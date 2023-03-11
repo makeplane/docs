@@ -3,81 +3,78 @@
 import { Heading } from '@/components/Heading'
 import { Note } from '@/components/mdx'
 
-<Note>
-  Plane is still in its early days, not everything will be perfect yet, and
-  hiccups may happen. Please let us know of any suggestions, ideas, or bugs that
-  you encounter on our [Discord](https://discord.com/invite/A92xrEGCge).
-</Note>
+Plane is still in its early days, not everything will be perfect yet, and
+hiccups may happen. Please let us know of any suggestions, ideas, or bugs that
+you encounter on our [Discord](https://discord.com/invite/A92xrEGCge).
 
-<Heading level={2} id="project-requirements">
-  Requirements
-</Heading>
+# Install with Docker
 
-1. Git
-2. Docker
-3. Docker-compose
+> It is strongly advised that you install the latest version of Docker available.
+> Please check that your docker is up-to date by running docker -v.
 
-<Heading level={2} id="project-requirements">
-  Project set-up
-</Heading>
-1. Clone the code
+This guide assumes you already have Docker installed and have permissions to run Docker containers. See the [Install on Ubuntu](https://docs.docker.com/engine/install/ubuntu/) for an installation from scratch.
 
-    ```bash
-    git clone --depth 1 https://github.com/makeplane/plane
-    ```
+## Quick Start
 
-2. Change Directory
+Run the command below to start a Plane server running locally listening on port `80`.
+You will only be able to connect to Plane from the machine running the server via
+`http://localhost/`.
 
-   ```bash
-   cd plane
-   ```
+```
+docker run -d --name plane -e NEXT_PUBLIC_API_BASE_URL=http://localhost -e DJANGO_SETTINGS_MODULE=plane.settings.production -p 80:80 --restart unless-stopped makeplane/plane:0.2.1
+```
 
-3. Move `env.example` to `.env` in the `apiserver` directory and `apps/app`
+- Add `-e DATABASE_URL=postgresql://user:pwd@host:port/db` to use an external
+  Postgresql.
+- Add `-e REDIS_URL=redis://user:pwd@host:port` to use an external Redis.
 
-   ```bash
-   mv.env.example.env
-   ```
+## Image Feature Overview
 
-4. Add all the variables - (the below are the compulsory variables)
+The `plane:0.2.1` image by default runs all of Plane's various services in a
+single container for ease of use. A quick summary of its features are:
 
-   Frontend - `apps/app/.env`
+- Set `DATABASE_URL` or the `DATABASE_...` variables to connect to an external Postgres.
+- Set `REDIS_URL` or the `REDIS_...` variables to connect to an external Postgres.
+- Runs all services behind a pre-configured nginx reverse proxy.
 
-   ```bash
-   NEXT_PUBLIC_API_BASE_URL = '<-- endpoint goes here -->'
-   NEXT_PUBLIC_GOOGLE_CLIENTID = '<-- google client id goes here -->'
-   NEXT_PUBLIC_GITHUB_ID = '<-- github id goes here -->'
-   NEXT_PUBLIC_APP_ENVIRONMENT = '<-- production | development -->'
-   ```
+## Upgrading from a previous version
 
-   Backend - `apiserver/.env`
+- It is recommended that you backup your data before upgrading, see the Backup sections
+  below for more details on how to do this.
 
-   ```bash
-   # Backend
-   SECRET_KEY="<-- django secret -->"
-   EMAIL_HOST="<-- email smtp -->"
-   EMAIL_HOST_USER="<-- email host user -->"
-   EMAIL_HOST_PASSWORD="<-- email host password -->"
+- Stop your existing plane container:
 
-   AWS_REGION="<-- aws region -->"
-   AWS_ACCESS_KEY_ID="<-- aws access key -->"
-   AWS_SECRET_ACCESS_KEY="<-- aws secret acess key -->"
-   AWS_S3_BUCKET_NAME="<-- aws s3 bucket name -->"
+```
+docker stop plane
+```
 
-   SENTRY_DSN="<-- sentry dsn -->"
-   WEB_URL="<-- frontend web url -->"
+- Bump the image version in the `docker run` command you usually use to run your
+  plane and start up a brand-new container:
 
-   GITHUB_CLIENT_SECRET="<-- github secret -->"
+```
+# We haven't yet deleted the old plane container so you need to start this new one
+# with a different name to prevent an error like:
+# `response from daemon: Conflict. The container name "/plane" is already in use by
+# container`
 
-   DISABLE_COLLECTSTATIC=1
-   DOCKERIZED=1
-   ```
+docker run \\
+  -d \\
+  --name plane_version_REPLACE_WITH_NEW_VERSION \\
+  # YOUR STANDARD ARGS HERE
+  makeplane/plane:REPLACE_WITH_LATEST_VERSION
 
-5. Run
+```
 
-   ```bash
-   docker-compose up --build
-   ```
+- Plane will automatically upgrade itself on startup, follow the logs to monitor it:
 
-6. Visit
-   1. [http://localhost:3000](http://localhost:3000) - (Frontend)
-   2. [http://localhost:8000](http://localhost:8000) - (Backend)
+```
+docker logs -f plane_version_REPLACE_WITH_NEW_VERSION
+```
+
+- Make sure your Plane has been successfully upgraded by visiting it and checking
+  everything is working as expected and your data is still present.
+- If everything works you can now remove the old Plane container.
+
+```
+docker rm plane
+```
