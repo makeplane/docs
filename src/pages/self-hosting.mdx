@@ -7,12 +7,46 @@ Plane is still in its early days, not everything will be perfect yet, and
 hiccups may happen. Please let us know of any suggestions, ideas, or bugs that
 you encounter on our [Discord](https://discord.com/invite/A92xrEGCge).
 
-# Install with Docker
+This guide assumes you already have Docker installed and have permissions to run Docker containers. See the [Install on Ubuntu](https://docs.docker.com/engine/install/ubuntu/) for an installation from scratch.
 
+# Install with Docker Compose
+
+
+- Clone the Repository
+
+```bash
+git clone https://github.com/makeplane/plane
+```
+
+- Change Directory
+
+```bash
+cd plane
+```
+
+- Run setup.sh
+
+```bash
+./setup.sh localhost 
+```
+
+> If running in a cloud env replace localhost with public facing IP address of the VM
+
+
+- Run Docker compose up
+
+```bash
+docker-compose up
+```
+
+<strong>You can use the default email and password for your first login `captain@plane.so` and `password123`.</strong> 
+
+<br/>
+<br/>
+# Install with Docker
+<Note>We are currently upgrading the configuration for the Plane Docker image, and as a result, some issues may arise. In the meantime, we highly recommend using docker-compose to self-host Plane.</Note>
 > It is strongly advised that you install the latest version of Docker available.
 > Please check that your docker is up-to date by running docker -v.
-
-This guide assumes you already have Docker installed and have permissions to run Docker containers. See the [Install on Ubuntu](https://docs.docker.com/engine/install/ubuntu/) for an installation from scratch.
 
 ## Quick Start
 
