@@ -2,7 +2,7 @@ import { forwardRef, Fragment, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Transition } from '@headlessui/react'
-
+import { githubEdit } from '@/lib/constants'
 import { Button } from '@/components/Button'
 import { navigation } from '@/components/Navigation'
 
@@ -194,6 +194,17 @@ function SocialLink({ href, icon: Icon, children }) {
   )
 }
 
+function EditOnGithub() {
+  const router = useRouter();
+  
+  return (
+    <a className="flex flex-row gap-2 fill-zinc-500 transition group-hover:fill-zinc-700 dark:group-hover:fill-zinc-300" href={githubEdit(router.pathname + ".mdx")}>
+      <GitHubIcon className="h-5 w-5" />
+      <span className="flex text-zinc-400">Edit on GitHub</span>
+    </a>
+  )
+}
+
 function SmallPrint() {
   return (
     <div className="flex flex-col items-center justify-between gap-5 border-t border-zinc-900/5 pt-8 dark:border-white/5 sm:flex-row">
@@ -201,6 +212,8 @@ function SmallPrint() {
         &copy; Copyrights Plane {new Date().getFullYear()}. All rights reserved.
       </p>
       <div className="flex gap-4">
+        <EditOnGithub />
+
         <SocialLink href="https://twitter.com/planepowers" icon={TwitterIcon}>
           Follow us on Twitter
         </SocialLink>

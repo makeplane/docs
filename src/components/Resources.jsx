@@ -52,7 +52,7 @@ const resources = [
   },
   {
     href: 'https://discord.com/invite/A92xrEGCge',
-    name: 'Community',
+    name: 'Discord Community',
     description: 'Hang out with truly exceptional devs & designers on Discord.',
     icon: UsersIcon,
     pattern: {

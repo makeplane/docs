@@ -4,7 +4,7 @@ export const description = 'Integrations'
 
 export const sections = [{ title: 'GitHub', id: 'github' }]
 
-# Integrations (Dev Release)
+# Integrations (WIP)
 
 Plane's integrations make it easy for users to connect their Workspace and
 projects to popular third-party tools. This enables seamless management of
@@ -34,32 +34,39 @@ GitHub. Similarly, if a user closes an issue in GitHub, it will be reflected
 in Plane as well.
 
 <Note>
-  Plane is still in development stage, in case if there are any hiccups in
-  Integrations, do report us on our [Discord]() or [Github]().
+  Plane is still in development, if there are any hiccups in
+  Integrations, please report them to us on our [Discord server]() or [Github issues]().
 </Note>
 
-## Plane + GitHub Sync Attribute Overivew
+### Plane to Github Synchronization Overivew
 
 ![Connect workspace](https://ik.imagekit.io/rdws4iz4v/Plane_Arch__1_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677529077471)
 
-## Configuring GitHub Integration
+### Configure GitHub Integration
 
-**Step One: Add GitHub Integration to your workspace**
+**1.** Install and authenticate GitHub Sync
+<Note>
+  Obviously, GitHub Sync requires you to authenticate with your account
+  to add the Plane GitHub application.
+  Also, if you want to use GitHub Sync in an organization, you may need to
+  ask an admin to allow Plane to access the organization, or do that yourself:
+  Organization settings => GitHub Apps (*enter sudo mode*) => approve the request for the Plane integration.
+</Note>
 
-![Connect workspace](https://ik.imagekit.io/rdws4iz4v/ezgif-2-c71e43f5de.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1677526036094)
+![Add GitHub Sync to your project](https://ik.imagekit.io/rdws4iz4v/ezgif-2-c71e43f5de.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1677526036094)
 
-**Step Two: Connect GitHub repository with project**
+**2.** Connect GitHub repository with project
 
-![Connect repo to project](https://ik.imagekit.io/rdws4iz4v/ezgif-2-cea843f5f8.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1677526558466)
+![Connect the repo to your project](https://ik.imagekit.io/rdws4iz4v/ezgif-2-cea843f5f8.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1677526558466)
 
-**Step Three: Create new or use existing issue on Plane**
+**3.** Create a new one or use an existing issue on Plane
 
-![Issue on Plane](https://ik.imagekit.io/rdws4iz4v/ezgif-5-71aa60e87f.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1677527704371)
+![Find or create an issue](https://ik.imagekit.io/rdws4iz4v/ezgif-5-71aa60e87f.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1677527704371)
 
-**Step Four: Add GitHub label to Plane issue (Plane to GitHub)**
+**4.** Add the `GitHub` label to Plane issue (Plane -> GitHub)
 
 ![GitHub label on Plane issue](https://ik.imagekit.io/rdws4iz4v/ezgif-5-58a5ac3b67.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1677527944556)
 
-**Step Five: Add Plane label to GitHub issue (GitHub to Plane)**
+**5.** Add the `Plane` label to GitHub issue (GitHub -> Plane)
 
 ![Plane label on GitHub issue](https://ik.imagekit.io/rdws4iz4v/ezgif-5-ccce270df6.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1677528064644)

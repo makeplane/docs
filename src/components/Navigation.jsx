@@ -193,6 +193,7 @@ export const navigation = [
       { title: 'Quick Start', href: '/quick-start' },
       { title: 'Self Hosting', href: '/self-hosting' },
       { title: 'Architecture', href: '/architecture' },
+      { title: 'Plane Basics', href: '/plane-basics'}
     ],
   },
   {
