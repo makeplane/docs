@@ -3,41 +3,53 @@
 import { Heading } from '@/components/Heading'
 import { Note } from '@/components/mdx'
 
-Plane is still in its early days, not everything will be perfect yet, and
+Plane is still in its early days, not everything is perfect yet, and
 hiccups may happen. Please let us know of any suggestions, ideas, or bugs that
 you encounter on our [Discord](https://discord.com/invite/A92xrEGCge).
 
-This guide assumes you already have Docker installed and have permissions to run Docker containers. See the [Install on Ubuntu](https://docs.docker.com/engine/install/ubuntu/) for an installation from scratch.
+This guide assumes you already have Docker installed
+and have permissions to run Docker containers.
+See the [Install on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+guide which explains installing Docker on your machine.
 
-# Install with Docker Compose
+## Install with Docker Compose (recommended way)
 
-
-- Clone the Repository
-
-```bash
-git clone https://github.com/makeplane/plane
-```
-
-- Change Directory
+### Clone the Repository and change the directory
 
 ```bash
-cd plane
+git clone https://github.com/makeplane/plane && cd plane
 ```
 
-- Run setup.sh
+### Run setup.sh
+
+This script downloads all the required dependencies,
+and sets up the environment with the IP address you provided.
 
 ```bash
-./setup.sh localhost 
+./setup.sh <your_ip>
 ```
 
-> If running in a cloud env replace localhost with public facing IP address of the VM
+<Note>
+`<your_ip>` is a placeholder for the actual IP address
+that you'd want your Plane instance to be available on.
 
+If you are running in a cloud environment or want the Plane
+instance to be available in your local network, use `0.0.0.0`
 
-- Run Docker compose up
+If you are setting Plane up, for example, on your own PC,
+it is recommended to use `localhost` for the IP address.
+</Note>
+
+### Bootstrap Plane with Docker Compose
 
 ```bash
-docker-compose up
+# -d detaches the containers, allowing you to perform other commands from the same shell
+# and allowing you to disconnect from the SSH server.
+# If you do not want for the containers to run in the background,
+# remove the flag.
+docker-compose up -d
 ```
 
-<strong>You can use the default email and password for your first login `captain@plane.so` and `password123`.</strong> 
-
+### Log in and enjoy your new and shiny Plane instance!
+There is a default user: `captain@plane.so` with the password `password123`.
+Be sure to delete it after you have set up the instance.
