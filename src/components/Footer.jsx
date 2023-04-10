@@ -199,8 +199,8 @@ function EditOnGithub() {
   
   return (
     <a className="flex flex-row gap-2 fill-zinc-500 transition group-hover:fill-zinc-700 dark:group-hover:fill-zinc-300" href={githubEdit(router.pathname + ".mdx")}>
-      <GitHubIcon className="h-5 w-5" />
-      <span className="flex text-zinc-400">Edit on GitHub</span>
+      <GitHubIcon className="h-5 w-5 fill-zinc-700 transition group-hover:fill-zinc-900 dark:group-hover:f" />
+      <span className="flex dark:text-zinc-400 light:text-zinc-200">Edit on GitHub</span>
     </a>
   )
 }
@@ -209,7 +209,7 @@ function SmallPrint() {
   return (
     <div className="flex flex-col items-center justify-between gap-5 border-t border-zinc-900/5 pt-8 dark:border-white/5 sm:flex-row">
       <p className="text-xs text-zinc-600 dark:text-zinc-400">
-        &copy; Copyrights Plane {new Date().getFullYear()}. All rights reserved.
+        &copy; Copyright Plane {new Date().getFullYear()}. All rights reserved.
       </p>
       <div className="flex gap-4">
         <EditOnGithub />
