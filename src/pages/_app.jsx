@@ -70,6 +70,21 @@ export default function App({ Component, pageProps }) {
       <Layout title={title} tableOfContents={tableOfContents}>
         <Component {...pageProps} />
       </Layout>
+      {/* algolia */}
+      <script
+        type="text/javascript"
+        dangerouslySetInnerHTML={{
+          __html: `
+              docsearch({
+                appId: '${process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID}',
+                apiKey: '${process.env.NEXT_PUBLIC_DOCSEARCH_API_KEY}',
+                indexName: '${process.env.NEXT_PUBLIC_DOCSEARCH_INDEX_NAME}',
+                container: '### REPLACE ME WITH A CONTAINER (e.g. div) ###',
+                debug: false // Set debug to true if you want to inspect the modal
+              });
+            `,
+        }}
+      />
       <script
         defer
         data-domain="docs.plane.so"
