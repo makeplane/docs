@@ -1,7 +1,7 @@
 ---
 title: Plane Documentation
-pageTitle: Plane - A simple, extensible, open source project and product management tool.
-description: Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.
+pageTitle: Plane Documentation
+description: Plane is a simple, extensible, open-source project and product management tool.
 ---
 
 Plane is a simple, extensible, open source project and product management tool. It allows users to start with a basic task tracking tool and gradually adopt various project management frameworks like Agile, Waterfall, and many more.
