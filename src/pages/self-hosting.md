@@ -45,7 +45,7 @@ it is recommended to use `localhost` for the IP address.
 # and allowing you to disconnect from the SSH server.
 # If you do not want for the containers to run in the background,
 # remove the flag.
-docker-compose up -d
+docker-compose -f docker-compose-hub.yml up
 ```
 
 ### Log in and enjoy your new and shiny Plane instance!
