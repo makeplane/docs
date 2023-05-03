@@ -10,10 +10,6 @@ Integrations and importers are only available on the cloud version. We plan to o
 
 Import issues from your Github repository into Plane.
 
-{% callout type="note" %}
-This feature is only available on Plane Cloud, and will be soon shipped for Plane self-hosted version.
-{% /callout %}
-
 ## GitHub Importer
 
 With Plane's GitHub importer, importing issues from a selected GitHub repository to a chosen project on Plane is just a few clicks away.
