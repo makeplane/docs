@@ -38,6 +38,13 @@ If you are setting Plane up, for example, on your own PC,
 it is recommended to use `localhost` for the IP address.
 {% /callout %}
 
+### Export Environment Variables
+```bash
+set -a
+source .env
+set +a
+```
+
 ### Bootstrap Plane with Docker Compose
 
 ```bash
