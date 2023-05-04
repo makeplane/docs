@@ -34,7 +34,9 @@ const navigation = [
         href: '/cycles',
       },
       { title: 'Modules', href: '/modules' },
+      { title: 'Views', href: '/views' },
       { title: 'Pages', href: '/pages' },
+      { title: 'Command Menu', href: '/command-menu' },
     ],
   },
   {
