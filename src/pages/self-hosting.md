@@ -23,11 +23,10 @@ git clone https://github.com/makeplane/plane && cd plane
 
 ### Run setup.sh
 
-This script downloads all the required dependencies,
-and sets up the environment with the IP address you provided.
+This script sets up the environment with the IP address or the Domain name you provided.
 
 ```bash
-./setup.sh <your_ip>
+./setup.sh <your_ip|domain_name>
 ```
 
 {% callout type="note" %}
