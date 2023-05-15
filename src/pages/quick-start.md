@@ -164,7 +164,7 @@ directly push them to the respective projects to convert them into an issue.
 You've reached the end of this section. But there's more to it. Here are useful
 resources for you to deep dive into each of these components of Plane.
 
-- Learn more about [Workspaces](/workspace)
+- Learn more about [Workspaces](/workspaces)
 - Learn more about [Projects](/projects)
 - Learn more about [Issues](/issues)
 - Learn more about [Cycles](/cycles)
