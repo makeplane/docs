@@ -1,6 +1,6 @@
 ---
-title: Project
-pageTitle: Project | Plane
+title: Projects
+pageTitle: Projects | Plane
 description: Projects let you manage teams and tasks within your Workspace. After creating your Workspace, you will need to create a new project.
 ---
 

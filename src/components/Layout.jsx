@@ -23,9 +23,9 @@ const navigation = [
   {
     title: 'Core concepts',
     links: [
-      { title: 'Workspace', href: '/workspaces' },
+      { title: 'Workspaces', href: '/workspaces' },
       {
-        title: 'Project',
+        title: 'Projects',
         href: '/projects',
       },
       { title: 'Issues', href: '/issues' },
