@@ -36,6 +36,7 @@ const navigation = [
       { title: 'Modules', href: '/modules' },
       { title: 'Views', href: '/views' },
       { title: 'Pages', href: '/pages' },
+      { title: 'Analytics', href: '/analytics' },
       { title: 'Command Menu', href: '/command-menu' },
     ],
   },
