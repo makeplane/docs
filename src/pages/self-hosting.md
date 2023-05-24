@@ -38,10 +38,24 @@ it is recommended to use `localhost` for the IP address.
 {% /callout %}
 
 ### Export Environment Variables
+
 ```bash
 set -a
 source .env
 set +a
+```
+
+For windows users:
+
+```powershell
+Get-Content -Path ".env" | ForEach-Object {
+     $line = $_ -split "="
+     if ($line.Length -ge 2) {
+         $variable = $line[0].Trim()
+         $value = $line[1..($line.Length - 1)] -join "="
+         Set-Item -Path "Env:\$variable" -Value $value
+     }
+ }
 ```
 
 ### Bootstrap Plane with Docker Compose
@@ -52,6 +66,13 @@ set +a
 # If you do not want for the containers to run in the background,
 # remove the flag.
 docker-compose -f docker-compose-hub.yml up
+```
+
+For windows users might need to run the following command before running the above command:
+
+```powershell
+(Get-Content apiserver/bin/takeoff -Raw) -replace "`r`n", "`n" | Set-Content apiserver/bin/takeoff -NoNewline
+(Get-Content apiserver/bin/worker -Raw) -replace "`r`n", "`n" | Set-Content apiserver/bin/worker -NoNewline
 ```
 
 ### Log in and enjoy your new and shiny Plane instance!
