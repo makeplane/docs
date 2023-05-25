@@ -1,5 +1,5 @@
-import { useId } from 'react'
 import clsx from 'clsx'
+import { useId } from 'react'
 
 import { InstallationIcon } from '@/components/icons/InstallationIcon'
 import { LightbulbIcon } from '@/components/icons/LightbulbIcon'

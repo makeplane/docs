@@ -15,7 +15,7 @@ export function WarningIcon({ id, color }) {
           gradientTransform="matrix(0 24.5 -24.5 0 16 5.5)"
         />
       </defs>
-      <LightMode>
+      <LightMode className={''}>
         <circle cx={20} cy={20} r={12} fill={`url(#${id}-gradient)`} />
         <path
           d="M3 16c0 7.18 5.82 13 13 13s13-5.82 13-13S23.18 3 16 3 3 8.82 3 16Z"
@@ -42,7 +42,7 @@ export function WarningIcon({ id, color }) {
           strokeLinejoin="round"
         />
       </LightMode>
-      <DarkMode>
+      <DarkMode className={''}>
         <path
           fillRule="evenodd"
           clipRule="evenodd"

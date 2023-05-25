@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import { Dialog } from '@headlessui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Dialog } from '@headlessui/react'
+import { useEffect, useState } from 'react'
 
 import { Logomark } from '@/components/Logo'
 import { Navigation } from '@/components/Navigation'

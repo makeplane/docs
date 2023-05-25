@@ -1,6 +1,6 @@
+import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import clsx from 'clsx'
 
 export function Navigation({ navigation, className }) {
   let router = useRouter()

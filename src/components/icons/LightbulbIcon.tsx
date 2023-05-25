@@ -15,7 +15,7 @@ export function LightbulbIcon({ id, color }) {
           gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)"
         />
       </defs>
-      <LightMode>
+      <LightMode className={''}>
         <circle cx={20} cy={20} r={12} fill={`url(#${id}-gradient)`} />
         <path
           fillRule="evenodd"
@@ -33,7 +33,7 @@ export function LightbulbIcon({ id, color }) {
           className="fill-[var(--icon-foreground)]"
         />
       </LightMode>
-      <DarkMode>
+      <DarkMode className={''}>
         <path
           fillRule="evenodd"
           clipRule="evenodd"

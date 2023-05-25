@@ -20,7 +20,7 @@ export function PluginsIcon({ id, color }) {
           gradientTransform="matrix(0 14 -14 0 16 10)"
         />
       </defs>
-      <LightMode>
+      <LightMode className={''}>
         <circle cx={20} cy={20} r={12} fill={`url(#${id}-gradient)`} />
         <g
           fillOpacity={0.5}

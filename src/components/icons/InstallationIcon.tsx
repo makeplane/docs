@@ -15,7 +15,7 @@ export function InstallationIcon({ id, color }) {
           gradientTransform="matrix(0 21 -21 0 16 7)"
         />
       </defs>
-      <LightMode>
+      <LightMode className={''}>
         <circle cx={12} cy={12} r={12} fill={`url(#${id}-gradient)`} />
         <path
           d="m8 8 9 21 2-10 10-2L8 8Z"
@@ -26,7 +26,7 @@ export function InstallationIcon({ id, color }) {
           strokeLinejoin="round"
         />
       </LightMode>
-      <DarkMode>
+      <DarkMode className={''}>
         <path
           d="m4 4 10.286 24 2.285-11.429L28 14.286 4 4Z"
           fill={`url(#${id}-gradient-dark)`}
