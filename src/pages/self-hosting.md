@@ -18,7 +18,7 @@ guide which explains installing Docker on your machine.
 ### Clone the Repository and change the directory
 
 ```bash
-git clone https://github.com/makeplane/plane && cd plane
+git clone -b master https://github.com/makeplane/plane && cd plane
 ```
 
 ### Run setup.sh
@@ -39,9 +39,7 @@ it is recommended to use `localhost` for the IP address.
 
 ### Export Environment Variables
 ```bash
-set -a
-source .env
-set +a
+set -a; source .env; set +a;
 ```
 
 ### Bootstrap Plane with Docker Compose
