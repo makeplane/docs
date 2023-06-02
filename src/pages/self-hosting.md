@@ -45,10 +45,6 @@ set -a; source .env; set +a;
 ### Bootstrap Plane with Docker Compose
 
 ```bash
-# -d detaches the containers, allowing you to perform other commands from the same shell
-# and allowing you to disconnect from the SSH server.
-# If you do not want for the containers to run in the background,
-# remove the flag.
 docker-compose -f docker-compose-hub.yml up
 ```
 
