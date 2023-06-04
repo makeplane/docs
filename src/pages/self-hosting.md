@@ -18,7 +18,9 @@ guide which explains installing Docker on your machine.
 ### Clone the Repository and change the directory
 
 ```bash
-git clone -b master https://github.com/makeplane/plane && cd plane
+git clone https://github.com/makeplane/plane
+cd plane
+chmod +x setup.sh
 ```
 
 ### Run setup.sh
@@ -26,7 +28,7 @@ git clone -b master https://github.com/makeplane/plane && cd plane
 This script sets up the environment with the IP address or the Domain name you provided.
 
 ```bash
-./setup.sh <your_ip|domain_name>
+./setup.sh http://<your_ip|domain_name>
 ```
 
 {% callout type="note" %}
@@ -34,7 +36,7 @@ This script sets up the environment with the IP address or the Domain name you p
 that you'd want your Plane instance to be available on.
 
 If you are setting Plane up, for example, on your own PC,
-it is recommended to use `localhost` for the IP address.
+it is recommended to use `http://localhost` for the IP address.
 {% /callout %}
 
 ### Export Environment Variables
@@ -45,7 +47,7 @@ set -a; source .env; set +a;
 ### Bootstrap Plane with Docker Compose
 
 ```bash
-docker-compose -f docker-compose-hub.yml up
+docker compose up -d
 ```
 
 ### Log in and enjoy your new and shiny Plane instance!
