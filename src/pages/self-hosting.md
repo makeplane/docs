@@ -18,7 +18,7 @@ guide which explains installing Docker on your machine.
 ### Clone the Repository and change the directory
 
 ```bash
-git clone -b master https://github.com/makeplane/plane && cd plane
+git clone -b master https://github.com/makeplane/plane.git && cd plane
 ```
 
 ### Run setup.sh
@@ -26,7 +26,7 @@ git clone -b master https://github.com/makeplane/plane && cd plane
 This script sets up the environment with the IP address or the Domain name you provided.
 
 ```bash
-./setup.sh <your_ip|domain_name>
+./setup.sh http://<your_ip|domain_name>
 ```
 
 {% callout type="note" %}
@@ -36,6 +36,78 @@ that you'd want your Plane instance to be available on.
 If you are setting Plane up, for example, on your own PC,
 it is recommended to use `localhost` for the IP address.
 {% /callout %}
+
+### Environment Variables
+```bash
+# Frontend
+# Extra image domains that need to be added for Next Image
+NEXT_PUBLIC_EXTRA_IMAGE_DOMAINS=
+# Google Client ID for Google OAuth
+NEXT_PUBLIC_GOOGLE_CLIENTID=""
+# Github ID for Github OAuth
+NEXT_PUBLIC_GITHUB_ID=""
+# Github App Name for GitHub Integration
+NEXT_PUBLIC_GITHUB_APP_NAME=""
+# Sentry DSN for error monitoring
+NEXT_PUBLIC_SENTRY_DSN=""
+# Enable/Disable OAUTH - default 0 for selfhosted instance 
+NEXT_PUBLIC_ENABLE_OAUTH=0
+# Enable/Disable sentry
+NEXT_PUBLIC_ENABLE_SENTRY=0
+# Enable/Disable session recording 
+NEXT_PUBLIC_ENABLE_SESSION_RECORDER=0
+# Enable/Disable event tracking
+NEXT_PUBLIC_TRACK_EVENTS=0
+# Slack for Slack Integration
+NEXT_PUBLIC_SLACK_CLIENT_ID=""
+
+# Backend
+
+# Database Settings
+PGUSER="plane"
+PGPASSWORD="plane"
+PGHOST="plane-db"
+PGDATABASE="plane"
+
+# Email Settings
+EMAIL_HOST=""
+EMAIL_HOST_USER=""
+EMAIL_HOST_PASSWORD=""
+EMAIL_PORT=587
+EMAIL_FROM="Team Plane <team@mailer.plane.so>"
+EMAIL_USE_TLS="1"
+
+# AWS Settings
+AWS_REGION=""
+AWS_ACCESS_KEY_ID="access-key"
+AWS_SECRET_ACCESS_KEY="secret-key"
+# Changing this requires change in the nginx.conf for uploads if using minio setup
+AWS_S3_BUCKET_NAME="uploads"
+# Maximum file upload limit
+FILE_SIZE_LIMIT=5242880
+
+# GPT settings // For AI assistance
+OPENAI_API_KEY=""
+GPT_ENGINE=""
+
+# Github
+GITHUB_CLIENT_SECRET="" // For fetching release notes
+
+# Settings related to Docker
+DOCKERIZED=1 // This needs to be set to true if using the Docker setup
+
+# Nginx Configuration
+NGINX_PORT=80 // The HOST port for NGINX
+
+# Default Creds for login
+DEFAULT_EMAIL="captain@plane.so"
+DEFAULT_PASSWORD="password123"
+
+# Auto generated and Required that will be generated from setup.sh
+NEXT_PUBLIC_API_BASE_URL=http://<your_ip|domain_name>
+SECRET_KEY="<redacted>"
+WEB_URL=http://<your_ip|domain_name>
+```
 
 ### Export Environment Variables
 ```bash
@@ -50,6 +122,14 @@ docker-compose -f docker-compose-hub.yml up
 
 ### Log in and enjoy your new and shiny Plane instance!
 
-Open your browser and navigate to `http://localhost/` to login onto your Plane instance.
+Open your browser and navigate to `http://<your_ip|domain_name>/` to login onto your Plane instance.
 
-There is a default user: `captain@plane.so` with the password `password123`.
+{% callout type="note" %}
+The Plane self-hosted setup has been updated with the release of version 0.7.1. If you are currently using an older version of Plane and encounter a database connection error after running the new containers, it is likely due to the username and password changes for the PostgreSQL containers in the 0.7.1 setup.
+
+To resolve this error, you can follow these steps if you were using the default password and username:
+
+Set the username as `PGUSER=plane` and the old password as `PGPASSWORD=xyzzyspoon` in the generated env file.
+Restart the containers.
+{% /callout %}
+
