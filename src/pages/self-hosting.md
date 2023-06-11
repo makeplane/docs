@@ -91,13 +91,13 @@ OPENAI_API_KEY=""
 GPT_ENGINE=""
 
 # Github
-GITHUB_CLIENT_SECRET="" // For fetching release notes
+GITHUB_CLIENT_SECRET="" # For fetching release notes
 
 # Settings related to Docker
-DOCKERIZED=1 // This needs to be set to true if using the Docker setup
+DOCKERIZED=1 # This needs to be set to true if using the Docker setup
 
 # Nginx Configuration
-NGINX_PORT=80 // The HOST port for NGINX
+NGINX_PORT=80 # The HOST port for NGINX
 
 # Default Creds for login
 DEFAULT_EMAIL="captain@plane.so"
