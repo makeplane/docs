@@ -18,7 +18,7 @@ guide which explains installing Docker on your machine.
 ### Clone the Repository and change the directory
 
 ```bash
-git clone -b master https://github.com/makeplane/plane.git && cd plane
+git clone --depth 1 -b master https://github.com/makeplane/plane.git && cd plane
 ```
 
 ### Run setup.sh
