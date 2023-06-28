@@ -62,12 +62,23 @@ NEXT_PUBLIC_TRACK_EVENTS=0
 NEXT_PUBLIC_SLACK_CLIENT_ID=""
 
 # Backend
+# Debug value for api server use it as 0 for production use
+DEBUG=0
+
+# Error logs
+SENTRY_DSN=""
 
 # Database Settings
 PGUSER="plane"
 PGPASSWORD="plane"
 PGHOST="plane-db"
 PGDATABASE="plane"
+DATABASE_URL=postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}
+
+# Redis Settings
+REDIS_HOST="plane-redis"
+REDIS_PORT="6379"
+REDIS_URL="redis://${REDIS_HOST}:6379/"
 
 # Email Settings
 EMAIL_HOST=""
@@ -76,42 +87,43 @@ EMAIL_HOST_PASSWORD=""
 EMAIL_PORT=587
 EMAIL_FROM="Team Plane <team@mailer.plane.so>"
 EMAIL_USE_TLS="1"
+EMAIL_USE_SSL="0"
 
 # AWS Settings
 AWS_REGION=""
 AWS_ACCESS_KEY_ID="access-key"
 AWS_SECRET_ACCESS_KEY="secret-key"
+AWS_S3_ENDPOINT_URL="http://plane-minio:9000"
 # Changing this requires change in the nginx.conf for uploads if using minio setup
 AWS_S3_BUCKET_NAME="uploads"
 # Maximum file upload limit
 FILE_SIZE_LIMIT=5242880
 
-# GPT settings // For AI assistance
+# GPT settings
 OPENAI_API_KEY=""
 GPT_ENGINE=""
 
 # Github
-GITHUB_CLIENT_SECRET="" // For fetching release notes
+GITHUB_CLIENT_SECRET="" # For fetching release notes
 
 # Settings related to Docker
-DOCKERIZED=1 // This needs to be set to true if using the Docker setup
+DOCKERIZED=1
+# set to 1 If using the pre-configured minio setup 
+USE_MINIO=1
 
 # Nginx Configuration
-NGINX_PORT=80 // The HOST port for NGINX
+NGINX_PORT=80
 
-# Default Creds for login
+# Default Creds
 DEFAULT_EMAIL="captain@plane.so"
 DEFAULT_PASSWORD="password123"
 
+# SignUps
+ENABLE_SIGNUP="1"
 # Auto generated and Required that will be generated from setup.sh
 NEXT_PUBLIC_API_BASE_URL=http://<your_ip|domain_name>
 SECRET_KEY="<redacted>"
 WEB_URL=http://<your_ip|domain_name>
-```
-
-### Export Environment Variables
-```bash
-set -a; source .env; set +a;
 ```
 
 ### Bootstrap Plane with Docker Compose
