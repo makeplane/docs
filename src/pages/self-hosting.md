@@ -129,7 +129,7 @@ WEB_URL=http://<your_ip|domain_name>
 ### Bootstrap Plane with Docker Compose
 
 ```bash
-docker-compose -f docker-compose-hub.yml up
+docker compose -f docker-compose-hub.yml up
 ```
 
 ### Log in and enjoy your new and shiny Plane instance!
