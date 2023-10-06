@@ -174,11 +174,34 @@ docker compose -f docker-compose-hub.yml up
 Open your browser and navigate to `http://<your_ip|domain_name>/` to login onto your Plane instance.
 
 {% callout type="note" %}
-For Version 0.7.1 Update:
 
-- The Plane self-hosted setup has been updated with version 0.7.1. If you encounter a database connection error after updating from an older version, it's likely due to PostgreSQL container username and password changes.
+In the 0.13.2 release, the default value for DJANGO_SETTINGS_MODULE has been changed back to plane.settings.production in the apiserver/.env file.
 
-- To resolve this error, if you were using default credentials, set `PGUSER=plane` as the username and `PGPASSWORD=xyzzyspoon` as the old password in your generated env file. Then, restart the containers.
+Additionally, you can configure the following settings `apiserver/.env` file:
+
+- To enable email password-based login, set:
+
+```bash
+ENABLE_EMAIL_PASSWORD="1"
+```
+
+- To enable magic link-based login, set:
+
+```bash
+ENABLE_MAGIC_LINK_LOGIN="0"
+```
+
+- You can adjust email redirections and Minio domain settings by configuring:
+
+```bash
+WEB_URL="http://localhost"
+```
+
+- For Google OAuth login methods, you can add the respective client IDs:
+
+```bash
+GOOGLE_CLIENT_ID="" # Add Google client ID for google login
+```
 
 {% /callout %}
 
@@ -192,4 +215,13 @@ Version 0.12 and Above Setup:
 - Restart the containers using: docker compose -f docker-compose-hub.yml.
 
 These steps ensure your environment is up-to-date and configured correctly for version 0.12 and later.
+{% /callout %}
+
+{% callout type="note" %}
+For Version 0.7.1 Update:
+
+- The Plane self-hosted setup has been updated with version 0.7.1. If you encounter a database connection error after updating from an older version, it's likely due to PostgreSQL container username and password changes.
+
+- To resolve this error, if you were using default credentials, set `PGUSER=plane` as the username and `PGPASSWORD=xyzzyspoon` as the old password in your generated env file. Then, restart the containers.
+
 {% /callout %}
