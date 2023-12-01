@@ -7,6 +7,7 @@ import { PluginsIcon } from '@/components/icons/PluginsIcon'
 import { PresetsIcon } from '@/components/icons/PresetsIcon'
 import { ThemingIcon } from '@/components/icons/ThemingIcon'
 import { WarningIcon } from '@/components/icons/WarningIcon'
+import { ArrowIcon } from './icons/ArrowFilled'
 
 const icons = {
   installation: InstallationIcon,
@@ -15,6 +16,7 @@ const icons = {
   theming: ThemingIcon,
   lightbulb: LightbulbIcon,
   warning: WarningIcon,
+  arrow: ArrowIcon
 }
 
 const iconStyles = {
@@ -75,3 +77,5 @@ export function LightMode({ className, ...props }) {
 export function DarkMode({ className, ...props }) {
   return <g className={clsx('hidden dark:inline', className)} {...props} />
 }
+
+

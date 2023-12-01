@@ -6,11 +6,11 @@ description: This section helps you get comfortable with Plane and find your way
 
 Plane is still in its early days, not everything is perfect yet, and
 hiccups may happen. Please let us know of any suggestions, ideas, or bugs that
-you encounter on our [Discord](https://discord.com/invite/A92xrEGCge).
+you encounter on our {% link href="https://discord.com/invite/A92xrEGCge" target="_blank" %}Discord{% /link %}
 
 This guide assumes you already have Docker installed
 and have permissions to run Docker containers.
-See the [Install on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+See the {% link href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" %}Install on Ubuntu{% /link%}
 guide which explains installing Docker on your machine.
 
 ## Install with Docker Compose (recommended way)
