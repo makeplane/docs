@@ -66,7 +66,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>{pageTitle}</title>
 
-        {NEXT_PUBLIC_NOINDEX === '1' && (
+        {process.env.NEXT_PUBLIC_NOINDEX === '1' && (
           <>
             <meta name="robots" content="noindex" />
             <meta name="googlebot" content="noindex" />
