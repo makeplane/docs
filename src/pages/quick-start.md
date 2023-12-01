@@ -57,7 +57,7 @@ new workspace.
   invitation part and be directly redirect to the workspace.
 
 {% callout type="note" %}
-  During the onboarding process, the invited users will be assigned a **Viewer**
+  During the onboarding process, the invited users will be assigned a `Viewer`
   role by default. You can adjust the permissions of invited users for your
   project in the workspace or project settings page based on your specific
   requirements.
