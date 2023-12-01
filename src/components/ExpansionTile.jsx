@@ -5,9 +5,9 @@ export function ExpansionTile({ children, collapsedTitle }) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <div className="border border-x-slate-900 border-y-slate-800">
+    <div className="border border-x-white dark:border-x-slate-900 dark:border-y-slate-800">
       <div
-        className="group flex cursor-pointer items-center gap-2   py-2"
+        className="group flex cursor-pointer items-center gap-2 py-2"
         onClick={() => {
           setIsExpanded(!isExpanded)
         }}
