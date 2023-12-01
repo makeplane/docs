@@ -1,3 +1,4 @@
+import { ButtonHTMLAttributes, FC, ReactNode } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 
@@ -8,12 +9,25 @@ const styles = {
     'rounded-full bg-slate-800 py-2 px-4 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 active:text-slate-400',
 }
 
-export function Button({ variant = 'primary', className, href, ...props }) {
-  className = clsx(styles[variant], className)
+export type ButtonProps = {
+  variant?: string
+  href?: string
+  className?: string
+  children: ReactNode
+} & ButtonHTMLAttributes<HTMLButtonElement>
+
+export const Button: FC<ButtonProps> = (props) => {
+  const { variant = 'primary', className, href, children, ...rest } = props
+
+  const transformedClassName = clsx(styles[variant], className)
 
   return href ? (
-    <Link href={href} className={className} {...props} />
+    <Link href={href} className={transformedClassName}>
+      {children}
+    </Link>
   ) : (
-    <button className={className} {...props} />
+    <button className={transformedClassName} {...rest}>
+      {children}
+    </button>
   )
 }
