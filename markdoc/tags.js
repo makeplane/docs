@@ -1,5 +1,10 @@
 import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
+import { Col2 } from '@/components/Col2'
+import { List } from '@/components/List'
+import Link from '@/components/link'
+import { BoldText } from '@/components/BoldText'
+import { ExpansionTile } from '@/components/ExpansionTile'
 
 const tags = {
   callout: {
@@ -41,6 +46,28 @@ const tags = {
       icon: { type: String },
       href: { type: String },
     },
+  },
+  'col-2': {
+    render: Col2,
+  },
+  list: {
+    render: List,
+  },
+  link: {
+    attributes: {
+      href: { type: String, default: '' },
+      target: { type: String, default: '_self' },
+    },
+    render: Link,
+  },
+  'bold-text': {
+    render: BoldText,
+  },
+  expansion: {
+    attributes: {
+      collapsedTitle: { type: String, default: '' },
+    },
+    render: ExpansionTile,
   },
 }
 

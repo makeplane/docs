@@ -38,11 +38,11 @@ Apache-2.0, and currently, we support self-hosting Plane using Docker. For
 detailed instructions, please refer to the [self-hosting](/self-hosting) section.
 
 {% callout type="note" %}
-  We are also working on making the self-hosting process smoother by introducing
-  easy deployment methods on popular PaaS tools such as Heroku, Render,
-  DigitalOcean, Railway, and more. If you wish to request any other
-  configuration, please raise a feature request on our
-  [GitHub](https://github.com/makeplane/plane).
+We are also working on making the self-hosting process smoother by introducing
+easy deployment methods on popular PaaS tools such as Heroku, Render,
+DigitalOcean, Railway, and more. If you wish to request any other
+configuration, please raise a feature request on our
+[GitHub](https://github.com/makeplane/plane).
 {% /callout %}
 
 ## Onboarding and Invitation
@@ -57,10 +57,9 @@ new workspace.
   invitation part and be directly redirect to the workspace.
 
 {% callout type="note" %}
-  During the onboarding process, the invited users will be assigned a **Viewer**
-  role by default. You can adjust the permissions of invited users for your
-  project in the workspace or project settings page based on your specific
-  requirements.
+During the onboarding process, the invited users will be assigned a **Viewer** role by default. You can adjust the permissions of invited users for your
+project in the workspace or project settings page based on your specific
+requirements.
 {% /callout %}
 
 ## The Dashboard
@@ -79,9 +78,9 @@ consider a workspace as a different company or organization you work with.
 
 {% callout type="note" %}
 
-  When you sign up for the first time, we'll prompt you to create a new
-  workspace. If you're invited to join, you can directly join the workspace
-  without creating a new one.
+When you sign up for the first time, we'll prompt you to create a new
+workspace. If you're invited to join, you can directly join the workspace
+without creating a new one.
 {% /callout %}
 
 ## Creating Projects
@@ -109,8 +108,8 @@ properties and relations are optional, know more about there [here]().
 
 {% callout type="note" %}
 
-  You can create issues by clicking on the `New Issue` button in the right-hand
-  corner of your project, or by using `C` shortcut.
+You can create issues by clicking on the `New Issue` button in the right-hand
+corner of your project, or by using `C` shortcut.
 {% /callout %}
 
 There's lot more about Issues, learn about them [here](/issues).
@@ -125,9 +124,9 @@ finished building and implementing a new version of their project or product.
 
 {% callout type="note" %}
 
-  Only one Cycle can be ongoing at a time to follow the principles of AGILE.
-  However, you can have your upcoming issues or draft issues already created for
-  the next cycles.
+Only one Cycle can be ongoing at a time to follow the principles of AGILE.
+However, you can have your upcoming issues or draft issues already created for
+the next cycles.
 {% /callout %}
 
 - You can move existing issues to a new or existing cycle, or create a new
