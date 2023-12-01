@@ -1,10 +1,10 @@
-import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
+import Head from 'next/head'
 
 import { Layout } from '@/components/Layout'
 
-import 'focus-visible'
-import '@/styles/tailwind.css'
+import '../styles/tailwind.css'
+// import 'focus-visible'
 
 function getNodeText(node) {
   let text = ''
@@ -78,7 +78,7 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </Layout>
       {/* algolia */}
-      <script
+      {/* <script
         type="text/javascript"
         dangerouslySetInnerHTML={{
           __html: `
@@ -91,7 +91,7 @@ export default function App({ Component, pageProps }) {
               });
             `,
         }}
-      />
+      /> */}
       <script
         defer
         data-domain="docs.plane.so"

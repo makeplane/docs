@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from 'react'
-import { createPortal } from 'react-dom'
+import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
 import Link from 'next/link'
 import Router from 'next/router'
-import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
+import { useCallback, useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 
 const docSearchConfig = {
   appId: process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID,
@@ -37,7 +37,7 @@ export function Search() {
   useDocSearchKeyboardEvents({ isOpen, onOpen, onClose })
 
   useEffect(() => {
-    setModifierKey(
+    return setModifierKey(
       /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform) ? '⌘' : 'Ctrl '
     )
   }, [])
@@ -46,7 +46,7 @@ export function Search() {
     <>
       <button
         type="button"
-        className="group flex h-6 w-6 items-center justify-center sm:justify-start md:h-auto md:w-80 md:flex-none md:rounded-lg md:py-2.5 md:pl-4 md:pr-3.5 md:text-sm md:ring-1 md:ring-slate-200 md:hover:ring-slate-300 dark:md:bg-slate-800/75 dark:md:ring-inset dark:md:ring-white/5 dark:md:hover:bg-slate-700/40 dark:md:hover:ring-slate-500 lg:w-96"
+        className="md:py-2.5 md:pr-3.5 dark:md:bg-slate-800/75 dark:md:ring-white/5 dark:md:hover:bg-slate-700/40 group flex h-6 w-6 items-center justify-center sm:justify-start md:h-auto md:w-80 md:flex-none md:rounded-lg md:pl-4 md:text-sm md:ring-1 md:ring-slate-200 md:hover:ring-slate-300 dark:md:ring-inset dark:md:hover:ring-slate-500 lg:w-96"
         onClick={onOpen}
       >
         <SearchIcon className="h-5 w-5 flex-none fill-slate-400 group-hover:fill-slate-500 dark:fill-slate-500 md:group-hover:fill-slate-400" />

@@ -15,7 +15,7 @@ export function ThemingIcon({ id, color }) {
           gradientTransform="matrix(0 24.5 -24.5 0 16 5.5)"
         />
       </defs>
-      <LightMode>
+      <LightMode className={''}>
         <circle cx={12} cy={20} r={12} fill={`url(#${id}-gradient)`} />
         <path
           d="M27 12.13 19.87 5 13 11.87v14.26l14-14Z"
@@ -46,7 +46,7 @@ export function ThemingIcon({ id, color }) {
           strokeLinejoin="round"
         />
       </LightMode>
-      <DarkMode>
+      <DarkMode className={''}>
         <path
           fillRule="evenodd"
           clipRule="evenodd"

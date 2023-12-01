@@ -1,6 +1,6 @@
 ---
-title: Workspaces
-pageTitle: Workspaces | Plane
+title: Workspace
+pageTitle: Workspace | Plane
 description: Workspaces in Plane are where you can access all of your content, including issues, cycles, and modules. Everything is organized within a workspace. To help you understand, you can think of a workspace as similar to a server on Discord or an organization on Slack, where you can bring your entire team together to work.
 ---
 

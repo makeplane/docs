@@ -15,7 +15,7 @@ export function PresetsIcon({ id, color }) {
           gradientTransform="matrix(0 22.75 -22.75 0 16 6.25)"
         />
       </defs>
-      <LightMode>
+      <LightMode className={''}>
         <circle cx={20} cy={12} r={12} fill={`url(#${id}-gradient)`} />
         <g
           className="fill-[var(--icon-background)] stroke-[color:var(--icon-foreground)]"
