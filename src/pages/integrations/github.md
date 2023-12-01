@@ -4,6 +4,10 @@ pageTitle: GitHub Sync | Plane
 description: GitHub Sync allows users to connect any GitHub repository to a Plane project, enabling cross-synchronization of issues between Plane and GitHub in both directions.
 ---
 
+{% callout type="note" %}
+Integrations and importers are only available on the cloud version. We plan to open-source our SDKs in the near future so that the community can request or contribute integrations as needed.
+{% /callout %}
+
 GitHub Sync allows users to connect any GitHub repository to a Plane project,
 enabling cross-synchronization of issues between Plane and GitHub in both
 directions.

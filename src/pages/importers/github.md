@@ -4,11 +4,11 @@ pageTitle: GitHub Importer | Plane
 description: Import issues from your Github repository into Plane.
 ---
 
-Import issues from your Github repository into Plane.
-
 {% callout type="note" %}
-This feature is only available on Plane Cloud, and will be soon shipped for Plane self-hosted version.
+Integrations and importers are only available on the cloud version. We plan to open-source our SDKs in the near future so that the community can request or contribute integrations as needed.
 {% /callout %}
+
+Import issues from your Github repository into Plane.
 
 ## GitHub Importer
 

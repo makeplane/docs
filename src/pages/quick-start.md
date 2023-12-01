@@ -59,7 +59,6 @@ new workspace.
 {% callout type="note" %}
 During the onboarding process, the invited users will be assigned a **Viewer** role by default. You can adjust the permissions of invited users for your
 project in the workspace or project settings page based on your specific
-requirements.
 {% /callout %}
 
 ## The Dashboard
@@ -163,7 +162,7 @@ directly push them to the respective projects to convert them into an issue.
 You've reached the end of this section. But there's more to it. Here are useful
 resources for you to deep dive into each of these components of Plane.
 
-- Learn more about [Workspaces](/workspace)
+- Learn more about [Workspaces](/workspaces)
 - Learn more about [Projects](/projects)
 - Learn more about [Issues](/issues)
 - Learn more about [Cycles](/cycles)
