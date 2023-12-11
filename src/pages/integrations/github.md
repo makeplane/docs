@@ -25,7 +25,7 @@ in Plane as well.
 
 {% callout type="note" %}
 Plane is still in development, if there are any hiccups in
-Integrations, please report them to us on our [Discord server]() or [Github issues]().
+Integrations, please report them to us on our [Discord server](https://discord.com/invite/A92xrEGCge) or [Github issues](https://github.com/makeplane/plane/issues).
 {% /callout %}
 
 ## Plane to Github Synchronization Overivew
