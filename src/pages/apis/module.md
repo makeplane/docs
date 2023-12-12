@@ -1,4 +1,8 @@
-## Module
+---
+title: Module
+pageTitle: Module | Plane
+description:
+---
 
 {% col-2 %}
 {% list %}
@@ -26,67 +30,68 @@ DELETE /api/v1/workspaces/:slug/projects/:project_id/modules/:module_id/
 
 - `name` string(required)
 
-Name of the module
+  Name of the module
 
 - `description` string
 
-Description of the module
+  Description of the module
 
 - `description_html` string
 
-Description in HTML format
+  Description in HTML format
 
 - `start_date` date
 
-Start date of the module
+  Start date of the module
 
 - `target_date` date
 
-Estimated date to complete the module
+  Estimated date to complete the module
 
 - `created_at` _timestamp_
 
-The timestamp of the time when the project was created
+  The timestamp of the time when the project was created
 
 - `updated_at` _timestamp_
 
-The timestamp of the time when the project was last updated
+  The timestamp of the time when the project was last updated
 
 - `status`
 
-It describes the status of the module
+  It describes the status of the module
 
-The status can be
+  The status can be
 
-- backlog
-- planned
-- in-progress
-- paused
-- completed
-- cancelled
+  - backlog
+  - planned
+  - in-progress
+  - paused
+  - completed
+  - cancelled
 - `view_props`
 
-It store the filters and the display properties selected by the user to visualize the issues in the module
+  It store the filters and the display properties selected by the user to visualize the issues in the module
 
 - `sort_order`
 
-It gives the position of the module at which it should be displayed
+  It gives the position of the module at which it should be displayed
 
 - `created_by` , `updated_by` _uuid_
 
-These values are auto saved and represent the id of the user that created or updated the module
+  These values are auto saved and represent the id of the user that created or updated the module
 
 - `Project` uuid
 
-It contains projects uuid which is automatically saved.
+  It contains projects uuid which is automatically saved.
 
 - `Workspace` uuid
 
-It contains workspace uuid which is automatically saved
+  It contains workspace uuid which is automatically saved
 
 - `lead` uuid
 
-Lead of the module
+  Lead of the module
+
 {% /list %}
 
 {% list %}

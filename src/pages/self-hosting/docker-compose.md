@@ -1,4 +1,10 @@
-# Self Hosting
+---
+title: Docker Compose
+pageTitle: Docker Compose | Plane
+description:
+---
+
+## Self Hosting
 
 In this guide, we will walk you through the process of setting up a self-hosted environment. Self-hosting allows you to have full control over your applications and data. It's a great way to ensure privacy, control, and customization.
 
@@ -38,7 +44,6 @@ sudo sh install-docker.sh
 After installation, you can verify the installation by opening a terminal (Command Prompt on Windows, Terminal app on Mac) and running the command `docker --version`. This should display the installed version of Docker.
 {% /expansion %}
 
----
 
 ## Installing Plane
 
@@ -47,7 +52,7 @@ Installing plane is a very easy and minimal step process.
 ### Prerequisite
 
 - Docker installed and running
-- OS with bash scripting enabled (Ubuntu, Linux AMI, macos). Windows systems need to have [gitbash](https://git-scm.com/download/win)
+- OS with bash scripting enabled (Ubuntu, Linux AMI, macos). Windows systems need to have {% link href="https://git-scm.com/download/win" target="_blank" %}gitbash{% /link %}
 - User context used must have access to docker services. In most cases, use sudo su to switch as root user
 - Use the terminal (or gitbash) window to run all the future steps
 
@@ -72,14 +77,13 @@ cd plane-selfhost
 
 export RELEASE=preview
 
-curl -fsSL https://raw.githubusercontent.com/makeplane/plane/$BRANCH/deploy/selfhost/install.sh | sed  's@BRANCH=master@BRANCH='"$RELEASE"'@' > setup.sh
+curl -fsSL https://raw.githubusercontent.com/makeplane/plane/$RELEASE/deploy/selfhost/install.sh | sed  's@BRANCH=master@BRANCH='"$RELEASE"'@' > setup.sh
 
 chmod +x setup.sh
 ```
 
 {% /expansion %}
 
----
 
 ### Proceed with setup
 
@@ -204,7 +208,7 @@ If all goes well, you must see something like this
 
 ---
 
-### Upgrading Plane Version
+### Upgrading Plane Version (From v0.14.0 onwards)
 
 It is always advised to keep Plane up to date with the latest release.
 

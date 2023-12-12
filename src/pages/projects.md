@@ -5,7 +5,7 @@ description: Projects let you manage teams and tasks within your Workspace. Afte
 ---
 
 Projects let you manage teams and tasks within your Workspace. After creating
-your [Workspace](/core-concepts/workspace), you will need to create a new project.
+your [Workspace](/workspaces), you will need to create a new project.
 
 {% callout type="note" %}
 Before inviting a user to a project, you'll need to invite them to the
@@ -16,7 +16,6 @@ users on the workspace.
 ## Key project attributes
 
 Every project comes with two key attributes that make it easier to plan and set permissions for users on the workspace.
-
 
 - **Identifier**: The project identifier is attached to every issue in the project to make it easier to track and differentiate each issue across projects and the workspace.
 

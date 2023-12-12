@@ -1,4 +1,8 @@
-## Issue Activity
+---
+title: Issue Activity
+pageTitle: Issue Activity | Plane
+description:
+---
 
 {% col-2 %}
 {% list %}
@@ -24,67 +28,68 @@ GET    /api/v1/workspaces/:slug/projects/:project_id/issues/:issue_id/activities
 
 - `created_at` _timestamp_
 
-The timestamp of the time when the project was created
+  The timestamp of the time when the project was created
 
 - `updated_at` _timestamp_
 
-The timestamp of the time when the project was last updated
+  The timestamp of the time when the project was last updated
 
 - `verb` _string_
 
-created or updated
+  created or updated
 
 - `field` _string_ or _null_
 
-The field that got changed null when created
+  The field that got changed null when created
 
 - `old_value` _string_
 
-Old value of the field
+  Old value of the field
 
 - `new_value` _string_
 
-New value of the field
+  New value of the field
 
 - `comment` _string_
 
-Comment auto generated
+  Comment auto generated
 
 - `attachments` - _[url,]_
 
-Url of all the attachments that are in the activity
+  Url of all the attachments that are in the activity
 
 - `old_identifier` _uuid_
 
-Old identifier of the field
+  Old identifier of the field
 
 - `new_identifier` _uuid_
 
-New identifier of the field
+  New identifier of the field
 
 - `epoch` _float_
 
-Epoch float field when the activity was created.
+  Epoch float field when the activity was created.
 
 - `project` uuid
 
-It contains projects uuid which is automatically saved.
+  It contains projects uuid which is automatically saved.
 
 - `workspace` uuid
 
-It contains workspace uuid which is automatically saved
+  It contains workspace uuid which is automatically saved
 
 - `issue` _uuid_
 
-The issue the activity is attached to
+  The issue the activity is attached to
 
 - `issue_comment` _uuid or null_
 
-The comment uuid if the activity was created due to a comment
+  The comment uuid if the activity was created due to a comment
 
 - `actor` uuid
 
-The actor who triggered this actor
+  The actor who triggered this actor
+
 {% /list %}
 
 {% list %}

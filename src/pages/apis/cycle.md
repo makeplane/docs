@@ -1,8 +1,21 @@
-## Cycle
+---
+title: Cycle
+pageTitle: Cycle | Plane
+description:
+---
 
 {% col-2 %}
 {% list %}
 Cycles is a custom time period in which a team works to complete items on their backlog. At the end of the sprint, the team will usually have finished building and implementing a new version of their project or product.
+
+To transfer issues of one cycle to another, the payload should be sent in the below format
+
+```
+{
+	"new_cycle_id": "2380ce13-1cc4-4f67-9f57-a2b7686886d7"
+}
+```
+
 {% /list %}
 
 {% list %}
@@ -27,47 +40,47 @@ POST   /api/v1/workspaces/:slug/projects/:project_id/cycles/:cycle_id/transfer-i
 
 - `name` string (required)
 
-Name of the cycle
+  Name of the cycle
 
 - `description` string
 
-Description of the cycle
+  Description of the cycle
 
 - `start_date` date
 
-Start date of the cycle
+  Start date of the cycle
 
 - `end_date` date
 
-End date of the cycle
+  End date of the cycle
 
 - `created_at` _timestamp_
 
-The timestamp of the time when the project was created
+  The timestamp of the time when the project was created
 
 - `updated_at` _timestamp_
 
-The timestamp of the time when the project was last updated
+  The timestamp of the time when the project was last updated
 
 - `view_props`
 
-It store the filters and the display properties selected by the user to visualize the issues in the module
+  It store the filters and the display properties selected by the user to visualize the issues in the module
 
 - `sort_order`
 
-It gives the position of the module at which it should be displayed
+  It gives the position of the module at which it should be displayed
 
 - `created_by` , `updated_by` _uuid_
 
-These values are auto saved and represent the id of the user that created or the updated the
+  These values are auto saved and represent the id of the user that created or the updated the
 
 - `Project` uuid
 
-It contains projects uuid which is automatically saved.
+  It contains projects uuid which is automatically saved.
 
 - `Workspace` uuid
 
-It contains workspace uuid which is automatically saved
+  It contains workspace uuid which is automatically saved
 
 - `owned_by` uuid
 

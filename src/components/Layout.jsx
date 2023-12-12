@@ -17,12 +17,15 @@ const navigation = [
     links: [
       { title: 'Home', href: '/' },
       { title: 'Quick start', href: '/quick-start' },
+      { title: 'Sign up and sign in', href: '/sign-up-sign-in' },
       {
-        title: 'Self Hosting',
-        href: '/self-hosting',
+        title: 'Self-hosting',
+        href: '/self-hosting/self-hosting',
         links: [
-          { title: 'Docker Compose', href: '/docker-compose' },
-          { title: 'Kubernetes', href: '/kubernetes' },
+          { title: 'Docker Compose', href: '/self-hosting/docker-compose' },
+          { title: 'Kubernetes', href: '/self-hosting/kubernetes' },
+          { title: 'Instance admin and God Mode', href: '/instance-admin' },
+          { title: 'Reset password', href: '/self-hosting/reset-password' },
         ],
       },
     ],
@@ -71,7 +74,7 @@ const navigation = [
       { title: 'State', href: '/apis/state' },
       { title: 'Label', href: '/apis/label' },
       { title: 'Links', href: '/apis/links' },
-      { title: 'Issue Attachment', href: '/apis/issue-attachment' },
+      // { title: 'Issue Attachment', href: '/apis/issue-attachment' },
       { title: 'Issue', href: '/apis/issue' },
       { title: 'Issue Activity', href: '/apis/issue-activity' },
       { title: 'Issue Comment', href: '/apis/issue-comment' },
