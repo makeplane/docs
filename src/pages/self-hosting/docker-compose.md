@@ -16,7 +16,7 @@ Let's get started!
 
 {% expansion collapsedTitle="Option 1 - Using Cloud Server" %}
 
-Best way to start is to create EC2 maching on AWS. It must of minimum `t3.medium/t3a.medium`
+Best way to start is to create EC2 machine on AWS. It must of minimum `t3.medium/t3a.medium`
 
 Run the below command to install docker engine.
 
