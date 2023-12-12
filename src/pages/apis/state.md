@@ -1,4 +1,8 @@
-## State
+---
+title: State
+pageTitle: State | Plane
+description:
+---
 
 {% col-2 %}
 {% list %}
@@ -26,52 +30,54 @@ DELETE /api/v1/workspaces/:slug/projects/:project_id/states/:state_id/
 
 - `name` _string_ **( required )**
 
-Name of the state
+  Name of the state
 
 - `created_at` , `updated_at` _timestamp_
 
-Timestamp of the issue when it was created and when it was last updated
+  Timestamp of the issue when it was created and when it was last updated
 
 - `description` _string_
 
-Description of the state
+  Description of the state
 
 - `color` _string_ **(required)**
 
-String code of the color
+  String code of the color
 
 - `slug` _string_
 
-Slugified name of the state auto generated from the system
+  Slugified name of the state auto generated from the system
 
 - `sequence` _string_
 
-Auto generated sequence of the state for ordering.
+  Auto generated sequence of the state for ordering.
 
 - `group` _string_ **(required)**
 
-Group to which the state belongs can only take values
+  Group to which the state belongs can only take values
 
-- backlog
-- unstarted
-- started
-- completed
-- cancelled
+  - backlog
+  - unstarted
+  - started
+  - completed
+  - cancelled
+
 - `default` _boolean_
 
-Is it the default state in which if the issues are not assigned any states all the issues are created in this state.
+  Is it the default state in which if the issues are not assigned any states all the issues are created in this state.
 
 - `created_by` & `updated_by`
 
-This values are auto saved and represent the id of the user that created or the updated the project.
+  This values are auto saved and represent the id of the user that created or the updated the project.
 
 - `project` _uuid_
 
-The project which the issue is part of auto generated from backend
+  The project which the issue is part of auto generated from backend
 
 - `workspace` _uuid_
 
-The workspace which the issue is part of auto generated from backend
+  The workspace which the issue is part of auto generated from backend
+
 {% /list %}
 
 {% list %}

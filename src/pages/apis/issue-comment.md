@@ -1,4 +1,8 @@
-## Issue Comment
+---
+title: Issue Comment
+pageTitle: Issue Comment | Plane
+description:
+---
 
 {% col-2 %}
 {% list %}
@@ -26,45 +30,47 @@ DELETE /api/v1/workspaces/:slug/projects/:project_id/issues/:issue_id/comments/:
 
 - `created_by` , `updated_by` _uuid_
 
-These values are auto saved and represent the id of the user that created or updated the module
+  These values are auto saved and represent the id of the user that created or updated the module
 
 - `created_at` _timestamp_
 
-The timestamp of the time when the project was created
+  The timestamp of the time when the project was created
 
 - `updated_at` _timestamp_
 
-The timestamp of the time when the project was last updated
+  The timestamp of the time when the project was last updated
 
 - `comment_html` html \*string **(required)\***
 
-HTML string version of the comment
+  HTML string version of the comment
 
 - `comment_stripped` _string_
 
-Stripped string version of the comment
+  Stripped string version of the comment
 
 - `access` _string_
 
-If the comment should be visible externally also if the project is published or not. Takes in two values
+  If the comment should be visible externally also if the project is published or not. Takes in two values
 
-- INTERNAL
-- EXTERNAL
+  - INTERNAL
+  - EXTERNAL
+
 - `project` uuid
 
-It contains projects uuid which is automatically saved.
+  It contains projects uuid which is automatically saved.
 
 - `workspace` uuid
 
-It contains workspace uuid which is automatically saved
+  It contains workspace uuid which is automatically saved
 
 - `issue` _uuid_
 
-The issue the activity is attached to
+  The issue the activity is attached to
 
 - `actor` _uuid_
 
-UUID of the user who commented.
+  UUID of the user who commented.
+
 {% /list %}
 
 {% list %}

@@ -57,6 +57,49 @@ Headers:
 
 ---
 
+### **Status codes**
+
+**HTTP Methods**
+
+HTTP defines a set of request methods, also known as HTTP verbs, to indicate the desired action for a given resource.
+
+Given below is the list of methods commonly adopted by Plane's APIs:
+
+| Verb  | Description                                       | Example                           |
+|-------|---------------------------------------------------|-----------------------------------|
+| GET   | Requests a representation of the specified resource | Fetch all issues from a project   |
+| POST  | Submits an entity to the specified resource       | Create a project                  |
+| DELETE| Deletes the specified resource                    | Delete a module-issue             |
+| PATCH | Applies partial modifications to a resource       | Edit a module                     |
+
+Given below is the list of the most commonly encountered success responses:
+
+| Status Code | Description                                                    |
+|-------------|----------------------------------------------------------------|
+| 200 OK      | The request succeeded, and a new resource was created, generally sent in GET or PATCH requests. |
+| 201 Created | The request is succeeded, and a new resource was created, generally sent in POST or PATCH requests. |
+| 204 No Content | The request is succeeded, and no body is sent, generally comes from the DELETE request. |
+
+### Error Response
+
+Given below is the list of the most commonly encountered error responses:
+
+| Status Code   | Description                                                                                                            |
+|---------------|------------------------------------------------------------------------------------------------------------------------|
+| 400 Bad Request | The server cannot or will not process the request due to something that is perceived to be a client error.          |
+| 401 Unauthorized | Although the HTTP standard specifies "unauthorized", semantically, this response means "unauthenticated". That is, the client must authenticate itself to get the requested response. |
+| 404 Not Found  | The server cannot find the requested resource. This means the URL is not recognized.                                   |
+| 429 Throttling Error | The server is processing too many requests at once and is unable to process your request. Retry the request after some time. You can read our rate-limit doc. |
+| 500 Internal Server Error | The server has encountered a situation it does not know how to handle.                                                  |
+| 502 Bad Gateway | This error response means that the server got an invalid response while working as a gateway to get a response needed to handle the request. |
+| 503 Service Unavailable | The server is not ready to handle the request. Common causes are a server that is down for maintenance or is overloaded. |
+| 504 Gateway Timeout | This error response is given when the server acts as a gateway and cannot get a timely response.                         |
+
+
+---
+
+
+
 ## Pagination Documentation
 
 ### Overview

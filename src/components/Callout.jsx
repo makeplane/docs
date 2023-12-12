@@ -15,11 +15,46 @@ const styles = {
     title: 'text-amber-900 dark:text-amber-500',
     body: 'text-amber-800 [--tw-prose-underline:theme(colors.amber.400)] [--tw-prose-background:theme(colors.amber.50)] prose-a:text-amber-900 prose-code:text-amber-900 dark:text-slate-300 dark:[--tw-prose-underline:theme(colors.sky.700)] dark:prose-code:text-slate-300',
   },
+  stash: {
+    container:
+      'bg-sky-50 dark:bg-slate-800/60 dark:ring-1 dark:ring-slate-300/10',
+    title: 'text-sky-900 dark:text-sky-400',
+    body: 'text-sky-800 [--tw-prose-background:theme(colors.sky.50)] prose-a:text-sky-900 prose-code:text-sky-900 dark:text-slate-300 dark:prose-code:text-slate-300',
+  },
+  cloud: {
+    container:
+      'bg-sky-50 dark:bg-slate-800/60 dark:ring-1 dark:ring-slate-300/10',
+    title: 'text-sky-900 dark:text-sky-400',
+    body: 'text-sky-800 [--tw-prose-background:theme(colors.sky.50)] prose-a:text-sky-900 prose-code:text-sky-900 dark:text-slate-300 dark:prose-code:text-slate-300',
+  },
+  man: {
+    container:
+      'bg-sky-50 dark:bg-slate-800/60 dark:ring-1 dark:ring-slate-300/10',
+    title: 'text-sky-900 dark:text-sky-400',
+    body: 'text-sky-800 [--tw-prose-background:theme(colors.sky.50)] prose-a:text-sky-900 prose-code:text-sky-900 dark:text-slate-300 dark:prose-code:text-slate-300',
+  },
+  people: {
+    container:
+      'bg-sky-50 dark:bg-slate-800/60 dark:ring-1 dark:ring-slate-300/10',
+    title: 'text-sky-900 dark:text-sky-400',
+    body: 'text-sky-800 [--tw-prose-background:theme(colors.sky.50)] prose-a:text-sky-900 prose-code:text-sky-900 dark:text-slate-300 dark:prose-code:text-slate-300',
+  },
+  playBack: {
+    container:
+      'bg-sky-50 dark:bg-slate-800/60 dark:ring-1 dark:ring-slate-300/10',
+    title: 'text-sky-900 dark:text-sky-400',
+    body: 'text-sky-800 [--tw-prose-background:theme(colors.sky.50)] prose-a:text-sky-900 prose-code:text-sky-900 dark:text-slate-300 dark:prose-code:text-slate-300',
+  },
 }
 
 const icons = {
   note: (props) => <Icon icon="lightbulb" {...props} />,
   warning: (props) => <Icon icon="warning" color="amber" {...props} />,
+  stash: (props) => <Icon icon="stash" color="amber" {...props} />,
+  cloud: (props) => <Icon icon="cloud" color="amber" {...props} />,
+  man: (props) => <Icon icon="man" color="amber" {...props} />,
+  people: (props) => <Icon icon="people" color="amber" {...props} />,
+  playBack: (props) => <Icon icon="playBack" color="amber" {...props} />,
 }
 
 export function Callout({ type = 'note', title, children }) {

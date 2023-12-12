@@ -1,8 +1,20 @@
-## Cycle Issue
+---
+title: Cycle Issue
+pageTitle: Cycle Issue | Plane
+description:
+---
 
 {% col-2 %}
 {% list %}
 It contains all the list of issues which are inside in a cycle.
+
+For creating a cycle issue, the payload should be sent in the below format.
+
+```
+{
+	"issues": ["d7a45e13-be2a-4942-aa15-b82c2cf244d0","d23wefadf-dafADfadfadfqeqerqer"]
+}
+```
 {% /list %}
 
 {% list %}
@@ -24,35 +36,36 @@ DELETE /api/v1/workspaces/:slug/projects/:project_id/cycles/:cycle_id/cycle-issu
 
 - `sub_issues_count`
 
-It tells the count of sub issues of the issue
+  It tells the count of sub issues of the issue
 
 - `created_at` _timestamp_
 
-The timestamp of the time when the project was created
+  The timestamp of the time when the project was created
 
 - `updated_at` _timestamp_
 
-The timestamp of the time when the project was last updated
+  The timestamp of the time when the project was last updated
 
 - `created_by` , `updated_by` _uuid_
 
-These values are auto saved and represent the id of the user that created or updated the module
+  These values are auto saved and represent the id of the user that created or updated the module
 
 - `Project` uuid
 
-It contains projects uuid which is automatically saved.
+  It contains projects uuid which is automatically saved.
 
 - `Workspace` uuid
 
-It contains workspace uuid which is automatically saved
+  It contains workspace uuid which is automatically saved
 
 - `cycle` uuid
 
-Cycle id of which the issue belongs to
+  Cycle id of which the issue belongs to
 
 - `issue` uuid
 
-Issue id of the issue
+  Issue id of the issue
+
 {% /list %}
 
 {% list %}

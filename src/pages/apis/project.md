@@ -1,4 +1,8 @@
-## Project
+---
+title: Project
+pageTitle: Project | Plane
+description:
+---
 
 {% col-2 %}
 
@@ -30,114 +34,119 @@ DELETE /api/v1/workspaces/:slug/projects/:project_id/
 
 - `name` _string_ (**required**)
 
-Name of the project
+  Name of the project
 
 - `identifier` _string_ (**required**)
 
-Unique Identifier of project for the workspace
+  Unique Identifier of project for the workspace
 
 - `description` _string_
 
-Project description
+  Project description
 
 - `total_members` _integer_
 
-Total members present in the project.
+  Total members present in the project.
 
 - `total_cycles` _integer_
 
-Total number of cycles present in the project.
+  Total number of cycles present in the project.
 
 - `total_modules` _integer_
 
-Total number of modules present in the project.
+  Total number of modules present in the project.
 
 - `is_member` _boolean_
 
-The current requesting user is a member of the project or not
+  The current requesting user is a member of the project or not
 
 - `member_role` _integer_
 
-The current requesting users role in the project.
+  The current requesting users role in the project.
 
 - `is_deployed` _integer_
 
-Represents if the project is deployed and publicly visible.
+  Represents if the project is deployed and publicly visible.
 
 - `created_at` _timestamp_
 
-The timestamp of the time when the project was created
+  The timestamp of the time when the project was created
 
 - `updated_at` _timestamp_
 
-The timestamp of the time when the project was last updated
+  The timestamp of the time when the project was last updated
 
 - `network` _integer_
 
-Is the project public or secret it takes in two values either (0,2)
+  Is the project public or secret it takes in two values either (0,2)
 
-- **0 - Secret**
-- **2 - Public**
+  - **0 - Secret**
+  - **2 - Public**
+
 - `emoji` _string_
 
-HTML emoji DEX code without the `&#`
+  HTML emoji DEX code without the `&#`
 
 - `icon_prop` _json_
+
+  saves the data of the project icon
+
 - `module_view` _bool_
 
-Enable disable module for the project in the UI
+  Enable disable module for the project in the UI
 
 - `cycle_view` _bool_
 
-Enable disable cycle for the project in the UI
+  Enable disable cycle for the project in the UI
 
 - `inbox_view` _bool_
 
-Enable disable inbox for the project in the UI
+  Enable disable inbox for the project in the UI
 
 - `page_view` _bool_
 
-Enable disable pages for the project in the UI
+  Enable disable pages for the project in the UI
 
 - `issue_views_view` _bool_
 
-Enable disable project views for the project in the UI
+  Enable disable project views for the project in the UI
 
 - `cover_image` _url_
 
-URL for the image for the project cover
+  URL for the image for the project cover
 
 - `archive_in` _integer_
 
-Months in which the issue should be automatically archived can take values between (0,12)
+  Months in which the issue should be automatically archived can take values between (0,12)
 
 - `close_in` _integer_
 
-Months in which the issue should be auto closed can take values between (0,12)
+  Months in which the issue should be auto closed can take values between (0,12)
 
 - `created_by` , `updated_by` _uuid_
 
-This values are auto saved and represent the id of the user that created or the updated the project
+  This values are auto saved and represent the id of the user that created or the updated the project
 
 - `workspace` _uuid_
 
-The workspace uuid where the project is created saved automatically
+  The workspace uuid where the project is created saved automatically
 
 - `default_assignee` _uuid_
 
-The uuid of the user who is a workspace member that have issues assigned automatically if the issue does not have any assignee
+  The uuid of the user who is a workspace member that have issues assigned automatically if the issue does not have any assignee
 
 - `project_lead` _uuid_
 
-The uuid of the user who is a workspace member that leads the project
+  The uuid of the user who is a workspace member that leads the project
 
 - `estimate` _uuid_
 
-UUID of the estimate of the project
+  UUID of the estimate of the project
 
 - `default_state`
 
-Default state which will be used when the issues will be auto closed
+  Default state which will be used when the issues will be auto closed
+
 {% /lisr %}
 
 {% list %}

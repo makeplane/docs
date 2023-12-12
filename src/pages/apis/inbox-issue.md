@@ -1,8 +1,30 @@
-## Inbox Issue
+---
+title: Inbox Issue
+pageTitle: Inbox Issue | Plane
+description:
+---
 
 {% col-2 %}
 {% list %}
-To toggle the inbox on the user needs to hit a PATCH request in the project/:project_id endpoint with the body as inbox_view to true
+To enable an inbox, the user can hit a PATCH request on the project api with the body as
+
+```
+{
+	inbox_view:true,
+}
+```
+
+To create an inbox issue, the payload should be sent in the below format
+
+```
+{
+	"issue": {
+		"name": "Snoozed Issue 2",
+		"priority": "high"
+	}
+}
+```
+
 {% /list %}
 
 {% list %}
@@ -26,53 +48,55 @@ DELETE /api/v1/workspaces/:slug/projects/:project_id/inbox-issues/:issue_id/
 
 - `created_at` _timestamp_
 
-The timestamp of the time when the project was created
+  The timestamp of the time when the project was created
 
 - `updated_at` _timestamp_
 
-The timestamp of the time when the project was last updated
+  The timestamp of the time when the project was last updated
 
 - `status`
 
-the status of the issue can be in above mentioned status
+  the status of the issue can be in above mentioned status
 
--   - -2 - Pending
-    - -1 - Rejected
-    - 0 - Snoozed
-    - 1 - Accepted
-    - 2 - Duplicate
+
+  - -2 - Pending
+  - -1 - Rejected
+  - 0 - Snoozed
+  - 1 - Accepted
+  - 2 - Duplicate
 
 - `snoozed_till`
 
-The time untill the issue is snoozed.
+  The time untill the issue is snoozed.
 
 - `source`
 
-The source describes the type inbox issue from
+  The source describes the type inbox issue from
 
 - `created_by` , `updated_by` _uuid_
 
-These values are auto saved and represent the id of the user that created or updated the module
+  These values are auto saved and represent the id of the user that created or updated the module
 
 - `Project` uuid
 
-It contains projects uuid which is automatically saved.
+  It contains projects uuid which is automatically saved.
 
 - `Workspace` uuid
 
-It contains workspace uuid which is automatically saved.
+  It contains workspace uuid which is automatically saved.
 
 - `inbox`
 
-inbox id of the issue
+  inbox id of the issue
 
 - `issue`
 
-issue id of the issue
+  issue id of the issue
 
 - `duplicate_to`
 
-Id of the issue of which the current issue is duplicate of.
+  Id of the issue of which the current issue is duplicate of.
+
 {% /list %}
 
 {% list %}

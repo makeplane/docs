@@ -1,4 +1,8 @@
-## Label
+---
+title: Label
+pageTitle: Label | Plane
+description:
+---
 
 {% col-2 %}
 {% list %}
@@ -25,39 +29,40 @@ DELETE /api/v1/workspaces/:slug/projects/:project_id/labels/:label_id/
 
 - `name` _string_ **(required)**
 
-Name of the label
+  Name of the label
 
 - `created_at` , `updated_at` _timestamp_
 
-Timestamp of the issue when it was created and when it was last updated.
+  Timestamp of the issue when it was created and when it was last updated.
 
 - `description` _string_
 
-Description of the Label
+  Description of the Label
 
 - `color` _string_
 
-Hex code of the color
+  Hex code of the color
 
 - `sort_order` _float_
 
-Sort order of the label used for sorting
+  Sort order of the label used for sorting
 
 - `created_by` & `updated_by`
 
-This values are auto saved and represent the id of the user that created or the updated the project.
+  This values are auto saved and represent the id of the user that created or the updated the project.
 
 - `project` _uuid_
 
-The project which the issue is part of auto generated from backend
+  The project which the issue is part of auto generated from backend
 
 - `workspace` _uuid_
 
-The workspace which the issue is part of auto generated from backend
+  The workspace which the issue is part of auto generated from backend
 
 - `parent` _uuid or null_
 
-Parent of the label which is also a Label
+  Parent of the label which is also a Label
+
 {% /list %}
 
 {% list %}

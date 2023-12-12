@@ -23,13 +23,13 @@ enhances the user experience and overall aesthetics.
 You can begin using Plane through our hosted version, Plane Cloud.
 Alternatively, if you prefer to self-host Plane, you can do so using Docker.
 
-### Plane Cloud
+### Cloud
 
 Setting up Plane with Plane Cloud is just a matter of signing up for a new
 account. You can quickly get started with the free plan to get things up and
 running.
 
-### Plane Self-hosted
+### Self-hosted
 
 If you prefer to self-host Plane on your own machine, you can do so using
 Docker. However, please note that you'll need to add additional configurations
@@ -42,8 +42,13 @@ We are also working on making the self-hosting process smoother by introducing
 easy deployment methods on popular PaaS tools such as Heroku, Render,
 DigitalOcean, Railway, and more. If you wish to request any other
 configuration, please raise a feature request on our
-[GitHub](https://github.com/makeplane/plane).
+{% link href="https://github.com/makeplane/plane" target="_blank" %}GitHub{% /link %}.
 {% /callout %}
+
+## Sign-up and sign-in
+
+Our new sign-up and sign-in flows make it easier for Instance admins to identify themselves and unlock security + governance features for their instance. Our Cloud users also enjoy easier sign-ups and sign-ins. See [Sign up and sign in](/sign-up-sign-in) for more.
+
 
 ## Onboarding and Invitation
 
@@ -151,7 +156,7 @@ manageable chunks and track progress towards specific goals or objectives.
 - Modules allow you to add documents and links within them, providing a convenient way to share resources
   with others within the module.
 
-Have questions? Ask the [Plane](https://discord.com/invite/29tPNhaV) Community.
+Have questions? Ask the {% link href="https://discord.com/invite/29tPNhaV" target="_blank" %}Plane{% /link %} Community.
 
 ## Creating Pages
 

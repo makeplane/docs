@@ -1,4 +1,8 @@
-## Links
+---
+title: Links
+pageTitle: Links | Plane
+description:
+---
 
 {% col-2 %}
 {% list %}
@@ -24,35 +28,36 @@ DELETE /api/v1/workspaces/:slug/projects/:project_id/issues/:issue_id/links/:lin
 
 - `title` _string_
 
-Title of the url
+  Title of the url
 
 - `url` _url_ **(required)**
 
-Url of the external link
+  Url of the external link
 
 - `metadata` _json_
 
-Metadata from the resource
+  Metadata from the resource
 
 - `created_at` , `updated_at` _timestamp_
 
-Timestamp of the issue when it was created and when it was last updated.
+  Timestamp of the issue when it was created and when it was last updated.
 
 - `created_by` & `updated_by`
 
-This values are auto saved and represent the id of the user that created or the updated the project.
+  This values are auto saved and represent the id of the user that created or the updated the project.
 
 - `project` _uuid_
 
-The project which the issue is part of auto generated from backend
+  The project which the issue is part of auto generated from backend
 
 - `workspace` _uuid_
 
-The workspace which the issue is part of auto generated from backend
+  The workspace which the issue is part of auto generated from backend
 
 - `issue` _uuid_
 
-The issue which the link is attached to
+  The issue which the link is attached to
+
 {% /list %}
 {% list %}
 
