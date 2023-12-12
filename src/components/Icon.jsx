@@ -8,6 +8,11 @@ import { PresetsIcon } from '@/components/icons/PresetsIcon'
 import { ThemingIcon } from '@/components/icons/ThemingIcon'
 import { WarningIcon } from '@/components/icons/WarningIcon'
 import { ArrowIcon } from './icons/ArrowFilled'
+import { StashIcon } from './icons/StashIcon'
+import { CloudIcon } from './icons/CloudIcon'
+import { ManIcon } from './icons/ManIcon'
+import { PeopleIcon } from './icons/PeopleIcon'
+import { PlayBackIcon } from './icons/PlayBackIcon'
 
 const icons = {
   installation: InstallationIcon,
@@ -16,7 +21,12 @@ const icons = {
   theming: ThemingIcon,
   lightbulb: LightbulbIcon,
   warning: WarningIcon,
-  arrow: ArrowIcon
+  arrow: ArrowIcon,
+  stash: StashIcon,
+  cloud: CloudIcon,
+  man: ManIcon,
+  people: PeopleIcon,
+  playBack: PlayBackIcon
 }
 
 const iconStyles = {
@@ -77,5 +87,3 @@ export function LightMode({ className, ...props }) {
 export function DarkMode({ className, ...props }) {
   return <g className={clsx('hidden dark:inline', className)} {...props} />
 }
-
-

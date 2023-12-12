@@ -10,9 +10,9 @@ A webhook triggers a HTTP POST request on the specified url, whenever there is a
 
 `url` You are required to provide a url in which you want the payloads to be triggered.
 
-`secret` A random generated string provided by the backend
+Then select the events for which you want the webhook to be triggered.
 
-`is_active` To make a webhook active and inactive
+After you create the webhook, a secret key will be created automatically and will be downloaded in csv format.
 
 ### Webhook Header
 
@@ -91,7 +91,7 @@ import hmac
 secret_token = os.environ.get("WEBHOOK_SECRET")
 
 received_signature = request.headers.get('X-Plane-Signature')
-received_payload = json.dumps(request.json, sort_keys=True).encode('utf-8')
+received_payload = json.dumps(request.json).encode('utf-8')
 
 expected_signature = hmac.new(secret_token.encode('utf-8'), msg=received_payload, digestmod=hashlib.sha256).hexdigest()
 
@@ -106,4 +106,30 @@ Your webhook consumer is a simple HTTP endpoint. It must satisfy the following c
 - It's available in a publicly accessible non-localhost URL.
 - It will respond to the Plane Webhook push (HTTP POST request) with a `HTTP 200` ("OK") response.
 
-If a delivery fails (i.e. server unavailable or responded with a non-200 HTTP status code), the push will be retried a couple of times. Here an exponential backoff delay is used: the attempt will be retried after approximately 10 minutes, then 30 minutes, and so on. If the webhook URL continues to be unresponsive the webhook might be disabled by Plane, and must be re-enabled again manually.
+If a delivery fails (i.e. server unavailable or responded with a non-200 HTTP status code), the push will be retried a couple of times. Here an exponential backoff delay is used: the attempt will be retried after approximately 10 minutes, then 30 minutes, and so on. 
+
+The webhooks are triggered for POST, PATCH, and DELETE requests. 
+
+- For DELETE requests, the response only includes the ID of the deleted entity.
+
+```
+"action":"delete",
+"data":{
+	"id":"9a28bd00-ed9c-4f5d-8be9-fc05cbb1fc57"
+},
+"event":"issue",
+"webhook_id":"f1a2fe64-c8d4-4eed-b3ef-498690052c1d",
+"workspace_id":"c467e125-59e3-44ec-b5ee-f9c1e138c611"
+```
+
+- However, for both POST and PATCH requests, the complete payload is sent in the response.
+
+```
+"event":"issue",
+"action":"update",
+"webhook_id":"f1a2fe64-c8d4-4eed-b3ef-498690052c1d",
+"workspace_id":"c467e125-59e3-44ec-b5ee-f9c1e138c611",
+"data":{ ... }
+```
+
+Note:- Whenever an issue is added to the module, the corresponding issue webhook will be triggered. Similarly, any updates made to the cycle issue will also activate the issue webhook.

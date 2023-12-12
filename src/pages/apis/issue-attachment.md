@@ -1,4 +1,8 @@
-## Issue Attachment
+---
+title: Issue Attachment
+pageTitle: Issue Attachment | Plane
+description: 
+---
 
 {% col-2 %}
 {% list %}

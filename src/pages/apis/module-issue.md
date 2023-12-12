@@ -1,4 +1,8 @@
-## Module Issue
+---
+title: Module Issue
+pageTitle: Module Issue | Plane
+description:
+---
 
 {% col-2 %}
 {% list %}
@@ -21,37 +25,48 @@ DELETE /api/v1/workspaces/:slug/projects/:project_id/modules/:module_id/module-i
 {% col-2 %}
 {% list %}
 
+It contains all the list of issues which are inside in a module.
+
+For creating a module issue, the payload should be sent in the below format.
+
+```
+{
+	"issues": ["d2e49a6e-e315-4b38-aecc-71c8c709ca6a"]
+}
+```
+
 - `sub_issues_count`
 
-It tells the count of sub issues of the issue
+  It tells the count of sub issues of the issue
 
 - `created_at` _timestamp_
 
-The timestamp of the time when the project was created
+  The timestamp of the time when the project was created
 
 - `updated_at` _timestamp_
 
-The timestamp of the time when the project was last updated
+  The timestamp of the time when the project was last updated
 
 - `created_by` , `updated_by` _uuid_
 
-These values are auto saved and represent the id of the user that created or updated the module
+  These values are auto saved and represent the id of the user that created or updated the module
 
 - `Project` uuid
 
-It contains projects uuid which is automatically saved.
+  It contains projects uuid which is automatically saved.
 
 - `Workspace` uuid
 
-It contains workspace uuid which is automatically saved
+  It contains workspace uuid which is automatically saved
 
 - `module` uuid
 
-Module id of which the issue belongs to
+  Module id of which the issue belongs to
 
 - `issue` uuid
 
-Issue id of the issue
+  Issue id of the issue
+
 {% /list %}
 
 {% list %}
