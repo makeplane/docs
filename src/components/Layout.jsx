@@ -18,16 +18,18 @@ const navigation = [
       { title: 'Home', href: '/' },
       { title: 'Quick start', href: '/quick-start' },
       { title: 'Sign up and sign in', href: '/sign-up-sign-in' },
+    ],
+  },
+  {
+    title: 'Self-hosting',
+    links: [
+      { title: 'Docker Compose', href: '/self-hosting/docker-compose' },
+      { title: 'Kubernetes', href: '/self-hosting/kubernetes' },
       {
-        title: 'Self-hosting',
-        href: '/self-hosting/self-hosting',
-        links: [
-          { title: 'Docker Compose', href: '/self-hosting/docker-compose' },
-          { title: 'Kubernetes', href: '/self-hosting/kubernetes' },
-          { title: 'Instance admin and God Mode', href: '/instance-admin' },
-          { title: 'Reset password', href: '/self-hosting/reset-password' },
-        ],
+        title: 'Instance admin and God Mode',
+        href: '/self-hosting/instance-admin',
       },
+      { title: 'Reset password', href: '/self-hosting/reset-password' },
     ],
   },
   {
@@ -158,7 +160,7 @@ function Header({ navigation }) {
           href="https://discord.com/invite/A92xrEGCge"
           className="group"
           aria-label="GitHub"
-          target='_blank'
+          target="_blank"
         >
           <DiscordIcon className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
         </Link>
@@ -166,7 +168,7 @@ function Header({ navigation }) {
           href="https://github.com/makeplane/plane"
           className="group"
           aria-label="GitHub"
-          target='_blank'
+          target="_blank"
         >
           <GitHubIcon className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
         </Link>
