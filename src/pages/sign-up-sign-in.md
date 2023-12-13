@@ -35,9 +35,9 @@ There may also be cases where a user IRL is running multiple instances, e.g., wh
 
 ![enter-instance-admin-e-mail-existing-instances-self-hosted](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-assets/docs/enter-instance-admin-e-mail-existing-instances-self-hosted.png)
 
-This screen will help you get set up with an e-mail and a password and get access to {% inline-code textColor="blue" %}God Mode{% /inline-code %} features. [Learn more](/instance-admin)
+This screen will help you get set up with an e-mail and a password and get access to {% inline-code textColor="blue" %}God Mode{% /inline-code %} features. [Learn more](/self-hosting/instance-admin)
 
-To prevent misuse of these features, you can’t access these screens without going through our secure set-up first, which will start when when you upgrade to {% inline-code textColor="red" %}v0.14{% /inline-code %}.
+To prevent misuse of these features, you can’t access these screens without going through our secure set-up first, which will start when when you upgrade to {% inline-code textColor="grey" %}v0.14{% /inline-code %}.
 
 {% callout type="cloud" %}
 Cloud users will get their own set of {% inline-code textColor="blue" %}God Mode{% /inline-code %} in a later update for authorization and billing controls. {% link href="https://ece39166.sibforms.com/serve/MUIFANgaMWIARsq1n0lMNrch19pdY2HJm9FkSXAeq1DrCoXJBmO9Yq6SPgtzu7rL0lQBmCvvz2A2arVl5WaDxYu6YhNW4PKNAis0DMXmpRnwm5633BvXqIYILqZuyqYiGS7_QjJ0Ozh4R2uctd8RwiiTLSHWpnV2njQt6DPV5cVr8FH3K-TouNAlBScOJxbCpjj8fYo2ULsEJeAL" target="_blank" %}Subscribe to be notified{% /link %}.
@@ -53,7 +53,7 @@ New instances that complete set-up let you skip {% inline-code textColor="blue" 
 
 ## FAQs
 
-{% expansion collapsedTitle="How do you know who an `Instance admin` is?" %}
+{% expansion collapsedTitle="How do you know who an is?" content="Instance admin" addAfter="an" textColor="blue" %}
 
 Whoever spins up the instance or upgrades to {% inline-code textColor="grey" %}v0.14{% /inline-code %}, we assume, is the instance admin. When you see {% inline-code textColor="blue" %}Let's secure your instance{% /inline-code %}, enter your email-password combo. If you are already using Plane with those credentials, you will be logged in and will see {% inline-code textColor="blue" %}/god-mode{% /inline-code %} features. If not, we will create a new user on your local instance and you will see {% inline-code textColor="blue" %}/god-mode{% /inline-code %}.
 
@@ -75,7 +75,7 @@ All existing users will log in with their usual email address-password combos if
 
 {% /expansion %}
 
-{% expansion collapsedTitle="What will happen to the default `captain@plane.so` account that you shipped so far?" %}
+{% expansion collapsedTitle="What will happen to the default account that you shipped so far?" content="captain@plane.so" addAfter="default" textColor="blue" %}
 
 For all new instances, there won’t be a {% inline-code textColor="blue" %}captain@plane.so{% /inline-code %} account. Instance set-up will allow you to set up a workspace and set workspace and project admins.
 
@@ -83,7 +83,7 @@ For existing instances, the instance admin’s email will be added to each proje
 
 {% /expansion %}
 
-{% expansion collapsedTitle="This is unreal, but I have an instance that has a `/god-mode` path already. I can’t access my Plane instance. Help!" %}
+{% expansion collapsedTitle="This is unreal, but I have an instance that has a path already. I can’t access my Plane instance. Help!" content="/god-mode" textColor="blue" addAfter=" a " %}
 
 That is unreal! Please reach out to us immediately on
 {% link href="https://discord.com/login?redirect_to=%2Fchannels%2F1031547764020084846%2F1094927053867995176" target="_blank" %}support{% /link %}
@@ -105,7 +105,7 @@ if you haven’t set up SMTP and are facing troubles with your users logging in.
 
 {% /expansion %}
 
-{% expansion collapsedTitle="Why are you introducing passwords for users? What’s happening with unique links to sign up and sign in?" link="app.plane.so" href="http://app.plane.so" addAfter="for" target="_blank" %}
+{% expansion collapsedTitle="Why are you introducing passwords for users? What’s happening with unique links to sign up and sign in?" content="app.plane.so" href="http://app.plane.so" addAfter="for" target="_blank" %}
 
 Unique links are secure and relatively easier, but we have heard from enough of our Cloud users that they would like to log in using a more permanent and easier method. Should you want to continue using unique codes, you are covered. We will keep that option alive for good.
 
@@ -113,9 +113,9 @@ While using Google or GitHub are good options already, not all of you would want
 
 {% /expansion %}
 
-{% expansion collapsedTitle="Is there a `God Mode` for Cloud admins, too?" %}
+{% expansion collapsedTitle="Is there a for Cloud admins, too?" content="God Mode" addAfter=" a " textColor="blue" %}
 
-Not now, but soon enough, there will be a {% inline-code textColor="blue" %}God Mode{% /inline-code %} for Cloud admins. More [here](/instance-admin)
+Not now, but soon enough, there will be a {% inline-code textColor="blue" %}God Mode{% /inline-code %} for Cloud admins. More [here](/self-hosting/instance-admin)
 
 {% /expansion %}
 

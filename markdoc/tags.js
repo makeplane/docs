@@ -61,7 +61,7 @@ const tags = {
     attributes: {
       href: { type: String, default: '' },
       target: { type: String, default: '_self' },
-      heading: {type: Boolean, default: false}
+      heading: { type: Boolean, default: false },
     },
     render: Link,
   },
@@ -74,8 +74,9 @@ const tags = {
       collapsedTitle: { type: String },
       href: { type: String, default: '' },
       addAfter: { type: String, default: '' },
-      link: { type: String, default: '' },
       target: { type: String, default: '_self' },
+      textColor: { type: String },
+      content: { type: String, default: '' },
     },
     render: ExpansionTile,
   },
@@ -87,10 +88,10 @@ const tags = {
   },
   'inline-code': {
     attributes: {
-      textColor: { type: String, default: 'text-[#FFFFFF]'}
+      textColor: { type: String, default: 'text-[#FFFFFF]' },
     },
-    render: InlineCode
-  }
+    render: InlineCode,
+  },
 }
 
 export default tags
