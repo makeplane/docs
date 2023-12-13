@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { Icon } from './Icon'
+import { InlineCode } from './Inline-code'
 
 export function ExpansionTile({
   children,
   collapsedTitle,
   href,
   addAfter,
-  link,
   target,
+  textColor,
+  content,
 }) {
   const [isExpanded, setIsExpanded] = useState(false)
 
@@ -43,9 +45,13 @@ export function ExpansionTile({
           {addAfter !== '' ? (
             <div>
               {partBeforeFor}{' '}
-              <a href={href} target={target}>
-                {link}
-              </a>{' '}
+              {href === '' ? (
+                <InlineCode textColor={textColor}>{content}</InlineCode>
+              ) : (
+                <a href={href} target={target}>
+                  {content}
+                </a>
+              )}{' '}
               {partAfterFor}
             </div>
           ) : (

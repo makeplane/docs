@@ -1,7 +1,6 @@
 const pages = [
   '',
   '/quick-start',
-  '/self-hosting',
   '/docker-compose',
   '/kubernetes',
   '/workspaces',

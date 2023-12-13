@@ -10,7 +10,7 @@ Plane is a simple, extensible, open source project and product management tool. 
 
 {% quick-link title="Quick Start" icon="installation" href="/quick-start" description="Learn how to use Plane and follow the best practices of taking-off." /%}
 
-{% quick-link title="Self-host Plane" icon="presets" href="/self-hosting/self-hosting" description="Run Plane on your computer or development machine." /%}
+{% quick-link title="Self-host Plane" icon="presets" href="/self-hosting/docker-compose" description="Run Plane on your computer or development machine." /%}
 
 {% quick-link title="Integrations" icon="plugins" href="/integrations/about" description="Extend Plane with third-party plugins and integrations" /%}
 
