@@ -8,21 +8,21 @@ Users can reset their password through the terminal of the Plane Application. Yo
 
 1.  Get the container id for `plane-backend`
 
-```jsx
-docker ps
-```
+    ```jsx
+    docker ps
+    ```
 
-1. Log in to the container
+2. Log in to the container
 
-```jsx
-docker exec -it <container_id> /bin/sh
-```
+    ```jsx
+    docker exec -it <container_id> /bin/sh
+    ```
 
-1. Run the reset password command
+3. Run the reset password command
 
-```jsx
-python manage.py reset_password <email>
-```
+    ```jsx
+    python manage.py reset_password <email>
+    ```
 
 {% callout type="note" %}
 The email should be of an already existing user on the Plane application. If the email is not attached to any user the command will throw an error.
