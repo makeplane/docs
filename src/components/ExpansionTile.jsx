@@ -59,7 +59,7 @@ export function ExpansionTile({
           )}
         </div>
       </div>
-      {isExpanded && children}
+      <div className="pl-6">{isExpanded && children}</div>
     </div>
   )
 }
