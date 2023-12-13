@@ -37,7 +37,7 @@ There may also be cases where a user IRL is running multiple instances, e.g., wh
 
 This screen will help you get set up with an e-mail and a password and get access to {% inline-code textColor="blue" %}God Mode{% /inline-code %} features. [Learn more](/self-hosting/instance-admin)
 
-To prevent misuse of these features, you can’t access these screens without going through our secure set-up first, which will start when when you upgrade to {% inline-code textColor="grey" %}v0.14{% /inline-code %}.
+To prevent misuse of these features, you can’t access these screens without going through our secure set-up first, which will start when you upgrade to {% inline-code textColor="grey" %}v0.14{% /inline-code %}.
 
 {% callout type="cloud" %}
 Cloud users will get their own set of {% inline-code textColor="blue" %}God Mode{% /inline-code %} in a later update for authorization and billing controls. {% link href="https://ece39166.sibforms.com/serve/MUIFANgaMWIARsq1n0lMNrch19pdY2HJm9FkSXAeq1DrCoXJBmO9Yq6SPgtzu7rL0lQBmCvvz2A2arVl5WaDxYu6YhNW4PKNAis0DMXmpRnwm5633BvXqIYILqZuyqYiGS7_QjJ0Ozh4R2uctd8RwiiTLSHWpnV2njQt6DPV5cVr8FH3K-TouNAlBScOJxbCpjj8fYo2ULsEJeAL" target="_blank" %}Subscribe to be notified{% /link %}.
