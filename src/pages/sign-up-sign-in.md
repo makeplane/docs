@@ -35,14 +35,14 @@ There may also be cases where a user IRL is running multiple instances, e.g., wh
 
 ![enter-instance-admin-e-mail-existing-instances-self-hosted](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-assets/docs/enter-instance-admin-e-mail-existing-instances-self-hosted.png)
 
-This screen will help you get set up with an e-mail and a password and get access to {% inline-code textColor="blue" %}God Mode{% /inline-code %} features. [Learn more](/self-hosting/instance-admin)
+This screen will help you get set up with an e-mail and a password and get access to {% inline-code textColor="blue" %}God Mode{% /inline-code %} features. [Learn more](/instance-admin)
 
 To prevent misuse of these features, you can’t access these screens without going through our secure set-up first, which will start when you upgrade to {% inline-code textColor="grey" %}v0.14{% /inline-code %}.
 
 {% callout type="cloud" %}
 Cloud users will get their own set of {% inline-code textColor="blue" %}God Mode{% /inline-code %} in a later update for authorization and billing controls. {% link href="https://ece39166.sibforms.com/serve/MUIFANgaMWIARsq1n0lMNrch19pdY2HJm9FkSXAeq1DrCoXJBmO9Yq6SPgtzu7rL0lQBmCvvz2A2arVl5WaDxYu6YhNW4PKNAis0DMXmpRnwm5633BvXqIYILqZuyqYiGS7_QjJ0Ozh4R2uctd8RwiiTLSHWpnV2njQt6DPV5cVr8FH3K-TouNAlBScOJxbCpjj8fYo2ULsEJeAL" target="_blank" %}Subscribe to be notified{% /link %}.
 {% /callout %}
-f
+
 Completing set-up will lead you to a success screen that should look like ↓.
 
 ![success-on-setup-existing-instances-self-hosted](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-assets/docs/success-on-setup-existing-instances-self-hosted.png)
@@ -87,7 +87,7 @@ For existing instances, the instance admin’s email will be added to each proje
 
 That is unreal! Please reach out to us immediately on
 {% link href="https://discord.com/login?redirect_to=%2Fchannels%2F1031547764020084846%2F1094927053867995176" target="_blank" %}support{% /link %}
-on our
+or on our
 {% link href="https://discord.com/invite/A92xrEGCge" target="_blank" %}Discord{% /link %}
 and mark your message urgent. We will help you get your instance back pronto.
 
@@ -115,7 +115,7 @@ While using Google or GitHub are good options already, not all of you would want
 
 {% expansion collapsedTitle="Is there a for Cloud admins, too?" content="God Mode" addAfter=" a " textColor="blue" %}
 
-Not now, but soon enough, there will be a {% inline-code textColor="blue" %}God Mode{% /inline-code %} for Cloud admins. More [here](/self-hosting/instance-admin)
+Not now, but soon enough, there will be a {% inline-code textColor="blue" %}God Mode{% /inline-code %} for Cloud admins. More [here](/instance-admin)
 
 {% /expansion %}
 

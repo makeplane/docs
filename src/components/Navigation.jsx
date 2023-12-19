@@ -22,7 +22,7 @@ const Renderlinks = (props) => {
 
 const NestedLinks = (props) => {
   const { links } = props
-
+  
   return (
     <ul
       role="list"
@@ -46,13 +46,21 @@ const NestedLinks = (props) => {
 }
 
 export function Navigation({ navigation, className }) {
+  let router = useRouter()
+
   return (
     <nav className={clsx('text-base lg:text-sm', className)}>
       <ul role="list" className="space-y-9">
         {navigation.map((section) => (
           <li key={section.title}>
             <h2 className="font-display font-medium text-slate-900 dark:text-white">
-              {section.title}
+              {section.title === 'Self-hosting' ? (
+                <Link href={section.href}>
+                  <div className={clsx(section.href === router.pathname ? 'text-sky-500 before:bg-sky-500' : '')}>{section.title}</div>
+                </Link>
+              ) : (
+                section.title
+              )}
             </h2>
             <NestedLinks links={section.links} />
           </li>

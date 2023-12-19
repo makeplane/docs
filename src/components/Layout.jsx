@@ -22,14 +22,15 @@ const navigation = [
   },
   {
     title: 'Self-hosting',
+    href: '/self-hosting',
     links: [
-      { title: 'Docker Compose', href: '/self-hosting/docker-compose' },
-      { title: 'Kubernetes', href: '/self-hosting/kubernetes' },
+      { title: 'Docker Compose', href: '/docker-compose' },
+      { title: 'Kubernetes', href: '/kubernetes' },
       {
         title: 'Instance admin and God Mode',
-        href: '/self-hosting/instance-admin',
+        href: '/instance-admin',
       },
-      { title: 'Reset password', href: '/self-hosting/reset-password' },
+      { title: 'Reset password', href: '/reset-password' },
     ],
   },
   {
