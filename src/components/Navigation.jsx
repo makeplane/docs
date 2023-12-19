@@ -26,7 +26,7 @@ const NestedLinks = (props) => {
   return (
     <ul
       role="list"
-      className="space-y-2 border-l border-slate-100 dark:border-slate-800 lg:mt-4 lg:space-y-4 lg:border-slate-200"
+      className="space-y-2 border-l ml-2 border-slate-100 dark:border-slate-800 lg:mt-4 lg:space-y-4 lg:border-slate-200"
     >
       {links.map((link) => (
         <li key={link.href} className="relative">
