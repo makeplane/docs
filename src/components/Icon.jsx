@@ -13,6 +13,8 @@ import { CloudIcon } from './icons/CloudIcon'
 import { ManIcon } from './icons/ManIcon'
 import { PeopleIcon } from './icons/PeopleIcon'
 import { PlayBackIcon } from './icons/PlayBackIcon'
+import { DockerCompose } from './icons/DockerCompose'
+import { Kubernetes } from './icons/Kubernetes'
 
 const icons = {
   installation: InstallationIcon,
@@ -26,7 +28,9 @@ const icons = {
   cloud: CloudIcon,
   man: ManIcon,
   people: PeopleIcon,
-  playBack: PlayBackIcon
+  playBack: PlayBackIcon,
+  dockerCompose: DockerCompose,
+  kubernetes: Kubernetes
 }
 
 const iconStyles = {

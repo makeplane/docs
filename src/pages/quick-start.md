@@ -35,7 +35,7 @@ If you prefer to self-host Plane on your own machine, you can do so using
 Docker. However, please note that you'll need to add additional configurations
 for email, authentication, and storage services. Plane is open-sourced under
 Apache-2.0, and currently, we support self-hosting Plane using Docker. For
-detailed instructions, please refer to the [self-hosting](/self-hosting/docker-compose) section.
+detailed instructions, please refer to the [self-hosting](/self-hosting) section.
 
 {% callout type="note" %}
 We are also working on making the self-hosting process smoother by introducing

@@ -57,7 +57,7 @@ On cloud, here's how you can invite a user to your workspace,
 
 {% callout type="note" %}
 Self-hosted users should configure an email service in order to send
-invitations. Follow [this](/self-hosting/docker-compose) document to learn how to set up
+invitations. Follow [this](/self-hosting) document to learn how to set up
 self-hosted instances.
 {% /callout %}
 

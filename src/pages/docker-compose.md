@@ -47,7 +47,7 @@ After installation, you can verify the installation by opening a terminal (Comma
 
 ## Installing Plane
 
-Installing plane is a very easy and minimal step process.
+Installing Plane is a very easy and minimal step process.
 
 ### Prerequisite
 
@@ -87,9 +87,9 @@ chmod +x setup.sh
 
 ### Proceed with setup
 
-Above steps will set you ready to install and start plane services.
+Above steps will set you ready to install and start Plane services.
 
-Lets get started by running the `./setup.sh` command.
+Let's get started by running the `./setup.sh` command.
 
 This will prompt you with the below options.
 
@@ -107,7 +107,7 @@ Action [2]: 1
 
 For the 1st time setup, type "1" as action input.
 
-This will create a create a folder `plane-app` or `plane-app-preview` (in case of preview deployment) and will download 2 files inside that
+This will create a folder `plane-app` or `plane-app-preview` (in case of preview deployment) and will download 2 files inside that
 
 - `docker-compose.yaml`
 - `.env`
@@ -118,7 +118,7 @@ Again the `options [1-6]` will be popped up and this time hit `6` to exit.
 
 ### Continue with setup - Environment Settings
 
-Before proceeding, we suggest used to review `.env` file and set the values.
+Before proceeding, we suggest you to review `.env` file and set the values.
 Below are the most import keys you must refer to. _You can use any text editor to edit this file_.
 
 > `NGINX_PORT` - This is default set to `80`. Make sure the port you choose to use is not preoccupied. (e.g `NGINX_PORT=8080`)
@@ -131,12 +131,12 @@ There are many other settings you can play with, but we suggest you configure `E
 
 ---
 
-### Continue with setup - Start Server
+### Continue with setup - Start server
 
-Lets again run the `./setup.sh` command. You will again be prompted with the below options. This time select `2` to start the sevices
+Let's again run the `./setup.sh` command. You will again be prompted with the below options. This time select `2` to start the services
 
 ```
-Select a Action you want to perform:
+Select an Action you want to perform:
    1) Install
    2) Start
    3) Stop
@@ -156,18 +156,18 @@ Be patient as it might take sometime based on download speed and system configur
 
 This is the confirmation that all images were downloaded and the services are up & running.
 
-You have successfully self hosted `Plane` instance. Access the application by going to IP or domain you have configured it (e.g `https://plane.example.com:8080` or `http://[IP-ADDRESS]:8080`)
+You have successfully self hosted `Plane` instance. Access the application by going to IP or domain you have configured it on (e.g `https://plane.example.com:8080` or `http://[IP-ADDRESS]:8080`)
 
 ---
 
-### Stopping the Server
+### Stopping the server
 
 In case you want to make changes to `.env` variables, we suggest you to stop the services before doing that.
 
-Lets again run the `./setup.sh` command. You will again be prompted with the below options. This time select `3` to stop the sevices
+Let's again run the `./setup.sh` command. You will again be prompted with the below options. This time select `3` to stop the services
 
 ```
-Select a Action you want to perform:
+Select an Action you want to perform:
    1) Install
    2) Start
    3) Stop
@@ -184,11 +184,11 @@ If all goes well, you must see something like this
 
 ---
 
-### Restarting the Server
+### Restarting the server
 
-In case you want to make changes to `.env` variables, without stopping the server or you noticed some abnormalies in services, you can restart the services with RESTART option.
+In case you want to make changes to `.env` variables, without stopping the server or you noticed some abnormalities in services, you can restart the services with RESTART option.
 
-Lets again run the `./setup.sh` command. You will again be prompted with the below options. This time select `4` to restart the sevices
+Let's again run the `./setup.sh` command. You will again be prompted with the below options. This time select `4` to restart the services
 
 ```
 Select a Action you want to perform:
@@ -208,7 +208,7 @@ If all goes well, you must see something like this
 
 ---
 
-### Upgrading Plane Version (From v0.14.0 onwards)
+### Upgrading Plane version (v0.14.0 onwards)
 
 It is always advised to keep Plane up to date with the latest release.
 
@@ -240,9 +240,9 @@ Once done with making changes in `.env` file, jump on to `Start Server`
 
 ## Upgrading from v0.13.2 to v0.14.x
 
-This is one time activity for users who are upgrading from v0.13.2 to v0.14.0
+This is a one time activity for users who are upgrading from v0.13.2 to v0.14.0
 
-As there has been significant changes to Self Hosting process, this step mainly covers the data migration from current (v0.13.2) docker volumes from newly created volumes
+As there have been significant changes to Self Hosting process, this step mainly covers the data migration from current (v0.13.2) docker volumes to newly created volumes
 
 > Before we begin with migration, make sure your v0.14.0 was started and then stopped. This is required to know the newly created docker volume names.
 
@@ -309,4 +309,4 @@ In case the suffixes are wrong or the mentioned volumes are not found, you will 
 
 In case of successful migration, it will be a silent exit without error.
 
-Now its time to restart v0.14.0 setup.
+Now it's time to restart v0.14.0 setup.
