@@ -23,13 +23,13 @@ enhances the user experience and overall aesthetics.
 You can begin using Plane through our hosted version, Plane Cloud.
 Alternatively, if you prefer to self-host Plane, you can do so using Docker.
 
-### Plane Cloud
+### Cloud
 
 Setting up Plane with Plane Cloud is just a matter of signing up for a new
 account. You can quickly get started with the free plan to get things up and
 running.
 
-### Plane Self-hosted
+### Self-hosted
 
 If you prefer to self-host Plane on your own machine, you can do so using
 Docker. However, please note that you'll need to add additional configurations
@@ -38,12 +38,16 @@ Apache-2.0, and currently, we support self-hosting Plane using Docker. For
 detailed instructions, please refer to the [self-hosting](/self-hosting) section.
 
 {% callout type="note" %}
-  We are also working on making the self-hosting process smoother by introducing
-  easy deployment methods on popular PaaS tools such as Heroku, Render,
-  DigitalOcean, Railway, and more. If you wish to request any other
-  configuration, please raise a feature request on our
-  [GitHub](https://github.com/makeplane/plane).
+We are also working on making the self-hosting process smoother by introducing
+easy deployment methods on popular PaaS tools such as Heroku, Render,
+DigitalOcean, Railway, and more. If you wish to request any other
+configuration, please raise a feature request on our
+{% link href="https://github.com/makeplane/plane" target="_blank" %}GitHub{% /link %}.
 {% /callout %}
+
+## Sign-up and sign-in
+
+Our new sign-up and sign-in flows make it easier for Instance admins to identify themselves and unlock security + governance features for their instance. Our Cloud users also enjoy easier sign-ups and sign-ins. See [Sign up and sign in](/sign-up-sign-in) for more.
 
 ## Onboarding and Invitation
 
@@ -57,10 +61,8 @@ new workspace.
   invitation part and be directly redirect to the workspace.
 
 {% callout type="note" %}
-  During the onboarding process, the invited users will be assigned a `Viewer`
-  role by default. You can adjust the permissions of invited users for your
-  project in the workspace or project settings page based on your specific
-  requirements.
+During the onboarding process, the invited users will be assigned a **Viewer** role by default. You can adjust the permissions of invited users for your
+project in the workspace or project settings page based on your specific
 {% /callout %}
 
 ## The Dashboard
@@ -79,9 +81,9 @@ consider a workspace as a different company or organization you work with.
 
 {% callout type="note" %}
 
-  When you sign up for the first time, we'll prompt you to create a new
-  workspace. If you're invited to join, you can directly join the workspace
-  without creating a new one.
+When you sign up for the first time, we'll prompt you to create a new
+workspace. If you're invited to join, you can directly join the workspace
+without creating a new one.
 {% /callout %}
 
 ## Creating Projects
@@ -109,8 +111,8 @@ properties and relations are optional, know more about there [here]().
 
 {% callout type="note" %}
 
-  You can create issues by clicking on the `New Issue` button in the right-hand
-  corner of your project, or by using `C` shortcut.
+You can create issues by clicking on the `New Issue` button in the right-hand
+corner of your project, or by using `C` shortcut.
 {% /callout %}
 
 There's lot more about Issues, learn about them [here](/issues).
@@ -125,9 +127,9 @@ finished building and implementing a new version of their project or product.
 
 {% callout type="note" %}
 
-  Only one Cycle can be ongoing at a time to follow the principles of AGILE.
-  However, you can have your upcoming issues or draft issues already created for
-  the next cycles.
+Only one Cycle can be ongoing at a time to follow the principles of AGILE.
+However, you can have your upcoming issues or draft issues already created for
+the next cycles.
 {% /callout %}
 
 - You can move existing issues to a new or existing cycle, or create a new
@@ -153,7 +155,7 @@ manageable chunks and track progress towards specific goals or objectives.
 - Modules allow you to add documents and links within them, providing a convenient way to share resources
   with others within the module.
 
-Have questions? Ask the [Plane](https://discord.com/invite/29tPNhaV) Community.
+Have questions? Ask the {% link href="https://discord.com/invite/29tPNhaV" target="_blank" %}Plane{% /link %} Community.
 
 ## Creating Pages
 

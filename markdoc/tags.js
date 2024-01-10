@@ -1,5 +1,13 @@
 import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
+import { Col2 } from '@/components/Col2'
+import { List } from '@/components/List'
+import Link from '@/components/link'
+import { BoldText } from '@/components/BoldText'
+import { ExpansionTile } from '@/components/ExpansionTile'
+import { UrlEmbed } from '@/components/UrlEmbed'
+import React from 'react'
+import { InlineCode } from '@/components/Inline-code'
 
 const tags = {
   callout: {
@@ -39,8 +47,50 @@ const tags = {
       title: { type: String },
       description: { type: String },
       icon: { type: String },
+      target: { type: String },
       href: { type: String },
     },
+  },
+  'col-2': {
+    render: Col2,
+  },
+  list: {
+    render: List,
+  },
+  link: {
+    attributes: {
+      href: { type: String, default: '' },
+      target: { type: String, default: '_self' },
+      heading: { type: Boolean, default: false },
+    },
+    render: Link,
+  },
+  'bold-text': {
+    render: BoldText,
+  },
+  expansion: {
+    selfClosing: true,
+    attributes: {
+      collapsedTitle: { type: String },
+      href: { type: String, default: '' },
+      addAfter: { type: String, default: '' },
+      target: { type: String, default: '_self' },
+      textColor: { type: String },
+      content: { type: String, default: '' },
+    },
+    render: ExpansionTile,
+  },
+  'url-embed': {
+    attributes: {
+      url: { type: String },
+    },
+    render: UrlEmbed,
+  },
+  'inline-code': {
+    attributes: {
+      textColor: { type: String, default: 'text-[#FFFFFF]' },
+    },
+    render: InlineCode,
   },
 }
 

@@ -7,6 +7,14 @@ import { PluginsIcon } from '@/components/icons/PluginsIcon'
 import { PresetsIcon } from '@/components/icons/PresetsIcon'
 import { ThemingIcon } from '@/components/icons/ThemingIcon'
 import { WarningIcon } from '@/components/icons/WarningIcon'
+import { ArrowIcon } from './icons/ArrowFilled'
+import { StashIcon } from './icons/StashIcon'
+import { CloudIcon } from './icons/CloudIcon'
+import { ManIcon } from './icons/ManIcon'
+import { PeopleIcon } from './icons/PeopleIcon'
+import { PlayBackIcon } from './icons/PlayBackIcon'
+import { DockerCompose } from './icons/DockerCompose'
+import { Kubernetes } from './icons/Kubernetes'
 
 const icons = {
   installation: InstallationIcon,
@@ -15,6 +23,14 @@ const icons = {
   theming: ThemingIcon,
   lightbulb: LightbulbIcon,
   warning: WarningIcon,
+  arrow: ArrowIcon,
+  stash: StashIcon,
+  cloud: CloudIcon,
+  man: ManIcon,
+  people: PeopleIcon,
+  playBack: PlayBackIcon,
+  dockerCompose: DockerCompose,
+  kubernetes: Kubernetes
 }
 
 const iconStyles = {

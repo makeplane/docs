@@ -6,7 +6,6 @@ description: Plane is a simple, extensible, open-source project and product mana
 
 Plane is a simple, extensible, open source project and product management tool. It allows users to start with a basic task tracking tool and gradually adopt various project management frameworks like Agile, Waterfall, and many more.
 
-
 {% quick-links %}
 
 {% quick-link title="Quick Start" icon="installation" href="/quick-start" description="Learn how to use Plane and follow the best practices of taking-off." /%}
@@ -15,7 +14,7 @@ Plane is a simple, extensible, open source project and product management tool. 
 
 {% quick-link title="Integrations" icon="plugins" href="/integrations/about" description="Extend Plane with third-party plugins and integrations" /%}
 
-{% quick-link title="Community" icon="theming" href="https://discord.com/invite/A92xrEGCge" description="Hang out with truly exceptional devs & designers on Discord." /%}
+{% quick-link title="Community" icon="theming" target="_blank" href="https://discord.com/invite/A92xrEGCge" description="Hang out with truly exceptional devs & designers on Discord." /%}
 
 {% /quick-links %}
 
@@ -27,5 +26,4 @@ Each page footer contains an "Edit on GitHub" Link. Make a pull request, and we'
 
 ## 🤔 Need Help?
 
-If you're unsure whether Plane is the ideal solution for your needs, feel free to reach out to the Plane team via [Discord](https://discord.com/invite/A92xrEGCge). You can connect with the community and receive helpful guidance.
-
+If you're unsure whether Plane is the ideal solution for your needs, feel free to reach out to the Plane team via {% link href="https://discord.com/invite/A92xrEGCge" target="_blank" %}Discord{% /link %}. You can connect with the community and receive helpful guidance.

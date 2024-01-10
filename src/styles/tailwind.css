@@ -4,3 +4,5 @@
 @import './prism.css';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import './table.css';
+

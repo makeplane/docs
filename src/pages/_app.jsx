@@ -65,6 +65,13 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title>{pageTitle}</title>
+
+        {process.env.NEXT_PUBLIC_NOINDEX === '1' && (
+          <>
+            <meta name="robots" content="noindex" />
+            <meta name="googlebot" content="noindex" />
+          </>
+        )}
         {description && <meta name="description" content={description} />}
       </Head>
       <Layout title={title} tableOfContents={tableOfContents}>
