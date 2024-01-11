@@ -51,7 +51,7 @@ const navigation = [
       { title: 'Pages', href: '/pages' },
       { title: 'Analytics', href: '/analytics' },
       { title: 'Deploy', href: '/deploy' },
-      { title: 'Command Menu', href: '/command-menu' },
+      { title: 'Power K', href: '/power-k' },
     ],
   },
   {
