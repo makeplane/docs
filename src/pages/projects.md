@@ -49,7 +49,7 @@ These options can be found under the Control tab inside Project>Settings ⬇️
 When the project is set to the Public network under project controls, it is open to all members on the workspace. When set to Secret network, workspace members must be invited to the project to gain access.
 
 For every member that is invited to the project, you can control their roles
-just [like on the workspace](workspace/#workspace-roles). All roles (Admin, Member, Guest, Viewer) are
+just [like on the workspace](workspaces/#workspace-roles). All roles (Admin, Member, Guest, Viewer) are
 supported.
 
 These options can be found under the Members tab inside Project>Settings ⬇️
