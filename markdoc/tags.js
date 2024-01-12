@@ -8,6 +8,7 @@ import { ExpansionTile } from '@/components/ExpansionTile'
 import { UrlEmbed } from '@/components/UrlEmbed'
 import React from 'react'
 import { InlineCode } from '@/components/Inline-code'
+import IconCallout from '@/components/IconCallout'
 
 const tags = {
   callout: {
@@ -21,6 +22,15 @@ const tags = {
       },
     },
     render: Callout,
+  },
+  'icon-callout': {
+    attributes: {
+      title: { type: String },
+      icon: { type: String },
+      image: { type: Boolean, default: false },
+      className: { type: String, default: '' },
+    },
+    render: IconCallout,
   },
   figure: {
     selfClosing: true,
