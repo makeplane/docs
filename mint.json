@@ -1,0 +1,109 @@
+{
+    "name": "Plane",
+    "logo": {
+      "light": "/logo/light.svg",
+      "dark": "/logo/dark.svg"
+    },
+    "favicon": "/logo/favicon.svg",
+    "colors": {
+      "primary": "#00A5E9",
+      "light": "#42C4F9",
+      "dark": "#00A5E9"
+    },
+    "topbarCtaButton": {
+      "name": "Sign in",
+      "url": "https://app.plane.so/"
+    },
+    "anchors": [
+      {
+        "name": "Discord",
+        "icon": "discord",
+        "url": "https://discord.com/invite/A92xrEGCge"
+      },
+      {
+        "name": "GitHub",
+        "icon": "github",
+        "url": "https://github.com/makeplane/plane"
+      }
+    ],
+    "navigation": [
+        {
+            "group": "Getting Started",
+            "pages": [
+              "introduction/home",
+              "introduction/quickstart",
+              "introduction/signup-signin"
+            ]
+          },
+          {
+            "group": "Self-hosting",
+            "pages": [
+              "self-hosting/overview",
+              "self-hosting/docker-compose",
+              "self-hosting/kubernetes",
+              "self-hosting/instance-admin",
+              "self-hosting/reset-password"                            
+            ]
+          },
+          {
+            "group": "Core concepts",
+            "pages": [
+              "core-concepts/workspaces",
+              "core-concepts/projects",
+              "core-concepts/issues",
+              "core-concepts/cycles",
+              "core-concepts/modules",
+              "core-concepts/views",
+              "core-concepts/pages",
+              "core-concepts/analytics",
+              "core-concepts/deploy",
+              "core-concepts/power-k"
+    
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/about",
+              "integrations/github",
+              "integrations/slack"           
+            ]
+          },
+          {
+            "group": "Importers",
+            "pages": [
+              "importers/github-imp",
+              "importers/jira-imp"              
+            ]
+          },
+          {
+            "group": "APIs",
+            "pages": [
+              "api-reference/introduction-api",
+              "api-reference/project-api",
+              "api-reference/state-api",
+              "api-reference/label-api",
+              "api-reference/links-api",
+              "api-reference/issue-api",              
+              "api-reference/issue-activity",              
+              "api-reference/issue-comment",              
+              "api-reference/module-api",              
+              "api-reference/module-issue",              
+              "api-reference/cycle-api",              
+              "api-reference/cycle-issue",              
+              "api-reference/inbox-issue"            
+            ]
+          },
+          {
+            "group": "Webhooks",
+            "pages": [
+              "webhooks/intro-webhooks"
+            ]
+          }
+    ],
+    "footerSocials":
+      {
+          "twitter": "https://twitter.com/planepowers",
+          "linkedin": "https://www.linkedin.com/company/planepowers/"
+      }
+  }
