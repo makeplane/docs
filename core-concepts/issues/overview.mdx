@@ -1,0 +1,89 @@
+---
+title: Overview
+description: In Plane, an issue serves as the fundamental unit of work, which can be assigned, managed, and completed. Issues represent the tasks you need to accomplish to make progress. They are analogous to tasks in the project management domain.
+
+---
+## Create issues
+
+An issue can only be created within a project. The fastest way to create a new issue in a project is to simply press `C` on your keyboard. The project you are on or last visited is automatically considered as the default project to create an issue in.
+
+### Create issue modal
+
+1. This is the default method to add issues in your project. You can open this modal in the following ways:
+   - Press `C` on your keyboard.
+   - Click on the "New issue" button in the side navigation bar.
+   - Click on the "New issue" button in your project/cycle/module issue.
+
+When you open the create issue modal, you can add almost all attributes of an issue and create the issue. This gives you the convenience of having all properties at your disposal. You can also choose to create multiple issues one after the other if you enable "Create more".
+
+Issues you create can be saved as drafts to access them later. The last draft you have in your session can be accessed via the dropdown beside the "New issue" button in your side navigation bar, and all draft issues can be found in your project's draft issues section.
+
+<Frame>![Create issue](/images/issues/create-issue-modal.png)</Frame>
+
+### Quick add
+
+The quick add mode of issue addition offers a quicker way to add issues when you're browsing through a layout and feel the need to add an issue promptly.
+
+<Frame>![Create issue](/images/issues/issue-quick-add.png)</Frame>
+
+Once an issue is created successfully, a sequential issue identifier based on your project is assigned to the issue (Eg: PROJ-1)
+## View an issue
+
+An issue in your board opens by default in the peek overview mode, which allows for easy switching between contexts when browsing multiple issues simultaneously. In this mode, you can choose different styles of the peek overview, such as modal, full screen, or side peek, with side peek being the default option.
+
+<Frame>![issue-side-peek](/images/issues/issue-side-peek.png)</Frame>
+
+## Issue activity
+
+Within each issue, all updates and comments are recorded in the activity area. Any change to a property of the issue is treated as an update and logged accordingly. Additionally, comments can be added to discuss the issue or its progress. Comments support multiple blocks for enhanced content structuring.
+
+<Frame>![issue-activity-comments](/images/issues/issue-activity-comments.png)</Frame>
+
+## Sub issues
+
+After creating an issue, you have the option to add sub-issues to it either by creating them or by linking to existing issues. Sub-issues allow you to divide the work into different functional components or break it down into smaller, achievable tasks.
+
+<Frame>![sub-issues](/images/issues/issue-sub-issues.png)</Frame>
+
+
+## Visualise and filter issues
+
+In Plane, you have several options for visualizing and filtering issues to help you quickly analyze and investigate them.
+
+### Layouts
+
+-  **List View:** Displays issues as an ordered list. Supports grouping by specific issue properties for easy categorization.
+   <Frame>![issue-list](/images/issues/issue-list-layout.png)</Frame>
+-  **Kanban View:** Groups issues by a specific property in a Kanban board format, typically by issue states. Allows for quick assessment of issues' status.
+   <Frame>![issue-kanban](/images/issues/issue-kanban-layout.png)</Frame>
+- **Calendar View:** Groups issues by due dates in a calendar interface, facilitating quick identification of issues due soon.
+   <Frame>![issue-calendar](/images/issues/issue-calendar-layout.png)</Frame>
+- **Spreadsheet View:** Arranges issues as rows in a spreadsheet, with all properties available as columns. Useful for taking similar actions on multiple issues.
+   <Frame>![issue-spreadsheet-layout](/images/issues/issue-spreadsheet-layout.png)</Frame>
+- **Gantt View:** Arranges issues by start and due dates in a Gantt chart format, providing a visual representation of issue timelines.
+   <Frame>![issue-gantt](/images/issues/issue-gantt-layout.png)</Frame>
+
+### Filter Issues
+
+Issues can be filtered by various properties, including:
+
+ 1. Priority
+ 2. State
+ 3. Start date
+ 4. Due date
+ 5. Assignee
+ 6. Labels
+ 7. Modules
+ 8. Cycles
+ 9. Created by
+10. Mentions
+
+When applying multiple filters, only issues matching all filter criteria are displayed. Note that when filtering issues in a workspace view, filtering by state, cycles, or modules is not yet supported.
+
+## Remove Issues
+
+Issues can be removed in two ways:
+
+1. **Archive Issues:** Completed or canceled issues can be archived, and automations can be set up to archive such issues. It's recommended to conclude an issue by closing it before archiving. Archived issues can be found in the project's options.
+
+2. **Delete Issues:** Issues that are created accidentally or no longer relevant to the project can be deleted from the board.

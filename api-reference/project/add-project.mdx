@@ -1,0 +1,15 @@
+---
+title: Add project
+description: Projects let you manage teams and tasks within your Workspace.
+api: POST /api/v1/workspaces/{slug}/projects/
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField body="name" type="string" required></ParamField>
+
+<ParamField body="identifier" type="string" required></ParamField>
+
+<ParamField body="description" type="string"></ParamField>

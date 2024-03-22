@@ -1,0 +1,417 @@
+{
+  "name": "Plane",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/logo/favicon.svg",
+  "colors": {
+    "primary": "#3f76ff",
+    "light": "#517be0",
+    "dark": "#3f76ff",
+    "background":{
+      "dark":"#1B1B1F"
+    }
+  },
+  "api": {
+    "baseUrl": "https://api.plane.so",
+    "auth": {
+      "method": "key",
+      "name": "x-api-key"
+    }
+  },
+  "topbarCtaButton": {
+    "name": "Sign in",
+    "url": "https://app.plane.so/"
+  },
+  "anchors": [
+    {
+      "name": "Discord",
+      "icon": "discord",
+      "url": "https://discord.com/invite/A92xrEGCge"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/makeplane/plane"
+    }
+  ],
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction/home",
+        "introduction/quickstart",
+        "introduction/signup-signin"
+      ]
+    },
+    {
+      "group": "Self-hosting",
+      "pages": [
+        "self-hosting/overview",
+        {
+          "group":"Methods",
+          "pages":[
+          "self-hosting/methods/docker-compose",
+          "self-hosting/methods/kubernetes"
+          ]
+        },
+        {
+          "group" : "Govern",
+          "pages": [
+            "self-hosting/govern/instance-admin",
+            "self-hosting/govern/authentication",
+            "self-hosting/govern/communication",
+            "self-hosting/govern/custom-domain",
+            "self-hosting/govern/reset-password"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Core concepts",
+      "pages": [
+        {
+          "group":"Workspaces",
+          "pages":[
+            "core-concepts/workspaces/overview",
+            "core-concepts/workspaces/members"
+          ]
+        },
+        {
+          "group":"Account",
+          "pages":[
+            "core-concepts/account/overview",
+            "core-concepts/account/settings"
+          ]
+        },
+        {
+          "group":"Projects",
+          "pages":[
+            "core-concepts/projects/overview",
+            "core-concepts/projects/run-project"
+          ]
+        },
+        {
+          "group":"Issues",
+          "pages":[
+            "core-concepts/issues/overview",
+            "core-concepts/issues/properties"
+          ]
+        },
+        "core-concepts/cycles",
+        "core-concepts/modules",
+        "core-concepts/views",
+        {
+          "group":"Pages",
+          "pages":[
+            "core-concepts/pages/overview",
+            "core-concepts/pages/editor-blocks"
+          ]
+        },
+        "core-concepts/analytics",
+        "core-concepts/deploy",
+        "core-concepts/power-k"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "plane-integrations/about",
+        "plane-integrations/github",
+        "plane-integrations/slack"
+      ]
+    },
+    {
+      "group": "Importers",
+      "pages": ["plane-importers/github-imp", "plane-importers/jira-imp"]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        "api-reference/introduction",
+        {
+          "group": "Project",
+          "pages": [
+            "api-reference/project/overview",
+            "api-reference/project/add-project",
+            "api-reference/project/get-projects",
+            "api-reference/project/get-project-detail",
+            "api-reference/project/update-project-detail",
+            "api-reference/project/delete-project"
+          ]
+        },
+        {
+          "group": "State",
+          "pages": [
+            "api-reference/state/overview",
+            "api-reference/state/add-state",
+            "api-reference/state/get-states",
+            "api-reference/state/get-state-detail",
+            "api-reference/state/update-state-detail",
+            "api-reference/state/delete-state"
+          ]
+        },
+        {
+          "group": "Label",
+          "pages": [
+            "api-reference/label/overview",
+            "api-reference/label/add-label",
+            "api-reference/label/get-labels",
+            "api-reference/label/get-label-detail",
+            "api-reference/label/update-label-detail",
+            "api-reference/label/delete-label"
+          ]
+        },
+        {
+          "group": "Link",
+          "pages": [
+            "api-reference/link/overview",
+            "api-reference/link/add-link",
+            "api-reference/link/get-links",
+            "api-reference/link/get-link-detail",
+            "api-reference/link/update-link-detail",
+            "api-reference/link/delete-link"
+          ]
+        },
+        {
+          "group": "Issue",
+          "pages": [
+            "api-reference/issue/overview",
+            "api-reference/issue/add-issue",
+            "api-reference/issue/get-issues",
+            "api-reference/issue/get-issue-detail",
+            "api-reference/issue/update-issue-detail",
+            "api-reference/issue/delete-issue"
+          ]
+        },
+        {
+          "group": "Issue activity",
+          "pages": [
+            "api-reference/issue-activity/overview",
+            "api-reference/issue-activity/get-issue-activities",
+            "api-reference/issue-activity/get-issue-activity-detail"
+          ]
+        },
+        {
+          "group": "Issue comment",
+          "pages": [
+            "api-reference/issue-comment/overview",
+            "api-reference/issue-comment/add-issue-comment",
+            "api-reference/issue-comment/get-issue-comments",
+            "api-reference/issue-comment/get-issue-comment-detail",
+            "api-reference/issue-comment/update-issue-comment-detail",
+            "api-reference/issue-comment/delete-issue-comment"
+          ]
+        },
+        {
+          "group": "Module",
+          "pages": [
+            "api-reference/module/overview",
+            "api-reference/module/add-module",
+            "api-reference/module/get-modules",
+            "api-reference/module/get-module-detail",
+            "api-reference/module/update-module-detail",
+            "api-reference/module/delete-module"
+          ]
+        },
+        {
+          "group": "Module issue",
+          "pages": [
+            "api-reference/module-issue/overview",
+            "api-reference/module-issue/add-module-issue",
+            "api-reference/module-issue/get-module-issues",
+            "api-reference/module-issue/delete-module-issue"
+          ]
+        },
+        {
+          "group": "Cycle",
+          "pages": [
+            "api-reference/cycle/overview",
+            "api-reference/cycle/add-cycle",
+            "api-reference/cycle/get-cycles",
+            "api-reference/cycle/get-cycle-detail",
+            "api-reference/cycle/update-cycle-detail",
+            "api-reference/cycle/delete-cycle"
+          ]
+        },
+        {
+          "group": "Cycle issue",
+          "pages": [
+            "api-reference/cycle-issue/overview",
+            "api-reference/cycle-issue/add-cycle-issue",
+            "api-reference/cycle-issue/get-cycle-issues",
+            "api-reference/cycle-issue/delete-cycle-issue"
+          ]
+        },
+        {
+          "group": "Inbox issue",
+          "pages": [
+            "api-reference/inbox-issue/overview",
+            "api-reference/inbox-issue/add-inbox-issue",
+            "api-reference/inbox-issue/get-inbox-issues",
+            "api-reference/inbox-issue/get-inbox-issue-detail",
+            "api-reference/inbox-issue/update-inbox-issue-detail",
+            "api-reference/inbox-issue/delete-inbox-issue"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Webhooks",
+      "pages": ["webhooks/intro-webhooks"]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/planepowers",
+    "linkedin": "https://www.linkedin.com/company/planepowers/"
+  },
+  "redirects": [
+    {
+      "source": "/quick-start",
+      "destination": "/introduction/quickstart"
+    },
+    {
+      "source": "/sign-up-sign-in",
+      "destination": "/introduction/signup-signin"
+    },
+    {
+      "source": "/docker-compose",
+      "destination": "/self-hosting/docker-compose"
+    },
+    {
+      "source": "/kubernetes",
+      "destination": "/self-hosting/kubernetes"
+    },
+    {
+      "source": "/instance-admin",
+      "destination": "/self-hosting/instance-admin"
+    },
+    {
+      "source": "/reset-password",
+      "destination": "/self-hosting/reset-password"
+    },
+    {
+      "source": "/workspaces",
+      "destination": "/core-concepts/workspaces"
+    },
+    {
+      "source": "/projects",
+      "destination": "/core-concepts/projects"
+    },
+    {
+      "source": "/issues",
+      "destination": "/core-concepts/issues"
+    },
+    {
+      "source": "/cycles",
+      "destination": "/core-concepts/cycles"
+    },
+    {
+      "source": "/modules",
+      "destination": "/core-concepts/modules"
+    },
+    {
+      "source": "/views",
+      "destination": "/core-concepts/views"
+    },
+    {
+      "source": "/pages",
+      "destination": "/core-concepts/pages"
+    },
+    {
+      "source": "/analytics",
+      "destination": "/core-concepts/analytics"
+    },
+    {
+      "source": "/deploy",
+      "destination": "/core-concepts/deploy"
+    },
+    {
+      "source": "/power-k",
+      "destination": "/core-concepts/power-k"
+    },
+    {
+      "source": "/integrations/about",
+      "destination": "/integrations/about"
+    },
+    {
+      "source": "/integrations/github",
+      "destination": "/integrations/github"
+    },
+    {
+      "source": "/integrations/slack",
+      "destination": "/integrations/slack"
+    },
+    {
+      "source": "/importers/github-imp",
+      "destination": "/importers/github"
+    },
+    {
+      "source": "/importers/jira-imp",
+      "destination": "/importers/jira"
+    },
+    {
+      "source": "/webhooks/introduction",
+      "destination": "/webhooks/intro-webhooks"
+    },
+    {
+      "source": "/apis/introduction",
+      "destination": "/api-reference/introduction"
+    },
+    {
+      "source": "/apis/project",
+      "destination": "/api-reference/project/overview"
+    },
+    {
+      "source": "/apis/state",
+      "destination": "/api-reference/state/overview"
+    },
+    {
+      "source": "/apis/label",
+      "destination": "/api-reference/label/overview"
+    },
+    {
+      "source": "/apis/links",
+      "destination": "/api-reference/links/overview"
+    },
+    {
+      "source": "/apis/issue",
+      "destination": "/api-reference/issue/overview"
+    },
+    {
+      "source": "/apis/issue-activity",
+      "destination": "/api-reference/issue-activity/overview"
+    },
+    {
+      "source": "/apis/issue-comment",
+      "destination": "/api-reference/issue-comment/overview"
+    },
+    {
+      "source": "/apis/module",
+      "destination": "/api-reference/module/overview"
+    },
+    {
+      "source": "/apis/module-issue",
+      "destination": "/api-reference/module-issue/overview"
+    },
+    {
+      "source": "/apis/cycle",
+      "destination": "/api-reference/cycle/overview"
+    },
+    {
+      "source": "/apis/cycle-issue",
+      "destination": "/api-reference/cycle-issue/overview"
+    },
+    {
+      "source": "/apis/inbox-issue",
+      "destination": "/api-reference/inbox-issue/overview"
+    }
+  ]
+}

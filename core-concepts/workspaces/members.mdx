@@ -1,0 +1,29 @@
+---
+title: Members
+description: Members can be your collaborators, employees, executives, managers or even clients. Each member in your workspace needs a role for them to start using Plane.
+---
+## **Workspace roles**
+
+Every user on a workspace has a specific role associated with them, which determines their permissions and what actions they are allowed to take within the workspace. This helps to ensure that users only have access to the resources and functions that they need in order to complete their work.
+
+**Available roles**
+
+- **Admin** - The administrator of the workspace is the supreme administrator and has all permissions set to `true` within the workspace.
+
+
+- **Member** - Workspace members are essentially team members within the organization, and they have the ability to read, write, edit, and delete entities inside projects, cycles, and modules within the workspace. It is important to note that workspace members can create new projects.
+- **Guest** - External members of organizations can be invited as guests, which grants them the ability to view all content to which they have been invited.
+
+## Adding members
+
+To invite members to the workspace, go to the [settings](/core-concepts/workspaces/overview#accessing-workspace-settings) of your workspace and then to the members tab. From there, you can invite a user by clicking on the "Add member" button, which will open a modal. In this modal, you can enter the email addresses of the members you wish to invite and select their roles.
+<Frame> ![Invite user](/images/workspaces/add-user.png)</Frame>
+After inviting members, they will receive a notification via email. If you are using a self-hosted Plane instance, it is advisable to set up an SMTP server now to facilitate sending invite notifications. Once the member accepts the invitation, they will be added to your workspace. If they decline the invitation, you have the option to remove them from the workspace.
+
+## Updating member roles
+In the workspace settings, accessible from the members page, you can promote or demote individuals. Administrators have the authority to promote or demote any member, while regular members can only promote others to the member role.
+<Frame> ![Update user role](/images/workspaces/update-user.png)</Frame>
+## Removing members
+An admin of the workspace has the ability to remove any user from the members page. Once removed, the user will lose access to the workspace.
+<Frame> ![Remove user](/images/workspaces/remove-user.png)</Frame>
+

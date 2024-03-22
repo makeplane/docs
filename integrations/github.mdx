@@ -1,0 +1,44 @@
+---
+title: Github Sync
+sidebarTitle: Github
+---
+<Tip>Integrations and importers are only available on the cloud version. We plan to open-source our SDKs in the near future so that the community can request or contribute integrations as needed.</Tip>
+
+GitHub Sync allows users to connect any GitHub repository to a Plane project, enabling cross-synchronization of issues between Plane and GitHub in both directions.
+
+By connecting a GitHub repository to a Plane project, users can easily track issues and changes in both platforms. This allows for a more streamlined workflow, as users can manage their GitHub issues and pull requests from within the Plane platform.
+
+The bi-directional synchronization means that changes made in either platform will be reflected in the other. For example, if a user creates a new issue in Plane, it will automatically be synced with the corresponding repository in GitHub. Similarly, if a user closes an issue in GitHub, it will be reflected in Plane as well.
+
+<Tip>Plane is still in development, if there are any hiccups in Integrations, please report them to us on our [Discord server](https://discord.com/invite/A92xrEGCge) or [Github issues](https://github.com/makeplane/plane/issues).</Tip>
+
+### Plane to Github Synchronization Overivew
+
+![](/images/plane-github.png)
+
+### Configure GitHub Integration
+
+1. Install and authenticate GitHub Sync
+
+<Tip>Obviously, GitHub Sync requires you to authenticate with your account to add the Plane GitHub application. Also, if you want to use GitHub Sync in an organization, you may need to ask an admin to allow Plane to access the organization, or do that yourself: Organization settings => GitHub Apps (enter sudo mode) => approve the request for the Plane integration.</Tip>
+
+![](/images/1.gif)
+
+2. Connect GitHub repository with project
+
+![](/images/2.gif)
+
+3. Create a new one or use an existing issue on Plane
+
+![](/images/3.gif)
+
+4. Add the `GitHub` label to Plane issue (Plane -> GitHub)
+
+![](/images/4.gif)
+
+5. Add the `Plane` label to GitHub issue (GitHub -> Plane)
+
+![](/images/5.gif)
+
+
+

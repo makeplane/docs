@@ -1,0 +1,50 @@
+---
+title: Cycles
+description: A cycle is a method for timeboxing the issues you're working on within a project. This approach aids in delivering issues within a fixed timeframe, boosting your team's momentum. Cycles share similarities with sprints in the agile methodology. 
+---
+## Toggle cycles
+
+Cycles are automatically enabled in a new project by default. You have the option to disable or enable them later by accessing project settings.
+
+## Create cycles
+
+To create a new cycle, simply press `Q` from anywhere in your project, or navigate to the cycles page to initiate one. Providing a name is necessary to create a new cycle, and you can also include a description along with start and due dates, which can be added later as well.
+<Frame>![Create cycle](/images/cycles/create-cycles.png) </Frame>
+
+## Cycle types
+
+Cycles are categorized into four types based on their dates:
+
+1. Active: If today's date falls within the range of the cycle's start and due dates, it is considered active. Only one active cycle is allowed in a project at a time.
+2. Yet to start: A cycle with a start date in the future is considered upcoming.
+3. Completed: A cycle with a due date in the past is considered completed.
+4. Draft: A cycle without assigned dates is considered a draft. Once dates are added, it becomes active or upcoming based on the specified dates.
+
+<Tip>You have the flexibility to modify the name, description, start and due dates of active, draft, and upcoming cycles at any time.</Tip>
+
+## Add issues to cycles
+
+Once a cycle is created, you can add new issues to the cycle or include existing issues from the cycle page. Additionally, you have the option to directly associate the cycle as a property in the issue.
+
+<Frame>![Empty cycle](/images/cycles/cycle-empty-state.png)</Frame>
+
+## Track progress
+
+Once a cycle is active and contains issues, you can monitor its progress, assess the team's productivity, and review the breakdown of priorities from the active cycle section of the project. This section also allows you to investigate any discrepancies if the cycle is not proceeding as expected.
+
+<Frame>![Active cycle](/images/cycles/active-cycle-ui.png)</Frame>
+
+## Active cycles across projects
+If you have multiple projects with cycles running concurrently, you can monitor the progress of all active cycles directly from the active cycles section. This allows you to quickly assess the progress of each cycle and identify any red flags.
+<Note> Active cycles is a feature included in our Pro plan, but it is currently available on our cloud free plan for a limited time, allowing users to experience its functionality.</Note>
+
+<Frame>![Active cycles](/images/cycles/active-cycles-ui.png)</Frame>
+## Close cycles
+
+After the due date of the active cycle passes, the cycle is automatically marked as completed. Once completed, you have the option to transfer any remaining incomplete issues from the cycle to a different cycle. This facilitates the swift movement of spillover tasks to other cycles. Once a cycle is marked as completed, its progress is locked, allowing you to track and compare the team's progress across cycles effectively.
+
+## Remove cycles
+
+You can remove cycles by deleting them. Upon deletion, all associated analytics and progress reports are also removed. Any issues linked to the cycle are subsequently de-linked.
+
+<Note> We will soon introduce a feature to archive completed cycles, allowing you to conceal significantly older cycles from your views.</Note>

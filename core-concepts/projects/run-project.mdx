@@ -1,0 +1,72 @@
+---
+title: Running your project
+description: Projects have states, labels, estimations along with integrations and automations which can be setup to run your project smoothly.
+---
+## Build project workflow with states
+
+Issues within a project can transition through various states to reflect the progression of work in your project. This movement of issues through states constitutes the project workflow.
+
+### State groups
+
+Plane provides five sets of state groups to categorize all your project states:
+
+- **Backlog**: Useful for issues not yet prioritized by project members. Issues in this group require more work or discussions before they move forward. Plane creates a default state in this group called "Backlog".
+- **Unstarted**: Useful for issues planned to be picked up by project members. Issues in this state represent upcoming work for members. Plane creates a default state called "To-do" in this group.
+- **Started**: Useful for issues picked up by project members. Issues in this state represent work that is currently happening in your project. Plane creates a default state called "In-progress" in this group.
+- **Completed**: Issues in this state represent completed work in your project. Plane creates a default state called "Done" in this group.
+- **Cancelled**: Issues in this state represent cancelled work in your project. Plane creates a default state called "Cancelled" in this group.
+
+<Frame>![Project state](/images/projects/project-states.png)</Frame>
+
+### Add, edit or remove states
+
+Each state group can contain multiple states, which can be created and ordered according to your project's workflow. These options can be found under the States tab inside Project &gt; Settings.
+
+To add a new state, click on the "+" button beside the state group of your choice. After adding the state, you can rearrange it with other states in the group.
+
+<Frame>![Project state](/images/projects/project-new-state.png)</Frame>
+
+You can also choose to mark the state as the default for the project to ensure all new issues without a state are assigned to this state.
+
+To remove a state, ensure no issues are assigned to the state you want to remove.
+
+## Define estimates
+
+Estimates aid in communicating the workload associated with each issue. By default, no estimates are added to your project. You can access these options under the Estimates tab inside Project &gt; Settings.
+
+### Estimate
+
+An estimate comprises an ordered set of points used to quantify the amount of work in an issue.
+
+Here are the attributes of an estimate:
+
+- **Name**: Name of the estimate group.
+- **Description (optional)**: Details about the estimate group.
+- **Points**: An ordered set of strings or numbers assigned to your issues. You need to add all 6 points before creating an estimate.
+
+Once an estimate is created, you can choose to mark it in use for your project. Once marked, the points in the estimate become available for members to use.
+
+You can add multiple estimates and change the estimate in use to seamlessly migrate to a different estimate type.
+
+<Note> Currently, estimates are limited as each point is treated as a category internally, preventing accurate insights on your work. We'll be changing this soon.</Note>
+
+## Manage labels
+
+Similar to states, labels on projects aid in filtering, differentiating, and categorizing issues within your project. You can create and control as many issue labels as needed.
+
+<Note> Labels can also be created directly from the issue detail page.</Note>
+
+You can access these options under the Labels tab inside Project > Settings.
+<Frame>![Project labels](/images/projects/project-labels.png)</Frame>
+
+
+## Connect integrations
+
+## Set up automations
+
+Within your project, you can set up automations to perform the following tasks:
+
+1. **Auto-archive closed issues**: You can configure an automation to archive issues that are closed in your project based on a customizable time period. Once set up, the automation will move all issues matching the time period to archives.
+<Frame>![Project archive automation](/images/projects/project-automations.png)</Frame>
+2. **Auto-close issues**: You can configure an automation to close issues that are open in your project based on a customizable time period. Once set up, the automation will move all open issues matching the time period to the selected closed state.
+<Frame>![Project close automation](/images/projects/project-close-automation.png)</Frame>

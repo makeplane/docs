@@ -1,0 +1,15 @@
+---
+title: Add module
+description: Adds a module in a project
+api: POST /api/v1/workspaces/{slug}/projects/{project_id}/modules/
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+### Body
+
+<ParamField body="name" type="string" required></ParamField>

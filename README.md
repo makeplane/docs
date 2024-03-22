@@ -1,64 +1,29 @@
-<h1 style="text-align:center; font-size: 3.5em;">Plane</h1>
+# Plane Documentation
 
-<figure>
-  <img src="https://raw.githubusercontent.com/makeplane/docs/master/public/logos/logo.svg" alt="The Plane Logo" style=" display:block; margin-left: auto; margin-right: auto; width: 25%;">
-  <figcaption style="text-align:center; font-size:3em;">Project management tool from the future.</figcaption>
-</figure>
+Welcome to the documentation repository for Plane! This repository hosts comprehensive documentation for Plane, accessible at [docs.plane.so](https://docs.plane.so).
 
-----
-This repository hosts all the documentation for Plane, and it is available at [docs.plane.so](https://docs.plane.so). If you are looking for the Plane code, please see the [Plane repo](https://github.com/makeplane/plane). 
+## Overview
 
-----
+The Plane documentation provides detailed information on the following topics:
 
-## Table of Contents
+- Setting up and managing a self-hosted instance of Plane.
+- Understanding the different components of Plane.
+- Establishing connections between Plane and other applications.
 
- 1. [About Plane](#about-plane)
- 2. [Installation](#installation)
- 3. [Usage](#usage)
- 4. [Contributing](#contributing)
- 5. [Community and Support](#community-and-support)
+## Raising Issues
 
- ## About Plane
+If you encounter any issues with our documentation or have suggestions for improvements, we encourage you to follow these steps:
 
- Plane is a user-friendly, extensible, and open-source project and product management tool. It serves as a versatile platform, allowing users to start their project management process with a simple task-tracking tool and smoothly progress towards implementing diverse project management methodologies, including Agile, Waterfall, and numerous others, to suit their growing needs.
-
- ## Installation
-
- Setting up Plane's documentation on your local machine is straightforward. Follow these installation steps:
-
-
- 1. Install the Markdoc library with:
-
-    ```bash
-    npm install @markdoc/markdoc
-    ```
- 
- 2. Install dependencies with:
-
-    ```bash
-    npm install
-    ```
-
- 3. Start the local development with:
-
-    ```bash
-    npm run dev
-    ```
-
-This command launches a local development server, and you can access the documentation at http://localhost:3000.
-
-## Usage
-
-Refer to our comprehensive documentation at [docs.plane.so](https://docs.plane.so) for detailed instructions on using Plane, including setup, configuration, and practical examples.
+1. **Check Existing Issues**: Before raising a new issue, please verify if a similar issue already exists.
+2. **Raise an Issue**: If you don't find an existing issue that matches your concern, feel free to create a new one. Provide as much detail as possible to clearly explain the problem or enhancement you're proposing.
 
 ## Contributing
 
-We welcome contributions from the community to improve Plane. Here's how you can get involved:
+Are you interested in contributing to our documentation? We welcome contributions from the community! You can contribute by:
 
-* Review our [Contribution Guidelines](https://github.com/makeplane/plane/blob/master/CONTRIBUTING.md) for detailed instructions on contributing code, reporting issues, and more.
+- Fixing bugs in the existing documentation.
+- Adding new guides or tutorials.
 
-* Please follow our [Code of Conduct](https://github.com/makeplane/plane/blob/master/CODE_OF_CONDUCT.md) to ensure a respectful and inclusive community.
+To get started with contributing, please refer to our [Contribution Guide](/CONTRIBUTING.md). We appreciate contributions related to self-hosting, core product functionality, and integrations with other applications.
 
- ## Community and Support
-
-For any issues or support, please contact the plane team via [Discord](https://discord.com/invite/A92xrEGCge).
+Thank you for considering contributing to Plane documentation. Your contributions help improve the overall user experience and make information more accessible to all users. Let's work together to make Plane documentation even better!

@@ -1,0 +1,17 @@
+---
+title: Update project details
+description: Projects let you manage teams and tasks within your Workspace.
+api: PATCH /api/v1/workspaces/{slug}/projects/{project_id}
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+<ParamField body="name" type="string"></ParamField>
+
+### Body
+
+<ParamField body="description" type="string"></ParamField>
