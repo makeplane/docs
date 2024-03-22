@@ -1,0 +1,17 @@
+---
+title: Update state details
+description: Updates the details of a state
+api: PATCH /api/v1/workspaces/{slug}/projects/{project_id}/states/{state_id}/
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+<ParamField path="state_id" type="string" required></ParamField>
+
+### Body
+
+<ParamField body="name" type="string"></ParamField>

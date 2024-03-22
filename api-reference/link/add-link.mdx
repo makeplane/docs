@@ -1,0 +1,19 @@
+---
+title: Add link
+description: Adds a link in an issue
+api: POST /api/v1/workspaces/{slug}/projects/{project_id}/issues/{issue_id}/links/
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+<ParamField path="issue_id" type="string" required></ParamField>
+
+### Body
+
+<ParamField body="title" type="string"></ParamField>
+
+<ParamField body="url" type="string" required></ParamField>

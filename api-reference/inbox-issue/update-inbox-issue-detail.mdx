@@ -1,0 +1,19 @@
+---
+title: Update inbox issue detail
+description: Updates the details of an inbox issue
+api: PATCH /api/v1/workspaces/{slug}/projects/{project_id}/inbox-issues/{issue_id}
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+<ParamField path="issue_id" type="string" required></ParamField>
+
+### Body
+
+<ParamField body="issue" type="object">
+  <ParamField body="name" type="string"></ParamField>
+</ParamField>

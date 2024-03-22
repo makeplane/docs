@@ -1,0 +1,21 @@
+---
+title: Update link details
+description: Updates the details of a link
+api: PATCH /api/v1/workspaces/{slug}/projects/{project_id}/issues/{issue_id}/links/{link_id}
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+<ParamField path="issue_id" type="string" required></ParamField>
+
+<ParamField path="link_id" type="string" required></ParamField>
+
+### Body
+
+<ParamField body="name" type="string"></ParamField>
+
+<ParamField body="url" type="string"></ParamField>

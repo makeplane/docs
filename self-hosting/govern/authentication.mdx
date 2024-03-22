@@ -1,0 +1,83 @@
+---
+title : Authentication
+description: Plane offers several methods you can choose from to let your users log in to your Plane instance. Configure these methods in `Authentication` on `/god-mode` of your instance.
+---
+## Restrict sign-ups to invited users
+
+To ensure only specific users can sign up and use Plane, you can toggle on `Allow sign up by invite only` which prevents users without invites from signing up.
+
+## Authentication methods
+
+### Unique code
+
+Plane lets your users log in with codes sent over email. This is disabled if SMTP is not configured for your instance. See [Communication](https://app.plane.so/plane/projects/e3ea12b0-62e3-4b8d-8ada-3379f4efc563/pages/e83af23e-b120-47b0-b241-2bee39037505) to set up SMTP if you wish to enable unique codes.
+
+### Passwords
+
+Your users can log in with passwords that they or you set for them. This is toggled on when SMTP isn't configured for your instance. Disable it if you would like to use another authentication method below.
+
+### Google OAuth
+
+Plane already ships with out-of-the-box support for Google OAuth. This is the easiest option to configure for Google Workspace users.
+
+#### Configure Plane as an app on Google API Console
+
+First, you will need to identify Plane as an approved OAuth app to Google.
+
+1. Go to the [Google API console](https://console.cloud.google.com/apis) and create a new project.
+2. Navigate to the **OAuth consent screen** under **APIs & Services**. Choose how you want to configure and register the Plane app, including your target users, and click **Create**.
+   <Frame>![](/images/authentication/google/google-auth-1.png)</Frame>
+3. Configure the OAuth consent screen with information about the app.
+   <Frame>![](/images/authentication/google/google-auth-2.png)</Frame>
+4. Navigate to the **Credentials** screen, click **Create Credentials**, and select **OAuth client ID** from the options given.
+   <Frame>![](/images/authentication/google/google-auth-3.png)</Frame>
+5. Select **Web application** under the **Application type** dropdown list. Update the following fields.
+   1. **Authorized JavaScript origins**\
+      The HTTP origins that host your web application, e.g., `https://app.plane.so`
+   2. **Authorized redirect URIs**\
+      Append the path that users should be redirected to after they have authenticated with Google, e.g., `https://app.plane.so/auth/google/callback`
+   3. Click **Create**.
+   4. Get the Client ID and Client secret under **OAuth 2.0 Client IDs** on the **Credentials** screen.
+   <Frame>![](/images/authentication/google/google-auth-4.png)</Frame>
+
+#### Configure Plane
+
+1. Go to `Google` on the Authentication screen of `/god mode`.
+2. Add the client ID + the client secret from Google API Console.
+3. Click `Save `.
+<Frame>![](/images/instance-admin/authentication-instance-settings.png)</Frame>
+
+
+Your Plane instance should now work with `Sign in with Google`.
+
+
+<Note>We don't restrict domains in with Google OAuth yet. It's on our roadmap.</Note>
+
+## Github OAuth
+
+Plane also supports GitHub OAuth so your users can sign-in with GitHub instead.
+
+### Configure Plane as an OAuth app on GitHub
+
+1. Log in to your [GitHub account](https://github.com/).
+2. Click your profile's avatar and navigate to **Settings.**
+3. Click **Developer Settings** and then **OAuth Apps**.
+   <Frame>![](/images/authentication/github/github-auth-1.png)</Frame>
+4. Click **Register a new application**.
+5. Configure the following OAuth credentials for your Plane app.
+   1. **Homepage URL**\
+      The domain, with HTTPS, on which you host Plane, e.g., `https://app.plane.so`
+   2. **Authorization Callback URL**\
+      Append `/auth/github/callback/ `to the Homepage URL, e.g., `https://app.plane.so//auth/github/callback/`
+6. Click `Register application` to save it.
+   <Frame>![](/images/authentication/github/github-auth-2.png)</Frame>
+7. Find the app you just registered and click through to find the client ID and the client secret. You will need this for the next steps.
+
+### Configure Plane
+
+1. Go to `GitHub` on the Authentication screen of `/god mode`.
+2. Add the client ID + the client secret from the GitHub app you just registered.
+3. Click `Save `.
+<Frame>![](/images/instance-admin/authentication-instance-settings.png)</Frame>
+
+Your Plane instance should now work with GitHub sign-in.

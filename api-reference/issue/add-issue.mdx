@@ -1,0 +1,15 @@
+---
+title: Add issue
+description: Adds an issue to a project
+api: POST /api/v1/workspaces/{slug}/projects/{project_id}/issues/
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+### Body
+
+<ParamField body="name" type="string" required></ParamField>

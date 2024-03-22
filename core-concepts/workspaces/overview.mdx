@@ -1,0 +1,35 @@
+---
+title: Overview
+description: Workspaces in Plane are where you can access all of your projects which contain including issues, cycles, and modules. Everything is organized within a workspace. To help you understand, you can think of a workspace as similar to a server on Discord or an organization on Slack, where you can bring your entire team together to work.
+---
+
+### Creating workspace
+
+If you are a first-time user who has signed up for Plane, you will create a new workspace for your team during the onboarding process.
+<Frame> ![Create workspace](/images/workspaces/create-workspace.png)</Frame>
+
+
+<Tip>On Plane cloud and self-hosted versions, the workspace URLs (also known as slugs) must be unique. We allow users to have the same organization names, but the URLs must still be unique to ensure a better experience.</Tip>
+
+If you are a team member or contributor and are invited to a workspace, you do not need to have your own workspace. Instead, after accepting the invitation, you will be redirected directly to the workspace you were invited to.
+
+### Workspace attributes
+A workspace comprises projects and members.
+
+A project allows you to create issues, assign tasks to members, and advance in Plane. Projects serve as the cornerstone for all activities within the product. If you envision your organization as NASA, each mission can be likened to a project. [Learn more here.](/core-concepts/projects.mdx)
+
+Members added to the workspace may include your employees, collaborators, managers, or executives. Each member must be assigned a role upon addition to the workspace. [Explore the roles and invitation process here.](/core-concepts/workspaces/members)
+### Accessing workspace settings
+To add members, integrations, or import data, navigate to workspace settings. Click on the workspace name and select "Settings" from the dropdown menu to access workspace settings.
+<Frame>![workspace-settings](/images/workspaces/workspace-settings.png)</Frame>
+### Integrations and importing data
+You can link your workspace to integrations such as [Github](/plane-integrations/github) and [Slack](/plane-integrations/slack) to receive notifications regarding new issues or modifications to existing ones. Additionally, you can import issues into Plane using our [JIRA](/plane-importers/jira-imp.mdx) and [Github](/plane-importers/github-imp.mdx) importers by configuring them within the workspace.
+### Switching between workspaces
+
+When working with multiple organizations or teams, you can switch between them using the workspace menu on the left sidebar. Here, you can find all the workspaces you've created or joined and switch between them anytime, as long as they are linked to your email. In the future, we plan to allow logging into multiple workspaces with different emails and improve the overall experience.
+
+### Delete a workspace
+
+Only workspace owners have the ability to delete a workspace, these options can be found under the workspace settings.
+
+<Tip>If a workspace is deleted, all of its content, issues, cycles, and modules will also be deleted. Currently, Plane does not offer a automatic backup service on cloud or self-hosted versions, but it is planned on our roadmap.</Tip>

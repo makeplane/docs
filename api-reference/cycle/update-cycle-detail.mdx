@@ -1,0 +1,17 @@
+---
+title: Update cycle details
+description: Updates the details of a cycle
+api: PATCH /api/v1/workspaces/{slug}/projects/{project_id}/cycles/{cycle_id}
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+<ParamField path="cycle_id" type="string" required></ParamField>
+
+### Body
+
+<ParamField body="name" type="string" required></ParamField>

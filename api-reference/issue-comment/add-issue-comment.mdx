@@ -1,0 +1,17 @@
+---
+title: Add issue comment
+description: Adds a comment to an issue
+api: POST /api/v1/workspaces/{slug}/projects/{project_id}/issues/{issue_id}/comments/
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+<ParamField path="issue_id" type="string" required></ParamField>
+
+### Body
+
+<ParamField body="comment_html" type="string" required></ParamField>

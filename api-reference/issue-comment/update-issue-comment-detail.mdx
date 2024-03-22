@@ -1,0 +1,19 @@
+---
+title: Update issue comment details
+description: Gets the details of a comment of an issue
+api: PATCH /api/v1/workspaces/{slug}/projects/{project_id}/issues/{issue_id}/comments/{comment_id}
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+<ParamField path="issue_id" type="string" required></ParamField>
+
+<ParamField path="comment_id" type="string" required></ParamField>
+
+### Body
+
+<ParamField body="comment_html" type="string" required></ParamField>

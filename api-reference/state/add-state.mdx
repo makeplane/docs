@@ -1,0 +1,17 @@
+---
+title: Add state
+description: Add a state to the project
+api: POST /api/v1/workspaces/{slug}/projects/{project_id}/states/
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+### Body
+
+<ParamField body="name" type="string" required></ParamField>
+
+<ParamField body="color" type="string" required></ParamField>

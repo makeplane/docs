@@ -1,0 +1,19 @@
+---
+title: Add module issue
+description: Adds an issue in a module
+api: POST /api/v1/workspaces/{slug}/projects/{project_id}/modules/{module_id}/module-issues/
+---
+
+### Path parameters
+
+<ParamField path="slug" type="string" required></ParamField>
+
+<ParamField path="project_id" type="string" required></ParamField>
+
+<ParamField path="module_id" type="string" required></ParamField>
+
+### Body
+
+<ParamField body="name" type="string" required></ParamField>
+
+<ParamField body="issues" type="list" required></ParamField>
