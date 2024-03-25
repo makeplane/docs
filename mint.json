@@ -141,7 +141,7 @@
           "pages": [
             "api-reference/project/overview",
             "api-reference/project/add-project",
-            "api-reference/project/get-projects",
+            "api-reference/project/list-projects",
             "api-reference/project/get-project-detail",
             "api-reference/project/update-project-detail",
             "api-reference/project/delete-project"
@@ -152,7 +152,7 @@
           "pages": [
             "api-reference/state/overview",
             "api-reference/state/add-state",
-            "api-reference/state/get-states",
+            "api-reference/state/list-states",
             "api-reference/state/get-state-detail",
             "api-reference/state/update-state-detail",
             "api-reference/state/delete-state"
@@ -163,7 +163,7 @@
           "pages": [
             "api-reference/label/overview",
             "api-reference/label/add-label",
-            "api-reference/label/get-labels",
+            "api-reference/label/list-labels",
             "api-reference/label/get-label-detail",
             "api-reference/label/update-label-detail",
             "api-reference/label/delete-label"
@@ -174,7 +174,7 @@
           "pages": [
             "api-reference/link/overview",
             "api-reference/link/add-link",
-            "api-reference/link/get-links",
+            "api-reference/link/list-links",
             "api-reference/link/get-link-detail",
             "api-reference/link/update-link-detail",
             "api-reference/link/delete-link"
@@ -185,7 +185,7 @@
           "pages": [
             "api-reference/issue/overview",
             "api-reference/issue/add-issue",
-            "api-reference/issue/get-issues",
+            "api-reference/issue/list-issues",
             "api-reference/issue/get-issue-detail",
             "api-reference/issue/update-issue-detail",
             "api-reference/issue/delete-issue"
@@ -195,7 +195,7 @@
           "group": "Issue activity",
           "pages": [
             "api-reference/issue-activity/overview",
-            "api-reference/issue-activity/get-issue-activities",
+            "api-reference/issue-activity/list-issue-activities",
             "api-reference/issue-activity/get-issue-activity-detail"
           ]
         },
@@ -204,7 +204,7 @@
           "pages": [
             "api-reference/issue-comment/overview",
             "api-reference/issue-comment/add-issue-comment",
-            "api-reference/issue-comment/get-issue-comments",
+            "api-reference/issue-comment/list-issue-comments",
             "api-reference/issue-comment/get-issue-comment-detail",
             "api-reference/issue-comment/update-issue-comment-detail",
             "api-reference/issue-comment/delete-issue-comment"
@@ -215,7 +215,7 @@
           "pages": [
             "api-reference/module/overview",
             "api-reference/module/add-module",
-            "api-reference/module/get-modules",
+            "api-reference/module/list-modules",
             "api-reference/module/get-module-detail",
             "api-reference/module/update-module-detail",
             "api-reference/module/delete-module"
@@ -226,7 +226,7 @@
           "pages": [
             "api-reference/module-issue/overview",
             "api-reference/module-issue/add-module-issue",
-            "api-reference/module-issue/get-module-issues",
+            "api-reference/module-issue/list-module-issues",
             "api-reference/module-issue/delete-module-issue"
           ]
         },
@@ -235,7 +235,7 @@
           "pages": [
             "api-reference/cycle/overview",
             "api-reference/cycle/add-cycle",
-            "api-reference/cycle/get-cycles",
+            "api-reference/cycle/list-cycles",
             "api-reference/cycle/get-cycle-detail",
             "api-reference/cycle/update-cycle-detail",
             "api-reference/cycle/delete-cycle"
@@ -246,7 +246,7 @@
           "pages": [
             "api-reference/cycle-issue/overview",
             "api-reference/cycle-issue/add-cycle-issue",
-            "api-reference/cycle-issue/get-cycle-issues",
+            "api-reference/cycle-issue/list-cycle-issues",
             "api-reference/cycle-issue/delete-cycle-issue"
           ]
         },
@@ -255,7 +255,7 @@
           "pages": [
             "api-reference/inbox-issue/overview",
             "api-reference/inbox-issue/add-inbox-issue",
-            "api-reference/inbox-issue/get-inbox-issues",
+            "api-reference/inbox-issue/list-inbox-issues",
             "api-reference/inbox-issue/get-inbox-issue-detail",
             "api-reference/inbox-issue/update-inbox-issue-detail",
             "api-reference/inbox-issue/delete-inbox-issue"
