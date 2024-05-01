@@ -40,6 +40,10 @@
     {
       "name": "API Reference",
       "url": "api-reference"
+    },
+    {
+      "name": "Plane one",
+      "url":"plane-one"
     }
   ],
   "navigation": [
@@ -266,6 +270,20 @@
     {
       "group": "Webhooks",
       "pages": ["webhooks/intro-webhooks"]
+    },
+    {
+      "group": "Plane one",
+      "pages":[
+        "plane-one/introduction",
+        {
+          "group": "Self-host",
+          "pages":[
+            "plane-one/self-host/overview",
+            "plane-one/self-host/guides",
+            "plane-one/self-host/plane-cli"
+          ]
+        }
+      ]
     }
   ],
   "footerSocials": {
