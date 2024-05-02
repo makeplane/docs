@@ -274,13 +274,36 @@
     {
       "group": "Plane one",
       "pages":[
-        "plane-one/introduction",
+        "plane-one/introduction"
+      ]
+    },
+    {
+      "group": "Self-host",
+      "pages":[
+        "plane-one/self-host/overview",
         {
-          "group": "Self-host",
+          "group":"Methods",
           "pages":[
-            "plane-one/self-host/overview",
-            "plane-one/self-host/guides",
-            "plane-one/self-host/plane-cli"
+            "plane-one/self-host/methods/one-command",
+            "plane-one/self-host/methods/kubernetes"
+            
+          ]
+        },
+        {
+          "group":"Tutorials",
+          "pages":[
+            "plane-one/self-host/tutorials/aws",
+            "plane-one/self-host/tutorials/azure",
+            "plane-one/self-host/tutorials/digitalocean",
+            "plane-one/self-host/tutorials/gcp"
+          ]
+        },
+        {
+          "group":"Manage",
+          "pages":[
+            "plane-one/self-host/manage/prime-client",
+            "plane-one/self-host/manage/prime-cli",
+            "plane-one/self-host/manage/advanced-deploy"
           ]
         }
       ]

@@ -1,0 +1,45 @@
+---
+title: One command
+---
+Deploy plane one with a single command across any cloud provider console.
+
+## Pre-requisites
+<AccordionGroup>
+  <Accordion title="A virtual machine with at-least 2vCPUs and 4GB RAM.">
+    You can choose a virtual machine from any cloud provider of your choice. Just make sure they have atleast 2vCPUs and 4GB of RAM. 
+    We only support the following operating systems
+    - Ubuntu
+    - Debian
+    - CentOS
+    - Amazon linux 2023
+    - Amazon linux 2
+
+  </Accordion>
+
+  <Accordion title="A publicly listed domain managed by you.">
+    We will also need a public domain which is pointed to the IP virtual machine you have chosen. Currently Plane one doesn't support localhost or IP based installations.
+  </Accordion>
+</AccordionGroup>
+
+## Steps
+Log in to Virtual Machine as per the command provided by the cloud providers terminal and then run the below command by replacing YOUR-LICENSE-KEY with the license key you purchased.
+
+```
+curl -fsSL https://prime.plane.so/install/YOUR-LICENSE-KEY | sh -
+```
+This command will do the following
+- Validates the license key
+- Based on the OS and CPU Architecture, downloads our command line interface(Prime cli) to setup and manage your plane one instance.
+- Start the prime-cli setup command with required parameters.
+
+Once Prime cli is installed, then it performs the following steps
+- Ask user for the domain name (to be) linked to the license. <b>Domain Name cannot be modified once linked to the license.</b>
+- Select a way of installation, express and advanced. Choose express if you don't want to configure any additional details for your setup.
+- Install Docker and required plugins.
+- Downloads the License File.
+- Downloads the required assets to install and run Plane instance ie docker-compose, plane.env, docker images.
+- Starts Plane one on the connected domain.
+
+Once complete, you can simply open the domain you have configured in the setup of Plane one and start using Plane.
+
+<Tip> You can also follow along with our in-depth guides for [AWS](plane-one/self-host/tutorials/aws), [Azure](plane-one/self-host/tutorials/azure), [Google cloud](plane-one/self-host/tutorials/gcp) and [DigitalOcean](plane-one/self-host/tutorials/digitalocean). </Tip>
