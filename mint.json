@@ -290,19 +290,10 @@
           ]
         },
         {
-          "group":"Tutorials",
-          "pages":[
-            "plane-one/self-host/tutorials/aws",
-            "plane-one/self-host/tutorials/azure",
-            "plane-one/self-host/tutorials/digitalocean",
-            "plane-one/self-host/tutorials/gcp"
-          ]
-        },
-        {
           "group":"Manage",
           "pages":[
-            "plane-one/self-host/manage/prime-client",
             "plane-one/self-host/manage/prime-cli",
+            "plane-one/self-host/manage/prime-client",
             "plane-one/self-host/manage/advanced-deploy"
           ]
         }
