@@ -102,7 +102,8 @@
           "group":"Issues",
           "pages":[
             "core-concepts/issues/overview",
-            "core-concepts/issues/properties"
+            "core-concepts/issues/properties",
+            "core-concepts/issues/visualise_filter"
           ]
         },
         "core-concepts/cycles",
@@ -115,6 +116,7 @@
             "core-concepts/pages/editor-blocks"
           ]
         },
+        "core-concepts/inbox",
         "core-concepts/analytics",
         "core-concepts/deploy",
         "core-concepts/power-k"
