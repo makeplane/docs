@@ -1,0 +1,133 @@
+---
+title: Inbox
+---
+
+Inbox is a Plane-only feature that lets project members (`guests` and `viewers`) create issues and project admins (`admin` and `members`) add issues inside a project. Inbox can take bug reports, feature or service requests, or raise a ticket by stakeholders, customers, or clients. Issues created in the inbox can then be accepted to move them to the Project’s workflow. Inbox functions at the project level and is toggled off by default. It can be enabled from the `Features` tab under project settings.
+<video controls>
+  <source src="/images/inbox/Enable Inbox feature.mp4" type="video/mp4"/>
+</video>
+## Create Issue in Inbox
+
+Users with guest and above roles can create issues in the Inbox. To create an issue, 
+
+- Head to Inbox from the project sidebar.
+- Click on the ‘Add Issue’ button at the top right corner.
+- Enter all the details that apply. Issue title, description, and properties.
+<video controls>
+  <source src="/images/inbox/Create issue in Inbox.mp4" type="video/mp4"/>
+</video>
+## Properties in an Inbox issue
+
+For an issue in the inbox, you can choose to assign the following properties,
+
+1. State - If the issue in the inbox is still being triaged, you can assign it to the proper state to help you identify the progress before moving it to your project.
+2. Assignees - If the issue needs to be triaged or prioritized by a specific member in your team, you can simply assign it to them
+3. Priority - Helps you or the issue creator set the priority of the issue to align the expectations on how quickly the issue should be acted upon.
+4. Due dates - You can also track when the issue needs to be prioritized or triaged by adding due dates.
+5. Labels - Helps you categorize issues using the same labels available in the project; you can also create a new label from here to categorize issues.  
+
+A `guest` or `viewer` can assign this properties at the time of creating an inbox issue. However, these properties can be overridden by project `admin` or `member` later.
+<Frame>
+  <img src="/images/inbox/inbox-properties.png" />
+</Frame>
+## Action for an Inbox issue
+
+When a project member creates an issue, it is added to the ‘Pending’ state. An Inbox issue can then be accepted, declined, snoozed for a later time, or marked as duplicate.
+
+- Accepting an Issue
+    
+    You can accept a ‘pending’ issue, after which the state changes to ‘backlog’ (or the default state set for that project.) This can be done by clicking on the ‘accept’ button present on any pending issue. This will open a modal where you can change the issue details before moving it to your project.
+    <video controls>
+        <source src="/images/inbox/Accept inbox issue.mp4" type="video/mp4"/>
+    </video>
+- Declining an Issue
+    
+    If the issue is not relevant to your project, you can chose to decline it. An issue can be declined by clicking on ‘decline’ button present on any pending issue. Once the issue is declined, it ends up in the cancelled state of your project.
+    <video controls>
+        <source src="/images/inbox/Declining inbox issue.mp4" type="video/mp4"/>
+    </video>
+- Snoozing an Issue
+    
+    An issue can be snoozed to review it at a later time. Steps to snooze an issue:
+    
+    1. Open a pending issue
+    2. Hover over to the ellipses in the top right corner
+    3. Select snooze option
+    4. Select a date 
+    
+    The issue is now snoozed and can be accessed from the filters drop-down.
+    <Frame>
+        <img src="/images/inbox/snooze-issue.png" />
+    </Frame>
+- Marking an issue as Duplicate:
+    
+    In cases where a similar issue exists in your project, an inbox issue can be marked as duplicate. 
+    
+    Steps to mark an issue as duplicate:
+    
+    1. Open a pending issue
+    2. Hover over to the ellipses in the top right corner
+    3. Select mark as duplicate option
+    4. Select an issue of which the current issue is the duplicate
+    
+    The issue is now declined with a ‘duplicate’ label on it.
+    <Frame>
+        <img src="/images/inbox/mark-as-duplicate.png" />
+    </Frame>
+
+## Open and closed issues
+
+You can view Open or closed issues on the Inbox sidebar.
+
+‘Pending’ or ‘Snoozed’ issues are considered Open issues. Further action can take place on such issues. Whereas ‘Accepted,’ ‘Declined,’ and ‘Duplicate’ are closed issues. No further action is required on closed issues.
+<img width="300" noZoom src="/images/inbox/inbox-tabs.png" />
+
+
+## Sorting and Filtering
+
+Like issues, sorting and filtering can create a focused view in an Inbox. Filters and sorting can be applied to the list of issues simultaneously. 
+
+**Filtering inbox issues**
+
+Filters can be assigned from the filters dropdown available on the left-hand side of the Inbox page. Inbox issues can be filtered by issue status, state, priority, assignee, created by, labels, created date, and last updated date.
+
+**Sorting inbox issues**
+
+Next to filters, you can use the sort drop-down to arrange issues sequentially. Issues can be sorted by date created, date updated, and issue ID in ascending or descending order.
+
+<video controls>
+  <source src="/images/inbox/Filter and sorting in Inbox issues.mp4" type="video/mp4"/>
+</video>
+
+## Additional features
+
+- Inbox issue description just like the project issue description has a rich text editor that allows you to format text, attach pictures, links and files, or add tables and dividers.
+    <Frame>
+        <img src="/images/inbox/inbox-description-box.png" />
+    </Frame>
+- Inbox has an activity and comments tab to know the status and collect feedback from users and customers.
+    
+    **Activity tab**
+    
+    All the changes made to the issue can be tracked in real time from the activity tab.
+    <Frame>
+        <img src="/images/inbox/inbox-activity.png" />
+    </Frame>
+    **Comments**
+
+        - Private and public comments
+    
+            - Private and public comments will enable you to communicate internally and externally. Comments can be made private and public at the time of creation. A private comment can be made public after it has been posted and vice-versa from the ellipses menu.
+            <Frame>
+                <img src="/images/inbox/inbox-comments.png" />
+            </Frame>
+        - Rich text editor, reactions, and mentions
+
+            - The comment section has a rich text editor (just like the issue description), reactions with emojis, and mentions your teammates to communicate.
+            <Frame>
+                <img src="/images/inbox/RTE-reactions-and-mentions.png" />
+            </Frame>
+- You can review your pending requests in Inbox sequentially using 🔼 or 🔽 button.
+    <Frame>
+        <img src="/images/inbox/inbox-navigate.png" />
+    </Frame>
