@@ -284,8 +284,7 @@
         {
           "group":"Methods",
           "pages":[
-            "plane-one/self-host/methods/one-command",
-            "plane-one/self-host/methods/kubernetes"
+            "plane-one/self-host/methods/one-command"
             
           ]
         },

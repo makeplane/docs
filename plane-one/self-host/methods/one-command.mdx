@@ -7,13 +7,15 @@ Deploy plane one with a single command across any cloud provider console.
 <AccordionGroup>
   <Accordion title="A virtual machine with at-least 2vCPUs and 4GB RAM.">
     You can choose a virtual machine from any cloud provider of your choice. Just make sure they have atleast 2vCPUs and 4GB of RAM. 
-    We only support the following operating systems
+    
+  </Accordion>
+  <Accordion title = "x64 CPU and Linux OS">
+  Your CPUs are x64 AKA AMD 64 or AArch 64 AKA ARM 64. We only support the following operating systems
     - Ubuntu
     - Debian
     - CentOS
     - Amazon linux 2023
     - Amazon linux 2
-
   </Accordion>
 
   <Accordion title="A publicly listed domain managed by you.">
@@ -22,24 +24,22 @@ Deploy plane one with a single command across any cloud provider console.
 </AccordionGroup>
 
 ## Steps
-Log in to Virtual Machine as per the command provided by the cloud providers terminal and then run the below command by replacing YOUR-LICENSE-KEY with the license key you purchased.
-
-```
-curl -fsSL https://prime.plane.so/install/YOUR-LICENSE-KEY | sh -
-```
-This command will do the following
-- Validates the license key
-- Based on the OS and CPU Architecture, downloads our command line interface(Prime cli) to setup and manage your plane one instance.
-- Start the prime-cli setup command with required parameters.
-
-Once Prime cli is installed, then it performs the following steps
-- Ask user for the domain name (to be) linked to the license. <b>Domain Name cannot be modified once linked to the license.</b>
-- Select a way of installation, express and advanced. Choose express if you don't want to configure any additional details for your setup.
-- Install Docker and required plugins.
-- Downloads the License File.
-- Downloads the required assets to install and run Plane instance ie docker-compose, plane.env, docker images.
-- Starts Plane one on the connected domain.
+1. `ssh` into your machine as the root user (or user with sudo access) per the norms of your hosting provider.
+2. Run the command below with the last twelve characters being your license key.
+<Tip>The easiest way to get this command is from the customer portal where you will get your license key from. Each entry on the portal shows the command bound to the license key, so you could just copy it from there.</Tip>
+  ```
+    curl -fsSL https://prime.plane.so/install/YOUR-LICENSE-KEY | sh -
+  ```
+Successfully running that command,
+1. Validates the license key
+2. Downloads prime-cli per your OS and your CPU's architecture and saves it to the /usr/bin directory.
+3. Runs the prime-cli setup command with necessary parameters. which in turn -
+    1. Asks you for the domain to link the license to. Choose this carefully. The domain linked to the license can't be changed later.
+    2. Asks you to setup Plane in express or advanced mode. Express is the fastest way to setup Plane. Advanced setup lets you configure all services on your own.
+    2. Installs Docker and its necessary plugins.
+    3. Downloads the license file.
+    4. Downloads docker-compose, plane.env, and the images for the microservices that will run in the Docker network.
+    5. Downloads the required docker images.
+    6. Starts the Plane Services.
 
 Once complete, you can simply open the domain you have configured in the setup of Plane one and start using Plane.
-
-<Tip> You can also follow along with our in-depth guides for [AWS](plane-one/self-host/tutorials/aws), [Azure](plane-one/self-host/tutorials/azure), [Google cloud](plane-one/self-host/tutorials/gcp) and [DigitalOcean](plane-one/self-host/tutorials/digitalocean). </Tip>
