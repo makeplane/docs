@@ -42,7 +42,7 @@
       "url": "api-reference"
     },
     {
-      "name": "Plane one",
+      "name": "Plane One",
       "url":"plane-one"
     }
   ],
@@ -272,7 +272,7 @@
       "pages": ["webhooks/intro-webhooks"]
     },
     {
-      "group": "Plane one",
+      "group": "Plane One",
       "pages":[
         "plane-one/introduction"
       ]
