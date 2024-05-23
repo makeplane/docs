@@ -40,6 +40,10 @@
     {
       "name": "API Reference",
       "url": "api-reference"
+    },
+    {
+      "name": "Plane One",
+      "url":"plane-one"
     }
   ],
   "navigation": [
@@ -268,6 +272,33 @@
     {
       "group": "Webhooks",
       "pages": ["webhooks/intro-webhooks"]
+    },
+    {
+      "group": "Plane One",
+      "pages":[
+        "plane-one/introduction"
+      ]
+    },
+    {
+      "group": "Self-host",
+      "pages":[
+        "plane-one/self-host/overview",
+        {
+          "group":"Methods",
+          "pages":[
+            "plane-one/self-host/methods/one-command",
+            "plane-one/self-host/methods/kubernetes"
+            
+          ]
+        },
+        {
+          "group":"Manage",
+          "pages":[
+            "plane-one/self-host/manage/prime-cli",
+            "plane-one/self-host/manage/prime-client"
+          ]
+        }
+      ]
     }
   ],
   "footerSocials": {
