@@ -284,7 +284,8 @@
         {
           "group":"Methods",
           "pages":[
-            "plane-one/self-host/methods/one-command"
+            "plane-one/self-host/methods/one-command",
+            "plane-one/self-host/methods/kubernetes"
             
           ]
         },
@@ -292,8 +293,7 @@
           "group":"Manage",
           "pages":[
             "plane-one/self-host/manage/prime-cli",
-            "plane-one/self-host/manage/prime-client",
-            "plane-one/self-host/manage/advanced-deploy"
+            "plane-one/self-host/manage/prime-client"
           ]
         }
       ]
