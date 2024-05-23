@@ -16,9 +16,7 @@ Best way to start is to create EC2 machine on AWS. It must of minimum **t3.mediu
     Run the below command to install docker engine.  
 
     ```bash 
-    curl -fsSL https://get.docker.com -o install-docker.sh
-
-    sudo sh install-docker.sh
+    curl -fsSL https://get.docker.com | sh -
     ```
 #### Option 2 - Using Docker Desktop 
 **For Mac:**
@@ -35,18 +33,18 @@ Best way to start is to create EC2 machine on AWS. It must of minimum **t3.mediu
     
     After installation, you can verify the installation by opening a terminal (Command Prompt on Windows, Terminal app on Mac) and running the command `docker --version`. This should display the installed version of Docker.
 
-### Installing Plane
+## Installing Plane
 
 Installing Plane is a very easy and minimal step process.
 
-#### Prerequisite
+### Prerequisite
 
 -   Docker installed and running
 -   OS with bash scripting enabled (Ubuntu, Linux AMI, macos). Windows systems need to have [gitbash](https://git-scm.com/download/win)
 -   User context used must have access to docker services. In most cases, use sudo su to switch as root user
 -   Use the terminal (or gitbash) window to run all the future steps
 
-#### Downloading Latest Stable Release
+### Downloading Latest Stable Release
 
 ```bash 
 mkdir plane-selfhost
@@ -72,7 +70,7 @@ chmod +x setup.sh
         ```
 </Accordion>
 
-#### Proceed with setup
+### Proceed with setup
 
 Above steps will set you ready to install and start Plane services.
 
@@ -82,18 +80,17 @@ This will prompt you with the below options.
 
 ```list
 Select a Action you want to perform:
-   1) Install
+   1) Install (arm64)
    2) Start
    3) Stop
    4) Restart
    5) Upgrade
-   6) Exit
-
+   6) View Logs
+   7) Backup Data
+   8) Exit
 Action [2]: 1
 
 ```
-
-
 For the 1st time setup, type "1" as action input.
 
 This will create a folder `plane-app` or `plane-app-preview` (in case of preview deployment) and will download 2 files inside that
@@ -105,32 +102,32 @@ Again the `options [1-6]` will be popped up and this time hit `6` to exit.
 
 * * *
 
-#### Continue with setup - Environment Settings
+### Continue with setup - Environment Settings
 
 Before proceeding, we suggest you to review `.env` file and set the values. Below are the most import keys you must refer to. _You can use any text editor to edit this file_.
 
-> _**"`NGINX_PORT` - This is default set to `80`. Make sure the port you choose to use is not preoccupied. (e.g `NGINX_PORT=8080`)"**_
+- `NGINX_PORT`: This is default set to `80`. Make sure the port you choose to use is not preoccupied. (e.g `NGINX_PORT=8080`)
 
-> _**"`WEB_URL` - This is default set to `http://localhost`. Change this to the FQDN you plan to use along with NGINX\_PORT (eg. `https://plane.example.com:8080` or `http://[IP-ADDRESS]:8080`)"**_
+- `WEB_URL`: This is default set to `http://localhost`. Change this to the FQDN you plan to use along with NGINX\_PORT (eg. `https://plane.example.com:8080` or `http://[IP-ADDRESS]:8080`)
 
-> _**"`CORS_ALLOWED_ORIGINS` - This is default set to `http://localhost`. Change this to the FQDN you plan to use along with NGINX\_PORT (eg. `https://plane.example.com:8080` or `http://[IP-ADDRESS]:8080`)"**_
-
-There are many other settings you can play with, but we suggest you configure `EMAIL SETTINGS` as it will enable you to invite your teammates onto the platform.
+- `CORS_ALLOWED_ORIGINS`: This is default set to `http://localhost`. Change this to the FQDN you plan to use along with NGINX\_PORT (eg. `https://plane.example.com:8080` or `http://[IP-ADDRESS]:8080`)
 
 * * *
 
-#### Continue with setup - Start server
+## Continue with setup - Start server
 
 Let's again run the `./setup.sh` command. You will again be prompted with the below options. This time select `2` to start the services
 
 ```list
-Select an Action you want to perform:
-   1) Install
+Select a Action you want to perform:
+   1) Install (x86_64)
    2) Start
    3) Stop
    4) Restart
    5) Upgrade
-   6) Exit
+   6) View Logs
+   7) Backup Data
+   8) Exit
 
 Action [2]: 2
 
@@ -150,20 +147,22 @@ You have successfully self hosted `Plane` instance. Access the application by go
 
 * * *
 
-#### Stopping the server
+## Stopping the server
 
 In case you want to make changes to `.env` variables, we suggest you to stop the services before doing that.
 
 Let's again run the `./setup.sh` command. You will again be prompted with the below options. This time select `3` to stop the services
 
 ```
-Select an Action you want to perform:
-   1) Install
+Select a Action you want to perform:
+   1) Install (x86_64)
    2) Start
    3) Stop
    4) Restart
    5) Upgrade
-   6) Exit
+   6) View Logs
+   7) Backup Data
+   8) Exit
 
 Action [2]: 3
 
@@ -176,7 +175,7 @@ If all goes well, you must see something like this
 
 * * *
 
-#### Restarting the server
+## Restarting the server
 
 In case you want to make changes to `.env` variables, without stopping the server or you noticed some abnormalities in services, you can restart the services with RESTART option.
 
@@ -184,12 +183,14 @@ Let's again run the `./setup.sh` command. You will again be prompted with the be
 
 ```
 Select a Action you want to perform:
-   1) Install
+   1) Install (x86_64)
    2) Start
    3) Stop
    4) Restart
    5) Upgrade
-   6) Exit
+   6) View Logs
+   7) Backup Data
+   8) Exit
 
 Action [2]: 4
 
@@ -202,20 +203,23 @@ If all goes well, you must see something like this
 
 * * *
 
-#### Upgrading Plane version (v0.14.0 onwards)
+## Upgrading Plane version
 
+<Note> This upgrade guide is for v0.14.0 and above. If your Plane version is v0.13.2 than v0.14.0 then follow the guide [here](#upgrading-from-v0-13-2-to-v0-14-0) to get to v0.14.0 and then continue with further upgrades.</Note>
 It is always advised to keep Plane up to date with the latest release.
 
 Lets again run the `./setup.sh` command. You will again be prompted with the below options. This time select `5` to upgrade the release.
 
 ```
 Select a Action you want to perform:
-   1) Install
+   1) Install (x86_64)
    2) Start
    3) Stop
    4) Restart
    5) Upgrade
-   6) Exit
+   6) View Logs
+   7) Backup Data
+   8) Exit
 
 Action [2]: 5
 
@@ -234,8 +238,8 @@ Once done, choose `6` to exit from prompt.
 
 Once done with making changes in `.env` file, jump on to `Start Server`
 
-Upgrading from v0.13.2 to v0.14.x
----------------------------------
+#### Upgrading from v0.13.2 to v0.14.0
+
 
 This is a one time activity for users who are upgrading from v0.13.2 to v0.14.0
 
@@ -312,3 +316,116 @@ In case the suffixes are wrong or the mentioned volumes are not found, you will 
 In case of successful migration, it will be a silent exit without error.
 
 Now it's time to restart v0.14.0 setup.
+
+
+***
+## View Logs
+There would a time when you might want to check what is happening inside the API, Worker or any other container.
+
+Lets again run the ./setup.sh command. You will again be prompted with the below options. This time select `6` to view logs.
+```
+Select a Action you want to perform:
+   1) Install (x86_64)
+   2) Start
+   3) Stop
+   4) Restart
+   5) Upgrade
+   6) View Logs
+   7) Backup Data
+   8) Exit
+
+Action [2]: 6
+```
+
+This will further open sub-menu with list of services
+```
+Select a Service you want to view the logs for:
+   1) Web
+   2) Space
+   3) API
+   4) Worker
+   5) Beat-Worker
+   6) Migrator
+   7) Proxy
+   8) Redis
+   9) Postgres
+   10) Minio
+   0) Back to Main Menu
+
+Service: 
+```
+Select any of the service to view the logs e.g. `3`. Expect something similar to this
+```
+api-1  | Waiting for database...
+api-1  | Database available!
+api-1  | Waiting for database migrations to complete...
+api-1  | Waiting for database migrations to complete...
+api-1  | Waiting for database migrations to complete...
+api-1  | Waiting for database migrations to complete...
+api-1  | Waiting for database migrations to complete...
+api-1  | Waiting for database migrations to complete...
+api-1  | Waiting for database migrations to complete...
+api-1  | No migrations Pending. Starting processes ...
+api-1  | Instance registered
+api-1  | ENABLE_SIGNUP loaded with value from environment variable.
+api-1  | ENABLE_EMAIL_PASSWORD loaded with value from environment variable.
+api-1  | ENABLE_MAGIC_LINK_LOGIN loaded with value from environment variable.
+api-1  | GOOGLE_CLIENT_ID loaded with value from environment variable.
+api-1  | GITHUB_CLIENT_ID loaded with value from environment variable.
+api-1  | GITHUB_CLIENT_SECRET loaded with value from environment variable.
+api-1  | EMAIL_HOST loaded with value from environment variable.
+api-1  | EMAIL_HOST_USER loaded with value from environment variable.
+api-1  | EMAIL_HOST_PASSWORD loaded with value from environment variable.
+api-1  | EMAIL_PORT loaded with value from environment variable.
+api-1  | EMAIL_FROM loaded with value from environment variable.
+api-1  | EMAIL_USE_TLS loaded with value from environment variable.
+api-1  | EMAIL_USE_SSL loaded with value from environment variable.
+api-1  | OPENAI_API_KEY loaded with value from environment variable.
+api-1  | GPT_ENGINE loaded with value from environment variable.
+api-1  | UNSPLASH_ACCESS_KEY loaded with value from environment variable.
+api-1  | Checking bucket...
+api-1  | Bucket 'uploads' does not exist. Creating bucket...
+api-1  | Bucket 'uploads' created successfully.
+api-1  | Public read access policy set for bucket 'uploads'.
+api-1  | Cache Cleared
+api-1  | [2024-05-02 03:56:01 +0000] [1] [INFO] Starting gunicorn 21.2.0
+api-1  | [2024-05-02 03:56:01 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+api-1  | [2024-05-02 03:56:01 +0000] [1] [INFO] Using worker: uvicorn.workers.UvicornWorker
+api-1  | [2024-05-02 03:56:01 +0000] [25] [INFO] Booting worker with pid: 25
+api-1  | [2024-05-02 03:56:03 +0000] [25] [INFO] Started server process [25]
+api-1  | [2024-05-02 03:56:03 +0000] [25] [INFO] Waiting for application startup.
+api-1  | [2024-05-02 03:56:03 +0000] [25] [INFO] ASGI 'lifespan' protocol appears unsupported.
+api-1  | [2024-05-02 03:56:03 +0000] [25] [INFO] Application startup complete.
+```
+To exit this, use `CTRL+C` and then you will land on to the main-menu with the list of actions.
+
+Similarly, you can view the logs of other services.
+
+***
+## Backup Data
+There would a time when you might want to backup your data from docker volumes to external storage like S3 or drives.
+
+Lets again run the ./setup.sh command. You will again be prompted with the below options. This time select `7` to back data up.
+```
+Select a Action you want to perform:
+   1) Install (x86_64)
+   2) Start
+   3) Stop
+   4) Restart
+   5) Upgrade
+   6) View Logs
+   7) Backup Data
+   8) Exit
+
+Action [2]: 7
+```
+In response, you can find the backup folder
+```
+Backing Up plane-app_pgdata
+Backing Up plane-app_redisdata
+Backing Up plane-app_uploads
+
+Backup completed successfully. Backup files are stored in /....../plane-app/backup/20240502-1120
+```
+This backup is stored in your machine and you can then further copy it to any storage service.
+**** 
