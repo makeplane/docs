@@ -1,23 +1,14 @@
 ---
 title: Docker
 ---
-Plane One is our first licensed self-hosted edition for growing teams. One unlocks security, governance, and project management features scale-ups need to manage their instance and projects better.
-
-### Getting your Plane One license
-
-If you have already purchased a Plane One license, go to app.plane.so/one and use the same email address you used at the time of purchase to log in.
-
-To find the email address used, look for an email from `@plane.so` or Stripe with the subject, `Your One license`.
-
-If you have successfully logged in, you should see a list of your licenses. Clicking any will show you your license info and the command you should copy to start deploying One.
-
-Deploy plane one with a single command across any cloud provider console.
-
-## Deploying Plane One
-### Pre-requisites
-- You have a virtual machine with at-least 2 vCPUs and 4 GB RAM
-- Your CPUs are x64 AKA AMD 64 or AArch 64 AKA ARM 64.
-- You are running Ubuntu, Debian, or CentOS. For Amazon Linux 2 or Linux 2023, click here.
+Plane One supports a standard Docker-based installation via our own command-line interface called the Prime CLI.
+## Pre-requisites
+- A Plane One license
+If you don't have a license, [get it here](https://plane.so/one).
+- A virtual or on-prem machine with at-least 2 vCPUs and 4 GB RAM
+- `x64` AKA `AMD 64` or `AArch 64` AKA `ARM 64` CPUs
+- Ubuntu, Debian, or CentOS
+For Amazon Linux 2 or Linux 2023, click here.
 
 ## Upgrading from Community Edition to One
 
@@ -63,21 +54,27 @@ e.g., `~/ce-backup`
 ## New installations
 1. `ssh` into your machine as the root user (or user with sudo access) per the norms of your hosting provider.
 2. Run the command below with the last twelve characters being your license key.
-```
+<Tip>The easiest way to get this command is from the [customer portal](https://prime.plane.tools ) where you also got your license key. Each entry on the portal shows the command bound to the license key, so you can just copy it from there.</Tip>
+   ```
     curl -fsSL https://prime.plane.so/install/YOUR-LICENSE-KEY | sh -
-  ```
-<Tip>The easiest way to get this command is from the customer portal where you will get your license key from. Each entry on the portal shows the command bound to the license key, so you could just copy it from there.</Tip>
+   ```
   
 Successfully running that command,
 1. Validates the license key
 2. Downloads `prime-cli` per your OS and your CPU's architecture and saves it to the `/usr/bin` directory.
-3. Runs the `prime-cli setup` command with necessary parameters. which in turn -
-    1. Asks you for the domain to link the license to. Choose this carefully. The domain linked to the license can't be changed later.
-    2. Asks you to setup Plane in express or advanced mode. Express is the fastest way to setup Plane. Advanced setup lets you configure all services on your own.
-    2. Installs Docker and its necessary plugins.
-    3. Downloads the license file.
-    4. Downloads `docker-compose`, `plane.env`, and the images for the microservices that will run in the Docker network.
-    5. Downloads the required docker images.
-    6. Starts the Plane Services.
+3. Runs the `prime-cli setup` command with necessary parameters. which in turn
+    1. Asks you for the domain to link the license to
+    Choose this carefully. The domain linked to the license can't be changed later.
+    2. Asks you to setup Plane in Express or Advanced modes
+    Express is the fastest way to setup Plane. Advanced lets you configure all Docker services to your specs.
+    2. Installs Docker and its necessary plugins
+    3. Downloads the license file
+    4. Downloads `docker-compose`, `plane.env`, and the images for the microservices that will run in the Docker network
+    5. Downloads the required docker images
+    6. Starts Plane services
 
-Once complete, you can simply open the domain you have configured in the setup of Plane one and start using Plane.
+Successful installation shows you the domain you entered in `1.` above. Go to that domain to access your Plane app.
+
+---
+# Docker Swarm
+<Tip>Docker Swarm will come soon. Please [reach out to us](mailto:support@plane.so) for updates and to have a quick chat to help us build it better.</Tip>
