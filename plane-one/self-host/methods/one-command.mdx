@@ -1,27 +1,66 @@
 ---
-title: One command
+title: Docker
 ---
-Deploy plane one with a single command across any cloud provider console.
-## Pre-requisites
-<AccordionGroup>
-  <Accordion title="A virtual machine with at-least 2vCPUs and 4GB RAM.">
-    You can choose a virtual machine from any cloud provider of your choice. Just make sure they have atleast 2vCPUs and 4GB of RAM. 
-    
-  </Accordion>
-  <Accordion title = "x64 CPU and Linux OS.">
-  Your CPUs are x64 AKA AMD 64 or AArch 64 AKA ARM 64. We only support the following operating systems
-    - Ubuntu
-    - Debian
-    - CentOS
-    - Amazon linux 2023
-    - Amazon linux 2
-  </Accordion>
+Plane One is our first licensed self-hosted edition for growing teams. One unlocks security, governance, and project management features scale-ups need to manage their instance and projects better.
 
-  <Accordion title="A domain managed by you.">
-    We will also need a public domain which is pointed to the IP of the virtual machine you have chosen. Currently Plane one doesn't support localhost or IP based installations.
-  </Accordion>
-</AccordionGroup>
-## Steps
+### Getting your Plane One license
+
+If you have already purchased a Plane One license, go to app.plane.so/one and use the same email address you used at the time of purchase to log in.
+
+To find the email address used, look for an email from `@plane.so` or Stripe with the subject, `Your One license`.
+
+If you have successfully logged in, you should see a list of your licenses. Clicking any will show you your license info and the command you should copy to start deploying One.
+
+Deploy plane one with a single command across any cloud provider console.
+
+## Deploying Plane One
+### Pre-requisites
+- You have a virtual machine with at-least 2 vCPUs and 4 GB RAM
+- Your CPUs are x64 AKA AMD 64 or AArch 64 AKA ARM 64.
+- You are running Ubuntu, Debian, or CentOS. For Amazon Linux 2 or Linux 2023, click here.
+
+## Upgrading from Community Edition to One
+
+### Backing up your data
+`setup.sh` in the Community Edition now comes with an option to back up your data.
+
+1. Use  `./setup.sh` to open the operator menu and select `7` to backup your Plane data.
+2. When done, your data will be backed up to the folder shown on the screen.
+e.g., `/plane-selfhost/plane-app/backup/20240522-1027`
+3. This folder will contain 3 `tar.gz` files.
+    - `pgdata.tar.gz`
+    - `redisdata.tar.gz`
+    - `uploads.tar.gz`
+4. Copy all the 3 files from the server running the Community Edition to any folder on the server running Plane One **** on any folder of your choice
+e.g., `~/ce-backup`
+
+### Restoring your data to your One instance
+1. Start any command-line interface like Terminal and go into the folder with the back-up files.
+    ```
+    cd ~/ce-backup
+    ```
+2. Copy and paste the script below on Terminal and hit Enter.
+    ```
+    
+      TARGET_DIR=/opt/plane/data
+      sudo mkdir -p $TARGET_DIRfor FILE in *.tar.gz; do
+      if [ -e "$FILE" ]; then
+              tar -xzvf "$FILE" -C "$TARGET_DIR"
+          else
+              echo "No .tar.gz files found in the current directory."
+              exit 1
+          fi
+      done
+
+      mv $TARGET_DIR/pgdata/ $TARGET_DIR/db
+      mv $TARGET_DIR/redisdata/ $TARGET_DIR/redis
+      mkdir -p $TARGET_DIR/minio
+      mv $TARGET_DIR/uploads/ $TARGET_DIR/minio/uploads/
+    ```
+3. This script will extract your Community Edition data and restore it to /opt/plane/data.
+4. Follow the instructions for new installations below.
+
+## New installations
 1. `ssh` into your machine as the root user (or user with sudo access) per the norms of your hosting provider.
 2. Run the command below with the last twelve characters being your license key.
 ```
@@ -31,13 +70,13 @@ Deploy plane one with a single command across any cloud provider console.
   
 Successfully running that command,
 1. Validates the license key
-2. Downloads prime-cli per your OS and your CPU's architecture and saves it to the /usr/bin directory.
-3. Runs the prime-cli setup command with necessary parameters. which in turn -
+2. Downloads `prime-cli` per your OS and your CPU's architecture and saves it to the `/usr/bin` directory.
+3. Runs the `prime-cli setup` command with necessary parameters. which in turn -
     1. Asks you for the domain to link the license to. Choose this carefully. The domain linked to the license can't be changed later.
     2. Asks you to setup Plane in express or advanced mode. Express is the fastest way to setup Plane. Advanced setup lets you configure all services on your own.
     2. Installs Docker and its necessary plugins.
     3. Downloads the license file.
-    4. Downloads docker-compose, plane.env, and the images for the microservices that will run in the Docker network.
+    4. Downloads `docker-compose`, `plane.env`, and the images for the microservices that will run in the Docker network.
     5. Downloads the required docker images.
     6. Starts the Plane Services.
 

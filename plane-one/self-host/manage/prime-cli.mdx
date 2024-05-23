@@ -20,30 +20,30 @@ For more advanced admins that want greater control over their instance, the list
         <Accordion title="Steps to configure your instance">
             - `Listening port`: Specify the port that the built-in reverse proxy will use
 
-            Default value: 80
+                Default value: 80
 
-        - `Max file-upload size`: Specify a size in MBs for how big each file uploaded to your Plane app can be
+            - `Max file-upload size`: Specify a size in MBs for how big each file uploaded to your Plane app can be
 
-            Default value: 5 MB
+                Default value: 5 MB
 
-        - `External Postgres URL`: Specify the URL of your own hosted Postgres if you would like to change the database your Plane app uses.
+            - `External Postgres URL`: Specify the URL of your own hosted Postgres if you would like to change the database your Plane app uses.
     
-            Default database: Postgres 15.5 in the Docker container
+                Default database: Postgres 15.5 in the Docker container
 
-        - `External Redis URL`: Specify the URL of your own hosted REdis if you would like to change the default Redis Plane ships with.
+            - `External Redis URL`: Specify the URL of your own hosted REdis if you would like to change the default Redis Plane ships with.
 
-            Default Redis: Redis 7.2.4
+                Default Redis: Redis 7.2.4
 
-        - `External storage`: Specify your AWS S3 bucket's credentials in the format below to change storage from the default Plane ships with.
-            - AWS Access Key ID
-            - AWS Secret Access Key
-            - AWS S3 Bucket Name
+            - `External storage`: Specify your AWS S3 bucket's credentials in the format below to change storage from the default Plane ships with.
+                - AWS Access Key ID
+                - AWS Secret Access Key
+                - AWS S3 Bucket Name
     
-                Default storage: MinIO
+                    Default storage: MinIO
         
-        - Confirm your choices on the screen ↓. 
+            - Confirm your choices on the screen ↓. 
 
-            This restarts your instance with the new configs.
+                This restarts your instance with the new configs.
         </Accordion>        
 - `Upgrade` checks your instance for available version upgrades and asks you for a confirmation before downloading the latest available version.
   1. Typing `YES` lets the CLI automatically download's the latest version and installs it. Then it restarts the instance to load the latest app.
@@ -51,8 +51,6 @@ For more advanced admins that want greater control over their instance, the list
 - `Uninstall` uninstalls Plane. Before it goes through, it asks you for a confirmation.
   1. Typing `YES` lets the CLI clean up the `/opt/plane` folder, leaving behind the `/opt/plane/data` and `/opt/plane/logs` folders.
   2. Typing `NO` cancels the uninstall.
-- `Setup`\
-  ***This command must not be used directly***
 
 
 
