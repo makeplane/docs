@@ -71,9 +71,9 @@ Create a Plane client or application per your IdP's documentation and configure 
 
 | **Config**                                                                                                                                                                                              | **Value**                                                                                          |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| Entity ID  <br/> Metadata that identifies Plane as an authorized service on your IdP                                                                                                                    | `http(s)://domain.tld/auth/oidc/`                                                                  |
-| ACS URL <br/>Assertion Consumer service that your IdP will redirect to after successful authentication by a user <br/><br/>This is roughly the counterpart of the `Callback URL` in OIDC set-ups.       | `http(s)://domain.tld/auth/oidc/callback/` <br/><br/> Plane supports HTTP-POST bindings.           |
-| SLS URL <br/>Single Logout Service that your IdP will recognize to end a Plane session when a user logs out <br/><br/>This is roughly the counterpart of the `Logout URL` in OIDC set-ups.                | `http(s)://domain.tld/auth/oidc/logout/`                                                           |
+| Entity ID  <br/><br/> Metadata that identifies Plane as an authorized service on your IdP                                                                                                                    | `http(s)://domain.tld/auth/oidc/`                                                                  |
+| ACS URL <br/><br/>Assertion Consumer service that your IdP will redirect to after successful authentication by a user <br/><br/>This is roughly the counterpart of the `Callback URL` in OIDC set-ups.       | `http(s)://domain.tld/auth/oidc/callback/` <br/><br/> Plane supports HTTP-POST bindings.           |
+| SLS URL <br/><br/>Single Logout Service that your IdP will recognize to end a Plane session when a user logs out <br/><br/>This is roughly the counterpart of the `Logout URL` in OIDC set-ups.                | `http(s)://domain.tld/auth/oidc/logout/`                                                           |
 
 <Tip>
 When setting these values up on the IdP, it’s important to remember Plane does not need to provide a signing certificate like other service providers.
@@ -81,9 +81,9 @@ When setting these values up on the IdP, it’s important to remember Plane does
 
 ### Let your IdP identify your users on Plane.
 
-| **Config**     | **Value**                                              |
-|----------------|--------------------------------------------------------|
-| Name ID format | emailAddress <br/><br/> By default, your IdP should send back a username, but Plane recognizes email addresses as the username. Set the value to the above so Plane recognizes the user correctly.
+| **Config**                 | **Value**                                              |
+|----------------------------|--------------------------------------------------------|
+| Name ID format             | emailAddress <br/><br/> By default, your IdP should send back a username, but Plane recognizes email addresses as the username. Set the value to the above so Plane recognizes the user correctly.
 ### Set additional attribute values.
 
 By default, your IdP will send the value listed under `Property`. You have to map it to the SAML attribute Plane recognizes.
