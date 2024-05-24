@@ -12,6 +12,11 @@ If you don't have a license, [get it here](https://plane.so/one).
     For Amazon Linux 2 or Linux 2023, click here.
 
 ## Upgrading from Community Edition to One
+<Warning> 
+Do not install One first if you are upgrading from the Community Edition. Follow the instructions below first all the way to the end of the section `Restoring your data to your One instance`.
+
+We strongly recommend you install One on a fresh machine, not the one running Plane Community.
+</Warning>
 
 ### Backing up your data
 `setup.sh` in the Community Edition now comes with an option to back up your data.
@@ -23,7 +28,8 @@ e.g., `/plane-selfhost/plane-app/backup/20240522-1027`
     - `pgdata.tar.gz`
     - `redisdata.tar.gz`
     - `uploads.tar.gz`
-4. Copy all the 3 files from the server running the Community Edition to any folder on the server running Plane One **** on any folder of your choice
+4. Copy all the 3 files from the server running the Community Edition to any folder on the server running Plane One on any folder of your choice._createMdxContent
+
 e.g., `~/ce-backup`
 
 ### Restoring your data to your One instance
@@ -83,4 +89,4 @@ Successful installation shows you the domain you entered in `1.` above. Go to th
 
 ---
 # Docker Swarm
-<Tip>Docker Swarm will come soon. Please [reach out to us](mailto:support@plane.so) for updates and to have a quick chat to help us build it better.</Tip>
+<Note>Docker Swarm will come soon. Please [reach out to us](mailto:support@plane.so) for updates and to have a quick chat to help us build it better.</Note>
