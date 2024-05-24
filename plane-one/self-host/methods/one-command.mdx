@@ -8,7 +8,8 @@ If you don't have a license, [get it here](https://plane.so/one).
 - A virtual or on-prem machine with at-least 2 vCPUs and 4 GB RAM
 - `x64` AKA `AMD 64` or `AArch 64` AKA `ARM 64` CPUs
 - Ubuntu, Debian, or CentOS
-For Amazon Linux 2 or Linux 2023, click here.
+
+    For Amazon Linux 2 or Linux 2023, click here.
 
 ## Upgrading from Community Edition to One
 
@@ -64,14 +65,18 @@ Successfully running that command,
 2. Downloads `prime-cli` per your OS and your CPU's architecture and saves it to the `/usr/bin` directory.
 3. Runs the `prime-cli setup` command with necessary parameters. which in turn
     1. Asks you for the domain to link the license to
-    Choose this carefully. The domain linked to the license can't be changed later.
+
+        Choose this carefully. The domain linked to the license can't be changed later.
+
     2. Asks you to setup Plane in Express or Advanced modes
-    Express is the fastest way to setup Plane. Advanced lets you configure all Docker services to your specs.
-    2. Installs Docker and its necessary plugins
-    3. Downloads the license file
-    4. Downloads `docker-compose`, `plane.env`, and the images for the microservices that will run in the Docker network
-    5. Downloads the required docker images
-    6. Starts Plane services
+
+        Express is the fastest way to setup Plane. Advanced lets you configure all Docker services to your specs.
+
+    3. Installs Docker and its necessary plugins
+    4. Downloads the license file
+    5. Downloads `docker-compose`, `plane.env`, and the images for the microservices that will run in the Docker network
+    6. Downloads the required docker images
+    7. Starts Plane services
 
 Successful installation shows you the domain you entered in `1.` above. Go to that domain to access your Plane app.
 
