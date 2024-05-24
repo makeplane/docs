@@ -34,20 +34,21 @@ e.g., `~/ce-backup`
 2. Copy and paste the script below on Terminal and hit Enter.
     ```
     
-      TARGET_DIR=/opt/plane/data
-      sudo mkdir -p $TARGET_DIRfor FILE in *.tar.gz; do
-      if [ -e "$FILE" ]; then
-              tar -xzvf "$FILE" -C "$TARGET_DIR"
-          else
-              echo "No .tar.gz files found in the current directory."
-              exit 1
-          fi
-      done
+    TARGET_DIR=/opt/plane/data
+    sudo mkdir -p $TARGET_DIR
+    for FILE in *.tar.gz; do
+        if [ -e "$FILE" ]; then
+            tar -xzvf "$FILE" -C "$TARGET_DIR"
+        else
+            echo "No .tar.gz files found in the current directory."
+            exit 1
+        fi
+    done
 
-      mv $TARGET_DIR/pgdata/ $TARGET_DIR/db
-      mv $TARGET_DIR/redisdata/ $TARGET_DIR/redis
-      mkdir -p $TARGET_DIR/minio
-      mv $TARGET_DIR/uploads/ $TARGET_DIR/minio/uploads/
+    mv $TARGET_DIR/pgdata/ $TARGET_DIR/db
+    mv $TARGET_DIR/redisdata/ $TARGET_DIR/redis
+    mkdir -p $TARGET_DIR/minio
+    mv $TARGET_DIR/uploads/ $TARGET_DIR/minio/uploads/
     ```
 3. This script will extract your Community Edition data and restore it to /opt/plane/data.
 4. Follow the instructions for new installations below.
