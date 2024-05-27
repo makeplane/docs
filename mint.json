@@ -290,18 +290,24 @@
             "plane-one/self-host/methods/kubernetes"
             
           ]
-        },
-        {
-          "group":"Manage",
-          "pages":[
-            "plane-one/self-host/manage/prime-cli",
-            "plane-one/self-host/manage/prime-client"
-          ]
-        },
+        }
+      ]
+    },
+    {
+      "group": "Manage",
+      "pages":[
+        "plane-one/manage/prime-cli",
+        "plane-one/manage/prime-client"
+      ]
+    }, 
+    {
+      "group": "Govern",
+      "pages":[
         {
           "group":"Authentication",
           "pages":[
-            "plane-one/self-host/authentication/custom-sso"
+            "plane-one/governance/authentication/custom-sso",
+            "plane-one/governance/authentication/workspaces-and-teams"
           ]
         }
       ]
@@ -451,6 +457,22 @@
     {
       "source": "/apis/inbox-issue",
       "destination": "/api-reference/inbox-issue/overview"
+    },
+    {
+      "source": "/plane-one/self-host/manage/prime-cli",
+      "destination": "/plane-one/manage/prime-cli"
+    },
+    {
+      "source": "/plane-one/self-host/manage/prime-client",
+      "destination": "/plane-one/manage/prime-client"
+    },
+    {
+      "source": "/plane-one/self-host/authentication/custom-sso",
+      "destination": "/plane-one/governance/authentication/custom-sso"
+    },
+    {
+      "source": "/plane-one/self-host/authentication/workspaces-and-teams",
+      "destination": "/plane-one/governance/authentication/workspaces-and-teams"
     }
   ]
 }
