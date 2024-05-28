@@ -306,10 +306,10 @@
         {
           "group":"Authentication",
           "pages":[
-            "plane-one/governance/authentication/custom-sso",
-            "plane-one/governance/authentication/workspaces-and-teams"
+            "plane-one/governance/authentication/custom-sso"
           ]
-        }
+        },
+        "plane-one/governance/workspaces-and-teams"
       ]
     }
   ],
