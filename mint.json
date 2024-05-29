@@ -51,8 +51,7 @@
       "group": "Getting Started",
       "pages": [
         "introduction/home",
-        "introduction/quickstart",
-        "introduction/signup-signin"
+        "introduction/quickstart"
       ]
     },
     {
