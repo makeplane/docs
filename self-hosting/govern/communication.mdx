@@ -8,30 +8,25 @@ description: Either during your set-up or sometime later, you will want to set S
 Plane offers an interface to configure Simple Mail Transfer Protocol (SMTP) and SSL for encrypted email communication.
 
 Navigate to `Email` in `/god-mode`and you will see ↓.
-<Frame>![](/images/instance-admin/email-instance-settings.png)</Frame>
+<Frame>![](/images/instance-admin/email-settings.png)</Frame>
 
 - **Host**\
-  The address of your SMTP server
+  The address of your SMTP server.
 - **Port**\
-  The port for outgoing emails
-- **Username**\
-  Your username for SMTP authentication
-- **Password**\
-  Your password for SMTP authentication
-- **From address**\
+  The port for outgoing emails.
+- **Sender email address**\
   The email address you wish to use as the sender of emails.
-- **TLS**\
-  Toggle TLS on or off depending on your SMTP server's support for TLS
+- **Email security**\
+  Toggle `TLS` or `SSL` as the email security layer for your emails. If you do not wish to use either of them, you can choose the `No email security` option.
+- **Authentication**\
+  You can configure the username and password to authenticate the SMTP server to send emails. It's an optional configuration, but we would advise you to provide authentication details for a secure email delivery experience.
+  - **Username**\
+    Specify the username for the SMTP configuration here.
+  - **Password**\
+    Specify the password for the SMTP configuration here.
+
 
 ## Configuration for popular email services providers
-
-### Gmail on Google Workspace
-
-1. Enter `smtp.gmail.com` in the **SMTP host** field.
-2. Specify `465` for the **SMTP port**.
-3. Enter your Google Workspace username, e.g., `hello@yourdomain.com`, in the **SMTP username** field.
-4. Enter your Google Workspace password in the **SMTP password** field.
-5. Enter the email address you wish to use as the sender of system notifications in the **From Address** field.
 
 ### Amazon SES
 
