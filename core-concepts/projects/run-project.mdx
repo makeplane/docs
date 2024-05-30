@@ -40,15 +40,13 @@ An estimate comprises an ordered set of points used to quantify the amount of wo
 
 Here are the attributes of an estimate:
 
-- **Name**: Name of the estimate group.
-- **Description (optional)**: Details about the estimate group.
-- **Points**: An ordered set of strings or numbers assigned to your issues. You need to add all 6 points before creating an estimate.
+- **Type**: Type of the estimate system to be used in the project.
+    - **Category**: Categorical estimates are a set of strings, which can be used in your project to estimate work. Typical examples of these are T-shirt sizing estimates or easy to hard estimate systems.
+    - **Points**: Point estimates are a set of numbers to estimate issues. With numbers, you can create a linear sequence, a fibonacci sequence or any other sequence of your choice to estimate work.
+- **Estimate**: Each selectable value for a member of the project to assign to their issues. You can add, re-order or remove any estimate.
 
-Once an estimate is created, you can choose to mark it in use for your project. Once marked, the points in the estimate become available for members to use.
-
-You can add multiple estimates and change the estimate in use to seamlessly migrate to a different estimate type.
-
-<Note> Currently, estimates are limited as each point is treated as a category internally, preventing accurate insights on your work. We'll be changing this soon.</Note>
+#### Archived estimates
+In older versions we supported adding different estimate systems, to help you switch between using different estimate values for your project easily. We have now changed this behavior to only have a single estimate system for your project. In-active estimate systems in the older version are now archived.
 
 ## Manage labels
 
