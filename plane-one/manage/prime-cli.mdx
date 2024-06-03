@@ -22,6 +22,16 @@ Bring up the Prime CLI with ```sudo prime-cli``` from any directory on your mach
         You will use this to restart a service in the Docker network with the name of the service as a `{param or flag}`.
 - Often, you will want to monitor the health of your instance and see if some services are up or down. Use `monitor` to do that.
 
+- `healthcheck` is another useful utility that lets you see the status and errors, if any, of all running services
+
+- `repair` fixes your Plane install for common errors automatically.
+
+- `update-cli` downloads and installs the latest version of Prime CLI.
+    <Tip>
+    It is highly recommend to run this first before you download any Plane updates. The latest version of the CLI ensures your Plane upgrades happen smoothly.
+    </Tip>
+
+
 For more advanced admins that want greater control over their instance, the list of additional commands available on Prime CLI follow.
     - `configure` 
     
@@ -63,22 +73,7 @@ For more advanced admins that want greater control over their instance, the list
                 - Confirm your choices on the screen ↓. 
 
                     This restarts your instance with the new configs.
-        </Accordion>     
-    - `healthcheck`
-
-        Reports on the the status of all running service
-
-    - `monitor`
-
-        Displays the logs and the statuses of all running services
-
-    - `repair`
-
-        Fixes your Plane install for common errors.
-
-    - `update-cli`
-
-        Upgrades the Prime CLI to its latest version
+        </Accordion>
 
 - `upgrade` 
 
