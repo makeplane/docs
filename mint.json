@@ -286,7 +286,7 @@
         {
           "group":"Methods",
           "pages":[
-            "plane-one/self-host/methods/one-command",
+            "plane-one/self-host/methods/docker",
             "plane-one/self-host/methods/kubernetes"
             
           ]
@@ -473,6 +473,10 @@
     {
       "source": "/plane-one/self-host/authentication/workspaces-and-teams",
       "destination": "/plane-one/governance/authentication/workspaces-and-teams"
+    },
+    {
+      "source": "/plane-one/self-host/methods/one-command",
+      "destination": "/plane-one/self-host/methods/docker"
     }
   ]
 }

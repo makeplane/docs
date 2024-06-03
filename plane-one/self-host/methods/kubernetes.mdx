@@ -39,37 +39,41 @@ title: Kubernetes
 
         - Quick set-up
 
-        This is the fastest way to deploy Plane with default settings. This will create stateful deployments for Postgres, Redis, and Minio with a persistent volume claim using the `longhorn` storage class. This also sets up the ingress routes for you using `nginx` ingress class.
+            This is the fastest way to deploy Plane with default settings. This will create stateful deployments for Postgres, Redis, and Minio with a persistent volume claim using the `longhorn` storage class. This also sets up the ingress routes for you using `nginx` ingress class.
         
-        <Tip> To customize this, see `Custom ingress routes` below. </Tip>
+            <Tip> To customize this, see `Custom ingress routes` below. </Tip>
         
-        Continue to be on the same Terminal window as you have so far, copy the code below, and paste it on your Terminal screen.
+            Continue to be on the same Terminal window as you have so far, copy the code below, and paste it on your Terminal screen.
 
-        ```bash
-        PLANE_HELM_CHART=$(ls -t *.tgz | head -n1)
+            ```bash
+            PLANE_HELM_CHART=$(ls -t *.tgz | head -n1)
 
-        helm install one-app ${PLANE_HELM_CHART} \
-        --create-namespace \
-        --namespace plane-one \
-        --set dockerRegistry.loginid=${REG_USER_ID} \
-        --set dockerRegistry.password=${REG_PASSWORD} \
-        --set license.licenseKey=${LICENSE_KEY} \
-        --set license.licenseDomain=${DOMAIN_NAME} \
-        --set license.licenseServer=https://prime.plane.so \
-        --set planeVersion=${PLANE_VERSION} \
-        --set ingress.ingressClass=nginx \
-        --set env.storageClass=longhorn \
-        --timeout 10m \
-        --wait \
-        --wait-for-jobs
-        ```
+            helm install one-app ${PLANE_HELM_CHART} \
+            --create-namespace \
+            --namespace plane-one \
+            --set dockerRegistry.loginid=${REG_USER_ID} \
+            --set dockerRegistry.password=${REG_PASSWORD} \
+            --set license.licenseKey=${LICENSE_KEY} \
+            --set license.licenseDomain=${DOMAIN_NAME} \
+            --set license.licenseServer=https://prime.plane.so \
+            --set planeVersion=${PLANE_VERSION} \
+            --set ingress.ingressClass=nginx \
+            --set env.storageClass=longhorn \
+            --timeout 10m \
+            --wait \
+            --wait-for-jobs
+            ```
 
-        <Tip>This is the minimum required to set up Plane One. You can change the default namespace from `plane-one`, the default appname
-        from `one-app`, the default storage class from `env.storageClass`, and the default ingress class from `ingress.ingressClass` to 
-        whatever you would like to.</Tip>
+            <Tip>
+            This is the minimum required to set up Plane One. You can change the default namespace from `plane-one`, the default appname
+            from `one-app`, the default storage class from `env.storageClass`, and the default ingress class from `ingress.ingressClass` to 
+            whatever you would like to.
+
+            You can also pass other settings referring to `Configuration Settings` section.
+            </Tip>
 
 
-        You can also pass other settings referring to `Configuration Settings` section.
+        
 
     - Advance set-up
 
@@ -83,6 +87,7 @@ title: Kubernetes
         ```
 
         Make sure you set the minimum required values as below.
+
         - `planeVersion: <v0.xx.x>`
         - `dockerRegistry.loginid: <REG_USER_ID as on prime.plane.so>`
         - `dockerRegistry.password: <REG_PASSWORD as on prime.plane.so>`
@@ -91,8 +96,7 @@ title: Kubernetes
         - `license.licenseServer: https://prime.plane.so`
         - `ingress.ingressClass: <nginx or any other ingress class configured in your cluster>`
         - `env.storageClass: <longhorn or any other storage class configured in your cluster>`
-
-        <Tip> See `Available customizations` for more details. </Tip>
+            <Tip> See `Available customizations` for more details. </Tip>
 
         After saving the `values.yaml` file, continue to be on the same Terminal window as on the previous steps, copy the code below, and paste it on your Terminal screen. 
 
