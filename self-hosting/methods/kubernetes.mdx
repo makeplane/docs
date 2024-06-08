@@ -24,11 +24,11 @@ Basic Install
     my-plane makeplane/plane-ce
     ```
 
-Customise Remote Postgress URL
+Customise Remote Postgres URL
 
-```bash Customise Remote Postgress URL
+```bash Customise Remote Postgres URL
     --set postgres.local_setup=false \
-    --set env.pgdb_remote_url="postgress://[username]:[password]@[pg-host]/[db-name]" \
+    --set env.pgdb_remote_url="postgresql://[username]:[password]@[pg-host]/[db-name]" \
 ```
 
 Customise Remote Redis URL
@@ -96,7 +96,7 @@ _Before proceeding with SSL configuration, make sure you have Cert Manager insta
 | redis.servicePort                     |                          6379                          |              | Yes, if redis.local_setup=true                                                                                           |
 | redis.storageClass                    |                        longhorn                        |              | Yes, if redis.local_setup=true                                                                                           |
 | redis.volumeSize                      |                           1Gi                          |              | Yes, if redis.local_setup=true                                                                                           |
-| **Postgress DB Setup**                |                                                        |              |                                                                                                                          |
+| **Postgres DB Setup**                |                                                        |              |                                                                                                                          |
 | postgres.local_setup                  |                          true                          |              |                                                                                                                          |
 | postgres.image                        |                  postgres:15.2-alpine                  |              | Yes, if postgres.local_setup=true                                                                                        |
 | postgres.servicePort                  |                          5432                          |              | Yes, if postgres.local_setup=true                                                                                        |
@@ -148,7 +148,7 @@ _Before proceeding with SSL configuration, make sure you have Cert Manager insta
 | env.pgdb_password                     |                          plane                         |              |                                                                                                                          |
 | env.pgdb_name                         |                          plane                         |              |                                                                                                                          |
 | env.pgdb_remote_host                  |                           ''                           |              | Required, in case of Remote Host provider                                                                                |
-| env.pgdb_remote_url                   |                           ''                           |              | Required, in case of Remote Postgress DB Url                                                                             |
+| env.pgdb_remote_url                   |                           ''                           |              | Required, in case of Remote Postgres DB Url                                                                             |
 | env.remote_redis_url                  |                           ''                           |              | Required, in case of Remote Redis Instance                                                                               |
 | env.docstore_bucket                   |                        'uploads'                       |      YES     | Minio / AWS-S3 Bucket Name                                                                                               |
 | env.doc_upload_size_limit             |                         5242880                        |      YES     | Document Upload Size Limit (default to 5Mb)                                                                              |
