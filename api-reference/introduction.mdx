@@ -4,14 +4,19 @@ sidebarTitle: Introduction
 description: The Plane API is organized around REST. Our API has predictable resource-oriented URLs, accepts application/json request bodies, returns JSON responses, and uses standard HTTP response codes, authentication, and verbs.
 ---
 
-## Authentication
+### Authentication
 
-### Overview
+Our APIs use a key for authentication. The API key should be included in the header of each request to verify the client's identity and permissions. The key should be passed as the value of the `X-API-Key` header.
 
-This API uses an API key for authentication. The API key should be included in the header of each request to verify the client's identity and permissions. The key should be passed as the value of the `X-API-Key` header.
-
-*   **Registration**: Users must register for an account to obtain an API key.
-*   **Key Generation**: Upon successful registration, users will receive an API key. This key uniquely identifies the user and should be kept secure.
+<Tip>You must have a Plane account or be registered to your instance to generate a key.</Tip>
+1. Log into your Plane account and go to `Workspace Settings`.
+  ![Workspace Settings](/images/api-reference/workspace-settings-plane.png)
+2. Go to `API tokens` in the list of tabs available.
+  ![API Tokens](/images/api-reference/api-tokens-plane.png)
+3. Click `Add API token`.
+  ![Add API key](/images/api-reference/add-api-key-plane.png)
+4. Choose a title and description so you know why you are creating this token and where you will use is.
+5. Choose an expiry if you want this to stop working after a point.
 
 ### Using the API Key
 
@@ -267,3 +272,4 @@ This request will return the resource data along with expanded information about
 
 *   Invalid or unrecognized field names passed in the **`fields`** parameter will result in an error response, indicating which fields are invalid.
 *   Similarly, if **`expand`** is used on fields that cannot be expanded, an appropriate error message will be returned.
+import { appendFileSync } from "fs"
