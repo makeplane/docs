@@ -79,26 +79,6 @@ title: Kubernetes
 |---|:---:|:---:|---|
 | planeVersion | stable | Yes |  |
 
-### Ingress Setup
-
-| Setting | Default | Required | Description |
-|---|:---:|:---:|---|
-| ingress.appHost | 'plane.example.com' | Yes |  |
-| ingress.minioHost | 'plane-minio.example.com' |  | (Optional) Required to open minio console interface |
-| ingress.ingressClass | 'nginx' | Yes | can be any of the supported ingress controller class (eg. nginx, traefik, etc) |
-| ingress.clientMaxBodySize | 5m | Yes | This is set at the ingress controller level to support max data from client. |
-
-### SSL Settings
-
-| Setting | Default | Required | Description |
-|---|:---:|:---:|---|
-| ssl.createIssuer | false |  | Set it to true to create Let's Encrypt Service based issuer |
-| ssl.issuer | http |  | (Yes, if createIssuer = true) Allowed - cloudflare, digitalocean, http |
-| ssl.token |  |  | (Yes, if createIssuer = true) api token of dns provider, not required for http |
-| ssl.server | [https://acme-v02.api.letsencrypt.org/directory](https://acme-v02.api.letsencrypt.org/directory) |  | (Yes, if createIssuer = true)Lets Encrypt SSL Generation API.  Staging: [https://acme-staging-v02.api.letsencrypt.org/directory](https://acme-staging-v02.api.letsencrypt.org/directory) |
-| ssl.email | [plane-admin@example.com](plane-admin@example.com) |  | (Yes, if createIssuer = true) Required by Let's Encrypt. Change to a valid email id |
-| ssl.generateCerts | false |  |  |
-
 ### Postgress DB Setup
 
 | Setting | Default | Required | Description |
