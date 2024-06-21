@@ -1,162 +1,235 @@
 ---
 title: Kubernetes
 ---
-### Setup
-Follow below steps to setup **Plane**
+## Pre-requisite
 
-Add Helm Repo
-```url Add Helm Repo
-helm repo add makeplane https://helm.plane.so/
-```
-You must refer the configuration variables before proceeding. This can be done by running the below command or visiting **Configuration** tab.
+- A working Kubernetes cluster
+- `kubectl` and `helm` on the client system that you will use to install our Helm charts
 
-```url
-helm show values plane-ce --repo https://helm.plane.so/ 
-```
+## Installing Plane
 
-Basic Install
+1. Open Terminal or any other command-line app that has access to Kubernetes tools on your local system.
+1. Add Helm Repo
 
-```bash Basic Install
-    helm install \
-    --create-namespace \
-    --namespace plane-ns \
-    --set ingress.host="plane.example.com" \
-    my-plane makeplane/plane-ce
+    ```bash
+    helm repo add makeplane https://helm.plane.so/
+    helm repo update
     ```
 
-Customise Remote Postgress URL
+1. Set-up and customization
 
-```bash Customise Remote Postgress URL
-    --set postgres.local_setup=false \
-    --set env.pgdb_remote_url="postgress://[username]:[password]@[pg-host]/[db-name]" \
-```
+    - Quick set-up
 
-Customise Remote Redis URL
+        This is the fastest way to deploy Plane with default settings. This will create stateful deployments for Postgres, Redis, and Minio with a persistent volume claim using the `longhorn` storage class. This also sets up the ingress routes for you using `nginx` ingress class.
 
-```bash Customise Remote Redis URL
-    --set redis.local_setup=false \
-    --set env.remote_redis_url="redis://[redis-host]:[6379]" \
-    ```
+        <Tip> To customize this, see `Custom ingress routes` below. </Tip>
 
-Customise SMTP Using
+        Continue to be on the same Terminal window as you have so far, copy the code below, and paste it on your Terminal screen.
 
-```bash Customise SMTP Using
-    --set smtp.host="smtp.example.com" \
-    --set smtp.user="my-email-address@example.com" \
-    --set smtp.password="my-password" \
-    --set smtp.from="Plane Mailer <mailer@example.com>" \
-    --set smtp.port=587 \
-    --set smtp.use_tls=1 \
+    ```bash
+        helm install plane-app makeplane/plane-ce \
+            --create-namespace \
+            --namespace plane-ce \
+            --set planeVersion=stable \
+            --set ingress.appHost="plane.example.com" \
+            --set ingress.minioHost="plane-minio.example.com" \
+            --set ingress.ingressClass=nginx \
+            --set postgres.storageClass=longhorn \
+            --set redis.storageClass=longhorn \
+            --set minio.storageClass=longhorn \
+            --timeout 10m \
+            --wait \
+            --wait-for-jobs
+        ```
 
-```
+        <Tip> 
+        This is the minimum required to set up Plane-CE. You can change the default namespace from `plane-ce`, the default appname from `plane-app`, the default storage class from `[postgres, redis, minio].storageClass`, and the default ingress class from `ingress.ingressClass` to whatever you would like to.
 
-Customise with SSL
+        You can also pass other settings referring to `Configuration Settings` section.
+        </Tip>
+    - Advance set-up
+    
+        For more control over your set-up, run the script below to download the `values.yaml` file and and edit using any editor like Vim or Nano. 
 
-_Before proceeding with SSL configuration, make sure you have Cert Manager installed on your cluster_
+        ```bash
+        helm  show values makeplane/plane-ce > values.yaml
+        vi values.yaml
+        ```
 
-```bash Customise with SSL
+        <Tip> See `Available customizations` for more details. </Tip>
 
-    --set ssl.createIssuer=true \
-    --set ssl.issuer=cloudflare \
-    --set ssl.token=xxxxxxxx \
-    --set ssl.server="https://acme-v02.api.letsencrypt.org/directory" \
-    --set ssl.email="plane-admin@example.com" \
-    --set ssl.generateCerts=true \
-    --set ssl.domains="{plane.example.com,plane-minio.example.com}"  \
-    ```
+        After saving the `values.yaml` file, continue to be on the same Terminal window as on the previous steps, copy the code below, and paste it on your Terminal screen.
 
+        ```bash
+        helm install plane-app makeplane/plane-ce \
+            --create-namespace \
+            --namespace plane-ce \
+            -f values.yaml \
+            --timeout 10m \
+            --wait \
+            --wait-for-jobs 
+        ```
 
+## Configuration Settings Available
+---
 
+### Plane Version
 
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| planeVersion | stable | Yes |  |
 
+### Ingress Setup
 
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| ingress.appHost | 'plane.example.com' | Yes |  |
+| ingress.minioHost | 'plane-minio.example.com' |  | (Optional) Required to open minio console interface |
+| ingress.ingressClass | 'nginx' | Yes | can be any of the supported ingress controller class (eg. nginx, traefik, etc) |
+| ingress.clientMaxBodySize | 5m | Yes | This is set at the ingress controller level to support max data from client. |
 
-### Configuration
+### SSL Settings
 
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| ssl.createIssuer | false |  | Set it to true to create Let's Encrypt Service based issuer |
+| ssl.issuer | http |  | (Yes, if createIssuer = true) Allowed - cloudflare, digitalocean, http |
+| ssl.token |  |  | (Yes, if createIssuer = true) api token of dns provider, not required for http |
+| ssl.server | [https://acme-v02.api.letsencrypt.org/directory](https://acme-v02.api.letsencrypt.org/directory) |  | (Yes, if createIssuer = true)Lets Encrypt SSL Generation API.  Staging: [https://acme-staging-v02.api.letsencrypt.org/directory](https://acme-staging-v02.api.letsencrypt.org/directory) |
+| ssl.email | [plane-admin@example.com](plane-admin@example.com) |  | (Yes, if createIssuer = true) Required by Let's Encrypt. Change to a valid email id |
+| ssl.generateCerts | false |  |  |
 
-| **Setting**                           |                       **Default**                      | **Required** | **Description**                                                                                                          |
-|---------------------------------------|:------------------------------------------------------:|:------------:|--------------------------------------------------------------------------------------------------------------------------|
-| planeVersion                          |                         latest                         |      Yes     |                                                                                                                          |
-| **Ingress Setup**                     |                                                        |              |                                                                                                                          |
-| ingress.appHost                       |                   'plane.example.com'                  |      Yes     |                                                                                                                          |
-| ingress.minioHost                     |                'plane-minio.example.com'               |              | (Optional) Required to open minio console interface                                                                      |
-| ingress.ingressClass                  |                         'nginx'                        |      Yes     | can be any of the supported ingress controller class (eg. nginx, traefik, etc)                                           |
-| ingress.clientMaxBodySize             |                           5m                           |      Yes     | This is set at the ingress controller level to support max data from client.                                             |
-| **SSL Settings**                      |                                                        |              |                                                                                                                          |
-| ssl.createIssuer                      |                          false                         |              | Set it to true to create Let's Encrypt Service based issuer                                                              |
-| ssl.issuer                            |                          http                          |              | (Yes, if createIssuer = true) Allowed - cloudflare, digitalocean, http                                                   |
-| ssl.token                             |                                                        |              | (Yes, if createIssuer = true) api token of dns provider, not required for http                                           |
-| ssl.server                            | https://acme-staging-v02.api.letsencrypt.org/directory |              | (Yes, if createIssuer = true)Lets Encrypt SSL Generation API. Production: https://acme-v02.api.letsencrypt.org/directory |
-| ssl.email                             |                 plane-admin@example.com                |              | (Yes, if createIssuer = true) Required by Let's Encrypt. Change to a valid email id                                      |
-| ssl.generateCerts                     |                          false                         |              |                                                                                                                          |
-| ssl.domains                           |                           []                           |              | (Yes, if generateCerts = true) Array List of domains                                                                     |
-| **Redis Setup**                       |                                                        |              |                                                                                                                          |
-| redis.local_setup                     |                          true                          |              |                                                                                                                          |
-| redis.image                           |                   redis:6.2.7-alpine                   |              |                                                                                                                          |
-| redis.servicePort                     |                          6379                          |              | Yes, if redis.local_setup=true                                                                                           |
-| redis.storageClass                    |                        longhorn                        |              | Yes, if redis.local_setup=true                                                                                           |
-| redis.volumeSize                      |                           1Gi                          |              | Yes, if redis.local_setup=true                                                                                           |
-| **Postgress DB Setup**                |                                                        |              |                                                                                                                          |
-| postgres.local_setup                  |                          true                          |              |                                                                                                                          |
-| postgres.image                        |                  postgres:15.2-alpine                  |              | Yes, if postgres.local_setup=true                                                                                        |
-| postgres.servicePort                  |                          5432                          |              | Yes, if postgres.local_setup=true                                                                                        |
-| postgres.storageClass                 |                        longhorn                        |              | Yes, if postgres.local_setup=true                                                                                        |
-| postgres.volumeSize                   |                           5Gi                          |              | Yes, if postgres.local_setup=true                                                                                        |
-| **Doc Store (Minio) Setup**           |                                                        |              |                                                                                                                          |
-| minio.local_setup                     |                          true                          |              | In case this is false, AWS-S3 will settings will be required                                                             |
-| minio.image                           |        minio/minio:RELEASE.2023-10-25T06-33-25Z        |              | Yes, if minio.local_setup=true                                                                                           |
-| minio.servicePort                     |                          9000                          |              | Yes, if minio.local_setup=true                                                                                           |
-| minio.consolePort                     |                          9090                          |              | Yes, if minio.local_setup=true                                                                                           |
-| minio.storageClass                    |                        longhorn                        |              | Yes, if minio.local_setup=true                                                                                           |
-| minio.volumeSize                      |                           5Gi                          |              | Yes, if minio.local_setup=true                                                                                           |
-| minio.root_user                       |                          admin                         |              | Yes, if minio.local_setup=true                                                                                           |
-| minio.root_password                   |                        password                        |              | Yes, if minio.local_setup=true                                                                                           |
-| **Web Deployment**                    |                                                        |              |                                                                                                                          |
-| web.replicas                          |                            3                           |      Yes     | must be >=1                                                                                                              |
-| web.memoryLimit                       |                          100Mi                         |              |                                                                                                                          |
-| web.cpuLimit                          |                          200m                          |              |                                                                                                                          |
-| web.hscale.minReplicas                |                            1                           |              |                                                                                                                          |
-| web.hscale.maxReplicas                |                           10                           |              |                                                                                                                          |
-| web.hscale.percentMemoryUtilization   |                           80                           |              |                                                                                                                          |
-| web.hscale.percentCpuUtilization      |                           60                           |              |                                                                                                                          |
-| **Space Deployment**                  |                                                        |              |                                                                                                                          |
-| space.replicas                        |                            3                           |      Yes     | must be >=1                                                                                                              |
-| space.memoryLimit                     |                          100Mi                         |              |                                                                                                                          |
-| space.cpuLimit                        |                          200m                          |              |                                                                                                                          |
-| space.hscale.minReplicas              |                            1                           |              |                                                                                                                          |
-| space.hscale.maxReplicas              |                           10                           |              |                                                                                                                          |
-| space.hscale.percentMemoryUtilization |                                                        |              |                                                                                                                          |
-| space.hscale.percentCpuUtilization    |                           60                           |              |                                                                                                                          |
-| **API Deployment**                    |                                                        |              |                                                                                                                          |
-| api.replicas                          |                            3                           |      Yes     | must be >=1                                                                                                              |
-| api.servicePort                       |                          8000                          |              |                                                                                                                          |
-| **SMTP Settings**                     |                                                        |              |                                                                                                                          |
-| smtp.host                             |                           ''                           |              | For Email Delivery                                                                                                       |
-| smtp.user                             |                           ''                           |              | For Email Delivery                                                                                                       |
-| smtp.password                         |                           ''                           |              | For Email Delivery                                                                                                       |
-| smtp.port                             |                           587                          |              | For Email Delivery                                                                                                       |
-| smtp.from                             |            'Plane Mailer mailer@example.com'           |              |                                                                                                                          |
-| smtp.use_tls                          |                            1                           |              |                                                                                                                          |
-| smtp.use_ssl                          |                            0                           |              |                                                                                                                          |
-| **OAUTH Settings**                    |                                                        |              |                                                                                                                          |
-| oauth.enabled                         |                            0                           |              |                                                                                                                          |
-| oauth.google_client_id                |                           ''                           |              |                                                                                                                          |
-| oauth.github_client_id                |                           ''                           |              |                                                                                                                          |
-| oauth.github_client_secret            |                           ''                           |              |                                                                                                                          |
-| **Common Environment Settings**       |                                                        |              |                                                                                                                          |
-| env.pgdb_username                     |                          plane                         |              |                                                                                                                          |
-| env.pgdb_password                     |                          plane                         |              |                                                                                                                          |
-| env.pgdb_name                         |                          plane                         |              |                                                                                                                          |
-| env.pgdb_remote_host                  |                           ''                           |              | Required, in case of Remote Host provider                                                                                |
-| env.pgdb_remote_url                   |                           ''                           |              | Required, in case of Remote Postgress DB Url                                                                             |
-| env.remote_redis_url                  |                           ''                           |              | Required, in case of Remote Redis Instance                                                                               |
-| env.docstore_bucket                   |                        'uploads'                       |      YES     | Minio / AWS-S3 Bucket Name                                                                                               |
-| env.doc_upload_size_limit             |                         5242880                        |      YES     | Document Upload Size Limit (default to 5Mb)                                                                              |
-| env.aws_access_key                    |                           ''                           |              | Required, in case minio.local_setup = false                                                                              |
-| env.aws_secret_access_key             |                           ''                           |              | Required, in case minio.local_setup = false                                                                              |
-| env.aws_region                        |                           ''                           |              | Required, in case minio.local_setup = false                                                                              |
-| env.enable_signup                     |                            1                           |              | Valid values are 0 & 1                                                                                                   |
-| env.enable_email_password             |                            1                           |              | Valid values are 0 & 1                                                                                                   |
-| env.enable_magic_link_login           |                            0                           |              | Valid values are 0 & 1. In case this is set to 1, SMTP settings would be required                                        |
-| env.secret_key                        |  '60gp0byfz2dvffa45cxl20p1scy9xbpf6d8c5y0geejgkyp1b5'  |              | Random secret key for data encoding during transit.                                                                      |
-| env.sentry_dsn                        |                           ''                           |              | Sentry DSN for error logging                                                                                             |
+### Postgress DB Setup
+
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| postgres.local_setup | true |  | Plane uses `postgres` as the primary database to store all the transactional data. This database can be hosted within kubernetes as part of helm chart deployment or can be used as hosted service remotely (e.g. aws rds or similar services). Set this to  `true` when you choose to setup stateful deployment of `postgres`. Mark it as `false` when using a remotely hosted database |
+| postgres.image | postgres:15.5-alpine |  | Using this key, user must provide the docker image name to setup the stateful deployment of `postgres`. (must be set when `postgres.local_setup=true`)|
+| postgres.servicePort | 5432 |  | This key sets the default port number to be used while setting up stateful deployment of `postgres`. |
+| postgres.cliConnectPort |  | | If you intend to access the hosted stateful deployment of postgres using any of the client tools (e.g Postico), this key helps you expose the port. The mentioned port must not be occupied by any other applicaiton |
+| postgres.volumeSize | 5Gi |  | While setting up the stateful deployment, while creating the persistant volume, volume allocation size need to be provided. This key helps you set the volume allocation size. Unit of this value must be in Mi (megabyte) or Gi (gigabyte) |
+| env.pgdb_username | plane |  | Database credentials are requried to access the hosted stateful deployment of `postgres`.  Use this key to set the username for the stateful deployment. |
+| env.pgdb_password | plane |  | Database credentials are requried to access the hosted stateful deployment of `postgres`.  Use this key to set the password for the stateful deployment. |
+| env.pgdb_name | plane |  |  Database name to be used while setting up stateful deployment of `Postgres`|
+| env.pgdb_remote_url |  |  | Users can also decide to use the remote hosted database and link to Plane deployment. Ignoring all the above keys, set `postgres.local_setup` to `false` and set this key with remote connection url. |
+| postgres.storageClass | longhorn |  | Creating the persitant volumes for the stateful deployments needs the `storageClass` name. Set the correct value as per your kubernetes cluster configuration. |
+
+### Redis Setup
+
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| redis.local_setup | true |  | Plane uses `redis` to cache the session authentication and other static data. This database can be hosted within kubernetes as part of helm chart deployment or can be used as hosted service remotely (e.g. aws rds or similar services). Set this to  `true` when you choose to setup stateful deployment of `redis`. Mark it as `false` when using a remotely hosted database |
+| redis.image | redis:7.2.4-alpine |  | Using this key, user must provide the docker image name to setup the stateful deployment of `redis`. (must be set when `redis.local_setup=true`)|
+| redis.servicePort | 6379 |  | This key sets the default port number to be used while setting up stateful deployment of `redis`. |
+| redis.volumeSize | 1Gi |  | While setting up the stateful deployment, while creating the persistant volume, volume allocation size need to be provided. This key helps you set the volume allocation size. Unit of this value must be in Mi (megabyte) or Gi (gigabyte) |
+| env.remote_redis_url |  |  | Users can also decide to use the remote hosted database and link to Plane deployment. Ignoring all the above keys, set `redis.local_setup` to `false` and set this key with remote connection url. |
+| redis.storageClass | longhorn |  | Creating the persitant volumes for the stateful deployments needs the `storageClass` name. Set the correct value as per your kubernetes cluster configuration. |
+
+### Doc Store (Minio/S3) Setup
+
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| minio.local_setup | true |  | Plane uses `minio` as the default file storage drive. This storage can be hosted within kubernetes as part of helm chart deployment or can be used as hosted service remotely (e.g. aws S3 or similar services). Set this to  `true` when you choose to setup stateful deployment of `postgres`. Mark it as `false` when using a remotely hosted database |
+| minio.image | minio/minio:latest |  | Using this key, user must provide the docker image name to setup the stateful deployment of `minio`. (must be set when `minio.local_setup=true`)|
+| minio.volumeSize | 5Gi |  | While setting up the stateful deployment, while creating the persistant volume, volume allocation size need to be provided. This key helps you set the volume allocation size. Unit of this value must be in Mi (megabyte) or Gi (gigabyte) |
+| minio.root_user | admin |  |  Storage credentials are requried to access the hosted stateful deployment of `minio`.  Use this key to set the username for the stateful deployment. |
+| minio.root_password | password |  | Storage credentials are requried to access the hosted stateful deployment of `minio`.  Use this key to set the password for the stateful deployment. |
+| env.docstore_bucket | uploads | Yes | Storage bucket name is required as part of configuration. This is where files will be uploaded irrespective of if you are using `Minio` or external `S3` (or compatible) storage service |
+| env.doc_upload_size_limit | 5242880 | Yes | Document Upload Size Limit (default to 5Mb) |
+| env.aws_access_key |  |  | External `S3` (or compatible) storage service provides `access key` for the application to connect and do the necessary upload/download operations. To be provided when `minio.local_setup=false`  |
+| env.aws_secret_access_key |  |  | External `S3` (or compatible) storage service provides `secret access key` for the application to connect and do the necessary upload/download operations. To be provided when `minio.local_setup=false`  |
+| env.aws_region |  |  | External `S3` (or compatible) storage service providers creates any buckets in user selected region. This is also shared with the user as `region` for the application to connect and do the necessary upload/download operations. To be provided when `minio.local_setup=false`  |
+| env.aws_s3_endpoint_url |  |  | External `S3` (or compatible) storage service providers shares a `endpoint_url` for the integration purpose for the application to connect and do the necessary upload/download operations. To be provided when `minio.local_setup=false`  |
+| minio.storageClass | longhorn |  | Creating the persitant volumes for the stateful deployments needs the `storageClass` name. Set the correct value as per your kubernetes cluster configuration. |
+
+### Web Deployment
+
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| web.replicas | 1 | Yes | Kubernetes helps you with scaling up/down the deployments. You can run 1 or more pods for each deployment. This key helps you setting up number of replicas you want to run for this deployment. It must be >=1 |
+| web.memoryLimit | 1000Mi |  | Every deployment in kubernetes can be set to use maximum memory they are allowed to use. This key sets the memory limit for this deployment to use.|
+| web.cpuLimit | 500m |  |  Every deployment in kubernetes can be set to use maximum cpu they are allowed to use. This key sets the cpu limit for this deployment to use.|
+| web.image| makeplane/plane-frontend |  |  This deployment needs a preconfigured docker image to function. Docker image name is provided by the owner and must not be changed for this deployment |
+
+### Space Deployment
+
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| space.replicas | 1 | Yes | Kubernetes helps you with scaling up/down the deployments. You can run 1 or more pods for each deployment. This key helps you setting up number of replicas you want to run for this deployment. It must be >=1 |
+| space.memoryLimit | 1000Mi |  |  Every deployment in kubernetes can be set to use maximum memory they are allowed to use. This key sets the memory limit for this deployment to use.|
+| space.cpuLimit | 500m |  | Every deployment in kubernetes can be set to use maximum cpu they are allowed to use. This key sets the cpu limit for this deployment to use.|
+| space.image| makeplane/plane-space|  |  This deployment needs a preconfigured docker image to function. Docker image name is provided by the owner and must not be changed for this deployment |
+
+### Admin Deployment
+
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| admin.replicas | 1 | Yes | Kubernetes helps you with scaling up/down the deployments. You can run 1 or more pods for each deployment. This key helps you setting up number of replicas you want to run for this deployment. It must be >=1 |
+| admin.memoryLimit | 1000Mi |  |  Every deployment in kubernetes can be set to use maximum memory they are allowed to use. This key sets the memory limit for this deployment to use.|
+| admin.cpuLimit | 500m |  |  Every deployment in kubernetes can be set to use maximum cpu they are allowed to use. This key sets the cpu limit for this deployment to use.|
+| admin.image| makeplane/plane-admin |  |  This deployment needs a preconfigured docker image to function. Docker image name is provided by the owner and must not be changed for this deployment |
+
+### API Deployment
+
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| api.replicas | 1 | Yes | Kubernetes helps you with scaling up/down the deployments. You can run 1 or more pods for each deployment. This key helps you setting up number of replicas you want to run for this deployment. It must be >=1 |
+| api.memoryLimit | 1000Mi |  |  Every deployment in kubernetes can be set to use maximum memory they are allowed to use. This key sets the memory limit for this deployment to use.|
+| api.cpuLimit | 500m |  | Every deployment in kubernetes can be set to use maximum cpu they are allowed to use. This key sets the cpu limit for this deployment to use.|
+| api.image| makeplane/plane-backend |  | This deployment needs a preconfigured docker image to function. Docker image name is provided by the owner and must not be changed for this deployment |
+| env.sentry_dsn |  |  | (optional) API service deployment comes with some of the preconfigured integration. Sentry is one among those. Here user can set the Sentry provided DSN for this integration.|
+| env.sentry_environment |  |  | (optional) API service deployment comes with some of the preconfigured integration. Sentry is one among those. Here user can set the Sentry environment name (as configured in Sentry) for this integration.|
+
+### Worker Deployment
+
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| worker.replicas | 1 | Yes | Kubernetes helps you with scaling up/down the deployments. You can run 1 or more pods for each deployment. This key helps you setting up number of replicas you want to run for this deployment. It must be >=1 |
+| worker.memoryLimit | 1000Mi |  |  Every deployment in kubernetes can be set to use maximum memory they are allowed to use. This key sets the memory limit for this deployment to use.|
+| worker.cpuLimit | 500m |  | Every deployment in kubernetes can be set to use maximum cpu they are allowed to use. This key sets the cpu limit for this deployment to use.|
+| worker.image| makeplane/plane-backend |  | This deployment needs a preconfigured docker image to function. Docker image name is provided by the owner and must not be changed for this deployment |
+
+### Beat-Worker deployment
+
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| beatworker.replicas | 1 | Yes | Kubernetes helps you with scaling up/down the deployments. You can run 1 or more pods for each deployment. This key helps you setting up number of replicas you want to run for this deployment. It must be >=1 |
+| beatworker.memoryLimit | 1000Mi |  |  Every deployment in kubernetes can be set to use maximum memory they are allowed to use. This key sets the memory limit for this deployment to use.|
+| beatworker.cpuLimit | 500m |  | Every deployment in kubernetes can be set to use maximum cpu they are allowed to use. This key sets the cpu limit for this deployment to use.|
+| beatworker.image| makeplane/plane-backend |  | This deployment needs a preconfigured docker image to function. Docker image name is provided by the owner and must not be changed for this deployment |
+
+### Ingress and SSL Setup
+
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| ingress.enabled | true |  | Ingress setup in kubernetes is a common practice to expose application to the intended audience.  Set it to `false` if you are using external ingress providers like `Cloudflare` |
+| ingress.appHost | 'plane.example.com' | Yes | The fully-qualified domain name (FQDN) in the format `sudomain.domain.tld` or `domain.tld` that the license is bound to. It is also attached to your `ingress` host to access Plane. |
+| ingress.minioHost | 'plane-minio.example.com' |  | Based on above configuration, if you want to expose the `minio` web console to set of users, use this key to set the `host` mapping or leave it as `EMPTY` to not expose interface. |
+| ingress.ingressClass | 'nginx' | Yes | Kubernetes cluster setup comes with various options of `ingressClass`. Based on your setup, set this value to the right one (eg. nginx, traefik, etc). Leave it to default in case you are using external ingress provider.|
+| ingress.ingress_annotations | `{ "nginx.ingress.kubernetes.io/proxy-body-size": "5m" }` |  | Ingress controllers comes with various configuration options which can be passed as annotations. Setting this value lets you change the default value to user required. |
+| ssl.createIssuer | false |  | Kubernets cluster setup supports creating `issuer` type resource. After deployment, this is step towards creating secure access to the ingress url. Issuer is required for you generate SSL certifiate. Kubernetes can be configured to use any of the certificate authority to generate SSL (depending on CertManager configuration). Set it to `true` to create the issuer. Applicable only when `ingress.enabled=true`|
+| ssl.issuer | http |  | CertManager configuration allows user to create issuers using `http` or any of the other DNS Providers like `cloudflare`, `digitalocean`, etc. As of now Plane supports `http`, `cloudflare`, `digitalocean`|
+| ssl.token |  |  | To create issuers using DNS challenge, set the issuer api token of dns provider like cloudflare` or `digitalocean`(not required for http) |
+| ssl.server | [https://acme-v02.api.letsencrypt.org/directory](https://acme-v02.api.letsencrypt.org/directory) |  | Issuer creation configuration need the certificate generation authority server url. Default URL is the `Let's Encrypt` server|
+| ssl.email | [plane@example.com](plane@example.com) |  | Certificate generation authority needs a valid email id before generating certificate. Required when `ssl.createIssuer=true`  |
+| ssl.generateCerts | false |  | After creating the issuers, user can still not create the certificate untill sure of configuration. Setting this to `true` will try to generate SSL certificate and associate with ingress. Applicable only when `ingress.enabled=true` and `ssl.createIssuer=true` |
+
+### Common Environment Settings
+
+| Setting | Default | Required | Description |
+|---|:---:|:---:|---|
+| env.secret_key | 60gp0byfz2dvffa45cxl20p1scy9xbpf6d8c5y0geejgkyp1b5 | Yes | This must a random string which is used for hashing/encrypting the sensitive data within the application. Once set, changing this might impact the already hashed/encrypted data|
+
+## Custom Ingress Routes
+
+If you are planning to use 3rd party ingress providers, here is the available route configuration
+
+| Host | Path | Service |
+|---    |:---:|---|
+| plane.example.com | /  | [http://plane-web.plane-ce:3000](http://plane-web.plane-ce:3000) |
+| plane.example.com | /spaces/*  | [http://plane-space.plane-ce:3000](http://plane-space.plane-ce:3000) |
+| plane.example.com | /god-mode/* | [http://plane-admin.plane-ce:8000](http://plane-admin.plane-ce:8000) |
+| plane.example.com | /api/*  |  [http://plane-api.plane-ce:8000](http://plane-api.plane-ce:8000) |
+| plane.example.com | /auth/* |[http://plane-api.plane-ce:8000](http://plane-api.plane-ce:8000) |
+| plane.example.com | /uploads/* | [http://plane-minio.plane-ce:9000](http://plane-minio.plane-ce:9000) |
+| plane-minio.example.com | / | [http://plane-minio.plane-ce:9090](http://plane-minio.plane-ce:9090) |
