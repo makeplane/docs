@@ -138,6 +138,7 @@ The paginated response includes the following fields:
 *   **`prev_page_results`**: Boolean indicating if there are results before the current page.
 *   **`count`**: Total number of items on the current page.
 *   **`total_pages`**: Estimated total number of pages.
+*   **`total_results`**: Total number of items across all pages.
 *   **`extra_stats`**: Additional statistics, if any.
 *   **`results`**: Array of items for the current page.
 
@@ -159,6 +160,7 @@ GET /api/v1/workspaces/:slug/projects/:project_id/issues/?per_page=20
   "prev_page_results": false,
   "count": 20,
   "total_pages": 50,
+  "total_results": 1000,
   "extra_stats": {},
   "results": [ ... items ... ]
 }
@@ -184,6 +186,7 @@ GET /api/v1/workspaces/:slug/projects/:project_id/issues?per_page=20&cursor=20:1
   "prev_page_results": true,
   "count": 20,
   "total_pages": 50,
+  "total_results": 1000,
   "extra_stats": {},
   "results": [ ... items ... ]
 }
