@@ -1,0 +1,37 @@
+---
+title: Anonymous data collection
+sidebarTitle: Telemetry
+---
+If you’re self-hosting Plane and you’ve opted in to provide us with anonymous usage data (thank you!), Plane will phone home some data collected via Posthog.
+
+We collect the instance admin emails to communicate in crucial scenarios like checkpoint releases or large migrations.
+
+### The anonymous data we collect
+
+We don’t collect any other usernames, emails or the issue titles, descriptions details of any kind, or any personally identifiable information (PII).
+
+The anonymous data helps us understand how people are actually using Plane, which in turn helps us Prioritize what to work on next.
+
+### Examples of the anonymous data we collect and how we use it
+
+We track some basic events in an anonymised way to find opportunities for improving the product and evaluating project outcomes.
+
+We collect events in the product like:
+- When you create an issue or filter a view.
+- When you add a table block in a page.
+- When you invite a user.
+
+This anonymous data helps us figure out things like:
+- Which features you’re using.
+- Where people get stuck.
+- How performance for key workflows (like querying or loading) changes over time.
+
+### Opting out of anonymous usage data collection for self-hosted Plane instances
+
+If you’re self-hosting Plane, you can opt out of providing us with your anonymous usage data:
+1. Login to the god-mode (/god-mode).
+2. Click General settings.
+3. Toggle off the Telemetry option.
+
+If you’re in the process of setting up your Plane, you can also toggle off tracking during the Usage Data Preferences onboarding step. We collect a few anonymous events before that point, but won’t do so anymore if you choose to opt out.
+
