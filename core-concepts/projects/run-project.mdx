@@ -30,31 +30,33 @@ You can also choose to mark the state as the default for the project to ensure a
 
 To remove a state, ensure no issues are assigned to the state you want to remove.
 
-## Define estimates
+## Estimates
 
-Estimates aid in communicating the workload associated with each issue. By default, no estimates are added to your project. You can access these options under the Estimates tab inside Project &gt; Settings.
+An ordered set of points, Estimates quantify the effort needed per issue using points you declare as a proxy.
 
-### Estimate
+### Set up estimates
 
-An estimate comprises an ordered set of points used to quantify the amount of work in an issue.
+By default, no estimate system is added to your project. Find the `Estimates` tab in `Project` / `Settings` to do that.
 
-Here are the attributes of an estimate:
+Start by choosing an estimate system from the two below.
 
-- **Name**: Name of the estimate group.
-- **Description (optional)**: Details about the estimate group.
-- **Points**: An ordered set of strings or numbers assigned to your issues. You need to add all 6 points before creating an estimate.
+- **Points**
 
-Once an estimate is created, you can choose to mark it in use for your project. Once marked, the points in the estimate become available for members to use.
+    Use this if you prefer progressive numbers to estimate effort. You can choose from `Linear`, `Fibonacci`, or `Squares`.
 
-You can add multiple estimates and change the estimate in use to seamlessly migrate to a different estimate type.
+- **Category**
+        
+        Use this if you would like to estimate effort by alphabetical text. Typical examples include T-shirt sizing or easy-to-hard estimate systems.
 
-<Note> Currently, estimates are limited as each point is treated as a category internally, preventing accurate insights on your work. We'll be changing this soon.</Note>
+When you are done, you can enable estimates by toggling on `Enable estimates for my project`. You can also change the type of the system by clicking the pencil icon next to each system you have set.
+
+<Warning>In previous versions of Estimates we let you add more than one estimate system so you could switch between them. After overwhelming feedback to make it simpler for you, we now let you create one system per project. Inactive estimate systems from previous versions are now archived.</Warning>
 
 ## Manage labels
 
 Similar to states, labels on projects aid in filtering, differentiating, and categorizing issues within your project. You can create and control as many issue labels as needed.
 
-<Note> Labels can also be created directly from the issue detail page.</Note>
+<Note>Labels can also be created directly from the issue detail page.</Note>
 
 You can access these options under the Labels tab inside Project > Settings.
 <Frame>![Project labels](/images/projects/project-labels.png)</Frame>
