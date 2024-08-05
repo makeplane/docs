@@ -96,7 +96,7 @@ For the 1st time setup, type `1` as action input.
 This will create a folder `plane-app` or `plane-app-preview` (in case of preview deployment) and will download 2 files inside that
 
 -   `docker-compose.yaml`
--   `.env`
+-   `plane.env`
 
 Again the `options [1-8]` will be popped up and this time hit `8` to exit.
 
@@ -104,7 +104,7 @@ Again the `options [1-8]` will be popped up and this time hit `8` to exit.
 
 ### Continue with setup - Environment Settings
 
-Before proceeding, we suggest you to review `.env` file and set the values. Below are the most import keys you must refer to. _You can use any text editor to edit this file_.
+Before proceeding, we suggest you to review `plane.env` file and set the values. Below are the most import keys you must refer to. _You can use any text editor to edit this file_.
 
 - `NGINX_PORT`: This is default set to `80`. Make sure the port you choose to use is not preoccupied. (e.g `NGINX_PORT=8080`)
 
@@ -149,7 +149,7 @@ You have successfully self hosted `Plane` instance. Access the application by go
 
 ## Stopping the server
 
-In case you want to make changes to `.env` variables, we suggest you to stop the services before doing that.
+In case you want to make changes to `plane.env` variables, we suggest you to stop the services before doing that.
 
 Let's again run the `./setup.sh` command. You will again be prompted with the below options. This time select `3` to stop the services
 
@@ -177,7 +177,7 @@ If all goes well, you must see something like this
 
 ## Restarting the server
 
-In case you want to make changes to `.env` variables, without stopping the server or you noticed some abnormalities in services, you can restart the services with RESTART option.
+In case you want to make changes to `plane.env` variables, without stopping the server or you noticed some abnormalities in services, you can restart the services with RESTART option.
 
 Let's again run the `./setup.sh` command. You will again be prompted with the below options. This time select `4` to restart the services
 
@@ -226,7 +226,7 @@ Action [2]: 5
 ```
 
 
-By choosing this, it will stop the services and then will download the latest `docker-compose.yaml` and `variables-upgrade.env`. Here system will not replace `.env` with the new one.
+By choosing this, it will stop the services and then will download the latest `docker-compose.yaml` and `variables-upgrade.env`. Here system will not replace `plane.env` with the new one.
 
 You must expect the below message
 
@@ -234,9 +234,9 @@ You must expect the below message
 
 Once done, choose `6` to exit from prompt.
 
-> _**"It is very important for you to compare the 2 files `variables-upgrade.env` and `.env`. Copy the newly added variable from downloaded file to `.env` and set the expected values."**_
+> _**"It is very important for you to compare the 2 files `variables-upgrade.env` and `plane.env`. Copy the newly added variable from downloaded file to `plane.env` and set the expected values."**_
 
-Once done with making changes in `.env` file, jump on to `Start Server`
+Once done with making changes in `plane.env` file, jump on to `Start Server`
 
 #### Upgrading from v0.13.2 to v0.14.0
 
