@@ -107,7 +107,8 @@
           "pages":[
             "core-concepts/issues/overview",
             "core-concepts/issues/properties",
-            "core-concepts/issues/visualise_filter"
+            "core-concepts/issues/visualise_filter",
+            "core-concepts/issues/issue-types"
           ]
         },
         "core-concepts/cycles",
