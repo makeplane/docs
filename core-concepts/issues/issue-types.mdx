@@ -1,0 +1,101 @@
+---
+title: Add, configure and control your issue types
+sidebarTitle: Issue Types
+description: Issue Types unlock a whole new way of adding, editing, and moving work forward in Plane.
+
+---
+
+## Overview
+
+The default issue type called `Issue` is great for starting with Plane, but as you advance in your project management journey, you find the need for names and properties unique to the type of work you are doing.
+
+For example, your Marketing team may need an issue type called `Content` with the properties, `Channel`, `SEO done?`, and `Reviewer` — properties that aren't available on the default Issues. Your Engineering team, on the other hand, may want an issue type called `Bugs` with the properties `Version` and `Environment` to have more upfront info per bug reported.
+
+Issue Types make these and infinite other use cases possible.
+
+## Create your issue type
+
+**Plan**: Pro  
+**Role**: Project admins
+
+1. Click the three-dots icon next to your project name on the left pane and click **Settings**.
+2. Select **Issue Types** on the right pane.
+<Frame>![Create issue](/images/issues/setup-issue-types.webp)</Frame>
+3. Click the **Enable** button to start creating issue types for your project.
+<Frame>![Create issue](/images/issues/enable-issue-types.webp)</Frame>
+4. The default type is called `Issue`. Click the **Add Issue Type** button to create a new issue type.
+<Frame>![Create issue](/images/issues/add-issue-type.webp)</Frame>
+5. In the **Create issue type** modal, type name, and description, and choose a background color and an icon to represent the issue type. Click the **Create issue type** button.
+<Frame>![Create issue](/images/issues/create-issue-type.webp)</Frame>
+6. Switch on the toggle button to allow users to select the issue type when creating issues and sub-issues.
+<Frame>![Create issue](/images/issues/activate-issue-type.webp)</Frame>
+
+### Examples of issue types
+
+- *IT development teams*   
+`Bug` `Improvement` `Epic` `Story`
+
+
+- *IT support teams*  
+`Incident` `Change` `Service request` `New feature`
+
+- *Product management*  
+`Product launches` `User research` `Feature development` `Market analysis`
+
+- *Production units (automobile)*  
+`Production planning`, `Material procurement`, `Quality control`, `Inventory management`
+
+- *Design agencies*   
+`Revision requests` `Design drafting` `Client presentation` `Quality assurance`
+
+- *NGOs*  
+`Grant writing` `Volunteer coordination` `Beneficiary management`
+
+
+## Add custom properties
+
+Adding custom properties to the default issue type Issue and other newly created issue types is possible.
+
+1. Under the issue type, click **Add New Property** to create custom fields.
+<Frame>![Create issue](/images/issues/add-new-property.webp)</Frame>
+2. Specify values for **Name**, **Type** and **Attributes** of the new property. Select the **Mandatory** checkbox if it's a required field. Switch on the **Active** toggle button to make the property visible in issues. 
+<Frame>![Create issue](/images/issues/property-details.webp)</Frame>
+3. Click the **Confirm** (green checkmark icon) to add the property to the issue type. 
+
+<Warning>Before you delete properties, switch off the **Active** toggle button to avoid data loss.</Warning>
+
+### Property types
+
+Here's a list of all the property types and attributes that Plane provides for creating custom fields: 
+
+| Property type | Attributes | Notes|
+| --------------| ------------------- |---- |
+| **Text** | Single line, Paragraph, Read-only | The **Read-only** attribute cannot be marked as mandatory. Enter text in the Read only data box for this option.|
+| **Number** | Default value | An optional default value can be given to this property type.|
+| **Dropdown** | Single select, Multi select, Add options | Specify the values for the dropdown under **Add options**. |
+| **Boolean** | True/False | Default value is false. This attribute cannot be marked as mandatory. |
+| **Date** | Date Format | Consistent date format across all properties. | 
+| **Member picker** | Single Select, Multi select | Displays a list of all project members. |                  
+
+
+### Examples of custom properties
+
+- *Product launch*  
+`Launch date` `Geography` `Budget` `Approval status` `Stakeholder`
+
+- *Bug*  
+`Affected version` `Resolved version` `Environment` `Steps to reproduce` `Approval status` `Customer impact`
+
+- *Final design approval*  
+`Final design files` `Approval checklist` `Client approval date` `Responsible person`
+
+## Use issue types
+
+Once the project Admin sets up the issue types any project member can use them when creating issues or sub-issues.
+
+- In the **Create new issue** modal, the user can choose the desired issue type from the list at the top left corner. By default, the issue type `Issue` is selected displaying both system-defined and custom properties.
+- Changing the issue type will update the modal to display the relevant properties for that type.
+- The system ensures that all properties marked as mandatory are filled before creating the issue.
+<Frame>![Create issue](/images/issues/use-issue-type.webp)</Frame>
+
+When viewing issues, the issue type is displayed with an icon near the title for easy identification. Any custom properties added will also appear in the list of properties, and changes to these values are tracked in the issue's activity trail.

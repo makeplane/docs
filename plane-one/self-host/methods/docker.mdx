@@ -1,0 +1,93 @@
+---
+title: Docker
+sidebar_label: Docker
+---
+Plane One supports a standard Docker-based installation via our own command-line interface called the Prime CLI.
+## Pre-requisites
+- A Plane One license
+If you don't have a license, [get it here](https://plane.so/one).
+- A virtual or on-prem machine with at-least 2 vCPUs and 4 GB RAM
+- `x64` AKA `AMD 64` or `AArch 64` AKA `ARM 64` CPUs
+- Ubuntu, Debian, or CentOS
+
+    For Amazon Linux 2 or Linux 2023, click here.
+
+## Upgrading from Community Edition to One
+<Warning> 
+Do not install One first if you are upgrading from the Community Edition. Follow the instructions below first all the way to the end of the section `Restoring your data to your One instance`.
+
+We strongly recommend you install One on a fresh machine, not the one running Plane Community.
+</Warning>
+
+### Backing up your data
+`setup.sh` in the Community Edition now comes with an option to back up your data.
+
+1. Use  `./setup.sh` to open the operator menu and select `7` to backup your Plane data.
+2. When done, your data will be backed up to the folder shown on the screen.
+e.g., `/plane-selfhost/plane-app/backup/20240522-1027`
+3. This folder will contain 3 `tar.gz` files.
+    - `pgdata.tar.gz`
+    - `redisdata.tar.gz`
+    - `uploads.tar.gz`
+4. Copy all the 3 files from the server running the Community Edition to any folder on the server running Plane One on any folder of your choice._createMdxContent
+
+e.g., `~/ce-backup`
+
+### Restoring your data to your One instance
+1. Start any command-line interface like Terminal and go into the folder with the back-up files.
+    ```
+    cd ~/ce-backup
+    ```
+2. Copy and paste the script below on Terminal and hit Enter.
+    ```
+    
+    TARGET_DIR=/opt/plane/data
+    sudo mkdir -p $TARGET_DIR
+    for FILE in *.tar.gz; do
+        if [ -e "$FILE" ]; then
+            tar -xzvf "$FILE" -C "$TARGET_DIR"
+        else
+            echo "No .tar.gz files found in the current directory."
+            exit 1
+        fi
+    done
+
+    mv $TARGET_DIR/pgdata/ $TARGET_DIR/db
+    mv $TARGET_DIR/redisdata/ $TARGET_DIR/redis
+    mkdir -p $TARGET_DIR/minio
+    mv $TARGET_DIR/uploads/ $TARGET_DIR/minio/uploads/
+    ```
+3. This script will extract your Community Edition data and restore it to /opt/plane/data.
+4. Follow the instructions for new installations below.
+
+## New installations
+1. `ssh` into your machine as the root user (or user with sudo access) per the norms of your hosting provider.
+2. Run the command below with the last twelve characters being your license key.
+<Tip>The easiest way to get this command is from the [customer portal](https://prime.plane.so/) where you also got your license key. Each entry on the portal shows the command bound to the license key, so you can just copy it from there.</Tip>
+   ```
+    curl -fsSL https://prime.plane.so/install/YOUR-LICENSE-KEY | sh -
+   ```
+  
+Successfully running that command,
+1. Validates the license key
+2. Downloads `prime-cli` per your OS and your CPU's architecture and saves it to the `/usr/bin` directory.
+3. Runs the `prime-cli setup` command with necessary parameters. which in turn
+    1. Asks you for the domain to link the license to
+
+        Choose this carefully. The domain linked to the license can't be changed later.
+
+    2. Asks you to setup Plane in Express or Advanced modes
+
+        Express is the fastest way to setup Plane. Advanced lets you configure all Docker services to your specs.
+
+    3. Installs Docker and its necessary plugins
+    4. Downloads the license file
+    5. Downloads `docker-compose`, `plane.env`, and the images for the microservices that will run in the Docker network
+    6. Downloads the required docker images
+    7. Starts Plane services
+
+Successful installation shows you the domain you entered in `1.` above. Go to that domain to access your Plane app.
+
+---
+# Docker Swarm
+<Note>Docker Swarm will come soon. Please [reach out to us](mailto:support@plane.so) for updates and to have a quick chat to help us build it better.</Note>

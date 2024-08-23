@@ -1,0 +1,123 @@
+---
+title: OIDC and SAML
+sidebarTitle: Custom SSO
+---
+Plane One enables custom SSO via any identity provider with an official and supported implementation of OIDC + SAML standards. This page cites examples from Okta, but we will soon publish provider-specific instructions in phases.
+
+## OIDC
+
+You will need to configure values on your IdP first and then on Plane later.
+
+### On your preferred IdP
+
+Create a Plane client or application per your IdP's documentation and configure ↓.
+
+<Tip>
+  `domain.tld` is the domain that you have hosted your Plane app on.
+</Tip>
+
+| **Config**     | **Key**                                               |
+|----------------|-------------------------------------------------------|
+| Origin URL     | `http(s)://domain.tld/auth/oidc/`                     |
+| Callback URL   | `http(s)://domain.tld/auth/oidc/callback/`            |
+| Logout URL     | `http(s)://domain.tld/auth/oidc/logout/`              |
+
+### On Plane
+
+Go to `/god-mode/authentication/oidc` on your Plane app and find the configs ↓.
+
+<Tip>
+  Your IdP will generate some of the following configs for you. Others, you will specify yourself. Just copy them over to each field.
+</Tip>
+
+<Frame>![OIDC Configuration](/images/custom-sso/oidc-config.png)</Frame>
+
+- Copy the `CLIENT_ID` for the Plane client or app you just created over from your IdP and paste it in the field for it.
+
+  With providers like Keycloak, you have to choose a unique ID per app your configure. With providers like Okta and Auth0, you copy over the generated ID over to Plane. Typically, you will find it on the Plane application Home or Settings page on your IdP.
+
+- Copy the `CLIENT_SECRET` for the Plane client or app you created over from your IdP and paste it in the field for it.
+
+  The secret is usually auto-generated and you just need to copy it over from the Plane app or client's Home or Settings page.
+
+- Copy the `TOKEN URL` from your IdP and paste it into the field for it on `/god-mode/authentication/oidc/`.\
+  Typically used to maintain user authentication and to persist it with refreshes, this URL lives in the `.well-known/` directory for the Plane app or client on your IdP.
+
+- Copy the `User info URL` from your IdP and paste it into the field for it on `/god-mode/authentication/oidc/`.
+
+  Used to get an authenticating user's `email`, `first_name` and the `last_name` values from the IdP, this too can be copied over from the `.well-known/` directory.
+
+- Copy the `Authorize URL` over from the `.well-known/` directory and paste it into the field for it on Plane's `/god-mode/authentication/oidc/`.\
+  This is the URL that Plane's login screen redirects to when your users click `Sign up with <name of IDP>` or `Login with <name of IdP>`.
+
+  <Frame>![Login with IdP](/images/custom-sso/plane-login.png)</Frame>
+
+  To test if this URL is right, see if clicking the `Login with <name of your IdP>` button brings up your IdP's authentication screen.
+
+   <Frame>![Login with Okta](/images/custom-sso/okta-signin.webp)</Frame>
+
+- Finally, choose a name for your IdP on Plane so you can recognize this set of configs.
+
+## SAML
+
+You will need to configure values on your IdP first and then on Plane later.
+<Tip>
+  `domain.tld` is the domain that you have hosted your Plane app on.
+</Tip>
+
+### On your preferred IdP
+
+Create a Plane client or application per your IdP's documentation and configure ↓.
+
+| **Config**                                                                                                                                                                                              | **Value**                                                                                          |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| Entity ID  <br/><br/> Metadata that identifies Plane as an authorized service on your IdP                                                                                                                    | `http(s)://domain.tld/auth/oidc/`                                                                  |
+| ACS URL <br/><br/>Assertion Consumer service that your IdP will redirect to after successful authentication by a user <br/><br/>This is roughly the counterpart of the `Callback URL` in OIDC set-ups.       | `http(s)://domain.tld/auth/oidc/callback/` <br/><br/> Plane supports HTTP-POST bindings.           |
+| SLS URL <br/><br/>Single Logout Service that your IdP will recognize to end a Plane session when a user logs out <br/><br/>This is roughly the counterpart of the `Logout URL` in OIDC set-ups.                | `http(s)://domain.tld/auth/oidc/logout/`                                                           |
+
+<Tip>
+When setting these values up on the IdP, it’s important to remember Plane does not need to provide a signing certificate like other service providers.
+</Tip>
+
+### Let your IdP identify your users on Plane.
+
+| **Config**                 | **Value**                                              |
+|----------------------------|--------------------------------------------------------|
+| Name ID format             | emailAddress <br/><br/> By default, your IdP should send back a username, but Plane recognizes email addresses as the username. Set the value to the above so Plane recognizes the user correctly.
+### Set additional attribute values.
+
+By default, your IdP will send the value listed under `Property`. You have to map it to the SAML attribute Plane recognizes.
+
+| **Default property value** | **Plane SAML attribute**                   |
+|----------------------------|--------------------------------------------|
+| user.firstName             | first_name                                 |
+| user.lastName              | last_name                                  |
+| user.email                 | email                                      |
+
+<Tip>
+  Depending on your IdP, you will have to find both the `Name ID format` and the three other user identification properties on different screens. Please refer to your IdP's documentation when configuring these up on your IdP. Additionally, you may have to configure the IdP to sign assertions. Irrespective of that, you have to copy the signing certificate from the IdP.
+</Tip>
+
+### On Plane
+
+<Frame>![SAML Configuration](/images/custom-sso/saml-config.png)</Frame>
+
+<Tip>
+  You will find all of the values for the fields below in the `/metadata` endpoint your IdP generates for the Plane app or client.
+</Tip>
+
+- Copy the `ENTITY_ID` for the Plane client or app you just created over from your IdP and paste it in the field for it.
+
+- Copy the `SSO URL` for the Plane client or app from your IdP and paste it in the field for it.
+
+  This will bring up the IdP's authentication screen for your users.
+
+  <Frame>![SSO URL](/images/custom-sso/okta-signin.webp)</Frame>
+
+- Copy the `SLS URL` for the Plane client or app from your IdP and paste it in the `Logout URL` field on Plane's `/god-mode/authentication/saml/`.
+
+- Add the name of the IdP that you want to show on your Plane instance's log-in or sign-up screens.
+
+  <Frame>![Log-in Screen](/images/custom-sso/instance-login.png)</Frame>
+
+- Finally, paste the signing certificate from your IdP that you got in the last step of setting up your Plane client or app on your IdP above and paste it in the field for it.
