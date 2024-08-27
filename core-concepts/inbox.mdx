@@ -1,9 +1,9 @@
 ---
-title: Capture external inputs and move valid issues to project
+title: Triage issues before adding them to your project
 sidebarTitle: Intake
 ---
 
-Intake is a Plane-only feature that lets `Guests` create issues and then the `Admins` and `Members` can move these issues inside a project. Intake can take bug reports, feature or service requests, or raise a ticket by stakeholders, customers, or clients. Issues created in Intake can then be accepted to move them to the Project’s workflow. 
+Intake is a Plane-only feature that lets `Guests` create issues following which `Admins` and `Members` can move these issues inside a project. Intake can take bug reports, feature or service requests, or raise a ticket by stakeholders, customers, or clients. Issues created in Intake can then be accepted to move them to the Project’s workflow. 
 
 ## Enable Intake
 
@@ -11,9 +11,9 @@ Intake functions at the project level and is toggled off by default. Project `Ad
 
 1. Click the three-dots icon next to your project name on the left pane and click **Settings**.
 2. Select **Features** on the right pane.
-3. Switch on the toggle button for the Intake feature to enable it on the project. 
+3. Switch on the toggle button for the **Intake** feature to enable it on the project. 
 
-    <Frame>![enable-intake-feature](/images/issues/enable-intake-feature.webp)</Frame>
+    <Frame>![enable-intake-feature](/images/inbox/enable-intake-feature.webp)</Frame>
 
 ## Create Issue in Intake
 
@@ -21,10 +21,10 @@ Users with a `Guest` role can create issues in Intake. To create an issue:
 
 1. Click on **Intake** under the project on the sidebar.
 2. Click the **Add Issue** button at the top right corner.
-<Frame>![create-issue-intake](/images/issues/create-issue-intake.webp)</Frame>
+<Frame>![create-issue-intake](/images/inbox/create-issue-intake.webp)</Frame>
 3. Enter the required details and click the **Create Issue** button.
 
-    <Frame>![enter-issue-details](/images/issues/enter-issue-details.webp)</Frame>
+    <Frame>![enter-issue-details](/images/inbox/enter-issue-details.webp)</Frame>
 
 ### Properties
 
@@ -42,28 +42,28 @@ For an issue in the Intake, you can choose to assign the following properties:
 
 ## Intake issue actions
 
-When a Guest creates an issue in Intake, it is added to the `Pending` state. Admin and Member roles can accept, decline, snooze or mark the issue as duplicate.
+When a Guest creates an issue in Intake, it is added to the `Pending` state. Admin and Member roles can accept, decline, snooze or mark the issue as a duplicate.
 
 ### Accept issue
 
-    <Frame>![accept-intake-issue](/images/issues/accept-intake-issue.webp)</Frame>
+    <Frame>![accept-intake-issue](/images/inbox/accept-intake-issue.webp)</Frame>
     
 1. Open a pending issue in Intake.
 2. Click the **Accept** button on the top right. This will open a modal where you can change the issue details before moving it to your project.
-3. Click the **Add to project** button to move the issue from **Intake** to **Issues** under the project. The issue will be be visible under the **State** selected when creating or accepting the Intake issue.
+3. Click the **Add to project** button to move the issue from **Intake** to **Issues** under the project. The issue will be visible under the **State** selected when creating or accepting the Intake issue.
 
 ### Decline issue
     
-If the issue is not relevant to your project, you can chose to decline it. Click the **Decline** button present on any pending issue to decline it. Once the issue is declined, it ends up in the `Cancelled` state under your project.
+If the issue is not relevant to your project, you can choose to decline it. Click the **Decline** button present on any pending issue to decline it. Once the issue is declined, it ends up in the `Cancelled` state under your project.
    
 ### Snooze issue
     
 An issue can be snoozed to review it at a later time.
 
-    <Frame>![snooze-intake-issue](/images/issues/snooze-intake-issue.webp)</Frame>
+    <Frame>![snooze-intake-issue](/images/inbox/snooze-intake-issue.webp)</Frame>
     
 1. Open a pending issue in Intake.
-2. Click on the three dots icon on the top right corner.
+2. Click on the three dots icon in the top right corner.
 3. Select the **Snooze** option in the menu.
 4. Select a date to review it later.
     
@@ -74,34 +74,33 @@ The issue is moved out of pending Intake issues and can be accessed in the **Fil
 In cases where a similar issue exists in your project, an Intake issue can be marked as duplicate. 
     
 1. Open a pending issue in Intake.
-2. Click on the three dots icon on the top right corner.
+2. Click on the three dots icon in the top right corner.
 3. Select the **Mark as duplicate** option in the menu.
-4. Select an issue in the project which is a duplicate of the Intake issue.
+4. Select an issue in the project that is a duplicate of the Intake issue.
 
-    <Frame>![mark-duplicate-intake-issues](/images/issues/mark-duplicate-intake-issues.webp)</Frame>
+    <Frame>![mark-duplicate-intake-issues](/images/inbox/mark-duplicate-intake-issues.webp)</Frame>
     
 The issue is now declined with a ‘Duplicate’ label on it. It will also appear in the `Cancelled` state under your project.
 
 ### Delete issue
 
-Only `Admins` have the permission to delete Intake issues before it goes through the workflow. Deleted issues will not appear under any label in the `Closed` issues of Intake.
+Only `Admins` have permission to delete Intake issues before it goes through the workflow. Deleted issues will not appear under any label in the `Closed` issues of Intake.
    
 ## View Intake issues
 
 You can view **Open** and **Closed** issues in Intake by clicking on the appropriate tabs.
 
-`Pending` or `Snoozed` issues are considered as open issues. Further action can take place on such issues. Whereas, `Accepted`, `Declined`, and `Duplicate` appear under closed issues. No further action is required on closed issues.
-
     <img width="300" noZoom src="/images/inbox/inbox-tabs.png" />
 
+`Pending` or `Snoozed` issues are considered open issues. Further action can take place on such issues. Whereas, `Accepted`, `Declined`, and `Duplicate` appear under closed issues. No further action is required on closed issues.
 
 ### Sort and filter
 
-Like issues in the project, sorting and filtering can create a focused view in Intake. Filters and sorting can be applied to a list of issues simultaneously. 
+Like issues in the project, sorting and filtering can create a focused view of issues in Intake. Filters and sorting can be applied to a list of issues simultaneously. 
 
 Filters can be assigned from the **Filters** dropdown available on the left-hand side of the Intake page. Issues can be filtered by *Issue status*, *State*, *Priority*, *Assignee*, *Created by*, *Labels*, *Created date*, and *Last updated date*.
 
-Next to the Filters dropdown, you can use the sort drop-down to arrange Intake issues sequentially. Issues can be sorted by *Date created*, *Date updated*, and *ID* in the ascending or descending order.
+Next to the Filters dropdown, you can use the sort drop-down to arrange Intake issues sequentially. Issues can be sorted by *Date created*, *Date updated*, and *ID* in ascending or descending order.
 
 ## Additional features
 
@@ -109,7 +108,7 @@ Next to the Filters dropdown, you can use the sort drop-down to arrange Intake i
     <Frame>
         <img src="/images/inbox/inbox-description-box.png" />
     </Frame>
-- Intake has an activity and comments section to know the status and see feedback from users and customers. All the changes made to the issue can be tracked in real time under the **Activity** section.
+- Intake has an activity and comments section to know the status and see feedback from users and customers. All the changes made to the issue can be tracked in real-time under the **Activity** section.
     <Frame>
         <img src="/images/inbox/inbox-activity.png" />
     </Frame>
