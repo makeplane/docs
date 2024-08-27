@@ -1,28 +1,50 @@
 ---
-title: Jira Importer
-description: Integrate seamlessly with Jira using the Jira Importer feature in Plane, effortlessly importing your issues into your Plane projects. Follow these straightforward steps to import your Jira issues into Plane.
+title: Import your Jira data to Plane
+sidebarTitle: Jira
 ---
+> **Plan**: Pro   
+> **Role**: Workspace Admins
+
+## Overview
+
+With the Jira importer, you can easily import tasks, states, labels, and user data from Jira to Plane. You can continue managing your existing projects and save time without having to re-enter data making your transition smooth and efficient.
+
 ## Import from Jira
 
-1. **Access workspace settings:** Begin by navigating to the workspace settings page within Plane. Click on the "Importers" tab to initiate the import process.
-2. **Start Jira importer:** Within the "Importers" tab, locate the Jira section and click on the import button to activate the Jira Importer feature.
-<Frame>![](/images/importers/jira/jira-workspace-setting.png)</Frame>
-3. **Provide Jira information:** Upon installation, you'll be prompted to provide essential Jira information:
-    <Frame>![](/images/importers/jira/jira-importer-first-step.png)</Frame>
-    - **Jira personal access token:** Generate this token by visiting the provided link and paste it into the designated field.
-    - **Jira project key:** Enter the unique project identifier found in front of all issue IDs in Jira.
-    - **Jira email address:** Provide the email address associated with your Jira account.
-    - **Jira installation or cloud host name:** Enter the host URL found in your Jira project URL, excluding "http" or "https".
-    - **Import to project:** Select the Plane project where you want the Jira issues to be transferred and click next to proceed.
-4. **Review import options:** On the next screen, review the available import options, including the number of issues, states, modules, labels, and users. Additionally, choose whether to import Epics. Once done, click on next to proceed.
-    <Frame>![](/images/importers/jira/jira-importer-second-step.png)</Frame>
-5. **Customize user settings:** In this step, customize user settings by making choices for each user:
-    <Frame>![](/images/importers/jira/jira-importer-step-three.png)</Frame>
-    - **Invite by email:** Invite users via email.
-    - **Map to existing:** Map users from Jira to existing users in Plane.
-    - **Do not import:** Choose not to import certain users.
-6. **Final approval:** After customizing user settings, confirm the import to initiate the process. Once completed, all your Jira issues will be visible in your designated Plane project.
-    <Frame>![](/images/importers/jira/jira-importer-step-fore.png)</Frame>
+To import Jira issues to a Plane project:
 
-With these simple steps, seamlessly import your Jira issues into Plane, ensuring smooth project management and collaboration across platforms. Experience enhanced efficiency and productivity as you consolidate your project data in one centralized location.
+1. Go to the workspace option in Plane. Click **Workspace settings**.
+2. Select **Imports** on the right pane. 
+3. Click the **Import** button.
+        <Frame>![Import from Jira](/images/importers/jira/import-from-jira.webp)</Frame>
+4. Click **Connect Jira** in the Jira to Plane Migration Assistant page.
+        <Frame>![Connect Jira](/images/importers/jira/connect-jira.webp)</Frame>
+5. You will be prompted to sign in to your Atlassian account. Enter your credentials and sign in.
+6. Click **Accept** to allow Plane access to your Atlassian account. If you have multiple workspace with the same account, you will be asked to select the one from which you want to import the data to Plane.
+7. In the **Configure Plane** step, select the Plane project to which you want to import your Jira project issues. Click **Next Step**.
+        <Frame>![Configure Plane](/images/importers/jira/configure-plane.webp)</Frame>
+8. In the **Configure Jira** step:
+    1. Select the workspace and the project from which you want to import in the **Select Jira Workspace** and **Select Jira Project** dropdown lists.
+    2. For **How do you want to record issue types in Plane?**, select the option to define the way issues types in Jira should be dsiplayed in the Plane project issues.
+        - **Create as a label** - Issue types from Jira will be converted as Labels in the Plane project issues.
+        - **Add [ issue_type ] in the title** - Issue types from Jira will appear in the title of the Plane project issues. 
+    <Frame>![Configure Jira](/images/importers/jira/configure-jira.webp)</Frame>
+10. In the **Import users** step,
+    - Click **Upload CSV** to add the users to your Plane project. Refer to [Export users from a site
+ users from a site](https://support.atlassian.com/organization-administration/docs/export-users-from-a-site/) to download the CSV file from Jira.
+    - Select the **Skip Importing User data** checkbox if you want to skip this step. You can manually add users after the import process. (not recommended)
+        <Warning>If you skip user import, the user information for the issues and comments added by other users will show the name of the user who performed the migration by default.</Warning>
+    <Frame>![Import users](/images/importers/jira/import-users.webp)</Frame>
+10. In the **Map states** step:
+    - Map the **Jira status** to their equivalent **Plane states**.
+    - Select the **Auto create and map the remaining Jira states** checkbox to automatically create and map the missing states from Jira in Plane.
+    <Frame>![Map states](/images/importers/jira/map-states.webp)</Frame>
+11. In the **Map priorities** step, map the **Jira priorities** to their equivalent **Plane priorities**. If a match doesn't exist, select **None** in the Plane priority list.
+    <Frame>![Map priorities](/images/importers/jira/map-priorities.webp)</Frame>
+12. In the **Summary** step, review the mappings and make any changes, if needed. Click **Confirm** to start migration.
+    <Frame>![Review mappings](/images/importers/jira/review-mappings.webp)</Frame>
+13. The data migration begins and takes a few minutes depending on the number of issues in your Jira workspace. 
+    <Frame>![Migration complete](/images/importers/jira/import-complete.webp)</Frame>
+14. Navigate to **Issues** in your project on the sidebar to verify that the data import is successful. 
+
 
