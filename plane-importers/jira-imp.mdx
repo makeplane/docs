@@ -7,7 +7,7 @@ sidebarTitle: Jira
 
 ## Overview
 
-With the Jira importer, you can easily import tasks, states, labels, and user data from Jira to Plane. You can continue managing your existing projects and save time without having to re-enter data making your transition smooth and efficient.
+With the Jira importer, you can easily import issues, states, labels, priorities and user data from Jira to Plane. You can continue managing your existing projects and save time without having to re-enter data making your transition smooth and efficient.
 
 ## Import from Jira
 
@@ -20,7 +20,7 @@ To import Jira issues to a Plane project:
 4. Click the **Connect Jira** button on the **Jira to Plane Migration Assistant** page.
         <Frame>![Connect Jira](/images/importers/jira/connect-jira.webp)</Frame>
 5. You will be prompted to sign in to your Atlassian account. Enter your credentials and sign in.
-6. Click **Accept** to allow Plane access to your Atlassian account. If you have multiple workspaces with the same account, you will be asked to select the one from which you want to import the data to Plane.
+6. Click **Accept** to allow Plane access to your Atlassian account. If you have multiple workspaces with the same account, you will be asked to select the one from which you want to import the data to Plane in the **Use app on** dropdown list.
 7. In the **Configure Plane** step, select the Plane project to which you want to import your Jira project issues. Click **Next Step**.
         <Frame>![Configure Plane](/images/importers/jira/configure-plane.webp)</Frame>
 8. In the **Configure Jira** step:
@@ -29,11 +29,10 @@ To import Jira issues to a Plane project:
         - **Create as a label** - Issue types from Jira will be converted as Labels in the Plane project issues.
         - **Add [ issue_type ] in the title** - Issue types from Jira will appear in the title of the Plane project issues. 
     <Frame>![Configure Jira](/images/importers/jira/configure-jira.webp)</Frame>
-10. In the **Import users** step,
-    - Click **Upload CSV** to add the users to your Plane project. Refer to [Export users from a site
- users from a site](https://support.atlassian.com/organization-administration/docs/export-users-from-a-site/) to download the CSV file from Jira.
-    - Select the **Skip Importing User data** checkbox if you want to skip this step. You can manually add users after the import process. (not recommended)
-        <Warning>If you skip user import, the user information for the issues and comments added by other users will show the name of the user who performed the migration by default.</Warning>
+10. In the **Import users** step, you have two options: 
+    - **Upload CSV**: Click the **Upload CSV** button to import the users to your Plane project. Refer to [Export users from a site](https://support.atlassian.com/organization-administration/docs/export-users-from-a-site/) to download the CSV file from Jira. 
+    - **Skip user import** - You can select the **Skip Importing User data** checkbox if you want to skip this step. You can manually add users after the import process. (not recommended)
+        <Warning>If you skip user import, the issues and comments added by other users will by default show the name of the user who performed the migration. The Assignees field will be empty.</Warning>
     <Frame>![Import users](/images/importers/jira/import-users.webp)</Frame>
 10. In the **Map states** step:
     - Map the **Jira status** to their equivalent **Plane states**.
@@ -47,4 +46,10 @@ To import Jira issues to a Plane project:
     <Frame>![Migration complete](/images/importers/jira/import-complete.webp)</Frame>
 14. Navigate to **Issues** in your project on the sidebar to verify that the data import is successful. 
 
+## Sync Jira to Plane
 
+After import, if a new issue is created or an existing issue is updated in Jira, you can easily migrate these changes to your Plane project. Follow the steps below:
+
+1. Go to the workspace option in Plane. Click **Workspace settings**.
+2. Select **Imports** on the right pane. 
+3. Click the **Re run** button 
