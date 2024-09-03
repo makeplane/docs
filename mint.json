@@ -479,5 +479,10 @@
       "source": "/plane-one/self-host/methods/one-command",
       "destination": "/plane-one/self-host/methods/docker"
     }
-  ]
+  ],
+  "analytics": {
+    "ga4": {
+        "measurementId": "G-G578SD4VZD"
+    }
+}
 }
