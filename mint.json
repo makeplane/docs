@@ -40,10 +40,6 @@
     {
       "name": "API Reference",
       "url": "api-reference"
-    },
-    {
-      "name": "Plane One",
-      "url":"plane-one"
     }
   ],
   "navigation": [
@@ -59,23 +55,48 @@
       "pages": [
         "self-hosting/overview",
         {
-          "group":"Methods",
+          "group":"Install Plane",
           "pages":[
           "self-hosting/methods/docker-compose",
           "self-hosting/methods/kubernetes"
           ]
         },
         {
-          "group" : "Govern",
+          "group" : "Configure instance",
           "pages": [
             "self-hosting/govern/instance-admin",
-            "self-hosting/govern/authentication",
+            {
+              "group": "Authentication",
+              "pages": [
+                "self-hosting/govern/authentication",
+                "self-hosting/govern/google-oauth",
+                "self-hosting/govern/github-oauth",
+                "self-hosting/govern/oidc-sso",
+                "self-hosting/govern/saml-sso"
+              ]
+            },
             "self-hosting/govern/communication",
             "self-hosting/govern/custom-domain",
-            "self-hosting/govern/reset-password"
+            "self-hosting/govern/reset-password",
+            "self-hosting/telemetry"
           ]
         },
-        "self-hosting/telemetry"
+        {
+          "group" : "Manage instance",
+          "pages": [
+            "self-hosting/manage/backup-restore",
+            "self-hosting/manage/upgrade-plane",
+            "self-hosting/manage/view-logs"
+          ]
+        },
+        {
+          "group" : "Manage plans",
+          "pages": [
+            "self-hosting/manage-plans/prime-client",
+            "self-hosting/manage-plans/prime-cli",
+            "self-hosting/manage-plans/upgrade-from-community"
+          ]
+        }
       ]
     },
     {
@@ -273,45 +294,6 @@
     {
       "group": "Webhooks",
       "pages": ["webhooks/intro-webhooks"]
-    },
-    {
-      "group": "Plane One",
-      "pages":[
-        "plane-one/introduction"
-      ]
-    },
-    {
-      "group": "Self-host",
-      "pages":[
-        "plane-one/self-host/overview",
-        {
-          "group":"Methods",
-          "pages":[
-            "plane-one/self-host/methods/docker",
-            "plane-one/self-host/methods/kubernetes"
-            
-          ]
-        }
-      ]
-    },
-    {
-      "group": "Manage",
-      "pages":[
-        "plane-one/manage/prime-cli",
-        "plane-one/manage/prime-client"
-      ]
-    }, 
-    {
-      "group": "Govern",
-      "pages":[
-        {
-          "group":"Authentication",
-          "pages":[
-            "plane-one/governance/authentication/custom-sso"
-          ]
-        },
-        "plane-one/governance/workspaces-and-teams"
-      ]
     }
   ],
   "footerSocials": {
@@ -478,6 +460,18 @@
     {
       "source": "/plane-one/self-host/methods/one-command",
       "destination": "/plane-one/self-host/methods/docker"
+    },
+    {
+      "source": "/plane-one/self-host/methods/docker",
+      "destination": "/self-hosting/methods/docker-compose"
+    },
+    {
+      "source": "/plane-one/self-host/methods/kubernetes",
+      "destination": "/self-hosting/methods/kubernetes"
+    },
+    {
+      "source": "/plane-one/self-host/overview",
+      "destination": "/self-hosting/overview"
     }
   ],
   "analytics": {
