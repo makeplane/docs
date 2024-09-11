@@ -86,17 +86,12 @@
           "pages": [
             "self-hosting/manage/backup-restore",
             "self-hosting/manage/upgrade-plane",
-            "self-hosting/manage/view-logs"
+            "self-hosting/manage/view-logs",
+            "self-hosting/manage/prime-cli"
           ]
         },
-        {
-          "group" : "Manage plans",
-          "pages": [
-            "self-hosting/manage-plans/prime-client",
-            "self-hosting/manage-plans/prime-cli",
-            "self-hosting/manage-plans/upgrade-from-community"
-          ]
-        }
+        "self-hosting/upgrade-from-community",
+        "self-hosting/prime-client"
       ]
     },
     {
