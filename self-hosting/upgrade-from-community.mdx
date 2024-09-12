@@ -23,7 +23,7 @@ e.g., `/plane-selfhost/plane-app/backup/20240522-1027`
 
 e.g., `~/ce-backup`
 
-### Restore data to new instance
+### Restore data
 1. Start any command-line interface like Terminal and go into the folder with the back-up files.
     ```
     cd ~/ce-backup
@@ -50,31 +50,6 @@ e.g., `~/ce-backup`
 3. This script will extract your Community Edition data and restore it to /opt/plane/data.
 4. Follow the instructions for new installations below.
 
-## Install Plane
-
-The Enterprise edition comes with a **free plan** and the flexibility to upgrade to a paid plan at any point.
-
-### Prerequisites
-
-      - A virtual or on-prem machine with atleast 2 vCPUs and 4 GB RAM
-      - `x64` AKA `AMD 64` or `AArch 64` AKA `ARM 64` CPUs
-      - Supported operating systems:
-         - Ubuntu
-         - Debian
-         - CentOS
-         - Amazon Linux 2 or Linux 2023
-
-### Method
-
-1. `ssh` into your machine as the root user (or user with sudo access) per the norms of your hosting provider.
-2. Run the command below:  
-    ```
-    curl -fsSL https://prime.plane.so/install/ | sh -
-    ```
-3. Follow the instructions on the terminal. Hit `Enter` or `Return` to continue.
-4. Enter the domain name where you will access the Plane app in the format `domain.tld` or `subdomain.domain.tld`. If you are using a paid plan, the domain linked to the license can’t be changed later.
-5. Choose one of the options below:
-         - **Express**: Plane installs with the default configurations.
-         - **Advanced**: You can customize the database, Redis, storage  and other settings.
-6. The installation will take a few minutes to complete and you will see the message **Plane has successfully installed**. You can access the Plane application on the domain you provided during the installation. 
-7. If you want to activate the license for a paid plan, see [Activate License](/self-hosting/activate-license).
+## Install Plane Enterprise
+- Using [Docker](http://localhost:3000/self-hosting/methods/docker-compose#enterprise-edition)
+- Using [Kubernetes](http://localhost:3000/self-hosting/methods/kubernetes#enterprise-edition)
