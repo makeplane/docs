@@ -4,8 +4,8 @@ title: Docker
 
 This guide shows you the steps to deploy a self-hosted instance of Plane using Docker.
 
-## Install Plane
-To install Plane, follow the steps below:
+## Enterprise edition
+To install the Enterprise edition (Plane One and Plane Pro), follow the steps below:
 
 ### Prerequisites
 
@@ -17,7 +17,7 @@ To install Plane, follow the steps below:
       - CentOS
       - Amazon Linux 2 or Linux 2023
 
-### Procedure
+### Install Plane
 
    1. `ssh` into your machine as the root user (or user with sudo access) per the norms of your hosting provider.
    2. Run the command below:  
@@ -30,12 +30,10 @@ To install Plane, follow the steps below:
       - **Express**: Plane installs with the default configurations.
       - **Advanced**: You can customize the database, Redis, storage  and other settings.
    6. The installation will take a few minutes to complete and you will see the message **Plane has successfully installed**. You can access the Plane application on the domain you provided during the installation. 
-   7. If you want to activate the license for a paid plan, see [Activate License](/self-hosting/prime-client).
+   7. If you want to activate the license for a paid plan, see [Activate License](/self-hosting/activate-license).
 
-<AccordionGroup>
-<Accordion title="Install Community edition">
-
-   The Enterprise edition comes with a **free plan** and the flexibility to upgrade to a paid plan at any point. If you still want to install the Community edittion, follow the steps below:
+## Community edition 
+   To install the Community edition, follow the steps below:
 
    ### Prerequisites
 
@@ -49,7 +47,7 @@ To install Plane, follow the steps below:
    -   User context used must have access to docker services. In most cases, use `sudo su` to switch as root user.
    -   Use the terminal (or gitbash) window to run all the future steps.
 
-   ### Procedure
+   ### Install Plane
       1. Create a folder named `plane-selfhost` on your machine for deployment and data storage. 
             
          ```bash 
@@ -114,7 +112,7 @@ To install Plane, follow the steps below:
 
       You have successfully self-hosted the `Plane` instance. Access the application by going to IP or domain you have configured it on. For example, `https://plane.example.com:8080` or `http://[IP-ADDRESS]:8080`.
 
-      ### Stop server
+      #### Stop server
 
          In case you want to make changes to `.env` variables, we recommend that you stop the services before doing that.
 
@@ -124,7 +122,7 @@ To install Plane, follow the steps below:
 
          ![Stop Services](/images/docker-compose/stopped-docker.png)
 
-         ### Restart server
+      #### Restart server
 
          In case you want to make changes to `.env` variables without stopping the server or noticed some abnormalities in services, you can restart the services.
 
@@ -132,6 +130,3 @@ To install Plane, follow the steps below:
 
          If all goes well, you will see something like this:
          ![Restart Services](/images/docker-compose/restart-docker.png)
-
-  </Accordion>
-</AccordionGroup>

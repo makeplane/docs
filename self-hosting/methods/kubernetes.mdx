@@ -4,17 +4,15 @@ title: Kubernetes
 
 This guide shows you the steps to deploy a self-hosted instance of Plane using Kubernetes.
 
-## Install Plane
+## Enterprise edition
 To install Plane, follow the steps below:
 
-   The Enterprise edition comes with a **free plan** and the flexibility to upgrade to a paid plan at any point.
-
-    ### Prerequisites
+### Prerequisites
 
     - A working Kubernetes cluster
     - `kubectl` and `helm` on the client system that you will use to install our Helm charts
 
-    ### Procedure
+### Install Plane
 
     1. Open terminal or any other command-line app that has access to Kubernetes tools on your local system.
     2. Set the following environment variables:
@@ -90,9 +88,10 @@ To install Plane, follow the steps below:
                 --wait \
                 --wait-for-jobs 
             ```
-    5. If you want to activate the license for a paid plan, see [Activate License](/self-hosting/prime-client).
+    5. If you want to activate the license for a paid plan, see [Activate License](/self-hosting/activate-license).
 
-    ### Configuration settings
+<AccordionGroup>
+   <Accordion title="Configuration settings">
 
     #### Docker registry
 
@@ -244,31 +243,16 @@ To install Plane, follow the steps below:
     | env.storageClass | longhorn |  | Creating the persitant volumes for the stateful deployments needs the `storageClass` name. Set the correct value as per your kubernetes cluster configuration. |
     | env.secret_key | 60gp0byfz2dvffa45cxl20p1scy9xbpf6d8c5y0geejgkyp1b5 | Yes | This must be a random string which is used for hashing/encrypting the sensitive data within the application. Once set, changing this might impact the already hashed/encrypted data|
     
-    ### Custom Ingress Routes
-
-    If you are planning to use 3rd party ingress providers, here is the available route configuration
-
-    | Host | Path | Service |
-    |---    |:---:|---|
-    | plane.example.com | `/` | `<http://plane-app-web.plane:3000>` |
-    | plane.example.com | `/spaces/*`  | `<http://plane-app-space.plane:3000>` |
-    | plane.example.com | `/god-mode/*` | `<http://plane-app-admin.plane:3000>` |
-    | plane.example.com | `/api/*`  |  `<http://plane-app-api.plane:8000>` |
-    | plane.example.com | `/auth/*` | `<http://plane-app-api.plane:8000>` |
-    | plane.example.com | `/uploads/*` | `<http://plane-app-minio.plane:9000>` |
-    | plane-minio.example.com | `/` | `<http://plane-app-minio.plane:9090>` |
+</Accordion>
+</AccordionGroup>
   
-<AccordionGroup>
-  <Accordion title="Install Community edition">
-
-    The Enterprise edition comes with a **free plan** and the flexibility to upgrade to a paid plan at any point. If you still want to install the Community edittion, follow the steps below:
-
-        ### Prerequisites
+## Community edition
+    ### Prerequisites
 
         - A working Kubernetes cluster
         - `kubectl` and `helm` on the client system that you will use to install our Helm charts
 
-        ### Procedure
+    ### Install Plane
 
         1. Open Terminal or any other command-line app that has access to Kubernetes tools on your local system.
         1. Add the Helm Repo
@@ -331,8 +315,8 @@ To install Plane, follow the steps below:
                     --wait-for-jobs 
                 ```
 
-        ### Configuration settings
-        ---
+<AccordionGroup>
+  <Accordion title="Configuration settings">
 
         #### Plane Version
 
@@ -461,19 +445,20 @@ To install Plane, follow the steps below:
         |---|:---:|:---:|---|
         | env.secret_key | 60gp0byfz2dvffa45cxl20p1scy9xbpf6d8c5y0geejgkyp1b5 | Yes | This must be a random string that is used for hashing/encrypting the sensitive data within the application. Once set, changing this might impact the already hashed/encrypted data|
 
-        ### Custom Ingress Routes
-
-        If you are planning to use 3rd party ingress providers, here is the available route configuration
-
-        | Host | Path | Service |
-        |---    |:---:|---|
-        | plane.example.com | /  | [http://plane-web.plane-ce:3000](http://plane-web.plane-ce:3000) |
-        | plane.example.com | /spaces/*  | [http://plane-space.plane-ce:3000](http://plane-space.plane-ce:3000) |
-        | plane.example.com | /god-mode/* | [http://plane-admin.plane-ce:8000](http://plane-admin.plane-ce:8000) |
-        | plane.example.com | /api/*  |  [http://plane-api.plane-ce:8000](http://plane-api.plane-ce:8000) |
-        | plane.example.com | /auth/* |[http://plane-api.plane-ce:8000](http://plane-api.plane-ce:8000) |
-        | plane.example.com | /uploads/* | [http://plane-minio.plane-ce:9000](http://plane-minio.plane-ce:9000) |
-        | plane-minio.example.com | / | [http://plane-minio.plane-ce:9090](http://plane-minio.plane-ce:9090) |
-
     </Accordion>
 </AccordionGroup>
+
+
+## Custom Ingress Routes
+
+    If you are planning to use 3rd party ingress providers, here is the available route configuration
+
+    | Host | Path | Service |
+    |---    |:---:|---|
+    | plane.example.com | `/` | `<http://plane-app-web.plane:3000>` |
+    | plane.example.com | `/spaces/*`  | `<http://plane-app-space.plane:3000>` |
+    | plane.example.com | `/god-mode/*` | `<http://plane-app-admin.plane:3000>` |
+    | plane.example.com | `/api/*`  |  `<http://plane-app-api.plane:8000>` |
+    | plane.example.com | `/auth/*` | `<http://plane-app-api.plane:8000>` |
+    | plane.example.com | `/uploads/*` | `<http://plane-app-minio.plane:9000>` |
+    | plane-minio.example.com | `/` | `<http://plane-app-minio.plane:9090>` |
