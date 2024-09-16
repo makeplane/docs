@@ -75,6 +75,7 @@
             "self-hosting/govern/reset-password"
           ]
         },
+        "self-hosting/activate-license",
         "self-hosting/telemetry"
       ]
     },
