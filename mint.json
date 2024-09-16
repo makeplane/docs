@@ -86,12 +86,13 @@
           "pages": [
             "self-hosting/manage/backup-restore",
             "self-hosting/manage/upgrade-plane",
-            "self-hosting/manage/view-logs",
-            "self-hosting/manage/prime-cli"
+            "self-hosting/upgrade-from-community",
+            "self-hosting/activate-license",
+            "self-hosting/manage/prime-cli",
+            "self-hosting/manage/view-logs"
+            
           ]
-        },
-        "self-hosting/upgrade-from-community",
-        "self-hosting/activate-license"
+        }
       ]
     },
     {
