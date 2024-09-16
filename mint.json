@@ -55,10 +55,11 @@
       "pages": [
         "self-hosting/overview",
         {
-          "group":"Install Plane",
+          "group":"Installation and activation",
           "pages":[
           "self-hosting/methods/docker-compose",
-          "self-hosting/methods/kubernetes"
+          "self-hosting/methods/kubernetes",
+          "self-hosting/activate-license"
           ]
         },
         {
@@ -87,7 +88,6 @@
             "self-hosting/manage/backup-restore",
             "self-hosting/manage/upgrade-plane",
             "self-hosting/upgrade-from-community",
-            "self-hosting/activate-license",
             "self-hosting/manage/prime-cli",
             "self-hosting/manage/view-logs"
             
