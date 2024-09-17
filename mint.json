@@ -55,11 +55,10 @@
       "pages": [
         "self-hosting/overview",
         {
-          "group":"Installation and activation",
+          "group":"Install Plane",
           "pages":[
           "self-hosting/methods/docker-compose",
-          "self-hosting/methods/kubernetes",
-          "self-hosting/activate-license"
+          "self-hosting/methods/kubernetes"
           ]
         },
         {
@@ -143,6 +142,13 @@
         "core-concepts/analytics",
         "core-concepts/deploy",
         "core-concepts/power-k"
+      ]
+    },
+    {
+      "group": "Workspaces and users",
+      "pages": [
+        "self-hosting/billing-and-plans",
+        "self-hosting/upgrade-plan"
       ]
     },
     {
