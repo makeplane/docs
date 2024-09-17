@@ -5,7 +5,7 @@ title: Kubernetes
 This guide shows you the steps to deploy a self-hosted instance of Plane using Kubernetes.
 
 ## Recommended edition
-Plane One and Plane Pro are enabled on this edition. If you would like to try the Community Edition first, [click here](#community-edition).
+Plane One and Plane Pro are enabled on this edition, so the Free plan on this edition is easier to trial our paid plans from.
 
 ### Prerequisites
 
@@ -51,7 +51,7 @@ Plane One and Plane Pro are enabled on this edition. If you would like to try th
             ```
 
             <Note>
-            This is the minimum required to set up Plane Enterprise. You can change the default namespace from `plane`, the default app name from `plane-app`, the default storage class from `longhorn`, and the default ingress class from `nginx` to 
+            This is the minimum required to set up Plane Commercial edition. You can change the default namespace from `plane`, the default app name from `plane-app`, the default storage class from `longhorn`, and the default ingress class from `nginx` to 
             whatever you would like to.<br/> <br/>
             You can also pass other settings referring to `Configuration Settings` section.
             </Note>
@@ -97,7 +97,7 @@ Plane One and Plane Pro are enabled on this edition. If you would like to try th
 
     | Setting | Default | Required | Description |
     |---|:---:|:---:|---|
-    | dockerRegistry.enabled | false |  | Plane uses a private Docker registry which needs authenticated login. This must be set to `true` to install Plane Enterprise. |
+    | dockerRegistry.enabled | false |  | Plane uses a private Docker registry which needs authenticated login. This must be set to `true` to install Plane Commerical edition. |
     | dockerRegistry.registry |  registry.plane.tools| Yes | The host that will serve the required Docker images; Don't change this. |
     | dockerRegistry.loginid |  | Yes | Sets the `loginid` for the Docker registry. This is the same as the REG_USER_ID value on prime. plane.so |
     | dockerRegistry.password |  | Yes | Sets the `password` for the Docker registry. This is the same as the REG_PASSWORD value on prime.plane.so|
