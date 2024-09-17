@@ -4,12 +4,11 @@ sidebarTitle: Upgrade from Community
 ---
 
 <Warning> 
- Follow the instructions below first all the way to the end of the section `Restoring your data to your One instance`.
-
-We strongly recommend you install on a fresh machine, not the one running Plane Community.
+ Follow the instructions below first all the way to the end of the section **Restore data**.  
+ We strongly recommend you install on a fresh machine, not the one running Plane Community.
 </Warning>
 
-### Back up data
+## Back up data
 `setup.sh` in the Community Edition now comes with an option to back up your data.
 
 1. Use  `./setup.sh` to open the operator menu and select `7` to backup your Plane data.
@@ -23,7 +22,7 @@ e.g., `/plane-selfhost/plane-app/backup/20240522-1027`
 
 e.g., `~/ce-backup`
 
-### Restore data
+## Restore data
 1. Start any command-line interface like Terminal and go into the folder with the back-up files.
     ```
     cd ~/ce-backup
@@ -48,7 +47,6 @@ e.g., `~/ce-backup`
     mv $TARGET_DIR/uploads/ $TARGET_DIR/minio/uploads/
     ```
 3. This script will extract your Community Edition data and restore it to /opt/plane/data.
-4. Follow the instructions for new installations below.
-5. Install Plane **Enterprise edition**.
+4. Install **Enterprise** edition.
     - Using [Docker](http://localhost:3000/self-hosting/methods/docker-compose#enterprise-edition)
     - Using [Kubernetes](http://localhost:3000/self-hosting/methods/kubernetes#enterprise-edition)
