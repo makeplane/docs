@@ -1,0 +1,30 @@
+---
+title: Github OAuth
+---
+
+Plane also supports GitHub OAuth so your users can sign-in with GitHub instead.
+
+## Configure Plane as an OAuth app on GitHub
+
+1. Log in to your [GitHub account](https://github.com/).
+2. Click your profile's avatar and navigate to **Settings.**
+3. Click **Developer Settings** and then **OAuth Apps**.
+   <Frame>![](/images/authentication/github/github-auth-1.png)</Frame>
+4. Click **Register a new application**.
+5. Configure the following OAuth credentials for your Plane app.
+   1. **Homepage URL**\
+      The domain, with HTTPS, on which you host Plane, e.g., `https://app.plane.so`
+   2. **Authorization Callback URL**\
+      Append `/auth/github/callback/ `to the Homepage URL, e.g., `https://app.plane.so//auth/github/callback/`
+6. Click `Register application` to save it.
+   <Frame>![](/images/authentication/github/github-auth-2.png)</Frame>
+7. Find the app you just registered and click through to find the client ID and the client secret. You will need this for the next steps.
+
+## Configure Plane
+
+1. Go to `GitHub` on the Authentication screen of `/god mode`.
+2. Add the client ID + the client secret from the GitHub app you just registered.
+3. Click `Save `.
+<Frame>![](/images/instance-admin/authentication-instance-settings.png)</Frame>
+
+Your Plane instance should now work with GitHub sign-in.

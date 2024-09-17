@@ -1,0 +1,83 @@
+---
+title: Backup and restore data
+sidebarTitle: Backup and restore data
+---
+
+## Backup data
+There would a time when you might want to backup your data from docker volumes to external storage like S3 or drives.
+
+Lets again run the ./setup.sh command. You will again be prompted with the below options. This time select `7` to back data up.
+```
+Select a Action you want to perform:
+   1) Install (x86_64)
+   2) Start
+   3) Stop
+   4) Restart
+   5) Upgrade
+   6) View Logs
+   7) Backup Data
+   8) Exit
+
+Action [2]: 7
+```
+In response, you can find the backup folder
+```
+Backing Up plane-app_pgdata
+Backing Up plane-app_redisdata
+Backing Up plane-app_uploads
+
+Backup completed successfully. Backup files are stored in /....../plane-app/backup/20240502-1120
+```
+This backup is stored in your machine and you can then further copy it to any storage service.
+**** 
+
+
+## Restore data
+
+When you want to restore the previously backed-up data, follow the instructions below.
+
+1. Make sure that Plane-CE is installed, started, and then stopped. This ensures that the Docker volumes are created.
+
+2. Download the restore script using the command below. We suggest downloading it in the same folder as setup.sh.
+
+    ```bash
+    curl -fsSL -o restore.sh https://raw.githubusercontent.com/makeplane/plane/master/deploy/selfhost/restore.sh
+    chmod +x restore.sh
+    ```
+
+3. Execute the command below to restore your data.
+
+    ```bash
+    ./restore.sh <path to backup folder containing *.tar.gz files>
+    ```
+
+    As an example, for a backup folder /opt/plane-selfhost/plane-app/backup/20240722-0914, expect the response below:
+
+    ```bash
+        --------------------------------------------
+        ____  _                          ///////// 
+        |  _ \| | __ _ _ __   ___         ///////// 
+        | |_) | |/ _` | '_ \ / _ \   /////    ///// 
+        |  __/| | (_| | | | |  __/   /////    ///// 
+        |_|   |_|\__,_|_| |_|\___|        ////      
+                                        ////      
+        --------------------------------------------
+        Project management tool from the future
+        --------------------------------------------
+        Found /opt/plane-selfhost/plane-app/backup/20240722-0914/pgdata.tar.gz
+        .....Restoring plane-app_pgdata
+        .....Successfully restored volume plane-app_pgdata from pgdata.tar.gz
+
+        Found /opt/plane-selfhost/plane-app/backup/20240722-0914/redisdata.tar.gz
+        .....Restoring plane-app_redisdata
+        .....Successfully restored volume plane-app_redisdata from redisdata.tar.gz
+
+        Found /opt/plane-selfhost/plane-app/backup/20240722-0914/uploads.tar.gz
+        .....Restoring plane-app_uploads
+        .....Successfully restored volume plane-app_uploads from uploads.tar.gz
+
+
+        Restore completed successfully.
+    ```
+
+4. Start the Plane instance using ./setup.sh start.
