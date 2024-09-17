@@ -3,45 +3,49 @@ title: Plan upgrades
 sidebarTitle: Plan upgrades
 ---
 
-<Note>
-If you are on the Community edition and want to upgrade to the Enterprise edition, see [Upgrade from Community](/self-hosting/manage-plans/upgrade-from-community).
-</Note>
+<Tip>
+If you are on the Community edition and want to upgrade to the Enterprise edition, see [Upgrade from Community](/self-hosting/upgrade-from-community).
+</Tip>
 
 ## Cloud and self-hosted
 
 To upgrade to a paid plan, follow the steps below:
+<Warning>
+Self-hosted editions will need one more step. [See here](#self-hosted-only).
+</Warning>
 
 1. On the Plane app, click the **⌄** icon next to your workspace name on the sidebar and select **Workspace Settings**.
    <Frame>![Workspace settings](/images/activate-license/workspace-settings.webp)</Frame>
 2. Select **Billing and plans** under **Settings**.
    <Frame>![Billings and plans](/images/activate-license/billing-and-plans-cloud.webp)</Frame>
-3. Select the **Monthly** or **Yearly** tab to choose the billing cycle.
+3. Select the **Monthly** or **Yearly** tab to choose the billing cycle for Pro.
 4. Click the **Upgrade** button. 
     <Note> 
-    If you are on Cloud, you can click the **Start free trial** button under the Pro plan to opt for a 14-day free trial.
+    If you are on Cloud, you can click the **Start free trial** button under the Pro plan to opt for a 14-day free trial. Trials aren't available for self-hosted paid plans.
     </Note>
-5. Clicking the **Upgrade** button will redirect you to a Stripe payment page. Enter the card information and click **Subscribe**.
-6. After processing the payment, you will see a confirmation as shown below.  
+5. Clicking the **Upgrade** button will redirect you to a Stripe page. Enter your payment info and click **Subscribe**.
+6. If your transaction goes through, you will see a confirmation as shown below.  
    <Frame>![Plan activated confirmation](/images/activate-license/activate-pro-license.webp)</Frame>
 7. That's it. To check your plan at any time and find additional details, just go to the **Billing and plans** tab in **Workspace Settings**.
     <Frame>![Manage subscription](/images/activate-license/pro-activated-cloud.webp)</Frame>
 
 ## Self-hosted only
-   <Note>
+   <Warning>
    Starting v1.3.0, your license will need to be activated on a self-hosted instance of our Enterprise Edition. Each license can be used to activate only one workspace.
-   </Note>
+   </Warning>
    
-   Steps 1 to 5 above are exactly the same when upgrading to a paid plan on your self-hosted instance. To activate the license on your workspace, follow the steps below:
+   Steps #1 through #5 from above work the exact same way on self-hosted, too. To activate the license on your workspace, follow the steps below:
 
-   1. After processing the payment, you will be redirected to the [Prime portal](https://prime.plane.so/licenses), where you can access all the licenses you have purchased.
+   1. If your payment goes through, you will be redirected to the [Prime portal](https://prime.plane.so/licenses), your one-stop interface to manage your licenses and buy new ones. Find the license by the plan you just subscribed to.
       <Frame>![Manage licenses](/images/activate-license/copy-license-key.webp)</Frame>
       <Note>
-      If you want to purchase more licenses for your other workspaces, you can directly do that in the [Prime portal](https://prime.plane.so/licenses/plans) instead of the **Billing and plans** screen. Click the **Get more licenses** button as shown in the image above to buy more licenses.
+      Click the Get more licenses button as in the image above on the [Prime portal](https://prime.plane.so/licenses/plans) to buy more licenses.
       </Note>
    2. Copy the **License key** for the license you want to activate. 
-   3. Go back to the **Billing and plans** screen. Click the **Activate this Workspace** button.
+   3. Go back to the **Billing and plans** screen, usually already open in your browser.
+   4. Click the **Activate this Workspace** button.
       <Frame>![Activate workspace](/images/activate-license/enter-license-key-selfhosted.webp)</Frame>
-   4. Paste the license key in the **Enter license key** box in the **Activate workspace** modal.
+   5. Paste the license key in the **Enter license key** box.
    5. Click **Activate**. You will see a confirmation. 
    6. That's it. To check your plan at any time and find additional details, just go to the **Billing and plans** tab in **Workspace Settings**.
     <Frame>![Manage subscription](/images/activate-license/pro-activated-cloud.webp)</Frame>
