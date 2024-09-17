@@ -147,8 +147,8 @@
     {
       "group": "Workspaces and users",
       "pages": [
-        "self-hosting/billing-and-plans",
-        "self-hosting/upgrade-plan"
+        "workspaces-and-users/billing-and-plans",
+        "workspaces-and-users/upgrade-plan"
       ]
     },
     {
