@@ -1,0 +1,54 @@
+---
+title: Upgrade from Community to Enterprise
+sidebarTitle: Upgrade from Community
+---
+
+<Warning> 
+ Follow the instructions below first all the way to the end of the section `Restoring your data to your One instance`.
+
+We strongly recommend you install on a fresh machine, not the one running Plane Community.
+</Warning>
+
+### Back up data
+`setup.sh` in the Community Edition now comes with an option to back up your data.
+
+1. Use  `./setup.sh` to open the operator menu and select `7` to backup your Plane data.
+2. When done, your data will be backed up to the folder shown on the screen.
+e.g., `/plane-selfhost/plane-app/backup/20240522-1027`
+3. This folder will contain 3 `tar.gz` files.
+    - `pgdata.tar.gz`
+    - `redisdata.tar.gz`
+    - `uploads.tar.gz`
+4. Copy all the 3 files from the server running the Community Edition to any folder on the server running Plane One on any folder of your choice._createMdxContent
+
+e.g., `~/ce-backup`
+
+### Restore data
+1. Start any command-line interface like Terminal and go into the folder with the back-up files.
+    ```
+    cd ~/ce-backup
+    ```
+2. Copy and paste the script below on Terminal and hit Enter.
+    ```
+    
+    TARGET_DIR=/opt/plane/data
+    sudo mkdir -p $TARGET_DIR
+    for FILE in *.tar.gz; do
+        if [ -e "$FILE" ]; then
+            tar -xzvf "$FILE" -C "$TARGET_DIR"
+        else
+            echo "No .tar.gz files found in the current directory."
+            exit 1
+        fi
+    done
+
+    mv $TARGET_DIR/pgdata/ $TARGET_DIR/db
+    mv $TARGET_DIR/redisdata/ $TARGET_DIR/redis
+    mkdir -p $TARGET_DIR/minio
+    mv $TARGET_DIR/uploads/ $TARGET_DIR/minio/uploads/
+    ```
+3. This script will extract your Community Edition data and restore it to /opt/plane/data.
+4. Follow the instructions for new installations below.
+5. Install Plane **Enterprise edition**.
+    - Using [Docker](http://localhost:3000/self-hosting/methods/docker-compose#enterprise-edition)
+    - Using [Kubernetes](http://localhost:3000/self-hosting/methods/kubernetes#enterprise-edition)
