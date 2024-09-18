@@ -14,6 +14,6 @@ api: POST /api/v1/workspaces/{workspace-slug}/projects/{project_id}/modules/{mod
 
 ### Body
 
-<ParamField body="name" type="string" required></ParamField>
-
-<ParamField body="issues" type="list" required></ParamField>
+<ParamField body="issues" type="string[]" required>
+It expects a list of issue ids
+</ParamField>
