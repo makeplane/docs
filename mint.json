@@ -475,6 +475,22 @@
     {
       "source": "/plane-one/self-host/overview",
       "destination": "/self-hosting/overview"
+    },
+    {
+      "source": "/plane-one/introduction",
+      "destination": "/self-hosting/overview"
+    },
+    {
+      "source": "/plane-one/manage/prime-cli",
+      "destination": "/self-hosting/manage/prime-cli"
+    },
+    {
+      "source": "/plane-one/manage/prime-client",
+      "destination": "/workspaces-and-users/upgrade-plan"
+    },
+    {
+      "source": "/plane-one/governance/authentication/custom-sso",
+      "destination": "/self-hosting/govern/authentication"
     }
   ],
   "analytics": {
