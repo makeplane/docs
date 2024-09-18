@@ -4,11 +4,11 @@ description: State is the current status of the issue
 ---
 
 ```http
-POST   /api/v1/workspaces/:slug/projects/:project_id/states/
-GET    /api/v1/workspaces/:slug/projects/:project_id/states/
-GET    /api/v1/workspaces/:slug/projects/:project_id/states/:state_id/
-PATCH  /api/v1/workspaces/:slug/projects/:project_id/states/:state_id/
-DELETE /api/v1/workspaces/:slug/projects/:project_id/states/:state_id/
+POST   /api/v1/workspaces/:workspace-slug/projects/:project_id/states/
+GET    /api/v1/workspaces/:workspace-slug/projects/:project_id/states/
+GET    /api/v1/workspaces/:workspace-slug/projects/:project_id/states/:state_id/
+PATCH  /api/v1/workspaces/:workspace-slug/projects/:project_id/states/:state_id/
+DELETE /api/v1/workspaces/:workspace-slug/projects/:project_id/states/:state_id/
 ```
 
 ## State Object
@@ -31,9 +31,9 @@ DELETE /api/v1/workspaces/:slug/projects/:project_id/states/:state_id/
 
   String code of the color
 
-- `slug` _string_
+- `workspace-slug` _string_
 
-  Slugified name of the state auto generated from the system
+  workspace-slugified name of the state auto generated from the system
 
 - `sequence` _string_
 
@@ -74,7 +74,7 @@ DELETE /api/v1/workspaces/:slug/projects/:project_id/states/:state_id/
 	"name": "Ideation",
 	"description": "",
 	"color": "#eb5757",
-	"slug": "ideation",
+	"workspace-slug": "ideation",
 	"sequence": 130000.0,
 	"group": "unstarted",
 	"default": false,
