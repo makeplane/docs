@@ -1,28 +1,90 @@
 ---
-title: Jira Importer
-description: Integrate seamlessly with Jira using the Jira Importer feature in Plane, effortlessly importing your issues into your Plane projects. Follow these straightforward steps to import your Jira issues into Plane.
+title: Import your Jira data to Plane
+sidebarTitle: Jira
 ---
+> **Plan**: Pro   
+> **Role**: Workspace Admins
+
+## Overview
+
+With the Jira importer, you can easily import issues, states, labels, priorities and user data from Jira to Plane and continue managing your existing projects.
+
 ## Import from Jira
 
-1. **Access workspace settings:** Begin by navigating to the workspace settings page within Plane. Click on the "Importers" tab to initiate the import process.
-2. **Start Jira importer:** Within the "Importers" tab, locate the Jira section and click on the import button to activate the Jira Importer feature.
-<Frame>![](/images/importers/jira/jira-workspace-setting.png)</Frame>
-3. **Provide Jira information:** Upon installation, you'll be prompted to provide essential Jira information:
-    <Frame>![](/images/importers/jira/jira-importer-first-step.png)</Frame>
-    - **Jira personal access token:** Generate this token by visiting the provided link and paste it into the designated field.
-    - **Jira project key:** Enter the unique project identifier found in front of all issue IDs in Jira.
-    - **Jira email address:** Provide the email address associated with your Jira account.
-    - **Jira installation or cloud host name:** Enter the host URL found in your Jira project URL, excluding "http" or "https".
-    - **Import to project:** Select the Plane project where you want the Jira issues to be transferred and click next to proceed.
-4. **Review import options:** On the next screen, review the available import options, including the number of issues, states, modules, labels, and users. Additionally, choose whether to import Epics. Once done, click on next to proceed.
-    <Frame>![](/images/importers/jira/jira-importer-second-step.png)</Frame>
-5. **Customize user settings:** In this step, customize user settings by making choices for each user:
-    <Frame>![](/images/importers/jira/jira-importer-step-three.png)</Frame>
-    - **Invite by email:** Invite users via email.
-    - **Map to existing:** Map users from Jira to existing users in Plane.
-    - **Do not import:** Choose not to import certain users.
-6. **Final approval:** After customizing user settings, confirm the import to initiate the process. Once completed, all your Jira issues will be visible in your designated Plane project.
-    <Frame>![](/images/importers/jira/jira-importer-step-fore.png)</Frame>
+To import Jira issues to a Plane project, follow these steps:
 
-With these simple steps, seamlessly import your Jira issues into Plane, ensuring smooth project management and collaboration across platforms. Experience enhanced efficiency and productivity as you consolidate your project data in one centralized location.
+1. Go to the workspace option in Plane. Click **Workspace settings**.
+2. Select **Imports** on the right pane. 
+3. Click the **Import** button.
+        <Frame>![Import from Jira](/images/importers/jira/import-from-jira.webp)</Frame>
+4. Click the **Connect Jira** button on the **Jira to Plane Migration Assistant** page.
+        <Frame>![Connect Jira](/images/importers/jira/connect-jira.webp)</Frame>
+5. Sign in to your Atlassian account.
+6. Click **Accept** to allow Plane access to your Atlassian account. If you have multiple workspaces with the same account, select the one from which you want to import the data to Plane in the **Use app on** list.
+    <Frame>![Authorise Plane](/images/importers/jira/authorize-plane.webp)</Frame>
+7. **Configure Plane**:   
+    Select the Plane project to which you want to import your Jira data. Click **Next Step**.
+        <Frame>![Configure Plane](/images/importers/jira/configure-plane.webp)</Frame>
+8. **Configure Jira**:  
+    1. Select the workspace and the project from where you want to import data in the **Select Jira Workspace** and **Select Jira Project** lists.
+    2. For **How do you want to record issue types in Plane?**, choose an option to define how issue types in Jira should be imported to your Plane project.
+        - **Create as a label** - Imports issue types in Jira as [Labels](https://docs.plane.so/core-concepts/projects/run-project#manage-labels) in Plane.
+        - **Add [ issue_type ] in the title** - Prefixes the issue type to the Issue title in Plane.   
+        *Example*: **[TASK] Blitz with dev team** where **TASK** is an issue type in Jira.
+    <Frame>![Configure Jira](/images/importers/jira/configure-jira.webp)</Frame>
+10. **Import users**:  
+    You can choose one of the following options:
+    - **Upload CSV**: Click the **Upload CSV** button to import the users to your Plane project. Refer to [Export users from a site](https://support.atlassian.com/organization-administration/docs/export-users-from-a-site/) to download the CSV file from Jira. *(recommended)* 
+    - **Skip user import** - You can select the **Skip Importing User data** checkbox and manually add users after the import process.
+        <Warning>If you skip user import, issues and comments added by any user will display the name of the user who performed the migration. The Assignees field will be empty.</Warning>
+    <Frame>![Import users](/images/importers/jira/import-users.webp)</Frame>
+10. **Map states**:
+    1. Map the **Jira status** to their equivalent **Plane states**.
+    2. Select the **Auto create and map the remaining Jira states** checkbox to automatically create and map the missing states from Jira in Plane.
+    <Frame>![Map states](/images/importers/jira/map-states.webp)</Frame>
+11. **Map priorities**:  
+    Map the **Jira priorities** to their equivalent **Plane priorities**. If a match doesn't exist, select **None** in the **Plane priorities** list.
+    <Frame>![Map priorities](/images/importers/jira/map-priorities.webp)</Frame>
+12. **Summary**:   
+    Review the mappings and make any changes, if required by clicking on the **Go Back** button. Click **Confirm** to start migration.
+    <Frame>![Review mappings](/images/importers/jira/review-mappings.webp)</Frame>
+13. The data migration begins and takes a few minutes to complete depending on the number of issues in your Jira workspace. 
+    <Frame>![Migration complete](/images/importers/jira/import-complete.webp)</Frame>
+14. Navigate to **Issues** in your project on the sidebar to verify that the data import is successful. 
+     <Frame>![Verify import](/images/importers/jira/verify-import.webp)</Frame>
+
+## Sync Jira to Plane
+
+After the import process, if the Jira project has a new or updated issue, you can easily migrate these changes to Plane. Follow the steps below to sync the changes:
+
+1. Go to the workspace option in Plane. Click **Workspace settings**.
+2. Select **Imports** on the right pane. 
+3. Click the **Re run** button on the project you want to sync.
+    <Frame>![Sync Jira](/images/importers/jira/rerun-import.webp)</Frame>
+
+## Imported entities
+
+The following entities are imported during migration from Jira to Plane:
+
+| Jira | Plane | Notes|
+|--------------| ------------------- |---- |
+| Labels | Labels | |
+| Status | States | |
+| Issue priorities | Priorities | |
+| Users | Users | |
+| Issues | Issues | |
+| Relations | Parent | Includes only parent-child relationships |
+| Issue&nbsp;comments | Issue&nbsp;comments |Includes username and timestamp. If you skip user import during migration, comments added by any user will display the name of the user who performed the migration.|
+| Issue attachments | Issue attachments | |
+| Reporter | Created by | |
+| Created | Created at | |
+| Assignee | Assignees | If you skip user import during migration, this field will be blank.|
+| Issue types | Labels \| Prefix in Issue title | |
+| Images in the Issue description | Images in the Issue description | |
+| Summary | Issue title | |
+| Start date | Start date | |
+| Due date | Due date | |
+| Linked Issues | Links | Includes backlinks to the original issue in Jira.|
+| Sprint | Cycles | Includes the issues, start and end date. |
+| Components | Modules | Includes the issues. |
 
