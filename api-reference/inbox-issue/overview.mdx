@@ -5,11 +5,11 @@ title: Overview
 To enable an inbox, the user can hit a PATCH request on the project api with the body as
 
 ```http
-GET    /api/v1/workspaces/:slug/projects/:project_id/inbox-issues/
-POST   /api/v1/workspaces/:slug/projects/:project_id/inbox-issues/
-GET    /api/v1/workspaces/:slug/projects/:project_id/inbox-issues/:issue_id/
-PATCH  /api/v1/workspaces/:slug/projects/:project_id/inbox-issues/:issue_id/
-DELETE /api/v1/workspaces/:slug/projects/:project_id/inbox-issues/:issue_id/
+GET    /api/v1/workspaces/:workspace-slug/projects/:project_id/inbox-issues/
+POST   /api/v1/workspaces/:workspace-slug/projects/:project_id/inbox-issues/
+GET    /api/v1/workspaces/:workspace-slug/projects/:project_id/inbox-issues/:issue_id/
+PATCH  /api/v1/workspaces/:workspace-slug/projects/:project_id/inbox-issues/:issue_id/
+DELETE /api/v1/workspaces/:workspace-slug/projects/:project_id/inbox-issues/:issue_id/
 ```
 
 ```
