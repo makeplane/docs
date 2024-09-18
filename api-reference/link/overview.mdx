@@ -4,11 +4,11 @@ description: Links can be added to an issue to point to some external resources
 ---
 
 ```http
-POST   /api/v1/workspaces/:slug/projects/:project_id/issues/:issue_id/links/
-GET    /api/v1/workspaces/:slug/projects/:project_id/issues/:issue_id/links/
-GET    /api/v1/workspaces/:slug/projects/:project_id/issues/:issue_id/links/:link_id/
-PATCH  /api/v1/workspaces/:slug/projects/:project_id/issues/:issue_id/links/:link_id/
-DELETE /api/v1/workspaces/:slug/projects/:project_id/issues/:issue_id/links/:link_id/
+POST   /api/v1/workspaces/:workspace-slug/projects/:project_id/issues/:issue_id/links/
+GET    /api/v1/workspaces/:workspace-slug/projects/:project_id/issues/:issue_id/links/
+GET    /api/v1/workspaces/:workspace-slug/projects/:project_id/issues/:issue_id/links/:link_id/
+PATCH  /api/v1/workspaces/:workspace-slug/projects/:project_id/issues/:issue_id/links/:link_id/
+DELETE /api/v1/workspaces/:workspace-slug/projects/:project_id/issues/:issue_id/links/:link_id/
 ```
 
 ### Link object

@@ -5,12 +5,12 @@ title: Overview
 Cycles is a custom time period in which a team works to complete items on their backlog. At the end of the sprint, the team will usually have finished building and implementing a new version of their project or product.
 
 ```http
-POST   /api/v1/workspaces/:slug/projects/:project_id/cycles/
-GET    /api/v1/workspaces/:slug/projects/:project_id/cycles/
-GET    /api/v1/workspaces/:slug/projects/:project_id/cycles/:cycle_id/
-PATCH  /api/v1/workspaces/:slug/projects/:project_id/cycles/:cycle_id/
-DELETE /api/v1/workspaces/:slug/projects/:project_id/cycles/:cycle_id/
-POST   /api/v1/workspaces/:slug/projects/:project_id/cycles/:cycle_id/transfer-issues/
+POST   /api/v1/workspaces/:workspace-slug/projects/:project_id/cycles/
+GET    /api/v1/workspaces/:workspace-slug/projects/:project_id/cycles/
+GET    /api/v1/workspaces/:workspace-slug/projects/:project_id/cycles/:cycle_id/
+PATCH  /api/v1/workspaces/:workspace-slug/projects/:project_id/cycles/:cycle_id/
+DELETE /api/v1/workspaces/:workspace-slug/projects/:project_id/cycles/:cycle_id/
+POST   /api/v1/workspaces/:workspace-slug/projects/:project_id/cycles/:cycle_id/transfer-issues/
 ```
 
 To transfer issues of one cycle to another, the payload should be sent in the below format

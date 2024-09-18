@@ -37,7 +37,7 @@ Here's an example of making a GET request to the API with the API key:
 ### Request
 
 ```
-GET /api/v1/workspaces/:slug/projects/:project_id/issues/
+GET /api/v1/workspaces/:workspace-slug/projects/:project_id/issues/
 Headers:
   X-API-Key: plane_api_<token>
 
@@ -145,7 +145,7 @@ The paginated response includes the following fields:
 ### Request: Fetching the First Page
 
 ```
-GET /api/v1/workspaces/:slug/projects/:project_id/issues/?per_page=20
+GET /api/v1/workspaces/:workspace-slug/projects/:project_id/issues/?per_page=20
 
 ```
 
@@ -171,7 +171,7 @@ GET /api/v1/workspaces/:slug/projects/:project_id/issues/?per_page=20
 ### Request: Fetching the Next Page
 
 ```
-GET /api/v1/workspaces/:slug/projects/:project_id/issues?per_page=20&cursor=20:1:0
+GET /api/v1/workspaces/:workspace-slug/projects/:project_id/issues?per_page=20&cursor=20:1:0
 
 ```
 
@@ -243,7 +243,7 @@ The fields parameter enables clients to selectively retrieve only a subset of fi
 *   Syntax: **`?fields=field1,field2,field3`**
 
 ```
-GET /api/v1/workspaces/:slug/projects/:project_id/issues/?fields=id,name,description
+GET /api/v1/workspaces/:workspace-slug/projects/:project_id/issues/?fields=id,name,description
 
 ```
 
@@ -264,7 +264,7 @@ The expand parameter allows clients to request additional related information to
 ## Example
 
 ```
-GET /api/v1/workspaces/:slug/projects/:project_id/issues/?expand=assignees,state
+GET /api/v1/workspaces/:workspace-slug/projects/:project_id/issues/?expand=assignees,state
 
 ```
 
