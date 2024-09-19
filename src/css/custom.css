@@ -1,0 +1,129 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #1e4ed8;
+  --ifm-color-primary-dark: #1b47c2;       /* Darker shade */
+  --ifm-color-primary-darker: #1941b1;     /* Even darker */
+  --ifm-color-primary-darkest: #153693;    /* Darkest */
+  --ifm-color-primary-light: #2257ed;      /* Lighter shade */
+  --ifm-color-primary-lighter: #3e6ef0;    /* Even lighter */
+  --ifm-color-primary-lightest: #557ef2;   /* Lightest */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #1e4ed8;
+  --ifm-color-primary-dark: #1b47c2;       /* Darker shade */
+  --ifm-color-primary-darker: #1941b1;     /* Even darker */
+  --ifm-color-primary-darkest: #153693;    /* Darkest */
+  --ifm-color-primary-light: #2257ed;      /* Lighter shade */
+  --ifm-color-primary-lighter: #3e6ef0;    /* Even lighter */
+  --ifm-color-primary-lightest: #557ef2;   /* Lightest */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+
+.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link--sublist {
+  margin-bottom: 6px;
+  font-size: 0.938rem;
+  font-weight: 600;
+  line-height: 100%;
+  color: #000;
+}
+
+[data-theme="dark"] .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link--sublist {
+  color: #fff;
+}
+
+.menu__list li:last-of-type {
+  -webkit-padding-after: 1.5rem;
+  padding-block-end: 0.5rem;
+}
+
+.menu__link {
+  align-items: center;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 16px;
+  transition: opacity 0.2s ease-out;
+}
+
+.theme-doc-sidebar-menu .menu__list-item .menu__caret:before,
+.theme-doc-sidebar-menu .menu__list-item .menu__link--sublist:after {
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyIDEwIDggNmwtNCA0IiBzdHJva2U9IiMxQjI3MzgiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=) 50% no-repeat;
+  height: 1.5rem;
+  min-height: 29.5px;
+  min-width: 1.5rem;
+  width: 1.5rem;
+}
+
+.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link--sublist.theme-doc-sidebar-menu .menu__list-item .menu__caret:before,
+.theme-doc-sidebar-menu .menu__list-item .menu__link--sublist:after {
+  background: none;
+  height: 1.5rem;
+  min-height: 29.5px;
+  min-width: 1.5rem;
+  width: 1.5rem;
+}
+
+.theme-doc-sidebar-item-category-level-3>.menu__list-item-collapsible>.menu__link--sublist.theme-doc-sidebar-menu .menu__list-item .menu__caret:before,
+.theme-doc-sidebar-menu .menu__list-item .menu__link--sublist:after {
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyIDEwIDggNmwtNCA0IiBzdHJva2U9IiMxQjI3MzgiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=) 50% no-repeat;
+  height: 1.5rem;
+  min-height: 29.5px;
+  min-width: 1.5rem;
+  width: 1.5rem;
+  margin-right: -5px;
+}
+
+.theme-doc-sidebar-item-category-level-2>.menu__list-item-collapsible>.menu__link--sublist {
+  margin-bottom: -6px;
+  margin-top: -6px;
+}
+
+.theme-doc-sidebar-item-category-level-3>.menu__list-item-collapsible>.menu__link--sublist {
+  margin-bottom: -6px;
+  margin-top: -6px;
+}
+
+.theme-doc-sidebar-item-category-level-4>.menu__list-item-collapsible>.menu__link--sublist {
+  margin-bottom: -6px;
+  margin-top: -6px;
+}
+
+
+.menu__caret {
+  padding: 0em 0.375em 0em 0.75em !important;
+}
+
+[class^="sidebar_"] {
+  -webkit-padding-before: 1rem;
+  overflow-y: auto;
+  padding-block-start: 1rem;
+  position: static;
+  padding-inline-end: 0.5em;
+  padding-inline-start: 0.5em;
+}
+
+[class^="sidebar_"]>.menu {
+  -webkit-padding-after: 2rem;
+  overflow-x: initial;
+  padding: 0;
+  padding-block-end: 2rem;
+}
+
+.menu__list {
+  display: block !important;
+  margin: 0;
+  transition: height 0.35s cubic-bezier(0.36, 0.66, 0.04, 1) 25ms !important;
+  will-change: auto !important;
+}
