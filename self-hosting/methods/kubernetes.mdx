@@ -17,7 +17,7 @@ Plane One and Plane Pro are enabled on this edition, so the Free plan on this ed
     1. Open terminal or any other command-line app that has access to Kubernetes tools on your local system.
     2. Set the following environment variables:
         ```bash
-        PLANE_VERSION=<v1.xx.x>
+        PLANE_VERSION=<v1.3.1>
         ```
         ```bash
         DOMAIN_NAME=<subdomain.domain.tld or domain.tld>
@@ -67,7 +67,7 @@ Plane One and Plane Pro are enabled on this edition, so the Free plan on this ed
             ```
 
             Make sure you set the required environment variables listed below:
-            - `planeVersion: <v1.xx.x>`
+            - `planeVersion: <v1.3.1>`
             - `license.licenseDomain: <The domain you have specified to host Plane>`
             - `license.licenseServer: https://prime.plane.so`
             - `ingress.enabled: <true | false>`
@@ -92,20 +92,11 @@ Plane One and Plane Pro are enabled on this edition, so the Free plan on this ed
 <AccordionGroup>
    <Accordion title="Configuration settings">
 
-    #### Docker registry
-
-    | Setting | Default | Required | Description |
-    |---|:---:|:---:|---|
-    | dockerRegistry.enabled | false |  | Plane uses a private Docker registry which needs authenticated login. This must be set to `true` to install Plane Commerical edition. |
-    | dockerRegistry.registry |  registry.plane.tools| Yes | The host that will serve the required Docker images; Don't change this. |
-    | dockerRegistry.loginid |  | Yes | Sets the `loginid` for the Docker registry. This is the same as the REG_USER_ID value on prime. plane.so |
-    | dockerRegistry.password |  | Yes | Sets the `password` for the Docker registry. This is the same as the REG_PASSWORD value on prime.plane.so|
-    
     #### License
 
     | Setting | Default | Required | Description |
     |---|:---:|:---:|---|
-    | planeVersion | v1.3.0	 | Yes |  Specifies the version of Plane to be deployed. Copy this from `prime.plane.so.` |
+    | planeVersion | v1.3.1	 | Yes |  Specifies the version of Plane to be deployed. Copy this from `prime.plane.so.` |
     | license.licenseServer | `https://prime.plane.so` | Yes | Sets the value of the `licenseServer` that gets you your license and validates it periodically. Don't change this. |
     | license.licenseDomain | 'plane.example.com' | Yes | The fully-qualified domain name (FQDN) in the format `sudomain.domain.tld` or `domain.tld` that the license is bound to. It is also attached to your `ingress` host to access Plane. |
 
@@ -186,7 +177,7 @@ Plane One and Plane Pro are enabled on this edition, so the Free plan on this ed
 
     | Setting | Default | Required | Description |
     |---|:---:|:---:|---|
-    | services.live.replicas | 1 | Yes | Kubernetes helps you with scaling up/down the deployments. You can run 1 or more pods for each deployment. This key helps you setting up number of replicas you want to run for this deployment. It must be >=1 |
+    | services.live.replicas | 1 | Yes | Kubernetes helps you with scaling up\/down the deployments. You can run 1 or more pods for each deployment. This key helps you setting up number of replicas you want to run for this deployment. It must be >=1 |
     | services.live.memoryLimit | 1000Mi |  |  Every deployment in kubernetes can be set to use maximum memory they are allowed to use. This key sets the memory limit for this deployment to use.|
     | services.live.cpuLimit | 500m |  |  Every deployment in kubernetes can be set to use maximum cpu they are allowed to use. This key sets the cpu limit for this deployment to use.|
     | services.live.image| registry.plane.tools/plane/live-enterprise |  |  This deployment needs a preconfigured docker image to function. Docker image name is provided by the owner and must not be changed for this deployment |
@@ -473,7 +464,7 @@ To install our Community Edition, please follow these steps below.
     | plane.example.com | `/` | `<http://plane-app-web.plane:3000>` |
     | plane.example.com | `/spaces/*`  | `<http://plane-app-space.plane:3000>` |
     | plane.example.com | `/god-mode/*` | `<http://plane-app-admin.plane:3000>` |
-    | plane.example.com | /live/* | <http://plane-app-live.plane:3000> |
+    | plane.example.com | `/live/*` | `<http://plane-app-live.plane:3000>` |
     | plane.example.com | `/api/*`  |  `<http://plane-app-api.plane:8000>` |
     | plane.example.com | `/auth/*` | `<http://plane-app-api.plane:8000>` |
     | plane.example.com | `/uploads/*` | `<http://plane-app-minio.plane:9000>` |
