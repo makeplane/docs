@@ -3,20 +3,19 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'Plane',
+  tagline: 'Project management like you wished it was',
+  favicon: 'img/logo.svg',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://docs.plane.so',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'makeplane', // Usually your GitHub org/user name.
+  projectName: 'docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -38,35 +37,38 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/makeplane/docs/edit/master/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
+        },
+        googleAnalytics: {
+          trackingID: 'G-G578SD4VZD',
+          anonymizeIP: true,
         },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
+    docs: {
+      sidebar: {
+        hideable: false,
+        autoCollapseCategories: false,
+      },
+    },
+   
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo.svg',
+    /*algolia: {
+      appId: 'AXICJJC8RP',
+      apiKey: '23df4157dee1d9a8d435cadd6cae3f26',
+      indexName: 'plane',
+      contextualSearch: false,
+    },*/
     navbar: {
-      title: '',
+      title: 'Plane',
       logo: {
         alt: 'Plane',
         src: 'img/logo.svg',
@@ -78,6 +80,7 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },
+        
         // {
         //   type: 'docSidebar',
         //   sidebarId: 'tutorialSidebar',
@@ -89,11 +92,24 @@ const config: Config = {
         //   position: 'left',
         //   label: 'Plane One',
         // },
+        
+        {
+          href: 'https://discord.com/invite/A92xrEGCge',
+          'aria-label': 'Discord',
+          position: 'right',
+          className: 'navbar--discord-link',
+        },
         {
           href: 'https://github.com/makeplane/plane',
-          label: 'GitHub',
+          'aria-label': 'GitHub',
           position: 'right',
-        },
+          className: 'navbar--github-link',
+        },  
+        {
+          href: 'https://app.plane.so/sign-in',
+          label: 'Sign in',
+          position: 'right',
+        }
       ],
     },
     // footer: {

@@ -28,22 +28,147 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: false,      
       label: 'Self-hosting',
       items: [
         'self-hosting/overview',
-        'self-hosting/telemetry',
+        {
+          type: 'category',
+          label: 'Install Plane',
+          link: { type: 'doc', id: 'self-hosting/methods/installation-methods' },
+          items: [            
+          'self-hosting/methods/docker-compose',
+          'self-hosting/methods/kubernetes',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Configure instance',
+          items: [            
+            'self-hosting/govern/instance-admin',
+            {
+              type: 'category',
+              label: 'Authentication',
+              link: {type: 'doc', id: 'self-hosting/govern/authentication'},
+              items: [
+                'self-hosting/govern/google-oauth', 
+                'self-hosting/govern/github-oauth', 
+                'self-hosting/govern/oidc-sso',
+                'self-hosting/govern/saml-sso',
+              ],
+            },
+            'self-hosting/govern/communication',
+            'self-hosting/govern/custom-domain',
+            'self-hosting/govern/reset-password',
+            'self-hosting/telemetry',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Manage instance',
+          items: [            
+            'self-hosting/manage/backup-restore',
+            'self-hosting/manage/upgrade-plane',
+            'self-hosting/upgrade-from-community',
+            'self-hosting/manage/prime-cli',
+            'self-hosting/manage/view-logs'
+          ],
+        },
+      ], 
+    },   
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Core concepts',
+      items: [
+        {
+          type: 'category',
+          label: 'Workspaces',
+          items: [            
+          'core-concepts/workspaces/overview',
+          'core-concepts/workspaces/members',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Account',
+          items: [            
+          'core-concepts/account/overview',
+          'core-concepts/account/settings',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Projects',
+          items: [            
+          'core-concepts/projects/overview',
+          'core-concepts/projects/run-project',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Issues',
+          items: [            
+          'core-concepts/issues/overview',
+          'core-concepts/issues/properties',
+          'core-concepts/issues/visualise_filter',
+          'core-concepts/issues/issue-types',
+          'core-concepts/issues/time-tracking'
+          ],
+        },
+        'core-concepts/cycles',
+        'core-concepts/modules',
+        'core-concepts/views',
+        {
+          type: 'category',
+          label: 'Pages',
+          items: [            
+          'core-concepts/pages/overview',
+          'core-concepts/pages/editor-blocks',
+          ],
+        },
+        'core-concepts/inbox',
+        'core-concepts/analytics',
+        'core-concepts/deploy',
+        'core-concepts/power-k'
       ],
-    }
-    // 'intro',
-    // {
-    //   type: 'category',
-    //   collapsed: false,
-    //   label: 'Tutorial',
-    //   items: ['tutorial-basics/create-a-document'],
-    // },
-  ],
-  
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Workspaces and users',
+      items: [
+        'workspaces-and-users/billing-and-plans',
+        'workspaces-and-users/upgrade-plan',
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Integrations',
+      items: [
+        'plane-integrations/about',
+        'plane-integrations/github',
+        'plane-integrations/slack',
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Integrations',
+      items: [
+        'plane-importers/github-imp',
+        'plane-importers/jira-imp',
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Webhooks',
+      items: [
+        'webhooks/intro-webhooks',
+      ],
+    },
+  ], 
 };
-
 export default sidebars;
