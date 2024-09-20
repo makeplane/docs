@@ -1,0 +1,40 @@
+---
+title: Google OAuth
+---
+
+Plane already ships with out-of-the-box support for Google OAuth. This is the easiest option to configure for Google Workspace users.
+
+## Configure Plane as an app on Google API Console
+
+First, you will need to identify Plane as an approved OAuth app to Google.
+
+1. Go to the [Google API console](https://console.cloud.google.com/apis) and create a new project.
+2. Navigate to the **OAuth consent screen** under **APIs & Services**. Choose how you want to configure and register the Plane app, including your target users, and click **Create**.
+   ![](/img/authentication/google/google-auth-1.png)
+3. Configure the OAuth consent screen with information about the app.
+   ![](/img/authentication/google/google-auth-2.png)
+4. Navigate to the **Credentials** screen, click **Create Credentials**, and select **OAuth client ID** from the options given.
+   ![](/img/authentication/google/google-auth-3.png)
+5. Select **Web application** under the **Application type** dropdown list. Update the following fields.
+   1. **Authorized JavaScript origins**\
+      The HTTP origins that host your web application, e.g., `https://app.plane.so`
+   2. **Authorized redirect URIs**\
+      Append the path that users should be redirected to after they have authenticated with Google, e.g., `https://app.plane.so/auth/google/callback`
+   3. Click **Create**.
+   4. Get the Client ID and Client secret under **OAuth 2.0 Client IDs** on the **Credentials** screen.
+   ![](/img/authentication/google/google-auth-4.png)
+
+## Configure Plane
+
+1. Go to `Google` on the Authentication screen of `/god mode`.
+2. Add the client ID + the client secret from Google API Console.
+3. Click `Save `.
+![](/img/instance-admin/authentication-instance-settings.png)
+
+
+Your Plane instance should now work with `Sign in with Google`.
+
+
+:::note
+We don't restrict domains in with Google OAuth yet. It's on our roadmap.
+:::
