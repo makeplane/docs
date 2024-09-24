@@ -59,15 +59,14 @@ const config: Config = {
         autoCollapseCategories: false,
       },
     },
-   
     // Replace with your project's social card
     image: 'img/logo.svg',
-    /*algolia: {
+    algolia: {
       appId: 'AXICJJC8RP',
       apiKey: '23df4157dee1d9a8d435cadd6cae3f26',
-      indexName: 'plane',
+      indexName: 'plane-docusaurus',
       contextualSearch: false,
-    },*/
+    },
     navbar: {
       title: 'Plane',
       logo: {
