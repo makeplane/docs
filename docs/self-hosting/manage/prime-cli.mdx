@@ -1,9 +1,23 @@
 ---
 title: Prime CLI
-sidebarTitle: Prime CLI
+hide_title: true
 ---
 
-> **Plan**: Plane Pro, Plane One
+import Tags from '@site/src/components/Tags';
+
+<div className="tag-wrapper">
+ <h1>Prime CLI</h1>
+ <Tags 
+  tags={[ 
+    { name: "One", additionalClass: "one" }
+  ]} 
+ />
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
 
 :::warning
 Update your CLI with the command `sudo prime-cli update-cli` before you download any Plane updates. The latest version of the CLI ensures your Plane upgrades happen smoothly.
@@ -46,8 +60,9 @@ For more advanced admins that want greater control over their instance, the list
     - `configure` 
     
         Brings up a step form to let you specify the following.
-        <!--
-        <Accordion title="Steps to configure your instance">
+     
+        <details>
+            <summary>Steps to configure your instance</summary>
             - `Listening port`
             
                 Specify the port that the built-in reverse proxy will use
@@ -84,8 +99,7 @@ For more advanced admins that want greater control over their instance, the list
                 - Confirm your choices on the screen ↓. 
 
                     This restarts your instance with the new configs.
-        </Accordion>
-        -->
+        </details>
 
 - `upgrade` 
 

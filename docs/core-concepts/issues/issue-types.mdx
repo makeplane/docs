@@ -1,14 +1,18 @@
 ---
 title: Issue types
-sidebarTitle: Issue Types
+hide_title: true
 ---
 
-# Add, configure and control your issue types
+import Tags from '@site/src/components/Tags';
 
-> **Plan**: Plane Pro   
-> **Role**: Project Admins
-
-## Overview
+<div className="tag-wrapper">
+ <h1>Add, configure and control your issue types</h1>
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
 
 Issue Types unlock a whole new way of adding, editing, and moving work forward in Plane. The default issue type called `Issue` is great for starting with Plane, but as you advance in your project management journey, you find the need for names and properties unique to the type of work you are doing.
 
@@ -21,6 +25,8 @@ Issue Types make these and infinite other use cases possible.
 :::warning 
 The Issue Types feature cannot be disabled once enabled for a Plane project.
 :::
+
+> **Role**: Project Admins
 
 1. Click the … icon next to your project name on the sidebar and click **Settings**.
 2. Select **Issue Types** on the right pane.

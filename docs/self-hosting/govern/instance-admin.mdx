@@ -50,52 +50,64 @@ Soon, we will introduce God Mode for our Cloud users as well so they can manage 
 
 ## FAQs
 
-<!--
-<AccordionGroup>
-  <Accordion title="How do you know who an Instance admin is?">
-    Whoever spins up the instance or upgrades to v0.14, we assume, is the instance admin. When you see Let's secure your instance, enter your email-password combo. If you are already using Plane with those credentials, you will be logged in and will see /god-mode features. If not, we will create a new user on your local instance and you will see /god-mode.
 
-    Our shrewd guess right now is users technical enough to upgrade to or bring up a new instance with v0.14 are instance admins. If there’s a case where this isn’t true, please reach out to us before you upgrade or set-up your fresh instance.
-  </Accordion>
+<details>
+  <summary> How do you know who an Instance admin is? </summary>
+    
+  Whoever spins up the instance or upgrades to v0.14, we assume, is the instance admin. When you see Let's secure your instance, enter your email-password combo. If you are already using Plane with those credentials, you will be logged in and will see /god-mode features. If not, we will create a new user on your local instance and you will see `/god-mode`.
 
-  <Accordion title="What if I don’t complete secure instance set-up at the time of the upgrade?">
+  Our shrewd guess right now is users technical enough to upgrade to or bring up a new instance with v0.14 are instance admins. If there’s a case where this isn’t true, please reach out to us before you upgrade or set-up your fresh instance.
+</details>
+
+<details>
+  <summary>What if I don’t complete secure instance set-up at the time of the upgrade? </summary>
+
     We strongly recommend completing set-up at upgrade so your regular users can access Plane without trouble. Because we are introducing several sensitive admin features in `God Mode`, we will show an instance-not-set-up screen to your regular users until such a time that you can complete set-up.
     ![success-on-setup-existing-instances-self-hosted](/img/faq-2.png)
-  </Accordion>
+</details>
 
-  <Accordion title="What has changed with how existing regular users of my instance log in?">
+<details>
+  <summary>What has changed with how existing regular users of my instance log in? </summary>
+
     All existing users will log in with their usual email address-password combos if they are already doing it. If they haven’t been using a password when not OAuthing into Plane, they will now need to. If OAuth is enabled, users can continue using your OAuth methods. New users will need to choose a password or OAuth into Plane.
-  </Accordion>
+</details>
 
-    <Accordion title="What will happen to the default captain@plane.so account that you shipped so far?">
+<details>
+    <summary>What will happen to the default captain@plane.so account that you shipped so far? </summary>
+
     For all new instances, there won’t be a `captain@plane.so` account. Instance set-up will allow you to set up a workspace and set workspace and project admins.
 
     For existing instances, the instance admin’s email will be added to each project with the same permissions as `captain@plane.so’s` so you can remove that email completely from your workspaces and projects.
-  </Accordion>
+</details>
 
-    <Accordion title="This is unreal, but I have an instance that has a /god-mode path already. I can’t access my Plane instance. Help!">
+<details>
+    
+    <summary>This is unreal, but I have an instance that has a /god-mode path already. I can’t access my Plane instance. Help! </summary>
+
     That is unreal! Please reach out to us immediately on [support](https://discord.com/login?redirect_to=%2Fchannels%2F1031547764020084846%2F1094927053867995176) or on our [Discord](https://discord.com/invite/A92xrEGCge) and mark your message urgent. We will help you get your instance back pronto.
 
-    </Accordion>
+</details>
 
-    <Accordion title="How will emails for password resets and onboarding be sent to users of my instance(s)?">
+<details>
+    <summary>How will emails for password resets and onboarding be sent to users of my instance(s)? </summary>
+
     We have always let you configure your own SMTP server to send emails from within your instance. It’s also why we are being deliberate about leading the instance admin of an existing instance to `/god-mode` first. After completing secure instance set-up now, you can configure your SMTP server on the UI instead of via `.env` variables. We strongly recommend you do that to avoid password-reset failures and failures in email delivery.
 
     Please [reach out](https://discord.com/login?redirect_to=%2Fchannels%2F1031547764020084846%2F1094927053867995176) to us on [Discord](https://discord.com/invite/A92xrEGCge) if you haven’t set up SMTP and are facing troubles with your users logging in.
-    </Accordion>
+</details>
 
-    <Accordion title="Why are you introducing passwords for app.plane.so users? What’s happening with unique links to sign up and sign in?">
+<details>
+    <summary>Why are you introducing passwords for app.plane.so users? What’s happening with unique links to sign up and sign in? </summary>
+
     Unique links are secure and relatively easier, but we have heard from enough of our Cloud users that they would like to log in using a more permanent and easier method. Should you want to continue using unique codes, you are covered. We will keep that option alive for good.
 
     While using Google or GitHub are good options already, not all of you would want to use them. For those that prefer a password and would like to do away with codes, we want to make that option available.
-    </Accordion>
+</details>
 
-    <Accordion title="Is there a God Mode for Cloud admins, too?">
-    Not now, but soon enough, there will be a `God Mode` for Cloud admins. More [here](/self-hosting/instance-admin)
+<details>
+    <summary>Is there a God Mode for Cloud admins, too? </summary>
 
-    </Accordion>
+    Not now, but soon enough, there will be a `God Mode` for Cloud admins.
 
-</AccordionGroup>
-
--->
+</details>
 
