@@ -64,8 +64,7 @@ const config: Config = {
     algolia: {
       appId: 'AXICJJC8RP',
       apiKey: '23df4157dee1d9a8d435cadd6cae3f26',
-      indexName: 'plane-docusaurus',
-      contextualSearch: false,
+      indexName: 'plane_docusaurus',
     },
     navbar: {
       title: 'Plane',
