@@ -196,15 +196,15 @@
       },
       {
         "source": "/self-hosting/:path*",
-        "destination": "https://developers.plane.so/self-hosting/overview"
+        "destination": "https://developers.plane.so/self-hosting/"
       },
       {
         "source": "/api-reference/:path*",
-        "destination": "https://developers.plane.so/api-reference/introduction"
+        "destination": "https://developers.plane.so/api-reference/"
       },
       {
         "source": "/webhooks/:path*",
-        "destination": "https://developers.plane.so/webhooks/intro-webhooks"
+        "destination": "https://developers.plane.so/webhooks/"
       }
     ]
   }
