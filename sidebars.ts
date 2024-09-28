@@ -28,56 +28,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,      
-      label: 'Self-hosting',
-      items: [
-        'self-hosting/overview',
-        {
-          type: 'category',
-          label: 'Install Plane',
-          link: { type: 'doc', id: 'self-hosting/methods/installation-methods' },
-          items: [            
-          'self-hosting/methods/docker-compose',
-          'self-hosting/methods/kubernetes',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Configure instance',
-          items: [            
-            'self-hosting/govern/instance-admin',
-            {
-              type: 'category',
-              label: 'Authentication',
-              link: {type: 'doc', id: 'self-hosting/govern/authentication'},
-              items: [
-                'self-hosting/govern/google-oauth', 
-                'self-hosting/govern/github-oauth', 
-                'self-hosting/govern/oidc-sso',
-                'self-hosting/govern/saml-sso',
-              ],
-            },
-            'self-hosting/govern/communication',
-            'self-hosting/govern/custom-domain',
-            'self-hosting/govern/reset-password',
-            'self-hosting/telemetry',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Manage instance',
-          items: [            
-            'self-hosting/manage/backup-restore',
-            'self-hosting/manage/upgrade-plane',
-            'self-hosting/upgrade-from-community',
-            'self-hosting/manage/prime-cli',
-            'self-hosting/manage/view-logs'
-          ],
-        },
-      ], 
-    },   
-    {
-      type: 'category',
       collapsed: false,
       label: 'Core concepts',
       items: [
@@ -162,12 +112,19 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
-      type: 'category',
-      collapsed: false,
+      type: 'link',
+      label: 'Self-host Plane', 
+      href: 'https://developers.plane.so/self-hosting/overview',
+    },
+    {
+      type: 'link',
+      label: 'API Reference',
+      href: 'https://developers.plane.so/api-reference/introduction', 
+    },
+    {
+      type: 'link',
       label: 'Webhooks',
-      items: [
-        'webhooks/intro-webhooks',
-      ],
+      href: 'https://developers.plane.so//webhooks/intro-webhooks', 
     },
   ], 
 };
