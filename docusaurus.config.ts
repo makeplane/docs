@@ -4,9 +4,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Plane',
-  tagline: 'Project management like you wished it was',
+  tagline: 'An easy, flexible project management software',
   favicon: 'img/logo.svg',
-
+  trailingSlash: false,
   // Set the production url of your site here
   url: 'https://docs.plane.so',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -19,6 +19,7 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors:'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -33,12 +34,22 @@ const config: Config = {
       'classic',
       {
         docs: {
+          path: 'docs',
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
+          include: ['**/*.md', '**/*.mdx'],
+          //sidebarCollapsible: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/makeplane/docs/edit/master/',
+          //editUrl:
+           // 'https://github.com/makeplane/docs/edit/preview/',
+        },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
         blog: false,
         theme: {
@@ -74,24 +85,9 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          type: 'search',
           position: 'left',
-          label: 'Documentation',
         },
-        
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: 'API Reference',
-        // },{
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: 'Plane One',
-        // },
-        
         {
           href: 'https://discord.com/invite/A92xrEGCge',
           'aria-label': 'Discord',
