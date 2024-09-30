@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Plane',
   tagline: 'An easy, flexible project management software',
-  favicon: 'img/logo.svg',
+  favicon: 'https://media.docs.plane.so/logo.svg',
   trailingSlash: false,
   // Set the production url of your site here
   url: 'https://docs.plane.so',
@@ -71,7 +71,7 @@ const config: Config = {
       },
     },
     // Replace with your project's social card
-    image: 'img/logo.svg',
+    image: 'https://media.docs.plane.so/logo.svg',
     algolia: {
       appId: 'AXICJJC8RP',
       apiKey: '23df4157dee1d9a8d435cadd6cae3f26',
@@ -81,7 +81,7 @@ const config: Config = {
       title: 'Plane',
       logo: {
         alt: 'Plane',
-        src: 'img/logo.svg',
+        src: 'https://media.docs.plane.so/logo.svg',
       },
       items: [
         {
