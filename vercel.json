@@ -160,7 +160,7 @@
       },
       {
         "source": "/plane-one/governance/authentication/workspaces-and-teams",
-        "destination": "https://developers.plane.so/plane-one/governance/workspaces-and-teams"
+        "destination": "/plane-one/governance/workspaces-and-teams"
       },
       {
         "source": "/plane-one/self-host/methods/one-command",
@@ -193,18 +193,25 @@
       {
         "source": "/plane-one/governance/authentication/custom-sso",
         "destination": "/self-hosting/govern/authentication"
-      },
+      }
+    ],
+
+    "rewrites": [
       {
         "source": "/self-hosting/:path*",
-        "destination": "https://developers.plane.so/self-hosting/"
+        "destination": "https://developers.plane.so/self-hosting/:path*"
       },
       {
         "source": "/api-reference/:path*",
-        "destination": "https://developers.plane.so/api-reference/"
+        "destination": "https://developers.plane.so/api-reference/:path*"
       },
       {
         "source": "/webhooks/:path*",
-        "destination": "https://developers.plane.so/webhooks/"
+        "destination": "https://developers.plane.so/webhooks/:path*"
+      },
+      {
+        "source": "/plane-one/governance/workspaces-and-teams",
+        "destination": "https://developers.plane.so/plane-one/governance/workspaces-and-teams"
       }
-    ]
-  }
+  ]
+}
