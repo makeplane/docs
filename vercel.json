@@ -1,0 +1,217 @@
+{
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "redirects": [
+      {
+        "source": "/quick-start",
+        "destination": "/introduction/quickstart"
+      },
+      {
+        "source": "/sign-up-sign-in",
+        "destination": "/introduction/signup-signin"
+      },
+      {
+        "source": "/docker-compose",
+        "destination": "/self-hosting/docker-compose"
+      },
+      {
+        "source": "/kubernetes",
+        "destination": "/self-hosting/kubernetes"
+      },
+      {
+        "source": "/instance-admin",
+        "destination": "/self-hosting/instance-admin"
+      },
+      {
+        "source": "/reset-password",
+        "destination": "/self-hosting/reset-password"
+      },
+      {
+        "source": "/workspaces",
+        "destination": "/core-concepts/workspaces"
+      },
+      {
+        "source": "/projects",
+        "destination": "/core-concepts/projects"
+      },
+      {
+        "source": "/issues",
+        "destination": "/core-concepts/issues"
+      },
+      {
+        "source": "/cycles",
+        "destination": "/core-concepts/cycles"
+      },
+      {
+        "source": "/modules",
+        "destination": "/core-concepts/modules"
+      },
+      {
+        "source": "/views",
+        "destination": "/core-concepts/views"
+      },
+      {
+        "source": "/pages",
+        "destination": "/core-concepts/pages"
+      },
+      {
+        "source": "/analytics",
+        "destination": "/core-concepts/analytics"
+      },
+      {
+        "source": "/deploy",
+        "destination": "/core-concepts/deploy"
+      },
+      {
+        "source": "/power-k",
+        "destination": "/core-concepts/power-k"
+      },
+      {
+        "source": "/integrations/about",
+        "destination": "/integrations/about"
+      },
+      {
+        "source": "/integrations/github",
+        "destination": "/integrations/github"
+      },
+      {
+        "source": "/integrations/slack",
+        "destination": "/integrations/slack"
+      },
+      {
+        "source": "/importers/github-imp",
+        "destination": "/importers/github"
+      },
+      {
+        "source": "/importers/jira-imp",
+        "destination": "/importers/jira"
+      },
+      {
+        "source": "/webhooks/introduction",
+        "destination": "/webhooks/intro-webhooks"
+      },
+      {
+        "source": "/apis/introduction",
+        "destination": "/api-reference/introduction"
+      },
+      {
+        "source": "/apis/project",
+        "destination": "/api-reference/project/overview"
+      },
+      {
+        "source": "/apis/state",
+        "destination": "/api-reference/state/overview"
+      },
+      {
+        "source": "/apis/label",
+        "destination": "/api-reference/label/overview"
+      },
+      {
+        "source": "/apis/links",
+        "destination": "/api-reference/links/overview"
+      },
+      {
+        "source": "/apis/issue",
+        "destination": "/api-reference/issue/overview"
+      },
+      {
+        "source": "/apis/issue-activity",
+        "destination": "/api-reference/issue-activity/overview"
+      },
+      {
+        "source": "/apis/issue-comment",
+        "destination": "/api-reference/issue-comment/overview"
+      },
+      {
+        "source": "/apis/module",
+        "destination": "/api-reference/module/overview"
+      },
+      {
+        "source": "/apis/module-issue",
+        "destination": "/api-reference/module-issue/overview"
+      },
+      {
+        "source": "/apis/cycle",
+        "destination": "/api-reference/cycle/overview"
+      },
+      {
+        "source": "/apis/cycle-issue",
+        "destination": "/api-reference/cycle-issue/overview"
+      },
+      {
+        "source": "/apis/inbox-issue",
+        "destination": "/api-reference/inbox-issue/overview"
+      },
+      {
+        "source": "/plane-one/self-host/manage/prime-cli",
+        "destination": "/plane-one/manage/prime-cli"
+      },
+      {
+        "source": "/plane-one/self-host/manage/prime-client",
+        "destination": "/plane-one/manage/prime-client"
+      },
+      {
+        "source": "/plane-one/self-host/authentication/custom-sso",
+        "destination": "/plane-one/governance/authentication/custom-sso"
+      },
+      {
+        "source": "/plane-one/self-host/authentication/workspaces-and-teams",
+        "destination": "/plane-one/governance/authentication/workspaces-and-teams"
+      },
+      {
+        "source": "/plane-one/governance/authentication/workspaces-and-teams",
+        "destination": "/plane-one/governance/workspaces-and-teams"
+      },
+      {
+        "source": "/plane-one/self-host/methods/one-command",
+        "destination": "/plane-one/self-host/methods/docker"
+      },
+      {
+        "source": "/plane-one/self-host/methods/docker",
+        "destination": "/self-hosting/methods/docker-compose"
+      },
+      {
+        "source": "/plane-one/self-host/methods/kubernetes",
+        "destination": "/self-hosting/methods/kubernetes"
+      },
+      {
+        "source": "/plane-one/self-host/overview",
+        "destination": "/self-hosting/overview"
+      },
+      {
+        "source": "/plane-one/introduction",
+        "destination": "/self-hosting/overview"
+      },
+      {
+        "source": "/plane-one/manage/prime-cli",
+        "destination": "/self-hosting/manage/prime-cli"
+      },
+      {
+        "source": "/plane-one/manage/prime-client",
+        "destination": "/workspaces-and-users/upgrade-plan"
+      },
+      {
+        "source": "/plane-one/governance/authentication/custom-sso",
+        "destination": "/self-hosting/govern/authentication"
+      }
+    ],
+
+    "rewrites": [
+      {
+        "source": "/self-hosting/:path*",
+        "destination": "https://developers.plane.so/self-hosting/:path*"
+      },
+      {
+        "source": "/api-reference/:path*",
+        "destination": "https://developers.plane.so/api-reference/:path*"
+      },
+      {
+        "source": "/webhooks/:path*",
+        "destination": "https://developers.plane.so/webhooks/:path*"
+      },
+      {
+        "source": "/plane-one/governance/workspaces-and-teams",
+        "destination": "https://developers.plane.so/plane-one/governance/workspaces-and-teams"
+      }
+  ]
+}

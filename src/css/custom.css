@@ -370,3 +370,24 @@ html[data-theme='dark'] {
   color: rgb(153 162 177);
 }
 
+@media (min-width: 768px){
+.navbarSearchContainer_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module{
+  margin-left: auto;
+  margin-right: auto;
+}
+.DocSearch-Button{
+  width:400px;
+}
+}
+
+.menuExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link-styles-module
+{
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgb(18 27 46);
+}
+
+[data-theme='dark'] .menuExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link-styles-module
+{
+  color: rgb(224 228 236);
+}
