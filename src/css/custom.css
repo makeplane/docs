@@ -375,6 +375,14 @@ html[data-theme='dark'] {
   margin-left: auto;
   margin-right: auto;
 }
+
+@media (min-width: 768px){
+  .navbarSearchContainer_Bca1{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}  
+
 .DocSearch-Button{
   width:400px;
 }
