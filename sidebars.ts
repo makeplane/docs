@@ -124,7 +124,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'link',
       label: 'Webhooks',
-      href: 'https://developers.plane.so//webhooks/intro-webhooks', 
+      href: 'https://developers.plane.so/webhooks/intro-webhooks', 
     },
   ], 
 };
