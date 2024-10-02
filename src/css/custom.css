@@ -388,14 +388,14 @@ html[data-theme='dark'] {
 }
 }
 
-.menuExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link-styles-module
+.menuExternalLink_NmtK, .menuExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link-styles-module
 {
   font-size: 0.9rem;
   font-weight: 600;
-  color: rgb(18 27 46);
+  color: rgb(18 27 46) !important;
 }
 
-[data-theme='dark'] .menuExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link-styles-module
+[data-theme='dark'] .menuExternalLink_NmtK, [data-theme='dark'] .menuExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link-styles-module
 {
-  color: rgb(224 228 236);
+  color: rgb(224 228 236) !important;
 }
