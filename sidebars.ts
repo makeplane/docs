@@ -20,7 +20,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Getting Started',
+      label: 'Get started',
       items: [
         'introduction/home',
         'introduction/quickstart',
