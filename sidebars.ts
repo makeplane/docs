@@ -23,6 +23,11 @@ const sidebars: SidebarsConfig = {
       label: 'Get started',
       items: [
         'introduction/home',
+        {
+          type: 'link',
+          label: 'Self-host Plane', 
+          href: 'https://developers.plane.so/self-hosting/overview',
+        },  
         'introduction/quickstart',
       ],
     },
@@ -110,11 +115,6 @@ const sidebars: SidebarsConfig = {
         'plane-importers/github-imp',
         'plane-importers/jira-imp',
       ],
-    },
-    {
-      type: 'link',
-      label: 'Self-host Plane', 
-      href: 'https://developers.plane.so/self-hosting/overview',
     },
     {
       type: 'link',
