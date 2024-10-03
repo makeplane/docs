@@ -34,24 +34,8 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Core concepts',
+      label: 'Project Management 101',
       items: [
-        {
-          type: 'category',
-          label: 'Workspaces',
-          items: [            
-          'core-concepts/workspaces/overview',
-          'core-concepts/workspaces/members',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Account',
-          items: [            
-          'core-concepts/account/overview',
-          'core-concepts/account/settings',
-          ],
-        },
         {
           type: 'category',
           label: 'Projects',
@@ -67,8 +51,6 @@ const sidebars: SidebarsConfig = {
           'core-concepts/issues/overview',
           'core-concepts/issues/properties',
           'core-concepts/issues/visualise_filter',
-          'core-concepts/issues/issue-types',
-          'core-concepts/issues/time-tracking'
           ],
         },
         'core-concepts/cycles',
@@ -88,11 +70,37 @@ const sidebars: SidebarsConfig = {
         'core-concepts/power-k'
       ],
     },
+
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Advanced project management',
+      items: [
+        'core-concepts/issues/issue-types',
+        'core-concepts/issues/time-tracking'
+      ],
+    },
     {
       type: 'category',
       collapsed: false,
       label: 'Workspaces and users',
       items: [
+        {
+          type: 'category',
+          label: 'Workspaces',
+          items: [            
+          'core-concepts/workspaces/overview',
+          'core-concepts/workspaces/members',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Account',
+          items: [            
+          'core-concepts/account/overview',
+          'core-concepts/account/settings',
+          ],
+        },
         'workspaces-and-users/billing-and-plans',
         'workspaces-and-users/upgrade-plan',
       ],
