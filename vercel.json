@@ -209,6 +209,10 @@
     {
       "source": "/plane-one/governance/workspaces-and-teams",
       "destination": "https://developers.plane.so/plane-one/governance/workspaces-and-teams"
+    },
+    {
+      "source": "/introduction/home",
+      "destination": "/"
     }
   ]
 }
