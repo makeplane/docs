@@ -34,7 +34,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Project Management 101',
+      label: 'Project management 101',
       items: [
         {
           type: 'category',
