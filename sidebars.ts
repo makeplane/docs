@@ -70,7 +70,6 @@ const sidebars: SidebarsConfig = {
         'core-concepts/power-k'
       ],
     },
-
     {
       type: 'category',
       collapsed: false,
@@ -108,6 +107,15 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
+      label: 'Importers',
+      items: [
+        'plane-importers/github-imp',
+        'plane-importers/jira-imp',
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
       label: 'Integrations',
       items: [
         'plane-integrations/about',
@@ -118,10 +126,9 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Importers',
+      label: 'Devices',
       items: [
-        'plane-importers/github-imp',
-        'plane-importers/jira-imp',
+        'devices/mobile',
       ],
     },
     {
