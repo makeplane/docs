@@ -409,7 +409,7 @@ table thead tr {
   border-bottom: none;
 }
 
-.container{
+.mobile-img-container{
   display:flex;
   flex-direction: row;
   justify-content: center;
@@ -417,7 +417,7 @@ table thead tr {
   flex-wrap: wrap;
   
 }
-.box{
+.mobile-img-box{
   display:flex;
   flex-direction: column;
   align-items: center;
