@@ -388,7 +388,46 @@ html[data-theme='dark'] {
 }
 }
 
- img[src*='#center'] {
+.table{
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 400;
+  --tw-numeric-spacing: tabular-nums;
+  width: 100%;
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+
+[data-theme='dark'] table tr:nth-child(2n) {
+  background-color: rgb(27 27 29);
+}
+
+table tr:nth-child(2n) {
+  background-color: rgb(255 255 255);
+}
+
+table thead tr {
+  border-bottom: none;
+}
+
+.mobile-img-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+.mobile-img-box{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width:25rem;
+  min-width:15rem;
+  text-align: center;
+  margin: 10px;
+}
+img[src*='#center'] {
   display: block;
   border-radius: 0.5rem;
   float: none;

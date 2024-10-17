@@ -1,41 +1,40 @@
-# Website
+# Plane Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus v3](https://docusaurus.io/) and hosted at [docs.plane.so](https://docs.plane.so/).
 
-### Installation
+## Installation
 
+1. Clone the repository.
+    ```bash
+    git clone git@github.com:makeplane/docs.git
+    ```
+
+2. Navigate to the project directory.
+    ```bash
+    cd docs
+    ```
+
+3. Install dependencies.
+    ```bash
+    yarn
+    ```
+
+## Local development
+
+```bash
+yarn start
 ```
-$ yarn
-```
-
-### Local Development
-
-```
-$ yarn start
-```
-
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
+## Build
 
+```bash
+yarn build
 ```
-$ yarn build
-```
+This command generates static files into the `build` directory.
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Contributing
 
-### Deployment
+Interested in helping us improve the documentation? We’d love your contributions! Whether you're fixing a typo, adding a new guide, or improving an existing page, every bit helps.
 
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+To get started, check out our [Contribution Guide](/CONTRIBUTING.md). We welcome contributions related to core product features or integrations with other tools.
