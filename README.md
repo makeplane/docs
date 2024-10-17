@@ -1,6 +1,12 @@
 # Plane Documentation
 
-This website is built using [Docusaurus v3](https://docusaurus.io/) and hosted at [docs.plane.so](https://docs.plane.so/).
+This website is built using [Docusaurus v3](https://docusaurus.io/) and hosted at [docs.plane.so](https://docs.plane.so/). If you are looking for the developer documentation, see [Plane developer documentation](https://github.com/makeplane/developer-docs).
+
+## Overview
+The Plane documentation provides detailed information on the following topics:
+
+- Understanding the different components of Plane.
+- Establishing connections between Plane and other applications.
 
 ## Installation
 
