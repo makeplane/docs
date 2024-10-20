@@ -429,14 +429,28 @@ table thead tr {
 }
 img[src*='#center'] {
   display: block;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   float: none;
   margin: 10px 0 10px 0;
-  border-color: rgb(153 162 177);
+  border-color: rgb(224 228 236);
   border-style: solid;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  padding: .07rem;
+  box-sizing: border-box;
+  border-width: 0px;
+  padding: .5rem;
+  background-color: rgb(243 246 251);
+}
+
+[data-theme='dark'] img[src*='#center'] {
+  display: block;
+  border-radius: 0.75rem;
+  float: none;
+  margin: 10px 0 10px 0;
+  border-color: rgb(224 228 236);
+  border-style: solid;
+  box-sizing: border-box;
+  border-width: 0px;
+  padding: .5rem;
+  background-color: rgb(32 43 61);
 }
 
     
