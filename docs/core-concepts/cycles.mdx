@@ -1,57 +1,147 @@
 ---
 title: Cycles
 ---
-A cycle is a method for timeboxing the issues you're working on within a project. This approach aids in delivering issues within a fixed timeframe, boosting your team's momentum. Cycles share similarities with sprints in the agile methodology.
+import Tags from '@site/src/components/Tags';
 
-## Toggle cycles
+A Cycle is a set period of time where your team focuses on completing specific tasks or issues, similar to sprints in Agile. Each Cycle is flexible, allowing you to prioritize and tackle backlog items at your own pace.
+ 
+Using Cycles, your team stays organized, meets deadlines, and keeps moving forward efficiently. It’s all about getting things done without the overwhelm! 
 
-Cycles are automatically enabled in a new project by default. You have the option to disable or enable them later by accessing project settings.
+## Enable cycles
+By default, Cycles are automatically enabled when you create a new project. If you ever want to switch them off or back on, you can easily do that by navigating to **Settings > Features** in your project's ellipsis (…) menu.
 
 ## Create cycles
-
-To create a new cycle, simply press `Q` from anywhere in your project, or navigate to the cycles page to initiate one. Providing a name is necessary to create a new cycle, and you can also include a description along with start and due dates, which can be added later as well.
-![Create cycle](https://media.docs.plane.so/cycles/create-cycles.png) 
-
-## Cycle types
-
-Cycles are categorized into four types based on their dates:
-
-1. Active: If today's date falls within the range of the cycle's start and due dates, it is considered active. Only one active cycle is allowed in a project at a time.
-2. Yet to start: A cycle with a start date in the future is considered upcoming.
-3. Completed: A cycle with a due date in the past is considered completed.
-4. Draft: A cycle without assigned dates is considered a draft. Once dates are added, it becomes active or upcoming based on the specified dates.
-
-:::tip
-You have the flexibility to modify the name, description, start and due dates of active, draft, and upcoming cycles at any time.
+:::warning[Caution]
+Two cycles cannot have overlapping dates.
 :::
+To create a new Cycle, just press `Q` from anywhere in your project. Or, you can head to the **Cycles** page under your project in the sidebar and click the **Add Cycle** button. You’ll need to give it a name and set the start and due dates. If you want, you can also add a description—either right away or later on!
+![Create cycle](https://media.docs.plane.so/cycles/create-cycles.webp#center) 
 
 ## Add issues to cycles
 
-Once a cycle is created, you can add new issues to the cycle or include existing issues from the cycle page. Additionally, you have the option to directly associate the cycle as a property in the issue.
+- After you create a cycle, you can start adding new issues or bringing in existing issues right in the Cycle page. 
+![Empty cycle](https://media.docs.plane.so/cycles/cycle-empty-state.webp#center)
 
-![Empty cycle](https://media.docs.plane.so/cycles/cycle-empty-state.png)
+- You can also link a Cycle directly as a property within any issue.
+![Cycle property](https://media.docs.plane.so/cycles/cycle-property.webp#center)
+
+
+## Cycle states
+
+- **Active cycle**  
+An active cycle is the current, ongoing cycle (the current date falls within the cycle's start and due dates) in which a team is working to complete a set of tasks or user stories within a defined time period. Only one cycle can be active at a time.
+
+- **Upcoming cycle**  
+A cycle with a start date in the future is considered upcoming. This allows teams to plan their next phase of work in advance, ensuring a seamless transition from the current active cycle to the next, with everything lined up and ready to go.
+
+- **Completed cycle**  
+When a cycle’s due date has passed, it moves into the completed state. This reflects that the work scheduled during that cycle is finished, and the team can move on to review, wrap-up, and start planning for future cycles. Completed cycles are not editable, however you can transfer issues that are incomplete to an active or upcoming cycle.
+
+:::tip
+You can modify the name, description, start and due dates of active and upcoming cycles at any time.
+:::
+
+<div className="tag-wrapper">
+ ## Transfer issues
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
+
+Once the due date of an active Cycle passes, it’s automatically marked as completed. After that, you can easily transfer any unfinished issues to an active or upcoming cycle, making it simple to move any leftover tasks to the next cycle.
+
+![Transfer issues](https://media.docs.plane.so/cycles/transfer-issues.webp#center)
 
 ## Track progress
 
-Once a cycle is active and contains issues, you can monitor its progress, assess the team's productivity, and review the breakdown of priorities from the active cycle section of the project. This section also allows you to investigate any discrepancies if the cycle is not proceeding as expected.
+Once a cycle is active and contains issues, you can monitor its progress, assess the team's productivity, and review the breakdown of priorities in the Cycles page of the project. This section also allows you to investigate any discrepancies if the cycle is not proceeding as expected.
 
-![Active cycle](https://media.docs.plane.so/cycles/active-cycle-ui.png)
+![Track cycle progress](https://media.docs.plane.so/cycles/track-cycle-progress.webp#center)
 
+<div className="tag-wrapper">
+## Cycle progress charts
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
+
+This feature provides powerful visualization tools to help you track project cycles more effectively. With real-time insights, you can see exactly how your cycle is performing against the planned progress, making it easier to stay on top of deadlines and adjust as needed. Using detailed burn-down and build-up charts, your team can quickly identify trends—whether you’re ahead, trailing, or right on track.
+
+![Cycle progress charts](https://media.docs.plane.so/cycles/cycle-progress-charts.webp#center)
+
+### Cycle summary
+
+At the top of the cycle page, you’ll see the overall progress percentage. Hover over it to get a breakdown of completed and pending issues, along with the number of days left in the cycle—pretty handy, right?
+
+To the left, a color-coded summary shows if the cycle is leading or trailing based on the burn-down and build-up metrics. This gives you instant feedback on how things are going and highlights any risks, so you can make quick decisions and ensure nothing slips through the cracks.
+
+The burn-down and build-up charts are straightforward ways to gauge your cycle’s momentum. You can customize them to show progress based on the **count of issues** or **point estimates** for each task, giving you the flexibility to use the metrics that work best for your team.
+
+- **Scope**  
+This is the total number of issues planned for the current cycle.
+
+- **Unstarted**  
+The issues that haven't begun yet.
+
+- **Backlog**  
+All issues in an unstarted state.
+
+The other metrics are detailed below, tailored to each chart type.
+
+### Burn-down chart
+The burn-down chart gives you a clear visual of how much work remains in your cycle. It's designed to show the ideal pace of progress compared to what’s actually happening.
+
+- **Today's ideal pending**  
+This shows how many tasks should be left based on the ideal progress for today.
+
+- **Pending**  
+This is the total number of unfinished tasks, calculated by subtracting completed tasks from the total planned for the cycle. The chart tracks the days left, so you can see what should be done by now versus what actually is done.
+
+- **Leading**   
+If your team is ahead of schedule, meaning you have fewer pending tasks than expected, the chart will show a green upward trend. The area between the ideal and pending lines is filled with light green, indicating strong progress.
+
+- **Trailing**   
+If progress is behind schedule and there are more pending tasks than expected, the chart displays a red downward trend. A light red fill appears between the ideal progress and the pending lines, signaling the need to catch up.
+
+
+### Build-up chart
+The build-up chart helps track how much work has already been completed in the cycle.
+
+- **Today's ideal done**  
+This shows how many issues should be completed by today based on the ideal pace.
+
+- **Done**  
+This is the total number of tasks your team has completed so far.
+
+- **Leading**  
+If you’ve completed more tasks than planned, the chart will show a green upward trend. The area between the ideal and completed lines is filled with light green, visually highlighting that you’re ahead of schedule.
+
+- **Trailing**
+If fewer tasks are completed than expected, the chart shows a red downward trend, with a light red fill between the ideal and actual lines, indicating the need to speed up progress.
+
+:::caution[Limitation]
+In shorter cycles, it can be harder to spot trailing trends early. To avoid falling behind, it’s important to rely on real-time updates and team communication.
+:::
+
+<div className="tag-wrapper">
 ## Active cycles across projects
-If you have multiple projects with cycles running concurrently, you can monitor the progress of all active cycles directly from the active cycles section. This allows you to quickly assess the progress of each cycle and identify any red flags.
-:::note 
-Active cycles is a feature included in our Pro plan, but it is currently available on our cloud free plan for a limited time, allowing users to experience its functionality.
-:::
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
 
-![Active cycles](https://media.docs.plane.so/cycles/active-cycles-ui.png)
-## Close cycles
+If you have multiple projects with Cycles running at the same time, you can easily track the progress of all active cycles in the **Cycles** section under **Workspaces** in the sidebar. This gives you a quick overview of each project’s progress and helps you spot any potential issues early on. Each cycle displays its status—whether it’s ahead of schedule or falling behind—based on the burn-down and build-up metrics.
+![Active cycles](https://media.docs.plane.so/cycles/active-cycles-ui.webp#center)
 
-After the due date of the active cycle passes, the cycle is automatically marked as completed. Once completed, you have the option to transfer any remaining incomplete issues from the cycle to a different cycle. This facilitates the swift movement of spillover tasks to other cycles. Once a cycle is marked as completed, its progress is locked, allowing you to track and compare the team's progress across cycles effectively.
+## Archive cycles
+You can archive completed cycles, allowing you to conceal significantly older cycles from your views.
 
-## Remove cycles
 
-You can remove cycles by deleting them. Upon deletion, all associated analytics and progress reports are also removed. Any issues linked to the cycle are subsequently de-linked.
-
-:::note 
-We will soon introduce a feature to archive completed cycles, allowing you to conceal significantly older cycles from your views.
-:::
+## Delete cycles
+You can delete a Cycle to remove it entirely. When you do, all associated analytics and progress reports will be erased. Any issues linked to that Cycle will also be automatically unlinked.
