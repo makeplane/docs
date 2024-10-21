@@ -65,6 +65,7 @@ const sidebars: SidebarsConfig = {
           ],
         },
         'core-concepts/inbox',
+        'core-concepts/drafts',
         'core-concepts/analytics',
         'core-concepts/deploy',
         'core-concepts/power-k'
