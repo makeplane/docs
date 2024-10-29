@@ -137,6 +137,11 @@ h1{
 }
 h2{
   font-size: 1.5rem;
+  line-height: 1.25;
+}
+h3{
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
 
@@ -452,3 +457,4 @@ img[src*='#center'] {
   padding: .5rem;
   background-color: rgb(32 43 61);
 }
+
