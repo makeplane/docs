@@ -3,6 +3,8 @@ title: Cycles
 ---
 import Tags from '@site/src/components/Tags';
 
+# Manage, plan, and track your team’s progress
+
 A Cycle is a set period of time where your team focuses on completing specific tasks or issues, similar to sprints in Agile. Each Cycle is flexible, allowing you to prioritize and tackle backlog items at your own pace.
  
 Using Cycles, your team stays organized, meets deadlines, and keeps moving forward efficiently. It’s all about getting things done without the overwhelm! 
@@ -54,78 +56,11 @@ Once the due date of an active Cycle passes, it’s automatically marked as comp
 
 ![Transfer issues](https://media.docs.plane.so/cycles/transfer-issues.webp#center)
 
-## Track progress
+## Track active cycle
 
 Once a cycle is active and contains issues, you can monitor its progress, assess the team's productivity, and review the breakdown of priorities in the Cycles page of the project. This section also allows you to investigate any discrepancies if the cycle is not proceeding as expected.
 
 ![Track cycle progress](https://media.docs.plane.so/cycles/track-cycle-progress.webp#center)
-
-<div className="tag-wrapper">
-## Cycle progress charts
-<Tags 
-  tags={[ 
-    { name: "Pro", additionalClass: "pro" }
-  ]} 
- />
-</div>
-
-This feature provides powerful visualization tools to help you track project cycles more effectively. With real-time insights, you can see exactly how your cycle is performing against the planned progress, making it easier to stay on top of deadlines and adjust as needed. Using detailed burn-down and build-up charts, your team can quickly identify trends—whether you’re ahead, trailing, or right on track.
-
-![Cycle progress charts](https://media.docs.plane.so/cycles/cycle-progress-charts.webp#center)
-
-### Cycle summary
-
-At the top of the cycle page, you’ll see the overall progress percentage. Hover over it to get a breakdown of completed and pending issues, along with the number of days left in the cycle—pretty handy, right?
-
-To the left, a color-coded summary shows if the cycle is leading or trailing based on the burn-down and build-up metrics. This gives you instant feedback on how things are going and highlights any risks, so you can make quick decisions and ensure nothing slips through the cracks.
-
-The burn-down and build-up charts are straightforward ways to gauge your cycle’s momentum. You can customize them to show progress based on the **count of issues** or **point estimates** for each task, giving you the flexibility to use the metrics that work best for your team.
-
-- **Scope**  
-This is the total number of issues planned for the current cycle.
-
-- **Unstarted**  
-The issues that haven't begun yet.
-
-- **Backlog**  
-All issues in an unstarted state.
-
-The other metrics are detailed below, tailored to each chart type.
-
-### Burn-down chart
-The burn-down chart gives you a clear visual of how much work remains in your cycle. It's designed to show the ideal pace of progress compared to what’s actually happening.
-
-- **Today's ideal pending**  
-This shows how many tasks should be left based on the ideal progress for today.
-
-- **Pending**  
-This is the total number of unfinished tasks, calculated by subtracting completed tasks from the total planned for the cycle. The chart tracks the days left, so you can see what should be done by now versus what actually is done.
-
-- **Leading**   
-If your team is ahead of schedule, meaning you have fewer pending tasks than expected, the chart will show a green upward trend. The area between the ideal and pending lines is filled with light green, indicating strong progress.
-
-- **Trailing**   
-If progress is behind schedule and there are more pending tasks than expected, the chart displays a red downward trend. A light red fill appears between the ideal progress and the pending lines, signaling the need to catch up.
-
-
-### Build-up chart
-The build-up chart helps track how much work has already been completed in the cycle.
-
-- **Today's ideal done**  
-This shows how many issues should be completed by today based on the ideal pace.
-
-- **Done**  
-This is the total number of tasks your team has completed so far.
-
-- **Leading**  
-If you’ve completed more tasks than planned, the chart will show a green upward trend. The area between the ideal and completed lines is filled with light green, visually highlighting that you’re ahead of schedule.
-
-- **Trailing**
-If fewer tasks are completed than expected, the chart shows a red downward trend, with a light red fill between the ideal and actual lines, indicating the need to speed up progress.
-
-:::caution[Limitation]
-In shorter cycles, it can be harder to spot trailing trends early. To avoid falling behind, it’s important to rely on real-time updates and team communication.
-:::
 
 <div className="tag-wrapper">
 ## Active cycles across projects
@@ -136,8 +71,8 @@ In shorter cycles, it can be harder to spot trailing trends early. To avoid fall
  />
 </div>
 
-If you have multiple projects with Cycles running at the same time, you can easily track the progress of all active cycles in the **Cycles** section under **Workspaces** in the sidebar. This gives you a quick overview of each project’s progress and helps you spot any potential issues early on. Each cycle displays its status—whether it’s ahead of schedule or falling behind—based on the burn-down and build-up metrics.
-![Active cycles](https://media.docs.plane.so/cycles/active-cycles-ui.webp#center)
+If you have multiple projects with Cycles running at the same time, you can easily track the progress of all active cycles in the **Cycles** section under the **Workspace** section in the sidebar. This gives you a quick overview of each project’s progress and helps you spot any potential issues early on. Each cycle displays its status—whether it’s ahead of schedule or falling behind—based on the burn-down and build-up metrics.
+![Active cycles](https://media.docs.plane.so/cycles/active-cycles-across-projects.webp#center)
 
 ## Archive cycles
 You can archive completed cycles, allowing you to conceal significantly older cycles from your views.
