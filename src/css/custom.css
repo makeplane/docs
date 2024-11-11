@@ -521,7 +521,7 @@ img[src*='#center'] {
   box-sizing: border-box;
   border-width: 0px;
   padding: .5rem;
-  background-color: rgb(243 246 251);
+  background-color: rgb(226 226 226);
 }
 
 [data-theme='dark'] img[src*='#center'] {
