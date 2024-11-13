@@ -1,0 +1,44 @@
+---
+title: De-dup
+hide_title: true
+---
+
+import Tags from '@site/src/components/Tags';
+
+<div className="tag-wrapper">
+ <h1>Detect duplicate issues</h1>
+<Tags 
+  tags={[ 
+    { name: "Business", additionalClass: "business" }
+  ]} 
+ />
+</div>
+
+When similar issues clutter a workspace, they confuse team members and make it harder to track and manage project scope.  
+
+Our De-dup feature helps you catch and manage duplicate issues in Plane.
+
+## How De-dup works
+
+Plane flags duplicate issues both when creating a new one and when viewing an issue's details. 
+
+### Detect duplicates during issue creation
+
+When you create a new issue, Plane scans titles and descriptions for similar content and notifies you if it finds potential duplicates.
+
+![Duplicates during issue creation](https://media.docs.plane.so/issues/dedup-create-issue.webp#center)
+
+You can click on the issues to check and decide if creating a new one is necessary or if updating an existing one makes more sense.
+
+### Mark or delete duplicate issues
+
+You can mark issues as duplicates or delete them in the issue detail view. 
+![Mark duplicates](https://media.docs.plane.so/issues/dedup-issue-desc.webp#center)
+
+When you open an issue, Plane analyses and lists similar issues. You can select one or more of these issues and mark them duplicates. This will add a "Duplicate of" relation to connect them.
+
+![Duplicate of relation](https://media.docs.plane.so/issues/dedup-relation.webp#center)
+
+:::tip 
+The De-dup feature is also active when creating or viewing issues in Intake. 
+:::
