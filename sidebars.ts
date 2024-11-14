@@ -64,7 +64,14 @@ const sidebars: SidebarsConfig = {
           'core-concepts/pages/editor-blocks',
           ],
         },
-        'core-concepts/inbox',
+        {
+          type: 'category',
+          label: 'Intake',
+          link: { type: 'doc', id: 'intake/README' },
+          items: [            
+          'intake/intake-forms',
+          ],
+        },
         'core-concepts/drafts',
         'core-concepts/analytics',
         'core-concepts/deploy',
