@@ -34,75 +34,80 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Project management 101',
+      label: 'The essentials',
       items: [
-        {
-          type: 'category',
-          label: 'Projects',
-          items: [            
-          'core-concepts/projects/overview',
-          'core-concepts/projects/run-project',
-          ],
-        },
+        'core-concepts/workspaces/overview',
+        'core-concepts/projects/overview',
         {
           type: 'category',
           label: 'Issues',
+          link: { type: 'doc', id: 'core-concepts/issues/overview' },
           items: [            
-          'core-concepts/issues/overview',
           'core-concepts/issues/properties',
           'core-concepts/issues/visualise_filter',
           ],
         },
         'core-concepts/cycles',
         'core-concepts/modules',
-        'core-concepts/views',
         {
           type: 'category',
           label: 'Pages',
+          link: { type: 'doc', id: 'core-concepts/pages/overview' },
           items: [            
-          'core-concepts/pages/overview',
           'core-concepts/pages/editor-blocks',
           ],
         },
-        'core-concepts/inbox',
         'core-concepts/drafts',
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Visualization',
+      items: [
+        'core-concepts/issues/layouts',
+        'core-concepts/views',
         'core-concepts/analytics',
-        'core-concepts/deploy',
+        
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Power users',
+      items: [
+        'core-concepts/issues/issue-types',
+        'core-concepts/issues/time-tracking',
         'core-concepts/power-k'
       ],
     },
+
     {
       type: 'category',
       collapsed: false,
-      label: 'Advanced project management',
+      label: 'Sharing & collaboration',
       items: [
-        'core-concepts/issues/issue-types',
-        'core-concepts/issues/time-tracking'
+        'core-concepts/inbox',
+        'core-concepts/deploy'
       ],
     },
+
     {
       type: 'category',
       collapsed: false,
-      label: 'Workspaces and users',
+      label: 'Workspace management',
       items: [
-        {
-          type: 'category',
-          label: 'Workspaces',
-          items: [            
-          'core-concepts/workspaces/overview',
-          'core-concepts/workspaces/members',
-          ],
-        },
+        'core-concepts/workspaces/members',
+        'workspaces-and-users/billing-and-plans',
+        'workspaces-and-users/upgrade-plan',
         {
           type: 'category',
           label: 'Account',
+          link: { type: 'doc', id: 'core-concepts/account/overview' },
           items: [            
-          'core-concepts/account/overview',
           'core-concepts/account/settings',
           ],
         },
-        'workspaces-and-users/billing-and-plans',
-        'workspaces-and-users/upgrade-plan',
       ],
     },
     {
