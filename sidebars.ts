@@ -29,6 +29,7 @@ const sidebars: SidebarsConfig = {
           href: 'https://developers.plane.so/self-hosting/overview',
         },  
         'introduction/quickstart',
+        'introduction/core-concepts',
       ],
     },
     {
