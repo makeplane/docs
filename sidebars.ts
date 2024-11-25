@@ -66,6 +66,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: 'Visualization',
       items: [
+        'core-concepts/account/overview',
         'core-concepts/issues/layouts',
         'core-concepts/views',
         'core-concepts/analytics',
@@ -101,14 +102,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/workspaces/members',
         'workspaces-and-users/billing-and-plans',
         'workspaces-and-users/upgrade-plan',
-        {
-          type: 'category',
-          label: 'Account',
-          link: { type: 'doc', id: 'core-concepts/account/overview' },
-          items: [            
-          'core-concepts/account/settings',
-          ],
-        },
+        'core-concepts/account/settings',
       ],
     },
     {
