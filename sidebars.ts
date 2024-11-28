@@ -35,21 +35,86 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
-      label: 'The essentials',
+      label: 'Project + work tracking',
       items: [
-        'core-concepts/workspaces/overview',
-        'core-concepts/projects/overview',
+
+        {
+          type: 'category',
+          label: 'Projects',
+          link: { type: 'doc', id: 'core-concepts/projects/overview' },
+          items: [            
+          'core-concepts/deploy'
+          ],
+        },
         {
           type: 'category',
           label: 'Issues',
           link: { type: 'doc', id: 'core-concepts/issues/overview' },
           items: [            
           'core-concepts/issues/properties',
+          'core-concepts/issues/states',
+          'core-concepts/issues/labels',
           'core-concepts/issues/visualise_filter',
           ],
         },
         'core-concepts/cycles',
         'core-concepts/modules',
+        'core-concepts/inbox',
+        'core-concepts/issues/estimates',
+        'core-concepts/drafts',
+      ],
+    },
+
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Project + work management',
+      items: [
+        'core-concepts/issues/issue-types',
+        'core-concepts/issues/time-tracking',
+        
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Visualization',
+      items: [
+        'core-concepts/issues/layouts',
+        'core-concepts/views',
+        'core-concepts/account/overview',
+        'core-concepts/analytics',
+        
+      ],
+    },
+
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Navigation',
+      items: [
+       'core-concepts/power-k'
+      ],
+    },
+
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Workspace & user management',
+      items: [
+        'core-concepts/workspaces/overview',
+        'core-concepts/workspaces/members',
+        'workspaces-and-users/billing-and-plans',
+        'workspaces-and-users/upgrade-plan',
+        'core-concepts/account/settings',
+      ],
+    },
+
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Knowledge management',
+      items: [
         {
           type: 'category',
           label: 'Pages',
@@ -58,51 +123,7 @@ const sidebars: SidebarsConfig = {
           'core-concepts/pages/editor-blocks',
           ],
         },
-        'core-concepts/drafts',
-      ],
-    },
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Visualization',
-      items: [
-        'core-concepts/account/overview',
-        'core-concepts/issues/layouts',
-        'core-concepts/views',
-        'core-concepts/analytics',
-        
-      ],
-    },
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Power users',
-      items: [
-        'core-concepts/issues/issue-types',
-        'core-concepts/issues/time-tracking',
-        'core-concepts/power-k'
-      ],
-    },
-
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Sharing & collaboration',
-      items: [
-        'core-concepts/inbox',
-        'core-concepts/deploy'
-      ],
-    },
-
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Workspace management',
-      items: [
-        'core-concepts/workspaces/members',
-        'workspaces-and-users/billing-and-plans',
-        'workspaces-and-users/upgrade-plan',
-        'core-concepts/account/settings',
+        'core-concepts/pages/wiki',
       ],
     },
     {
