@@ -1,35 +1,39 @@
 ---
-title: Visualise and filter issues
+title: Filters
 ---
 
-In Plane, you have several options for visualizing and filtering issues to help you quickly analyze and investigate them.
+# Filter issues
 
-### Layouts
+Filtering issues in Plane helps you quickly locate, analyze, and manage tasks based on specific criteria. 
 
--  **List View:** Displays issues as an ordered list. Supports grouping by specific issue properties for easy categorization.
-   ![issue-list](https://media.docs.plane.so/issues/issue-list-layout.webp#center)
--  **Kanban View:** Groups issues by a specific property in a Kanban board format, typically by issue states. Allows for quick assessment of issues' status.
-   ![issue-kanban](https://media.docs.plane.so/issues/issue-kanban-layout.webp#center)
-- **Calendar View:** Groups issues by due dates in a calendar interface, facilitating quick identification of issues due soon.
-   ![issue-calendar](https://media.docs.plane.so/issues/issue-calendar-layout.webp#center)
-- **Spreadsheet View:** Arranges issues as rows in a spreadsheet, with all properties available as columns. Useful for taking similar actions on multiple issues.
-   ![issue-spreadsheet-layout](https://media.docs.plane.so/issues/issue-spreadsheet-layout.webp#center)
-- **Gantt View:** Arranges issues by start and due dates in a Gantt chart format, providing a visual representation of issue timelines.
-   ![issue-gantt](https://media.docs.plane.so/issues/issue-gantt-layout.webp#center)
+![Filter issues](https://media.docs.plane.so/issues/filter-issues.webp#center)
 
-### Filter Issues
+## Options
+- **Priority**  
+Filter issues by their priority level (e.g., Urgent, High, Medium, Low) to focus on the most critical tasks.
+- **State**  
+View issues based on their current state, such as Todo, In Progress, or Done.
+- **Issue Type**  
+Filter by custom issue types, such as Bug, Feature, or Task.
+- **Assignee**  
+Focus on issues assigned to specific team members to track workloads or identify pending tasks.
+- **Cycle**   
+View issues tied to specific cycles to monitor progress within a timeframe.
+- **Module**  
+Filter issues by their associated module to analyze related tasks together.
+- **Mention**  
+Filter tasks where you or another team member has been mentioned to ensure no critical tasks are missed.
+- **Created by**  
+Identify issues created by specific individuals.
+- **Label**  
+Filter issues based on custom tags, such as "Frontend", or "Marketing".
+- **Issue grouping**  
+View all, active or backlog issues.
+- **Start date and Target date**  
+Filter issues by start dates to view tasks that are planned or already in progress, and by target dates to track upcoming deadlines or overdue tasks. For even more flexibility, you can specify a custom date range to focus on a specific timeframe.
 
-Issues can be filtered by various properties, including:
+## Multiple filters
+You can apply multiple filters to refine your results further. Only issues that match all the selected criteria will be displayed. For instance, filtering for "High Priority" and "Assigned to Alice" will only show high-priority issues assigned to Alice.
 
- 1. Priority
- 2. State
- 3. Start date
- 4. Due date
- 5. Assignee
- 6. Labels
- 7. Modules
- 8. Cycles
- 9. Created by
-10. Mentions
-
-When applying multiple filters, only issues matching all filter criteria are displayed. Note that when filtering issues in a workspace view, filtering by state, cycles, or modules is not yet supported.
+## Save filters
+Once you’ve applied filters, you can save your configuration as a custom view for easy access in the future. Custom views allow you to quickly switch between different perspectives, such as a high-priority tasks dashboard or a specific team’s workload. See [Views](/core-concepts/views) for more info. 

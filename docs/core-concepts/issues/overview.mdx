@@ -1,58 +1,105 @@
 ---
-title: Overview
+title: Issues
 ---
 
-In Plane, an issue serves as the fundamental unit of work, which can be assigned, managed, and completed. Issues represent the tasks you need to accomplish to make progress. They are analogous to tasks in the project management domain.
+In Plane, an issue serves as the fundamental unit of work. They represent the tasks you need to accomplish to make progress Think of issues as the to-dos of your project management flow—assignable, trackable, and actionable. 
 
-## Create issues
+## Create issue
 
-An issue can only be created within a project. The fastest way to create a new issue in a project is to simply press `C` on your keyboard. The project you are on or last visited is automatically considered as the default project to create an issue in.
+The quickest way to add a new issue is to press `C` on your keyboard. By default, the issue will be assigned to the project you are currently on or the one you last visited.
 
-### Create issue modal
-
-1. This is the default method to add issues in your project. You can open this modal in the following ways:
-   - Press `C` on your keyboard.
-   - Click on the "New issue" button in the side navigation bar.
-   - Click on the "New issue" button in your project/cycle/module issue.
-
-When you open the create issue modal, you can add almost all attributes of an issue and create the issue. This gives you the convenience of having all properties at your disposal. You can also choose to create multiple issues one after the other if you enable "Create more".
-
-Issues you create can be saved as drafts to access them later. The last draft you have in your session can be accessed via the dropdown beside the "New issue" button in your side navigation bar, and all draft issues can be found in your project's draft issues section.
+You can also head over to the **Issues** tab in the sidebar and click **Add Issue** at the top right of the screen. 
 
 ![Create issue](https://media.docs.plane.so/issues/create-issue-modal.webp#center)
 
-### Quick add
+In the **Create new issue** modal, you can define all the attributes of the issue, including title, description, assignees, state, priority, labels, due dates, and more. You can also enable the **Create more** option to add multiple issues one after the other.
 
-The quick add mode of issue addition offers a quicker way to add issues when you're browsing through a layout and feel the need to add an issue promptly.
+When you create an issue, Plane assigns it a sequential identifier based on your project (e.g., PROJ-1).
 
-![Create issue](https://media.docs.plane.so/issues/issue-quick-add.webp#center)
+:::tip
+Plane automatically saves your half-written issues so you can access them later in [Drafts](/core-concepts/drafts), in case you're not ready to finalize them or if you accidentally close the modal. 
+:::
 
-Once an issue is created successfully, a sequential issue identifier based on your project is assigned to the issue (Eg: PROJ-1)
-## View an issue
+### Quick add issues
 
-An issue in your board opens by default in the peek overview mode, which allows for easy switching between contexts when browsing multiple issues simultaneously. In this mode, you can choose different styles of the peek overview, such as modal, full screen, or side peek, with side peek being the default option.
+For when you're in the middle of your workflow and need to jot something down fast, Plane lets you create an issue with minimal input and come back to refine it later.
+
+![Quick add issue](https://media.docs.plane.so/issues/issue-quick-add.webp#center)
+
+## View issue details
+
+An issue in your board opens by default in the peek overview mode, which allows for easy switching between contexts when browsing multiple issues simultaneously. In this mode, you can choose different styles, such as modal, full screen, or side peek, with side peek being the default option.
 
 ![issue-side-peek](https://media.docs.plane.so/issues/issue-side-peek.webp#center)
 
-## Issue activity
+## Set issue properties
 
-Within each issue, all updates and comments are recorded in the activity area. Any change to a property of the issue is treated as an update and logged accordingly. Additionally, comments can be added to discuss the issue or its progress. Comments support multiple blocks for enhanced content structuring.
+You can set various properties for an issue, including its state, assignees, priority, start date, and due date. For a complete list of all available properties, check out the [Properties](/core-concepts/issues/properties) page.
 
-![issue-activity-comments](https://media.docs.plane.so/issues/issue-activity-comments.webp#center)
+## Create sub-issues
 
-## Sub issues
-
-After creating an issue, you have the option to add sub-issues to it either by creating them or by linking to existing issues. Sub-issues allow you to divide the work into different functional components or break it down into smaller, achievable tasks.
+Break down larger tasks into smaller, manageable components by creating sub-issues. Sub-issues can be either newly created or linked to existing issues, giving you flexibility in organizing work.
 
 ![sub-issues](https://media.docs.plane.so/issues/issue-sub-issues.webp#center)
 
-## Remove Issues
+## Add relations
 
-Issues can be removed in two ways:
+You can also set up relations and dependencies between issues using the **Relations** property. These relationships help clarify how issues are interconnected and how the completion of one task might affect another.
 
-1. **Archive Issues:** Completed or canceled issues can be archived, and automations can be set up to archive such issues. It's recommended to conclude an issue by closing it before archiving. Archived issues are present in the project's additional options and can be found under the three dots menu next to the project name.
+![Issue relations](https://media.docs.plane.so/issues/issue-relations.webp#center)
+
+- **Relates to**  
+This relation is used when two issues are linked by some kind of context or dependency, but one does not directly affect the other’s completion.
+
+- **Duplicate of**  
+This relation is used when one issue is a duplicate of another. The original issue remains active, while the duplicate issue is linked and typically closed or archived.
+
+- **Blocking**  
+When an issue is marked as Blocking, it means that the issue needs to be resolved first before the second issue can progress.
+
+- **Blocked by**  
+If an issue is marked as Blocked by, it indicates that the issue cannot proceed until the blocking issue is completed.
+
+## Add links and attachments
+
+You can easily add links and upload attachments to issues in Plane to provide additional context or resources. 
+
+![Add links and attachments](https://media.docs.plane.so/issues/links-and-attachments.webp#center)
+
+You can link to external resources, documentation, or related issues by adding URLs in the **Add link** modal. This helps in providing quick access to important references without cluttering the issue itself.
+
+Plane allows you to upload different file types directly to the issue. Whether it’s an image, video, PDF, or a zip file, use the **Attach** button to upload it.
+
+## View issue activity
+
+Inside each issue, you’ll find an Activity log tracking updates like status changes, reassignments, or due date modifications. This feed also logs comments, which support rich formatting for discussions, updates, or sharing resources related to the issue.
+
+![issue-activity-comments](https://media.docs.plane.so/issues/issue-activity-comments.webp#center)
+
+## Subscribe to notifications
+
+You’ll automatically receive email notifications for updates on issues that you’ve created or are assigned to. You can also view these notifications directly in **Inbox** on the sidebar. If you'd like to start receiving notifications for an issue you’re interested in, click **Subscribe** at the top right of the issue detail page.
+
+If you no longer want to receive updates, simply click **Unsubscribe** to stop the notifications.
+
+## Archive issues
+
+Completed or canceled issues can be archived, and automations can be set up to archive such issues. Archived issues can be found under the three dots menu next to your project name.
 
 ![archived-issues](https://media.docs.plane.so/issues/archived-issues.webp#center)
 
+## Delete issues
 
-2. **Delete Issues:** Issues that are created accidentally or no longer relevant to the project can be deleted from the board.
+You can delete issues that were created accidentally or are no longer relevant to the project. Deleted issues cannot be recovered, so be sure to review them carefully before removal. Once deleted, the issue is permanently removed from the project.
+
+## Set up automations
+
+Within your project, you can set up automations to perform the following tasks:
+
+- **Auto-archive closed issues**  
+You can set up an automation to archive issues that are marked as closed. This helps keep your active project board clean and organized, while still retaining closed issues for reference. You can customize the time period after which closed issues will automatically be moved to the archive.
+![Project archive automation](https://media.docs.plane.so/projects/auto-archive-closed-issues.webp#center)
+
+-  **Auto-close issues**  
+You can also automate the closing of issues that are still open after a certain period of time. This is useful for ensuring that issues don’t remain open unnecessarily, helping to keep your project board organized and up to date. The automation will move all open issues matching the time period to a selected closed state.
+![Project close automation](https://media.docs.plane.so/projects/auto-close-issues.webp#center)
