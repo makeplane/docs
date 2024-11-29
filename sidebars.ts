@@ -100,7 +100,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Workspace & user management',
+      label: 'Workspace + user management',
       items: [
         'core-concepts/workspaces/overview',
         'core-concepts/workspaces/members',
