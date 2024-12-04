@@ -132,7 +132,6 @@ const sidebars: SidebarsConfig = {
       label: 'Importers',
       items: [
         'plane-importers/overview',
-        'plane-importers/github-imp',
         'plane-importers/jira-imp',
       ],
     },
