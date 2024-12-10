@@ -1,5 +1,5 @@
 ---
-title: Dependencies
+title: Dependencies in Timeline
 hide_title: true
 ---
 
@@ -9,22 +9,24 @@ import Tags from '@site/src/components/Tags';
  <h1>Set up task dependencies visually</h1>
 <Tags 
   tags={[ 
-    { name: "Pro", additionalClass: "pro" },
-    { name: "Business", additionalClass: "business" }
+    { name: "Pro", additionalClass: "pro" }
   ]} 
  />
 </div>
 
-With dependencies, managing connected tasks has never been easier. This feature provides a clear, high-level view of task relationships, allowing you to quickly see which tasks depend on each other. It helps you plan tasks more efficiently, optimize resource allocation, and stay on top of critical tasks. By tracking dependencies, you can spot bottlenecks, prevent delays, and keep everything on track. When you drag tasks along the timeline, dependent tasks will adjust automatically to stay in sync.
-
+With dependencies, managing connected tasks has never been easier. This feature provides a clear, high-level view of task relationships, allowing you to quickly see which tasks depend on each other. It helps you plan tasks more efficiently, optimize resource allocation, and stay on top of critical tasks. By tracking dependencies, you can spot bottlenecks, prevent delays, and keep everything on track.
 
 ## Timeline connectors
+:::info
+You need to set the Start date and Due date on issues for dependencies to appear in the Timeline layout.
+:::
+
 In the Timeline layout, you can easily set up dependencies by dragging connectors from one task to another. Once the dependency is established, a line appears between the tasks to visually represent the connection. Violated dependencies are shown as red lines, making it simple to spot any misaligned timelines.
 
 ![Timeline dependencies](https://media.docs.plane.so/issues/timeline-dependencies.webp#center)
 
 :::tip
-You need to set the Start date and Due date on issues for dependencies to appear in the Timeline layout.
+When you drag tasks along the timeline, dependent tasks will adjust automatically to stay in sync.
 :::
 
 Plane supports three main types of dependencies:
