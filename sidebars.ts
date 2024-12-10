@@ -29,52 +29,46 @@ const sidebars: SidebarsConfig = {
           href: 'https://developers.plane.so/self-hosting/overview',
         },  
         'introduction/quickstart',
+        'introduction/core-concepts',
       ],
     },
     {
       type: 'category',
       collapsed: false,
-      label: 'Project management 101',
+      label: 'Project + work tracking',
       items: [
+
         {
           type: 'category',
           label: 'Projects',
+          link: { type: 'doc', id: 'core-concepts/projects/overview' },
           items: [            
-          'core-concepts/projects/overview',
-          'core-concepts/projects/run-project',
+          'core-concepts/deploy'
           ],
         },
         {
           type: 'category',
           label: 'Issues',
+          link: { type: 'doc', id: 'core-concepts/issues/overview' },
           items: [            
-          'core-concepts/issues/overview',
           'core-concepts/issues/properties',
+          'core-concepts/issues/states',
+          'core-concepts/issues/labels',
           'core-concepts/issues/visualise_filter',
           ],
         },
         'core-concepts/cycles',
         'core-concepts/modules',
-        'core-concepts/views',
-        {
-          type: 'category',
-          label: 'Pages',
-          items: [            
-          'core-concepts/pages/overview',
-          'core-concepts/pages/editor-blocks',
-          ],
-        },
         'core-concepts/inbox',
+        'core-concepts/issues/estimates',
         'core-concepts/drafts',
-        'core-concepts/analytics',
-        'core-concepts/deploy',
-        'core-concepts/power-k'
       ],
     },
+
     {
       type: 'category',
       collapsed: false,
-      label: 'Advanced project management',
+      label: 'Project + work management',
       items: [
         'core-concepts/issues/issue-types',
         'core-concepts/issues/time-tracking',
@@ -84,26 +78,52 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Workspaces and users',
+      label: 'Visualization',
+      items: [
+        'core-concepts/issues/layouts',
+        'core-concepts/views',
+        'core-concepts/account/overview',
+        'core-concepts/analytics',
+        
+      ],
+    },
+
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Navigation',
+      items: [
+       'core-concepts/power-k'
+      ],
+    },
+
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Workspace + user management',
+      items: [
+        'core-concepts/workspaces/overview',
+        'core-concepts/workspaces/members',
+        'workspaces-and-users/billing-and-plans',
+        'workspaces-and-users/upgrade-plan',
+        'core-concepts/account/settings',
+      ],
+    },
+
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Knowledge management',
       items: [
         {
           type: 'category',
-          label: 'Workspaces',
+          label: 'Pages',
+          link: { type: 'doc', id: 'core-concepts/pages/overview' },
           items: [            
-          'core-concepts/workspaces/overview',
-          'core-concepts/workspaces/members',
+          'core-concepts/pages/editor-blocks',
           ],
         },
-        {
-          type: 'category',
-          label: 'Account',
-          items: [            
-          'core-concepts/account/overview',
-          'core-concepts/account/settings',
-          ],
-        },
-        'workspaces-and-users/billing-and-plans',
-        'workspaces-and-users/upgrade-plan',
+        'core-concepts/pages/wiki',
       ],
     },
     {
