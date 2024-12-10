@@ -72,7 +72,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'core-concepts/issues/issue-types',
         'core-concepts/issues/time-tracking',
-        
+        'core-concepts/issues/timeline-dependency'
       ],
     },
     {
