@@ -154,6 +154,21 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      type: 'category',
+      collapsed: false,
+      label: 'Product',
+      items: [
+        'product/hyper-mode',
+        'product/editions-and-versions',
+        {
+          type: 'link',
+          label: 'Changelog',
+          href: 'https://plane.so/changelog', 
+        }
+        
+      ],
+    },
+    {
       type: 'link',
       label: 'API Reference',
       href: 'https://developers.plane.so/api-reference/introduction', 
