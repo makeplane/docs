@@ -163,16 +163,9 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Product',
+      label: 'Performance',
       items: [
-        'product/hyper-mode',
-        'product/editions-and-versions',
-        {
-          type: 'link',
-          label: 'Changelog',
-          href: 'https://plane.so/changelog', 
-        }
-        
+        'performance/hyper-mode'  
       ],
     },
     {
@@ -185,6 +178,11 @@ const sidebars: SidebarsConfig = {
       label: 'Webhooks',
       href: 'https://developers.plane.so/webhooks/intro-webhooks', 
     },
+    {
+      type: 'link',
+      label: 'Changelog',
+      href: 'https://plane.so/changelog', 
+    }
   ], 
 };
 export default sidebars;
