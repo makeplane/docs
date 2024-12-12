@@ -53,8 +53,7 @@ const sidebars: SidebarsConfig = {
           items: [            
           'core-concepts/issues/properties',
           'core-concepts/issues/states',
-          'core-concepts/issues/labels',
-          'core-concepts/issues/visualise_filter',
+          'core-concepts/issues/labels'
           ],
         },
         'core-concepts/cycles',
@@ -80,7 +79,15 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: 'Visualization',
       items: [
-        'core-concepts/issues/layouts',
+        {
+          type: 'category',
+          label: 'Layouts',
+          link: { type: 'doc', id: 'core-concepts/issues/layouts' },
+          items: [            
+          'core-concepts/issues/visualise_filter',
+          'core-concepts/issues/display-options',
+          ],
+        },
         'core-concepts/views',
         'core-concepts/account/overview',
         'core-concepts/analytics',
