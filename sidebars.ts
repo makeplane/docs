@@ -161,6 +161,14 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      type: 'category',
+      collapsed: false,
+      label: 'Performance',
+      items: [
+        'performance/hyper-mode'  
+      ],
+    },
+    {
       type: 'link',
       label: 'API Reference',
       href: 'https://developers.plane.so/api-reference/introduction', 
@@ -170,6 +178,11 @@ const sidebars: SidebarsConfig = {
       label: 'Webhooks',
       href: 'https://developers.plane.so/webhooks/intro-webhooks', 
     },
+    {
+      type: 'link',
+      label: 'Changelog',
+      href: 'https://plane.so/changelog', 
+    }
   ], 
 };
 export default sidebars;
