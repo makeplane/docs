@@ -69,9 +69,11 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: 'Project + work management',
       items: [
+        'core-concepts/projects/project-states',
         'core-concepts/issues/issue-types',
         'core-concepts/issues/time-tracking',
-        'core-concepts/issues/timeline-dependency'
+        'core-concepts/issues/timeline-dependency',
+        'core-concepts/export',
       ],
     },
     {
@@ -155,17 +157,17 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Devices',
+      label: 'Performance',
       items: [
-        'devices/mobile',
+        'performance/hyper-mode'  
       ],
     },
     {
       type: 'category',
       collapsed: false,
-      label: 'Performance',
+      label: 'Devices',
       items: [
-        'performance/hyper-mode'  
+        'devices/mobile',
       ],
     },
     {
