@@ -34,7 +34,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Project + work tracking',
       items: [
 
@@ -66,7 +66,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Project + work management',
       items: [
         'core-concepts/projects/project-states',
@@ -78,7 +78,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Visualization',
       items: [
         {
@@ -99,7 +99,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Navigation',
       items: [
        'core-concepts/power-k'
@@ -108,7 +108,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Workspace + user management',
       items: [
         'core-concepts/workspaces/overview',
@@ -121,7 +121,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Knowledge management',
       items: [
         {
@@ -137,7 +137,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Importers',
       items: [
         'plane-importers/github-imp',
@@ -146,7 +146,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Integrations',
       items: [
         'plane-integrations/about',
@@ -156,7 +156,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Performance',
       items: [
         'performance/hyper-mode'  
@@ -164,7 +164,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Devices',
       items: [
         'devices/mobile',
