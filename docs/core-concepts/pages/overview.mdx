@@ -122,3 +122,26 @@ When you export to PDF, your documents keep their formatting, making them easy t
 With Plane, you can publish Pages to the web, making them accessible to anyone with the link—no login required. This feature is perfect for sharing project updates, documentation, or any other information with external stakeholders. Published pages allow viewers to engage directly by leaving comments, providing an open channel for feedback without needing access to your workspace.
 
 To publish a page, click the **Publish** button at the top right of your screen. You’ll receive a unique link to share the page.
+
+## Troubleshooting
+
+### Page content not visible
+
+**Issue**  
+Page content is not visible to Members, even when the page is set to public. While the page title appears, the content does not, and only the page creator can view it. In some cases, content is visible on certain pages but not others, making the issue inconsistent and unpredictable.
+
+**Cause**  
+When using an external reverse proxy, the necessary HTTP upgrade headers must be added to support WebSocket communication. The default configuration does not handle WebSocket connections correctly.
+
+**Solution**  
+To resolve this issue, enable WebSocket support by adding specific headers in your external proxy configuration file.
+
+For example, if you are using NGINX, include the following settings:
+
+```bash
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+```
+
+For more details on configuring an external reverse proxy for Plane and accessing different templates, refer to the [External reverse proxy](https://developers.plane.so/self-hosting/govern/reverse-proxy) guide.
