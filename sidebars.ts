@@ -69,6 +69,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: 'Project + work management',
       items: [
+        'core-concepts/issues/bulk-ops',
         'core-concepts/projects/project-states',
         'core-concepts/issues/issue-types',
         'core-concepts/issues/time-tracking',
