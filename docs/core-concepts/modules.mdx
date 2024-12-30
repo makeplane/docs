@@ -2,49 +2,97 @@
 title: Modules
 ---
 
-Modules are a flexible way to organise issues in your project. Modules can be goal based, where you track progress of a new feature you are building, they can be milestone based where you track the work for a new marketing campaign or they can be discrete pieces in your software architecture like a specific micro-service, which have a lead.
+ Modules are smaller, focused projects that help users group and organize issues within specific time frames. They allow teams to break down their work into manageable chunks and track progress towards specific goals or objectives. They can serve various purposes: tracking progress on a new feature, managing a milestone like a marketing campaign, or representing discrete pieces of your software architecture such as a microservice.
 
-## Toggle modules
+## Enable Modules
 
-Modules are automatically enabled in a new project by default. You have the option to disable or enable them later by accessing project settings.
+By default, Modules are enabled for all new projects. If you need to enable or disable them later, head to [Project settings](/core-concepts/projects/overview#project-settings) and toggle the Modules feature as needed.
 
-## Create modules
+## Create Module
 
-To initiate a new module, simply press `M` from any project view, or access the module page directly. You'll need to provide a name for the module, and you can also include a description, designate a lead, and set start and due dates, which can be added later if needed.
+To create a new Module:
+
+1. Press `M` from anywhere in the project or navigate to the Modules page on the sidebar and click **Add Module**.
+2. Provide a name for the Module.
+3. Optionally, add a description, state, designate a lead, and set start and due dates (these can also be added later).
+
 ![Create module](https://media.docs.plane.so/modules/create-module.webp#center)
 
-## Add issues
+:::info
+You can add Members to the Module irrespective of whether they are the assignees in the issues present in the Module.
+:::
 
-Once a module is created, you can add new issues to the module or include existing issues from the module page. You also have the ability to add multiple modules to an issue from it's properties, which makes it easy for scenarios when an issue has to be a part of a feature module and a release module.
-![Add issues to module](https://media.docs.plane.so/modules/add-issues-to-module.webp#center)
+## Add issues to Module
 
-## States
+Once your Module is created, you can populate it with issues:
 
-A module has the following states
+- Add new or existing issues directly from the Module page.
+    ![Add issues to module](https://media.docs.plane.so/modules/add-issues-to-module.webp#center)
 
-1. Backlog
-2. Planned
-3. In progress
-4. Paused
-5. Completed
-6. Cancelled
+- Assign multiple Modules to an issue from its properties. For instance, an issue can belong to both a Feature module and a Release module simultaneously.
+    ![Issue module property](https://media.docs.plane.so/modules/issue-module-property.webp#center)
 
-Any module created goes to the backlog state by default, you can use this to inform about the progress of a module in your project.
 
-## Layouts
+## Module states
 
-Modules can be visualised in the grid, list or gantt layouts offering the ability to investigate how modules are progressing or how they will progress. With the gantt layout you can visualise how your project's goals are sequenced and identify if they are on track.
-![Module layout](https://media.docs.plane.so/modules/module-gallery.webp#center)
+Modules can be in one of the following states:
 
-## Progress
+- **Backlog** - Newly created Modules start here by default.
 
-Since a module is just a collection of issues, a module indicates the progress by the number of completed issues in it. This can be used to understand how much work is left in a module before it can be closed.
+- **Planned** - Indicating that the Module has been scheduled.
+
+- **In Progress** - Work on the Module has started.
+
+- **Paused** - Temporarily on hold.
+
+- **Completed** - All issues in the Module are in the Done state.
+
+- **Cancelled** - The Module has been discontinued.
+
+These states provide a clear picture of where each Module stands in your project timeline. Users can plan their Modules with these statuses, offering clarity about the progress and current stage of each Module.
+
+## Module progress
+
+Module progress is calculated based on the number of completed issues within the Module. This offers a quick overview of how much work remains before the Module can be closed. Each Module comes with analytics and metrics, empowering teams to assess performance and the success of their goals.
+
 ![Module progress](https://media.docs.plane.so/modules/module-progress.webp#center)
 
-## Remove modules
+## View Module details
 
-You can remove modules by deleting them. Upon deletion, all associated analytics and progress reports are also removed. Any issues linked to the module are subsequently de-linked.
+- To view the issues within a module, simply click on the module itself.
 
-:::note 
-We will soon introduce a feature to archive completed modules, allowing you to conceal significantly older modules from your views.
+- For detailed information about the module, click the info icon next to the module name. This will display the following details:
+    - Name, description, Members, and assigned lead
+    - Start and due dates
+    - Issues in the Module and their statuses
+    - Progress indicators
+    - Additional properties like assignees, labels and states
+
+![View Module details](https://media.docs.plane.so/modules/view-module-details.webp#center)
+
+## Search, sort, and filter Modules
+
+Quickly locate specific Modules using the search, sorting, and filtering options. You can sort Modules by name, state, or due date, and apply filters to focus on relevant Modules.
+
+## Module layouts
+
+Visualize your Modules in different layouts:
+
+- **List layout** – For simple ordered list of Modules in the project.
+
+- **Gallery layout** – Displays Modules as cards, with a clear breakdown of issue counts by state for better visibility.
+
+- **Timeline layout**  – Displays the sequence of goals and their progress, helping you ensure your project is on track.
+![Module layout](https://media.docs.plane.so/modules/module-gallery.webp#center)
+
+:::info
+Easily share a Module by copying its link. Mark frequently used Modules as favorites for quick access.
 :::
+
+## Archive Module
+
+Archive completed Modules to declutter your views while preserving historical data. This feature is ideal for concealing older, no-longer-active Modules. You can access them in the project's **Archives** option. 
+
+## Delete Module
+
+If a Module is no longer needed, you can delete it. Deleting a Module removes its progress analytics and de-links all associated issues.
