@@ -141,7 +141,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: 'Importers',
       items: [
-        'plane-importers/github-imp',
+        'plane-importers/overview',
         'plane-importers/jira-imp',
       ],
     },
