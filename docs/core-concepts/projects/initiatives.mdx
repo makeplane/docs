@@ -1,0 +1,123 @@
+---
+title: Initiatives
+hide_title: true
+---
+
+import Tags from '@site/src/components/Tags';
+
+<div className="tag-wrapper">
+# Group multiple projects using Initiatives
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
+
+Iniiatives is designed to help you manage and track progress across multiple related projects under a unified objective. This feature is particularly useful if you need a high-level view of how various projects align with strategic goals.
+
+Use Initiatives when you need to: 
+- Align multiple projects with a broader organizational goal.
+- Manage and monitor groups of related projects efficiently.
+- Provide stakeholders with an aggregated view of progress and status.
+
+## Enable Initiatives
+
+To start using Initiatives, you'll need to enable the feature:
+
+1. Go to [Workspace settings](/core-concepts/workspaces/overview#workspace-settings).
+2. Select the **Initiatives** tab on the right pane.
+3. Toggle on the **Enable Initiatives** option.
+
+![Enable Initiatives](https://media.docs.plane.so/initiatives/enable-initiatives.webp#center)
+
+Once enabled, you'll see an **Initiatives** option in the sidebar under **Workspace** section.
+
+## Create Initiatives
+
+![Create Initiatives](https://media.docs.plane.so/initiatives/create-initiatives.webp#center)
+
+Follow these steps to set up an Initiative:
+
+1. Navigate to the **Initiatives** section in the sidebar.
+2. Click the **Add Initiative** button on the top right of the screen.
+3. Provide the following details:
+    - **Title**: Name your Initiative.
+    - **Description**: Add context about the goal of the Initiative.
+    - **Projects**: Select related projects to associate with the Initiative.
+    - **Start and End Dates**: Define the timeline.
+    - **Lead**: Assign a person responsible for the Initiative.
+4. Click **Create Initiative**.
+
+## View and manage Initiatives
+
+Once created, you can view all Initiatives in the **Initiatives** section on the sidebar. 
+
+![View Initiatives](https://media.docs.plane.so/initiatives/view-initiatives.webp#center)
+
+
+Selecting an Initiative opens its detailed view, which includes:
+
+### Progress overview
+
+    ![Progress overview](https://media.docs.plane.so/initiatives/progress-overview.webp#center)
+
+    A progress bar indicating a visual representation of project progress categorized as:
+
+        - Overdue
+        - Backlog
+        - Unstarted
+        - Started
+        - Completed
+        - Cancelled
+
+    The percentages and counts for each category are automatically calculated based on the associated projects.
+
+    :::tip
+    Use Initiatives for a top-down view of progress. For detailed updates, navigate to individual projects.
+    :::
+
+### Projects list
+
+    ![Projects list](https://media.docs.plane.so/initiatives/projects-list.webp#center)
+
+    A list of all associated projects, including:
+
+        - Project names
+        - Issue count and status
+        - Assigned leads
+        - Start and end dates
+    :::info
+    You cannot add or edit project updates directly from the Initiative view.
+    :::
+
+### Properties, comments, and activity
+
+- The Info tab on the side panel of an Initiative provides a quick snapshot of key properties and metadata associated with the Initiative. 
+    ![Initiative properties](https://media.docs.plane.so/initiatives/properties.webp#center)
+
+- Add comments to discuss updates or highlight issues.
+    ![Initiative comments](https://media.docs.plane.so/initiatives/comments.webp#center)
+
+- View the activity log for all updates related to the Initiative.
+    ![Initiative activity](https://media.docs.plane.so/initiatives/activity.webp#center)
+
+
+## Sort and filter Initiatives
+
+To make managing Initiatives easier, Plane provides options to filter and sort them based on various criteria:
+
+**Filter Initiatives**:
+
+- By the assigned lead with options to select multiple leads or search for a specific person.
+- Based on their start date. Quick options include "1 week from now," "2 weeks from now," "1 month from now," and a custom date selector.
+- Based on their target completion date, similar to the start date options.
+
+**Sort Initiatives**: 
+
+- **Group By**  
+  Organize your Initiatives by categories like Lead or Created By. You can also choose "None" to view Initiatives in a flat list.
+- **Order By**  
+  Sort Initiatives manually, by the last created date, or by the last updated date to prioritize the most relevant ones.
+
+These filtering and sorting tools make it easier to focus on specific Initiatives or prioritize your view based on team needs.
