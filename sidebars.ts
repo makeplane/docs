@@ -74,6 +74,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/issues/issue-types',
         'core-concepts/issues/time-tracking',
         'core-concepts/issues/timeline-dependency',
+        'core-concepts/issues/epics',
         'core-concepts/export',
       ],
     },
