@@ -1,0 +1,417 @@
+---
+title: Teams
+hide_title: true
+---
+import Tags from '@site/src/components/Tags';
+
+<div className="tag-wrapper">
+# Manage your team's workload and performance
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
+
+The Teams page is a centralized space designed to provide comprehensive insights into your team’s activities, performance, and collaboration. This feature empowers team leads, project managers, and stakeholders to monitor project health, track contributions, and make data-driven decisions. 
+
+Teams enables you to:
+- Gain real-time insights into ongoing workflows and their statuses.
+- Understand team availability and prevent overloading by analyzing workload distribution.
+- Ensure alignment with sprint goals through progress tracking and performance metrics.
+- Foster collaboration through centralized updates, notifications, and comments.
+
+This tool is ideal for project managers, team leads, and stakeholders seeking to optimize team efficiency and decision-making.
+
+## Enable Teams
+
+:::warning 
+The Teams feature cannot be disabled once enabled for a Plane workspace.
+:::
+
+![Enable Teams](https://media.docs.plane.so/teams/enable-teams.webp#center)
+
+To start using Teams, enable the feature for your workspace:
+
+1. Navigate to the [Workspace settings](/core-concepts/workspaces/overview#workspace-settings).
+2. Select the **Teams** tab on the right pane.
+3. Toggle on the **Enable Teams** option.
+
+Once enabled, the **Teams** options will appear in the sidebar under **Workspaces**, giving you quick access to create and manage Epics.
+
+## Create Teams
+
+![Create Teams](https://media.docs.plane.so/teams/create-teams.webp#center)
+
+Creating a team is quick and easy. Follow these steps to set up your team and start collaborating:
+
+1. Navigate to the **Teams** section from the sidebar.
+2. Click the **New Team** button located at the top-right corner of the screen.
+3. Fill in the required details:
+    - **Team name**: Provide a name that clearly represents the team.
+    - **Team lead**: Assign a team lead.
+    - **Team members**: Add members by selecting from the list of available users.
+    - **Projects**: Link relevant projects to the team for better coordination.
+4. Once all details are filled, click **Create Team**.
+
+After creating a team, you can view and manage all your teams in one place.
+
+## Team Overview
+
+Clicking on a Team opens a dashboard displaying an overview of activities across all projects managed by the team.
+
+
+
+1. Team Activity Insights
+
+
+
+Activities include issues created, resolved, and updated, as well as comments and other contributions.
+
+A timeline visualization helps stakeholders track progress over specific time periods.
+
+2. Workload Management
+
+Member Workload: View detailed insights into individual team members' workloads, showing how tasks and responsibilities are distributed.
+
+Capacity Planning: Helps managers allocate resources effectively by identifying underutilized or overburdened team members.
+
+3. Metrics Dashboard
+
+Comprehensive metrics include:
+
+Issue velocity and resolution rates.
+
+Pending tasks and overdue deadlines.
+
+Distribution of tasks across cycles, modules, and priorities.
+
+Visualizations such as bar charts, pie charts, and line graphs provide actionable insights.
+
+4. Collaborative Updates
+
+Enables team members to share regular updates and progress reports directly from the dashboard.
+
+Supports inline commenting and quick actions to foster better communication and decision-making.
+
+5. Filters and Customization
+
+Users can apply filters to narrow down data by:
+
+Time periods (e.g., weekly, monthly).
+
+Team members.
+
+Specific projects or labels.
+
+Customizable widgets allow users to tailor the dashboard to suit their preferences.
+
+6. Cross-Team Collaboration
+
+Supports visibility into inter-team dependencies by showing how different teams interact and contribute to shared goals.
+
+Facilitates alignment across multiple teams within an organization.
+
+Use Cases
+
+For Team Leads:
+
+Monitor individual and team performance to identify high performers and areas needing improvement.
+
+Detect bottlenecks or delays in project progress.
+
+For Project Managers:
+
+Gain visibility into task distribution and reallocate resources effectively.
+
+Prepare comprehensive progress reports for stakeholders.
+
+For Stakeholders:
+
+Track overall team efficiency and project status without micromanaging.
+
+Assess team alignment with broader organizational objectives.
+
+Getting Started
+
+Accessing the Team Dashboard:
+
+Navigate to the "Dashboards" tab in your Plane workspace.
+
+Select "Team Dashboard" from the available options.
+
+Customizing the View:
+
+Use the filter options to customize the data displayed.
+
+Add or remove widgets to highlight the metrics most relevant to your role.
+
+Sharing and Collaboration:
+
+Share the dashboard link with team members and stakeholders for seamless collaboration.
+
+Use the "Add Comments" feature to annotate metrics or suggest actions.
+
+Future Enhancements
+
+Based on the PRD, future iterations of the Team Dashboard may include:
+
+Integration with Drafts:
+
+Allow teams to save and share drafts of updates directly within the dashboard.
+
+Real-Time Updates:
+
+Incorporate live updates for issue tracking, task assignments, and comments.
+
+Advanced Reporting Tools:
+
+Generate downloadable reports with custom templates for meetings and reviews.
+
+Predictive Insights:
+
+Use AI/ML to predict potential risks and recommend proactive measures.
+
+FAQs
+
+Q: Can I view data for multiple teams in one dashboard?
+A: Currently, the dashboard focuses on individual team insights. Cross-team data visualization will be part of a future update.
+
+Q: How frequently is the data updated?
+A: Data is refreshed every 15 minutes. Real-time updates are planned for next year.
+
+Q: Is the dashboard available on mobile?
+A: The Team Dashboard is accessible on the Plane mobile app for Commercial Edition users.
+
+
+
+
+
+
+The Team Dashboard provides a centralized hub for teams to monitor progress, streamline collaboration, and improve overall project visibility. This document outlines all aspects of the Team Dashboard, based on the provided Product Requirements Document (PRD).
+
+Overview
+
+The Team Dashboard enables teams to:
+
+Track Active Workflows: Gain real-time insights into ongoing workflows and their statuses.
+
+Monitor Capacity: Understand team availability and prevent overloading by analyzing workload distribution.
+
+Analyze Sprint Health: Ensure alignment with sprint goals through progress tracking and performance metrics.
+
+Streamline Communication: Foster collaboration through centralized updates, notifications, and comments.
+
+This tool is ideal for project managers, team leads, and stakeholders seeking to optimize team efficiency and decision-making.
+
+Key Features
+
+1. Workload Overview
+
+Displays the distribution of issues across team members to highlight workload imbalances.
+
+Provides real-time capacity metrics to ensure tasks are assigned evenly.
+
+Features a "Capacity Alert" that notifies when a team member’s workload exceeds the defined threshold.
+
+2. Activity Tracker
+
+Tracks activity by user to offer insights into:
+
+Completed tasks.
+
+Ongoing tasks.
+
+Pending reviews or approvals.
+
+Timeline view for individual and team activity breakdown.
+
+3. Sprint Health Metrics
+
+Visual indicators to monitor sprint progress:
+
+Total planned tasks.
+
+Completed vs. pending tasks.
+
+Burnup and burndown charts.
+
+Alerts for missed sprint goals or bottlenecks in workflow.
+
+4. Team Collaboration Tools
+
+A dedicated section for:
+
+Comments on tasks and sprints.
+
+Discussion threads for issue resolution.
+
+Integrated notifications for updates and mentions.
+
+Quick actions for assigning or reassigning tasks directly from the dashboard.
+
+5. Customizable Filters
+
+Filters to view dashboard data by:
+
+Time range (daily, weekly, monthly).
+
+Team member.
+
+Sprint or project.
+
+Status (in progress, completed, blocked).
+
+6. Analytics & Insights
+
+Reports on:
+
+Average time to complete tasks.
+
+Sprint success rate.
+
+Team productivity trends.
+
+Comparison charts between sprints for retrospectives.
+
+Exportable reports for stakeholder presentations.
+
+7. Issue Status Breakdown
+
+Categorizes issues by:
+
+New.
+
+In progress.
+
+Review.
+
+Completed.
+
+Highlights blocked tasks for immediate action.
+
+8. Integrations
+
+Supports integrations with third-party tools such as:
+
+Jira.
+
+Slack.
+
+GitHub.
+
+Notifications and updates synced across platforms.
+
+9. Real-Time Updates
+
+Data on the dashboard is updated in real-time to ensure accuracy and relevancy.
+
+Includes live issue updates and dynamic status changes.
+
+User Roles and Permissions
+
+1. Team Members
+
+View personal workload and sprint goals.
+
+Collaborate using comments and updates.
+
+Access task-level metrics relevant to their role.
+
+2. Team Leads
+
+Oversee the entire team’s workload and sprint progress.
+
+Adjust workloads to optimize capacity.
+
+Monitor sprint health and address bottlenecks.
+
+3. Project Managers
+
+Monitor high-level metrics, such as team productivity trends and sprint success rates.
+
+Generate and share reports with stakeholders.
+
+Customize filters to focus on specific teams, sprints, or projects.
+
+Use Cases
+
+Balancing Workloads:
+
+Project managers can identify overloaded team members and reassign tasks to balance workloads effectively.
+
+Improving Sprint Success:
+
+By analyzing sprint health metrics, teams can identify issues early and take corrective action to meet goals.
+
+Enhancing Collaboration:
+
+Real-time comments and notifications keep everyone aligned and reduce delays in decision-making.
+
+Data-Driven Retrospectives:
+
+Teams can use analytics and insights to identify patterns and improve processes for future sprints.
+
+Stakeholder Reporting:
+
+Exportable reports and customizable views make it easier to present progress and performance to external stakeholders.
+
+Future Enhancements
+
+Time Tracking Integration:
+
+Adding time tracking tools to measure effort against estimates.
+
+Cross-Team Collaboration:
+
+Enable collaboration across multiple teams working on interconnected projects.
+
+Advanced AI Insights:
+
+Predictive analytics for workload planning and sprint outcomes.
+
+Custom Widgets:
+
+Allow users to add personalized widgets to their dashboards.
+
+Setup and Configuration
+
+Prerequisites
+
+Ensure you have the latest version of Plane installed.
+
+User roles and permissions must be configured before accessing the dashboard.
+
+Configuration Steps
+
+Navigate to the Team Dashboard from the main menu.
+
+Customize filters and views based on your team’s preferences.
+
+Integrate third-party tools if necessary (e.g., Slack or Jira).
+
+Set workload thresholds for capacity alerts.
+
+Troubleshooting
+
+If real-time updates are not displaying, ensure your system has a stable internet connection and the dashboard is configured correctly.
+
+For integration issues, check API settings and permissions.
+
+FAQs
+
+Q1. Can I export data from the dashboard?
+
+Yes, analytics and insights can be exported as CSV or PDF files.
+
+Q2. Are real-time updates available in the self-hosted version?
+
+Real-time updates are currently available only for the commercial edition. Support for the self-hosted version is planned.
+
+Q3. Can I customize metrics displayed on the dashboard?
+
+Yes, the dashboard allows users to apply filters and customize views based on team requirements.
+
+Q4. Does the dashboard support cross-project tracking?
+
+Cross-project tracking is planned for a future release.

@@ -73,6 +73,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/projects/project-states',
         'core-concepts/issues/issue-types',
         'core-concepts/issues/time-tracking',
+        'core-concepts/workspaces/teams',
         'core-concepts/issues/timeline-dependency',
         'core-concepts/export',
       ],
