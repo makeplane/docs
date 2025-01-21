@@ -73,6 +73,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/issues/time-tracking',
         'core-concepts/issues/bulk-ops',
         'core-concepts/issues/timeline-dependency',
+        'core-concepts/issues/epics',
         'core-concepts/projects/project-states',
         'core-concepts/projects/project-overview',
         'core-concepts/export',
