@@ -58,9 +58,10 @@ const sidebars: SidebarsConfig = {
         },
         'core-concepts/cycles',
         'core-concepts/modules',
-        'core-concepts/inbox',
+        'core-concepts/intake',
         'core-concepts/issues/estimates',
         'core-concepts/drafts',
+        'core-concepts/inbox'
       ],
     },
 
