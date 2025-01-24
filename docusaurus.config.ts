@@ -83,10 +83,11 @@ const config: Config = {
       indexName: "plane-docs-v3",
     },
     navbar: {
-      title: "Plane",
+      title: "",
       logo: {
         alt: "Plane",
-        src: "https://media.docs.plane.so/logo.svg",
+        src: "https://media.docs.plane.so/logo/Plane.svg",
+        srcDark: "https://media.docs.plane.so/logo/Plane-white.svg"
       },
       items: [
         {
