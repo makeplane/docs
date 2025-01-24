@@ -86,6 +86,8 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: 'Visualization',
       items: [
+        'core-concepts/account/overview',
+        'your-work',
         {
           type: 'category',
           label: 'Layouts',
@@ -96,7 +98,6 @@ const sidebars: SidebarsConfig = {
           ],
         },
         'core-concepts/views',
-        'core-concepts/account/overview',
         'core-concepts/analytics',
         
       ],
