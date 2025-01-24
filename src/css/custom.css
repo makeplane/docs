@@ -458,8 +458,8 @@ html[data-theme='dark'] {
 
 
 @media (min-width: 997px) {
-  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Sidebar-styles-module {
-    border-right: 1px solid rgb(112 112 112 / 5%) !important;
+  .docSidebarContainer_YfHR {
+    border-right: 1px solid rgb(112 112 112 / 9%) !important;
   }
 }
 
@@ -553,7 +553,7 @@ html[data-theme='dark'] .business {
   padding: 0 15px 0 15px;
 }
 
-[data-theme='light'] .themedComponent--light_node_modules-\@docusaurus-theme-common-lib-components-ThemedComponent-styles-module, [data-theme='dark'] .themedComponent--dark_node_modules-\@docusaurus-theme-common-lib-components-ThemedComponent-styles-module{
+[data-theme=dark] .themedComponent--dark_xIcU, [data-theme=light] .themedComponent--light_NVdE, html:not([data-theme]) .themedComponent--light_NVdE{
   width:100px !important;
 }
 
