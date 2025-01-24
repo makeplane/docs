@@ -78,6 +78,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/projects/project-states',
         'core-concepts/projects/project-overview',
         'core-concepts/export',
+        'core-concepts/stickies',
       ],
     },
     {
