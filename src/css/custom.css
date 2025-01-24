@@ -552,3 +552,8 @@ html[data-theme='dark'] .business {
   background: linear-gradient(164.95deg, #414669 0%, rgba(56, 60, 78, 0.12) 53.4%, rgba(172, 211, 255, 0.16) 100%);
   padding: 0 15px 0 15px;
 }
+
+[data-theme='light'] .themedComponent--light_node_modules-\@docusaurus-theme-common-lib-components-ThemedComponent-styles-module, [data-theme='dark'] .themedComponent--dark_node_modules-\@docusaurus-theme-common-lib-components-ThemedComponent-styles-module{
+  width:100px !important;
+}
+
