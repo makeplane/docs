@@ -157,7 +157,7 @@ const sidebars: SidebarsConfig = {
       label: 'Integrations',
       items: [
         'plane-integrations/about',
-        'plane-integrations/github',
+        'integrations/github',
         'plane-integrations/slack',
       ],
     },
