@@ -1,0 +1,89 @@
+---
+title: Asana
+---
+
+# Import your Asana data to Plane
+
+:::info
+The Asana importer is currently available under a feature flag. Contact our support team if you’d like to try it out.
+:::
+
+With the Asana importer, you can easily import issues, states, labels, priorities and user data from Asana to Plane and continue managing your existing projects.
+
+## Import from Asana
+> **Role**: Workspace admins
+
+To import Asana issues to a Plane project, follow these steps:
+1. Click the **∨** icon next to your workspace name on the sidebar and select **Workspace Settings**.
+
+2. Select **Imports** on the right pane and click the **Import** button in the Asana section. 
+    ![Import from Asana](https://media.docs.plane.so/importers/asana/import-asana.webp#center)   
+
+4. In the **Asana to Plane Migration Assistant** screen, enter your **Personal Access Token** to allow Plane access to your Asana account. 
+    ![Connect Asana](https://media.docs.plane.so/importers/asana/asana-plane-migration-assistant.webp#center)
+
+5. Click the **Connect Asana** button to link the accounts.
+
+6. Click the **Import** button under the **Imports** section.
+    ![Import Asana](https://media.docs.plane.so/importers/asana/import-asana-data.webp#center)
+
+7. **Configure Plane**   
+    Select the Plane project where you want to import your Asana data and and click **Next**.
+        ![Configure Plane](https://media.docs.plane.so/importers/asana/configure-plane.webp#center) 
+
+8. **Configure Asana**  
+    Choose the workspace and project in Asana from where you want to import data.
+       ![Configure Asana](https://media.docs.plane.so/importers/asana/configure-asana.webp#center)  
+
+10. **Map states**  
+    Map **Asana sections** to their equivalent **Plane states**.
+       ![Map states](https://media.docs.plane.so/importers/asana/map-states.webp#center)   
+
+11. **Map priorities**  
+    Map the **Asana priorities** to the corresponding **Plane priorities**. If  there's no match, select **None** in the **Plane priorities** list.
+       ![Map priorities](https://media.docs.plane.so/importers/asana/map-priorities.webp#center)   
+
+12. **Summary**  
+    Review the mappings and make any changes if needed.  Click **Back** to adjust, or click **Confirm** to start the migration.
+       ![Review mappings](https://media.docs.plane.so/importers/asana/import-summary.webp#center)   
+
+13. The data migration begins and takes a few minutes to complete depending on the number of issues in your Asana workspace. 
+       ![Migration complete](https://media.docs.plane.so/importers/asana/import-complete.webp#center)   
+
+14. Once it's done, go to **Issues** in your Plane project to confirm that the data import is successful. 
+
+## Imported entities
+
+Here’s a quick look at what gets imported during the migration from Asana to Plane:
+
+| Asana | Plane | Notes|
+|--------------| ------------------- |---- |
+| Labels | Labels | |
+| Status | States | |
+| Issue priorities | Priorities | |
+| Users | Users | |
+| Issues | Issues | |
+| Relations | Parent | Includes only parent-child relationships |
+| Issue&nbsp;comments | Issue&nbsp;comments |Includes username and timestamp. If you skip user import during migration, comments will show the name of the user who performed the migration.|
+| Issue attachments | Issue attachments | |
+| Reporter | Created by | |
+| Created | Created at | |
+| Assignee | Assignees | If you skip user import during migration, this will be blank.|
+| Issue types | Labels \| Prefix in Issue title | |
+| Images in the Issue description | Images in the Issue description | |
+| Summary | Issue title | |
+| Start date | Start date | |
+| Due date | Due date | |
+| Linked Issues | Links | Includes backlinks to the original Asana issue.|
+| Sprint | Cycles | Includes the issues, start and end date. |
+| Components | Modules | Includes the issues. |
+
+## Sync Asana to Plane
+
+After the import, if there are any new or updated issues in Asana, you can easily sync these changes to Plane:
+
+1. Go to **Workspace settings**.
+2. Select **Imports** on the right pane. 
+3. Click the **Re run** button next to the project you want to sync.
+    ![Sync Asana](https://media.docs.plane.so/importers/asana/rerun-import.webp#center)   
+
