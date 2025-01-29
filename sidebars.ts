@@ -34,7 +34,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Project + work tracking',
       items: [
 
@@ -53,36 +53,52 @@ const sidebars: SidebarsConfig = {
           items: [            
           'core-concepts/issues/properties',
           'core-concepts/issues/states',
-          'core-concepts/issues/labels',
-          'core-concepts/issues/visualise_filter',
+          'core-concepts/issues/labels'
           ],
         },
         'core-concepts/cycles',
         'core-concepts/modules',
-        'core-concepts/inbox',
+        'core-concepts/intake',
         'core-concepts/issues/estimates',
         'core-concepts/drafts',
+        'core-concepts/inbox'
       ],
     },
 
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Project + work management',
       items: [
         'core-concepts/issues/issue-types',
         'core-concepts/issues/time-tracking',
-        
+        'core-concepts/issues/bulk-ops',
+        'core-concepts/issues/timeline-dependency',
+        'core-concepts/issues/epics',
+        'core-concepts/workspaces/teamspaces',
+        'core-concepts/projects/project-states',
+        'core-concepts/projects/project-overview',
+        'core-concepts/export',
+        'core-concepts/stickies',
       ],
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Visualization',
       items: [
-        'core-concepts/issues/layouts',
-        'core-concepts/views',
         'core-concepts/account/overview',
+        'your-work',
+        {
+          type: 'category',
+          label: 'Layouts',
+          link: { type: 'doc', id: 'core-concepts/issues/layouts' },
+          items: [            
+          'core-concepts/issues/visualise_filter',
+          'core-concepts/issues/display-options',
+          ],
+        },
+        'core-concepts/views',
         'core-concepts/analytics',
         
       ],
@@ -90,7 +106,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Navigation',
       items: [
        'core-concepts/power-k'
@@ -99,7 +115,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Workspace + user management',
       items: [
         'core-concepts/workspaces/overview',
@@ -112,7 +128,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Knowledge management',
       items: [
         {
@@ -128,16 +144,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Importers',
       items: [
-        'plane-importers/asana-importer',
-        'plane-importers/jira-imp',
+        'importers/jira-imp',
+        'importers/asana',
       ],
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Integrations',
       items: [
         'plane-integrations/about',
@@ -147,7 +163,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
+      label: 'Performance',
+      items: [
+        'performance/hyper-mode'  
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: true,
       label: 'Devices',
       items: [
         'devices/mobile',
@@ -163,6 +187,11 @@ const sidebars: SidebarsConfig = {
       label: 'Webhooks',
       href: 'https://developers.plane.so/webhooks/intro-webhooks', 
     },
+    {
+      type: 'link',
+      label: 'Changelog',
+      href: 'https://plane.so/changelog', 
+    }
   ], 
 };
 export default sidebars;
