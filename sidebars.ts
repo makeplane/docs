@@ -147,6 +147,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       label: 'Importers',
       items: [
+        'importers/overview',
         'importers/asana',
         'importers/jira-imp',
         'importers/linear'
