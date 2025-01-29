@@ -1,0 +1,124 @@
+---
+title: Intake
+sidebarTitle: Intake
+---
+
+# Triage issues before adding them to your project
+
+Intake is a Plane-only feature that lets `Guests` create issues following which `Admins` and `Members` can move these issues inside a project. Intake can take bug reports, feature or service requests, or raise a ticket by stakeholders, customers, or clients. Issues created in Intake can then be accepted to move them to the Project’s workflow. 
+
+## Turn on Intake
+
+Intake functions at the project level and is toggled off by default. Project `Admins` can turn on the Intake feature for the project. 
+
+1. Click the three-dots icon next to your project name on the left pane and click **Settings**.
+2. Select **Features** on the right pane.
+3. Switch on the toggle button for the **Intake** feature to turn it on for the project. 
+
+    ![enable-intake-feature](https://media.docs.plane.so/intake/enable-intake-feature.webp#center)
+
+## Create Issue in Intake
+
+Users with a `Guest` role can create issues in Intake. To create an issue: 
+
+1. Click on **Intake** under the project on the sidebar.
+2. Click the **Add Issue** button at the top right corner.
+![create-issue-intake](https://media.docs.plane.so/intake/create-issue-intake.webp#center)
+3. Enter the required details and click the **Create Issue** button.
+
+    ![enter-issue-details](https://media.docs.plane.so/intake/enter-issue-details.webp#center)
+
+### Properties
+
+A `Guest` role can assign properties when creating an Intake issue. However, these properties can be overridden by the project `Admin` or `Member` later.
+
+For an issue in the Intake, you can choose to assign the following properties:
+
+| Property      | Description         |
+| --------------| ------------------- |
+| State         | If the issue in Intake is still being triaged, you can assign it to a state to help you identify the progress before moving it to your project.
+| Priority      | Set the priority of the issue to align the expectations on how quickly the issue should be acted upon.
+| Assignees     | Assign the team member who should triage or prioritize the issue.
+| Labels        | Categorize issues using the labels available in the project.
+| Due date     | Set when the issue needs to be prioritized or triaged by adding a due date.
+
+## Intake issue actions
+
+When a Guest creates an issue in Intake, it is added to the `Pending` state. Admin and Member roles can accept, decline, snooze or mark the issue as a duplicate.
+
+### Accept issue
+
+    ![accept-intake-issue](https://media.docs.plane.so/intake/accept-intake-issue.webp#center)
+    
+1. Open a pending issue in Intake.
+2. Click the **Accept** button on the top right. This will open a modal where you can change the issue details before moving it to your project.
+3. Click the **Add to project** button to move the issue from **Intake** to **Issues** under the project. The issue will be visible under the **State** selected when creating or accepting the Intake issue.
+
+### Decline issue
+    
+If the issue is not relevant to your project, you can choose to decline it. Click the **Decline** button present on any pending issue to decline it. Once the issue is declined, it ends up in the `Cancelled` state under your project.
+   
+### Snooze issue
+    
+An issue can be snoozed to review it at a later time.
+
+    ![snooze-intake-issue](https://media.docs.plane.so/intake/snooze-intake-issue.webp#center)
+    
+1. Open a pending issue in Intake.
+2. Click on the three dots icon in the top right corner.
+3. Select the **Snooze** option in the menu.
+4. Select a date to review it later.
+    
+The issue is moved out of pending Intake issues and can be accessed in the **Filters** drop-down under `Open` issues. You can also un-snooze the issue from the three dots menu. 
+
+### Mark issue as duplicate
+    
+In cases where a similar issue exists in your project, an Intake issue can be marked as duplicate. 
+    
+1. Open a pending issue in Intake.
+2. Click on the three dots icon in the top right corner.
+3. Select the **Mark as duplicate** option in the menu.
+4. Select an issue in the project that is a duplicate of the Intake issue.
+
+    ![mark-duplicate-intake-issues](https://media.docs.plane.so/intake/mark-duplicate-intake-issues.webp#center)
+    
+The issue is now declined with a ‘Duplicate’ label on it. It will also appear in the `Cancelled` state under your project.
+
+### Delete issue
+
+Only `Admins` have permission to delete Intake issues before it goes through the workflow. Deleted issues will not appear under any label in the `Closed` issues of Intake.
+   
+## View Intake issues
+
+You can view **Open** and **Closed** issues in Intake by clicking on the appropriate tabs.
+
+    <img src="https://media.docs.plane.so/intake/intake-tabs.webp#center" />
+
+`Pending` or `Snoozed` issues are considered open issues. Further action can take place on such issues. Whereas, `Accepted`, `Declined`, and `Duplicate` appear under closed issues. No further action is required on closed issues.
+
+### Sort and filter
+
+Like issues in the project, sorting and filtering can create a focused view of issues in Intake. Filters and sorting can be applied to a list of issues simultaneously. 
+
+Filters can be assigned from the **Filters** dropdown available on the left-hand side of the Intake page. Issues can be filtered by *Issue status*, *State*, *Priority*, *Assignee*, *Created by*, *Labels*, *Created date*, and *Last updated date*.
+
+Next to the Filters dropdown, you can use the sort drop-down to arrange Intake issues sequentially. Issues can be sorted by *Date created*, *Date updated*, and *ID* in ascending or descending order.
+
+## Additional features
+
+- Intake issue description has a rich text editor that allows you to format text, attach pictures, links and files, or add tables and dividers.
+    
+        <img src="https://media.docs.plane.so/intake/intake-description-box.webp#center" />
+    
+- Intake has an activity and comments section to know the status and see feedback from users and customers. All the changes made to the issue can be tracked in real-time under the **Activity** section.
+    
+        <img src="https://media.docs.plane.so/intake/intake-activity.webp#center" />
+    
+- The **Add Comment** box has a rich text editor where you can react with emojis and mention your teammates to communicate.
+    
+        <img src="https://media.docs.plane.so/intake/RTE-reactions-and-mentions.webp#center" />
+    
+- You can review pending requests in Intake sequentially using 🔼 or 🔽 button.
+    
+        <img src="https://media.docs.plane.so/intake/intake-navigate.webp#center" />
+    
