@@ -148,9 +148,9 @@ const sidebars: SidebarsConfig = {
       label: 'Importers',
       items: [
         'importers/overview',
-        'importers/asana',
         'importers/jira',
-        'importers/linear'
+        'importers/linear',
+        'importers/asana'
       ],
     },
     {
