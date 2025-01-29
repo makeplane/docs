@@ -2,28 +2,1185 @@
 title: Members
 ---
 
-Members can be your collaborators, employees, executives, managers or even clients. Each member in your workspace needs a role for them to start using Plane.
+# Manage users, roles, and permissions
 
-## **Workspace roles**
+Keeping your workspace organized and secure is essential for smooth project management. Plane makes it easy to control who can access your workspace, what they can do, and how they collaborate with others. This guide will walk you through managing members, assigning roles, and understanding the permissions associated with each role.
 
-Every user on a workspace has a specific role associated with them, which determines their permissions and what actions they are allowed to take within the workspace. This helps to ensure that users only have access to the resources and functions that they need in order to complete their work.
+## Roles
 
-**Available roles**
+Each user in your workspace has a role, which defines their level of access and permissions. Here’s a quick overview of the available roles:
 
-- **Admin** - The administrator of the workspace is the supreme administrator and has all permissions set to `true` within the workspace.
+- **Admin**  
+Admins have full access to everything in the workspace. They can manage members, update settings, and perform all actions across projects, cycles, and modules. If you're an admin, you’re essentially running the show.
 
-- **Member** - Workspace members are essentially team members within the organization, and they have the ability to read, write, edit, and delete entities inside projects, cycles, and modules within the workspace. It is important to note that workspace members can create new projects.
-- **Guest** - External members of organizations can be invited as guests, which grants them the ability to view all content to which they have been invited.
+- **Member**   
+Members are your core team. They can create, edit, and delete content in projects, cycles, and modules. Members also can create new projects. This role works well for collaborators who need to contribute to day-to-day tasks.
 
-## Adding members
+- **Guest**  
+Guests are external collaborators—like clients or contractors—who need limited access. They can only view the specific content they’ve been invited to. This role is perfect for keeping outsiders in the loop without giving them full access.
 
-To invite members to the workspace, go to the [settings](/core-concepts/workspaces/overview#workspace-settings) of your workspace and then to the members tab. From there, you can invite a user by clicking on the "Add member" button, which will open a modal. In this modal, you can enter the email addresses of the members you wish to invite and select their roles.
- ![Invite user](https://media.docs.plane.so/workspaces/add-user.webp#center)
-After inviting members, they will receive a notification via email. If you are using a self-hosted Plane instance, it is advisable to set up an SMTP server now to facilitate sending invite notifications. Once the member accepts the invitation, they will be added to your workspace. If they decline the invitation, you have the option to remove them from the workspace.
+### Grant view access to Guests
+You can turn on this setting in **Project Settings > Members**. Enabling this setting allows guest users to view all project issues, providing them with broader visibility into the project's progress and details. This is useful for external stakeholders who need full context without editing permissions.
+    ![Grant guest users view access](https://media.docs.plane.so/workspaces/grant-guests-view-access.webp#center)
 
-## Updating member roles
-In the workspace settings, accessible from the members page, you can promote or demote individuals. Administrators have the authority to promote or demote any member, while regular members can only promote others to the member role.
- ![Update user role](https://media.docs.plane.so/workspaces/update-user.webp#center)
-## Removing members
-An admin of the workspace has the ability to remove any user from the members page. Once removed, the user will lose access to the workspace.
- ![Remove user](https://media.docs.plane.so/workspaces/remove-user.webp#center)
+## Permissions
+Permissions define what actions users can take within a workspace or project. By assigning appropriate roles, you can ensure everyone has the right level of access to collaborate effectively while maintaining security.
+
+<details>
+    <summary><b>Workspaces</b></summary>
+    <p>
+        <div className="">
+            <table className="" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+                <thead>
+                    <tr>
+                        <th>Permission</th>
+                        <th>Admin</th>
+                        <th>Member</th>
+                        <th>Guest</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Access Workspace settings</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr>  
+                    <tr>
+                        <td> Create Workspace</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr>  
+                    <tr>
+                        <td>Update Workspace</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Delete Workspace</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Add user</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Remove user</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Change user role</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Manage Project states</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Manage Billing and plans</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Manage Integrations</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Manage Imports</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Manage Exports</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Manage Webhooks</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Manage API tokens</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Manage Worklogs</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Home</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Your work</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr>
+                    <tr>
+                        <td>Inbox</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Drafts</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr>
+                    <tr>
+                        <td>Projects</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr>
+                    <tr>
+                        <td>View private projects</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>View public projects</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr>
+                    <tr>
+                        <td>Join private projects</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr>
+                    <tr>
+                        <td>Join public projects</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr>
+                    <tr>
+                        <td>Cycles</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr>
+                    <tr>
+                        <td>Views</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Analytics</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr>
+                    <tr>
+                        <td>Your favourites</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </p>
+</details>
+
+<details>
+    <summary><b>Projects</b></summary>
+    <p>
+        <div className="">
+            <table className="" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+            <thead>
+                <tr>
+                    <th width="350">Permission</th>
+                    <th>Workspace Admin</th>
+                    <th>Project Admin</th>
+                    <th>Member</th>
+                    <th>Guest</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> Access Project settings</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Create Project</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr>  
+                <tr>
+                    <td>Update Project</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Archive Project</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Delete Project</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Add user</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Remove user</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Change user role</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Enable features</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Manage issue states</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Manage issue labels</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Manage Estimates</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Manage Automations</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Manage issue types and custom properties</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Add Project to favorites</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Publish Project</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>Copy link</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+                <tr>
+                    <td>View Archived projects</td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                </tr> 
+            </tbody>
+            </table>
+        </div>
+    </p>
+</details>
+
+<details>
+    <summary><b>Issues</b></summary>
+    <p>
+    <div className="">
+        <table className="" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+        <thead>
+            <tr>
+                <th>Permission</th>
+                <th>Workspace Admin</th>
+                <th>Project Admin</th>
+                <th>Member</th>
+                <th>Guest</th>
+                <th>Guest with <br/> view access</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Create Issue</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td></td>
+            </tr> 
+            <tr>
+                <td>View Issues</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td>Guests without view access can only see their own issues accepted through Intake.</td>
+            </tr>
+            <tr>
+                <td>Edit Issue</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Duplicate Issue</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Copy link</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Archive Issue</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Delete Issue</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Edit Issue properties</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>View Issue activity</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Log work</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Add Comments</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td></td>
+            </tr> 
+            <tr>
+                <td>View Comments</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td></td>
+            </tr> 
+            <tr>
+                <td>Add Reactions</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td></td>
+            </tr> 
+            <tr>
+                <td>View issue types</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td></td>
+            </tr> 
+            <tr>
+                <td>Use issue types</td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                <td></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    </p>
+</details>
+
+
+<details>
+    <summary><b>Cycles</b></summary>
+    <p>
+        <div className="">
+            <table className="" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+                <thead>
+                    <tr>
+                        <th>Permission</th>
+                        <th>Workspace Admin</th>
+                        <th>Project Admin</th>
+                        <th>Member</th>
+                        <th>Guest</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Create Cycle</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>View Cycles</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>View Cycle issues</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Edit Cycle</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Add issues</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Archive Cycle</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Delete Cycle</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Copy link</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Add Cycle to favorites</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>View Cycle details</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Filter Cycles</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Search Cycles</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+    </p>
+</details>
+
+<details>
+    <summary><b>Modules</b></summary>
+    <p>
+        <div className="">
+            <table className="" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+                <thead>
+                    <tr>
+                        <th>Permission</th>
+                        <th>Workspace Admin</th>
+                        <th>Project Admin</th>
+                        <th>Member</th>
+                        <th>Guest</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Create Module</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>View Modules</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>View Module issues</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Edit Module</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Add issues</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Archive Module</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Delete Module</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Copy link</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Add Module to favorites</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>View Module details</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Add links to Module</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Sort Modules</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Filter Modules</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Search Modules</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+    </p>
+</details>
+
+<details>
+    <summary><b>Views</b></summary>
+    <p>
+        <div className="">
+            <table className="" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+                <thead>
+                    <tr>
+                    <th>Permission</th>
+                        <th>Workspace Admin</th>
+                        <th>Project Admin</th>
+                        <th>Member</th>
+                        <th>Guest</th>
+                        <th>Guest with <br/> view access</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Create View</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>See Views</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td>Guests without view access can only see the Views they create</td>
+                    </tr> 
+                    <tr>
+                        <td>Edit View</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>Add issues</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>Delete View</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>Sort Views</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>Filter Views</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>Search Views</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>Add View to favorites</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>Publish View</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>Copy link</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td></td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+    </p>
+</details>
+
+<details>
+    <summary><b>Pages</b></summary>
+    <p>
+        <div className="">
+            <table className="" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+                <thead>
+                    <tr>
+                    <th>Permission</th>
+                        <th>Workspace Admin</th>
+                        <th>Project Admin</th>
+                        <th>Member</th>
+                        <th>Guest</th>
+                        <th>Guest with <br/> view access</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Create Page</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>View Pages</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Edit Page</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Archive Page</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Delete Page</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Add Page to favorites</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Publish Page</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Copy link</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Sort Pages</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Filter Pages</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    </tr> 
+                    <tr>
+                        <td>Search Pages</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                    </tr> 
+                    
+                </tbody>
+            </table>
+        </div>
+    </p>
+</details>
+
+<details>
+    <summary><b>Intake</b></summary>
+    <p>
+        <div className="">
+            <table className="" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+                <thead>
+                    <tr>
+                    <th>Permission</th>
+                        <th>Workspace Admin</th>
+                        <th>Project Admin</th>
+                        <th>Member</th>
+                        <th>Guest</th>
+                        <th>Guest with <br/> view access</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Create Intake issue</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>View Intake issues</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td> Guest without view access can only view the Intake issues they create</td>
+                    </tr> 
+                    <tr>
+                        <td>Edit Intake issue</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td> Guest without view access can only modify the Intake issues they create</td>
+                    </tr> 
+                    <tr>
+                        <td>Accept Intake issue</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td> </td>
+                    </tr> 
+                    <tr>
+                        <td>Reject Intake issue</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td> </td>
+                    </tr> 
+                    <tr>
+                        <td>Snooze Intake issue</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td> Members can't snooze issues created by other users</td>
+                    </tr> 
+                    <tr>
+                        <td>Mark duplicate</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td> Members can't mark duplicate Intake issues created by other users</td>
+                    </tr> 
+                    <tr>
+                        <td>Delete Intake issue</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td> Members can't delete Intake issues created by other users</td>
+                    </tr> 
+                    <tr>
+                        <td>Add attachments</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td>Members and Guests can only attach files to the Intake issues they create</td>
+                    </tr> 
+                    <tr>
+                        <td>Modify Intake issue properties</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td>Members and Guests can only modify Intake issue properties they create</td>
+                    </tr> 
+                    <tr>
+                        <td>View activity</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Add comments</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Add reactions</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Copy link</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'red', fontWeight: 'bold', fontSize: '16px'}}>x</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Sort Intake issues</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>Filter Intake issues</td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td align="center"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>✓</span></td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </p>
+</details>
+
+## Manage Members
+
+You can manage the members in your workspace by navigating to **Workspace settings > Members**.
+
+### Add member
+
+![Invite user](https://media.docs.plane.so/workspaces/add-user.webp#center)
+
+1. Click on **Add member**. This opens a modal where you can:
+    1. Enter the email addresses of the user you’re inviting.
+    2. Assign the role to **Admin**, **Member**, or **Guest**.
+    3. Click **Add another** to add multiple users. 
+    4. Finally, click the **Invite** button.
+
+Once invited, members receive an email notification. 
+:::caution[Self-hosted users]
+Ensure your SMTP server is properly configured to send invite emails successfully. See [Email](https://developers.plane.so/self-hosting/govern/communication) for more information.
+:::
+
+After the user accepts the invitation, they’ll be added to the workspace. If they don’t accept or decline, you can manually remove the pending invitation.
+
+### Update member roles
+
+![Update user role](https://media.docs.plane.so/workspaces/update-user.webp#center)
+
+1. Locate the member whose role you want to update.
+2. Use the role dropdown to promote or demote their role.
+
+Admins can update any member's role, while regular members can only promote others to the Member role.
+
+
+### Remove member
+![Remove user](https://media.docs.plane.so/workspaces/remove-user.webp#center)
+
+1. Find the member you want to remove.
+3. Click the **Remove** option next to their name.
+
+Once removed, they’ll immediately lose access to the workspace and its projects.

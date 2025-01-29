@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #3e76ff;
+  --ifm-color-primary: #004eff;
   --ifm-color-primary-dark: #1b47c2;       /* Darker shade */
   --ifm-color-primary-darker: #1941b1;     /* Even darker */
   --ifm-color-primary-darkest: #153693;    /* Darkest */
@@ -152,7 +152,7 @@ h3{
 
 
 #__docusaurus > nav > div.navbar__inner > div.navbar__items.navbar__items--right > a:nth-child(3) {
-  background-color: #3e76ff;
+  background-color: #004eff;
   border-radius: var(--rounded-full, 9999px);
   color: #f3f5f7;
   font-size: .750rem;
@@ -458,8 +458,8 @@ html[data-theme='dark'] {
 
 
 @media (min-width: 997px) {
-  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Sidebar-styles-module {
-    border-right: 1px solid rgb(112 112 112 / 5%) !important;
+  .docSidebarContainer_YfHR {
+    border-right: 1px solid rgb(112 112 112 / 9%) !important;
   }
 }
 
@@ -535,5 +535,25 @@ img[src*='#center'] {
   border-width: 0px;
   padding: .5rem;
   background-color: rgb(32 43 61);
+}
+
+.business {
+  color: #111111;
+  border-radius: 4px;
+  border: 1px solid #D6D7D9;
+  background: linear-gradient(167.44deg, #C2C8E4 0%, #BFC4DF 67.25%, #FCFCFC 98.9%);
+  padding: 0 15px 0 15px;
+}
+
+html[data-theme='dark'] .business {
+  color: #F5F5F5;
+  border-radius: 4px;
+  border: 1px solid #646c90;
+  background: linear-gradient(164.95deg, #414669 0%, rgba(56, 60, 78, 0.12) 53.4%, rgba(172, 211, 255, 0.16) 100%);
+  padding: 0 15px 0 15px;
+}
+
+[data-theme=dark] .themedComponent--dark_xIcU, [data-theme=light] .themedComponent--light_NVdE, html:not([data-theme]) .themedComponent--light_NVdE{
+  width:100px !important;
 }
 

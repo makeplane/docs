@@ -27,9 +27,12 @@ These attributes can always be edited later under the **General** tab in the [pr
 Click the **…** icon next to your project name on the sidebar and click **Settings**. 
 ![Project settings](https://media.docs.plane.so/projects/project-settings.webp#center)
 
+### Project timezone
+Each project can have its own timezone setting, managed by project admins. The project timezone affects how dates and times are displayed within the project context. For example, the Cycle schedules (start and end) will align with the timezone set here. However, Members will see Cycles starting and stopping based on the timezone set in their [profile settings](/core-concepts/account/settings#timezone-and-language).
+
 ## Add and manage members
 
-To get others involved in your project, they first need to be part of your workspace. [Invite them](/core-concepts/workspaces/members#adding-members) to the workspace. 
+To get others involved in your project, they first need to be part of your workspace. [Invite them](/core-concepts/workspaces/members#add-member) to the workspace. 
 
 Once they’re in the workspace, you can invite them to join the project and assign roles like **Admin**, **Member**, or **Guest**. You can always update their roles later if needed. 
 
@@ -39,7 +42,7 @@ If you want to make sure every issue gets assigned, you can set a **Default assi
 
 ## Enable features
 
-After creating a project, you can enable specific features based on your requirements:
+After creating a project, you can turn on specific features based on your requirements:
 
 - **Cycles**: Timebox issues in your project, helping to build momentum and keep things moving forward.
 - **Modules**: Group related issues together logically, making it easier to manage large projects.
@@ -51,13 +54,13 @@ After creating a project, you can enable specific features based on your require
 ![Project features](https://media.docs.plane.so/projects/project-features.webp#center)
 
 
-## Archive project
+## Archive Project
 
 You can archive a project in [Project settings](/core-concepts/projects/overview#project-settings). Archiving a project will remove it from your sidebar, keeping your workspace clean and focused on active projects. However, you can still access the archived project and easily restore or delete it permanently at any time. 
 
 ![Archived Projects](https://media.docs.plane.so/projects/archived-projects.webp#center)
 
-## Delete project
+## Delete Project
 
 You can delete a project to completely remove it in [Project settings](/core-concepts/projects/overview#project-settings). However, be careful—once deleted, everything tied to that project, like issues, cycles, views, modules, and pages, are also deleted.
 
@@ -65,3 +68,12 @@ You can delete a project to completely remove it in [Project settings](/core-con
 Right now, Plane doesn’t offer a way to recover a deleted project, so be sure before you hit delete.
 :::
 
+## Troubleshooting
+
+### Unable to create new projects
+
+When attempting to create a new project, the page auto-refreshes, but no project is created. 
+
+This issue typically occurs in **self-hosted instances** when the Unsplash API key configured in your instance has expired or is invalid.
+
+Update the [Unsplash Access key](https://developers.plane.so/self-hosting/govern/instance-admin#images-in-plane) in God mode to resolve this issue.
