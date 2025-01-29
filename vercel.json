@@ -213,6 +213,10 @@
     {
       "source": "/introduction/home",
       "destination": "/"
+    },
+    {
+      "source": "/importers/jira-imp",
+      "destination": "/importers/jira"
     }
   ]
 }
