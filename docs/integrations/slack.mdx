@@ -1,7 +1,66 @@
 ---
-title: Slack Sync
-sidebarTitle: Slack
+title: Slack
+hide_title: true
 ---
 
-Coming very soon.
+import Tags from '@site/src/components/Tags';
 
+<div className="tag-wrapper">
+ <h1>Integrate with Slack</h1>
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
+
+:::info
+The Slack integration is in a private beta. Contact us to try it out.
+:::
+
+Integrating Slack with Plane allows your team to streamline communication and stay updated on your projects, directly from within Slack. Whether you're syncing threads, receiving updates, or collaborating in real-time, this integration brings the power of Slack and Plane together for a more connected workflow.
+
+This guide will walk you through how to set up and connect your Slack account to Plane.
+
+## Set up Slack integration
+
+Follow the steps below to complete the setup:
+1. [Connect your Slack Workspace](/integrations/slack#connect-slack-workspace)
+2. [Connect your personal Slack account](/integrations/slack#connect-personal-slack-account)
+
+### Connect Slack Workspace
+To get started, you need to connect your Slack workspace to Plane.
+
+1. Navigate to [Workspace Settings](/core-concepts/workspaces/overview#workspace-settings) in Plane.
+2. On the right pane, select **Integrations**.
+3. Find  the **Slack** integration and click **Configure**.
+4. Click the **Install** button. This will redirect you to Slack’s authentication page. Slack will ask you to review the permissions it needs to integrate with Plane. Make sure to allow them.
+5. After allowing permissions, you’ll be redirected back to Plane. You should now see that your Slack workspace is successfully connected.
+
+That's it! Your Slack workspace is now integrated with Plane.
+
+### Connect personal Slack account
+For a more personalized experience, you can connect your personal Slack account. This is particularly useful for features like Thread Sync. When Thread Sync is enabled, any messages posted to an issue will be sent back to Slack. If you're connected, it will show your name as the sender. If you're not connected, the message will appear as coming from the Plane Bot or the name of your Slack bot.
+
+#### From Workspace settings
+Workspace admins can connect their personal Slack accounts from Workspace settings.
+
+1. In the **Connect your personal account** section under **Integrations**, click **Connect**.
+2. Slack will ask for permission to integrate with Plane. Review and allow the necessary permissions.
+3. After granting permissions, you’ll see the status updated to show that your personal account is connected.
+
+:::info
+Only one Workspace Admin can connect their personal GitHub account via Workspace Settings. Other Admins and Members can connect theirs from [Profile settings](/integrations/slack#from-workspace-settings).
+:::
+
+#### From Profile settings
+If you don’t have admin access, you can still connect your personal Slack account through your profile settings.
+
+1. Head to the [Profile settings](/core-concepts/account/settings) page in Plane.
+2. Select the **Connections** tab on the sidebar.
+3.In the dropdown menu, select the Plane workspace you want to connect your personal account to.
+4. Click **Connect** in the Slack section, which will redirect you to Slack to complete the connection.
+    :::info
+    If your workspace doesn’t have Slack integration enabled, you won’t be able to connect your personal account. In this case, contact your Workspace Admin.
+    :::
+5. Once your account is connected, you’ll see the status update to reflect that your personal Slack account is successfully integrated.
