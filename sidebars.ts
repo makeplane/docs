@@ -160,7 +160,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'plane-integrations/about',
         'plane-integrations/github',
-        'plane-integrations/slack',
+        'integrations/slack',
       ],
     },
     {
