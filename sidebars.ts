@@ -161,6 +161,7 @@ const sidebars: SidebarsConfig = {
         'plane-integrations/about',
         'plane-integrations/github',
         'plane-integrations/slack',
+        'integrations/gitlab'
       ],
     },
     {
