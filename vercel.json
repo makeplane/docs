@@ -220,7 +220,7 @@
     },
     {
       "source": "/plane-integrations/about",
-      "destination": "/importers/about"
+      "destination": "/integrations/about"
     },
     {
       "source": "/plane-integrations/github",
