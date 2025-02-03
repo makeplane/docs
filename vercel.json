@@ -225,6 +225,10 @@
     {
       "source": "/plane-integrations/github",
       "destination": "/integrations/github"
+    },
+    {
+      "source": "/plane-integrations/slack",
+      "destination": "/integrations/slack"
     }
   ]
 }
