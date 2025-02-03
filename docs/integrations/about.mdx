@@ -1,9 +1,16 @@
 ---
-title: About (WIP)
-sidebarTitle: About
+title: Overview
 ---
-:::tipIntegrations and importers are only available on the cloud version. We plan to open-source our SDKs in the near future so that the community can request or contribute integrations as needed.:::
 
-Plane's integrations make it easy for users to connect their Workspace and projects to popular third-party tools. This enables seamless management of issues and notifications, all from within the Plane platform.
+import {CardGroup,Card} from '@site/src/components';
 
-Rather than having to switch back and forth between different tools and interfaces, users can access and manage their third-party tools directly from within the Plane platform. This streamlines workflows and improves efficiency by providing a centralized hub for all project-related activities.
+Plane's integrations make it easy to connect your workspace and projects with your favorite tools to streamline your workflow and keep everything in sync. Instead of constantly switching between different platforms, you can access and manage your external tools directly inside Plane. This creates a more efficient workflow, keeping your team focused and your projects running smoothly.
+
+<CardGroup cols={2}>
+  <Card title="Github" icon="FaGithub" href="/integrations/github">
+    Sync issues and pull requests between Plane and GitHub for a smooth, two-way workflow.
+  </Card>
+  <Card title="Slack" icon="FaSlack" href="/integrations/slack">
+    Connect Plane with Slack to create issues, sync discussions, and take action on tasks—all without leaving Slack.
+  </Card>
+</CardGroup>
