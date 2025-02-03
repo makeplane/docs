@@ -158,9 +158,9 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       label: 'Integrations',
       items: [
-        'plane-integrations/about',
-        'plane-integrations/github',
-        'plane-integrations/slack',
+        'integrations/about',
+        'integrations/github',
+        'integrations/slack'
       ],
     },
     {

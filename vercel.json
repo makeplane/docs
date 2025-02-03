@@ -215,8 +215,24 @@
       "destination": "/"
     },
     {
+      "source": "/plane-importers/overview",
+      "destination": "/importers/overview"
+    },
+    {
       "source": "/importers/jira-imp",
       "destination": "/importers/jira"
+    },
+    {
+      "source": "/plane-integrations/about",
+      "destination": "/integrations/about"
+    },
+    {
+      "source": "/plane-integrations/github",
+      "destination": "/integrations/github"
+    },
+    {
+      "source": "/plane-integrations/slack",
+      "destination": "/integrations/slack"
     }
   ]
 }
