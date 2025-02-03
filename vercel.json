@@ -217,6 +217,14 @@
     {
       "source": "/importers/jira-imp",
       "destination": "/importers/jira"
+    },
+    {
+      "source": "/plane-integrations/about",
+      "destination": "/integrations/about"
+    },
+    {
+      "source": "/plane-integrations/github",
+      "destination": "/integrations/github"
     }
   ]
 }
