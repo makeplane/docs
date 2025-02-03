@@ -363,11 +363,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 html[data-theme='dark'] {
-  color: #99a2b1;
+  color: #ebebeb;
 }
 
 [data-theme='dark']  blockquote {
-  color: #99a2b1;
+  color: #ebebeb;
 }
   
 [data-theme='dark'] code{
