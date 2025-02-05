@@ -67,15 +67,15 @@
       "destination": "/core-concepts/power-k"
     },
     {
-      "source": "/integrations/about",
+      "source": "/plane-integrations/about",
       "destination": "/integrations/about"
     },
     {
-      "source": "/integrations/github",
+      "source": "/plane-integrations/github",
       "destination": "/integrations/github"
     },
     {
-      "source": "/integrations/slack",
+      "source": "/plane-integrations/slack",
       "destination": "/integrations/slack"
     },
     {
