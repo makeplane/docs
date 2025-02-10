@@ -63,6 +63,12 @@ const config: Config = {
     ],
   ],
 
+  scripts: [
+    {
+      src: 'https://plausible.io/js/script.js', defer: true, 'data-domain': 'docs.plane.so'
+    }
+  ],
+
   themeConfig: {
     colorMode: {
       defaultMode: 'dark',
