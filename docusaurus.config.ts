@@ -63,6 +63,12 @@ const config: Config = {
     ],
   ],
 
+  scripts: [
+    {
+      src: 'https://plausible.io/js/script.js', defer: true, 'data-domain': 'docs.plane.so'
+    }
+  ],
+
   themeConfig: {
     colorMode: {
       defaultMode: 'dark',
@@ -83,10 +89,11 @@ const config: Config = {
       indexName: "plane-docs-v3",
     },
     navbar: {
-      title: "Plane",
+      title: "",
       logo: {
         alt: "Plane",
-        src: "https://media.docs.plane.so/logo.svg",
+        src: "https://media.docs.plane.so/logo/Plane.svg",
+        srcDark: "https://media.docs.plane.so/logo/Plane-white.svg"
       },
       items: [
         {

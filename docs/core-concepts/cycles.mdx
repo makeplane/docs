@@ -3,14 +3,14 @@ title: Cycles
 ---
 import Tags from '@site/src/components/Tags';
 
-# Manage, plan, and track your team’s progress
+# Manage and track your sprints using Cycles
 
 A Cycle is a set period of time where your team focuses on completing specific tasks or issues, similar to sprints in Agile. Each Cycle is flexible, allowing you to prioritize and tackle backlog items at your own pace.
  
 Using Cycles, your team stays organized, meets deadlines, and keeps moving forward efficiently. It’s all about getting things done without the overwhelm! 
 
-## Enable cycles
-By default, Cycles are automatically enabled when you create a new project. If you ever want to switch them off or back on, you can easily do that by navigating to **Settings > Features** in your project's ellipsis (…) menu.
+## Turn on cycles
+By default, Cycles are automatically turned on when you create a new project. If you ever want to switch them off or back on, you can easily do that by navigating to **Settings > Features** in your project's ellipsis (…) menu.
 
 ## Create cycles
 :::warning[Caution]
@@ -19,9 +19,8 @@ Two cycles cannot have overlapping dates.
 To create a new Cycle, just press `Q` from anywhere in your project. Or, you can head to the **Cycles** page under your project in the sidebar and click the **Add Cycle** button. You’ll need to give it a name and set the start and due dates. If you want, you can also add a description—either right away or later on!
 ![Create cycle](https://media.docs.plane.so/cycles/create-cycles.webp#center) 
 
-
 :::caution[Timezone settings]
-If the Project Admin sets the **Timezone** in [Project settings](/core-concepts/projects/overview#project-settings), the Cycle schedules (start and end) will align with it. However, Members will view Cycles starting and stopping based on the timezone set in their user settings.
+If the Project Admin sets the **Timezone** in [Project settings](/core-concepts/projects/overview#project-settings), the Cycle schedules (start and end) will align with it. However, Members will view Cycles starting and stopping based on the timezone set in their [profile settings](/core-concepts/account/settings#timezone-and-language).
 :::
 
 ## Add issues to cycles
@@ -31,7 +30,6 @@ If the Project Admin sets the **Timezone** in [Project settings](/core-concepts/
 
 - You can also link a Cycle directly as a property within any issue.
 ![Cycle property](https://media.docs.plane.so/cycles/cycle-property.webp#center)
-
 
 ## Cycle states
 
@@ -47,6 +45,43 @@ When a cycle’s due date has passed, it moves into the completed state. This re
 :::tip
 You can modify the name, description, start and due dates of active and upcoming cycles at any time.
 :::
+
+<div className="tag-wrapper">
+## Start and stop cycles
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
+
+While Cycles typically run for their set duration, sometimes you need more flexibility in managing your work periods. You can manually control when a Cycle begins or ends using the interface controls.
+
+To start a Cycle, simply click the **Start Cycle** button next to your upcoming Cycle. This is particularly useful when you want to begin a planned Cycle earlier than its scheduled start date or if you need to start a fresh Cycle immediately.
+
+:::tip
+You can't start a new Cycle while another is in progress. To begin a new Cycle, you'll need to stop the currently active one first.
+:::
+
+![Start Cycle](https://media.docs.plane.so/cycles/start-cycle.webp#center)
+
+To end a Cycle before its scheduled completion date, you can:
+
+1. Click the three-dot menu (⋯) on the active Cycle.
+
+2. Select **End Cycle** from the three dots menu to the right of the active cycle.
+
+    :::warning
+    You can't restart a Cycle after it's been manually ended.
+    ::: 
+
+3. Once you end a Cycle, it will be marked as completed and move to your **Completed cycle** section.
+
+![End Cycle](https://media.docs.plane.so/cycles/end-cycle.webp#center)
+
+Any unfinished issues in the ended Cycle will remain in their current state. The burn-down chart and progress metrics will be finalized based on the completion status at the time you end the Cycle.
+
+This manual control gives you the flexibility to adapt your Cycles to your team's actual work rhythm, rather than being strictly bound to predetermined dates.
 
 ## Transfer issues
 

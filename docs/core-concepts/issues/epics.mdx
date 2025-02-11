@@ -1,0 +1,129 @@
+---
+title: Epics
+hide_title: true
+---
+
+import Tags from '@site/src/components/Tags';
+
+<div className="tag-wrapper">
+# Organize and track your issues with Epics
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
+
+Epics help you group related tasks into a larger work item, providing a hierarchical structure for managing complex projects. This feature is ideal for breaking down major objectives into smaller, manageable pieces while keeping everything organized within a project.
+
+Use Epics when you need to:
+
+- Organize tasks related to a larger objective or feature.
+- Track progress and dependencies across multiple related issues.
+- Improve visibility into how individual tasks contribute to broader goals.
+
+:::tip
+Use an Epic for larger bodies of work that span multiple cycles and extend across different modules.
+:::
+
+## Turn on Epics
+
+![Enable Epics](https://media.docs.plane.so/epics/enable-epics.webp#center)
+
+To start using Epics, turn on the feature for your project:
+
+1. Go to the [Project settings](/core-concepts/projects/overview#project-settings) for the desired project.
+2. Navigate to the **Epics** section on the right pane.
+3. Click the **Enable** button.
+
+Once turned on, the Epics tab will appear in the project's sidebar, giving you quick access to create and manage Epics.
+
+## Add custom properties to Epics
+
+Custom properties allow you to add specialized fields to your Epics, helping you track additional information specific to your project's needs. These properties can be configured to capture various types of data.
+
+![Add custom properties](https://media.docs.plane.so/epics/add-custom-properties.webp#center)
+
+To add custom properties to an Epic:
+
+1. Click the **Add new property** button on the Epics pane.
+2. In the **Custom Properties** section, fill in the following fields:
+    - **Title**: Enter a name for your property
+    - **Description**: Add details about what this property represents
+    - **Property type**: Select from the available options:
+        - **Text**: For free-form text input
+        - **Number**: For numerical values
+        - **Dropdown**: For predefined selection options
+        - **Boolean**: For yes/no or true/false values
+        - **Date**: For temporal information
+        - **Member picker**: For assigning team members
+
+## Create Epics
+
+![Create Epics](https://media.docs.plane.so/epics/create-epics.webp#center)
+
+Follow these steps to create a new Epic:
+
+1. Navigate to the **Epics** section under your project.
+2. Click the **New Epic** button at the top right of the screen.
+3. Provide the following details:
+    - **Title**: Name your Epic.
+    - **Description**: Add context for the Epic’s purpose.
+    - **Properties**: Assign metadata like priority, assignees, labels, and due dates.
+4. Click **Save** to create the Epic.
+
+## View and manage Epics
+Once created, all Epics can be accessed from the **Epics** section under your project. The Epics screen provides a high-level view of all Epics within a project.
+
+![Epics screen](https://media.docs.plane.so/epics/epics-screen.webp#center)
+
+:::tip[Sort and filter Epics]
+To help you manage Epics effectively, Plane offers flexible sorting and filtering options.
+:::
+
+Clicking on an Epic opens a detailed view where you can quickly view and manage an Epic without leaving your current context.
+
+### Add issues to Epic
+
+![Add issues to Epic](https://media.docs.plane.so/epics/add-issues.webp#center)
+
+You can add existing issues to the Epic or create new ones directly from the Epic.
+
+:::caution[important]
+An issue can belong to only one Epic. This ensures clarity in organization and avoids overlapping tasks across multiple Epics.
+:::
+
+### Issues list and relations
+![Issues and Relations](https://media.docs.plane.so/epics/issues-and-relations.webp#center)
+
+- See the full list of issues grouped under the Epic.
+- Add or remove issues from the Epic.
+- Manage issues directly by updating their status, assignee, or priority.
+
+### Epic progress
+![Epic progress](https://media.docs.plane.so/epics/epic-progress.webp#center)
+
+You can track Epic progress visually with a color-coded progress bar that shows:
+- Task completion status (e.g., Backlog, Started, Completed).
+- Issue counts and completion percentage for each status category.
+
+### Properties, comments, and activity
+
+- View and update the Epic’s key properties like assignee, priority, timelines, and other custom properties.
+  ![Epic properties](https://media.docs.plane.so/epics/epic-properties.webp#center)
+
+- Add comments to collaborate with your team and to discuss progress, blockers, or updates.
+  ![Epic comments](https://media.docs.plane.so/epics/epic-comments.webp#center)
+  
+- Access the activity log for a history of changes made to the Epic, ensuring transparency and accountability.
+  ![Epic activity](https://media.docs.plane.so/epics/epic-activity.webp#center)
+
+## Link Issues to Epics
+For each issue, you can assign or change an issue's Epic directly in the **Parent** property.
+
+![Link Issues to Epics](https://media.docs.plane.so/epics/link-issue-epic.webp#center)
+
+---
+
+Epics provide a simple yet powerful way to manage larger goals while keeping your projects organized and your team aligned.
+

@@ -172,7 +172,7 @@ View a list of all, active and backlog issues.
     <br/>
   
 ## Push notifications
-The Plane mobile app supports push notifications to keep you updated on important activities. To start receiving notifications, make sure to enable them in the app settings. Once enabled, you'll be notified about relevant updates, ensuring you never miss an important change or task.
+The Plane mobile app supports push notifications to keep you updated on important activities. To start receiving notifications, make sure to turn them on in the app settings. Once turned on, you'll be notified about relevant updates, ensuring you never miss an important change or task.
 
 ## Troubleshooting
 
@@ -191,3 +191,16 @@ This error occurs when attempting to log in to the mobile app with a self-hosted
 - Retry logging in and ensure the self-hosted URL is entered correctly in the app.
 
 
+### Unable to log in using SSO
+
+Ensure the correct Redirect URI is configured in your OAuth service:
+
+- For Google Sign-In: Add the following URL to the Redirect URIs section in your Google Cloud Console:
+    ```bash
+    https://<plane.example.com>/auth/mobile/google/callback/
+    ```
+- For GitHub Sign-In: Add the following URL to the Callback URL section in your GitHub OAuth app:
+    ```bash
+    https://<plane.example.com>/auth/mobile/github/callback/
+    ```
+Verify that the `<plane.example.com>` part of the URL matches your self-hosted instance's domain.
