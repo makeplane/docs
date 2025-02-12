@@ -75,6 +75,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/issues/bulk-ops',
         'core-concepts/issues/timeline-dependency',
         'core-concepts/issues/epics',
+        'core-concepts/projects/initiatives',
         'core-concepts/workspaces/teamspaces',
         'core-concepts/projects/project-states',
         'core-concepts/projects/project-overview',
