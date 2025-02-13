@@ -161,7 +161,8 @@ const sidebars: SidebarsConfig = {
       items: [
         'integrations/about',
         'integrations/github',
-        'integrations/slack'
+        'integrations/slack',
+        'integrations/gitlab'
       ],
     },
     {
