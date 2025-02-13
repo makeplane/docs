@@ -1,44 +1,161 @@
 ---
-title: Github Sync
-sidebarTitle: Github
+title: GitHub
+hide_title: true
 ---
-:::tipIntegrations and importers are only available on the cloud version. We plan to open-source our SDKs in the near future so that the community can request or contribute integrations as needed.:::
 
-GitHub Sync allows users to connect any GitHub repository to a Plane project, enabling cross-synchronization of issues between Plane and GitHub in both directions.
+import Tags from '@site/src/components/Tags';
 
-By connecting a GitHub repository to a Plane project, users can easily track issues and changes in both platforms. This allows for a more streamlined workflow, as users can manage their GitHub issues and pull requests from within the Plane platform.
+<div className="tag-wrapper">
+ <h1>Integrate with GitHub</h1>
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
 
-The bi-directional synchronization means that changes made in either platform will be reflected in the other. For example, if a user creates a new issue in Plane, it will automatically be synced with the corresponding repository in GitHub. Similarly, if a user closes an issue in GitHub, it will be reflected in Plane as well.
+:::info
+The GitHub integration is in a private beta. Contact us to try it out.
+:::
 
-:::tipPlane is still in development, if there are any hiccups in Integrations, please report them to us on our [Discord server](https://discord.com/invite/A92xrEGCge) or [Github issues](https://github.com/makeplane/plane/issues).:::
+GitHub integration with Plane allows seamless synchronization between your GitHub repositories and Plane projects. By linking the two, your issues and pull requests stay updated across both platforms, enhancing collaboration and streamlining your workflow. Whether you're managing code, tasks, or both, this integration ensures your team stays in sync without the hassle of switching between platforms.
 
-### Plane to Github Synchronization Overivew
+## Set up GitHub integration
+To get started, you'll need to connect your GitHub account, organization, and repositories with Plane. Follow the steps below to complete the setup:
+1. [Connect your GitHub organization](/integrations/github#connect-github-organization)  
+2. [Connect your personal GitHub account](/integrations/github#connect-personal-github-account)  
+3. [Add repository mappings](/integrations/github#add-repository-mappings)
 
-![](https://media.docs.plane.so/plane-github.png)
+### Connect GitHub organization
+Link your GitHub organization to your Plane workspace to start syncing repositories. This step is crucial for enabling the full range of GitHub-Plane integrations.
 
-### Configure GitHub Integration
+![Connect GitHub](https://media.docs.plane.so/integrations/github/connect-github.webp#center)
 
-1. Install and authenticate GitHub Sync
+1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#workspace-settings) in Plane.
+2. On the right pane, select **Integrations**.
+3. Find  the **GitHub** integration and click **Configure**.
+4. In the **Connect Organization** section, click **Connect**.
+5. On the GitHub app installation page, choose the organization you want to connect.
+6. Select whether you want to sync all repositories or pick specific ones.
+7. Click **Install** to finalize the connection.
+8. After authorization, you’ll be redirected back to Plane, where your GitHub organization will appear as connected.
 
-:::tipObviously, GitHub Sync requires you to authenticate with your account to add the Plane GitHub application. Also, if you want to use GitHub Sync in an organization, you may need to ask an admin to allow Plane to access the organization, or do that yourself: Organization settings => GitHub Apps (enter sudo mode) => approve the request for the Plane integration.:::
+### Connect personal GitHub account
 
-![](https://media.docs.plane.so/integrations/github/1.gif)
+This step allows you to make comments on issues and pull requests in GitHub through your Plane account, using your personal GitHub identity.
 
-2. Connect GitHub repository with project
+When this connection is enabled, comments made in Plane will appear in GitHub under your GitHub user account, else comments will be posted as `Plane GitHub App` or your custom GitHub app name.
 
-![](https://media.docs.plane.so/integrations/github/2.gif)
+#### From Workspace settings
+Workspace admins can connect their personal GitHub accounts from Workspace settings.
 
-3. Create a new one or use an existing issue on Plane
+![Connect personal account](https://media.docs.plane.so/integrations/github/connect-personal-account.webp#center)
 
-![](https://media.docs.plane.so/integrations/github/3.gif)
+1. In the **Connect personal account** section under **Integrations**, click **Connect**.
+2. Review the required permissions GitHub requests and authorize.
+3. After granting permissions, you’ll see the status updated to show that your personal account is connected.
 
-4. Add the `GitHub` label to Plane issue (Plane -> GitHub)
+:::info
+Only one Workspace Admin can connect their GitHub account via Workspace Settings. Others can connect their accounts through [Profile Settings](/integrations/github#from-profile-settings).
+:::
 
-![](https://media.docs.plane.so/integrations/github/4.gif)
+#### From Profile settings
+If you don’t have admin access, you can still connect your personal GitHub account through your profile settings.
 
-5. Add the `Plane` label to GitHub issue (GitHub -> Plane)
+![Connect member personal account](https://media.docs.plane.so/integrations/github/connect-personal-account-member.webp#center)
 
-![](https://media.docs.plane.so/integrations/github/5.gif)
+1. Go to [Profile settings](/core-concepts/account/settings).
+2. Select the **Connections** tab in the sidebar. 
+3. Choose the workspace where you want to connect your GitHub personal account.
+4. Click **Connect** in the GitHub section, which will redirect you to GitHub for authentication.
+    :::info
+    If your workspace doesn’t have GitHub integration enabled, you won’t be able to connect your personal account. In this case, contact your Workspace Admin.
+    :::
+5. Once connected, your GitHub account will be listed in Plane.
 
+### Add repository mappings
 
+Once GitHub is connected to Plane, workspace admins can map GitHub repositories to Plane projects. This ensures issues and pull requests sync correctly.
 
+![Repository mapping](https://media.docs.plane.so/integrations/github/repository-mapping.webp#center)
+
+1. Go to the **Repository Mapping** section under **Integrations**.
+2. Click **Add** to create a new mapping.
+![Sync repo and project](https://media.docs.plane.so/integrations/github/sync-repo-and-project.webp#center)
+3. In the modal that appears, select:
+    - The GitHub repository you want to sync.
+    - The Plane project to map it to.
+    - The Plane states to map the state of the pull requests. 
+4. Click **Continue**.
+
+All linked repositories will appear in a list, where you can edit or remove them as needed.
+
+## Sync issues
+
+With the GitHub integration setup, you can start syncing issues between Plane and GitHub. The synchronization is bi-directional and label-based, so issues are updated automatically on both platforms when certain labels are applied.
+
+### Github -> Plane
+1. Add the `Plane` label to an issue in GitHub to create and sync the issue in Plane.
+  ![Add Plane label](https://media.docs.plane.so/integrations/github/add-plane-label.webp#center)
+2. Plane posts a link back to the GitHub issue, confirming the connection.
+  ![Synced issue from GitHub](https://media.docs.plane.so/integrations/github/synced-issue-from-github.webp#center)
+3. A new issue is created in Plane with a link to the GitHub issue. 
+  ![Creates issue in Plane](https://media.docs.plane.so/integrations/github/creates-plane-issue.webp#center)
+
+### Plane -> GitHub
+
+1. Add the `GitHub` label to an issue in Plane to sync it to GitHub.
+  ![Add GitHub label](https://media.docs.plane.so/integrations/github/add-github-label.webp#center)
+2. A new issue is created in GitHub.
+  ![Creates issue in GitHub](https://media.docs.plane.so/integrations/github/create-github-issue.webp#center)
+3. The GitHub issue is also linked back to Plane. 
+
+### What gets synced?
+
+Here’s what syncs automatically between Plane and GitHub:
+
+|Property&nbsp;&nbsp;    |Sync&nbsp;direction&nbsp;&nbsp;                           |Notes
+| ------------| ----------------------------------------|-------------------------------------------------------------------------- |
+|Title	|Both ways|	Updates in either platform reflect in the other.|
+|Description	|Both ways|	Content remains consistent between Plane and GitHub.|
+|Assignees	|Both ways|	Assigned users are mapped based on the initial setup. If a user isn’t mapped, the assignee field may be left empty.|
+|Labels|	Both ways| If a Label doesn’t exist in Plane, it will be created (and vice versa).|
+|States|	GitHub → Plane| Changes in Plane do not update GitHub states. However, if an issue is closed in GitHub, it automatically moves to the Done state in Plane.|
+|Comments	|Both ways	|Comments sync between platforms with source attribution. If the commenter isn’t mapped to a Plane user, the comment appears as posted by the GitHub Bot. See [Connect personal GitHub account](/integrations/github#connect-personal-github-account) for more info.|
+|Mentions	|Both ways	|Mentioned users sync if they are mapped; otherwise, a GitHub profile link is included.|
+|Issue links|	GitHub → Plane|	Any issue references in GitHub descriptions or comments will be displayed in Plane with a direct link to the issue including the repository name and owner.|
+
+## Sync pull requests 
+Pull requests (PRs) are also synchronized with Plane to ensure issue tracking remains accurate throughout the development lifecycle.
+
+#### Closing references and auto-updates
+When a pull request includes closing references to GitHub issues (e.g., `closes #14`), any linked Plane issues will automatically update with the PR link. If the PR is merged or closed, the Plane issue state updates based on the configured workflow in [Repository mappings](/integrations/github#add-repository-mappings).
+
+#### Magic words for issue references
+You can use specific keywords in GitHub pull requests to manage how Plane issues are updated.
+
+- **Closing references**  
+These keywords close linked issues when the PR is merged or closed.
+**Keywords**  
+`close`, `closes`, `closed`, `closing`, `fix`, `fixes`, `fixed`, `resolve`, `resolves`, `resolved`, `complete`, `completes`, `completed`.
+
+- **Non-closing references**  
+These keywords maintain the state mappings of linked issues but don’t close them.
+**Keywords**  
+`ref`, `references`, `reference to`, `part of`, `related to`.
+
+#### PR lifecycle mapping
+The lifecycle of a pull request can be [mapped](/integrations/github#add-repository-mappings) to workflow states in Plane. The following PR states are available for mapping:
+
+- A draft PR is created.
+- A PR is opened.
+- A review is requested.
+- The PR is approved and ready to be merged.
+- The PR is successfully merged.
+- The PR is closed without merging.
+
+#### Issue backlinks in pull requests
+When a PR references Plane issues (using closing or non-closing reference keywords), Plane will post a confirmation comment on the pull request, ensuring visibility into which issues are linked.
+
+---
+With GitHub integration, Plane makes managing your issues and pull requests across both platforms easy and efficient. Whether you’re tracking progress, syncing updates, or managing workflows, you’ll always have a clear view of your project’s status.
