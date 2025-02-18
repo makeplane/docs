@@ -1,12 +1,12 @@
 ---
-title: Issue types
+title: Work item types
 hide_title: true
 ---
 
 import Tags from '@site/src/components/Tags';
 
 <div className="tag-wrapper">
- <h1>Add, configure and control your issue types</h1>
+ <h1>Add, configure and control your work item types</h1>
 <Tags 
   tags={[ 
     { name: "Pro", additionalClass: "pro" }
@@ -14,37 +14,37 @@ import Tags from '@site/src/components/Tags';
  />
 </div>
 
-Issue Types unlock a whole new way of adding, editing, and moving work forward in Plane. The default issue type called `Issue` is great for starting with Plane, but as you advance in your project management journey, you find the need for names and properties unique to the type of work you are doing.
+Work item Types unlock a whole new way of adding, editing, and moving work forward in Plane. The default work item type called `Issue` is great for starting with Plane, but as you advance in your project management journey, you find the need for names and properties unique to the type of work you are doing.
 
-For example, your Marketing team may need an issue type called `Content` with the properties, `Channel`, `SEO done?`, and `Reviewer` — properties that aren't available on the default Issues. Your Engineering team, on the other hand, may want an issue type called `Bugs` with the properties `Version` and `Environment` to have more upfront info per bug reported.
+For example, your Marketing team may need an work item type called `Content` with the properties, `Channel`, `SEO done?`, and `Reviewer` — properties that aren't available on the default Work items. Your Engineering team, on the other hand, may want an work item type called `Bugs` with the properties `Version` and `Environment` to have more upfront info per bug reported.
 
-Issue Types make these and infinite other use cases possible.
+Work item Types make these and infinite other use cases possible.
 
 <div style={{ position: "relative", paddingBottom: "calc(56.67989417989418% + 41px)", height: "0", width: "100%" }}>
     <iframe src="https://demo.arcade.software/V1jNWxXip4waqo9CgkO3?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light"}} title="Set up your workspace">
     </iframe>
 </div>
 
-## Create issue types
+## Create work item types
 
 :::warning 
-The Issue Types feature cannot be disabled once turned on for a Plane project.
+The Work item Types feature cannot be disabled once turned on for a Plane project.
 :::
 
 > **Role**: Project Admins
 
 1. Click the … icon next to your project name on the sidebar and click **Settings**.
-2. Select **Issue Types** on the right pane.
-3. Click the **Enable** button to start creating issue types for your project.
-![Enable issue type](https://media.docs.plane.so/issues/enable-issue-types.webp#center)
-4. The default type is called `Issue`. Click the **Add Issue Type** button to create a new issue type.
-![Add issue type](https://media.docs.plane.so/issues/add-issue-type.webp#center)
-5. In the **Create issue type** modal, type name, and description, and choose a background color and an icon to represent the issue type. Click the **Create issue type** button.
-![Create issue type](https://media.docs.plane.so/issues/create-issue-type.webp#center)
-6. Switch on the toggle button to allow users to select the issue type when creating issues and sub-issues.
-![Activate issue type](https://media.docs.plane.so/issues/activate-issue-type.webp#center)
+2. Select **Work item Types** on the right pane.
+3. Click the **Enable** button to start creating work item types for your project.
+![Enable work item type](https://media.docs.plane.so/issues/enable-issue-types.webp#center)
+4. The default type is called `Issue`. Click the **Add Work item Type** button to create a new work item type.
+![Add work item type](https://media.docs.plane.so/issues/add-issue-type.webp#center)
+5. In the **Create work item type** modal, type name, and description, and choose a background color and an icon to represent the work item type. Click the **Create work item type** button.
+![Create work item type](https://media.docs.plane.so/issues/create-issue-type.webp#center)
+6. Switch on the toggle button to allow users to select the work item type when creating work items and sub-work items.
+![Activate work item type](https://media.docs.plane.so/issues/activate-issue-type.webp#center)
 
-### Examples of issue types
+### Examples of work item types
 
 - *IT development teams*   
 `Bug` `Improvement` `Epic` `Story`
@@ -68,14 +68,14 @@ The Issue Types feature cannot be disabled once turned on for a Plane project.
 ## Add custom properties
 > **Role**: Project Admins
 
-Adding custom properties to the default issue type Issue and other newly created issue types is possible.
+Adding custom properties to the default work item type Issue and other newly created work item types is possible.
 
-1. Under the issue type, click **Add New Property** to create custom fields.
+1. Under the work item type, click **Add New Property** to create custom fields.
 ![Add new property](https://media.docs.plane.so/issues/add-new-property.webp#center)
 2. Specify values for **Title**, **Description** and **Property type** of the new property. 
   ![Property details](https://media.docs.plane.so/issues/property-details.webp#center)
-3. Select the **Mandatory property** checkbox if it's a required field. Select the **Active** checkbox to make the property visible in issues. 
-4. Click **Create** to add the property to the issue type. 
+3. Select the **Mandatory property** checkbox if it's a required field. Select the **Active** checkbox to make the property visible in work items. 
+4. Click **Create** to add the property to the work item type. 
 
 :::warning
 Before you delete properties, switch off the **Active** toggle button to avoid data loss.
@@ -106,45 +106,45 @@ Here's a list of all the property types and attributes that Plane provides for c
 - *Final design approval*  
 `Final design files` `Approval checklist` `Client approval date` `Responsible person`
 
-## Use issue types
+## Use work item types
 
-Once the project Admin sets up the issue types any project member can use them when creating issues or sub-issues.
+Once the project Admin sets up the work item types any project member can use them when creating work items or sub-work items.
 
-- In the **Create new issue** modal, the user can choose the desired issue type from the list at the top left corner. By default, the issue type `Issue` is selected displaying both system-defined and custom properties.
-- Changing the issue type will update the modal to display the relevant properties for that type.
-- The system ensures that all properties marked as mandatory are filled before creating the issue.
-![Use issue types](https://media.docs.plane.so/issues/use-issue-type.webp#center)
+- In the **Create new work item** modal, the user can choose the desired work item type from the list at the top left corner. By default, the work item type `Issue` is selected displaying both system-defined and custom properties.
+- Changing the work item type will update the modal to display the relevant properties for that type.
+- The system ensures that all properties marked as mandatory are filled before creating the work item.
+![Use work item types](https://media.docs.plane.so/issues/use-issue-type.webp#center)
 
-When viewing issues, the issue type is displayed with an icon near the title for easy identification. Any custom properties added will also appear in the list of properties, and changes to these values are tracked in the issue's activity trail.
+When viewing work items, the work item type is displayed with an icon near the title for easy identification. Any custom properties added will also appear in the list of properties, and changes to these values are tracked in the work item's activity trail.
 
-## Switch issue types
+## Switch work item types
 
-You can easily switch the issue's type at any time. Just follow these steps:
+You can easily switch the work item's type at any time. Just follow these steps:
 
-1. Open the issue you’d like to update.
-2. Hover over to the right of the issue ID and click **Switch issue type**. Alternatively, you can click **Edit** from the issue's ellipsis (•••) menu to open the **Update issue** modal directly.
-  ![Switch issue type](https://media.docs.plane.so/issues/switch-issue-type.webp#center)
-3. Choose the new issue type from the dropdown next to your project name.
-    ![Update issue type](https://media.docs.plane.so/issues/update-issue-type.webp#center)
+1. Open the work item you’d like to update.
+2. Hover over to the right of the work item ID and click **Switch work item type**. Alternatively, you can click **Edit** from the work item's ellipsis (•••) menu to open the **Update work item** modal directly.
+  ![Switch work item type](https://media.docs.plane.so/issues/switch-issue-type.webp#center)
+3. Choose the new work item type from the dropdown next to your project name.
+    ![Update work item type](https://media.docs.plane.so/issues/update-issue-type.webp#center)
 4. Click **Update** to save your changes.
 
-## Bulk update issue types
+## Bulk update work item types
 
-You can change the issue types for several issues at once. Here’s how:
+You can change the work item types for several work items at once. Here’s how:
 
-1. Switch to the **Spreadsheet** layout in the Issues page. 
-2. Select the issues you want to update.
-3. At the bottom of your screen, open the **Issue type** dropdown and pick the new issue type.
-    ![Bulk update issue types](https://media.docs.plane.so/issues/bulk-update-issue-types.webp#center)
+1. Switch to the **Spreadsheet** layout in the Work items page. 
+2. Select the work items you want to update.
+3. At the bottom of your screen, open the **Work item type** dropdown and pick the new work item type.
+    ![Bulk update work item types](https://media.docs.plane.so/issues/bulk-update-issue-types.webp#center)
 4. Click **Update** to apply the changes.
 
-## Disable issue types
+## Disable work item types
 
-You can temporarily pause the creation of new issues for a specific issue type without affecting existing ones. 
+You can temporarily pause the creation of new work items for a specific work item type without affecting existing ones. 
 
-1. Head to the **Issue types** screen in your project's settings.
-2. Toggle off the switch next to the issue type you want to disable.
-    ![Disable issue types](https://media.docs.plane.so/issues/disable-issue-types.webp#center)
+1. Head to the **Work item types** screen in your project's settings.
+2. Toggle off the switch next to the work item type you want to disable.
+    ![Disable work item types](https://media.docs.plane.so/issues/disable-issue-types.webp#center)
 
 
 

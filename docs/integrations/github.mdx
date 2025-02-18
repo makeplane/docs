@@ -100,12 +100,12 @@ With the GitHub integration setup, you can start syncing issues between Plane an
   ![Add Plane label](https://media.docs.plane.so/integrations/github/add-plane-label.webp#center)
 2. Plane posts a link back to the GitHub issue, confirming the connection.
   ![Synced issue from GitHub](https://media.docs.plane.so/integrations/github/synced-issue-from-github.webp#center)
-3. A new issue is created in Plane with a link to the GitHub issue. 
+3. A new work item is created in Plane with a link to the GitHub issue. 
   ![Creates issue in Plane](https://media.docs.plane.so/integrations/github/creates-plane-issue.webp#center)
 
 ### Plane -> GitHub
 
-1. Add the `GitHub` label to an issue in Plane to sync it to GitHub.
+1. Add the `GitHub` label to an work item in Plane to sync it to GitHub.
   ![Add GitHub label](https://media.docs.plane.so/integrations/github/add-github-label.webp#center)
 2. A new issue is created in GitHub.
   ![Creates issue in GitHub](https://media.docs.plane.so/integrations/github/create-github-issue.webp#center)
@@ -130,10 +130,10 @@ Here’s what syncs automatically between Plane and GitHub:
 Pull requests (PRs) are also synchronized with Plane to ensure issue tracking remains accurate throughout the development lifecycle.
 
 #### Closing references and auto-updates
-When a pull request includes closing references to GitHub issues (e.g., `closes #14`), any linked Plane issues will automatically update with the PR link. If the PR is merged or closed, the Plane issue state updates based on the configured workflow in [Repository mappings](/integrations/github#add-repository-mappings).
+When a pull request includes closing references to GitHub issues (e.g., `closes #14`), any linked Plane work items will automatically update with the PR link. If the PR is merged or closed, the Plane work item state updates based on the configured workflow in [Repository mappings](/integrations/github#add-repository-mappings).
 
 #### Magic words for issue references
-You can use specific keywords in GitHub pull requests to manage how Plane issues are updated.
+You can use specific keywords in GitHub pull requests to manage how Plane work items are updated.
 
 - **Closing references**  
 These keywords close linked issues when the PR is merged or closed.
@@ -156,7 +156,7 @@ The lifecycle of a pull request can be [mapped](/integrations/github#add-reposit
 - The PR is closed without merging.
 
 #### Issue backlinks in pull requests
-When a PR references Plane issues (using closing or non-closing reference keywords), Plane will post a confirmation comment on the pull request, ensuring visibility into which issues are linked.
+When a PR references Plane work items (using closing or non-closing reference keywords), Plane will post a confirmation comment on the pull request, ensuring visibility into which issues are linked.
 
 ---
 With GitHub integration, Plane makes managing your issues and pull requests across both platforms easy and efficient. Whether you’re tracking progress, syncing updates, or managing workflows, you’ll always have a clear view of your project’s status.
