@@ -10,7 +10,7 @@ With the Asana importer, you can easily import issues, states, labels, prioritie
 > **Role**: Workspace admins
 
 :::tip
-To import issue types from Asana, make sure the [Issue types](/core-concepts/issues/issue-types) feature is enabled in your Plane workspace.
+To import issue types from Asana, make sure the [Work item types](/core-concepts/issues/issue-types) feature is enabled in your Plane workspace.
 :::
 
 To import Asana issues to a Plane project, follow these steps:
@@ -50,7 +50,7 @@ To import Asana issues to a Plane project, follow these steps:
 13. The data migration begins and takes a few minutes to complete depending on the number of issues in your Asana workspace. 
        ![Migration complete](https://media.docs.plane.so/importers/asana/import-complete.webp#center)   
 
-14. Once it's done, go to **Issues** in your Plane project to confirm that the data import is successful. 
+14. Once it's done, go to **Work items** in your Plane project to confirm that the data import is successful. 
 
 ## Imported entities
 
@@ -62,16 +62,16 @@ Here’s a quick look at what gets imported during the migration from Asana to P
 | Status | States | |
 | Issue priorities | Priorities | |
 | Users | Users | |
-| Issues | Issues | |
+| Issues | Work items | |
 | Relations | Parent | Includes only parent-child relationships |
-| Issue&nbsp;comments | Issue&nbsp;comments |Includes username and timestamp. If you skip user import during migration, comments will show the name of the user who performed the migration.|
-| Issue attachments | Issue attachments | |
+| Issue&nbsp;comments | Work item&nbsp;comments |Includes username and timestamp. If you skip user import during migration, comments will show the name of the user who performed the migration.|
+| Issue attachments | Work item attachments | |
 | Reporter | Created by | |
 | Created | Created at | |
 | Assignee | Assignees | If you skip user import during migration, this will be blank.|
 | Issue types | Labels \| Prefix in Issue title | |
-| Images in the Issue description | Images in the Issue description | |
-| Summary | Issue title | |
+| Images in the Issue description | Images in the Work item description | |
+| Summary | Work item title | |
 | Start date | Start date | |
 | Due date | Due date | |
 | Linked Issues | Links | Includes backlinks to the original Asana issue.|
