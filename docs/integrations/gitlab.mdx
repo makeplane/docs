@@ -14,7 +14,7 @@ import Tags from '@site/src/components/Tags';
  />
 </div>
 
-Integrating GitLab with Plane allows you to sync your development workflow seamlessly by linking GitLab merge requests with Plane issues. This connection enables automated updates and enhances collaboration between developers and project managers. 
+Integrating GitLab with Plane allows you to sync your development workflow seamlessly by linking GitLab merge requests with Plane work items. This connection enables automated updates and enhances collaboration between developers and project managers. 
 
 This guide walks you through the steps to connect your GitLab account, link GitLab projects to Plane, and configure pull request automation.
 
@@ -67,13 +67,13 @@ Once connected, the GitLab project will be listed in the UI, confirming the inte
 
 ### Connect Plane project
 
-After linking a GitLab project, the next step is to associate it with a Plane project. This connection ensures that Plane issues can be updated automatically based on GitLab merge request activities.
+After linking a GitLab project, the next step is to associate it with a Plane project. This connection ensures that Plane work items can be updated automatically based on GitLab merge request activities.
 
 ![Connect Plane project](https://media.docs.plane.so/integrations/gitlab/connect-plane-project.webp#center)
 
 1. Select the **Plane Project** you want to connect.
 
-2. In the **Pull Request Automation** section, set up rules for how Plane should update issue states based on merge request lifecycle events.
+2. In the **Pull Request Automation** section, set up rules for how Plane should update work item states based on merge request lifecycle events.
 
 3. Once configured, you will see the project connection appear in the **Plane Project Connections** section.
 
@@ -81,10 +81,10 @@ After linking a GitLab project, the next step is to associate it with a Plane pr
 Pull requests (PRs) are also synchronized with Plane to ensure issue tracking remains accurate throughout the development lifecycle.
 
 #### Closing references and auto-updates
-When a pull request includes closing references to GitLab issues (e.g., `closes #14`), any linked Plane issues will automatically update with the PR link. If the PR is merged or closed, the Plane issue state updates based on the configured workflow in [Pull Request Automation](/integrations/gitlab#connect-plane-project).
+When a pull request includes closing references to GitLab issues (e.g., `closes #14`), any linked Plane work items will automatically update with the PR link. If the PR is merged or closed, the Plane work item state updates based on the configured workflow in [Pull Request Automation](/integrations/gitlab#connect-plane-project).
 
 #### Magic words for issue references
-You can use specific keywords in GitLab pull requests to manage how Plane issues are updated.
+You can use specific keywords in GitLab pull requests to manage how Plane work items are updated.
 
 - **Closing references**  
 These keywords close linked issues when the PR is merged or closed.
@@ -107,4 +107,4 @@ The lifecycle of a pull request can be [mapped](/integrations/gitlab#connect-pla
 - The PR is closed without merging.
 
 #### Issue backlinks in pull requests
-When a PR references Plane issues (using closing or non-closing reference keywords), Plane will post a confirmation comment on the pull request, ensuring visibility into which issues are linked.
+When a PR references Plane work items (using closing or non-closing reference keywords), Plane will post a confirmation comment on the pull request, ensuring visibility into which issues are linked.

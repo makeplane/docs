@@ -35,8 +35,8 @@ To import Jira issues to a Plane project, follow these steps:
     Choose the workspace and project in Jira from where you want to import data.
        ![Configure Jira](https://media.docs.plane.so/importers/jira/configure-jira.webp#center)  
 
-    :::info[Issue types]
-    If you're on a paid plan (Pro or higher), issue types in Jira will be imported as issue types in Plane. On the free plan, issue types from Jira won't be imported.
+    :::info[Work item types]
+    If you're on a paid plan (Pro or higher), issue types in Jira will be imported as work item types in Plane. On the free plan, issue types from Jira won't be imported.
     :::   
 
 10. **Import users**  
@@ -46,7 +46,7 @@ To import Jira issues to a Plane project, follow these steps:
     - **Skip user import**  
     You can select the **Skip Importing User data** checkbox and manually add users later.
         :::warning
-        If you skip user import, issues and comments will show the name of the person who performed the migration, and the Assignees field will be empty.
+        If you skip user import, work items and comments will show the name of the person who performed the migration, and the Assignees field will be empty.
         :::
        ![Import users](https://media.docs.plane.so/importers/jira/import-users.webp#center)   
 
@@ -66,7 +66,7 @@ To import Jira issues to a Plane project, follow these steps:
 13. The data migration begins and takes a few minutes to complete depending on the number of issues in your Jira workspace. 
        ![Migration complete](https://media.docs.plane.so/importers/jira/jira-import-complete.webp#center)   
 
-14. Once it's done, go to **Issues** in your Plane project to confirm that the data import is successful. 
+14. Once it's done, go to **Work items** in your Plane project to confirm that the data import is successful. 
 
 ## Imported entities
 
@@ -78,21 +78,21 @@ Here’s a quick look at what gets imported during the migration from Jira to Pl
 | Status | States | |
 | Issue priorities | Priorities | |
 | Users | Users | |
-| Issues | Issues | |
+| Issues | Work items | |
 | Relations | Parent | Includes only parent-child relationships |
-| Issue&nbsp;comments | Issue&nbsp;comments |Includes username and timestamp. If you skip user import during migration, comments will show the name of the user who performed the migration.|
-| Issue attachments | Issue attachments | |
+| Issue&nbsp;comments | Work item&nbsp;comments |Includes username and timestamp. If you skip user import during migration, comments will show the name of the user who performed the migration.|
+| Issue attachments | Work item attachments | |
 | Reporter | Created by | |
 | Created | Created at | |
 | Assignee | Assignees | If you skip user import during migration, this will be blank.|
 | Issue types | Labels \| Prefix in Issue title | |
-| Images in the Issue description | Images in the Issue description | |
-| Summary | Issue title | |
+| Images in the Issue description | Images in the Work item description | |
+| Summary | Work item title | |
 | Start date | Start date | |
 | Due date | Due date | |
 | Linked Issues | Links | Includes backlinks to the original Jira issue.|
-| Sprint | Cycles | Includes the issues, start and end date. |
-| Components | Modules | Includes the issues. |
+| Sprint | Cycles | Includes the work items, start and end date. |
+| Components | Modules | Includes the work items. |
 
 ## Sync Jira to Plane
 
