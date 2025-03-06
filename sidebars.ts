@@ -79,6 +79,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/workspaces/teamspaces',
         'core-concepts/projects/project-states',
         'core-concepts/projects/project-overview',
+        'intake/intake-forms',
         'core-concepts/export',
         'core-concepts/stickies',
       ],
