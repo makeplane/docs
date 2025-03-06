@@ -1,0 +1,214 @@
+---
+title: Teamspaces
+hide_title: true
+---
+import Tags from '@site/src/components/Tags';
+
+<div className="tag-wrapper">
+# Track work by teams
+<Tags 
+  tags={[ 
+    { name: "Pro", additionalClass: "pro" }
+  ]} 
+ />
+</div>
+
+With Teamspaces, you can mirror your real-world teams of any kind and track work separately from a project. Link projects, see your team's work automatically filtered across projects, and house your team's knowledge separate from anything else in Plane.
+
+## What is Teamspaces?
+
+Teamspaces brings together people and projects in a neat space tucked away from all else in Plane, offering you an overview of your teams' work. Track work items across projects, manage multiple cycles, share views and pages, and chat with team members—all without jumping around from one screen to another.
+
+## Turn on Teamspaces
+
+:::warning 
+Once on, the feature cannot be turned off in a workspace.
+:::
+
+![Enable Teams](https://media.docs.plane.so/teams/enable-teams.webp#center)
+
+To start using Teams, turn on the feature for your workspace:
+
+1. Navigate to [Workspace Settings](/core-concepts/workspaces/overview#workspace-settings).
+2. Select the **Teams** tab on the right pane.
+3. Toggle on the **Enable Teams** option.
+
+Once turned on, the **Teams** options will appear in the sidebar under **Workspaces**, giving you quick access to create and manage Teams.
+
+## Create Teams
+
+![Create Teams](https://media.docs.plane.so/teams/create-teams.webp#center)
+
+Creating a team is quick and easy. Here's how:
+
+1. Navigate to the **Teams** section from the sidebar.
+2. Click the **New Team** button located at the top-right corner of the screen.
+3. Fill in the required details:
+    - **Team name**: Provide a name that clearly represents the team.
+    - **Team lead**: Assign a team lead.
+    - **Team members**: Add members by selecting from the list of available users.
+    - **Projects**: Link relevant projects to the team for better coordination.
+4. Once all details are filled, click **Create Team**.
+
+After creating a team, you can view and manage all your teams in one place.
+
+![Teams page](https://media.docs.plane.so/teams/teams-page.webp#center)
+
+## Team Overview
+
+When you click on a Team, you'll see a comprehensive dashboard that gives you visibility into all activities across your team's projects. The **Jump in** section serves as your navigation hub, providing quick access to your team's Projects, Work items, Cycles, Views and Pages.  
+
+### Team Projects
+
+The Projects screen displays all projects associated with your team. 
+
+![Team projects](https://media.docs.plane.so/teams/team-projects.webp#center)
+
+Here's what you can do:
+
+- See each project's current state. 
+    :::tip
+    You need to turn on [Project States](/core-concepts/projects/project-states) for the projects to be displayed grouped by their State. Otherwise, the projects will appear as cards in a Gallery view.
+    :::
+- Use **Filters** to narrow down projects based on specific criteria.
+- Customize the display layout to your preference using the **Display** dropdown.
+- Navigate directly to a project's Work items screen by clicking on any project.
+
+### Team Work items
+
+The Work items screen lets you track all work items across your team's projects through two distinct tabs.
+
+![Team work items](https://media.docs.plane.so/teams/team-issues.webp#center)
+
+**Team tab**  
+- Shows work items assigned specifically to your team members.
+- Helps track what your team is working on.
+
+**Project tab**  
+- Displays all work items from projects linked to your team.
+- Provides a complete view of project-wide work items.
+
+Each tab offers a different perspective on your work, helping you manage both team responsibilities and project progress effectively.
+
+### Team Cycles
+
+The Cycles screen gives you a complete overview of all cycles across your team's projects. 
+
+![Team cycles](https://media.docs.plane.so/teams/team-cycles.webp#center)
+
+You can track:
+
+- Active cycles currently in progress
+- Upcoming cycles planned for the future
+- Completed cycles from past work
+
+This consolidated view helps you monitor project timelines and track delivery schedules across all team projects.
+
+### Team Views
+![Team views](https://media.docs.plane.so/teams/team-views.webp#center)
+
+The Views screen offers two ways to organize and access your team's work:
+
+**Team tab**  
+- Create and manage views specifically for your team.
+- Organize work in ways that make sense for team collaboration.
+- Access team-specific views independent of individual projects.
+
+**Project tab**  
+- Access all views from your team's linked projects in one place
+- Navigate through project-level views across multiple projects
+- Get quick insights into how work is organized within each project
+
+### Team Pages  
+
+![Team pages](https://media.docs.plane.so/teams/team-pages.webp#center)
+
+Similar to Views, the Pages screen helps you manage documentation at both team and project levels:
+
+**Team tab**  
+- Create and maintain team-specific documentation
+- Build a knowledge base for team-wide processes
+- Collaborate on team-level documentation
+
+**Project tab**  
+- Access all pages from your team's linked projects
+- Navigate through project documentation across multiple projects
+- Get a comprehensive view of documentation across all team projects
+
+## Team progress
+
+This section provides a visual representation and summary of the team's current workload and performance, helping managers track progress effectively. It highlights overdue work items, incomplete tasks, and pending actions, ensuring teams stay on top of their responsibilities. 
+
+![Team progress](https://media.docs.plane.so/teams/team-progress.webp#center)
+
+Here's a breakdown of its components:
+
+- **Overdue Work items**  
+A red-highlighted banner at the top shows the count of overdue work items, emphasizing the urgency to address them.
+This feature encourages timely action to meet deadlines and reduce project delays.
+
+- **Progress chart**  
+A bar chart displays the progress of work items categorized by selected criteria, such as Priority, Due Date, or Start Date.
+Users can toggle between these views using the dropdown menu to focus on specific aspects of the team's work.
+Each bar is segmented to show the percentage of completed and pending work items, offering a quick comparison.
+
+- **Summary of Team's Work items**  
+A summary panel on the right provides a detailed breakdown of work item states:
+  - Displays counts for Pending and Completed work items.
+  - Includes additional states like Backlog and Cancelled, ensuring all work items are accounted for.
+
+  It also highlights work items without due dates, helping team leads prioritize and assign deadlines.
+
+## Team Relations
+The Relations feature allows team members to track dependencies between work items. It has two main tabs: Blocking and Blocked.
+
+![Team relations](https://media.docs.plane.so/teams/team-relations.webp#center)
+
+**Blocking**  
+This tab displays work items that are currently blocking other tasks, potentially causing delays in your team’s workflow.
+
+**Blocked**  
+This tab would display work items that are blocked by others. It helps in identifying bottlenecks and ensuring timely resolution to keep tasks moving.
+
+## Team stats
+This section provides a high-level view of tasks across multiple projects or teams. It visualizes work items in a treemap format, where each section represents a project, and the size of each block is proportional to the number of work items.
+
+![Team stats](https://media.docs.plane.so/teams/team-stats.webp#center)
+
+You can group the stats based on filters like Projects, Members, State Groups, Dependency, and Due By to focus on specific areas of work.
+
+A legend at the bottom categorizes work items by their state or priority, making it easier to understand their progress. 
+
+This feature helps you quickly assess the distribution of workload, identify where resources are focused, and monitor the health of ongoing efforts.
+
+## Teams info
+
+The Info tab on the right serves as a centralized space to view key details and linked entities.
+
+![Teams info](https://media.docs.plane.so/teams/team-info.webp#center)
+
+- **Properties**  
+Displays primary details about the entity. For example, the lead or owner of the team is listed here.
+
+- **Linked entities**  
+Provides a breakdown of related elements associated with the entity, including number of projects, work items, cycles, views, and pages. 
+
+- **Team's entities** 
+Displays the count of views and pages created at the team level.
+
+## Teams members
+
+The Members tab displays all members currently associated with the team. Clicking the **Add new member** button allows you to onboard teammates. You can remove team members through the menu (represented by the three dots) next to the member name.
+
+![Teams members](https://media.docs.plane.so/teams/team-members.webp#center)
+
+## Teams comments
+Add comments to collaborate with your team and to discuss progress, blockers, or updates.
+![Teams info](https://media.docs.plane.so/teams/team-comments.webp#center)
+
+## Teams activity feed
+Access the activity log for a history of changes made to the team, ensuring transparency and accountability.
+![Teams info](https://media.docs.plane.so/teams/team-activity.webp#center)
+
+---
+Teams is your answer to scattered collaboration. It's where your team members, their projects, and their work come together in perfect harmony. No more switching between multiple views or losing track of who's doing what – everything your team needs is right here in one organized space.

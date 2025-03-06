@@ -1,6 +1,8 @@
 # Dependencies
 /node_modules
 
+.next
+
 # Production
 /build
 

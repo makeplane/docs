@@ -29,111 +29,154 @@ const sidebars: SidebarsConfig = {
           href: 'https://developers.plane.so/self-hosting/overview',
         },  
         'introduction/quickstart',
+        'introduction/core-concepts',
       ],
     },
     {
       type: 'category',
-      collapsed: false,
-      label: 'Project management 101',
+      collapsed: true,
+      label: 'Project + work tracking',
       items: [
+
         {
           type: 'category',
           label: 'Projects',
+          link: { type: 'doc', id: 'core-concepts/projects/overview' },
           items: [            
-          'core-concepts/projects/overview',
-          'core-concepts/projects/run-project',
+          'core-concepts/deploy'
           ],
         },
         {
           type: 'category',
-          label: 'Issues',
+          label: 'Work items',
+          link: { type: 'doc', id: 'core-concepts/issues/overview' },
           items: [            
-          'core-concepts/issues/overview',
           'core-concepts/issues/properties',
-          'core-concepts/issues/visualise_filter',
+          'core-concepts/issues/states',
+          'core-concepts/issues/labels'
           ],
         },
         'core-concepts/cycles',
         'core-concepts/modules',
+        'core-concepts/intake',
+        'core-concepts/issues/estimates',
+        'core-concepts/drafts',
+        'core-concepts/inbox'
+      ],
+    },
+
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'Project + work management',
+      items: [
+        'core-concepts/issues/issue-types',
+        'core-concepts/issues/time-tracking',
+        'core-concepts/issues/bulk-ops',
+        'core-concepts/issues/timeline-dependency',
+        'core-concepts/issues/epics',
+        'core-concepts/projects/initiatives',
+        'core-concepts/workspaces/teamspaces',
+        'core-concepts/projects/project-states',
+        'core-concepts/projects/project-overview',
+        'intake/intake-forms',
+        'core-concepts/export',
+        'core-concepts/stickies',
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'Visualization',
+      items: [
+        'core-concepts/account/overview',
+        'your-work',
+        {
+          type: 'category',
+          label: 'Layouts',
+          link: { type: 'doc', id: 'core-concepts/issues/layouts' },
+          items: [            
+          'core-concepts/issues/visualise_filter',
+          'core-concepts/issues/display-options',
+          ],
+        },
         'core-concepts/views',
+        'core-concepts/analytics',
+        
+      ],
+    },
+
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'Navigation',
+      items: [
+       'core-concepts/power-k'
+      ],
+    },
+
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'Workspace + user management',
+      items: [
+        'core-concepts/workspaces/overview',
+        'core-concepts/workspaces/members',
+        'workspaces-and-users/billing-and-plans',
+        'workspaces-and-users/upgrade-plan',
+        'core-concepts/account/settings',
+      ],
+    },
+
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'Knowledge management',
+      items: [
         {
           type: 'category',
           label: 'Pages',
+          link: { type: 'doc', id: 'core-concepts/pages/overview' },
           items: [            
-          'core-concepts/pages/overview',
           'core-concepts/pages/editor-blocks',
           ],
         },
-        {
-          type: 'category',
-          label: 'Intake',
-          link: { type: 'doc', id: 'intake/README' },
-          items: [            
-          'intake/intake-forms',
-          ],
-        },
-        'core-concepts/drafts',
-        'core-concepts/analytics',
-        'core-concepts/deploy',
-        'core-concepts/power-k'
+        'core-concepts/pages/wiki',
       ],
     },
     {
       type: 'category',
-      collapsed: false,
-      label: 'Advanced project management',
-      items: [
-        'core-concepts/issues/issue-types',
-        'core-concepts/issues/time-tracking'
-      ],
-    },
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Workspaces and users',
-      items: [
-        {
-          type: 'category',
-          label: 'Workspaces',
-          items: [            
-          'core-concepts/workspaces/overview',
-          'core-concepts/workspaces/members',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Account',
-          items: [            
-          'core-concepts/account/overview',
-          'core-concepts/account/settings',
-          ],
-        },
-        'workspaces-and-users/billing-and-plans',
-        'workspaces-and-users/upgrade-plan',
-      ],
-    },
-    {
-      type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Importers',
       items: [
-        'plane-importers/github-imp',
-        'plane-importers/jira-imp',
+        'importers/overview',
+        'importers/jira',
+        'importers/linear',
+        'importers/asana'
       ],
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
       label: 'Integrations',
       items: [
-        'plane-integrations/about',
-        'plane-integrations/github',
-        'plane-integrations/slack',
+        'integrations/about',
+        'integrations/github',
+        'integrations/slack',
+        'integrations/gitlab'
       ],
     },
     {
       type: 'category',
-      collapsed: false,
+      collapsed: true,
+      label: 'Performance',
+      items: [
+        'performance/hyper-mode'  
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: true,
       label: 'Devices',
       items: [
         'devices/mobile',
@@ -149,6 +192,11 @@ const sidebars: SidebarsConfig = {
       label: 'Webhooks',
       href: 'https://developers.plane.so/webhooks/intro-webhooks', 
     },
+    {
+      type: 'link',
+      label: 'Changelog',
+      href: 'https://plane.so/changelog', 
+    }
   ], 
 };
 export default sidebars;
