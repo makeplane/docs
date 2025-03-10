@@ -147,6 +147,14 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: true,
+      label: 'Workflows',
+      items: [
+        'workflows/transition',
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: true,
       label: 'Importers',
       items: [
         'importers/overview',

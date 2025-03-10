@@ -1,0 +1,70 @@
+---
+title: State transitions
+hide_title: true
+---
+
+import Tags from '@site/src/components/Tags';
+
+<div className="tag-wrapper">
+ <h1>Control your Work Item transitions</h1>
+<Tags 
+  tags={[ 
+    { name: "Business", additionalClass: "business" }
+  ]} 
+ />
+</div>
+
+Workflows give you control over how work items move through your process. Think of it as creating guardrails that ensure work follows your team's agreed-upon path, with the right people making decisions at each step.
+
+Transition workflows let you define which states a work item can transition to, and who has permission to make those transitions. 
+
+This means you can:
+- Create clear paths for work items to follow.
+- Ensure important transitions are only made by the right team members.
+- Prevent work items from moving backward in your process unexpectedly.
+- Control which states can receive new work items.
+
+## Set up your Workflow
+Getting started with Workflows takes just a few minutes:
+
+1. Head over to your [Project Settings](https://docs.plane.so/core-concepts/projects/overview#project-settings) and select **Workflows** from the right pane.
+
+2. You'll see all your workflow states listed. Each state represents a stage in your process (like "Backlog," "Todo," "In Progress").
+
+3. For each state, you'll notice a toggle labeled **Allow new work items**. This controls whether team members can create new items directly in this state. Toggle it off for states that should only be reached through progression (like "Ready to Publish").
+    ![Allow new work items](https://media.docs.plane.so/workflows/allow-new-work-items.webp#center)
+
+4. Under the state, click **Add permitted state change** to define possible transitions.
+
+    - When you click this option, a menu appears where you can select which states this work item can move to next. For example, from "Backlog," you might allow transitions to "Todo" or "Sprint Backlog".
+        ![Add permitted state change](https://media.docs.plane.so/workflows/allow-new-work-items.webp#center)
+
+    - For each transition, you can also specify Reviewers who are permitted to make this change. Click the **∨* icon next to the trash icon and click **Add reviewers**. If you don't add any reviewers, any team member can move items to this state.
+        ![Add reviewers](https://media.docs.plane.so/workflows/add-reviewers.webp#center)
+
+5. Add all the state transitions your team needs, building out your complete workflow.
+
+6. When everything looks good, click the **Live** toggle at the top right to activate your workflow.
+
+7. The three-dot menu in the top-right provides additional options:
+    ![Additional options](https://media.docs.plane.so/workflows/additional-options.webp#center)
+
+    - **Reset workflow**  
+    Removes all your custom workflow settings
+    - **View change history**   
+    See a log of modifications made to your workflow
+
+
+## How Workflows work
+Once your workflow is live, you'll notice some changes in how work items behave:
+
+- A special icon appears next to the state column, indicating a workflow is active.
+    ![Transition active icon](https://media.docs.plane.so/workflows/transition-change-icon.webp#center)
+- Members will only be able to move items to the states you've permitted.
+- If someone tries to make a state change they're not authorized for, they'll see a blocker message.
+    ![Transition blocker](https://media.docs.plane.so/workflows/transition-blocker.webp#center)
+- Items can only be created in states where "Allow new work items" is enabled.
+
+:::info[Approval Workflows]
+We're working on the next phase of Workflows that will introduce Approvals. This upcoming feature will let you create approval steps for critical state transitions. Team leads or project owners will be able to approve or reject proposed movements, giving you even more control over your workflow.
+:::
