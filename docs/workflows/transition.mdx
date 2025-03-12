@@ -37,7 +37,7 @@ Getting started with Workflows takes just a few minutes:
 4. Under the state, click **Add permitted state change** to define possible transitions.
 
     - When you click this option, a menu appears where you can select which states this work item can move to next. For example, from "Backlog," you might allow transitions to "Todo" or "Sprint Backlog".
-        ![Add permitted state change](https://media.docs.plane.so/workflows/allow-new-work-items.webp#center)
+        ![Add permitted state change](https://media.docs.plane.so/workflows/add-state-change.webp#center)
 
     - For each transition, you can also specify Reviewers who are permitted to make this change. Click the **∨* icon next to the trash icon and click **Add reviewers**. If you don't add any reviewers, any team member can move items to this state.
         ![Add reviewers](https://media.docs.plane.so/workflows/add-reviewers.webp#center)
@@ -60,10 +60,10 @@ Once your workflow is live, you'll notice some changes in how work items behave:
 
 - A special icon appears next to the state column, indicating a workflow is active.
     ![Transition active icon](https://media.docs.plane.so/workflows/transition-change-icon.webp#center)
+- Items can only be created in states where "Allow new work items" is enabled.
 - Members will only be able to move items to the states you've permitted.
 - If someone tries to make a state change they're not authorized for, they'll see a blocker message.
     ![Transition blocker](https://media.docs.plane.so/workflows/transition-blocker.webp#center)
-- Items can only be created in states where "Allow new work items" is enabled.
 
 :::info[Approval Workflows]
 We're working on the next phase of Workflows that will introduce Approvals. This upcoming feature will let you create approval steps for critical state transitions. Team leads or project owners will be able to approve or reject proposed movements, giving you even more control over your workflow.
