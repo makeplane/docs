@@ -70,6 +70,9 @@ const config: Config = {
   ],
 
   themeConfig: {
+    metadata: [
+      {property: 'og:image', content: 'https://media.docs.plane.so/logo/docs-og.webp'}
+    ],
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
