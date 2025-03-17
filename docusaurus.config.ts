@@ -70,6 +70,9 @@ const config: Config = {
   ],
 
   themeConfig: {
+    metadata: [
+      {property: 'og:image', content: '/logo/docs-og.webp'}
+    ],
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
