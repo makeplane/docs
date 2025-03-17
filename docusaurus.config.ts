@@ -71,7 +71,8 @@ const config: Config = {
 
   themeConfig: {
     metadata: [
-      {property: 'og:image', content: 'https://media.docs.plane.so/logo/docs-og.webp'}
+      {property: 'og:image', content: 'https://media.docs.plane.so/logo/docs-og.webp'},
+      {property: 'twitter:image', content: 'https://media.docs.plane.so/logo/docs-og.webp'}
     ],
     colorMode: {
       defaultMode: 'dark',
