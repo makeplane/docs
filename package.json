@@ -30,6 +30,12 @@
     "@docusaurus/types": "3.5.2",
     "typescript": "~5.5.2"
   },
+  "resolutions": {
+    "path-to-regexp": "3.3.0",
+    "@babel/helpers": "7.26.10",
+    "@babel/runtime": "7.26.10",
+    "@babel/runtime-corejs3": "7.26.10"
+  },
   "browserslist": {
     "production": [
       ">0.5%",

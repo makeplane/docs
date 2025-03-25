@@ -48,7 +48,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Work items',
+          label: 'Work Items',
           link: { type: 'doc', id: 'core-concepts/issues/overview' },
           items: [            
           'core-concepts/issues/properties',
