@@ -79,6 +79,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/workspaces/teamspaces',
         'core-concepts/projects/project-states',
         'core-concepts/projects/project-overview',
+        'workflows-and-approvals/workflows',
         'intake/intake-forms',
         'core-concepts/export',
         'core-concepts/stickies',
@@ -142,14 +143,6 @@ const sidebars: SidebarsConfig = {
           ],
         },
         'core-concepts/pages/wiki',
-      ],
-    },
-    {
-      type: 'category',
-      collapsed: true,
-      label: 'Workflows',
-      items: [
-        'workflows/transition-workflow',
       ],
     },
     {
