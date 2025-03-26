@@ -149,7 +149,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       label: 'Workflows',
       items: [
-        'workflows/transition',
+        'workflows/transition-workflow',
       ],
     },
     {
