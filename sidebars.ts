@@ -153,7 +153,8 @@ const sidebars: SidebarsConfig = {
         'importers/overview',
         'importers/jira',
         'importers/linear',
-        'importers/asana'
+        'importers/asana',
+        'importers/csv'
       ],
     },
     {

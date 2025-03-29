@@ -1,0 +1,70 @@
+---
+title: CSV
+---
+
+# Import your CSV data to Plane
+
+With the CSV importer, you can easily import work items from your CSV file to Plane.
+
+:::caution[Work Item Types]
+To import work item types, make sure the [Work item types](/core-concepts/issues/issue-types) feature is enabled in your Plane project.
+:::
+
+## Import from CSV
+> **Role**: Workspace admins
+
+Here's how to get started:
+
+1. Click your Workspace name at the top left on the sidebar.
+
+2. Select **Settings**.
+
+3. In the right pane, click on **Imports**.
+
+4. You'll see several import options - look for the **CSV Importers** tile and click the **Import** button.
+
+5. Use the dropdown to select the project where you want your CSV data to go. If you haven't created your destination project yet, you'll need to create it first.
+
+6. Click the **Upload CSV** button.
+
+    :::warning[Prepare your CSV]
+    When importing user fields like **Assignee**, make sure to use email addresses rather than usernames. This ensures your team members are correctly linked to their work items.
+    :::
+
+7. You can either drag and drop your file onto the upload area or click **Upload file** to browse your files. Alternatively, you can click **Manually enter data** if you prefer to input information directly.
+
+8. You'll need to match your CSV columns to Plane fields:
+    - You'll see your CSV fields listed under **INCOMING FIELDS** on the left.
+    - On the right, under **DESTINATION FIELDS**, select the corresponding Plane field for each item. Fields will be automatically mapped when names match, but you can adjust as needed.
+    - Required fields are marked with an asterisk (*).
+
+9. Once you've mapped your fields, click **Continue** to proceed.
+
+10. You'll see a preview of your data in a table view:
+    - Review the data to make sure everything looks correct.
+    - If something's not right, you can click Back to adjust your field mapping.
+    - When you're ready, click **Submit** to import your data.
+
+11. That's it! Your CSV data is now imported into your Plane project. For very large datasets, the import might take a few minutes to process.
+
+12. Once it's done, go to **Work Items** in your Plane project to confirm that the data import is successful.
+
+## Imported fields
+
+When bringing your data from CSV into Plane, here's exactly what you can transfer over:
+
+| Field | Notes|
+|--------------|---- |
+| Title | Required for all items |
+| Description | Plain text only - any formatting, images, or tags will be imported as raw text|
+| Work Item Type | Make sure the [Work item types](/core-concepts/issues/issue-types) feature is enabled in your Plane project |
+| State | |
+| Assignee | **Must be email addresses**, not usernames - this is how Plane connects work items to users|
+| Priority | |
+| Created by | **Must be email addresses** - allows Plane to track who originally created the item |
+| Start date | |
+| Due date | |
+| Modules | |
+| Cycle | |
+| Labels | |
+| Created At | |
