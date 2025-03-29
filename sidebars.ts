@@ -48,7 +48,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Work items',
+          label: 'Work Items',
           link: { type: 'doc', id: 'core-concepts/issues/overview' },
           items: [            
           'core-concepts/issues/properties',
@@ -79,6 +79,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/workspaces/teamspaces',
         'core-concepts/projects/project-states',
         'core-concepts/projects/project-overview',
+        'workflows-and-approvals/workflows',
         'intake/intake-forms',
         'core-concepts/export',
         'core-concepts/stickies',
