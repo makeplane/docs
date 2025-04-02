@@ -69,6 +69,17 @@ const config: Config = {
     }
   ],
 
+  plugins: [
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: "phc_HskAKGRy7x0BEoWfyeHzYWWzcMmKG9DCail7ot7WQkA",
+        appUrl: "https://docs.plane.so/",
+        enableInDevelopment: false, // optional
+      },
+    ],
+  ],
+
   themeConfig: {
     metadata: [
       {property: 'og:image', content: 'https://media.docs.plane.so/logo/docs-og.webp'},
