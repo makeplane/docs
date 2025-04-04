@@ -104,6 +104,7 @@ const sidebars: SidebarsConfig = {
         },
         'core-concepts/views',
         'core-concepts/analytics',
+        'dashboards',
         
       ],
     },
