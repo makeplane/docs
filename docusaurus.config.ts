@@ -63,10 +63,15 @@ const config: Config = {
     ],
   ],
 
-  scripts: [
-    {
-      src: 'https://plausible.io/js/script.js', defer: true, 'data-domain': 'docs.plane.so'
-    }
+  plugins: [
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: "phc_HskAKGRy7x0BEoWfyeHzYWWzcMmKG9DCail7ot7WQkA",
+        appUrl: "https://docs.plane.so/",
+        enableInDevelopment: false, // optional
+      },
+    ],
   ],
 
   themeConfig: {

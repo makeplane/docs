@@ -80,6 +80,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/projects/project-states',
         'core-concepts/projects/project-overview',
         'workflows-and-approvals/workflows',
+        'customers',
         'intake/intake-forms',
         'core-concepts/export',
         'core-concepts/stickies',
@@ -154,7 +155,8 @@ const sidebars: SidebarsConfig = {
         'importers/overview',
         'importers/jira',
         'importers/linear',
-        'importers/asana'
+        'importers/asana',
+        'importers/csv'
       ],
     },
     {
