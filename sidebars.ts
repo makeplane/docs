@@ -80,6 +80,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/projects/project-states',
         'core-concepts/projects/project-overview',
         'workflows-and-approvals/workflows',
+        'customers',
         'intake/intake-forms',
         'core-concepts/export',
         'core-concepts/stickies',
@@ -103,6 +104,7 @@ const sidebars: SidebarsConfig = {
         },
         'core-concepts/views',
         'core-concepts/analytics',
+        'dashboards',
         
       ],
     },
