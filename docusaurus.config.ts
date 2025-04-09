@@ -55,7 +55,7 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
-        googleAnalytics: {
+        gtag: {
           trackingID: "G-G578SD4VZD",
           anonymizeIP: true,
         },
@@ -68,7 +68,7 @@ const config: Config = {
       "posthog-docusaurus",
       {
         apiKey: "phc_HskAKGRy7x0BEoWfyeHzYWWzcMmKG9DCail7ot7WQkA",
-        appUrl: "https://docs.plane.so/",
+        appUrl: "https://us.i.posthog.com", // optional
         enableInDevelopment: false, // optional
       },
     ],
