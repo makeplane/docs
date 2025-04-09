@@ -6,7 +6,11 @@ function Tags({ tags }) {
       {tags.map((tag, index) => (
         (tag && tag.name) ? (
           <React.Fragment key={index}>
-            {(
+            {tag.link ? (
+              <a href={tag.link} target="_blank" rel="noopener noreferrer" className={`plantag ${tag.additionalClass}`}>
+                {tag.name}
+              </a>
+            ) : (
               <span className={`plantag ${tag.additionalClass}`}>
                 {tag.name}
               </span>
