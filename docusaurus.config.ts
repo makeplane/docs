@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "Plane",
   tagline: "An easy, flexible project management software",
-  favicon: "https://media.docs.plane.so/logo.svg",
+  favicon: "https://media.docs.plane.so/favicon-32x32.png",
   trailingSlash: false,
   // Set the production url of your site here
   url: "https://docs.plane.so",
