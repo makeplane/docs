@@ -82,6 +82,7 @@ const sidebars: SidebarsConfig = {
         'workflows-and-approvals/workflows',
         'customers',
         'intake/intake-forms',
+        'intake/intake-email',
         'core-concepts/export',
         'core-concepts/stickies',
       ],
