@@ -34,7 +34,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Project + work tracking',
       items: [
 
@@ -67,7 +67,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Project + work management',
       items: [
         'core-concepts/issues/issue-types',
@@ -88,7 +88,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Visualization',
       items: [
         'core-concepts/account/overview',
@@ -111,7 +111,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Navigation',
       items: [
        'core-concepts/power-k'
@@ -120,7 +120,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Workspace + user management',
       items: [
         'core-concepts/workspaces/overview',
@@ -133,7 +133,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Knowledge management',
       items: [
         {
@@ -149,7 +149,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Importers',
       items: [
         'importers/overview',
@@ -161,7 +161,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Integrations',
       items: [
         'integrations/about',
@@ -172,7 +172,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Performance',
       items: [
         'performance/hyper-mode'  
@@ -180,7 +180,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Devices',
       items: [
         'devices/mobile',
