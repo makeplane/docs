@@ -511,7 +511,6 @@ table {
   display: table;
   width: 100%;
   margin-bottom: 1rem;
-  table-layout: fixed;
 }
 
 .table-wrapper {
