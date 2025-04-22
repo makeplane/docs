@@ -42,6 +42,13 @@
   }
 }
 
+body, .navbar {
+  width: 100%;
+  min-width: 87.6vw;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 [data-theme='light'] body,
 [data-theme='light'] .navbar {
   background-color: rgb(250 250 250);
@@ -498,6 +505,23 @@ html[data-theme='dark'] {
   --tw-numeric-spacing: tabular-nums;
   width: 100%;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+
+table {
+  display: table;
+  width: 100%;
+  margin-bottom: 1rem;
+  table-layout: fixed;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.markdown table {
+  width: 100%;
+  display: table;
 }
 
 [data-theme='dark'] table tr:nth-child(2n) {
