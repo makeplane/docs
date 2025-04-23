@@ -448,6 +448,7 @@ html[data-theme='dark'] .one {
 
 html{
   color: #213547;
+  font-family: 'Instrument Sans', sans-serif;
 }
   
 code{
@@ -459,12 +460,12 @@ strong{
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   color: rgb(18 27 46);
 }
 
 [data-theme='dark'] h1, [data-theme='dark'] h2, [data-theme='dark'] h3, [data-theme='dark'] h4,[data-theme='dark'] h5, [data-theme='dark'] h6 {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: rgb(224 228 236);
 }
 
@@ -546,8 +547,6 @@ color: rgba(60, 60, 60, .7);
   border-bottom: 1px solid rgb(206 206 206 / 6% );
   box-shadow: none;
 }
-
-
 
 
 .lightToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module{
@@ -667,8 +666,8 @@ html[data-theme='dark'] .business {
   width:100px !important;
 }
 
-p, table{
-  font-family: sans-serif;
+p, table, .menu__link{
+  font-family: 'Instrument Sans', sans-serif;
 }
 
 .menu__caret:hover {
