@@ -677,3 +677,12 @@ p, table, .menu__link{
 [data-theme=dark] .clean-btn {
   color: rgb(159 160 160);
 }
+
+@media (min-width: 1455px) {
+  body, .navbar {
+    width: 100%;
+    min-width: 87.8vw;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
