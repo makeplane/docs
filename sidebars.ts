@@ -80,6 +80,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/projects/project-states',
         'core-concepts/projects/project-overview',
         'workflows-and-approvals/workflows',
+        'templates/project-templates',
         'templates/work-item-templates',
         'customers',
         'intake/intake-forms',
