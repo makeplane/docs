@@ -9,7 +9,7 @@ import Tags from '@site/src/components/Tags';
 # Organize and track your work items with Epics
 <Tags 
   tags={[ 
-    { name: "Pro", additionalClass: "pro" }
+    { name: "Pro", link:"https://plane.so/pricing", additionalClass: "pro" }
   ]} 
  />
 </div>
@@ -83,7 +83,7 @@ To help you manage Epics effectively, Plane offers flexible sorting and filterin
 
 Clicking on an Epic opens a detailed view where you can quickly view and manage an Epic without leaving your current context.
 
-### Add work items to Epic
+## Add work items to Epic
 
 ![Add work items to Epic](https://media.docs.plane.so/epics/add-issues.webp#center)
 
@@ -93,21 +93,41 @@ You can add existing work items to the Epic or create new ones directly from the
 An work item can belong to only one Epic. This ensures clarity in organization and avoids overlapping tasks across multiple Epics.
 :::
 
-### Work items list and relations
+## Work items list and relations
 ![Work items and Relations](https://media.docs.plane.so/epics/issues-and-relations.webp#center)
 
 - See the full list of work items grouped under the Epic.
 - Add or remove work items from the Epic.
 - Manage work items directly by updating their status, assignee, or priority.
 
-### Epic progress
+## Epic progress
 ![Epic progress](https://media.docs.plane.so/epics/epic-progress.webp#center)
 
 You can track Epic progress visually with a color-coded progress bar that shows:
 - Task completion status (e.g., Backlog, Started, Completed).
 - Work item counts and completion percentage for each status category.
 
-### Properties, comments, and activity
+## Epic updates
+
+Share epic status using updates. This helps keep your team informed and create a timeline of epic progress.  
+
+1. Select the tab with rocket icon in the side panel.
+2. Click the **Add Update** button.
+2. Select the status. Each update can be marked as:
+    - 🚀 **On Track** - Epic is progressing as planned
+    - ⚠️ **At Risk** - There are potential work items that need attention
+    - ❗ **Off Track** - Epic has significant blockers or delays
+3. Add your update message.
+4. Click **Add update**.
+
+![Add epic updates](https://media.docs.plane.so/epics/add-epic-updates.webp#center)
+
+### Collaborate on updates
+
+- Start threaded discussions around specific updates or tasks.
+- Use emoji reactions for quick feedback.
+
+## Properties, comments, and activity
 
 - View and update the Epic’s key properties like assignee, priority, timelines, and other custom properties.
   ![Epic properties](https://media.docs.plane.so/epics/epic-properties.webp#center)

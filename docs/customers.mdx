@@ -1,0 +1,115 @@
+---
+title: Customers
+hide_title: true
+description: Manage your work based on what matters to your customers.
+---
+
+import Tags from '@site/src/components/Tags';
+
+<div className="tag-wrapper">
+ <h1>Manage your work by customer priorities</h1>
+<Tags 
+  tags={[ 
+    { name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }
+  ]} 
+ />
+</div>
+
+The Customers feature transforms how you organize and prioritize work by placing your clients at the center of your process. Instead of managing tasks in isolation, Customers creates direct connections between your work items and the people they serve, helping teams make better decisions about what to prioritize and ensuring customer requests receive proper attention.
+
+With Customers, you can create comprehensive client profiles, track specific requests, link those requests to your work items, and maintain important context about why certain work matters throughout your organization.
+
+## Enable Customers
+![Enable Customers](https://media.docs.plane.so/customers/enable-customers.webp#center)
+
+1. Go to [Workspace Settings](https://docs.plane.so/core-concepts/workspaces/overview#workspace-settings). 
+2. Select the **Customers** tab on the right pane.
+3. Toggle the feature on at the top right. Alternatively, you can click the **Enable Customers** button.
+
+## Configure custom properties
+![Custom properties](https://media.docs.plane.so/customers/custom-properties.webp#center)
+
+### Default properties
+Plane comes with essential customer fields pre-configured. These properties appear on every customer record and help organize your customer data consistently.
+
+- **Customer name**  
+- **Description**  
+- **Email**   
+- **Website**  
+- **Employees**   
+- **Industry**  
+- **Stage**  
+- **Contract status**  
+- **Revenue**  
+
+### Custom properties
+You can extend customer records with properties specific to your business. Custom properties appear in customer records alongside default properties. 
+
+1. Navigate to **Workspace Settings → Customers**. 
+2. Find the **Custom properties** section. 
+3. Click **Add new property**.
+
+## Create customer records
+![Create Customers](https://media.docs.plane.so/customers/create-customer-record.webp#center)
+
+1. Navigate to **Customers** in the sidebar.
+2. Click **Create customer record** in the top-right corner. 
+3. Enter the required information. Here you will see the default and custom properties (if any).
+4. Click **Create customer record**.
+
+## View and manage your customers
+
+![Customer records](https://media.docs.plane.so/customers/customers-list.webp#center)
+
+The Customers page displays all your customer records. Each customer appears with their logo and website for easy identification.
+
+1. Click on a customer record to view all details.
+2. Use the options menu (three dots) for actions:
+    - **Edit** - Update customer information.
+    - **Copy link to customer** - Share the customer record.
+    - **Delete** - Remove the customer record.
+3. To update customer information: 
+    - Click the options menu (three dots) and select **Edit**.
+    - Update any fields as needed.
+    - Click **Update customer** to save your changes.
+
+The customer detail view shows all properties on the right side and requests on the left, making it easy to see all customer information at a glance.
+
+![Customer details](https://media.docs.plane.so/customers/view-customer-details.webp#center)
+
+
+## Create and manage customer requests
+Customer requests serve as the bridge between what your clients need and the actual work your team performs. Each request captures a specific client requirement or feedback that can then be translated into actionable work items in your projects.
+
+### Add a request
+![Add request](https://media.docs.plane.so/customers/add-request.webp#center)
+
+1. Open a customer record.
+2. Go to the **Requests** tab.
+3. Click **Add request**.
+4. Name your request and add a description.
+5. Add source links to document where the request originated and connect it directly to work items in your project that will fulfill this request.
+6. Click **Create request**.
+
+### Link work to requests
+- Add source information
+    ![Add source](https://media.docs.plane.so/customers/add-source.webp#center)
+
+    1. From a request, click **Add source**.
+    2. Enter the URL for the source.
+    3. Click **Submit**.
+
+- Connect existing work items
+    ![Link work items](https://media.docs.plane.so/customers/link-work-items.webp#center)
+
+    1. From a request, click **Link work items**.
+    2. Search and select relevant Work Items or Epics.
+    3. Click **Add selected work items** to confirm.
+    4. In the Work item and Epic properties panel, a new **Customers** field displays all associated customers. This connection helps your teams instantly see which customers are impacted by or have requested specific work items, maintaining customer context throughout your workflow. 
+    5. Admins can hover over the **Customer** name to view details. 
+
+    ![Customer property](https://media.docs.plane.so/customers/customer-property.webp#center)
+
+:::info[What's next]
+Soon, you'll be able to bulk upload customer records via CSV files.
+:::

@@ -9,7 +9,7 @@ import Tags from '@site/src/components/Tags';
 # Group multiple projects using Initiatives
 <Tags 
   tags={[ 
-    { name: "Pro", additionalClass: "pro" }
+    { name: "Pro", link:"https://plane.so/pricing", additionalClass: "pro" }
   ]} 
  />
 </div>
@@ -58,7 +58,7 @@ Once created, you can view all Initiatives in the **Initiatives** section on the
 
 Selecting an Initiative opens its detailed view, which includes:
 
-### Progress overview
+## Progress overview
 
     ![Progress overview](https://media.docs.plane.so/initiatives/progress-overview.webp#center)
 
@@ -75,7 +75,7 @@ Selecting an Initiative opens its detailed view, which includes:
     Use Initiatives for a top-down view of progress. For detailed updates, navigate to individual projects.
     :::
 
-### Projects list
+## Projects list
 
     ![Projects list](https://media.docs.plane.so/initiatives/projects-list.webp#center)
 
@@ -89,7 +89,7 @@ Selecting an Initiative opens its detailed view, which includes:
     You cannot add or edit project updates directly from the Initiative view.
     :::
 
-### Track Epics across projects
+## Track Epics across projects
 
     ![Add Epics](https://media.docs.plane.so/initiatives/add-epics.webp#center)
 
@@ -105,7 +105,20 @@ After you create an Initiative and add Epics from any project. From there, you c
 
 This is perfect for cross-functional teams working on company-wide objectives, product launches, or any effort that spans multiple projects.
 
-### Properties, comments, and activity
+## Initiative updates
+
+    ![Initiative updates](https://media.docs.plane.so/initiatives/initiative-updates.webp#center)
+
+The Initiative updates stream displays all project and epic updates in a chronological feed at the top of the Initiative view. Each update card shows:
+
+- Status indicators (On Track, At Risk, Off Track)
+- Source project or epic name
+- Post date and author
+- Complete update content
+
+This consolidated view enables Initiative owners to monitor progress across all connected work without navigating to individual items. The stream combines qualitative context with the initiative's quantitative metrics, providing real-time visibility into progress and potential risks across all contributing workstreams.
+
+## Properties, comments, and activity
 
 - The Info tab on the side panel of an Initiative provides a quick snapshot of key properties and metadata associated with the Initiative. 
     ![Initiative properties](https://media.docs.plane.so/initiatives/properties.webp#center)
