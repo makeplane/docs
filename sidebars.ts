@@ -84,6 +84,7 @@ const sidebars: SidebarsConfig = {
         'templates/work-item-templates',
         'customers',
         'intake/intake-forms',
+        'intake/intake-email',
         'core-concepts/export',
         'core-concepts/stickies',
       ],
