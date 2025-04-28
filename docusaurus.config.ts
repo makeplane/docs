@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "Plane",
   tagline: "An easy, flexible project management software",
-  favicon: "https://media.docs.plane.so/logo.svg",
+  favicon: "https://media.docs.plane.so/favicon-32x32.png",
   trailingSlash: false,
   // Set the production url of your site here
   url: "https://docs.plane.so",
@@ -55,7 +55,7 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
-        googleAnalytics: {
+        gtag: {
           trackingID: "G-G578SD4VZD",
           anonymizeIP: true,
         },
@@ -63,10 +63,22 @@ const config: Config = {
     ],
   ],
 
-  scripts: [
+  stylesheets: [
     {
-      src: 'https://plausible.io/js/script.js', defer: true, 'data-domain': 'docs.plane.so'
-    }
+      href: 'https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=National+Park:wght@200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap',
+      type: 'text/css',
+    },
+  ],
+
+  plugins: [
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: "phc_HskAKGRy7x0BEoWfyeHzYWWzcMmKG9DCail7ot7WQkA",
+        appUrl: "https://us.i.posthog.com", // optional
+        enableInDevelopment: false, // optional
+      },
+    ],
   ],
 
   themeConfig: {

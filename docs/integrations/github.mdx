@@ -9,16 +9,21 @@ import Tags from '@site/src/components/Tags';
  <h1>Integrate with GitHub</h1>
 <Tags 
   tags={[ 
-    { name: "Pro", additionalClass: "pro" }
+    { name: "Pro", link:"https://plane.so/pricing", additionalClass: "pro" }
   ]} 
  />
 </div>
+
+:::note[Self-hosted GitHub instance]
+At the moment, we only support GitHub Cloud for integrations. Support for self-hosted GitHub instances (GitHub Enterprise Server) isn’t available just yet—but we’re actively working on it.
+:::
+
 
 GitHub integration with Plane allows seamless synchronization between your GitHub repositories and Plane projects. By linking the two, your issues and pull requests stay updated across both platforms, enhancing collaboration and streamlining your workflow. Whether you're managing code, tasks, or both, this integration ensures your team stays in sync without the hassle of switching between platforms.
 
 ## Set up GitHub integration
 
-:::danger[Self-hosted instances]
+:::danger[Self-hosted Plane instance]
 If you're running a self-hosted instance of Plane, you'll need to set up a few extra configurations to get GitHub integration working. Check out the [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github) first before diving into the steps on this page.
 :::
 

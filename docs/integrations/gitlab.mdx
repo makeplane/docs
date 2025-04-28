@@ -9,10 +9,15 @@ import Tags from '@site/src/components/Tags';
  <h1>Integrate with GitLab</h1>
 <Tags 
   tags={[ 
-    { name: "Pro", additionalClass: "pro" }
+    { name: "Pro",link:"https://plane.so/pricing", additionalClass: "pro" }
   ]} 
  />
 </div>
+
+:::note[Self-hosted GitLab instance]
+Currently, Plane integrates only with GitLab Cloud. Support for self-managed GitLab instances is not available yet, but we’re working on adding it soon.
+:::
+
 
 Integrating GitLab with Plane allows you to sync your development workflow seamlessly by linking GitLab merge requests with Plane work items. This connection enables automated updates and enhances collaboration between developers and project managers. 
 
@@ -20,7 +25,7 @@ This guide walks you through the steps to connect your GitLab account, link GitL
 
 ## Set up GitLab integration
 
-:::danger[Self-hosted instances]
+:::danger[Self-hosted Plane instance]
 If you're running a self-hosted instance of Plane, you'll need to set up a few extra configurations to get GitLab integration working. Check out the [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab) first before diving into the steps on this page.
 :::
 

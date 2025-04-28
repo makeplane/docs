@@ -34,7 +34,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Project + work tracking',
       items: [
 
@@ -67,7 +67,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Project + work management',
       items: [
         'core-concepts/issues/issue-types',
@@ -81,6 +81,7 @@ const sidebars: SidebarsConfig = {
         'core-concepts/projects/project-overview',
         'workflows-and-approvals/workflows',
         'templates/work-item-templates',
+        'customers',
         'intake/intake-forms',
         'core-concepts/export',
         'core-concepts/stickies',
@@ -88,7 +89,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Visualization',
       items: [
         'core-concepts/account/overview',
@@ -104,13 +105,14 @@ const sidebars: SidebarsConfig = {
         },
         'core-concepts/views',
         'core-concepts/analytics',
+        'dashboards',
         
       ],
     },
 
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Navigation',
       items: [
        'core-concepts/power-k'
@@ -119,7 +121,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Workspace + user management',
       items: [
         'core-concepts/workspaces/overview',
@@ -132,7 +134,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Knowledge management',
       items: [
         {
@@ -148,18 +150,19 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Importers',
       items: [
         'importers/overview',
         'importers/jira',
         'importers/linear',
-        'importers/asana'
+        'importers/asana',
+        'importers/csv'
       ],
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Integrations',
       items: [
         'integrations/about',
@@ -170,7 +173,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Performance',
       items: [
         'performance/hyper-mode'  
@@ -178,7 +181,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: true,
+      collapsed: false,
       label: 'Devices',
       items: [
         'devices/mobile',

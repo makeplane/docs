@@ -1,0 +1,112 @@
+---
+title: Dashboards
+hide_title: true
+---
+
+import Tags from '@site/src/components/Tags';
+
+<div className="tag-wrapper">
+ <h1>Visualize your projects using custom dashboards</h1>
+ <Tags 
+  tags={[ 
+    { name: "Pro", link:"https://plane.so/pricing", additionalClass: "pro" }
+  ]} 
+ />
+</div>
+
+Dashboards in Plane give you a bird's-eye view of your projects through customizable visualizations. They help you monitor progress, identify bottlenecks, and make data-driven decisions without diving into individual projects.
+
+<div style={{ position: "relative", paddingBottom: "calc(56.67989417989418% + 41px)", height: "0", width: "100%" }}>
+    <iframe src="https://demo.arcade.software/nWdHtHinGVMWjMmaTMGj?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light"}} title="Set up your workspace">
+    </iframe>
+</div>
+
+## Create Dashboard
+
+![Create Dashboard](https://media.docs.plane.so/dashboards/create-new-dashboard.webp#center)
+
+To create a new dashboard:
+
+1. Navigate to the **Dashboards** section in the left sidebar.
+2. Click the **Add dashboard** button in the top-right corner.
+3. Give your dashboard a descriptive name (e.g., `Project Analytics Dashboard` or `Workload by Team`)
+4. Choose which projects to include in your dashboard.
+5. Click **Create dashboard** to finish.
+
+## Add Widgets
+Once you've created a dashboard, it's time to add widgets. Widgets are visualization components that display your project data in different formats.
+
+![Add Widget](https://media.docs.plane.so/dashboards/add-widget.webp#center)
+
+To add a widget:
+
+1. Click the **+ Add widget** button.
+2. Choose a [widget type](/dashboards#widget-types).
+3. Configure your widget with the specific data you want to display.
+4. Name your widget to reflect what it shows.
+5. Position it on your dashboard by dragging it
+
+### Widget types
+
+![Dashboards](https://media.docs.plane.so/dashboards/dashboards.webp#center)
+
+#### Bar chart
+Perfect for comparing quantities across categories, like work items by priority or state. The bars make it easy to spot patterns and imbalances.
+
+#### Line chart
+Ideal for tracking trends over time, such as completed work items per week. Use these to identify patterns and forecast future performance.
+
+#### Area chart
+Similar to line charts but with the area below the line filled in, making it easier to visualize volume changes over time.
+
+#### Donut chart
+Great for showing proportions and percentages of a whole, like work item types or assignee workload distribution.
+
+#### Pie chart
+Another option for displaying proportional data when you need to see how different segments relate to the whole.
+
+#### Number
+Simple counters that show important metrics like total work items, overdue tasks, or completed items. Use these for at-a-glance KPIs.
+
+
+### Customize Widgets
+![Customize Widget](https://media.docs.plane.so/dashboards/customize-widget.webp#center)
+
+Each widget type comes with specific configuration options:
+
+#### Data selection
+
+- **Property**  
+Choose what data to group by (e.g., Work item Types, Priority, Assignee)
+- **Metric**  
+Select what to measure (e.g., Work item count, Estimate points)
+
+#### Appearance
+
+- **Color scheme**  
+Choose from preset palettes like `Modern`, `Horizon`, or `Earthen`.
+
+- **Center value**  
+Toggle whether to show the total count in the middle of donut/pie charts.
+
+- **Legends and Tooltips**  
+Enable or disable these to control how much detail appears
+
+#### Style options
+
+- **Fill color and Opacity**  
+Customize the look of area charts
+
+- **Borders and Smoothing**   
+Refine the appearance of your charts
+
+- **Markers**  
+Add data point indicators on line charts
+
+## Interact with your dashboard
+![Hover over widget](https://media.docs.plane.so/dashboards/hover-on-widget.webp#center)
+
+After setting up your widgets, use your dashboard for insights:
+- Hover over chart elements to see detailed tooltips.
+- Use the legends to identify specific categories.
+- Click the **View** or **Edit** button at the top right corner to switch from edit to view mode.
