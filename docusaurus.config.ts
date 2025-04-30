@@ -90,7 +90,8 @@ const config: Config = {
   themeConfig: {
     metadata: [
       {property: 'og:image', content: 'https://media.docs.plane.so/logo/docs-og.webp'},
-      {name: 'twitter:image', content: 'https://media.docs.plane.so/logo/docs-og.webp'}
+      {name: 'twitter:image', content: 'https://media.docs.plane.so/logo/docs-og.webp'},
+      {name: 'keywords', content: 'project management, issue tracking, sprint management, agile, scrum, create projects, track sprints'},
     ],
     colorMode: {
       defaultMode: 'dark',
