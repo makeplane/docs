@@ -191,6 +191,32 @@ This error occurs when attempting to log in to the mobile app with a self-hosted
 
 - Retry logging in and ensure the self-hosted URL is entered correctly in the app.
 
+### Sign-in issues on Android
+If you're having trouble signing into the Plane app on your Android device, here are a few steps you can follow to get things working:
+
+**Sign-in button doesn’t open the app?**  
+Make sure you have a browser (like Chrome, Firefox, or Edge) installed on your phone.
+
+**App still not opening, even with a browser installed?**  
+1. Check which profile the Plane app is installed under — Personal or Work.
+2. Make sure the browser is also installed in the same profile.
+
+**Browser opens, but sign-in keeps looping?**  
+This might be due to default browser settings. Try the following:
+
+    1. Open your device’s **Settings**.
+    2. Go to **Apps** or **Default Apps**.
+    3. Find and tap on the browser you're using.
+    4. Look for an option like **Clear defaults** or **Reset default app**
+    5. Clear the defaults, then try signing in again. 
+    
+    You’ll be prompted to choose a browser. Choose one that's in the same profile as the Plane app.
+
+**Still stuck?**  
+Try clearing site data:
+    1. When the web sign-in page opens, tap the three-dot menu (usually in the top-right corner of the browser).
+    2. Go to **Settings → Site settings → Clear data** (wording may vary slightly by browser).
+    3. Try the sign-in process again.
 
 ### Unable to log in using SSO
 
@@ -205,3 +231,5 @@ Ensure the correct Redirect URI is configured in your OAuth service:
     https://<plane.example.com>/auth/mobile/github/callback/
     ```
 Verify that the `<plane.example.com>` part of the URL matches your self-hosted instance's domain.
+
+

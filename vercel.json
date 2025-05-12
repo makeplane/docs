@@ -228,7 +228,7 @@
     },
     {
       "source": "/plane-importers/jira-imp",
-      "destination": "/importers/overview"
+      "destination": "/importers/jira"
     }
   ]
 }
