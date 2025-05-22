@@ -148,6 +148,7 @@ const sidebars: SidebarsConfig = {
           ],
         },
         'core-concepts/pages/wiki',
+        'core-concepts/pages/nested-pages'
       ],
     },
     {
