@@ -82,6 +82,7 @@ const sidebars: SidebarsConfig = {
         'workflows-and-approvals/workflows',
         'templates/project-templates',
         'templates/work-item-templates',
+        'templates/page-templates',
         'customers',
         'intake/intake-forms',
         'intake/intake-email',
