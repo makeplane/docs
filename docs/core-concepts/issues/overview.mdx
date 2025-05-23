@@ -2,6 +2,7 @@
 title: Work Items
 description: Create, manage and organize work items in Plane with sub-tasks, relations, file attachments, automations, and activity tracking for efficient project management
 ---
+import Tags from '@site/src/components/Tags';
 
 # Create, organize, and track project tasks
 
@@ -107,6 +108,24 @@ TrueType, OpenType, WOFF, WOFF2
 
 - **Other**  
 CSS, JavaScript, JSON, XML, CSV, SQL
+
+
+<div className="tag-wrapper">
+## Convert Work Items to Epics
+<Tags 
+  tags={[ 
+    { name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }
+  ]} 
+ />
+</div>
+
+Sometimes a work item grows in scope and complexity, and you realize it's actually big enough to be its own epic with multiple sub-tasks. This feature promotes a regular work item into an epic, giving you the structure and flexibility to break it down into smaller, manageable pieces.
+
+![convert work item to epic](https://media.docs.plane.so/issues/convert-work-item-to-epic.webp#center)
+
+From any work item, find the **Convert to Epic** option. The system will ask you to confirm since this action detaches any associated cycles, modules, and parent items. Once converted, you'll have a new epic that you can start breaking down into sub-work items and organizing however makes sense for your project.
+
+You can also [convert Epics to Work Items](/core-concepts/issues/epics#convert-epics-to-work-items). 
 
 ## View work item activity
 
