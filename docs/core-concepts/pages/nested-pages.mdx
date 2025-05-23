@@ -1,0 +1,69 @@
+---
+title: Nested Pages
+hide_title: true
+description: Create structured documentation with Nested Pages. Build parent-child hierarchies, organize content logically, and improve navigation for your team's knowledge base.
+---
+
+import Tags from '@site/src/components/Tags';
+
+<div className="tag-wrapper">
+# Structure content with Nested Pages
+<Tags 
+  tags={[ 
+    { name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }
+  ]} 
+ />
+</div>
+
+Nested Pages allows you to create a hierarchical structure for your workspace content, helping you organize documentation logically and improve navigation for your team. This feature enables you to build robust knowledge architecture with parent and child pages, similar to folders and files but with more flexibility.
+
+## Create nested pages
+There are multiple ways to create a nested page:
+
+### Using the `/page` command
+
+While editing any page, type `/page` to insert a new page reference. Name your new page and it will automatically be created as a child of the current page.
+![Page command](https://media.docs.plane.so/pages/page-command.webp#center)
+
+### On the Wiki sidebar
+
+Click the **+** icon that appears next to any page name. This creates a new page nested under the selected parent.
+![Nested page on the wiki sidebar](https://media.docs.plane.so/pages/create-nested-page-sidebar.webp#center)
+
+## Move existing pages
+To nest an existing page under another page, drag and drop the page in the sidebar to position it under the desired parent.
+![Move nested pages](https://media.docs.plane.so/pages/move-nested-pages.webp#center)
+
+## Navigate nested pages
+
+- The sidebar displays your page hierarchy with visual indentation showing the nesting structure.
+- Expand or collapse parent pages using the ▶ arrow to show or hide nested pages.
+- Breadcrumbs appear at the top of each page showing the full path.
+- Click any page in the breadcrumb trail to navigate to that level. This provides context about where you are in the documentation hierarchy.
+
+## Move pages between levels
+
+To promote a nested page to a higher level, drag it to the desired position in the hierarchy. To demote a page to become nested under another, drag it under the new parent.
+
+## Visibility and access control
+
+#### Public vs. Private Pages
+
+- Public pages are visible to anyone with access to your workspace.
+- Private pages are only visible to only you and the Workspace Admins.
+- You can nest private pages under public pages for controlled access to sensitive information.
+- A private nested page is not visible to users who only have access to the public parent.
+
+#### Visibility Inheritance
+
+- Nested pages do not automatically inherit the visibility settings of their parent.
+- Each page can have its own visibility settings, allowing for flexible access control.
+- Users without access to a parent page will not see any nested pages, regardless of the nested pages' individual visibility settings.
+
+## Archiving and Deletion
+
+- When you archive a parent page, all nested pages under it will also be archived. This helps maintain the integrity of related content.
+- Archived pages can be restored from the **Archived** section in the sidebar.
+- Deleting a parent page prompts a warning about nested content. You can choose to:
+  - Delete only the parent page and move nested pages up one level
+  - Delete the parent and all nested content permanently
