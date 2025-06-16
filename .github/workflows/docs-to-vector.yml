@@ -21,13 +21,14 @@ jobs:
               current_commit_id: $current_commit_id,
               repo_name: $repo_name,
             }')
-          echo "PAYLOAD=$payload" >> $GITHUB_OUTPUT
+
+          echo "$payload" > /tmp/payload.json
           
           
       - name: Call Webhook (Master)
         if: ${{ github.ref_name == 'master' }}
         run: |
-          payload=${{ steps.payload.outputs.PAYLOAD }}
+          payload=$(cat /tmp/payload.json)
           sig=$(printf '%s' "$payload" | \
               openssl dgst -sha256 -hmac "${{ secrets.VECTOR_WEBHOOK_SECRET }}" -binary | xxd -p -c 256)
           
@@ -48,7 +49,7 @@ jobs:
       - name: Call Webhook (Preview)
         if: ${{ github.ref_name != 'master' }}
         run: |
-          payload=${{ steps.payload.outputs.PAYLOAD }}
+          payload=$(cat /tmp/payload.json)
           sig=$(printf '%s' "$payload" | \
               openssl dgst -sha256 -hmac "${{ secrets.VECTOR_WEBHOOK_SECRET_PREVIEW }}" -binary | xxd -p -c 256)
           
