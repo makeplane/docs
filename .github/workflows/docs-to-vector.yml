@@ -5,17 +5,30 @@ on:
   push:
     branches:
       - master
+      - docs-to-vector
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Prepare Payload
+        id: payload
+        run: |
+          payload='{"current_commit_id": "${{ github.sha }}", "branch": "${{ github.ref_name }}", "repo_name": "${{ github.event.repository.name }}"}'
+          echo "PAYLOAD=$payload" >> $GITHUB_OUTPUT
+          
+          
       - name: Call Webhook (Master)
         if: ${{ github.ref_name == 'master' }}
         run: |
+          payload=${{ steps.payload.outputs.PAYLOAD }}
+          sig=$(printf '%s' "$payload" | \
+              openssl dgst -sha256 -hmac "${{ secrets.VECTOR_WEBHOOK_SECRET }}" -binary | xxd -p -c 256)
+          
           curl -X POST \
             -H "Content-Type: application/json" \
-            -d '{"commit_id": "${{ github.sha }}", "branch": "${{ github.ref_name }}"}' \
+            -H "X-Hub-Signature-256: sha256=$sig" \
+            -d "$payload" \
             ${{ secrets.VECTOR_WEBHOOK_URL }}
 
       - name: Connect to company network
@@ -29,8 +42,13 @@ jobs:
       - name: Call Webhook (Preview)
         if: ${{ github.ref_name != 'master' }}
         run: |
+          payload=${{ steps.payload.outputs.PAYLOAD }}
+          sig=$(printf '%s' "$payload" | \
+              openssl dgst -sha256 -hmac "${{ secrets.VECTOR_WEBHOOK_SECRET_PREVIEW }}" -binary | xxd -p -c 256)
+          
           curl -X POST \
             -H "Content-Type: application/json" \
-            -d '{"commit_id": "${{ github.sha }}", "branch": "${{ github.ref_name }}"}' \
+            -H "X-Hub-Signature-256: sha256=$sig" \
+            -d "$payload" \
             ${{ secrets.VECTOR_WEBHOOK_URL_PREVIEW }}
 
