@@ -14,7 +14,13 @@ jobs:
       - name: Prepare Payload
         id: payload
         run: |
-          payload='{"current_commit_id": "${{ github.sha }}", "branch": "${{ github.ref_name }}", "repo_name": "${{ github.event.repository.name }}"}'
+          payload=$(jq -n \
+            --arg current_commit_id "${{ github.sha }}" \
+            --arg repo_name "${{ github.event.repository.name }}" \
+            '{
+              current_commit_id: $current_commit_id,
+              repo_name: $repo_name,
+            }')
           echo "PAYLOAD=$payload" >> $GITHUB_OUTPUT
           
           
