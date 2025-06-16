@@ -5,7 +5,6 @@ on:
   push:
     branches:
       - master
-      - docs-to-vector
 
 env:
   TARGET_BRANCH: ${{ github.ref_name }}
