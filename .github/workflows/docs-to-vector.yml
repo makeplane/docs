@@ -51,8 +51,10 @@ jobs:
           sig=$(printf '%s' "$payload" | \
               openssl dgst -sha256 -hmac "${{ secrets.VECTOR_WEBHOOK_SECRET }}" -binary | xxd -p -c 256)
           
-          curl -X POST \
-            -H "Content-Type: application/json" \
-            -H "X-Hub-Signature-256: sha256=$sig" \
-            -d "$payload" \
-            ${{ secrets.VECTOR_WEBHOOK_URL }}
+          if [ "${{ secrets.VECTOR_WEBHOOK_URL }}" != "none" ]; then
+            curl -X POST \
+              -H "Content-Type: application/json" \
+              -H "X-Hub-Signature-256: sha256=$sig" \
+              -d "$payload" \
+              ${{ secrets.VECTOR_WEBHOOK_URL }}
+          fi
