@@ -1,0 +1,60 @@
+name: Docs to Vector
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare Payload
+        id: payload
+        run: |
+          payload=$(jq -n \
+            --arg current_commit_id "${{ github.sha }}" \
+            --arg branch_name "${{ github.ref_name }}" \
+            --arg repo_name "${{ github.event.repository.name }}" \
+            '{
+              current_commit_id: $current_commit_id,
+              branch_name: $branch_name,
+              repo_name: $repo_name,
+            }')
+
+          echo "$payload" > /tmp/payload.json
+          
+      - name: Connect to company network
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+      
+      - name: Call Webhook (Preview)
+        run: |
+          payload=$(cat /tmp/payload.json)
+          sig=$(printf '%s' "$payload" | \
+              openssl dgst -sha256 -hmac "${{ secrets.VECTOR_WEBHOOK_SECRET_PREVIEW }}" -binary | xxd -p -c 256)
+          
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-Hub-Signature-256: sha256=$sig" \
+            -d "$payload" \
+            ${{ secrets.VECTOR_WEBHOOK_URL_PREVIEW }}
+
+      - name: Call Webhook (Master)
+        if: ${{ github.ref_name == 'master' }}
+        run: |
+          payload=$(cat /tmp/payload.json)
+          sig=$(printf '%s' "$payload" | \
+              openssl dgst -sha256 -hmac "${{ secrets.VECTOR_WEBHOOK_SECRET }}" -binary | xxd -p -c 256)
+          
+          if [ "${{ secrets.VECTOR_WEBHOOK_URL }}" != "none" ]; then
+            curl -X POST \
+              -H "Content-Type: application/json" \
+              -H "X-Hub-Signature-256: sha256=$sig" \
+              -d "$payload" \
+              ${{ secrets.VECTOR_WEBHOOK_URL }}
+          fi
