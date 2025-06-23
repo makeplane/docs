@@ -34,13 +34,25 @@ Each project can have its own timezone setting, managed by project admins. The p
 
 ## Add and manage members
 
-To get others involved in your project, they first need to be part of your workspace. [Invite them](/core-concepts/workspaces/members#add-member) to the workspace. 
+To add members directly to your project, they first need to be part of your workspace. [Invite them](/core-concepts/workspaces/members#add-member) to the workspace if they're not already there.
 
-Once they’re in the workspace, you can invite them to join the project and assign roles like **Admin**, **Member**, or **Guest**. You can always update their roles later if needed. 
+Once they're in the workspace, you can invite them to join the project and assign roles like **Admin**, **Member**, or **Guest**. You can always update their roles later if needed. 
 
 If you want to make sure every work item gets assigned, you can set a **Default assignee** for when work items are created without one. This ensures nothing slips through the cracks.
 
 ![Project members](https://media.docs.plane.so/projects/project-members.webp#center)
+
+### How users join projects
+
+Users can become project members in two different ways, and understanding both helps you manage your project team effectively.
+
+**Direct project membership** is where you specifically [invite users to your project](/core-concepts/projects/overview#add-and-manage-members) and assign them roles. These members have access only to the projects you've added them to, and you have full control over their permissions.
+
+**Teamspace-based membership** happens automatically when your project is linked to a [Teamspace](/core-concepts/workspaces/teamspaces). All members of that teamspace automatically receive `Member` access to your project, making it perfect for teams that collaborate across multiple projects.
+
+Users can have both types of access simultaneously. When this happens, Plane automatically applies whichever role gives them higher permissions. For example, if someone is a `Guest` on your project but joins a linked teamspace, they're automatically upgraded to `Member` access. If they're already an `Admin`, they keep their `Admin` role.
+
+The project members list shows everyone who has access to your project, regardless of how they gained that access, so you can see your complete team in one place.
 
 ## Enable features
 
