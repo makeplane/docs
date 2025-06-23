@@ -5,71 +5,75 @@ description: Visualize work item data, track team capacity, measure progress, an
 
 # Analytics
 
-Imagine transforming your entire Workspace data into a structured dataset that provides actionable insights, enhancing your understanding of your work. Plane Analytics does just that, acting as your personal analyst. It swiftly answers your queries, forecasts demand, and determines scope within moments. Dive into data with Plane Analytics and make smarter decisions.
+Transform your entire workspace data into actionable insights with Analytics. Get instant answers to complex questions, forecast demand, track progress across all dimensions, and make data-driven decisions with confidence.
 
-![Snapshot of Plane Analytics in Action](https://media.docs.plane.so/analytics/analytics-custom-analytics.webp#center)
+![Analytics Overview](https://media.docs.plane.so/analytics/analytics-overview.webp#center)
 
-## Analytics Levels
+The enhanced visualization experience brings your data to life with interactive charts featuring hover details and tooltips that provide instant context as you explore your metrics. 
 
-Plane Analytics can be utilized at two distinct levels:
+## Analytics access levels
 
-*   **Workspace Level:** Users in the **`Owner`** or **`Admin`** roles have access to Plane Analytics at the Workspace level. You can locate it on the left sidebar, just beneath your Dashboard.
-*   **Project Level:** Users assigned the **`Owner`**, **`Admin`**, or **`Member`** roles can avail Plane Analytics at the Project level. To utilize this feature within a Project, navigate to your respective Project Work items, and you'll find it on the top bar, adjacent to the **`Views`** section.
-*   **Cycle and Module Level**: Operating within the Project Level, Plane Analytics efficiently filters work items specific to a given Cycle or Module, subsequently generating pertinent insights. To access this, navigate to Cycle/Module and hit Plane Analytics on the top bar.
+Plane Analytics operates at multiple levels to provide the right insights:
+
+*   **Workspace level**  
+Users in the `Admin` roles have access to Analytics at the Workspace level. You can locate it on the left sidebar.
+
+*   **Project level**  
+Users with `Admin`, or `Member` roles can access project-specific analytics. Navigate to your project and find Analytics in the top navigation bar.
+
+*   **Cycle and Module level**  
+Drill down into specific cycles or modules for focused insights. Access through the respective Cycle or Module views with Analytics in the top bar.
 
 ## Analytics types
-Upon entering Plane Analytics, you'll encounter two distinct tabs:
+The new analytics experience provides comprehensive views across six key areas:
 
-1.  Scope and Demand
-2.  Custom Analytics
+### Overview
+Get a bird's-eye view of your entire workspace with essential performance indicators that drive strategic decision-making. The workspace metrics section displays comprehensive user statistics including total users, admins, members, and guests, alongside project count and distribution across your organization. You can monitor the overall work item count across all projects and track active cycles and intake statistics to understand your team's current workload.
 
-Let's dive into what these entail.
+### Projects analysis
 
-### **Scope and Demand**
+The project status tracking features provide a complete breakdown of your total project count with comprehensive status analysis, enabling you to quickly identify on-track, off-track, and at-risk projects. Visual charts display project distribution by current state, whether in draft, execution, or other phases, helping you understand your project pipeline at a glance.
 
-This tab showcases a pre-designed dashboard focused on Scope and Demand. Functional at both Workspace and Project Levels, this dashboard offers a snapshot of all work items and their progress, calculated based on the states of the work items.
-![Scope and demand](https://media.docs.plane.so/analytics/analytics-scope-demand.webp#center)
+### Work items analysis
+![Analytics Work Items](https://media.docs.plane.so/analytics/work-item-analytics.webp#center)
 
-#### Demand
+The work item metrics section displays total work items with state-based breakdown, showing started, backlog, unstarted, and completed counts to give you a complete picture of your team's workload distribution. The created vs resolved trend analysis tracks progress over time, while velocity and completion rate tracking helps you understand team performance patterns.
 
-**Open Tasks**: This encompasses the total number of tasks listed under the **`Backlog`**, **`Unstarted`**, and **`Started`** states.
+#### Customized insights
+![Customized insights](https://media.docs.plane.so/analytics/customized-insights.webp#center)
 
-At the Workspace level, it aggregates all open tasks from all Projects within the Workspace. On the other hand, at the Project level, it solely counts the work items present within the specified project.
+The interactive chart builder offers flexible measure options including work item count and estimate points, allowing you to focus on the metrics that matter most to your team. Dimension analysis capabilities cover state name, state group, priority, label, assignee, estimate point, and cycle, providing multiple perspectives on your data.
 
-#### Scope
+The priority section delivers a comprehensive breakdown by priority levels including high, medium, low, urgent, and none categories.
 
-Scope provides a summary of your team's bandwidth. Here, you'll find the total number of **`Backlog`**, **`Unstarted`**, and **`Started`** work items assigned to each member of your Workspace or Project.
+You can easily export all your analytics data to CSV format, making it simple to dive deeper into the numbers using spreadsheets or other analysis tools you prefer.
 
-This feature allows you to swiftly understand who has more work items assigned, and who has the bandwidth to tackle additional work items. For customization by different groups, use the Custom Analytics.
+### Cycles analysis
+![Analytics Cycles](https://media.docs.plane.so/analytics/cycle-analytics.webp#center)
 
-Directly beneath the Scope and Demand section, you'll find couple of Leaderboards for celebration 🎉. These display the top performers in work item closure, as well as notable contributors to work item initiation. To cap it all off, a comprehensive graph illustrates the total number of work items closed throughout the entire year.
+The cycle metrics section provides total cycle count with comprehensive status breakdown, tracking current, upcoming, and completed cycles to help you manage your sprint planning effectively. Cycle progress visualization displays completion percentages and performance indicators to keep teams aligned on sprint goals.
 
-### Custom Analytics
+Progress tracking includes sophisticated scatter plot analysis showing cycle completion rates across different time periods, individual cycle performance data with lead and project information for accountability, and comprehensive start and end date tracking with completion percentages.
 
-Welcome to the realm of Bar charts.
+### Modules analysis
+![Analytics Modules](https://media.docs.plane.so/analytics/module-analytics.webp#center)
 
-Custom Analytics is the hub of answers pertaining to your work. Here, we will guide you on how to leverage it to its fullest potential.
+The module overview section displays total module count across all projects with detailed status distribution covering completed, in progress, planned, and paused modules. Module progress visualization includes scatter plots with completion percentages to help you understand development velocity and identify potential delays.
 
-Upon accessing Custom Analytics, three distinct properties will greet you - **`Measure`**, **`Dimension`**, and **`Group`**.
+Individual module tracking provides detailed information including lead assignment and responsibility mapping, project-wise module distribution for cross-project visibility, and progress percentage analysis with timeline tracking.
 
-**Measure:** The foundation of Plane is built upon Work items, and the Measure property echoes this centrality. This property consists of two attributes: **`Work item Count`** and **`Estimate`**. These attributes form the Y-axis of your chart.
+### Intake analysis
+![Analytics Intake](https://media.docs.plane.so/analytics/Intake-analytics.webp#center)
 
-**Dimension:** This property is where you can utilize all the work item properties to derive insights based on the chosen Measure. The following attributes are currently supported:
+The intake metrics section tracks total intake items with status breakdown, monitoring accepted, declined, and duplicate requests to help you understand demand patterns. 
 
-*   State name
-*   State group
-*   Priority
-*   Label
-*   Assignee
-*   Estimate point
-*   Cycle
+Trend analysis capabilities include historical intake pattern recognition that reveals seasonal variations and cyclical demand, acceptance rate monitoring to understand how well requests align with team capacity, and project-wise intake distribution analysis. 
 
-Each attribute in the Dimension property aids in understanding the Measure property from a different perspective, offering detailed analysis based on the selected attribute.
+## Export analytics
 
-**Group:** The Group property enables you to delve deeper into your insights by constructing stacked bar charts. It's important to note that although the same attributes are sourced from the Dimension property, any selected attribute in the Group property will disappear from the Dimension property. This offers a way to further categorize and understand the data in your Dimension attribute, creating a more layered insight into your work.
+You can export comprehensive data from every analytics view with our CSV export functionality, giving you the flexibility to perform deeper analysis using your preferred external tools. The export process is designed for simplicity with one-click data downloads that include detailed datasets containing all relevant metrics and dimensions from your selected view.
 
-## Export Analytics
+Access to export functionality is carefully controlled and available only to users with an Admin role, ensuring your sensitive project data remains secure.
 
-For backup purposes and further analysis, data from Plane Analytics can be effortlessly exported into a CSV format with a single click. The CSV data will then be shared with the specified user.
-
-Please note that only users with **`Owner`** or **`Admin`** roles in a workspace can access these exports.
+---
+Analytics transforms raw data into strategic insights, helping you optimize team performance, predict bottlenecks, and drive successful project outcomes.
