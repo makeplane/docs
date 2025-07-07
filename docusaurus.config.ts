@@ -111,8 +111,7 @@ const config: Config = {
       },
       {
         name: "keywords",
-        content:
-          "project management, issue tracking, sprint management, agile, scrum, create projects, track sprints",
+        content: "project management, issue tracking, sprint management, agile, scrum, create projects, track sprints",
       },
     ],
     colorMode: {
