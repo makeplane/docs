@@ -2832,7 +2832,7 @@
     "@docusaurus/utils-validation" "3.5.2"
     tslib "^2.6.0"
 
-"@docusaurus/plugin-google-tag-manager@^3.8.1":
+"@docusaurus/plugin-google-tag-manager@^3.5.2":
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-tag-manager/-/plugin-google-tag-manager-3.8.1.tgz#88241ffd06369f4a4d5fb982ff3ac2777561ae37"
   integrity sha512-iqe3XKITBquZq+6UAXdb1vI0fPY5iIOitVjPQ581R1ZKpHr0qe+V6gVOrrcOHixPDD/BUKdYwkxFjpNiEN+vBw==
