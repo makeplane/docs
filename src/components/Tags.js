@@ -1,23 +1,21 @@
-import React from 'react';
+import React from "react";
 
 function Tags({ tags }) {
   return (
     <div className="tags">
-      {tags.map((tag, index) => (
-        (tag && tag.name) ? (
+      {tags.map((tag, index) =>
+        tag && tag.name ? (
           <React.Fragment key={index}>
             {tag.link ? (
               <a href={tag.link} target="_blank" rel="noopener noreferrer" className={`plantag ${tag.additionalClass}`}>
                 {tag.name}
               </a>
             ) : (
-              <span className={`plantag ${tag.additionalClass}`}>
-                {tag.name}
-              </span>
+              <span className={`plantag ${tag.additionalClass}`}>{tag.name}</span>
             )}
           </React.Fragment>
         ) : null
-      ))}
+      )}
     </div>
   );
 }

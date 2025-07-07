@@ -2,6 +2,7 @@
 title: Projects
 description: Create and manage projects, configure settings, add team members, and enable features.
 ---
+
 # Create, configure and manage Projects
 
 Projects let you manage your teams, tasks, and everything you need to get things done within your workspace. Once you've set up your [Workspace](/core-concepts/workspaces/overview.mdx), the next step is to create a Project. Each project acts as a container for your work, bringing together the work items, cycles, modules, and all the other tasks you and your team need to manage.
@@ -11,43 +12,48 @@ Projects let you manage your teams, tasks, and everything you need to get things
 To create a new project in your workspace, you can either press `P` or head over to the **Projects** tab in the sidebar and click **Add Project**. You’ll need to fill in a few key details to set up your project:
 
 - **Project name**  
-Give your project a clear and meaningful name.
+  Give your project a clear and meaningful name.
 - **Project ID**  
-This is like a unique ID attached to every work item in the project, making it easier to track and differentiate them across your workspace. You can update this identifier later if needed.
+  This is like a unique ID attached to every work item in the project, making it easier to track and differentiate them across your workspace. You can update this identifier later if needed.
 - **Description (optional)**  
-Provide a brief description to help your team understand what the project is about.
+  Provide a brief description to help your team understand what the project is about.
 - **Access**  
-Choose whether the project is **Private** or **Public**. See [Project visibilty](/core-concepts/projects/overview#project-visibility) for details.
+  Choose whether the project is **Private** or **Public**. See [Project visibilty](/core-concepts/projects/overview#project-visibility) for details.
 - **Lead (optional)**  
-You can designate a lead for the project. This person will be the go-to for queries related to the project's execution.
+  You can designate a lead for the project. This person will be the go-to for queries related to the project's execution.
 
 These attributes can always be edited later under the **General** tab in the [project's settings](#project-settings).
 
 ![Create project](https://media.docs.plane.so/projects/create-project.webp#center)
 
 ## Project visibility
+
 When creating a new project, you'll need to decide who can access it by choosing between Private and Public visibility.
 
-### Public projects 
+### Public projects
+
 These are open to everyone in your workspace (except guests). Any team member can discover and join these projects on their own, making them perfect for company-wide initiatives, shared resources, or collaborative efforts where you want maximum visibility and participation.
 
-### Private projects 
+### Private projects
+
 This works on an invite-only basis. Only project admins can add new members, giving you complete control over who has access. This is ideal for sensitive work, client projects, or anything that needs to stay within a specific group of people.
 
 You can always change a project's visibility later if your needs evolve. Just remember that switching from private to public will make the project visible to your entire workspace, so make sure that's what you want before making the change.
 
 ## Project settings
-Click the **…** icon next to your project name on the sidebar and click **Settings**. 
+
+Click the **…** icon next to your project name on the sidebar and click **Settings**.
 ![Project settings](https://media.docs.plane.so/projects/project-settings.webp#center)
 
 ### Project timezone
+
 Each project can have its own timezone setting, managed by project admins. The project timezone affects how dates and times are displayed within the project context. For example, the Cycle schedules (start and end) will align with the timezone set here. However, Members will see Cycles starting and stopping based on the timezone set in their [profile settings](/core-concepts/account/settings#timezone-and-language).
 
 ## Add and manage members
 
 To add members directly to your project, they first need to be part of your workspace. [Invite them](/core-concepts/workspaces/members#add-member) to the workspace if they're not already there.
 
-Once they're in the workspace, you can invite them to join the project and assign roles like **Admin**, **Member**, or **Guest**. You can always update their roles later if needed. 
+Once they're in the workspace, you can invite them to join the project and assign roles like **Admin**, **Member**, or **Guest**. You can always update their roles later if needed.
 
 If you want to make sure every work item gets assigned, you can set a **Default assignee** for when work items are created without one. This ensures nothing slips through the cracks.
 
@@ -76,10 +82,9 @@ After creating a project, you can turn on specific features based on your requir
 
 ![Project features](https://media.docs.plane.so/projects/project-features.webp#center)
 
-
 ## Archive Project
 
-You can archive a project in [Project settings](/core-concepts/projects/overview#project-settings). Archiving a project will remove it from your sidebar, keeping your workspace clean and focused on active projects. However, you can still access the archived project and easily restore or delete it permanently at any time. 
+You can archive a project in [Project settings](/core-concepts/projects/overview#project-settings). Archiving a project will remove it from your sidebar, keeping your workspace clean and focused on active projects. However, you can still access the archived project and easily restore or delete it permanently at any time.
 
 ![Archived Projects](https://media.docs.plane.so/projects/archived-projects.webp#center)
 
@@ -95,7 +100,7 @@ Right now, Plane doesn’t offer a way to recover a deleted project, so be sure 
 
 ### Unable to create new projects
 
-When attempting to create a new project, the page auto-refreshes, but no project is created. 
+When attempting to create a new project, the page auto-refreshes, but no project is created.
 
 This issue typically occurs in **self-hosted instances** when the Unsplash API key configured in your instance has expired or is invalid.
 
