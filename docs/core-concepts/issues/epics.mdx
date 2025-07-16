@@ -4,15 +4,11 @@ hide_title: true
 description: Create and manage Epics in Plane to organize related work items, track progress across multiple tasks, and align your team around larger objectives.
 ---
 
-import Tags from '@site/src/components/Tags';
+import Tags from "@site/src/components/Tags";
 
 <div className="tag-wrapper">
-# Organize and track your work items with Epics
-<Tags 
-  tags={[ 
-    { name: "Pro", link:"https://plane.so/pricing", additionalClass: "pro" }
-  ]} 
- />
+  # Organize and track your work items with Epics
+  <Tags tags={[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]} />
 </div>
 
 Epics help you group related tasks into a larger work item, providing a hierarchical structure for managing complex projects. This feature is ideal for breaking down major objectives into smaller, manageable pieces while keeping everything organized within a project.
@@ -49,15 +45,15 @@ To add custom properties to an Epic:
 
 1. Click the **Add new property** button on the Epics pane.
 2. In the **Custom Properties** section, fill in the following fields:
-    - **Title**: Enter a name for your property
-    - **Description**: Add details about what this property represents
-    - **Property type**: Select from the available options:
-        - **Text**: For free-form text input
-        - **Number**: For numerical values
-        - **Dropdown**: For predefined selection options
-        - **Boolean**: For yes/no or true/false values
-        - **Date**: For temporal information
-        - **Member picker**: For assigning team members
+   - **Title**: Enter a name for your property
+   - **Description**: Add details about what this property represents
+   - **Property type**: Select from the available options:
+     - **Text**: For free-form text input
+     - **Number**: For numerical values
+     - **Dropdown**: For predefined selection options
+     - **Boolean**: For yes/no or true/false values
+     - **Date**: For temporal information
+     - **Member picker**: For assigning team members
 
 ## Create Epics
 
@@ -68,12 +64,13 @@ Follow these steps to create a new Epic:
 1. Navigate to the **Epics** section under your project.
 2. Click the **New Epic** button at the top right of the screen.
 3. Provide the following details:
-    - **Title**: Name your Epic.
-    - **Description**: Add context for the Epic’s purpose.
-    - **Properties**: Assign metadata like priority, assignees, labels, and due dates.
+   - **Title**: Name your Epic.
+   - **Description**: Add context for the Epic’s purpose.
+   - **Properties**: Assign metadata like priority, assignees, labels, and due dates.
 4. Click **Save** to create the Epic.
 
 ## View and manage Epics
+
 Once created, all Epics can be accessed from the **Epics** section under your project. The Epics screen provides a high-level view of all Epics within a project.
 
 ![Epics screen](https://media.docs.plane.so/epics/epics-screen.webp#center)
@@ -106,6 +103,7 @@ Creates an identical Epic within the current project with all the same propertie
 Duplicates the Epic to another project in your workspace that has Epics enabled. This is particularly useful when you have similar large-scale objectives across multiple projects or want to replicate Epics between projects. The copied Epic adapts to the destination project's identifier format and default state.
 
 ## Work items list and relations
+
 ![Work items and Relations](https://media.docs.plane.so/epics/issues-and-relations.webp#center)
 
 - See the full list of work items grouped under the Epic.
@@ -113,24 +111,26 @@ Duplicates the Epic to another project in your workspace that has Epics enabled.
 - Manage work items directly by updating their status, assignee, or priority.
 
 ## Epic progress
+
 ![Epic progress](https://media.docs.plane.so/epics/epic-progress.webp#center)
 
 You can track Epic progress visually with a color-coded progress bar that shows:
+
 - Task completion status (e.g., Backlog, Started, Completed).
 - Work item counts and completion percentage for each status category.
 
 ## Epic updates
 
-Share epic status using updates. This helps keep your team informed and create a timeline of epic progress.  
+Share epic status using updates. This helps keep your team informed and create a timeline of epic progress.
 
 1. Select the tab with rocket icon in the side panel.
 2. Click the **Add Update** button.
-2. Select the status. Each update can be marked as:
-    - 🚀 **On Track** - Epic is progressing as planned
-    - ⚠️ **At Risk** - There are potential work items that need attention
-    - ❗ **Off Track** - Epic has significant blockers or delays
-3. Add your update message.
-4. Click **Add update**.
+3. Select the status. Each update can be marked as:
+   - 🚀 **On Track** - Epic is progressing as planned
+   - ⚠️ **At Risk** - There are potential work items that need attention
+   - ❗ **Off Track** - Epic has significant blockers or delays
+4. Add your update message.
+5. Click **Add update**.
 
 ![Add epic updates](https://media.docs.plane.so/epics/add-epic-updates.webp#center)
 
@@ -146,22 +146,18 @@ Share epic status using updates. This helps keep your team informed and create a
 
 - Add comments to collaborate with your team and to discuss progress, blockers, or updates.
   ![Epic comments](https://media.docs.plane.so/epics/epic-comments.webp#center)
-  
 - Access the activity log for a history of changes made to the Epic, ensuring transparency and accountability.
   ![Epic activity](https://media.docs.plane.so/epics/epic-activity.webp#center)
 
 ## Link Work items to Epics
+
 For each work item, you can assign or change a work item's Epic directly in the **Parent** property.
 
 ![Link Work items to Epics](https://media.docs.plane.so/epics/link-issue-epic.webp#center)
 
 <div className="tag-wrapper">
-## Convert Epics to Work Items
-<Tags 
-  tags={[ 
-    { name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }
-  ]} 
- />
+  ## Convert Epics to Work Items
+  <Tags tags={[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]} />
 </div>
 
 Sometimes you realize that what you thought was a big, complex epic is actually something smaller and more focused. That's where converting an epic to a work item comes in handy. This feature lets you transform an epic into a regular work item, making it easier to track and manage as a single deliverable rather than a collection of tasks.
@@ -170,9 +166,8 @@ Sometimes you realize that what you thought was a big, complex epic is actually 
 
 From any epic, look for the conversion option in the interface. Click **Convert to work item** and the system will transform your epic while preserving all the important details like title, description, and basic properties.
 
-You can also [convert Work items to Epics](/core-concepts/issues/overview#convert-work-items-to-epics). 
+You can also [convert Work items to Epics](/core-concepts/issues/overview#convert-work-items-to-epics).
 
 ---
 
 Epics provide a simple yet powerful way to manage larger goals while keeping your projects organized and your team aligned.
-

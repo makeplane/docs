@@ -14,11 +14,8 @@ new Crawler({
       recordExtractor: ({ $, helpers }) => {
         // priority order: deepest active sub list header -> navbar active item -> 'Documentation'
         const lvl0 =
-          $(
-            ".menu__link.menu__link--sublist.menu__link--active, .navbar__item.navbar__link--active"
-          )
-            .last()
-            .text() || "Documentation";
+          $(".menu__link.menu__link--sublist.menu__link--active, .navbar__item.navbar__link--active").last().text() ||
+          "Documentation";
 
         return helpers.docsearch({
           recordProps: {
@@ -43,21 +40,8 @@ new Crawler({
   ],
   initialIndexSettings: {
     "plane-docs-v3": {
-      attributesForFaceting: [
-        "type",
-        "lang",
-        "language",
-        "version",
-        "docusaurus_tag",
-      ],
-      attributesToRetrieve: [
-        "hierarchy",
-        "content",
-        "anchor",
-        "url",
-        "url_without_anchor",
-        "type",
-      ],
+      attributesForFaceting: ["type", "lang", "language", "version", "docusaurus_tag"],
+      attributesToRetrieve: ["hierarchy", "content", "anchor", "url", "url_without_anchor", "type"],
       attributesToHighlight: ["hierarchy", "content"],
       attributesToSnippet: ["content:10"],
       camelCaseAttributes: ["hierarchy", "content"],
@@ -73,20 +57,8 @@ new Crawler({
       ],
       distinct: true,
       attributeForDistinct: "url",
-      customRanking: [
-        "desc(weight.pageRank)",
-        "desc(weight.level)",
-        "asc(weight.position)",
-      ],
-      ranking: [
-        "words",
-        "filters",
-        "typo",
-        "attribute",
-        "proximity",
-        "exact",
-        "custom",
-      ],
+      customRanking: ["desc(weight.pageRank)", "desc(weight.level)", "asc(weight.position)"],
+      ranking: ["words", "filters", "typo", "attribute", "proximity", "exact", "custom"],
       highlightPreTag: '<span class="algolia-docsearch-suggestion--highlight">',
       highlightPostTag: "</span>",
       minWordSizefor1Typo: 3,

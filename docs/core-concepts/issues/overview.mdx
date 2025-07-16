@@ -2,17 +2,18 @@
 title: Work Items
 description: Create, manage and organize work items in Plane with sub-tasks, relations, file attachments, automations, and activity tracking for efficient project management
 ---
-import Tags from '@site/src/components/Tags';
+
+import Tags from "@site/src/components/Tags";
 
 # Create, organize, and track project tasks
 
-In Plane, a work item serves as the fundamental unit of work. They represent the tasks you need to accomplish to make progress Think of work items as the to-dos of your project management flow—assignable, trackable, and actionable. 
+In Plane, a work item serves as the fundamental unit of work. They represent the tasks you need to accomplish to make progress Think of work items as the to-dos of your project management flow—assignable, trackable, and actionable.
 
 ## Create work item
 
 The quickest way to add a new work item is to press `C` on your keyboard. By default, the work item will be assigned to the project you are currently on or the one you last visited.
 
-You can also head over to the **Work items** tab in the sidebar and click **Add Work item** at the top right of the screen. 
+You can also head over to the **Work items** tab in the sidebar and click **Add Work item** at the top right of the screen.
 
 ![Create work item](https://media.docs.plane.so/issues/create-issue-modal.webp#center)
 
@@ -21,7 +22,7 @@ In the **Create new work item** modal, you can define all the attributes of the 
 When you create a work item, Plane assigns it a sequential identifier based on your project (e.g., PROJ-1).
 
 :::tip
-Plane automatically saves your half-written work items so you can access them later in [Drafts](/core-concepts/drafts), in case you're not ready to finalize them or if you accidentally close the modal. 
+Plane automatically saves your half-written work items so you can access them later in [Drafts](/core-concepts/drafts), in case you're not ready to finalize them or if you accidentally close the modal.
 :::
 
 ### Quick add work items
@@ -66,69 +67,65 @@ You can also set up relations and dependencies between work items using the **Re
 ![Work item relations](https://media.docs.plane.so/issues/issue-relations.webp#center)
 
 - **Relates to**  
-This relation is used when two work items are linked by some kind of context or dependency, but one does not directly affect the other’s completion.
+  This relation is used when two work items are linked by some kind of context or dependency, but one does not directly affect the other’s completion.
 
 - **Duplicate of**  
-This relation is used when one work item is a duplicate of another. The original work item remains active, while the duplicate work item is linked and typically closed or archived.
+  This relation is used when one work item is a duplicate of another. The original work item remains active, while the duplicate work item is linked and typically closed or archived.
 
 - **Blocking**  
-When a work item is marked as Blocking, it means that the work item needs to be resolved first before the second work item can progress.
+  When a work item is marked as Blocking, it means that the work item needs to be resolved first before the second work item can progress.
 
 - **Blocked by**  
-If a work item is marked as Blocked by, it indicates that the work item cannot proceed until the blocking work item is completed.
+  If a work item is marked as Blocked by, it indicates that the work item cannot proceed until the blocking work item is completed.
 
 ## Add links and attachments
 
-You can easily add links and upload attachments to work items in Plane to provide additional context or resources. 
+You can easily add links and upload attachments to work items in Plane to provide additional context or resources.
 
 ![Add links and attachments](https://media.docs.plane.so/issues/links-and-attachments.webp#center)
 
 You can link to external resources, documentation, or related work items by adding URLs in the **Add link** modal. This helps in providing quick access to important references without cluttering the work item itself.
 
-Plane allows you to upload different file types directly to the work item. Use the **Attach** button to upload attachments. 
+Plane allows you to upload different file types directly to the work item. Use the **Attach** button to upload attachments.
 
 ### Supported file types
 
 - **Images**  
-JPEG, PNG, GIF, SVG, WebP, TIFF, BMP
+  JPEG, PNG, GIF, SVG, WebP, TIFF, BMP
 
 - **Documents**  
-PDF, Microsoft Word, Microsoft Excel, Microsoft PowerPoint, Plain Text, Rich Text Format (RTF), OpenDocument Spreadsheet, OpenDocument Text, OpenDocument Presentation, OpenDocument Graphics
+  PDF, Microsoft Word, Microsoft Excel, Microsoft PowerPoint, Plain Text, Rich Text Format (RTF), OpenDocument Spreadsheet, OpenDocument Text, OpenDocument Presentation, OpenDocument Graphics
 
 - **Audio**  
-MP3, WAV, OGG, MIDI, AAC, FLAC, M4A
+  MP3, WAV, OGG, MIDI, AAC, FLAC, M4A
 
 - **Video**  
-MP4, MPEG, OGG Video, WebM, QuickTime, AVI, WMV
+  MP4, MPEG, OGG Video, WebM, QuickTime, AVI, WMV
 
 - **Archives**  
-ZIP, RAR, TAR, GZIP
+  ZIP, RAR, TAR, GZIP
 
 - **Microsoft Visio**  
-Visio Files
+  Visio Files
 
 - **Netpbm formats**  
-Portable Graymap, Portable Bitmap, Portable Pixmap
+  Portable Graymap, Portable Bitmap, Portable Pixmap
 
 - **OpenOffice Base**  
-Database files
+  Database files
 
 - **3D models**  
-GLTF Binary, GLTF JSON, OBJ
+  GLTF Binary, GLTF JSON, OBJ
 
 - **Fonts**  
-TrueType, OpenType, WOFF, WOFF2
+  TrueType, OpenType, WOFF, WOFF2
 
 - **Other**  
-CSS, JavaScript, JSON, XML, CSV, SQL
+  CSS, JavaScript, JSON, XML, CSV, SQL
 
 <div className="tag-wrapper">
-## Convert Work Items to Epics
-<Tags 
-  tags={[ 
-    { name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }
-  ]} 
- />
+  ## Convert Work Items to Epics
+  <Tags tags={[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]} />
 </div>
 
 Sometimes a work item grows in scope and complexity, and you realize it's actually big enough to be its own epic with multiple sub-tasks. This feature promotes a regular work item into an epic, giving you the structure and flexibility to break it down into smaller, manageable pieces.
@@ -137,7 +134,7 @@ Sometimes a work item grows in scope and complexity, and you realize it's actual
 
 From any work item, find the **Convert to Epic** option. The system will ask you to confirm since this action detaches any associated cycles, modules, and parent items. Once converted, you'll have a new epic that you can start breaking down into sub-work items and organizing however makes sense for your project.
 
-You can also [convert Epics to Work Items](/core-concepts/issues/epics#convert-epics-to-work-items). 
+You can also [convert Epics to Work Items](/core-concepts/issues/epics#convert-epics-to-work-items).
 
 ## Comment on work items
 
@@ -155,7 +152,6 @@ Inside each work item, you’ll find an Activity log tracking updates like statu
 
 You can filter the activity log to display specific types of acticity, such as comments, updates, or [worklogs](/core-concepts/issues/time-tracking). Additionally, you can sort the log by activity date in either ascending or descending order.
 
-
 ![issue-activity-comments](https://media.docs.plane.so/issues/issue-activity-comments.webp#center)
 
 ## Subscribe to notifications
@@ -168,7 +164,7 @@ You can subscribe other users to the work item by mentioning them using `@userna
 
 ## View description edit history
 
-The work item editor now features an edit history viewer that tracks changes to work item descriptions. 
+The work item editor now features an edit history viewer that tracks changes to work item descriptions.
 
 ![Description edit history](https://media.docs.plane.so/issues/description-edit-history.webp#center)
 
@@ -195,9 +191,9 @@ You can delete work items that were created accidentally or are no longer releva
 Within your project, you can set up automations to perform the following tasks:
 
 - **Auto-archive closed work items**  
-You can set up an automation to archive work items that are marked as closed. This helps keep your active project board clean and organized, while still retaining closed work items for reference. You can customize the time period after which closed work items will automatically be moved to the archive.
-![Project archive automation](https://media.docs.plane.so/projects/auto-archive-closed-issues.webp#center)
+  You can set up an automation to archive work items that are marked as closed. This helps keep your active project board clean and organized, while still retaining closed work items for reference. You can customize the time period after which closed work items will automatically be moved to the archive.
+  ![Project archive automation](https://media.docs.plane.so/projects/auto-archive-closed-issues.webp#center)
 
--  **Auto-close work items**  
-You can also automate the closing of work items that are still open after a certain period of time. This is useful for ensuring that work items don’t remain open unnecessarily, helping to keep your project board organized and up to date. The automation will move all open work items matching the time period to a selected closed state.
-![Project close automation](https://media.docs.plane.so/projects/auto-close-issues.webp#center)
+- **Auto-close work items**  
+  You can also automate the closing of work items that are still open after a certain period of time. This is useful for ensuring that work items don’t remain open unnecessarily, helping to keep your project board organized and up to date. The automation will move all open work items matching the time period to a selected closed state.
+  ![Project close automation](https://media.docs.plane.so/projects/auto-close-issues.webp#center)
