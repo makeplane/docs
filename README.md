@@ -3,6 +3,7 @@
 This website is built using [Docusaurus v3](https://docusaurus.io/) and hosted at [docs.plane.so](https://docs.plane.so/). If you are looking for the developer documentation, see [Plane developer documentation](https://github.com/makeplane/developer-docs).
 
 ## Overview
+
 The Plane documentation provides detailed information on the following topics:
 
 - Understanding the different components of Plane.
@@ -11,25 +12,28 @@ The Plane documentation provides detailed information on the following topics:
 ## Installation
 
 1. Clone the repository.
-    ```bash
-    git clone git@github.com:makeplane/docs.git
-    ```
+
+   ```bash
+   git clone git@github.com:makeplane/docs.git
+   ```
 
 2. Navigate to the project directory.
-    ```bash
-    cd docs
-    ```
+
+   ```bash
+   cd docs
+   ```
 
 3. Install dependencies.
-    ```bash
-    yarn
-    ```
+   ```bash
+   yarn
+   ```
 
 ## Local development
 
 ```bash
 yarn start
 ```
+
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 ## Build
@@ -37,6 +41,7 @@ This command starts a local development server and opens up a browser window. Mo
 ```bash
 yarn build
 ```
+
 This command generates static files into the `build` directory.
 
 ## Contributing

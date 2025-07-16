@@ -4,20 +4,17 @@ hide_title: true
 description: Create structured documentation with Nested Pages. Build parent-child hierarchies, organize content logically, and improve navigation for your team's knowledge base.
 ---
 
-import Tags from '@site/src/components/Tags';
+import Tags from "@site/src/components/Tags";
 
 <div className="tag-wrapper">
-# Structure content with Nested Pages
-<Tags 
-  tags={[ 
-    { name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }
-  ]} 
- />
+  # Structure content with Nested Pages
+  <Tags tags={[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]} />
 </div>
 
 Nested Pages allows you to create a hierarchical structure for your workspace content, helping you organize documentation logically and improve navigation for your team. This feature enables you to build robust knowledge architecture with parent and child pages, similar to folders and files but with more flexibility.
 
 ## Create nested pages
+
 There are multiple ways to create a nested page:
 
 ### Using the `/page` command
@@ -31,6 +28,7 @@ Click the **+** icon that appears next to any page name. This creates a new page
 ![Nested page on the wiki sidebar](https://media.docs.plane.so/pages/create-nested-page-sidebar.webp#center)
 
 ## Move existing pages
+
 To nest an existing page under another page, drag and drop the page in the sidebar to position it under the desired parent.
 ![Move nested pages](https://media.docs.plane.so/pages/move-nested-pages.webp#center)
 
