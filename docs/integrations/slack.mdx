@@ -4,15 +4,11 @@ hide_title: true
 description: Integrate Plane with Slack to create work items from messages, sync thread conversations, and take actions directly from your chat interface.
 ---
 
-import Tags from '@site/src/components/Tags';
+import Tags from "@site/src/components/Tags";
 
 <div className="tag-wrapper">
- <h1>Integrate with Slack</h1>
-<Tags 
-  tags={[ 
-    { name: "Pro", link:"https://plane.so/pricing", additionalClass: "pro" }
-  ]} 
- />
+  <h1>Integrate with Slack</h1>
+  <Tags tags={[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]} />
 </div>
 
 Integrating Slack with Plane allows your team to streamline communication and stay updated on your projects, directly from within Slack. Whether you're syncing threads, receiving updates, or collaborating in real-time, this integration brings the power of Slack and Plane together for a more connected workflow.
@@ -26,28 +22,32 @@ If you're running a self-hosted instance of Plane, you'll need to set up a few e
 :::
 
 Follow the steps below to complete the setup:
+
 1. [Connect your Slack Workspace](/integrations/slack#connect-slack-workspace)
 2. [Connect your personal Slack account](/integrations/slack#connect-personal-slack-account)
 
 ### Connect Slack Workspace
+
 To get started, you need to connect your Slack workspace to Plane.
 
 ![Connect Slack](https://media.docs.plane.so/integrations/slack/connect-slack.webp#center)
 
 1. Navigate to [Workspace Settings](/core-concepts/workspaces/overview#workspace-settings) in Plane.
 2. On the right pane, select **Integrations**.
-3. Find  the **Slack** integration and click **Configure**.
+3. Find the **Slack** integration and click **Configure**.
 4. Click the **Install** button. This will redirect you to Slack’s authentication page. Slack will ask you to review the permissions it needs to integrate with Plane. Make sure to allow them.
 5. After allowing permissions, you’ll be redirected back to Plane. You should now see that your Slack workspace is successfully connected.
 
 That's it! Your Slack workspace is now integrated with Plane.
 
 ### Connect personal Slack account
+
 For a more personalized experience, you can connect your personal Slack account. This is particularly useful for features like Thread Sync. When Thread Sync is enabled, any messages posted to a work item will be sent back to Slack. If you're connected, it will show your name as the sender. If you're not connected, the message will appear as coming from the Plane Bot or the name of your Slack bot.
 
 ![Connect personal account](https://media.docs.plane.so/integrations/slack/slack-connected.webp#center)
 
 #### From Workspace settings
+
 Workspace admins can connect their personal Slack accounts from Workspace settings.
 
 1. In the **Connect your personal account** section under **Integrations**, click **Connect**.
@@ -59,35 +59,39 @@ Only one Workspace Admin can connect their personal Slack account via Workspace 
 :::
 
 #### From Profile settings
+
 If you don’t have admin access, you can still connect your personal Slack account through your profile settings.
 
 1. Head to the [Profile settings](/core-concepts/account/settings) page in Plane.
 2. Select the **Connections** tab on the sidebar.
 3. In the dropdown menu, select the Plane workspace you want to connect your personal account to.
-![Connect personal account member](https://media.docs.plane.so/integrations/slack/connect-personal-account-member.webp#center)
+   ![Connect personal account member](https://media.docs.plane.so/integrations/slack/connect-personal-account-member.webp#center)
 4. Click **Connect** in the Slack section, which will redirect you to Slack to complete the connection.
-    :::info
-    If your workspace doesn’t have Slack integration enabled, you won’t be able to connect your personal account. In this case, contact your Workspace Admin.
-    :::
+   :::info
+   If your workspace doesn’t have Slack integration enabled, you won’t be able to connect your personal account. In this case, contact your Workspace Admin.
+   :::
 5. Once your account is connected, you’ll see the status update to reflect that your personal Slack account is successfully integrated.
 
 ## Use the Slack integration
+
 Now that you’ve connected Slack to Plane, let’s explore what you can do with this integration. We built this to reduce the constant back-and-forth between Plane and Slack—so instead of switching between tools to create work items, update statuses, or share links, you can do it all from Slack.
 
 ### Create work items from Slack
+
 There are two easy ways to create issues from Slack, depending on your workflow: using the message shortcut or the `/plane` command. Any updates in Plane to fields like State, Assignee, or others will automatically reflect in the linked Slack thread.
 
 #### Message shortcut
+
 If a message sparks an action item, turn it into a Plane work item in just a few clicks:
 
-  1. Hover over any message in Slack.
-  2. Click the three-dot menu and select **Create an Issue**.
-    ![Thread sync](https://media.docs.plane.so/integrations/slack/create-plane-issue.webp#center)
-  3. A modal will open where you can select the project.
-  4. Add a title and description (the original message is pre-filled).
-  5. Assign Labels, State, Priority, and Assignee.
-  6. Enable Thread Sync (optional). When enabled, Thread Sync keeps your conversation and Plane issue comments in sync. Anything you say in the Slack thread appears in the Plane work item comments, and vice versa. It’s the easiest way to keep everyone aligned without repeating updates in two places.
-  7. Once you hit **Create Issue**, the issue gets added to the Backlog of your selected project, and a preview is posted in the Slack thread so everyone knows it's being tracked.
+1. Hover over any message in Slack.
+2. Click the three-dot menu and select **Create an Issue**.
+   ![Thread sync](https://media.docs.plane.so/integrations/slack/create-plane-issue.webp#center)
+3. A modal will open where you can select the project.
+4. Add a title and description (the original message is pre-filled).
+5. Assign Labels, State, Priority, and Assignee.
+6. Enable Thread Sync (optional). When enabled, Thread Sync keeps your conversation and Plane issue comments in sync. Anything you say in the Slack thread appears in the Plane work item comments, and vice versa. It’s the easiest way to keep everyone aligned without repeating updates in two places.
+7. Once you hit **Create Issue**, the issue gets added to the Backlog of your selected project, and a preview is posted in the Slack thread so everyone knows it's being tracked.
 
 #### `/plane` command
 
@@ -101,11 +105,12 @@ The `/plane` command lets you create a work item on the fly, without referencing
 This is great for when an idea or task comes up mid-conversation—you can create the work item in just a couple of clicks without breaking your flow.
 
 ### Link work items to Slack threads
+
 If a Plane work item already exists, and you want to connect it to a Slack thread (for updates, visibility, or comments), just use the **Link Work Item** shortcut. Here’s how:
 
 1. Hover over the relevant Slack message or thread.
 2. Click the three-dot menu adn select **Link Work Item**.
-  ![Link Work Item](https://media.docs.plane.so/integrations/slack/link-work-item.webp#center)
+   ![Link Work Item](https://media.docs.plane.so/integrations/slack/link-work-item.webp#center)
 3. In the modal, search for the work item by title or ID.
 4. Select the right issue and hit **Link**.
 
@@ -114,7 +119,8 @@ That’s it. Now the thread and the work item are connected. Comments in the thr
 This is perfect for situations where someone logs an issue in Plane but the conversation about it happens in Slack. Just link them up and avoid duplication.
 
 ### Connect project to Slack channel
-Stay on top of project updates without switching tabs. You can now link each Plane project to a default Slack channel to receive notifications whenever new work items are created. 
+
+Stay on top of project updates without switching tabs. You can now link each Plane project to a default Slack channel to receive notifications whenever new work items are created.
 ![Connect project to Slack channel](https://media.docs.plane.so/integrations/slack/connect-project-slack-channel.webp#center)
 
 To configure this:
@@ -128,16 +134,17 @@ To configure this:
 
 Once set, Plane will automatically post updates to the selected Slack channel every time a new work item is created in that project keeping your team informed and your workflows connected.
 
-
 ### Link previews
+
 When you share a Plane Issue, Cycle, or Module link in Slack, you’ll see a live preview of its details, including:
 
 - **Issues**  
-Title, status, priority, assignee, and quick actions.
+  Title, status, priority, assignee, and quick actions.
 - **Cycles and Modules**  
-Progress percentage, active vs. completed work items, and key details.
+  Progress percentage, active vs. completed work items, and key details.
 
 #### Take actions from Slack
+
 With link previews, you can interact with the work item directly from Slack.
 
 ![Link previews](https://media.docs.plane.so/integrations/slack/link-previews.webp#center)
@@ -149,4 +156,5 @@ With link previews, you can interact with the work item directly from Slack.
 This makes it easy to stay updated and take action without leaving Slack.
 
 ---
+
 By using these features, you can reduce context-switching and manage Plane work items directly from Slack—keeping your workflow smooth and efficient.

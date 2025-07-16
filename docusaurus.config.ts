@@ -65,15 +65,21 @@ const config: Config = {
 
   stylesheets: [
     {
-      href: 'https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=National+Park:wght@200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap',
-      type: 'text/css',
+      href: "https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=National+Park:wght@200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap",
+      type: "text/css",
     },
   ],
 
   scripts: [
     {
-      src: 'https://plausible.io/js/script.js', defer: true, 'data-domain': 'docs.plane.so'
-    }
+      src: "https://plausible.io/js/script.js",
+      defer: true,
+      "data-domain": "docs.plane.so",
+    },
+    {
+      src: "https://cdn.cr-relay.com/v1/site/b1fcbcbd-67f6-4736-940f-033731801664/signals.js",
+      async: true,
+    },
   ],
 
   plugins: [
@@ -85,16 +91,31 @@ const config: Config = {
         enableInDevelopment: false, // optional
       },
     ],
+    [
+      "@docusaurus/plugin-google-tag-manager",
+      {
+        containerId: "G-G578SD4VZD",
+      },
+    ],
   ],
 
   themeConfig: {
     metadata: [
-      {property: 'og:image', content: 'https://media.docs.plane.so/logo/docs-og.webp'},
-      {name: 'twitter:image', content: 'https://media.docs.plane.so/logo/docs-og.webp'},
-      {name: 'keywords', content: 'project management, issue tracking, sprint management, agile, scrum, create projects, track sprints'},
+      {
+        property: "og:image",
+        content: "https://media.docs.plane.so/logo/docs-og.webp",
+      },
+      {
+        name: "twitter:image",
+        content: "https://media.docs.plane.so/logo/docs-og.webp",
+      },
+      {
+        name: "keywords",
+        content: "project management, issue tracking, sprint management, agile, scrum, create projects, track sprints",
+      },
     ],
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: "dark",
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
@@ -116,7 +137,7 @@ const config: Config = {
       logo: {
         alt: "Plane",
         src: "https://media.docs.plane.so/logo/Plane.svg",
-        srcDark: "https://media.docs.plane.so/logo/Plane-white.svg"
+        srcDark: "https://media.docs.plane.so/logo/Plane-white.svg",
       },
       items: [
         {
