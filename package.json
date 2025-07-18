@@ -45,7 +45,10 @@
     "path-to-regexp": "3.3.0",
     "@babel/helpers": "7.26.10",
     "@babel/runtime": "7.26.10",
-    "@babel/runtime-corejs3": "7.26.10"
+    "@babel/runtime-corejs3": "7.26.10",
+    "brace-expansion": "1.1.12",
+    "on-headers": "1.1.0",
+    "webpack-dev-server": "5.2.1"
   },
   "browserslist": {
     "production": [
