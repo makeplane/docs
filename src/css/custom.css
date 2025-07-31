@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #004eff;
+  --ifm-color-primary: #006399;
   --ifm-color-primary-dark: #1b47c2; /* Darker shade */
   --ifm-color-primary-darker: #1941b1; /* Even darker */
   --ifm-color-primary-darkest: #153693; /* Darkest */
@@ -19,7 +19,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-color-primary: #3e76ff;
+  --ifm-color-primary: #006399;
   --ifm-color-primary-dark: #1b47c2; /* Darker shade */
   --ifm-color-primary-darker: #1941b1; /* Even darker */
   --ifm-color-primary-darkest: #153693; /* Darkest */
@@ -94,17 +94,29 @@
 .menu__link--active:not(.menu__link--sublist) {
   font-weight: 600;
   transition: color 0.25s;
-  color: #3e76ff;
+  color: #006399;
   font-size: 13px;
   border-left-style: solid;
   border-left-width: 4px;
   padding-left: 8px !important;
 }
 
+[data-theme="dark"] .menu__link--active:not(.menu__link--sublist) {
+  color: #2690C9;
+}  
+
+[data-theme="dark"] .breadcrumbs__item--active .breadcrumbs__link {
+    color: #2690C9;
+}
+
+[data-theme="dark"] a{
+  color: #2690C9;
+}
+
 .menu__link--active:is(.theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible > .menu__link--sublist) {
   font-weight: 600;
   transition: color 0.25s;
-  color: #3e76ff;
+  color: #006399;
   font-size: 13px;
   border-left-style: solid;
   border-left-width: 4px;
@@ -292,8 +304,8 @@ h6{
 
 
 #__docusaurus > nav > div.navbar__inner > div.navbar__items.navbar__items--right > a:nth-child(3) {
-  background-color: #004eff;
-  border-radius: var(--rounded-full, 9999px);
+  background-color: #006399;
+  border-radius: 8px;
   color: #f3f5f7;
   font-size: 0.75rem;
   font-weight: 500;
@@ -449,7 +461,7 @@ html[data-theme="dark"] .one {
 }
 
 .card:hover {
-  border: 1px solid #3e76ff;
+  border: 1px solid #006399;
 }
 
 .card-icon {
@@ -461,7 +473,7 @@ html[data-theme="dark"] .one {
 }
 
 .icon-style {
-  color: #3e76ff;
+  color: #006399;
 }
 
 .card-title {
