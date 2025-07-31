@@ -790,7 +790,7 @@ html:not([data-theme]) .themedComponent--light_NVdE {
 p,
 table,
 .menu__link {
-  font-family: "Nacelle";
+  font-family: var(--ifm-font-family-base);
 }
 
 .menu__caret:hover {
