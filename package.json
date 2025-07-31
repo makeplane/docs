@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "private": true,
   "author": "Plane",
   "license": "MIT",
@@ -23,29 +23,25 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@docusaurus/core": "3.5.2",
-    "@docusaurus/plugin-google-tag-manager": "3.5.2",
-    "@docusaurus/preset-classic": "3.5.2",
+    "@docusaurus/core": "3.8.1",
+    "@docusaurus/preset-classic": "3.8.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "posthog-docusaurus": "^2.0.4",
-    "prism-react-renderer": "2.3.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-icons": "5.5.0"
+    "prism-react-renderer": "^2.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.5.2",
-    "@docusaurus/tsconfig": "3.5.2",
-    "@docusaurus/types": "3.5.2",
-    "prettier": "3.6.2",
-    "typescript": "5.8.3"
+    "@docusaurus/module-type-aliases": "3.8.1",
+    "@docusaurus/tsconfig": "3.8.1",
+    "@docusaurus/types": "3.8.1",
+    "prettier": "^3.6.2",
+    "typescript": "~5.6.2"
   },
   "resolutions": {
-    "path-to-regexp": "3.3.0",
-    "@babel/helpers": "7.26.10",
-    "@babel/runtime": "7.26.10",
-    "@babel/runtime-corejs3": "7.26.10"
+    "webpack-dev-server": "5.2.1"
   },
   "browserslist": {
     "production": [
@@ -60,7 +56,7 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=18.0.0"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@1.22.22"
 }

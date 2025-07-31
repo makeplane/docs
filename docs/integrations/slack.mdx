@@ -17,7 +17,7 @@ This guide will walk you through how to set up and connect your Slack account to
 
 ## Set up Slack integration
 
-:::danger[Self-hosted instances]
+:::danger[Self-hosted instances (Commercial Edition)]
 If you're running a self-hosted instance of Plane, you'll need to set up a few extra configurations to get Slack integration working. Check out the [setup guide](https://developers.plane.so/self-hosting/govern/integrations/slack) first before diving into the steps on this page.
 :::
 
@@ -117,6 +117,26 @@ If a Plane work item already exists, and you want to connect it to a Slack threa
 That’s it. Now the thread and the work item are connected. Comments in the thread can sync to Plane (and vice versa, if **Thread Sync** is enabled on that issue), and the thread will display a rich preview of the linked work item.
 
 This is perfect for situations where someone logs an issue in Plane but the conversation about it happens in Slack. Just link them up and avoid duplication.
+
+### Add Plane to private Slack channels
+When you use Plane in public Slack channels, it automatically adds the Plane bot to those channels. However, for private channels, you must manually add the bot before you can create or link work items.
+
+Here's how to add Plane to your private channels:
+
+1. Navigate to your private channel.
+2. Open the channel settings.
+3. Go to the **Integrations** tab.
+4. Click **Add apps** in the **Apps** section.
+5. Search for `Plane` in the app directory. You'll see the Plane app with the `/plane` slash command
+6. Click *Add* next to the Plane app.
+
+This will add the Plane bot to your private channel, and Slack will show you a confirmation message.
+
+:::note
+Only channel members with the right permissions can add apps to private channels. If you don't see the option to add apps, ask a channel admin or the channel creator to add Plane for you.
+:::
+
+Once you add Plane to your private channel, you can use all the same features you'd use in public channels - creating work items, linking existing ones, and getting rich link previews. The bot just needs that initial invitation to join your private conversation.
 
 ### Connect project to Slack channel
 
