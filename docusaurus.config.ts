@@ -177,6 +177,13 @@ const config: Config = {
   ],
 
   themeConfig: {
+    image: "https://media.docs.plane.so/logo.svg",
+    docs: {
+      sidebar: {
+        hideable: false,
+        autoCollapseCategories: false,
+      },
+    },
     metadata: [
       {
         property: "og:image",
