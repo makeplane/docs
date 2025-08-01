@@ -132,7 +132,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsed: false,
       label: "Integrations",
-      items: ["integrations/about", "integrations/github", "integrations/github-enterprise", "integrations/slack", "integrations/gitlab"],
+      items: ["integrations/about", "integrations/github", "integrations/slack", "integrations/gitlab"],
     },
     {
       type: "category",
