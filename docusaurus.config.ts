@@ -6,8 +6,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Plane",
-  tagline: "An easy, flexible project management software",
-  favicon: "https://media.docs.plane.so/favicon-32x32.png",
+  tagline: "A modern project management tool",
+  favicon: "https://media.docs.plane.so/logo/favicon-32x32.png",
   trailingSlash: false,
   // Set the production url of your site here
   url: "https://docs.plane.so",
@@ -64,6 +64,118 @@ const config: Config = {
     ],
   ],
 
+  scripts: [
+    {
+      src: "https://plausible.io/js/script.js",
+      defer: true,
+      "data-domain": "docs.plane.so",
+    },
+    {
+      src: "https://cdn.cr-relay.com/v1/site/b1fcbcbd-67f6-4736-940f-033731801664/signals.js",
+      async: true,
+    },
+  ],
+
+  plugins: [
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: "phc_HskAKGRy7x0BEoWfyeHzYWWzcMmKG9DCail7ot7WQkA",
+        appUrl: "https://us.i.posthog.com", // optional
+        enableInDevelopment: false, // optional
+      },
+    ],
+    [
+      "@docusaurus/plugin-google-tag-manager",
+      {
+        containerId: "G-G578SD4VZD",
+      },
+    ],
+  ],
+
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/Nacelle/Nacelle-Light.otf",
+        as: "font",
+        type: "font/otf",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/Nacelle/Nacelle-Regular.otf",
+        as: "font",
+        type: "font/otf",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/Nacelle/Nacelle-SemiBold.otf",
+        as: "font",
+        type: "font/otf",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/Nacelle/Nacelle-Bold.otf",
+        as: "font",
+        type: "font/otf",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/IBM/IBMPlexMono-Light.ttf",
+        as: "font",
+        type: "font/ttf",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/IBM/IBMPlexMono-Regular.ttf",
+        as: "font",
+        type: "font/ttf",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/IBM/IBMPlexMono-SemiBold.ttf",
+        as: "font",
+        type: "font/ttf",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/fonts/IBM/IBMPlexMono-Bold.ttf",
+        as: "font",
+        type: "font/ttf",
+        crossorigin: "anonymous",
+      },
+    },
+  ],
+
   themeConfig: {
     image: "https://media.docs.plane.so/logo.svg",
     docs: {
@@ -100,8 +212,8 @@ const config: Config = {
       title: "",
       logo: {
         alt: "Plane",
-        src: "https://media.docs.plane.so/logo/Plane.svg",
-        srcDark: "https://media.docs.plane.so/logo/Plane-white.svg",
+        src: "https://media.docs.plane.so/logo/new-logo-white.png",
+        srcDark: "https://media.docs.plane.so/logo/new-logo-dark.png",
       },
       items: [
         {
@@ -139,35 +251,6 @@ const config: Config = {
       href: "https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=National+Park:wght@200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap",
       type: "text/css",
     },
-  ],
-
-  scripts: [
-    {
-      src: "https://plausible.io/js/script.js",
-      defer: true,
-      "data-domain": "docs.plane.so",
-    },
-    {
-      src: "https://cdn.cr-relay.com/v1/site/b1fcbcbd-67f6-4736-940f-033731801664/signals.js",
-      async: true,
-    },
-  ],
-
-  plugins: [
-    [
-      "posthog-docusaurus",
-      {
-        apiKey: "phc_HskAKGRy7x0BEoWfyeHzYWWzcMmKG9DCail7ot7WQkA",
-        appUrl: "https://us.i.posthog.com", // optional
-        enableInDevelopment: false, // optional
-      },
-    ],
-    [
-      "@docusaurus/plugin-google-tag-manager",
-      {
-        containerId: "G-G578SD4VZD",
-      },
-    ],
   ],
 };
 

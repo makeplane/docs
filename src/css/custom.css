@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #004eff;
+  --ifm-color-primary: #006399;
   --ifm-color-primary-dark: #1b47c2; /* Darker shade */
   --ifm-color-primary-darker: #1941b1; /* Even darker */
   --ifm-color-primary-darkest: #153693; /* Darkest */
@@ -19,7 +19,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-color-primary: #3e76ff;
+  --ifm-color-primary: #006399;
   --ifm-color-primary-dark: #1b47c2; /* Darker shade */
   --ifm-color-primary-darker: #1941b1; /* Even darker */
   --ifm-color-primary-darkest: #153693; /* Darkest */
@@ -30,7 +30,8 @@
 }
 
 .navbar__logo img {
-  width: 100px;
+  width: 150px;
+  height: auto;
 }
 
 @media (min-width: 1536px) {
@@ -93,17 +94,29 @@
 .menu__link--active:not(.menu__link--sublist) {
   font-weight: 600;
   transition: color 0.25s;
-  color: #3e76ff;
+  color: #006399;
   font-size: 13px;
   border-left-style: solid;
   border-left-width: 4px;
   padding-left: 8px !important;
 }
 
+[data-theme="dark"] .menu__link--active:not(.menu__link--sublist) {
+  color: #2690C9;
+}  
+
+[data-theme="dark"] .breadcrumbs__item--active .breadcrumbs__link {
+    color: #2690C9;
+}
+
+[data-theme="dark"] a{
+  color: #2690C9;
+}
+
 .menu__link--active:is(.theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible > .menu__link--sublist) {
   font-weight: 600;
   transition: color 0.25s;
-  color: #3e76ff;
+  color: #006399;
   font-size: 13px;
   border-left-style: solid;
   border-left-width: 4px;
@@ -266,19 +279,33 @@
 
 h1 {
   font-size: 2rem;
+  line-height: 120%;
 }
 h2 {
   font-size: 1.5rem;
-  line-height: 1.25;
+  line-height: 140%;
 }
 h3 {
   font-size: 1.25rem;
-  line-height: 1;
+   line-height: 140%;
 }
 
+h4{
+  line-height: 140%;
+} 
+
+h5{
+  line-height: 140%;
+} 
+
+h6{
+  line-height: 140%;
+} 
+
+
 #__docusaurus > nav > div.navbar__inner > div.navbar__items.navbar__items--right > a:nth-child(3) {
-  background-color: #004eff;
-  border-radius: var(--rounded-full, 9999px);
+  background-color: #006399;
+  border-radius: 8px;
   color: #f3f5f7;
   font-size: 0.75rem;
   font-weight: 500;
@@ -434,7 +461,7 @@ html[data-theme="dark"] .one {
 }
 
 .card:hover {
-  border: 1px solid #3e76ff;
+  border: 1px solid #006399;
 }
 
 .card-icon {
@@ -446,7 +473,7 @@ html[data-theme="dark"] .one {
 }
 
 .icon-style {
-  color: #3e76ff;
+  color: #006399;
 }
 
 .card-title {
@@ -475,11 +502,67 @@ html[data-theme="dark"] .one {
 
 html {
   color: #213547;
-  font-family: "Instrument Sans", sans-serif;
+  font-family: var(--ifm-font-family-base);
+}
+
+body {
+  font-family: var(--ifm-font-family-base);
+}
+
+.navbar {
+  font-family: var(--ifm-font-family-base);
+}
+
+.navbar__title {
+  font-family: var(--ifm-font-family-base);
+  font-weight: 600;
+}
+
+.menu__link {
+  font-family: var(--ifm-font-family-base);
+}
+
+.markdown {
+  font-family: var(--ifm-font-family-base);
+}
+
+* {
+  font-family: var(--ifm-font-family-base);
+}
+
+.theme-doc-markdown {
+  font-family: var(--ifm-font-family-base);
 }
 
 code {
   color: #213547;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+pre {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+pre code {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* Inline code */
+.markdown code {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* Code blocks in different contexts */
+.prism-code {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.codeBlockContainer_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Container-styles-module {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+code, kbd, pre, samp {
+  font-family: var(--ifm-font-family-monospace) !important;
 }
 
 strong {
@@ -492,7 +575,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Instrument Sans", sans-serif;
+  font-family: var(--ifm-heading-font-family);
   color: rgb(18 27 46);
 }
 
@@ -502,7 +585,7 @@ h6 {
 [data-theme="dark"] h4,
 [data-theme="dark"] h5,
 [data-theme="dark"] h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--ifm-heading-font-family);
   color: rgb(224 228 236);
 }
 
@@ -707,7 +790,7 @@ html:not([data-theme]) .themedComponent--light_NVdE {
 p,
 table,
 .menu__link {
-  font-family: "Instrument Sans", sans-serif;
+  font-family: var(--ifm-font-family-base);
 }
 
 .menu__caret:hover {
@@ -727,3 +810,73 @@ table,
     box-sizing: border-box;
   }
 }
+
+@font-face {
+      font-family: 'Nacelle';
+      src: url('/fonts/Nacelle/Nacelle-Light.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+  }
+
+ @font-face {
+      font-family: 'Nacelle';
+      src: url('/fonts/Nacelle/Nacelle-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+  }
+
+  @font-face {
+      font-family: 'Nacelle';
+      src: url('/fonts/Nacelle/Nacelle-SemiBold.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+  }
+
+  @font-face {
+      font-family: 'Nacelle';
+      src: url('/fonts/Nacelle/Nacelle-Bold.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+  }
+
+  @font-face {
+      font-family: 'IBM Mono';
+      src: url('/fonts/IBM/IBMPlexMono-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+  }
+
+  @font-face {
+  font-family: 'IBM Mono';
+  src: url('/fonts/IBM/IBMPlexMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Mono';
+  src: url('/fonts/IBM/IBMPlexMono-SemiBold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Mono';
+  src: url('/fonts/IBM/IBMPlexMono-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+  :root {
+     --ifm-font-family-base: 'Nacelle';
+     --ifm-heading-font-family: 'Nacelle';
+     --ifm-font-family-monospace: 'IBM Mono';
+  }
