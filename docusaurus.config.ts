@@ -187,11 +187,11 @@ const config: Config = {
     metadata: [
       {
         property: "og:image",
-        content: "https://media.docs.plane.so/logo/docs-og.webp",
+        content: "https://media.docs.plane.so/logo/og-docs.webp",
       },
       {
         name: "twitter:image",
-        content: "https://media.docs.plane.so/logo/docs-og.webp",
+        content: "https://media.docs.plane.so/logo/og-docs.webp",
       },
       {
         name: "keywords",
