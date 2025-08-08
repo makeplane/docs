@@ -122,6 +122,14 @@ const sidebars: SidebarsConfig = {
         "core-concepts/pages/nested-pages",
       ],
     },
+    
+    {
+      type: "category",
+      collapsed: false,
+      label: "AI",
+      items: ["ai/pi-chat"],
+    },
+
     {
       type: "category",
       collapsed: false,

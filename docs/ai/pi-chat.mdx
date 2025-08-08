@@ -1,0 +1,206 @@
+---
+title: Pi chat
+hide_title: true
+description: Meet Pi, Plane's AI assistant that helps you find project data, analyze work items, and get insights using natural language queries. Try it today.
+---
+
+import Tags from "@site/src/components/Tags";
+
+<div className="tag-wrapper">
+  <h1>AI-powered assistant for Plane</h1>
+  <Tags tags={[{ name: "Pro", additionalClass: "pro" }]} />
+  <Tags tags={[{ name: "Business", additionalClass: "business" }]} />
+</div>
+
+Pi (Plane Intelligence) is an AI assistant that helps you interact with your Plane workspace using natural language. Instead of navigating through menus and filters, you can simply ask Pi questions about your projects, work items, and documentation in plain English.
+
+Think of Pi as a knowledgeable team member who has instant access to all your project data. You can ask it to find specific issues, analyze project progress, search through documentation, or help you understand complex relationships between work items.
+
+## What Pi can do today
+
+Pi excels at finding and analyzing information from your Plane workspace:
+
+**Search and discovery**
+- Find work items by describing what you're looking for: "Show me all bugs related to user authentication".
+- Search across project documentation and Pages.
+- Discover related work items and identify potential duplicates through AI-powered matching with similarity scoring.
+- Access official Plane documentation and feature guides.
+- Cross-project discovery to find related content across multiple projects
+
+**Data analysis and insights**
+- Analyze project progress and team performance with real-time queries.
+- Generate reports on work item status and trends using complex filtering and aggregations
+- Identify bottlenecks and overdue tasks through intelligent database querying
+- Compare data across different time periods or projects.
+- Handle temporal queries and understand relationships between entities.
+- Convert natural language to optimized SQL queries for structured Plane data
+
+**Contextual assistance**
+- Get help with Plane features and workflows.
+- Find best practices and usage recommendations.
+- Understand relationships between projects, cycles, and modules.
+- Navigate complex project structures.
+- Access step-by-step instructions and how-to guidance. 
+
+## What Pi cannot do (yet)
+
+Pi is currently **read-only**. It cannot perform actions that modify your workspace:
+
+- ❌ Create new work items, cycles, or modules.
+- ❌ Update existing issues or change their status.
+- ❌ Assign tasks to team members.
+- ❌ Modify project settings or permissions.
+- ❌ Delete any content.
+- ❌ Execute automated task workflows.
+- ❌ Handle bulk operations or routine project management tasks.
+
+The Action Executor Agent is in development and will enable these capabilities in future releases.
+
+## How to use Pi
+
+### Access Pi
+
+Pi is accessible from the left sidebar (Pi icon for a dedicated chat interface with recent history) or directly within a project’s Work Items and Cycles pages (Pi icon on the top right to start a new chat in a side panel without leaving your view).
+
+### Start a conversation
+
+1. Type your question in the chat input at the bottom of the Pi interface.
+2. Pi will process your query and provide a response.
+3. You can ask follow-up questions to dive deeper into the results.
+
+### Thread organization and management
+
+- All conversations are saved and organized in persistent conversation threads.
+- Automatic chat titling based on content.
+- Mark important conversations as favorites for easy access.
+- Search and revisit past conversations.
+- Delete and rename chats with full management capabilities.
+
+Conversational features
+
+- Maintain context across multiple exchanges with multi-turn conversations.
+- Support for markdown, code blocks, tables, and lists with rich formatting.
+- Automatically create clickable links to work items and pages through entity linking.
+
+### Workspace and project context
+
+Notice the **Focus** selector at the bottom of the chat interface.
+- Set your conversation scope to a specific workspace.
+- Switch between different workspaces if you have access to multiple ones.
+- Ensure Pi searches and analyzes data from the right context.
+- Narrow context to individual projects when needed.
+
+### Pi's reasoning and responses
+
+Pi includes a **Show thinking** feature that reveals how it processes your queries.
+- Click **Show thinking** to see Pi's step-by-step reasoning process.
+- Watch as Pi understands your query, plans its approach, and executes database searches.
+- This transparency helps you understand why Pi provides certain results and how to refine your questions.
+
+Pi provides structured responses that may include:
+- Direct answers with relevant data from live Plane databases.
+- Tables and lists for organized information with complex filtering.
+- Links to specific work items and pages with clickable references.
+- Explanations of why certain results were included with reasoning.
+- Aggregations and analytics that generate insights from project data.
+- Relationship mapping showing connections between entities.
+
+When Pi references work items, it will show you the title and provide clickable links to view them directly in Plane.
+
+### Get better results
+
+**Be specific about your needs**
+- Instead of: "Show me issues"
+- Try: "Show me high-priority bugs in the mobile app project from last month"
+
+**Use natural language**
+- "What tasks are overdue in my current sprint?"
+- "Who has been working on authentication issues?"
+- "Find documentation about setting up webhooks"
+
+**Ask follow-up questions**
+- Pi remembers your conversation context
+- Build on previous queries: "Now show me only the ones assigned to Sarah"
+- Ask for different formats: "Can you show this as a summary instead?"
+
+### Sample queries to try
+
+Based on the interface, here are some example questions you might ask:
+
+**Personal work insights**
+- "Who commented on my work items recently?"
+- "What did I complete this week?"
+- "What's the progress of work items in current active cycles?"
+
+**Project analysis**
+- "Show me all items in the backlog for this project"
+- "What work is planned for the next sprint?"
+- "Which items are ready for development?"
+
+**Team coordination**
+- "What's blocking our current sprint work?"
+- "Show me overdue items across all projects"
+- "Which team members need more work assigned?"
+
+### Manage your conversations
+
+- **Recent chats**: Access your conversation history from the **Recents** section in the sidebar.
+- **New conversations**: Click "New chat" to start fresh when switching topics.
+- **Contextual help**: Pi will suggest relevant follow-up questions based on your queries
+
+### Response interactions
+
+At the bottom of each Pi response, you'll find:
+- **Thumbs up/down**: Rate the helpfulness of Pi's response.
+- **Copy**: Copy the response text for use elsewhere.
+- **Share**: Share the conversation or specific responses with team members.
+
+## Platform availability
+
+Pi works across all your devices:
+
+- **Web interface**: Access Pi directly within your Plane workspace.
+- **Mobile apps**: Native iOS and Android apps with full Pi functionality.
+- **Sync across devices**: Your conversation history stays consistent everywhere.
+
+## Privacy and permissions
+
+Pi respects your Plane permissions and workspace boundaries:
+- You can only access data you normally have permission to view.
+- Conversations are scoped to your current workspace.
+- Pi cannot see or access other workspaces you don't belong to.
+
+## Tips for effective use
+
+**Start broad, then narrow down**. Begin with general queries and use Pi's responses to refine your search:
+1. "Show me recent bugs"
+2. "Focus on the ones from the authentication module"
+3. "Which of these are assigned to the backend team?"
+
+**Use Pi for discovery**
+- "What documentation exists about our API?"
+- "Find all work items mentioning performance issues"
+- "Show me pages related to user onboarding"
+
+**Leverage context awareness**
+Pi understands your project structure and relationships:
+- "What's blocking the login feature work?"
+- "Find related issues to PROJ-123"
+- "Show me work items similar to this bug report"
+
+If Pi doesn't understand your query or provides unexpected results:
+- Try rephrasing your question with different terms
+- Be more specific about timeframes, projects, or work item types
+- Ask Pi to explain its reasoning: "Why did you include these results?"
+
+Pi is continuously learning and improving. The more you use it, the better it becomes at understanding your team's specific needs and terminology.
+
+## What's coming next
+
+We're actively working on expanding Pi's capabilities:
+- **Action execution**: Create and update work items through conversation
+- **Advanced workflows**: Automate routine project management tasks
+- **Voice interface**: Speak your queries instead of typing
+- **Enhanced analytics**: Predictive insights and recommendations
+
+Pi represents the future of project management, where natural conversation replaces complex interfaces, and your AI assistant helps you focus on what matters most: building great products.
