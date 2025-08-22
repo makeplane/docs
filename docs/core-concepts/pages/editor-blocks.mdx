@@ -66,11 +66,16 @@ Uploads and embeds files directly into your content, supporting documents, image
   ]} 
  />
 </div>
+![Math equations](https://media.docs.plane.so/pages/math-equations.webp#center)
 
 ### Block equation
 Creates standalone mathematical expressions using LaTeX syntax. Block equations are displayed on their own line with centered formatting, perfect for formulas, theorems, and complex mathematical statements that need emphasis.
 
-Use the `/blockequation` slash command or double dollar syntax:
+Use the `/blockequation` slash command:
+  ```
+  \lim_{x \to \infty} \frac{1}{x} = 0
+  ```
+Or use double dollar syntax:
   ```latex
   $$ \int_a^b f(x)\,dx = F(b) - F(a) $$
   ```
@@ -78,7 +83,11 @@ Use the `/blockequation` slash command or double dollar syntax:
 ### Inline equation
 Embeds mathematical expressions within regular text flow using LaTeX syntax. Inline equations maintain the same text baseline, allowing you to seamlessly integrate mathematical notation into sentences and paragraphs.
 
-Use the `/inlineequation` slash command or single dollar syntax: 
+Use the `/inlineequation` slash command:
+  ```
+  /inlineequation \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+  ```
+Or use single dollar syntax: 
   ```latex
   $ a^2 + b^2 = c^2 $
   ```
