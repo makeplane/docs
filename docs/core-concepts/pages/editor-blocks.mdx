@@ -58,6 +58,33 @@ Inserts and displays images within your content.
 
 Uploads and embeds files directly into your content, supporting documents, images, and other file types up to 100MB each.
 
+<div className="tag-wrapper">
+## Math equations
+<Tags 
+  tags={[ 
+    { name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }
+  ]} 
+ />
+</div>
+
+### Block equation
+Creates standalone mathematical expressions using LaTeX syntax. Block equations are displayed on their own line with centered formatting, perfect for formulas, theorems, and complex mathematical statements that need emphasis.
+
+Use the `/blockequation` slash command or double dollar syntax:
+  ```latex
+  $$ \int_a^b f(x)\,dx = F(b) - F(a) $$
+  ```
+
+### Inline equation
+Embeds mathematical expressions within regular text flow using LaTeX syntax. Inline equations maintain the same text baseline, allowing you to seamlessly integrate mathematical notation into sentences and paragraphs.
+
+Use the `/inlineequation` slash command or single dollar syntax: 
+  ```latex
+  $ a^2 + b^2 = c^2 $
+  ```
+
+Both equation types support full LaTeX rendering with built-in validation and error handling for invalid mathematical expressions.
+
 ## Callout   
 Creates visually distinct sections with customizable icons and colors for highlighting warnings, tips , and calls-to-action.
 
