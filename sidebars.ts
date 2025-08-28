@@ -135,7 +135,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsed: false,
       label: "Importers",
-      items: ["importers/overview", "importers/jira", "importers/linear", "importers/asana", "importers/csv"],
+      items: ["importers/overview", "importers/asana", "importers/confluence", "importers/clickup","importers/csv", "importers/jira", "importers/linear", "importers/notion" ],
     },
     {
       type: "category",
