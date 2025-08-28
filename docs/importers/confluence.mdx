@@ -9,14 +9,14 @@ import Tags from "@site/src/components/Tags";
 # Import your Confluence data to Plane
 <Tags 
   tags={[ 
-    { name: "Pro", link:"https://plane.so/pricing", additionalClass: "pro" }
+    { name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }
   ]} 
  />
 </div>
 
-The Confluence to Plane importer lets you transfer your Confluence pages and content to Plane's wiki. This is useful when you want to bring your documentation, notes, and structured content from Confluence into your Plane workspace as wiki pages.
+The Confluence to Plane importer lets you transfer your Confluence pages and content to Plane's Wiki. This is useful when you want to bring your documentation, notes, and structured content from Confluence into your Plane workspace as Wiki pages.
 
-The importer takes exported Confluence content and converts it into Plane wiki pages. It preserves your page structure, including subpages, and maintains the hierarchical organization of your Confluence space within Plane's wiki system.
+The importer takes exported Confluence content and converts it into Plane Wiki pages. It preserves your page structure, including subpages, and maintains the hierarchical organization of your Confluence space within Plane's Wiki system.
 
 ## Export your Confluence content
 
@@ -40,15 +40,41 @@ First, you need to export your content from Confluence:
 
 ## Import Confluence content to Plane
 
+![Import from Confluence](https://media.docs.plane.so/importers/confluence/import-confluence.webp#center)
+
 Once you have your exported ZIP file:
 
 1. Go to the **Imports** section in your Plane workspace.
 2. Click **Import** next to the Confluence option.
 3. On the Confluence import page, click **Upload Confluence Exported ZIP**.
 4. Select and upload the ZIP file you exported from Confluence.
+    ![Upload confluence file](https://media.docs.plane.so/importers/confluence/upload-confluence-file.webp#center)
 5. Wait for the upload to complete. You'll see a "Upload complete!" message.
 6. Click **Start Import** to begin processing your Confluence data.
 
 7. The import will process in phases. Once finished, the status will change to "Finished".
+    ![Confluence file uploaded](https://media.docs.plane.so/importers/confluence/confluence-file-uploaded.webp#center)
 
 8. After the import completes, your Confluence pages will be available in Plane's **Wiki** section. The page hierarchy from Confluence will be preserved, with main pages and their subpages organized in the same structure.
+
+## Imported fields
+
+Here's how different Confluence elements are handled during import:
+
+| Confluence | Plane |
+|-------------------|--------------|
+| Markdown | Markdown |
+| Videos | Links |
+| Embeds | Links |
+| Attachments | Links |
+| Text and background colors | Text and background colors |
+| Links | Links |
+| Subpages | Nested pages |
+| Page mentions | Links |
+| User mentions | Link (Atlassian user) |
+| Table background colors | Not imported |
+| Block highlight | Text highlight (not supported) |
+| Columns | Rendered Vertically (not supported) |
+| Comments | Not supported |
+| Databases | Tables |
+| Collapsible | Callout |

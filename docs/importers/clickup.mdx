@@ -18,25 +18,29 @@ To import custom task types from ClickUp, make sure the [Work item types](/core-
 ## Import from ClickUp
 > **Role**: Workspace admins
 
+    ![Import from ClickUp](https://media.docs.plane.so/importers/clickup/import-clickup.webp#center)
 1. Go to your Workspace Settings.
-
+   
 2. Select **Imports** on the left pane and click **Import** next to ClickUp.
+
+    ![Personal access token](https://media.docs.plane.so/importers/clickup/personal-access-token.webp#center)
 
 3. Enter your ClickUp Personal Access Token on the Migration Assistant page. If you don't have one, go to your ClickUp settings under **Apps** to generate it. Click **Connect ClickUp** after entering the token.
 
 4. Choose what to import:
+    ![Configure ClickUp](https://media.docs.plane.so/importers/clickup/configure-clickup.webp#center)
     1. Select your ClickUp team (workspace).
     2. Pick your ClickUp space.
     3. Choose the folders to migrate.
     4. Check "Import comments and attachments" if you want these included.
+    5. Click **Next** to continue.
 
-5. Click **Next** to continue.
+5. Match your ClickUp priorities to Plane priorities using the dropdown menus. This keeps your task prioritization consistent after migration.
+  ![Map priorities](https://media.docs.plane.so/importers/clickup/map-priorities.webp#center)
 
-6. Match your ClickUp priorities (Urgent, High, Normal, Low) to Plane priorities using the dropdown menus. This keeps your task prioritization consistent after migration.
+6. Review the mappings and make any changes if needed. Click **Back** to adjust.
 
-7. Review the mappings and make any changes if needed. Click **Back** to adjust.
-
-8. You can check "Skip importing User data" if you don't want to migrate user information and manually add them later.
+7. You can check "Skip importing User data" if you don't want to migrate user information and manually add them later.
     :::warning
     If you skip user import, work items and comments will show the name of the person who performed the migration, and the Assignees field will be empty.
     :::
@@ -79,7 +83,9 @@ The importer handles these custom field types:
 
 After the import, if there are any new or updated issues in ClickUp, you can easily sync these changes to Plane:
 
+![Rerun import](https://media.docs.plane.so/importers/clickup/rerun-import.webp#center)
+
 1. Go to **Workspace settings**.
-2. Select **Imports** on the right pane.
+2. Select **Imports** on the left pane.
 3. Click the **Re run** button next to the project you want to sync.
 
