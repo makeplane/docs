@@ -52,6 +52,7 @@ const sidebars: SidebarsConfig = {
         "core-concepts/issues/time-tracking",
         "core-concepts/issues/bulk-ops",
         "core-concepts/projects/recurring-work-items",
+        "automations/custom-automations",
         "core-concepts/issues/timeline-dependency",
         "core-concepts/issues/epics",
         "core-concepts/projects/initiatives",
