@@ -98,39 +98,9 @@ const config: Config = {
       tagName: "link",
       attributes: {
         rel: "preload",
-        href: "/fonts/Nacelle/Nacelle-Light.otf",
+        href: "/fonts/Satoshi/Satoshi-Variable.ttf",
         as: "font",
-        type: "font/otf",
-        crossorigin: "anonymous",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "preload",
-        href: "/fonts/Nacelle/Nacelle-Regular.otf",
-        as: "font",
-        type: "font/otf",
-        crossorigin: "anonymous",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "preload",
-        href: "/fonts/Nacelle/Nacelle-SemiBold.otf",
-        as: "font",
-        type: "font/otf",
-        crossorigin: "anonymous",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "preload",
-        href: "/fonts/Nacelle/Nacelle-Bold.otf",
-        as: "font",
-        type: "font/otf",
+        type: "font/ttf",
         crossorigin: "anonymous",
       },
     },

@@ -75,7 +75,7 @@
 
 .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link--sublist {
   margin-bottom: 6px;
-  font-size: 13px;
+  font-size: 14px !important;
   font-weight: 600;
   line-height: 20px;
   color: #213547;
@@ -531,6 +531,7 @@ html {
 
 body {
   font-family: var(--ifm-font-family-base);
+  letter-spacing: 0.02em;
 }
 
 .navbar {
@@ -539,11 +540,11 @@ body {
 
 .navbar__title {
   font-family: var(--ifm-font-family-base);
-  font-weight: 600;
 }
 
 .menu__link {
   font-family: var(--ifm-font-family-base);
+  font-variation-settings: 'wght' 600; 
 }
 
 .markdown {
@@ -835,35 +836,11 @@ table,
   }
 }
 
-@font-face {
-      font-family: 'Nacelle';
-      src: url('/fonts/Nacelle/Nacelle-Light.otf') format('opentype');
-      font-weight: 300;
-      font-style: normal;
-      font-display: swap;
-  }
-
- @font-face {
-      font-family: 'Nacelle';
-      src: url('/fonts/Nacelle/Nacelle-Regular.otf') format('opentype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-  }
-
   @font-face {
-      font-family: 'Nacelle';
-      src: url('/fonts/Nacelle/Nacelle-SemiBold.otf') format('opentype');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-  }
-
-  @font-face {
-      font-family: 'Nacelle';
-      src: url('/fonts/Nacelle/Nacelle-Bold.otf') format('opentype');
-      font-weight: 600;
-      font-style: normal;
+      font-family: 'Satoshi';
+      src: url('/fonts/Satoshi/Satoshi-Variable.ttf') format('truetype');
+      font-weight: 400 680;
+      font-style: normal italic;
       font-display: swap;
   }
 
@@ -900,7 +877,12 @@ table,
 }
 
   :root {
-     --ifm-font-family-base: 'Nacelle';
-     --ifm-heading-font-family: 'Nacelle';
+     --ifm-font-family-base: 'Satoshi';
+     --ifm-heading-font-family: 'Satoshi';
      --ifm-font-family-monospace: 'IBM Mono';
+     --font-weight-light: 400;
+     --font-weight-regular: 480;
+     --font-weight-medium: 560;
+     --font-weight-semibold: 640;
+     --font-weight-bold: 680;
   }
