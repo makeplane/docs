@@ -9,20 +9,11 @@ const sidebars: SidebarsConfig = {
       items: [
         "introduction/home",
         "introduction/core-concepts",
-        {
-          type: "category",
-          label: "Quickstart",
-          link: { type: "doc", id: "introduction/quickstart" },
-          items: [
-            "introduction/quickstart/workspace-admin",
-            "introduction/quickstart/project-admin",
-            "introduction/quickstart/project-member",
-          ],
-        },
+        "introduction/quickstart",
         {
           type: "category",
           label: "Tutorials",
-          link: { type: "doc", id: "core-concepts/projects/overview" },
+          link: { type: "doc", id: "introduction/tutorials/overview" },
           items: [
             "introduction/tutorials/create-workspace",
             "introduction/tutorials/invite-members",
