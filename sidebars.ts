@@ -158,12 +158,13 @@ const sidebars: SidebarsConfig = {
       label: "Integrations",
       items: ["integrations/about", "integrations/github", "integrations/slack", "integrations/gitlab"],
     },
-    {
+   /* {
       type: "category",
       collapsed: false,
       label: "Performance",
       items: ["performance/hyper-mode"],
     },
+    */
     {
       type: "category",
       collapsed: false,
