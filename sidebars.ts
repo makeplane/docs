@@ -124,7 +124,7 @@ const sidebars: SidebarsConfig = {
         "core-concepts/pages/nested-pages",
       ],
     },
-    
+
     {
       type: "category",
       collapsed: false,
@@ -136,15 +136,30 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsed: false,
       label: "Importers",
-      items: ["importers/overview", "importers/asana", "importers/confluence", "importers/clickup","importers/csv", "importers/jira", "importers/linear", "importers/notion" ],
+      items: [
+        "importers/overview",
+        "importers/asana",
+        "importers/confluence",
+        "importers/clickup",
+        "importers/csv",
+        "importers/jira",
+        "importers/linear",
+        "importers/notion",
+      ],
     },
     {
       type: "category",
       collapsed: false,
       label: "Integrations",
-      items: ["integrations/about", "integrations/github", "integrations/slack", "integrations/gitlab"],
+      items: [
+        "integrations/about",
+        "integrations/github",
+        "integrations/slack",
+        "integrations/gitlab",
+        "integrations/sentry",
+      ],
     },
-   /* {
+    /* {
       type: "category",
       collapsed: false,
       label: "Performance",
