@@ -26,7 +26,7 @@ Follow the steps below to complete the setup:
 
 To get started, you need to connect your Sentry account to Plane.
 
-![Connect Sentry](https://media.docs.plane.so/integrations/sentry/connect-sentry.webp#center)
+![Connect Sentry](https://media.docs.plane.so/sentry/sentry_install.png#center)
 
 1. Navigate to [Workspace Settings](/core-concepts/workspaces/overview#workspace-settings) in Plane.
 2. On the right pane, select **Integrations**.
@@ -40,14 +40,16 @@ That's it! Your Sentry account is now integrated with Plane.
 
 Map Sentry issue states to your project states. Configure which states to use when a Sentry issue is resolved or unresolved.
 
-![State Mapping](https://media.docs.plane.so/integrations/sentry/state-mapping.webp#center)
-
 1. In the **Sentry** integration settings, find the **State Mapping** section.
 2. Select the Plane project you want to sync Sentry issues to.
 3. Configure how Sentry issue states should map to Plane project states:
    - **Unresolved** → Select the appropriate Plane project status (e.g., "Open" or "In Progress")
    - **Resolved** → Select the appropriate Plane project status (e.g., "Done" or "Closed")
 4. Click **Save** to apply your state mapping configuration.
+
+![State Mapping](https://media.docs.plane.so/sentry/sentry_project_mapping.png)
+
+![Post State Mapping](https://media.docs.plane.so/sentry/sentry_config.png)
 
 :::info
 State mapping ensures that when Sentry issues are automatically synced to Plane, they appear with the correct status. You can always modify these mappings later if your workflow changes.
@@ -61,7 +63,8 @@ Now that Sentry is connected to your Plane workspace, we can resolve Sentry issu
 
 In Sentry alerts, users can setup an action to auto create a work item in Plane when trigger and conditions are met.
 
-![Sentry Alert Setup](https://media.docs.plane.so/integrations/sentry/sentry-alert-setup.webp#center)
+![Sentry Alert Setup](https://media.docs.plane.so/sentry/create_issue_alert.png)
+![Sentry Plane Sync Modal](https://media.docs.plane.so/sentry/create_workitem_modal.png)
 
 1. Navigate to your Sentry project settings.
 2. Go to **Alerts** and click **Create Alert Rule**.
@@ -79,13 +82,15 @@ Once configured, Sentry will automatically create work items in your selected Pl
 
 On a Sentry issue, you can use Makeplane in the "Issue Tracking" section to link the current issue to a Plane work item. This will start a bi-directional sync with Plane work items.
 
-![Link Sentry Issue](https://media.docs.plane.so/integrations/sentry/link-sentry-issue.webp#center)
-
 1. Navigate to any Sentry issue in your project.
 2. Scroll down to the **Issue Tracking** section.
 3. Click on **Makeplane** to link this issue to a Plane work item.
 4. Search for and select the existing Plane work item you want to link, or create a new one.
 5. Click **Save Changes** to establish the connection.
+
+![Link Sentry Issue](https://media.docs.plane.so/sentry/issue_tracking.png)
+![Create / Link Work Item](https://media.docs.plane.so/sentry/create_link.png)
+
 
 Once linked, the Sentry issue and Plane work item will sync bi-directionally:
 - If the issue is resolved on Sentry, it will be closed on Plane
@@ -98,8 +103,6 @@ This bi-directional sync keeps your error tracking and project management in per
 ### Update work item status from Plane
 
 Once the state on a work item is moved to the resolved state specified during state mapping, the Sentry issue will get automatically resolved.
-
-![Update Work Item Status](https://media.docs.plane.so/integrations/sentry/update-work-item-status.webp#center)
 
 1. Navigate to the linked work item in Plane.
 2. Change the work item state to the resolved state you configured during state mapping.
