@@ -20,9 +20,7 @@ This guide will walk you through how to set up and connect your Sentry account t
 Follow the steps below to complete the setup:
 
 1. [Connect your Sentry account](/integrations/sentry#connect-your-sentry-account)
-2. [Set up State Mapping](/integrations/sentry#set-up-state-mapping)
-3. [Set up Sentry alerts](/integrations/sentry#set-up-sentry-alerts)
-4. [Link Sentry issues to Plane work items](/integrations/sentry#link-sentry-issues-to-plane-work-items)
+2. [Set up Resolution States](/integrations/sentry#set-up-resolution-states)
 
 ### Connect your Sentry account
 
@@ -38,9 +36,9 @@ To get started, you need to connect your Sentry account to Plane.
 
 That's it! Your Sentry account is now integrated with Plane.
 
-### Set up State Mapping
+### Set up Resolution States
 
-Map Sentry issue states to your project states. Configure which states to use when a Sentry issue is resolved or unresolved.
+Select resolution states for Sentry issues. Configure which states to use when a Sentry issue is resolved or unresolved and vice versa.
 
 1. In the **Sentry** integration settings, find the **State Mapping** section.
 2. Select the Plane project you want to sync Sentry issues to.
@@ -54,7 +52,7 @@ Map Sentry issue states to your project states. Configure which states to use wh
 ![Post State Mapping](https://media.docs.plane.so/sentry/sentry_config.png)
 
 :::info
-State mapping ensures that when Sentry issues are automatically synced to Plane, they appear with the correct status. You can always modify these mappings later if your workflow changes.
+State mapping ensures that when Sentry issues are automatically synced to Plane, they appear with the correct state. You can always modify these mappings later if your workflow changes.
 :::
 
 ## Use the Sentry integration
@@ -82,7 +80,7 @@ Once configured, Sentry will automatically create work items in your selected Pl
 
 ### Link Sentry issues to Plane work items
 
-On a Sentry issue, you can use Makeplane in the "Issue Tracking" section to link the current issue to a Plane work item. This will start a bi-directional sync with Plane work items.
+On a Sentry issue, you can use Makeplane in the "Issue Tracking" section to link the current issue to a Plane work item. This will start a bi-directional state sync between Sentry issues and Plane work items.
 
 1. Navigate to any Sentry issue in your project.
 2. Scroll down to the **Issue Tracking** section.
@@ -95,8 +93,8 @@ On a Sentry issue, you can use Makeplane in the "Issue Tracking" section to link
 
 
 Once linked, the Sentry issue and Plane work item will sync bi-directionally:
-- If the issue is resolved on Sentry, it will be closed on Plane
-- If the work item is marked as done on Plane, it will be resolved on Sentry
+- If the issue is resolved on Sentry, it will be closed on Plane.
+- If the work item is marked as done on Plane, it will be resolved on Sentry.
 
 :::info
 This bi-directional sync keeps your error tracking and project management in perfect alignment, ensuring that issue resolution status is consistent across both platforms.
