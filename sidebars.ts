@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
             "introduction/tutorials/collaborate-on-work-items",
             "introduction/tutorials/organize-and-view-work",
             "introduction/tutorials/plan-and-create-cycles",
+            "introduction/tutorials/create-pages",
           ],
         },
         {
