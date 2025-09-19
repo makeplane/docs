@@ -35,11 +35,11 @@ You can combine multiple filters to create powerful queries:
 - Add **State** → **is not** → `Done`
 
 **Track overdue work:**
-- Set **Target date** → **before** → [Today's date]
+- Set **Target date** → **before** → [Select date]
 - Add **State group** → **is not** → `Completed`
 
 **Review items without assignments:**
-- Set **Assignee** → is → [empty]
+- Set **Assignee** → is → [Leave empty]
 - Add State → in → [Backlog, To Do]
 
 ### Work with date filters
@@ -47,14 +47,14 @@ You can combine multiple filters to create powerful queries:
 Date filters are particularly powerful for project management:
 
 **This week's deliverables:**
-- Set **Target date** → **between** → [Monday] and [Sunday]
+- Set **Target date** → **between** → [[Select date range]
 
 **Items starting soon:**
-- Set **Start Date** → **after or on** → [Today]
-- Add **Start Date** → **before or on** → [One week from today]
+- Set **Start Date** → **after or on** → [Select date]
+- Add **Start Date** → **before or on** → [Select date]
 
 **Overdue items:**
-- Set **Target date** → **before** → [Today]
+- Set **Target date** → **before** → [Select date]
 - Add **State group** → **is not** → [Completed]
 
 ## Manage your filters
@@ -77,7 +77,7 @@ Each field supports different operators to give you precise control over your fi
 You get essential filtering with the `is` operator, plus `between` for date fields. This covers the most common filtering needs.
 
 **Paid plans**  
-Unlock advanced filtering with additional operators including `is not`, `after`, `before`, and more specialized conditions. We will be adding more conditions here such as `in`, `contains`, `is empty`, etc. .
+Unlock advanced filtering with additional operators including `is not`, `after`, `before`, and more specialized conditions. We will be adding more conditions here such as `not in`, `contains`, `is empty`, etc. .
 :::
 
 ### Type
@@ -87,6 +87,7 @@ Filter by custom work item types, such as Bug, Feature, or Task.
 | Operator | Description | Use case |
 |----------|-------------|----------|
 | `is` | Exactly matches one type | Show only work items with type *Bug* |
+| `is any of` | Matches any of several types | Bugs or Tasks only |
 
 ### State
 
@@ -95,6 +96,7 @@ View work items based on their current state, such as Todo, In Progress, or Done
 | Operator | Description | Use case |
 |----------|-------------|----------|
 | `is` | Exactly matches one state | Only items In Progress |
+| `is any of` | Matches any of several states | Todo or In Progress |
 | `is not` | Excludes one state | Everything except Done |
 
 ### State Group
@@ -104,6 +106,7 @@ View all, active or backlog work items.
 | Operator | Description | Use case |
 |----------|-------------|----------|
 | `is` | Exactly matches one group | Show only Started work items |
+| `is any of` | Matches any of several groups | Backlog or Unstarted |
 | `is not` | Excludes one group | Everything except Backlog |
 
 ### Assignees
@@ -113,6 +116,7 @@ Focus on work items assigned to specific team members to track workloads or iden
 | Operator | Description | Use case |
 |----------|-------------|----------|
 | `is` | Exactly matches one person | Find work assigned to Sarah |
+| `is any of` | Matches any of multiple people | Show work for the frontend team |
 | `is not` | Excludes one person | Hide items assigned to John |
 
 ### Priority
@@ -122,6 +126,7 @@ Filter work items by their priority level (e.g., Urgent, High, Medium, Low) to f
 | Operator | Description | Use case |
 |----------|-------------|----------|
 | `is` | Exactly matches one priority | Only high priority items |
+| `is any of` | Matches any of several priorities | High or medium priority |
 | `is not` | Excludes one priority | Everything except low priority |
 
 ### Mentions
@@ -131,6 +136,7 @@ Filter tasks where you or another team member has been mentioned to ensure no cr
 | Operator | Description | Use case |
 |----------|-------------|----------|
 | `is` | Exactly matches one person | Items mentioning Sarah |
+| `is any of` | Matches any of multiple people | Mentioning team leads |
 | `is not` | Excludes one person | Not mentioning John |
 
 ### Label
@@ -140,6 +146,7 @@ Filter work items based on custom tags, such as "Frontend", or "Marketing".
 | Operator | Description | Use case |
 |----------|-------------|----------|
 | `is` | Exact label match | Label exactly "bug" |
+| `is any of` | Matches any of the Labels| frontend or backend |
 | `is not` | Not exact label match | Label not exactly "bug" |
 
 ### Cycle
@@ -149,6 +156,7 @@ View work items tied to specific cycles to monitor progress within a timeframe.
 | Operator | Description | Use case |
 |----------|-------------|----------|
 | `is` | Exactly this cycle | Items in Sprint 23 |
+| `is any of` | Any of these cycles | In Sprint 23 or 24 |
 | `is not` | Not this specific cycle | Not in Sprint 23 |
 
 ### Module
@@ -158,6 +166,7 @@ Filter work items by their associated module to analyze related tasks together.
 | Operator | Description | Use case |
 |----------|-------------|----------|
 | `is` | Exactly this module | Items in Authentication module |
+| `is any of` | Any of these modules | In API development or Data management modules |
 | `is not` | Not this specific module | Not in Authentication module |
 
 ### Start date and Target date
@@ -186,4 +195,5 @@ Identify work items created by specific individuals.
 | Operator | Description | Use case |
 |----------|-------------|----------|
 | `is` | Exactly matches one person | Items created by Sarah |
+| `is any of` | Matches any of multiple people | Show work for the frontend team |
 | `is not` | Excludes one person | Not created by John |
