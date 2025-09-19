@@ -77,12 +77,9 @@ const sidebars: SidebarsConfig = {
       items: [
         "core-concepts/account/overview",
         "your-work",
-        {
-          type: "category",
-          label: "Layouts",
-          link: { type: "doc", id: "core-concepts/issues/layouts" },
-          items: ["core-concepts/issues/visualise_filter", "core-concepts/issues/display-options"],
-        },
+        "core-concepts/issues/layouts",
+        "core-concepts/issues/visualise_filter",
+        "core-concepts/issues/display-options",
         "core-concepts/views",
         "core-concepts/analytics",
         "dashboards",
