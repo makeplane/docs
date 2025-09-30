@@ -229,6 +229,10 @@
     {
       "source": "/plane-importers/jira-imp",
       "destination": "/importers/jira"
+    },
+    {
+      "source": "/performance/hyper-mode#use-hyper-mode",
+      "destination": "/"
     }
   ]
 }
