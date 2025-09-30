@@ -489,13 +489,14 @@ html[data-theme="dark"] .one {
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
+  color: #006399;
 }
 
 .icon-style {
   color: #006399;
 }
 
-[data-theme="dark"] .icon-style {
+[data-theme="dark"] .icon-style, [data-theme="dark"] .card-icon {
   color: #2690C9;
 }
 
@@ -509,6 +510,7 @@ html[data-theme="dark"] .one {
 
 .card-description {
   font-size: 14px;
+  color: #213547 !important;
 }
 
 .card-link {
@@ -522,6 +524,10 @@ html[data-theme="dark"] .one {
 .card-link:hover {
   text-decoration: none;
   color: inherit;
+}
+
+[data-theme="dark"] .card-title, [data-theme="dark"] .card-description {
+  color: #fff !important;
 }
 
 html {
