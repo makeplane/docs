@@ -8,13 +8,28 @@ const sidebars: SidebarsConfig = {
       label: "Get started",
       items: [
         "introduction/home",
+        "introduction/core-concepts",
+        "introduction/quickstart",
+        {
+          type: "category",
+          label: "Tutorials",
+          link: { type: "doc", id: "introduction/tutorials/overview" },
+          items: [
+            "introduction/tutorials/create-workspace",
+            "introduction/tutorials/invite-members",
+            "introduction/tutorials/create-project",
+            "introduction/tutorials/create-work-items",
+            "introduction/tutorials/collaborate-on-work-items",
+            "introduction/tutorials/organize-and-view-work",
+            "introduction/tutorials/plan-and-create-cycles",
+            "introduction/tutorials/create-pages",
+          ],
+        },
         {
           type: "link",
           label: "Self-host Plane",
           href: "https://developers.plane.so/self-hosting/overview",
-        },
-        "introduction/quickstart",
-        "introduction/core-concepts",
+        }
       ],
     },
     {
