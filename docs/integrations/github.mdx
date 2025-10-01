@@ -108,45 +108,85 @@ If you don’t have admin access, you can still connect your personal GitHub acc
    :::
 5. Once connected, your GitHub account will be listed in Plane.
 
-### Add repository mappings
-
-Once GitHub is connected to Plane, workspace admins can map GitHub repositories to Plane projects. This ensures issues and pull requests sync correctly.
-
-![Repository mapping](https://media.docs.plane.so/integrations/github/repository-mapping.webp#center)
-
-1. Go to the **Repository Mapping** section under **Integrations**.
-2. Click **Add** to create a new mapping.
-   ![Sync repo and project](https://media.docs.plane.so/integrations/github/sync-repo-and-project.webp#center)
-3. In the modal that appears, select:
-   - The GitHub repository you want to sync.
-   - The Plane project to map it to.
-   - The Plane states to map the state of the pull requests.
-4. Click **Continue**.
-
-All linked repositories will appear in a list, where you can edit or remove them as needed.
-
 ## Sync issues
 
-With the GitHub integration setup, you can start syncing issues between Plane and GitHub. The synchronization is bi-directional and label-based, so issues are updated automatically on both platforms when certain labels are applied.
+With the GitHub integration set up, you can sync issues between Plane and GitHub at the project level. This ensures GitHub issues and Plane work items stay synchronized within your configured repositories and projects.
 
-### Github -> Plane
+### Add project work item sync
+Once GitHub is connected to Plane, workspace admins can link GitHub repositories with Plane projects.
 
-1. Add the `Plane` label to an issue in GitHub to create and sync the issue in Plane.
+1. Navigate to the **Project Issue Sync** section under **Integrations**.
+2. Click the (+) button to create a new sync mapping.
+   ![Sync project to GitHub](https://media.docs.plane.so/integrations/github/sync-project-github.webp#center)
+3. In the modal that appears, configure the following:
+   1. **Plane project**  
+      Select the Plane project you want to sync with.
+   2. **GitHub repository**  
+      Choose the GitHub repository to connect.
+   3. **Project issue sync**  
+      Map GitHub issue states to Plane states:
+      - Issue Open → Select a Plane state (e.g., Todo)
+      - Issue Closed → Select a Plane state (e.g., Done)
+   4. **Select issue sync direction**  
+      Choose how issues should sync:
+      - Unidirectional → Sync issues from GitHub to Plane only.
+         :::warning
+         This will overwrite Plane work item content with GitHub issue data.
+         :::
+      - Bidirectional → Sync issues both ways between GitHub and Plane.
+
+      ![Sync direction](https://media.docs.plane.so/integrations/github/sync-direction.webp#center)
+   5. Click **Start Sync**.
+
+All configured project issue syncs will appear in a list where you can edit or remove them as needed.
+
+### Sync issues to Plane
+After configuring project work item sync, you can link existing GitHub issues into your Plane project.
+
+#### GitHub → Plane
+
+1. In your GitHub repository, add the `Plane` label to any issue you want to sync.
    ![Add Plane label](https://media.docs.plane.so/integrations/github/add-plane-label.webp#center)
-2. Plane posts a link back to the GitHub issue, confirming the connection.
+2. The issue will automatically be created as a work item in the linked Plane project.
+3. Plane posts a comment on the GitHub issue with a link to the newly created work item, confirming the connection.
    ![Synced issue from GitHub](https://media.docs.plane.so/integrations/github/synced-issue-from-github.webp#center)
-3. A new work item is created in Plane with a link to the GitHub issue.
+4. The work item in Plane will include a link back to the original GitHub issue.
    ![Creates issue in Plane](https://media.docs.plane.so/integrations/github/creates-plane-issue.webp#center)
 
-### Plane -> GitHub
+### Sync work items to GitHub
+If you have existing work items in Plane that you want to sync to GitHub, you can do so using labels.
 
-1. Add the `GitHub` label to a work item in Plane to sync it to GitHub.
+#### Plane → GitHub
+
+1. In your Plane project, add the `GitHub` label to any work item you want to sync.
    ![Add GitHub label](https://media.docs.plane.so/integrations/github/add-github-label.webp#center)
-2. A new issue is created in GitHub.
+2. A new issue will automatically be created in the linked GitHub repository.
    ![Creates issue in GitHub](https://media.docs.plane.so/integrations/github/create-github-issue.webp#center)
-3. The GitHub issue is also linked back to Plane.
+3. The GitHub issue will be linked back to the Plane work item.
+4. Future updates will sync according to your configured sync direction (unidirectional or bidirectional).
+
+### How issue syncing works
+
+#### State synchronization
+
+- When a GitHub issue is opened or closed, the corresponding Plane work item automatically moves to the mapped state.
+- With bidirectional sync enabled, state changes in Plane work items will also update the GitHub issue status (open/closed).
+
+#### Creating synced issues
+
+- Issues created in GitHub (within a synced repository) are automatically created in the linked Plane project.
+- With bidirectional sync enabled, work items created in Plane (with the sync configured) are also created in GitHub.
+
+#### Continuous updates
+
+- All synced properties (title, description, assignees, labels, comments, etc.) update automatically based on your sync direction settings.
+- See [What gets synced?](#what-gets-synced) for detailed information on property-level sync behavior
 
 ### What gets synced?
+
+:::warning[important]
+By default, syncing is unidirectional (GitHub → Plane only). Data from GitHub issues will overwrite corresponding data in Plane. Changes made in Plane will not sync back to GitHub unless you enable Bidirectional sync in your integration settings.
+:::
 
 Here’s what syncs automatically between Plane and GitHub:
 
@@ -161,29 +201,61 @@ Here’s what syncs automatically between Plane and GitHub:
 | Mentions             | Both ways                       | Mentioned users sync if they are mapped; otherwise, a GitHub profile link is included.                                                                                                                                                                              |
 | Issue links          | GitHub → Plane                  | Any issue references in GitHub descriptions or comments will be displayed in Plane with a direct link to the issue including the repository name and owner.                                                                                                         |
 
-## Sync pull requests
+## Configure PR state automation
 
-Pull requests (PRs) are also synchronized with Plane to ensure issue tracking remains accurate throughout the development lifecycle.
+Pull requests (PRs) are also synchronized with Plane to ensure work item tracking remains accurate throughout the development lifecycle.
 
-#### Closing references and auto-updates
+### Add pull request mapping
 
-When a pull request includes closing references to GitHub issues (e.g., `closes #14`), any linked Plane work items will automatically update with the PR link. If the PR is merged or closed, the Plane work item state updates based on the configured workflow in [Repository mappings](/integrations/github#add-repository-mappings).
+Once GitHub is connected to Plane, workspace admins can configure pull request state mapping for Plane projects. This ensures PR states automatically sync with work item states in the mapped project.
 
-#### Magic words for issue references
+1. Navigate to the **Pull request state mapping** section.
+2. Click the (+) button to create a new mapping.
+   ![Repository mapping](https://media.docs.plane.so/integrations/github/pr-state-mapping.webp#center)
+3. In the modal that appears, configure the following:
+   - **Plane project**  
+     Select the Plane project where PR state automation should be enabled.
+   - **Pull request automation**
+      Map GitHub pull request states to Plane work item states
+   ![Sync repo and project](https://media.docs.plane.so/integrations/github/pr-automation.webp#center)
+4. Click **Save**.
 
-You can use specific keywords in GitHub pull requests to manage how Plane work items are updated.
+All configured pull request state mappings will appear in a list where you can edit or remove them as needed.
 
-- **Closing references**  
-  These keywords close linked issues when the PR is merged or closed.
-  **Keywords**  
-  `close`, `closes`, `closed`, `closing`, `fix`, `fixes`, `fixed`, `resolve`, `resolves`, `resolved`, `complete`, `completes`, `completed`.
+### Set up PR automation
 
-- **Non-closing references**  
-  These keywords maintain the state mappings of linked issues but don’t close them.
-  **Keywords**  
-  `ref`, `references`, `reference to`, `part of`, `related to`.
+To automate pull request state changes with Plane work items:
 
-#### PR lifecycle mapping
+1. Configure PR state mapping for your Plane project to enable PR state automation. See [Add pull request mapping](#add-pull-request-mapping).
+2. Reference Plane work items in your GitHub PR title or description using the appropriate format. See [Reference formats](#reference-formats) below.
+3. Automatic state updates will move the work item state in Plane based on the GitHub PR state defined in your mapping.
+
+#### Reference formats
+There are two ways to reference Plane work items in your GitHub PRs:
+
+##### With brackets [WEB-344] - State automation
+
+- Links the work item to the PR
+- Adds a comment from Plane App showing linked work items
+- Automatically updates the work item state based on PR state changes (as configured in your PR state mapping)
+
+##### Without brackets WEB-344 - Link only
+
+- Links the work item to the PR as a reference
+- Adds a comment from Plane App showing referenced work items
+- Does not trigger automatic state updates
+
+*Example*
+```bash
+PR Title: [WEB-344] Add user authentication feature
+PR Description: Implements login functionality for WEB-345
+```
+
+In this example:
+- WEB-344 will be fully automated (state changes with PR state)
+- WEB-345 will be linked as a reference only (no state automation)
+
+### PR lifecycle mapping
 
 The lifecycle of a pull request can be [mapped](/integrations/github#add-repository-mappings) to workflow states in Plane. The following PR states are available for mapping:
 
@@ -194,9 +266,9 @@ The lifecycle of a pull request can be [mapped](/integrations/github#add-reposit
 - The PR is successfully merged.
 - The PR is closed without merging.
 
-#### Issue backlinks in pull requests
+### Issue backlinks in pull requests
 
-When a PR references Plane work items (using closing or non-closing reference keywords), Plane will post a confirmation comment on the pull request, ensuring visibility into which issues are linked.
+When a PR references Plane work items, Plane will post a confirmation comment on the pull request, ensuring visibility into which issues are linked.
 
 ---
 
