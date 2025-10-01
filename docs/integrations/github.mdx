@@ -140,6 +140,31 @@ Once GitHub is connected to Plane, workspace admins can link GitHub repositories
 
 All configured project issue syncs will appear in a list where you can edit or remove them as needed.
 
+### Sync issues to Plane
+After configuring project work item sync, you can link existing GitHub issues into your Plane project.
+
+#### GitHub → Plane
+
+1. In your GitHub repository, add the `Plane` label to any issue you want to sync.
+   ![Add Plane label](https://media.docs.plane.so/integrations/github/add-plane-label.webp#center)
+2. The issue will automatically be created as a work item in the linked Plane project.
+3. Plane posts a comment on the GitHub issue with a link to the newly created work item, confirming the connection.
+   ![Synced issue from GitHub](https://media.docs.plane.so/integrations/github/synced-issue-from-github.webp#center)
+4. The work item in Plane will include a link back to the original GitHub issue.
+   ![Creates issue in Plane](https://media.docs.plane.so/integrations/github/creates-plane-issue.webp#center)
+
+### Sync work items to GitHub
+If you have existing work items in Plane that you want to sync to GitHub, you can do so using labels.
+
+#### Plane → GitHub
+
+1. In your Plane project, add the `GitHub` label to any work item you want to sync.
+   ![Add GitHub label](https://media.docs.plane.so/integrations/github/add-github-label.webp#center)
+2. A new issue will automatically be created in the linked GitHub repository.
+   ![Creates issue in GitHub](https://media.docs.plane.so/integrations/github/create-github-issue.webp#center)
+3. The GitHub issue will be linked back to the Plane work item.
+4. Future updates will sync according to your configured sync direction (unidirectional or bidirectional).
+
 ### How issue syncing works
 
 #### State synchronization
@@ -176,7 +201,7 @@ Here’s what syncs automatically between Plane and GitHub:
 | Mentions             | Both ways                       | Mentioned users sync if they are mapped; otherwise, a GitHub profile link is included.                                                                                                                                                                              |
 | Issue links          | GitHub → Plane                  | Any issue references in GitHub descriptions or comments will be displayed in Plane with a direct link to the issue including the repository name and owner.                                                                                                         |
 
-## Sync pull requests
+## Configure PR state automation
 
 Pull requests (PRs) are also synchronized with Plane to ensure work item tracking remains accurate throughout the development lifecycle.
 
