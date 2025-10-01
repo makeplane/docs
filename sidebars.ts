@@ -134,6 +134,7 @@ const sidebars: SidebarsConfig = {
         },
         "core-concepts/pages/wiki",
         "core-concepts/pages/nested-pages",
+         "core-concepts/pages/inline-comments",
       ],
     },
 
