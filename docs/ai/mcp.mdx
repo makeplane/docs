@@ -1,0 +1,180 @@
+---
+title: MCP Server
+sidebar_label: MCP Server
+description: Use the Plane MCP server to integrate with Plane
+---
+
+
+## Introduction
+
+The [Model Context Protocol](https://modelcontextprotocol.io/overview) (MCP) is a
+standardized interface that enables AI models to communicate with external tools and
+services. When combined with Server-Sent Events (SSE), it provides a powerful
+mechanism for real-time data transfer between AI models and external systems.
+
+:::tip Alpha
+The Plane MCP Server is currently in **Alpha**. Some aspects of the API may change.
+While MCP is standardized, it is also rapidly evolving. The Plane MCP Server aims to
+provide a stable implementation for developers to build robust AI-powered
+applications. Please send any issues to support@plane.so.
+:::
+
+## Prerequisites
+
+Before setting up the Plane MCP Server, ensure you have the following installed:
+
+### Node.js and npm
+- **Node.js**: Version 20 or later (LTS recommended)
+- **npm**: Comes bundled with Node.js
+- **npx**: Comes bundled with npm
+
+You can verify your installation by running:
+```bash
+node --version
+npm --version
+npx --version
+```
+
+If you don't have Node.js installed, download it from [nodejs.org](https://nodejs.org/).
+
+:::note
+The MCP server uses `npx` to run the `mcp-remote` package, which handles the connection to Plane's MCP server. This is why Node.js and npx are required.
+:::
+
+## Using the Plane MCP Server
+
+Follow these steps to integrate with the Plane MCP Server.
+
+### Claude.ai
+
+- Open **Settings** from the sidebar on the web or desktop app.
+- Scroll to the **Integrations** section and click **Add more**.
+- Enter the Integration URL: `https://mcp.plane.so/sse`
+- Click **Connect** to link your Plane workspace.
+
+### Claude Desktop
+
+Add Plane to [Claude Desktop](https://modelcontextprotocol.io/quickstart/user) by
+updating your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "plane": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://mcp.plane.so/sse"]
+    }
+  }
+}
+```
+
+### VSCode
+
+Connect Plane to [VSCode](https://code.visualstudio.com/docs/copilot/chat/mcp-servers#_add-an-mcp-server)
+by editing your `.vscode.json` or `mcp.json` file:
+
+```json
+{
+  "servers": {
+    "plane": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://mcp.plane.so/sse"]
+    }
+  }
+}
+```
+
+### Windsurf
+
+1. Press `Ctrl/Cmd + ,` to open Windsurf settings
+2. Navigate to **Cascade** > **MCP servers**
+3. Select **Add Server** > **Add custom server**
+4. Add the following configuration:
+
+```json
+{
+  "mcpServers": {
+    "plane": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.plane.so/sse"]
+    }
+  }
+}
+```
+
+### Zed
+
+1. Press `Cmd + ,` to open Zed settings
+2. Add the following configuration:
+
+```json
+{
+  "context_servers": {
+    "plane": {
+      "source": "custom",
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.plane.so/sse"],
+      "env": {}
+    }
+  }
+}
+```
+
+## Activating the Plane MCP Server
+
+After setup, when activating the server, you will be prompted in your browser to
+connect your Plane workspace to the MCP server.
+
+When prompted to authorize, click **Approve**.
+
+Next, choose the workspace you want to connect, review the permissions, and click
+**Accept**.
+
+## Troubleshooting
+
+### Common Issues
+
+**Authentication Errors**
+
+If you encounter authentication issues, clear saved auth tokens:
+
+```bash
+rm -rf ~/.mcp-auth
+```
+
+**Connection Timeouts**
+
+- Ensure you have a stable internet connection
+- Check if your firewall or proxy is blocking MCP connections
+- Try using the HTTP endpoint instead of SSE if available
+
+**WSL on Windows**
+
+If you're using WSL on Windows and encountering errors, use this configuration:
+
+```json
+{
+  "mcpServers": {
+    "plane": {
+      "command": "wsl",
+      "args": ["npx", "-y", "mcp-remote", "https://mcp.plane.so/sse", "--transport sse-only"]
+    }
+  }
+}
+```
+
+**Node.js Version**
+
+Ensure you have a recent version of Node.js installed. MCP servers require Node.js 18 or later.
+
+### Getting Help
+
+If you continue to experience issues:
+
+1. Verify your authentication credentials
+2. Contact support at support@plane.so for Plane-specific issues
+3. Check the [MCP community forums](https://modelcontextprotocol.io) for general MCP issues
+
+## Congrats!
+
+You have successfully connected your Plane workspace to the MCP server!

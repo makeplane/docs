@@ -29,7 +29,7 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "Self-host Plane",
           href: "https://developers.plane.so/self-hosting/overview",
-        }
+        },
       ],
     },
     {
@@ -141,7 +141,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsed: false,
       label: "AI",
-      items: ["ai/pi-chat"],
+      items: ["ai/pi-chat", "ai/mcp"],
     },
 
     {
