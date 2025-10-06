@@ -8,8 +8,8 @@ const sidebars: SidebarsConfig = {
       label: "Get started",
       items: [
         "introduction/home",
-        "introduction/core-concepts",
         "introduction/quickstart",
+        "introduction/core-concepts",
         {
           type: "category",
           label: "Tutorials",
@@ -27,6 +27,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "link",
+          label: "Download Plane",
+          href: "https://plane.so/download",
+        },
+        {
+          type: "link",
           label: "Self-host Plane",
           href: "https://developers.plane.so/self-hosting/overview",
         }
@@ -35,128 +40,172 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       collapsed: false,
-      label: "Project + work tracking",
+      label: "Workspace management",
       items: [
+         {
+          type: "category",
+          label: "Workspaces",
+          items: [
+            "core-concepts/workspaces/overview",
+            "core-concepts/power-k"
+          ],
+        },
+
         {
           type: "category",
-          label: "Projects",
-          link: { type: "doc", id: "core-concepts/projects/overview" },
-          items: ["core-concepts/deploy"],
+          label: "Members",
+          items: [
+            "workspaces-and-users/roles",
+            "core-concepts/workspaces/members",
+            "workspaces-and-users/permissions",
+          ],
         },
         {
           type: "category",
-          label: "Work Items",
-          link: { type: "doc", id: "core-concepts/issues/overview" },
-          items: ["core-concepts/issues/properties", "core-concepts/issues/states", "core-concepts/issues/labels"],
+          label: "Authentication",
+          items: [
+            {
+              type: 'link',
+              label: 'Google OAuth', 
+              href: 'https://developers.plane.so/self-hosting/govern/google-oauth',
+            },
+            {
+              type: 'link',
+              label: 'GitHub OAuth', 
+              href: 'https://developers.plane.so/self-hosting/govern/github-oauth',
+            },
+            {
+              type: 'link',
+              label: 'SAML SSO', 
+              href: 'https://developers.plane.so/self-hosting/govern/saml-sso',
+            },
+            {
+              type: 'link',
+              label: 'OIDC SSO', 
+              href: 'https://developers.plane.so/self-hosting/govern/oidc-sso',
+            },
+          ],
         },
+        "core-concepts/account/settings",
+        {
+          type: "category",
+          label: "Billing and plans",
+          items: [
+            "workspaces-and-users/upgrade-plan",
+            "workspaces-and-users/add-remove-seats",
+            "workspaces-and-users/manage-subscription",
+            "workspaces-and-users/manage-licenses",
+            "workspaces-and-users/billing-and-plans",
+          ],
+        },
+      ],
+    },
+    {
+      type: "category",
+      collapsed: false,
+      label: "Project management",
+      items: [
+        "core-concepts/projects/overview",
+        "core-concepts/issues/states",
+        "core-concepts/projects/project-states",
+        "core-concepts/projects/project-overview",
+        "templates/project-templates",
+        "core-concepts/deploy"
+      ],
+    },
+    {
+      type: "category",
+      collapsed: false,
+      label: "Work item management",
+      items: [
+        "core-concepts/issues/overview",
+        "core-concepts/issues/properties",
+        "core-concepts/issues/issue-types",
+        "templates/work-item-templates",
+        "core-concepts/projects/recurring-work-items",
+        "core-concepts/drafts",
+      ],
+    },
+    {
+      type: "category",
+      collapsed: false,
+      label: "Planning and organization",
+      items: [
+        "core-concepts/issues/labels",
+        "core-concepts/issues/epics",
+        "core-concepts/issues/timeline-dependency",
         "core-concepts/cycles",
         "core-concepts/modules",
-        "core-concepts/intake",
-        "core-concepts/issues/estimates",
-        "core-concepts/drafts",
-        "core-concepts/inbox",
+        "core-concepts/projects/initiatives",
+        "core-concepts/workspaces/teamspaces",
+        "core-concepts/account/overview",
+        "core-concepts/stickies",
       ],
     },
 
     {
       type: "category",
       collapsed: false,
-      label: "Project + work management",
+      label: "Views and layouts",
       items: [
-        "core-concepts/issues/issue-types",
-        "core-concepts/issues/time-tracking",
-        "core-concepts/issues/bulk-ops",
-        "core-concepts/projects/recurring-work-items",
-        "automations/custom-automations",
-        "core-concepts/issues/timeline-dependency",
-        "core-concepts/issues/epics",
-        "core-concepts/projects/initiatives",
-        "core-concepts/workspaces/teamspaces",
-        "core-concepts/projects/project-states",
-        "core-concepts/projects/project-overview",
-        "workflows-and-approvals/workflows",
-        "templates/project-templates",
-        "templates/work-item-templates",
-        "templates/page-templates",
-        "customers",
-        "intake/intake-forms",
-        "intake/intake-email",
-        "core-concepts/export",
-        "core-concepts/stickies",
-      ],
-    },
-    {
-      type: "category",
-      collapsed: false,
-      label: "Visualization",
-      items: [
-        "core-concepts/account/overview",
-        "your-work",
         "core-concepts/issues/layouts",
         "core-concepts/issues/visualise_filter",
         "core-concepts/issues/display-options",
         "core-concepts/views",
-        "core-concepts/analytics",
-        "dashboards",
+        "your-work",
       ],
     },
-
     {
       type: "category",
       collapsed: false,
-      label: "Navigation",
-      items: ["core-concepts/power-k"],
-    },
-
-    {
-      type: "category",
-      collapsed: false,
-      label: "Workspace + user management",
+      label: "Collaboration and communication",
       items: [
-        "core-concepts/workspaces/overview",
-        "core-concepts/workspaces/members",
-        "workspaces-and-users/billing-and-plans",
-        "workspaces-and-users/upgrade-plan",
-        "core-concepts/account/settings",
+         "core-concepts/inbox",
       ],
     },
 
+     {
+      type: "category",
+      collapsed: false,
+      label: "Advanced management",
+      items: [
+        "core-concepts/issues/bulk-ops",
+        "core-concepts/issues/estimates",
+        "core-concepts/issues/time-tracking",
+        "workflows-and-approvals/workflows",
+        "automations/custom-automations",
+      ],
+    },
+    {
+      type: "category",
+      collapsed: false,
+      label: "Intake and customer requests",
+      items: [
+        "core-concepts/intake",
+        "intake/intake-forms",
+        "intake/intake-email",
+        "customers",
+      ],
+    },
     {
       type: "category",
       collapsed: false,
       label: "Knowledge management",
       items: [
-        {
-          type: "category",
-          label: "Pages",
-          link: { type: "doc", id: "core-concepts/pages/overview" },
-          items: ["core-concepts/pages/editor-blocks"],
-        },
+        "core-concepts/pages/overview",
+        "core-concepts/pages/editor-blocks",
+        "templates/page-templates",
         "core-concepts/pages/wiki",
         "core-concepts/pages/nested-pages",
       ],
     },
-
     {
       type: "category",
       collapsed: false,
-      label: "AI",
-      items: ["ai/pi-chat"],
-    },
-
-    {
-      type: "category",
-      collapsed: false,
-      label: "Importers",
+      label: "Analytics and reporting",
       items: [
-        "importers/overview",
-        "importers/asana",
-        "importers/confluence",
-        "importers/clickup",
-        "importers/csv",
-        "importers/jira",
-        "importers/linear",
-        "importers/notion",
+        "core-concepts/analytics",
+        "dashboards",
       ],
     },
     {
@@ -164,41 +213,137 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: "Integrations",
       items: [
-        "integrations/about",
-        "integrations/github",
-        "integrations/slack",
-        "integrations/gitlab",
-        "integrations/sentry",
+        {
+          type: "category",
+          label: "Native integrations",
+          link: { type: "doc", id: "integrations/about" },
+          items: [
+            "integrations/github",
+            "integrations/slack",
+            "integrations/gitlab",
+            "integrations/sentry",
+          ],
+        },
+        {
+          type: "category",
+          label: "Custom integrations",
+          items: [
+            {
+              type: "link",
+              label: "Build a Plane app",
+              href: "https://developers.plane.so/dev-tools/build-plane-app",
+            },
+            {
+              type: "link",
+              label: "API reference",
+              href: "https://developers.plane.so/api-reference/introduction",
+            },
+            {
+              type: "link",
+              label: "Webhooks",
+              href: "https://developers.plane.so/dev-tools/intro-webhooks",
+            },
+          ],
+        },
       ],
     },
-    /* {
+
+    {
       type: "category",
       collapsed: false,
-      label: "Performance",
-      items: ["performance/hyper-mode"],
+      label: "Import and export",
+      items: [
+        {
+          type: "category",
+          label: "Import",
+          link: { type: "doc", id: "importers/overview"},
+          items: [
+            "importers/asana",
+            "importers/confluence",
+            "importers/clickup",
+            "importers/csv",
+            "importers/jira",
+            "importers/linear",
+            "importers/notion",
+          ],
+        },
+        "core-concepts/export",
+      ],
     },
-    */
+
+    {
+      type: "category",
+      collapsed: false,
+      label: "Plane AI",
+      items: [
+        "ai/pi-chat",
+        {
+          type: "link",
+          label: "MCP server",
+          href: "https://developers.plane.so/dev-tools/mcp-server",
+        },
+      ],
+    },
     {
       type: "category",
       collapsed: false,
       label: "Devices",
       items: ["devices/mobile"],
     },
+
     {
-      type: "link",
-      label: "API Reference",
-      href: "https://developers.plane.so/api-reference/introduction",
-    },
-    {
-      type: "link",
-      label: "Webhooks",
-      href: "https://developers.plane.so/webhooks/intro-webhooks",
-    },
-    {
-      type: "link",
-      label: "Changelog",
-      href: "https://plane.so/changelog",
-    },
+      type: "category",
+      collapsed: false,
+      label: "Support and resources",
+      items: [
+        {
+          type: "category",
+          label: "Resources",
+          items: [
+            {
+              type: "link",
+              label: "Developer docs",
+              href: "https://developers.plane.so",
+            },
+            {
+              type: "link",
+              label: "Blog",
+              href: "https://plane.so/blog",
+            },
+            {
+              type: "link",
+              label: "Templates library",
+              href: "https://plane.so/templates",
+            },
+            {
+              type: "link",
+              label: "Integrations marketplace",
+              href: "https://plane.so/marketplace/integrations",
+            },
+          ],
+        },
+        {
+          type: "link",
+          label: "Changelog",
+          href: "https://plane.so/changelog",
+        },
+        {
+          type: "link",
+          label: "Discord",
+          href: "https://discord.com/invite/A92xrEGCge",
+        },
+        {
+          type: "link",
+          label: "Feature requests",
+          href: "https://github.com/makeplane/plane/issues",
+        },
+        {
+          type: "link",
+          label: "System status",
+          href: "https://status.plane.so/",
+        },
+      ],
+    }, 
   ],
 };
 

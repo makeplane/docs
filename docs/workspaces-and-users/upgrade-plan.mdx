@@ -1,6 +1,6 @@
 ---
-title: Manage and upgrade plans
-sidebarTitle: Plan upgrades
+title: Upgrade plan
+sidebarTitle: Upgrade plan
 description: Upgrade to paid plans in Plane, activate license keys on self-hosted instances, manage seats, and handle subscription changes.
 ---
 
@@ -59,36 +59,3 @@ Steps #1 through #5 from above work the exact same way on self-hosted, too.
 6.  Click **Activate**. You will see a confirmation.
 7.  That's it. To check your plan at any time and find additional details, just go to the **Billing and plans** tab in **Workspace Settings**.
     ![Manage subscription](https://media.docs.plane.so/activate-license/pro-activated-cloud.webp#center)
-
-### Delink license key
-
-Your license key is linked to both a workspace and an instance, meaning it can only be used on one workspace on one machine at a time. If you switch machines or reinstall the Commercial edition, you’ll need to reactivate your workspace. This helps prevent any misuse of the license on multiple machines or workspaces.
-
-To make it easier for you to move between machines or workspaces, we've added a new Delink feature. This lets you free up your license from its current workspace, so you can reuse it on a new machine or workspace.
-
-Here’s how to delink your license key from a workspace:
-
-1. Head over to the **Billing and Plans** screen of the workspace that's currently using the license.
-2. Click **Delink license key**. This will release the license key, making it available for use on another machine or workspace.
-   ![Delink license key](https://media.docs.plane.so/activate-license/delink-license-key.webp#center)
-3. Restart the instance using `prime-cli restart`.
-4. If you’re switching machines or reinstalling the Commercial edition, see [Move Plane instance to another server](https://developers.plane.so/self-hosting/manage/migrate-plane).
-5. Ensure you are connected to the internet and reactivate the new workspace using the license key you delinked earlier.
-
-## Manage paid users
-
-You can always reassign or adjust seats as your team’s needs change. Here’s how to add or remove paid seats:
-
-1. Open your [workspace settings](/core-concepts/workspaces/overview#workspace-settings) and navigate to the **Members** screen.
-2. You’ll see a **Manage Seats** button.
-   ![Manage seats](https://media.docs.plane.so/activate-license/manage-seats.webp#center)
-
-Clicking this will give you two choices:
-
-- **Add seats**  
-  If you need more seats, click **Add seats**. A modal will appear where you can specify the number of additional paid seats you want to add. Once you’ve entered the number, click **Change**. You’ll be redirected to the Stripe payment portal to complete the payment for the new seats.
-
-![Add seats](https://media.docs.plane.so/activate-license/add-paid-seats.webp#center)
-
-- **Remove unused seats**  
-  Any paid seat that isn’t currently assigned to a user is considered unused and can be reassigned at any time. If you no longer need these unused seats and want to stop paying for them, click **Remove unused seats**. This will automatically remove all paid but unused seats from your workspace.
