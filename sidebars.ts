@@ -93,7 +93,6 @@ const sidebars: SidebarsConfig = {
           items: [
             "workspaces-and-users/upgrade-plan",
             "workspaces-and-users/add-remove-seats",
-            "workspaces-and-users/manage-subscription",
             "workspaces-and-users/manage-licenses",
             "workspaces-and-users/billing-and-plans",
           ],
