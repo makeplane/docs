@@ -892,3 +892,7 @@ table,
      --font-weight-semibold: 640;
      --font-weight-bold: 680;
   }
+
+  .theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible > .menu__link--sublist-caret{
+    height: 28px;
+  }

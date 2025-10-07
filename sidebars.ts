@@ -47,7 +47,8 @@ const sidebars: SidebarsConfig = {
           label: "Workspaces",
           items: [
             "core-concepts/workspaces/overview",
-            "core-concepts/power-k"
+            "core-concepts/power-k",
+            "core-concepts/account/overview",
           ],
         },
 
@@ -86,7 +87,6 @@ const sidebars: SidebarsConfig = {
             },
           ],
         },
-        "core-concepts/account/settings",
         {
           type: "category",
           label: "Billing and plans",
@@ -98,6 +98,7 @@ const sidebars: SidebarsConfig = {
             "workspaces-and-users/billing-and-plans",
           ],
         },
+        "core-concepts/account/settings",
       ],
     },
     {
@@ -105,12 +106,20 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: "Project management",
       items: [
-        "core-concepts/projects/overview",
+        {
+          type: "category",
+          label: "Projects",
+          items: [
+            "core-concepts/projects/overview",
+            "core-concepts/projects/manage-project-members",
+            "core-concepts/deploy"
+          ],
+        },
         "core-concepts/issues/states",
         "core-concepts/projects/project-states",
         "core-concepts/projects/project-overview",
         "templates/project-templates",
-        "core-concepts/deploy"
+        
       ],
     },
     {
@@ -118,12 +127,19 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: "Work item management",
       items: [
-        "core-concepts/issues/overview",
-        "core-concepts/issues/properties",
+        {
+          type: "category",
+          label: "Work items",
+          items: [
+            "core-concepts/issues/overview",
+            "core-concepts/issues/properties",
+            "core-concepts/drafts",
+          ],
+        },
+
         "core-concepts/issues/issue-types",
         "templates/work-item-templates",
         "core-concepts/projects/recurring-work-items",
-        "core-concepts/drafts",
       ],
     },
     {
@@ -132,13 +148,12 @@ const sidebars: SidebarsConfig = {
       label: "Planning and organization",
       items: [
         "core-concepts/issues/labels",
-        "core-concepts/issues/epics",
-        "core-concepts/issues/timeline-dependency",
         "core-concepts/cycles",
         "core-concepts/modules",
+        "core-concepts/issues/epics",
+        "core-concepts/issues/timeline-dependency",
         "core-concepts/projects/initiatives",
         "core-concepts/workspaces/teamspaces",
-        "core-concepts/account/overview",
         "core-concepts/stickies",
       ],
     },
@@ -160,6 +175,8 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: "Collaboration and communication",
       items: [
+         "communication-and-collaboration/comments_and-activity",
+         "communication-and-collaboration/project-updates",
          "core-concepts/inbox",
       ],
     },
@@ -169,8 +186,8 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: "Advanced management",
       items: [
-        "core-concepts/issues/bulk-ops",
         "core-concepts/issues/estimates",
+        "core-concepts/issues/bulk-ops",
         "core-concepts/issues/time-tracking",
         "workflows-and-approvals/workflows",
         "automations/custom-automations",
@@ -179,7 +196,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       collapsed: false,
-      label: "Intake and customer requests",
+      label: "Intake and customers",
       items: [
         "core-concepts/intake",
         "intake/intake-forms",
@@ -192,11 +209,18 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: "Knowledge management",
       items: [
-        "core-concepts/pages/overview",
-        "core-concepts/pages/editor-blocks",
-        "templates/page-templates",
+         {
+          type: "category",
+          label: "Pages",
+          items: [
+             "core-concepts/pages/overview",
+             "core-concepts/pages/editor-blocks",
+          ],
+        },
         "core-concepts/pages/wiki",
         "core-concepts/pages/nested-pages",
+        "templates/page-templates",
+        "core-concepts/pages/inline-comments",
       ],
     },
     {
@@ -274,7 +298,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       collapsed: false,
-      label: "Plane AI",
+      label: "AI",
       items: [
         "ai/pi-chat",
         {
