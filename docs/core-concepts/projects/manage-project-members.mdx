@@ -22,3 +22,26 @@ Users can become project members in two different ways, and understanding both h
 **Teamspace-based membership** happens automatically when your project is linked to a [Teamspace](/core-concepts/workspaces/teamspaces). All members of that teamspace automatically receive `Member` access to your project, making it perfect for teams that collaborate across multiple projects.
 
 Users can have both types of access simultaneously. When this happens, Plane automatically applies whichever role gives them higher permissions. For example, if someone is a `Guest` on your project but joins a linked teamspace, they're automatically upgraded to `Member` access. If they're already an `Admin`, they keep their `Admin` role.
+
+
+### Grant view access to Guests
+
+You can turn on this setting in **Project Settings > Members**. Enabling this setting allows guest users to view all project work items, providing them with broader visibility into the project's progress and details. This is useful for external stakeholders who need full context without editing permissions.
+![Grant guest users view access](https://media.docs.plane.so/workspaces/grant-guests-view-access.webp#center)
+
+
+The Guest view access toggle
+By default, Guests can only interact with work items they're explicitly involved with—a conservative security posture. However, some projects benefit from broader Guest visibility: client review projects, public roadmaps, or stakeholder dashboards.
+The "Grant guest users view access" setting expands Guest permissions within a specific project, allowing them to view all work items rather than just their own. This setting is project-specific rather than workspace-wide, acknowledging that different projects have different confidentiality requirements.
+Even with view access enabled, Guests remain limited to their invited projects and cannot see the broader workspace structure.
+
+Guest view permissions
+Setting location: Project Settings > Members
+Effect: When enabled, guest users can view all work items within the project
+Default behavior: Guests can only view content they are explicitly invited to
+Configuration:
+
+Navigate to the project
+Open Project Settings
+Select Members tab
+Enable "Grant guest users view access"

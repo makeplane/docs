@@ -47,7 +47,7 @@ const sidebars: SidebarsConfig = {
           label: "Workspaces",
           items: [
             "core-concepts/workspaces/overview",
-            "core-concepts/power-k",
+            "workspaces-and-users/search-workspace",
             "core-concepts/account/overview",
           ],
         },
@@ -56,8 +56,8 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Members",
           items: [
-            "workspaces-and-users/roles",
             "core-concepts/workspaces/members",
+            "workspaces-and-users/roles",
             "workspaces-and-users/permissions",
           ],
         },
@@ -313,12 +313,12 @@ const sidebars: SidebarsConfig = {
       label: "Devices",
       items: ["devices/mobile"],
     },
-
     {
       type: "category",
       collapsed: false,
       label: "Support and resources",
       items: [
+        "core-concepts/power-k",
         {
           type: "category",
           label: "Resources",

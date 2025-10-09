@@ -1,46 +1,54 @@
 ---
 title: Manage members
-description: Manage user roles in workspaces.
+description: Add, update, and remove workspace members
 ---
 
-# Manage users
+# Manage members
 
-Keeping your workspace organized and secure is essential for smooth project management. Plane makes it easy to control who can access your workspace, what they can do, and how they collaborate with others. This guide will walk you through managing members and assigning roles.
+Keeping your workspace organized and secure is essential for smooth project management. Plane makes it easy to control who can access your workspace, what they can do, and how they collaborate with others. 
 
+This guide shows you how to add members to your workspace, change their roles, and remove them when needed.
 
-You can manage the members in your workspace by navigating to **Workspace settings > Members**.
-
-### Add member
-
+## Invite a member to your workspace
 ![Invite user](https://media.docs.plane.so/workspaces/add-user.webp#center)
 
-1. Click on **Add member**. This opens a modal where you can:
-   1. Enter the email addresses of the user you’re inviting.
-   2. Assign the role to **Admin**, **Member**, or **Guest**.
-   3. Click **Add another** to add multiple users.
-   4. Finally, click the **Invite** button.
+1. Navigate to **Workspace settings > Members**.
+2. Click **Add member**.
+3. In the modal:
+   - Enter the email address of the person you're inviting.
+   - Select their role: **Admin**, **Member**, or **Guest**.
+   - To invite multiple people at once, click **Add another** and repeat.
+4. Click **Invite**.
 
-Once invited, members receive an email notification.
-:::caution[Self-hosted users]
-Ensure your SMTP server is properly configured to send invite emails successfully. See [Email](https://developers.plane.so/self-hosting/govern/communication) for more information.
+The invited person receives an email notification with instructions to join your workspace.
+
+**If the invitation isn't accepted:**
+- The invitation remains pending until accepted or declined.
+- You can manually remove pending invitations using the Remove option (see below).
+
+:::caution[Self-hosted Plane instance]
+Ensure your SMTP server is properly configured to send invite emails successfully. See [Configure SMTP for email](https://developers.plane.so/self-hosting/govern/communication) for more information.
 :::
 
-After the user accepts the invitation, they’ll be added to the workspace. If they don’t accept or decline, you can manually remove the pending invitation.
-
-### Update member roles
+## Change a member's role
 
 ![Update user role](https://media.docs.plane.so/workspaces/update-user.webp#center)
 
-1. Locate the member whose role you want to update.
-2. Use the role dropdown to promote or demote their role.
+1. Navigate to **Workspace settings > Members**.
+2. Find the member whose role you need to change.
+3. Click the role dropdown next to their name.
+4. Select the new role.
 
-Admins can update any member's role, while regular members can only promote others to the Member role.
+The role change takes effect immediately.
 
-### Remove member
+
+## Remove a member from your workspace
 
 ![Remove user](https://media.docs.plane.so/workspaces/remove-user.webp#center)
 
-1. Find the member you want to remove.
-2. Click the **Remove** option next to their name.
+1. Navigate to **Workspace settings > Members**.
+2. Find the member you want to remove.
+3. Click **Remove** next to their name.
+4. Confirm the removal.
 
-Once removed, they’ll immediately lose access to the workspace and its projects.
+The member loses access to the workspace and all its projects immediately.
