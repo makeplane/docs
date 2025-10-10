@@ -92,8 +92,8 @@ const sidebars: SidebarsConfig = {
           label: "Billing and plans",
           items: [
             "workspaces-and-users/upgrade-plan",
-            "workspaces-and-users/add-remove-seats",
             "workspaces-and-users/manage-licenses",
+            "workspaces-and-users/add-remove-seats",
             "workspaces-and-users/billing-and-plans",
           ],
         },

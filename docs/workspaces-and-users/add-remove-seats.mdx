@@ -1,23 +1,47 @@
 ---
 title: Add or remove seats
 toc_max_heading_level: 4
-description: Learn how Plane's per-seat billing works, how to manage seats for admins and members and upgrade workspaces.
+description: Manage paid seats in your workspace
 ---
 
-## Manage paid users
+# Manage paid seats in your workspace
 
-You can always reassign or adjust seats as your team’s needs change. Here’s how to add or remove paid seats:
+Manage the number of paid seats in your workspace to control your subscription costs. Seats determine how many Admins and Members you can have.
 
-1. Open your [workspace settings](/core-concepts/workspaces/overview#workspace-settings) and navigate to the **Members** screen.
-2. You’ll see a **Manage Seats** button.
-   ![Manage seats](https://media.docs.plane.so/activate-license/manage-seats.webp#center)
+:::info
+Guests don't count as paid seats. You get 5 Guest users per paid seat automatically.
+:::
 
-Clicking this will give you two choices:
+## Add seats
 
-- **Add seats**  
-  If you need more seats, click **Add seats**. A modal will appear where you can specify the number of additional paid seats you want to add. Once you’ve entered the number, click **Change**. You’ll be redirected to the Stripe payment portal to complete the payment for the new seats.
+Add seats when you need to invite more Admins or Members than your current seat count allows.
 
-![Add seats](https://media.docs.plane.so/activate-license/add-paid-seats.webp#center)
+1. Navigate to **Workspace Settings > Members**.
+  ![Manage seats](https://media.docs.plane.so/activate-license/manage-seats.webp#center)
+2. Click **Manage Seats**.
+3. Select **Add seats**.
+  ![Add seats](https://media.docs.plane.so/activate-license/add-paid-seats.webp#center)
+4. Enter the number of seats to add.
+5. Click **Change**.
+6. Complete payment in Stripe.
 
-- **Remove unused seats**  
-  Any paid seat that isn’t currently assigned to a user is considered unused and can be reassigned at any time. If you no longer need these unused seats and want to stop paying for them, click **Remove unused seats**. This will automatically remove all paid but unused seats from your workspace.
+:::info[Billing impact]
+- New seats are charged immediately.
+- Future bills include the full price of all seats.
+:::
+
+## Remove unused seats
+
+Remove unused seats to reduce your subscription cost. You can only remove seats that aren't currently assigned to members.
+
+:::tip
+If you want to remove seats currently in use, remove the members first or change their role to Guest. See [Manage members](/core-concepts/workspaces/members), then remove the unused seats.
+:::
+
+1. Navigate to **Workspace Settings > Members**.
+2. Click **Manage Seats**.
+3. Select **Remove unused seats**.
+
+This removes all paid seats not currently assigned to Admins or Members.
+
+
