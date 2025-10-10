@@ -114,8 +114,8 @@ const sidebars: SidebarsConfig = {
             "core-concepts/deploy"
           ],
         },
-        "core-concepts/issues/states",
         "core-concepts/projects/project-states",
+        "core-concepts/issues/states",
         "core-concepts/projects/project-overview",
         "templates/project-templates",
         
@@ -172,15 +172,22 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       collapsed: false,
-      label: "Collaboration and communication",
+      label: "Knowledge management",
       items: [
-         "communication-and-collaboration/comments_and-activity",
-         "communication-and-collaboration/project-updates",
-         "core-concepts/inbox",
+         {
+          type: "category",
+          label: "Pages",
+          items: [
+             "core-concepts/pages/overview",
+             "core-concepts/pages/editor-blocks",
+          ],
+        },
+        "core-concepts/pages/wiki",
+        "core-concepts/pages/nested-pages",
+        "templates/page-templates",
       ],
     },
-
-     {
+    {
       type: "category",
       collapsed: false,
       label: "Advanced management",
@@ -195,31 +202,23 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       collapsed: false,
+      label: "Collaboration and communication",
+      items: [
+        "communication-and-collaboration/project-updates",
+        "communication-and-collaboration/comments_and-activity",
+        "core-concepts/pages/inline-comments",
+        "core-concepts/inbox",
+      ],
+    },
+    {
+      type: "category",
+      collapsed: false,
       label: "Intake and customers",
       items: [
         "core-concepts/intake",
         "intake/intake-forms",
         "intake/intake-email",
         "customers",
-      ],
-    },
-    {
-      type: "category",
-      collapsed: false,
-      label: "Knowledge management",
-      items: [
-         {
-          type: "category",
-          label: "Pages",
-          items: [
-             "core-concepts/pages/overview",
-             "core-concepts/pages/editor-blocks",
-          ],
-        },
-        "core-concepts/pages/wiki",
-        "core-concepts/pages/nested-pages",
-        "templates/page-templates",
-        "core-concepts/pages/inline-comments",
       ],
     },
     {
@@ -239,6 +238,7 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "Native integrations",
+          collapsed: false,
           link: { type: "doc", id: "integrations/about" },
           items: [
             "integrations/github",
@@ -278,6 +278,7 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "category",
+          collapsed: false,
           label: "Import",
           link: { type: "doc", id: "importers/overview"},
           items: [
