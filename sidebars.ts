@@ -205,7 +205,7 @@ const sidebars: SidebarsConfig = {
       label: "Collaboration and communication",
       items: [
         "communication-and-collaboration/project-updates",
-        "communication-and-collaboration/comments_and-activity",
+        "communication-and-collaboration/comments-and-activity",
         "core-concepts/pages/inline-comments",
         "core-concepts/inbox",
       ],

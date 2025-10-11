@@ -799,7 +799,7 @@ img[src*="#center"] {
 
 .markdown p:has(> img[src$="#hero"]),
 article p:has(> img[src$="#hero"]) {
-  width: 841px;
+  max-width: 841px;
   padding: 36px 56px 0px 56px;
   background: #F1F3F3;
   border-radius: 12px;
