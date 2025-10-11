@@ -1,63 +1,137 @@
 ---
-title: Profile settings
-description: Manage your profile settings including personal details, password, timezone, language, custom themes, and notification preferences to personalize your experience.
+title: Account settings
+description: Reference for personal account settings including profile, preferences, notifications, security, and activity.
 ---
 
 # Customize your account and preferences
 
-Your account settings offer the ability to adjust your profile details, password, theme preferences, and email notification settings. Additionally, you can access a comprehensive list of all activities across workspaces.
+Account settings control your personal profile, interface preferences, notification preferences, security options, and activity history. These settings apply across all workspaces you belong to.
 
-Access your account settings from the side-navigation bar by clicking on your name/profile picture and selecting **Settings**.
+## Access account settings
+1. Click your profile picture in the sidebar.
+2. Select **Settings**
 
-![Profile dropdown](https://media.docs.plane.so/account/account-profile-dropdown.webp#center)
+![Profile dropdown](https://media.docs.plane.so/account/account-profile-dropdown.webp#hero-tl)
 
 ## Profile
 
-Your profile includes details about you, primarily your name and display name, which are visible to others, especially in the assignee or creator sections of work items and other entities. You can update this information here.
+Manage your personal information and account visibility across workspaces. All profile information is visible to other members in your workspaces.
 
-Additionally, you have the option to deactivate your account, which removes you from all the workspaces you are associated with. However, please note that deactivating your account will not delete the work items or any other entities created by you.
+**Profile picture and cover image**
+- Profile picture appears throughout Plane (work items, comments, assignments).
+- Cover image displays at the top of your profile page.
+- Click **Change cover** to upload a custom cover image.
+
+**Personal information**
+- **First name** - Your given name (required)
+- **Last name** - Your family name
+- **Display name** - Name shown in work items and mentions (required)
+- **Email** - Your account email address (required)
+
+**Account deactivation**  
+You have the option to deactivate your account, which removes you from all the workspaces you are associated with. However, please note that deactivating your account will not delete the work items or any other entities created by you.
+
 
 ## Preferences
 
-![Preferenes](https://media.docs.plane.so/account/account-preferences.webp#center)
+Customize your interface appearance and behavior.
 
 ### Theme
 
-By default, the theme on Plane is light. You have the option to synchronize it with your system's preference, select from a range of themes provided by us, or create a custom theme that reflects your personality.
+Your selected theme applies across all workspaces and devices where you're logged in.
 
-To create your custom theme, you can specify the following:
+**Default:** Light theme
 
-- Background color: This sets the background color for all platform sections except the sidebar (such as dashboard, work items, pages, etc.).
-- Text color: Determines the color of text across the platform, excluding the sidebar.
-- Primary color: Defines the color of all call-to-action buttons and selections in the navigation.
-- Sidebar background color: Sets the background color of the side navigation bar.
-- Sidebar text color: Specifies the color of text displayed on the side navigation bar.
+**Theme options:**
+- **System** - Automatically matches your operating system's theme preference
+- **Light** - Light color scheme
+- **Dark** - Dark color scheme
+- **High contrast** - Enhanced contrast for better visibility
+- **Custom theme** - Create your own color scheme
+
+**Custom theme**  
+When you select **Custom theme** from the theme dropdown, you can define your own color scheme by specifying hex color values for five interface elements:
+
+**Customizable colors:**
+- **Background color** - Sets the background for main content areas (dashboard, work items, pages, etc.)
+- **Text color** - Determines text color throughout the platform
+- **Primary (Theme) color** - Defines accent color for interactive elements
+- **Sidebar background color** - Sets the side navigation background
+- **Sidebar text color** - Specifies text color in side navigation
+
+Click **Set theme** to apply your custom color scheme.
 
 ### First day of the week
 
-Make your calendar feel just right by choosing which day kicks off your week. Whether you're team Sunday (traditional calendar style) or prefer Monday (workweek vibes), this setting ensures all calendars throughout the app match your personal preference.
-
-Once you set this up in your preferences, every calendar view - from project timelines to due date pickers - will automatically align with your chosen week structure. It's one of those small touches that makes the whole experience feel more natural to how you think about time.
+Changes the starting day for all calendar displays throughout Plane, including:
+- Project timelines
+- Due date pickers
+- Calendar views
+- Date range selectors
 
 ### Smooth cursor
-
-If you love that buttery-smooth feel when moving your cursor around, toggle on the smooth cursor option. This feature adds a subtle animation to your cursor movement, creating a more fluid and responsive experience as you navigate through editors and interface elements.
-
-Some people find it makes the app feel more polished and easier on the eyes, especially during longer editing sessions. Give it a try and see if the smoother motion feels right for your workflow - you can always toggle it off if you prefer the snappier default cursor behavior.
+Adds animation to cursor movement for a more fluid experience when navigating through editors.
 
 ### Timezone and language
+**Timezone:**
+- Sets display format for all times throughout Plane.
+- Affects notifications, activity logs, start dates, end dates, and timestamps.
 
-You can now customize your timezone and language preferences. The timezone setting controls how times are displayed across the platform, including notifications, activity logs, start and end dates, etc. Currently, we support English, French, Spanish, and Japanese, with more languages coming soon.
+**Language:**
+- Controls interface language.
+- Supported languages: English, French, Spanish, Japanese, Simplified Chinese, Traditional Chinese, Russian, Italian, Czech, Slovak, German, Ukrainian, Polish, Korean, Brazilian Portuguese, Indonesian, Romanian, Vietnamese, Turkish
+
 
 ## Notifications
 
-By default, email-based notifications are disabled for new users. You have the option to turn on all notifications or select specific types of notifications. Once you save your preferences, you will only receive email notifications for work items that match the preferences you have selected.
+Control email notification preferences for work item updates. Email notifications supplement in-app notifications visible in the [Inbox](/core-concepts/inbox) section.
 
-Notifications include updates on work items you've created, are assigned to, or have subscribed to. These notifications can also be found in the Inbox section on your sidebar. They encompass:
+All notifications apply only to work items where you are the creator, assigned to, or explicitly subscribed.
 
-- Changes in work item state or properties made by others
-- Mentions of you on work items
-- Comments added to work items
-- Work items created and assigned to you
+### Notification types
 
-![Email](https://media.docs.plane.so/account/account-email-preferences.webp#center)
+**Property changes**
+- Notifies when work item properties change (assignees, priority, estimates, etc.)
+- Applies to work items you created, are assigned to, or subscribed to
+
+**State change**
+- Notifies when work items move to different states
+- Applies to work items you created, are assigned to, or subscribed to
+
+**Work item completed**
+- Notifies only when work items reach completed state
+- Subset of state change notifications
+
+**Comments**
+- Notifies when someone adds a comment to work items you're involved with
+- Applies to work items you created, are assigned to, or subscribed to
+
+**Mentions**
+- Notifies when someone mentions you in comments or descriptions
+
+
+## Security
+
+Manage account access credentials. Password must meet security criteria (minimum length, complexity requirements as configured by your instance).
+
+### Change password
+
+- **Current password** - Your existing password (required)
+- **New password** - Your new password (required)
+- **Confirm password** - Re-enter new password (required)
+
+## Activity
+
+View your recent actions and changes across all workspaces. Displays a chronological feed of your activities with timestamps.
+
+
+## Connections
+
+Manage personal account connections on integrations with external services.
+
+
+## Personal access tokens
+
+Generate secure API tokens for integrating Plane data with external systems and applications.
+
+
