@@ -770,6 +770,7 @@ table thead tr {
   text-align: center;
   margin: 10px;
 }
+/*
 img[src*="#center"] {
   display: block;
   border-radius: 0.75rem;
@@ -794,6 +795,148 @@ img[src*="#center"] {
   border-width: 0px;
   padding: 0.5rem;
   background-color: rgb(32 43 61);
+}*/
+
+.markdown p:has(> img[src$="#hero"]),
+article p:has(> img[src$="#hero"]) {
+  width: 841px;
+  padding: 36px 56px 0px 56px;
+  background: #F1F3F3;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.markdown img[src$="#hero"],
+article img[src$="#hero"] {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 8px 8px 0px 0px;
+  border-width: 1px 1px 0px 1px;
+  border-style: solid;
+  border-color: #EAEBEB;
+  object-fit: cover;
+  box-shadow: 
+    0px 2px 4px -1px rgba(41, 47, 61, 0.04),
+    0px 4px 6px -1px rgba(41, 47, 61, 0.05);
+}
+
+.markdown p:has(> img[src$="#hero-tl"]),
+article p:has(> img[src$="#hero-tl"]) {
+  max-width: 841px;
+  padding: 36px 0px 0px 56px;
+  background: #F1F3F3;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.markdown img[src$="#hero-tl"],
+article img[src$="#hero-tl"] {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 8px 0px 0px 0px;
+  border-width: 1px 0px 0px 1px;
+  border-style: solid;
+  border-color: #EAEBEB;
+  object-fit: cover;
+  box-shadow: 
+    0px 2px 4px -1px rgba(41, 47, 61, 0.04),
+    0px 4px 6px -1px rgba(41, 47, 61, 0.05);
+}
+
+.markdown p:has(> img[src$="#hero-tr"]),
+article p:has(> img[src$="#hero-tr"]) {
+  max-width: 841px;
+  padding: 36px 56px 0px 0px;
+  background: #F1F3F3;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.markdown img[src$="#hero-tr"],
+article img[src$="#hero-tr"] {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 0px 8px 0px 0px;
+  border-width: 1px 1px 0px 0px;
+  border-style: solid;
+  border-color: #EAEBEB;
+  object-fit: cover;
+  box-shadow: 
+    0px 2px 4px -1px rgba(41, 47, 61, 0.04),
+    0px 4px 6px -1px rgba(41, 47, 61, 0.05);
+}
+
+.markdown p:has(> img[src$="#hero-bl"]),
+article p:has(> img[src$="#hero-bl"]) {
+  max-width: 841px;
+  padding: 0px 0px 36px 56px;
+  background: #F1F3F3;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.markdown img[src$="#hero-bl"],
+article img[src$="#hero-bl"] {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 0px 0px 0px 8px;
+  border-width: 0px 0px 1px 1px;
+  border-style: solid;
+  border-color: #EAEBEB;
+  object-fit: cover;
+  box-shadow: 
+    0px 2px 4px -1px rgba(41, 47, 61, 0.04),
+    0px 4px 6px -1px rgba(41, 47, 61, 0.05);
+}
+
+.markdown p:has(> img[src$="#hero-br"]),
+article p:has(> img[src$="#hero-br"]) {
+  max-width: 841px;
+  padding: 0px 56px 36px 0px;
+  background: #F1F3F3;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.markdown img[src$="#hero-br"],
+article img[src$="#hero-br"] {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 0px 0px 8px 0px;
+  border-width: 0px 1px 1px 0px;
+  border-style: solid;
+  border-color: #EAEBEB;
+  object-fit: cover;
+  box-shadow: 
+    0px 2px 4px -1px rgba(41, 47, 61, 0.04),
+    0px 4px 6px -1px rgba(41, 47, 61, 0.05);
+}
+
+/* Fallback: Direct image styling (if :has() not supported) */
+@supports not (selector(:has(*))) {
+  .markdown img[src$="#hero"],
+  article img[src$="#hero"] {
+    max-width: calc(841px - 32px); /* Subtract padding */
+    margin: 36px auto;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
 }
 
 .business {
