@@ -1,21 +1,27 @@
 ---
 title: GitLab
 hide_title: true
-description: Integrate Plane with GitLab to synchronize issues and pull requests. Connect repositories to projects for bidirectional updates and seamless workflows.
+description: Integrate Plane with GitLab and Self-managed GitLab to automate pull requests and work item state mapping. Connect repositories to projects for bidirectional updates and seamless workflows.
 ---
 
 import Tags from "@site/src/components/Tags";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <div className="tag-wrapper">
   <h1>Integrate with GitLab</h1>
   <Tags tags={[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]} />
 </div>
 
-:::note[Self-hosted GitLab instance]
-Currently, Plane integrates only with GitLab Cloud. Support for self-managed GitLab instances is not available yet, but we’re working on adding it soon.
-:::
-
 Integrating GitLab with Plane allows you to sync your development workflow seamlessly by linking GitLab merge requests with Plane work items. This connection enables automated updates and enhances collaboration between developers and project managers.
+
+Plane supports integration with:
+
+- **GitLab.com**   
+The standard cloud-hosted GitLab service
+
+- **GitLab Self-managed**   
+Self-hosted GitLab instances for organizations with specific compliance or security requirements
 
 This guide walks you through the steps to connect your GitLab account, link GitLab projects to Plane, and configure pull request automation.
 
@@ -33,25 +39,55 @@ To get started, you'll need to connect your GitLab account, organization, and re
 
 ### Connect GitLab organization
 
-Link your GitLab organization to your Plane workspace to start syncing repositories. This step is crucial for enabling the full range of GitLab-Plane integrations.
+Link your GitLab organization to your Plane workspace to start syncing repositories. This step is crucial for enabling the full range of GitLab-Plane integration.
 
-1. Navigate to Workspace **Settings** in Plane.
+<Tabs queryString="edition">
+  <TabItem value="gitlab-cloud" label="GitLab.com">
+  :::danger[Self-hosted Plane instance (Commercial Edition)]
+  If you're running a self-hosted instance of Plane, you'll need to set up a few extra configurations to get GitLab integration working. Check out the [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab?edition=gitlab-cloud) first before diving into the steps on this page.
+  :::
 
-2. Go to the **Integrations** tab.
+  1. Navigate to Workspace **Settings** in Plane.
 
-3. Locate the **GitLab** integration section.
+  2. Go to the **Integrations** tab.
 
-4. Click **Connect** to authenticate your GitLab account and initiate the connection.
-   
-   ![Connect GitLab](https://media.docs.plane.so/integrations/gitlab/connect-gitlab.webp#hero)
+  3. Locate the **GitLab** integration section.
 
-5. Review the requested permissions and click **Authorize Plane** to grant access.
-   
-   ![Authorize Plane](https://media.docs.plane.so/integrations/gitlab/authorize-plane.webp#hero)
+  4. Click **Connect** to authenticate your GitLab account and initiate the connection.
 
-6. Once authenticated, you should see your GitLab account listed as connected.
+     ![Connect GitLab](https://media.docs.plane.so/integrations/gitlab/connect-gitlab.webp#hero)
+
+  5. Review the requested permissions and click **Authorize Plane** to grant access.
+
+  6. Once authenticated, you should see your GitLab account listed as connected.
+  </TabItem>
+  
+  <TabItem value="gitlab-self-managed" label="GitLab Self-managed">
+  :::danger[Plane Cloud and self-hosted instances]
+
+  Before you can integrate with GitLab Self-managed, you must first set up the necessary configurations in your GitLab instance. This is required for both Plane Cloud and self-hosted users.
+
+  Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab?edition=gitlab-self-managed) first before diving into the steps on this section.
+  :::
+
+  1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
+  2. On the right pane, select **Integrations**.
+  3. Find the **GitLab Self-managed** integration and click **Configure**.
+  4. In the **Connect Organization** section, click **Connect**.
+      
+      ![Connect GitLab Enterprise organization](https://media.docs.plane.so/integrations/gitlab/connect-gitlab-self-managed.webp#hero)
+  5. Fill the form with the details of your GitLab self-managed instance and click **Connect**.
+      
+      ![Configure GitLab Self-managed organization](https://media.docs.plane.so/integrations/gitlab/configure-gitlab-self-managed.webp#hero)
+  6. On the GitLab app installation page, choose the organization you want to connect.
+  7. Select whether you want to sync all repositories or pick specific ones.
+  8. Click **Install** to finalize the connection.
+  9. After authorization, you’ll be redirected back to Plane, where your GitLab organization will appear as connected.
+  </TabItem>
+</Tabs>
 
 At this stage, your GitLab account is linked to Plane, but you still need to connect specific GitLab projects to Plane projects.
+
 
 ### Connect GitLab project
 
@@ -81,31 +117,43 @@ After linking a GitLab project, the next step is to associate it with a Plane pr
 
 3. Once configured, you will see the project connection appear in the **Plane Project Connections** section.
 
-## Sync pull requests
+## Configure PR state automation
 
-Pull requests (PRs) are also synchronized with Plane to ensure issue tracking remains accurate throughout the development lifecycle.
+Pull requests (PRs) are also synchronized with Plane to ensure work item tracking remains accurate throughout the development lifecycle.
 
-#### Closing references and auto-updates
+To automate pull request state changes with Plane work items:
 
-When a pull request includes closing references to GitLab issues (e.g., `closes #14`), any linked Plane work items will automatically update with the PR link. If the PR is merged or closed, the Plane work item state updates based on the configured workflow in [Pull Request Automation](/integrations/gitlab#connect-plane-project).
+1. Reference Plane work items in your GitLab PR title or description using the appropriate format. See [Reference formats](#reference-formats) below.
+2. Automatic state updates will move the work item state in Plane based on the GitLab PR state defined in your mapping.
 
-#### Magic words for issue references
+#### Reference formats
+There are two ways to reference Plane work items in your GitLab PRs:
 
-You can use specific keywords in GitLab pull requests to manage how Plane work items are updated.
+##### With brackets [WEB-344] - State automation
 
-- **Closing references**  
-  These keywords close linked issues when the PR is merged or closed.
-  **Keywords**  
-  `close`, `closes`, `closed`, `closing`, `fix`, `fixes`, `fixed`, `resolve`, `resolves`, `resolved`, `complete`, `completes`, `completed`.
+- Links the work item to the PR
+- Adds a comment from Plane App showing linked work items
+- Automatically updates the work item state based on PR state changes (as configured in your PR state mapping)
 
-- **Non-closing references**  
-  These keywords maintain the state mappings of linked issues but don’t close them.
-  **Keywords**  
-  `ref`, `references`, `reference to`, `part of`, `related to`.
+##### Without brackets WEB-344 - Link only
 
-#### PR lifecycle mapping
+- Links the work item to the PR as a reference
+- Adds a comment from Plane App showing referenced work items
+- Does not trigger automatic state updates
 
-The lifecycle of a pull request can be [mapped](/integrations/gitlab#connect-plane-project) to workflow states in Plane. The following PR states are available for mapping:
+*Example*
+```bash
+PR Title: [WEB-344] Add user authentication feature
+PR Description: Implements login functionality for WEB-345
+```
+
+In this example:
+- WEB-344 will be fully automated (state changes with PR state)
+- WEB-345 will be linked as a reference only (no state automation)
+
+### PR lifecycle mapping
+
+The lifecycle of a pull request can be mapped to workflow states in Plane. The following PR states are available for mapping:
 
 - A draft PR is created.
 - A PR is opened.
@@ -114,6 +162,6 @@ The lifecycle of a pull request can be [mapped](/integrations/gitlab#connect-pla
 - The PR is successfully merged.
 - The PR is closed without merging.
 
-#### Issue backlinks in pull requests
+### Issue backlinks in pull requests
 
-When a PR references Plane work items (using closing or non-closing reference keywords), Plane will post a confirmation comment on the pull request, ensuring visibility into which issues are linked.
+When a PR references Plane work items, Plane will post a confirmation comment on the pull request, ensuring visibility into which issues are linked.
