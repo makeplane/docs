@@ -235,3 +235,19 @@ Ensure the correct Redirect URI is configured in your OAuth service:
     https://<plane.example.com>/auth/mobile/github/callback/
     `
   Verify that the `<plane.example.com>` part of the URL matches your self-hosted instance's domain.
+
+### Link not opening iOS app
+
+If clicking links doesn't open the Plane iOS app and instead redirects to your browser, this is usually related to how iOS handles Universal Links.
+
+**Why this happens**
+
+1. Your default browser may not be Safari.
+2. You may have previously opened the web app (`https://app.plane.so`) in your browser, causing iOS to associate the domain with the browser instead of the app.
+
+**How to fix it**
+
+1. Open the link in Safari.
+2. A banner will appear at the top that says **Open** and stays for about a second.
+3. Tap **Open** before the banner disappears to launch the Plane app.
+4. Try clicking the link from any other app to verify that it now opens the Plane app directly.

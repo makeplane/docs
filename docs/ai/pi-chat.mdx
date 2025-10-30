@@ -1,9 +1,8 @@
 ---
-title: Pi chat
+title: Plane AI
 hide_title: true
-description: Meet Pi, Plane's AI assistant that helps you find project data, analyze work items, and get insights using natural language queries. Try it today.
+description: Plane AI is your intelligent assistant for finding project data, analyzing work items, and managing tasks using natural language.
 ---
-
 import Tags from "@site/src/components/Tags";
 
 <div className="tag-wrapper">
@@ -12,15 +11,15 @@ import Tags from "@site/src/components/Tags";
   <Tags tags={[{ name: "Business", additionalClass: "business" }]} />
 </div>
 
-Pi (Plane Intelligence) is an AI assistant that helps you interact with your Plane workspace using natural language. Instead of navigating through menus and filters, you can simply ask Pi questions about your projects, work items, and documentation in plain English.
+Plane AI is an AI assistant that helps you interact with your Plane workspace using natural language. Instead of navigating through menus and filters, you can simply ask Plane AI questions about your projects, work items, and documentation in plain English.
 
-Think of Pi as a knowledgeable team member who has instant access to all your project data. You can ask it to find specific issues, analyze project progress, search through documentation, or help you understand complex relationships between work items.
+Think of Plane AI as a knowledgeable team member who has instant access to all your project data. You can ask it to find specific issues, analyze project progress, search through documentation, or help you understand complex relationships between work items.
 
-![Pi chat sidebar](https://media.docs.plane.so/pi-chat/pi-chat-sidebar.webp#hero)
+![Plane AI chat sidebar](https://media.docs.plane.so/pi-chat/pi-chat-sidebar.webp#hero)
 
-## What Pi can do today
+## What Plane AI can do today
 
-Pi excels at finding and analyzing information from your Plane workspace:
+Plane AI excels at finding and analyzing information from your Plane workspace:
 
 **Search and discovery**
 - Find work items by describing what you're looking for: "Show me all bugs related to user authentication".
@@ -44,36 +43,69 @@ Pi excels at finding and analyzing information from your Plane workspace:
 - Navigate complex project structures.
 - Access step-by-step instructions and how-to guidance. 
 
-## What Pi cannot do (yet)
+## What Plane AI cannot do (yet)
 
-Pi is currently **read-only**. It cannot perform actions that modify your workspace:
+Plane AI is currently **read-only**. It cannot perform actions that modify your workspace:
 
-- ❌ Create new work items, cycles, or modules.
-- ❌ Update existing issues or change their status.
-- ❌ Assign tasks to team members.
-- ❌ Modify project settings or permissions.
-- ❌ Delete any content.
 - ❌ Execute automated task workflows.
 - ❌ Handle bulk operations or routine project management tasks.
 
-The Action Executor Agent is in development and will enable these capabilities in future releases.
+## How to use Plane AI
 
-## How to use Pi
+### Access Plane AI
 
-### Access Pi
+Plane AI is accessible from the left sidebar (AI icon for a dedicated chat interface with recent history) or directly within a project's Work Items and Cycles pages (AI icon on the top right to start a new chat in a side panel without leaving your view).
 
-Pi is accessible from the left sidebar (Pi icon for a dedicated chat interface with recent history) or directly within a project’s Work Items and Cycles pages (Pi icon on the top right to start a new chat in a side panel without leaving your view).
-
-![Pi chat project](https://media.docs.plane.so/pi-chat/pi-chat-project.webp#hero)
+![Plane AI chat project](https://media.docs.plane.so/pi-chat/pi-chat-project.webp#hero)
 
 ### Start a conversation
 
-1. Type your question in the chat input at the bottom of the Pi interface.
-2. Pi will process your query and provide a response.
+1. Type your question in the chat input at the bottom of the Plane AI interface.
+2. Plane AI will process your query and provide a response.
 3. You can ask follow-up questions to dive deeper into the results.
 4. Use `@mentions` for direct entity reference, for eg., "@WEB-4651 what's the status of this issue?"
 
-![Pi chat mentions](https://media.docs.plane.so/pi-chat/pi-chat-mentions.webp#hero)
+![Plane AI chat mentions](https://media.docs.plane.so/pi-chat/pi-chat-mentions.webp#hero)
+
+### Attach files
+
+Click the **attachment icon** in the chat input to upload files:
+- Screenshots and images for visual context
+- Documents for reference
+- Error logs or data files for analysis
+
+Plane AI can reference attachments in its responses and help you analyze the content.
+
+### Use voice input
+
+Click the **microphone icon** to speak your query instead of typing. Plane AI transcribes your speech and processes it as a text query, useful for:
+- Quick queries on mobile
+- Complex questions that are faster to speak
+- Hands-free operation
+
+### Create items with Plane AI
+
+Plane AI can create work items, projects, cycles, and modules through natural language commands.
+
+#### Create a work item
+
+1. Ensure you have a project selected using the Focus selector.
+2. Type a creation command describing what you want to create:
+    ```
+      Create a bug report for the login page crash
+    ```
+3. Plane AI processes your request and shows its thinking.
+4. Once completed, the work item is created and you'll see a success confirmation with the work item ID.
+
+The newly created work item will include:
+- Automatically generated title based on your description
+- AI-generated description summarizing the issue
+- Appropriate work item type (bug, feature, etc.) inferred from your command
+- Default project properties
+
+:::tip
+Be specific in your commands. Include details like priority, assignees, or descriptions to help Plane AI create more complete work items. For example: "Create a high-priority bug for the payment gateway timeout issue and assign it to the backend team."
+:::
 
 ### Thread organization and management
 
@@ -94,17 +126,17 @@ Conversational features
 Notice the **Focus** selector at the bottom of the chat interface.
 - Set your conversation scope to a specific workspace.
 - Switch between different workspaces if you have access to multiple ones.
-- Ensure Pi searches and analyzes data from the right context.
+- Ensure Plane AI searches and analyzes data from the right context.
 - Narrow context to individual projects when needed.
 
-### Pi's reasoning and responses
+### Plane AI's reasoning and responses
 
-Pi includes a **Show thinking** feature that reveals how it processes your queries.
-- Click **Show thinking** to see Pi's step-by-step reasoning process.
-- Watch as Pi understands your query, plans its approach, and executes database searches.
-- This transparency helps you understand why Pi provides certain results and how to refine your questions.
+Plane AI includes a **Show thinking** feature that reveals how it processes your queries.
+- Click **Show thinking** to see Plane AI's step-by-step reasoning process.
+- Watch as Plane AI understands your query, plans its approach, and executes database searches.
+- This transparency helps you understand why Plane AI provides certain results and how to refine your questions.
 
-Pi provides structured responses that may include:
+Plane AI provides structured responses that may include:
 - Direct answers with relevant data from live Plane databases.
 - Tables and lists for organized information with complex filtering.
 - Links to specific work items and pages with clickable references.
@@ -112,7 +144,7 @@ Pi provides structured responses that may include:
 - Aggregations and analytics that generate insights from project data.
 - Relationship mapping showing connections between entities.
 
-When Pi references work items, it will show you the title and provide clickable links to view them directly in Plane.
+When Plane AI references work items, it will show you the title and provide clickable links to view them directly in Plane.
 
 ### Get better results
 
@@ -126,7 +158,7 @@ When Pi references work items, it will show you the title and provide clickable 
 - "Find documentation about setting up webhooks"
 
 **Ask follow-up questions**
-- Pi remembers your conversation context
+- Plane AI remembers your conversation context
 - Build on previous queries: "Now show me only the ones assigned to Sarah"
 - Ask for different formats: "Can you show this as a summary instead?"
 
@@ -153,61 +185,61 @@ Based on the interface, here are some example questions you might ask:
 
 - **Recent chats**: Access your conversation history from the **Recents** section in the sidebar.
 - **New conversations**: Click "New chat" to start fresh when switching topics.
-- **Contextual help**: Pi will suggest relevant follow-up questions based on your queries
+- **Contextual help**: Plane AI will suggest relevant follow-up questions based on your queries
 
 ### Response interactions
 
-At the bottom of each Pi response, you'll find:
-- **Thumbs up/down**: Rate the helpfulness of Pi's response.
+At the bottom of each Plane AI response, you'll find:
+- **Thumbs up/down**: Rate the helpfulness of Plane AI's response.
 - **Copy**: Copy the response text for use elsewhere.
 - **Share**: Share the conversation or specific responses with team members.
 
 ## Platform availability
 
-Pi works across all your devices:
+Plane AI works across all your devices:
 
-- **Web interface**: Access Pi directly within your Plane workspace.
-- **Mobile apps**: Native iOS and Android apps with full Pi functionality.
+- **Web interface**: Access Plane AI directly within your Plane workspace.
+- **Mobile apps**: Native iOS and Android apps with full Plane AI functionality.
 - **Sync across devices**: Your conversation history stays consistent everywhere.
 
 ## Privacy and permissions
 
-Pi respects your Plane permissions and workspace boundaries:
+Plane AI respects your Plane permissions and workspace boundaries:
 - You can only access data you normally have permission to view.
 - Conversations are scoped to your current workspace.
-- Pi cannot see or access other workspaces you don't belong to.
+- Plane AI cannot see or access other workspaces you don't belong to.
 
 ## Tips for effective use
 
-**Start broad, then narrow down**. Begin with general queries and use Pi's responses to refine your search:
+**Start broad, then narrow down**. Begin with general queries and use Plane AI's responses to refine your search:
 1. "Show me recent bugs"
 2. "Focus on the ones from the authentication module"
 3. "Which of these are assigned to the backend team?"
 
-**Use Pi for discovery**
+**Use Plane AI for discovery**
 - "What documentation exists about our API?"
 - "Find all work items mentioning performance issues"
 - "Show me pages related to user onboarding"
 
 **Leverage context awareness**
-Pi understands your project structure and relationships:
+Plane AI understands your project structure and relationships:
 - "What's blocking the login feature work?"
 - "Find related issues to PROJ-123"
 - "Show me work items similar to this bug report"
 
-If Pi doesn't understand your query or provides unexpected results:
+If Plane AI doesn't understand your query or provides unexpected results:
 - Try rephrasing your question with different terms
 - Be more specific about timeframes, projects, or work item types
-- Ask Pi to explain its reasoning: "Why did you include these results?"
+- Ask Plane AI to explain its reasoning: "Why did you include these results?"
 
-Pi is continuously learning and improving. The more you use it, the better it becomes at understanding your team's specific needs and terminology.
+Plane AI is continuously learning and improving. The more you use it, the better it becomes at understanding your team's specific needs and terminology.
 
 ## What's coming next
 
-We're actively working on expanding Pi's capabilities:
+We're actively working on expanding Plane AI's capabilities:
 - **Action execution**: Create and update work items through conversation
 - **Advanced workflows**: Automate routine project management tasks
 - **Voice interface**: Speak your queries instead of typing
 - **Enhanced analytics**: Predictive insights and recommendations
 
-Pi represents the future of project management, where natural conversation replaces complex interfaces, and your AI assistant helps you focus on what matters most: building great products.
+Plane AI represents the future of project management, where natural conversation replaces complex interfaces, and your AI assistant helps you focus on what matters most: building great products.

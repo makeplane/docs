@@ -128,7 +128,7 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "category",
-          label: "Work items",
+          label: "Work Items",
           items: [
             "core-concepts/issues/overview",
             "core-concepts/issues/properties",
@@ -303,7 +303,7 @@ const sidebars: SidebarsConfig = {
         "ai/pi-chat",
         {
           type: "link",
-          label: "MCP server",
+          label: "MCP Server",
           href: "https://developers.plane.so/dev-tools/mcp-server",
         },
       ],
