@@ -42,9 +42,10 @@ Follow these steps to set up an Initiative:
 3. Provide the following details:
    - **Title**: Name your Initiative.
    - **Description**: Add context about the goal of the Initiative.
-   - **Projects**: Select related projects to associate with the Initiative.
-   - **Start and End Dates**: Define the timeline.
+   - **State**: Set the initial state (Drafts, Planned, Active, Completed, or Closed). By default, new Initiatives are set to "Drafts".
+   - **Start and End Dates**: Define the timeline for the Initiative.
    - **Lead**: Assign a person responsible for the Initiative.
+   - **Labels**: Add custom labels to categorize the Initiative (labels must be set up in workspace settings first).
 4. Click **Create Initiative**.
 
 ## View and manage Initiatives
@@ -94,6 +95,34 @@ Each item shows its current progress, making it simple to drill down into specif
 
 Use the **Add scope** button in the top-right corner to expand your initiative by connecting additional epics and projects. This makes it easy to grow your initiative as new work streams emerge or when you need to link existing work to your strategic goals.
 
+### Initiative states
+
+Every Initiative has a state that reflects its current phase. Use the **State** property to update its status:
+
+- **Drafts**  
+  Initiatives in the planning phase that aren't ready to start
+- **Planned**  
+  Initiatives that are defined and scheduled but not yet active
+- **Active**  
+  Currently ongoing Initiatives that teams are working on
+- **Completed**  
+  Successfully finished Initiatives that have met their goals
+- **Closed**  
+  Initiatives that have been archived or discontinued
+
+You can filter Initiatives by state using the **Display** dropdown in the Initiatives list view, making it easy to focus on active work or review completed efforts.
+
+### Initiative labels
+
+Labels help you categorize and organize Initiatives across your workspace. Before you can use labels on Initiatives, you need to set them up in your [workspace settings](/core-concepts/workspaces/overview#access-workspace-settings).
+
+1. Go to **Workspace settings**.
+2. Navigate to the **Initiatives** tab in the left sidebar.
+3. Scroll to the **Labels** section.
+4. Click **Add label** or **Create your first label**.
+5. Define your label name and color.
+
+Once labels are created, you can assign them to any Initiative through the **Labels** property in the Initiative's properties panel. Multiple labels can be applied to a single Initiative, allowing for flexible categorization.
 
 ## Initiative updates
 
@@ -111,7 +140,16 @@ This consolidated view enables Initiative owners to monitor progress across all 
 ## Properties, comments, and activity
 
 - The Info tab on the side panel of an Initiative provides a quick snapshot of key properties and metadata associated with the Initiative.
-  
+
+  - **State**: Track the Initiative's lifecycle phase (Drafts, Planned, Active, Completed, Closed)
+  - **Projects**: Number of connected projects
+  - **Epics**: Number of associated epics
+  - **Lead**: Person responsible for the Initiative
+  - **Start date**: When the Initiative begins
+  - **Due date**: Target completion date
+  - **Created by**: Initiative creator
+  - **Labels**: Custom categorization tags for organization
+
   ![Initiative properties](https://media.docs.plane.so/initiatives/properties.webp#hero-tr)
 
 - Add comments to discuss updates or highlight issues.
@@ -122,21 +160,34 @@ This consolidated view enables Initiative owners to monitor progress across all 
   
   ![Initiative activity](https://media.docs.plane.so/initiatives/activity.webp#hero-tr)
 
-## Sort and filter Initiatives
+## Sort and filter initiatives
 
-To make managing Initiatives easier, Plane provides options to filter and sort them based on various criteria:
+To make managing initiatives easier, Plane provides comprehensive options to filter, group, and sort them based on various criteria.
 
-**Filter Initiatives**:
+### Filter initiatives
 
-- By the assigned lead with options to select multiple leads or search for a specific person.
-- Based on their start date. Quick options include "1 week from now," "2 weeks from now," "1 month from now," and a custom date selector.
-- Based on their target completion date, similar to the start date options.
+Use the filter icon in the top navigation to apply filters:
 
-**Sort Initiatives**:
+- **Lead**: Filter by the assigned lead with options to select multiple leads or search for a specific person.
+- **Start date**: Filter based on Initiative start dates with quick options like "1 week from now," "2 weeks from now," "1 month from now," or use a custom date selector.
+- **End date**: Filter based on target completion dates, similar to the start date options.
+- **State**: Filter Initiatives by their lifecycle phase (Drafts, Planned, Active, Completed, Closed).
+- **Labels**: Filter by custom labels to find Initiatives in specific categories.
 
-- **Group By**  
-  Organize your Initiatives by categories like Lead or Created By. You can also choose "None" to view Initiatives in a flat list.
-- **Order By**  
-  Sort Initiatives manually, by the last created date, or by the last updated date to prioritize the most relevant ones.
+### Display options
 
-These filtering and sorting tools make it easier to focus on specific Initiatives or prioritize your view based on team needs.
+Click the **Display** dropdown in the top navigation to customize how Initiatives are organized and sorted:
+
+**Group by**
+- **Lead**: Group Initiatives by the person responsible for them
+- **Created By**: Group by the person who created the Initiative
+- **States**: Group by lifecycle phase (Drafts, Planned, Active, Completed, Closed)
+- **Labels**: Group by assigned labels
+- **None**: View all Initiatives in a flat list without grouping
+
+**Order by**
+- **Manual**: Drag and drop to arrange Initiatives in your preferred order
+- **Last Created**: Sort by creation date, showing newest Initiatives first
+- **Last Updated**: Sort by last modification date, showing recently updated Initiatives first
+
+These filtering, grouping, and sorting tools make it easier to focus on specific Initiatives or prioritize your view based on team needs and workflow preferences.

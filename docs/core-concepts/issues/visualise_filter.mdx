@@ -1,5 +1,5 @@
 ---
-title: Work item filters
+title: Work Item Filters
 description: Learn how to filter work items in Plane.
 ---
 
@@ -77,7 +77,7 @@ Each field supports different operators to give you precise control over your fi
 You get essential filtering with the `is` operator, plus `between` for date fields. This covers the most common filtering needs.
 
 **Paid plans**  
-Unlock advanced filtering with additional operators including `is not`, `after`, `before`, and more specialized conditions. We will be adding more conditions here such as `not in`, `contains`, `is empty`, etc. .
+Unlock advanced filtering with additional operators including `is not`, `is not any of`, `after`, `before`, and more specialized conditions. We will be adding more conditions here such as `not in`, `contains`, `is empty`, etc. .
 :::
 
 ### Type
@@ -88,6 +88,8 @@ Filter by custom work item types, such as Bug, Feature, or Task.
 |----------|-------------|----------|
 | `is` | Exactly matches one type | Show only work items with type *Bug* |
 | `is any of` | Matches any of several types | Bugs or Tasks only |
+| `is not` | Excludes one type | Everything except Bug |
+| `is not any of` | Excludes several types | Not Bugs or Tasks |
 
 ### State
 
@@ -98,6 +100,7 @@ View work items based on their current state, such as Todo, In Progress, or Done
 | `is` | Exactly matches one state | Only items In Progress |
 | `is any of` | Matches any of several states | Todo or In Progress |
 | `is not` | Excludes one state | Everything except Done |
+| `is not any of` | Excludes several states | Not Done or Cancelled |
 
 ### State Group
 
@@ -108,6 +111,7 @@ View all, active or backlog work items.
 | `is` | Exactly matches one group | Show only Started work items |
 | `is any of` | Matches any of several groups | Backlog or Unstarted |
 | `is not` | Excludes one group | Everything except Backlog |
+| `is not any of` | Excludes several groups | Not Backlog or Cancelled |
 
 ### Assignees
 
@@ -118,6 +122,7 @@ Focus on work items assigned to specific team members to track workloads or iden
 | `is` | Exactly matches one person | Find work assigned to Sarah |
 | `is any of` | Matches any of multiple people | Show work for the frontend team |
 | `is not` | Excludes one person | Hide items assigned to John |
+| `is not any of` | Excludes multiple people | Not assigned to John or Sarah |
 
 ### Priority
 
@@ -128,6 +133,7 @@ Filter work items by their priority level (e.g., Urgent, High, Medium, Low) to f
 | `is` | Exactly matches one priority | Only high priority items |
 | `is any of` | Matches any of several priorities | High or medium priority |
 | `is not` | Excludes one priority | Everything except low priority |
+| `is not any of` | Excludes several priorities | Not low or none priority |
 
 ### Mentions
 
@@ -138,6 +144,7 @@ Filter tasks where you or another team member has been mentioned to ensure no cr
 | `is` | Exactly matches one person | Items mentioning Sarah |
 | `is any of` | Matches any of multiple people | Mentioning team leads |
 | `is not` | Excludes one person | Not mentioning John |
+| `is not any of` | Excludes multiple people | Not mentioning John or Sarah |
 
 ### Label
 
@@ -148,6 +155,7 @@ Filter work items based on custom tags, such as "Frontend", or "Marketing".
 | `is` | Exact label match | Label exactly "bug" |
 | `is any of` | Matches any of the Labels| frontend or backend |
 | `is not` | Not exact label match | Label not exactly "bug" |
+| `is not any of` | Excludes several labels | Not frontend or backend |
 
 ### Cycle
 
@@ -158,6 +166,7 @@ View work items tied to specific cycles to monitor progress within a timeframe.
 | `is` | Exactly this cycle | Items in Sprint 23 |
 | `is any of` | Any of these cycles | In Sprint 23 or 24 |
 | `is not` | Not this specific cycle | Not in Sprint 23 |
+| `is not any of` | Not in any of these cycles | Not in Sprint 23 or 24 |
 
 ### Module
 
@@ -168,6 +177,7 @@ Filter work items by their associated module to analyze related tasks together.
 | `is` | Exactly this module | Items in Authentication module |
 | `is any of` | Any of these modules | In API development or Data management modules |
 | `is not` | Not this specific module | Not in Authentication module |
+| `is not any of` | Not in any of these modules | Not in API or Data management |
 
 ### Start date and Target date
 
@@ -197,3 +207,77 @@ Identify work items created by specific individuals.
 | `is` | Exactly matches one person | Items created by Sarah |
 | `is any of` | Matches any of multiple people | Show work for the frontend team |
 | `is not` | Excludes one person | Not created by John |
+| `is not any of` | Excludes multiple people | Not created by John or Sarah |
+
+### Custom properties
+Filter work items by any custom properties defined for each work item type in your project. The available operators depend on the property type.
+
+**Text properties**
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exact text match | Name is exactly "Login feature" |
+| `is not` | Not exact text match | Name is not "Login feature" |
+| `contains` | Text contains value | Description contains "authentication" |
+| `does not contain` | Text does not contain value | Description does not contain "deprecated" |
+
+**Number properties**
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exactly this number | Story points is 8 |
+| `is not` | Not this number | Estimated hours is not 5 |
+| `less than` | Below this value | Priority score less than 50 |
+| `not less than` | This value or above | Complexity not less than 3 |
+| `less than or equal` | This value or below | Effort less than or equal 10 |
+| `not less than or equal` | Above this value | Risk level not less than or equal 5 |
+| `greater than` | Above this value | Technical complexity greater than 3 |
+| `not greater than` | This value or below | Customer impact not greater than 7 |
+| `greater than or equal` | This value or above | Business value greater than or equal 50 |
+| `not greater than or equal` | Below this value | Severity not greater than or equal 8 |
+| `between` | Within numeric range | Estimated hours between 5 and 10 |
+| `not between` | Outside numeric range | Priority score not between 20 and 40 |
+
+**Dropdown properties** 
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exactly this option | Severity is Critical |
+| `is any of` | Any of these options | Status is Approved or Pending |
+| `is not` | Not this option | Category is not Bug |
+| `is not any of` | Not any of these options | Environment not Staging or Development |
+
+**Boolean properties**
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Matches boolean value | Is blocking is True |
+| `is not` | Does not match boolean value | Requires review is not False |
+
+**Date properties**
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exactly this date | Review date is today |
+| `is not` | Not this specific date | Launch date is not tomorrow |
+| `before` | Earlier than this date | Deadline before next Monday |
+| `not before` | This date or later | Start date not before January 1 |
+| `before or on` | This date or earlier | Due date before or on Friday |
+| `not before or on` | Later than this date | Planned date not before or on March 15 |
+| `after` | Later than this date | Completion date after Q1 end |
+| `not after` | This date or earlier | Target date not after June 30 |
+| `after or on` | This date or later | Delivery date after or on release day |
+| `not after or on` | Earlier than this date | Milestone not after or on sprint end |
+| `between` | Within date range | Review period between Jan 1 and Jan 31 |
+| `not between` | Outside date range | Availability not between holidays |
+
+**Member picker properties**
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exactly this member | Reviewer is Sarah |
+| `is any of` | Any of these members | Code owner is John or Emily |
+| `is not` | Not this member | Quality checker is not Mike |
+| `is not any of` | Not any of these members | Approver not John or Sarah |
+
+**URL properties**
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exact URL match | Design link is exactly [URL] |
+| `is not` | Not this exact URL | Documentation link is not [URL] |
+| `contains` | URL contains text | Reference URL contains "figma.com" |
+| `does not contain` | URL does not contain text | External link does not contain "staging" |
