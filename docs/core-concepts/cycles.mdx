@@ -92,6 +92,42 @@ Once the due date of an active Cycle passes, it’s automatically marked as comp
 
 ![Transfer work items](https://media.docs.plane.so/cycles/transfer-issues.webp#hero-tr)
 
+
+<div className="tag-wrapper">
+  ## Auto-schedule cycles
+  <Tags tags={[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]} />
+</div>
+
+Automate the creation and management of cycles according to predefined configurations, eliminating manual setup while ensuring consistent cycle planning and team predictability.
+
+![Autoschedule cycles](https://media.docs.plane.so/cycles/auto-schedule-cycles.webp#hero-br)
+
+### Benefits
+- Maintain regular cycle rhythms automatically without manual intervention.
+- Keep future cycles pre-scheduled so teams can plan ahead with confidence.
+- Eliminate repetitive administrative work from cycle creation.
+- Ensure reliable, consistent sprint schedules across projects.
+
+### Configuration
+
+1. Navigate to **Project Settings → Features → Cycles**.
+2. Turn on the **Auto-schedule cycles** toggle and configure:
+    - Cycle Title — Set a naming convention for automatically created cycles.
+    - Cycle Duration — Define the length of each cycle in weeks (e.g., 1 week, 2 weeks).
+    - Cooldown Period — Add an optional buffer between cycles in days for planning and retrospectives.
+    - Cycle starts day — Choose the start date for the first auto-scheduled cycle.
+    - Number of future cycles — Specify how many upcoming cycles to keep pre-scheduled.
+    - Auto-rollover work items — Enable to automatically move incomplete issues from one cycle to the next.
+
+Once enabled, the system automatically:
+
+- Generates the configured number of future cycles based on your settings.
+- Creates a new cycle when the current one concludes to maintain the specified schedule.
+- Ensures cycles don't overlap and follow the defined cadence.
+- Applies consistent naming conventions and durations across all cycles.
+
+All auto-scheduled cycles appear in your Cycles view with clear dates and durations. Admins can update configuration settings anytime to adjust the schedule, and the system will adapt future cycles accordingly.
+
 ## Track active cycle
 
 Once a cycle is active and contains work items, you can monitor its progress, assess the team's productivity, and review the breakdown of priorities in the Cycles page of the project. This section also allows you to investigate any discrepancies if the cycle is not proceeding as expected.

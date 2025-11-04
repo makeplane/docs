@@ -92,8 +92,8 @@ If a message sparks an action item, turn it into a Plane work item in just a few
 3. A modal will open where you can select the project.
 4. Add a title and description (the original message is pre-filled).
 5. Assign Labels, State, Priority, and Assignee.
-6. Enable Thread Sync (optional). When enabled, Thread Sync keeps your conversation and Plane issue comments in sync. Anything you say in the Slack thread appears in the Plane work item comments, and vice versa. It’s the easiest way to keep everyone aligned without repeating updates in two places.
-7. Once you hit **Create Issue**, the issue gets added to the Backlog of your selected project, and a preview is posted in the Slack thread so everyone knows it's being tracked.
+6. Enable Thread Sync (optional). When enabled, Thread Sync keeps your conversation and Plane work item comments in sync. Anything you say in the Slack thread appears in the Plane work item comments, and vice versa. It’s the easiest way to keep everyone aligned without repeating updates in two places.
+7. Once you hit **Create Issue**, the work item gets added to the Backlog of your selected project, and a preview is posted in the Slack thread so everyone knows it's being tracked.
 
 #### `/plane` command
 
@@ -116,11 +116,11 @@ If a Plane work item already exists, and you want to connect it to a Slack threa
    
    ![Link Work Item](https://media.docs.plane.so/integrations/slack/link-work-item.webp#hero)
 3. In the modal, search for the work item by title or ID.
-4. Select the right issue and hit **Link**.
+4. Select the right work item and hit **Link**.
 
-That’s it. Now the thread and the work item are connected. Comments in the thread can sync to Plane (and vice versa, if **Thread Sync** is enabled on that issue), and the thread will display a rich preview of the linked work item.
+That’s it. Now the thread and the work item are connected. Comments in the thread can sync to Plane (and vice versa, if **Thread Sync** is enabled on that work item), and the thread will display a rich preview of the linked work item.
 
-This is perfect for situations where someone logs an issue in Plane but the conversation about it happens in Slack. Just link them up and avoid duplication.
+This is perfect for situations where someone logs an work item in Plane but the conversation about it happens in Slack. Just link them up and avoid duplication.
 
 ### Add Plane to private Slack channels
 When you use Plane in public Slack channels, it automatically adds the Plane bot to those channels. However, for private channels, you must manually add the bot before you can create or link work items.
@@ -161,7 +161,7 @@ Once set, Plane will automatically post updates to the selected Slack channel ev
 
 ### Link previews
 
-When you share a Plane Issue, Cycle, or Module link in Slack, you’ll see a live preview of its details, including:
+When you share a Plane Work item, Cycle, or Module link in Slack, you’ll see a live preview of its details, including:
 
 - **Issues**  
   Title, status, priority, assignee, and quick actions.

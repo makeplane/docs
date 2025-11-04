@@ -153,6 +153,7 @@ const sidebars: SidebarsConfig = {
         "core-concepts/issues/timeline-dependency",
         "core-concepts/projects/initiatives",
         "core-concepts/workspaces/teamspaces",
+        "core-concepts/projects/milestones",
         "core-concepts/stickies",
       ],
     },
