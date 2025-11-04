@@ -7,7 +7,7 @@ import Tags from "@site/src/components/Tags";
 
 # Manage and track your sprints using Cycles
 
-A Cycle is a set period of time where your team focuses on completing specific tasks or issues, similar to sprints in Agile. Each Cycle is flexible, allowing you to prioritize and tackle backlog items at your own pace.
+A Cycle is a set period of time where your team focuses on completing specific tasks or work items, similar to sprints in Agile. Each Cycle is flexible, allowing you to prioritize and tackle backlog items at your own pace.
 
 Using Cycles, your team stays organized, meets deadlines, and keeps moving forward efficiently. It’s all about getting things done without the overwhelm!
 
@@ -92,6 +92,42 @@ Once the due date of an active Cycle passes, it’s automatically marked as comp
 
 ![Transfer work items](https://media.docs.plane.so/cycles/transfer-issues.webp#hero-tr)
 
+
+<div className="tag-wrapper">
+  ## Auto-schedule cycles
+  <Tags tags={[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]} />
+</div>
+
+Automate the creation and management of cycles according to predefined configurations, eliminating manual setup while ensuring consistent cycle planning and team predictability.
+
+![Autoschedule cycles](https://media.docs.plane.so/cycles/auto-schedule-cycles.webp#hero-br)
+
+### Benefits
+- Maintain regular cycle rhythms automatically without manual intervention.
+- Keep future cycles pre-scheduled so teams can plan ahead with confidence.
+- Eliminate repetitive administrative work from cycle creation.
+- Ensure reliable, consistent sprint schedules across projects.
+
+### Configuration
+
+1. Navigate to **Project Settings → Features → Cycles**.
+2. Turn on the **Auto-schedule cycles** toggle and configure:
+    - Cycle Title — Set a naming convention for automatically created cycles.
+    - Cycle Duration — Define the length of each cycle in weeks (e.g., 1 week, 2 weeks).
+    - Cooldown Period — Add an optional buffer between cycles in days for planning and retrospectives.
+    - Cycle starts day — Choose the start date for the first auto-scheduled cycle.
+    - Number of future cycles — Specify how many upcoming cycles to keep pre-scheduled.
+    - Auto-rollover work items — Enable to automatically move incomplete work items from one cycle to the next.
+
+Once enabled, the system automatically:
+
+- Generates the configured number of future cycles based on your settings.
+- Creates a new cycle when the current one concludes to maintain the specified schedule.
+- Ensures cycles don't overlap and follow the defined cadence.
+- Applies consistent naming conventions and durations across all cycles.
+
+All auto-scheduled cycles appear in your Cycles view with clear dates and durations. Admins can update configuration settings anytime to adjust the schedule, and the system will adapt future cycles accordingly.
+
 ## Track active cycle
 
 Once a cycle is active and contains work items, you can monitor its progress, assess the team's productivity, and review the breakdown of priorities in the Cycles page of the project. This section also allows you to investigate any discrepancies if the cycle is not proceeding as expected.
@@ -109,22 +145,22 @@ This feature provides powerful visualization tools to help you track project cyc
 
 ### Cycle summary
 
-At the top of the cycle view, you’ll see the overall progress percentage. Hover over it to get a breakdown of completed and pending issues, along with the number of days left in the cycle.
+At the top of the cycle view, you’ll see the overall progress percentage. Hover over it to get a breakdown of completed and pending work items, along with the number of days left in the cycle.
 
 To the left, there’s a color-coded summary that shows if the cycle is leading or trailing based on the burn-down and build-up. This gives you instant feedback about how things are going and highlights risks so you can make quick decisions and ensure nothing slips through the cracks.
 
-The burn-down and build-up charts are straightforward ways to gauge your cycle’s momentum. You can customize them to show progress based on the **count of issues** or **point estimates** for each task, giving you the flexibility to use the metrics that work best for your team.
+The burn-down and build-up charts are straightforward ways to gauge your cycle’s momentum. You can customize them to show progress based on the **count of work items** or **point estimates** for each task, giving you the flexibility to use the metrics that work best for your team.
 
 ![Scope](https://media.docs.plane.so/cycles/scope-change.webp#hero)
 
 - **Scope**\
-  This is the total number of issues planned for the current cycle.
+  This is the total number of work items planned for the current cycle.
 
 - **Unstarted**\
-  The issues that haven't begun yet
+  The work items that haven't begun yet
 
 - **Backlog**\
-  All issues in an unstarted state
+  All work items in an unstarted state
 
 The other metrics are detailed below, tailored to each chart type.
 
@@ -149,7 +185,7 @@ The burn-down chart gives you a clear visual of how much work remains in your cy
 The build-up chart helps track how much work has already been completed in the cycle.
 
 - **Today's ideal done**\
-  This shows how many issues should be completed by today based on the ideal pace.
+  This shows how many work items should be completed by today based on the ideal pace.
 
 - **Done**\
   This is the total number of tasks your team has completed so far.
