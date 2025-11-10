@@ -49,6 +49,7 @@ const sidebars: SidebarsConfig = {
             "core-concepts/workspaces/overview",
             "workspaces-and-users/search-workspace",
             "core-concepts/account/overview",
+            "core-concepts/power-k",
           ],
         },
 
@@ -320,7 +321,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: "Support and resources",
       items: [
-        "core-concepts/power-k",
+        "support/get-help",
         {
           type: "category",
           label: "Resources",
@@ -351,16 +352,6 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "Changelog",
           href: "https://plane.so/changelog",
-        },
-        {
-          type: "link",
-          label: "Discord",
-          href: "https://discord.com/invite/A92xrEGCge",
-        },
-        {
-          type: "link",
-          label: "Feature requests",
-          href: "https://github.com/makeplane/plane/issues",
         },
         {
           type: "link",
