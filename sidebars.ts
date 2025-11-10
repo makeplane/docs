@@ -322,6 +322,7 @@ const sidebars: SidebarsConfig = {
       label: "Support and resources",
       items: [
         "support/get-help",
+        "support/keyboard-shortcuts",
         {
           type: "category",
           label: "Resources",
