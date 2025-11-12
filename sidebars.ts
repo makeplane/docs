@@ -303,11 +303,12 @@ const sidebars: SidebarsConfig = {
       label: "AI",
       items: [
         "ai/pi-chat",
+        "ai/plane-ai-credits",
         {
           type: "link",
           label: "MCP Server",
           href: "https://developers.plane.so/dev-tools/mcp-server",
-        },
+        }
       ],
     },
     {
