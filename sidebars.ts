@@ -243,10 +243,11 @@ const sidebars: SidebarsConfig = {
           collapsed: false,
           link: { type: "doc", id: "integrations/about" },
           items: [
+            "integrations/draw-io",
             "integrations/github",
-            "integrations/slack",
             "integrations/gitlab",
             "integrations/sentry",
+            "integrations/slack",
           ],
         },
         {
