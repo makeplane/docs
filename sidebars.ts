@@ -50,6 +50,7 @@ const sidebars: SidebarsConfig = {
             "workspaces-and-users/search-workspace",
             "core-concepts/account/overview",
             "core-concepts/power-k",
+            "workspaces-and-users/customize-navigation"
           ],
         },
 
