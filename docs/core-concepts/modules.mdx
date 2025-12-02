@@ -3,6 +3,8 @@ title: Organize project features with Modules
 sidebar_label: Modules
 description: Use Modules to organize work items, track feature development, and break down projects into manageable components with progress tracking and multiple layouts.
 ---
+import Tags from "@site/src/components/Tags";
+
 
 # Break your project down into Modules
 
@@ -102,3 +104,12 @@ Archive completed Modules to declutter your views while preserving historical da
 ## Delete Module
 
 If a Module is no longer needed, you can delete it. Deleting a Module removes its progress analytics and de-links all associated work items.
+
+<div className="tag-wrapper">
+  ## Export modules
+  <Tags tags={[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]} />
+</div>
+
+You can export module data to track progress, create reports, or share module updates with stakeholders outside of Plane. Exports include all work items within the module along with their key details.
+
+Learn more about [custom exports](/core-concepts/export#custom-exports).
