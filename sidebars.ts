@@ -218,6 +218,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: "Intake and customers",
       items: [
+        "intake/overview",
         "core-concepts/intake",
         "intake/intake-forms",
         "intake/intake-email",
