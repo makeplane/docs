@@ -45,7 +45,7 @@
   }
   .navbar__logo img {
     height: auto; /* adjust as needed for your logo */
-    width: auto;
+    width: 100px;
   }
 }
 
@@ -646,13 +646,13 @@ html[data-theme="dark"] {
 
 @media (min-width: 768px) {
   .navbarSearchContainer_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
-  .navbarSearchContainer_Bca1 {
-    margin-left: auto;
-    margin-right: auto;
+  .navbarSearchContainer_bxl4 {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .DocSearch-Button {
