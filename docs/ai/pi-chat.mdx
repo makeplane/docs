@@ -80,25 +80,13 @@ Plane AI is accessible in two ways:
 
 ![Plane AI chat mentions](https://media.docs.plane.so/pi-chat/pi-chat-mentions.webp#hero)
 
-### Attach files
-
-Click the **attachment icon** in the chat input to upload files:
-- Screenshots and images for visual context
-- Documents for reference
-- Error logs or data files for analysis
-
-Plane AI can reference attachments in its responses and help you analyze the content.
-
-### Use voice input
-
-Click the **microphone icon** to speak your query instead of typing. Plane AI transcribes your speech and processes it as a text query, useful for:
-- Quick queries on mobile
-- Complex questions that are faster to speak
-- Hands-free operation
-
 ### Create items with Plane AI
 
 Plane AI can create work items, projects, cycles, and modules through natural language commands.
+
+:::info
+Creating items requires [Build mode](#build-mode).
+:::
 
 #### Create a work item
 
@@ -119,6 +107,65 @@ The newly created work item will include:
 :::tip
 Be specific in your commands. Include details like priority, assignees, or descriptions to help Plane AI create more complete work items. For example: "Create a high-priority bug for the payment gateway timeout issue and assign it to the backend team."
 :::
+
+### Ask and build modes
+Plane AI operates in two distinct modes to balance information retrieval with project management actions: **Ask** mode and **Build** mode. You can switch between these modes using the mode selector at the bottom of the chat interface.
+
+#### Ask mode
+Ask mode is designed for answering questions, retrieving information, and finding insights from your Plane workspace. In this mode, Plane AI is read-only—it cannot modify, create, or delete any data.
+
+![Ask mode](https://media.docs.plane.so/pi-chat/ask-mode.webp#hero)
+
+What you can do in Ask mode:
+
+- Search the Plane documentation: "How do I create a new cycle?" or "What are Modules?".
+- Query your workspace data: "Show me all high-priority bugs assigned to me".
+- Analyze trends: "Summarize the progress of the Frontend Revamp project".
+- Find specific items: "Find the issue regarding the login crash".
+- Get context: Ask about the status of specific cycles or modules.
+
+Example queries:
+
+- "What issues are currently blocking the release?"
+- "How many open bugs are there in the Mobile project?"
+- "Summarize the latest comments on issue PAI-123"
+
+#### Build mode
+Build mode is designed for action and execution. Switch to Build Mode when you need to create, update, or manage data within Plane.
+
+![Build mode](https://media.docs.plane.so/pi-chat/build-mode.webp#hero)
+
+What you can do in Build mode:
+
+- Create work items: "Create a new bug titled 'Login page 404 error' in the Core project".
+- Update statuses: "Move all issues in the Backlog cycle to Todo".
+- Assign users: "Assign all high-priority design tasks to Sarah".
+- Manage projects: "Create a new project called 'Q4 Marketing Push'".
+- Generate cycles and modules: "Start a new cycle named 'Sprint 24' beginning next Monday".
+
+Build mode respects your user permissions. You cannot perform actions via Plane AI that you wouldn't be allowed to do manually. Some actions may require explicit authorization to ensure secure access.
+
+Example commands:
+
+- "Create a new work item for 'Update API documentation' and assign it to Mike"
+- "Change the priority of issue MOB-12 to Urgent"
+- "Add all authentication-related tasks to the Security module"
+
+### Attach files
+
+Click the **attachment icon** in the chat input to upload files:
+- Screenshots and images for visual context
+- Documents for reference
+- Error logs or data files for analysis
+
+Plane AI can reference attachments in its responses and help you analyze the content.
+
+### Use voice input
+
+Click the **microphone icon** to speak your query instead of typing. Plane AI transcribes your speech and processes it as a text query, useful for:
+- Quick queries on mobile
+- Complex questions that are faster to speak
+- Hands-free operation
 
 ### Thread organization and management
 
