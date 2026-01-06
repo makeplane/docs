@@ -166,3 +166,101 @@ The lifecycle of a pull request can be mapped to workflow states in Plane. The f
 ### Work item backlinks in pull requests
 
 When a PR references Plane work items, Plane will post a confirmation comment on the pull request, ensuring visibility into which issues are linked.
+
+## Sync issues
+
+With the GitLab integration set up, you can sync issues between Plane and GitLab at the project level. This ensures GitLab issues and Plane work items stay synchronized within your configured GitLab Projects and Plane projects.
+
+### Add project work item sync
+Once GitLab is connected to Plane, workspace admins can link GitLab Projects with Plane projects.
+
+1. Navigate to the **Project Issue Sync** section under **Integrations**.
+2. Click the (+) button to create a new sync mapping.
+   
+   ![Sync project to GitLab](https://media.docs.plane.so/integrations/github/sync-project-github.webp#hero)
+3. In the modal that appears, configure the following:
+   1. **Plane project**  
+      Select the Plane project you want to sync with.
+   2. **GitLab Project**  
+      Choose the GitLab Project to connect.
+   3. **Project issue sync**  
+      Map GitLab issue states to Plane states:
+      - Issue Open → Select a Plane state (e.g., Todo)
+      - Issue Closed → Select a Plane state (e.g., Done)
+   4. **Select issue sync direction**  
+      Choose how issues should sync:
+      - Unidirectional → Sync issues from GitLab to Plane only.
+         :::warning
+         This will overwrite Plane work item content with GitLab issue data.
+         :::
+      - Bidirectional → Sync issues both ways between GitLab and Plane.
+
+      ![Sync direction](https://media.docs.plane.so/integrations/github/sync-direction.webp#hero)
+   5. Click **Start Sync**.
+
+All configured project issue syncs will appear in a list where you can edit or remove them as needed.
+
+### Sync issues to Plane
+After configuring project work item sync, you can link existing GitLab issues into your Plane project.
+
+#### GitLab → Plane
+
+1. In your GitLab project, add the `Plane` label to any issue you want to sync.
+   
+   ![Add Plane label](https://media.docs.plane.so/integrations/github/add-plane-label.webp#hero)
+2. The issue will automatically be created as a work item in the linked Plane project.
+3. Plane posts a comment on the GitLab issue with a link to the newly created work item, confirming the connection.
+   
+   ![Synced issue from GitLab](https://media.docs.plane.so/integrations/github/synced-issue-from-github.webp#hero)
+4. The work item in Plane will include a link back to the original GitLab issue.
+   
+   ![Creates issue in Plane](https://media.docs.plane.so/integrations/github/creates-plane-issue.webp#hero)
+
+### Sync work items to GitLab
+If you have existing work items in Plane that you want to sync to GitLab, you can do so using labels.
+
+#### Plane → GitLab
+
+1. In your Plane project, add the `gitlab` label to any work item you want to sync.
+   
+   ![Add gitlab label](https://media.docs.plane.so/integrations/github/add-github-label.webp#hero)
+2. A new issue will automatically be created in the linked GitLab project.
+   
+   ![Creates issue in GitLab](https://media.docs.plane.so/integrations/github/create-gitlab-issue.webp#hero)
+3. The GitLab issue will be linked back to the Plane work item.
+4. Future updates will sync according to your configured sync direction (unidirectional or bidirectional).
+
+### How issue syncing works
+
+#### State synchronization
+
+- When a GitLab issue is opened or closed, the corresponding Plane work item automatically moves to the mapped state.
+- With bidirectional sync enabled, state changes in Plane work items will also update the GitLab issue status (open/closed).
+
+#### Creating synced issues
+
+- Issues created in GitLab (within a synced project) are automatically created in the linked Plane project.
+- With bidirectional sync enabled, work items created in Plane (with the sync configured) are also created in GitLab.
+
+#### Continuous updates
+
+- All synced properties (title, description, labels, comments, etc.) update automatically based on your sync direction settings.
+- See [What gets synced?](#what-gets-synced) for detailed information on property-level sync behavior
+
+### What gets synced?
+
+:::warning[important]
+In unidirectional sync mode (GitLab → Plane only), data from GitLab issues will overwrite corresponding data in Plane. Changes made in Plane will not sync back to GitLab unless you enable Bidirectional sync in your integration settings.
+:::
+
+Here’s what syncs automatically between Plane and GitLab:
+
+| Property&nbsp;&nbsp; | Sync&nbsp;direction&nbsp;&nbsp; | Notes                                                                                                                                                                                                                                                               |
+| -------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                | Both ways                       | Updates in either platform reflect in the other.                                                                                                                                                                                                                    |
+| Description          | Both ways                       | Content remains consistent between Plane and GitLab.                                                                                                                                                                                                                |
+| Labels               | Both ways                       | If a Label doesn’t exist in Plane, it will be created (and vice versa).                                                                                                                                                                                             |
+| States               | Both ways                       | Updates in either platform reflect in the other.                                                                                                                                                                                                                    |
+| Comments             | Both ways                       | Comments sync between platforms with source attribution. The comment appears as posted by the Admin with the username of the user who posted the comment.
+| Mentions             | Both ways                       | Mentioned users username will be displayed in Plane and in the GitLab issue.                                                                                                                                                                              |
+| Issue links          | GitLab → Plane                  | Any issue references in GitLab descriptions or comments will be displayed in Plane with a direct link to the issue including the project name and owner.                                                                                                         |
