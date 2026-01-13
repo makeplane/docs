@@ -195,7 +195,7 @@ If you have existing work items in Plane that you want to sync to GitHub, you ca
 ### What gets synced?
 
 :::warning[important]
-By default, syncing is unidirectional (GitHub → Plane only). Data from GitHub issues will overwrite corresponding data in Plane. Changes made in Plane will not sync back to GitHub unless you enable Bidirectional sync in your integration settings.
+In unidirectional sync mode (GitHub → Plane only), data from GitHub issues will overwrite corresponding data in Plane. Changes made in Plane will not sync back to GitHub unless you enable Bidirectional sync in your integration settings.
 :::
 
 Here’s what syncs automatically between Plane and GitHub:
@@ -206,7 +206,7 @@ Here’s what syncs automatically between Plane and GitHub:
 | Description          | Both ways                       | Content remains consistent between Plane and GitHub.                                                                                                                                                                                                                |
 | Assignees            | Both ways                       | Assigned users are mapped based on the initial setup. If a user isn’t mapped, the assignee field may be left empty.                                                                                                                                                 |
 | Labels               | Both ways                       | If a Label doesn’t exist in Plane, it will be created (and vice versa).                                                                                                                                                                                             |
-| States               | GitHub → Plane                  | Changes in Plane do not update GitHub states. However, if an issue is closed in GitHub, it automatically moves to the Done state in Plane.                                                                                                                          |
+| States               | Both ways                       | Updates in either platform reflect in the other.                                                                                                                                                                                                                    |
 | Comments             | Both ways                       | Comments sync between platforms with source attribution. If the commenter isn’t mapped to a Plane user, the comment appears as posted by the GitHub Bot. See [Connect personal GitHub account](/integrations/github#connect-personal-github-account) for more info. |
 | Mentions             | Both ways                       | Mentioned users sync if they are mapped; otherwise, a GitHub profile link is included.                                                                                                                                                                              |
 | Issue links          | GitHub → Plane                  | Any issue references in GitHub descriptions or comments will be displayed in Plane with a direct link to the issue including the repository name and owner.                                                                                                         |
