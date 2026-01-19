@@ -4,6 +4,8 @@ sidebar_label: Manage members
 description: Add members to projects, assign roles, and configure access
 ---
 
+import Tags from "@site/src/components/Tags";
+
 # Manage project members
 
 Manage who has access to your project and what they can do by adding members and assigning roles.
@@ -124,3 +126,41 @@ Users can become project members in two different ways, and understanding both h
 
 Users can have both types of access simultaneously. When this happens, Plane automatically applies whichever role gives them higher permissions. For example, if someone is a `Guest` on your project but joins a linked teamspace, they're automatically upgraded to `Member` access. If they're already an `Admin`, they keep their `Admin` role.
 
+
+<div className="tag-wrapper">
+  ## View project member activity
+  <Tags tags={[{ name: "Enterprise", link: "https://plane.so/pricing", additionalClass: "enterprise" }]} />
+</div>
+
+:::info
+The Enterprise plan is currently only available for self-hosted instances. If you're interested in Enterprise features for your self-hosted deployment, contact [sales@plane.so](mailto:sales@plane.so) for pricing and licensing information.
+:::
+
+Track member actions like additions, role changes, and removals to maintain visibility over project access management.
+
+**To view member activity:**
+
+1. Navigate to **Project Settings → Members & Teamspaces**.
+2. Click **Activity** in the top right corner of the Members section.
+
+The activity panel shows recent project member events:
+- **Member additions** - Who added which members to the project and when.
+- **Role changes** - Role updates with who made the change and when.
+- **Member removals** - Who removed members from the project.
+
+Each activity entry shows:
+- The action taken
+- Who performed the action
+- When it happened (relative time like "6 days ago" or "3 days ago")
+
+This audit trail helps project admins monitor membership changes and verify that access permissions are correct. Activity is retained for project history.
+
+## How users join projects
+
+Users can become project members in two different ways, and understanding both helps you manage your project team effectively.
+
+**Direct project membership** is where you specifically invite users to your project and assign them roles. These members have access only to the projects you've added them to, and you have full control over their permissions.
+
+**Teamspace-based membership** happens automatically when your project is linked to a [Teamspace](/core-concepts/workspaces/teamspaces). All members of that teamspace automatically receive `Member` access to your project, making it perfect for teams that collaborate across multiple projects.
+
+Users can have both types of access simultaneously. When this happens, Plane automatically applies whichever role gives them higher permissions. For example, if someone is a `Guest` on your project but joins a linked teamspace, they're automatically upgraded to `Member` access. If they're already an `Admin`, they keep their `Admin` role.
