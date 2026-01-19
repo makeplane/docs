@@ -153,20 +153,29 @@ Once you add Plane to your private channel, you can use all the same features yo
 
 ### Connect project to Slack channel
 
-Stay on top of project updates without switching tabs. You can now link each Plane project to a default Slack channel to receive notifications whenever new work items are created.
+Stay on top of project updates by linking Plane projects to Slack channels. You can configure which events trigger notifications, so your team only sees updates that matter.
 
 ![Connect project to Slack channel](https://media.docs.plane.so/integrations/slack/project-notifications.webp#hero)
 
 To configure this:
 
 1. Go to your [Workspace Settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
-2. Navigate to **Integrations > Slack**.
+2. Navigate to **Integrations > Slack** in Plane.
 3. Click **Configure** on the Slack integration.
 4. Under **Project Notifications**, click the **➕** button.
 5. Select a Plane Project and the corresponding Slack Channel you’d like to connect.
-6. Click Save.
+6. Under **Notify when**, choose which events trigger Slack notifications:
+   - **When a work item is created** - Posts a notification whenever someone creates a new work item in this project.
+   - **When a work item state changes** - Notifies the channel when work items move between states (e.g., Todo → In Progress).
+   - **When a comment is created on a work item** - Posts updates when someone comments on a work item. You can reply to these comments directly from Slack using the **Reply** button on the notification.
+   - **When a work item is marked cancelled or done** - Notifies when work items reach completion states or the cancelled state.
 
-Once set, Plane will automatically post updates to the selected Slack channel every time a new work item is created in that project keeping your team informed and your workflows connected.
+   ![Project Slack updates](https://media.docs.plane.so/integrations/slack/project-slack-updates.webp#hero)
+
+7. Click **Save**.
+
+**To edit or remove a project notification**. 
+Find the project-channel mapping in the Project Notifications list. Click the edit icon to change notification settings or the delete icon to remove the connection entirely.
 
 ### Get DM notifications
 
