@@ -67,25 +67,11 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Authentication",
           items: [
+            "authentication/sso",
             {
-              type: 'link',
-              label: 'Google OAuth', 
-              href: 'https://developers.plane.so/self-hosting/govern/google-oauth',
-            },
-            {
-              type: 'link',
-              label: 'GitHub OAuth', 
-              href: 'https://developers.plane.so/self-hosting/govern/github-oauth',
-            },
-            {
-              type: 'link',
-              label: 'SAML SSO', 
-              href: 'https://developers.plane.so/self-hosting/govern/saml-sso',
-            },
-            {
-              type: 'link',
-              label: 'OIDC SSO', 
-              href: 'https://developers.plane.so/self-hosting/govern/oidc-sso',
+                  type: 'link',
+                  label: 'Self-hosted authentication', 
+                  href: 'https://developers.plane.so/self-hosting/govern/authentication',
             },
           ],
         },
