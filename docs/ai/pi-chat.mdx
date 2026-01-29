@@ -135,21 +135,209 @@ Build mode is designed for action and execution. Switch to Build Mode when you n
 
 ![Build mode](https://media.docs.plane.so/pi-chat/build-mode.webp#hero)
 
-What you can do in Build mode:
+:::warning
+Build mode actions respect your Plane permissions. You can only perform actions you're authorized to do manually. Some operations (like deleting projects or managing workspace features) require admin permissions.
+:::
 
-- Create work items: "Create a new bug titled 'Login page 404 error' in the Core project".
-- Update statuses: "Move all issues in the Backlog cycle to Todo".
-- Assign users: "Assign all high-priority design tasks to Sarah".
-- Manage projects: "Create a new project called 'Q4 Marketing Push'".
-- Generate cycles and modules: "Start a new cycle named 'Sprint 24' beginning next Monday".
+#### What you can do in Build mode
 
-Build mode respects your user permissions. You cannot perform actions via Plane AI that you wouldn't be allowed to do manually. Some actions may require explicit authorization to ensure secure access.
+Build mode gives you the ability to create, update, and manage nearly every aspect of your Plane workspace through natural language commands. Here's what Plane AI can do for you:
 
-Example commands:
+**Work items**
 
-- "Create a new work item for 'Update API documentation' and assign it to Mike"
-- "Change the priority of issue MOB-12 to Urgent"
-- "Add all authentication-related tasks to the Security module"
+Create and manage work items with full control:
+- Create new work items with complete details (title, description, priority, assignees, labels, start/due dates).
+- Update any field on existing work items.
+- Delete work items permanently.
+- Add [relations](/core-concepts/issues/overview#add-relations to work items (blocking, blocked by, relates to, duplicate of, etc.).
+
+Add context and collaboration:
+- Add comments to any work item.
+- Edit or delete existing comments.
+- Log time spent on work items.
+- Edit or delete time log entries.
+- Add, edit, or remove external URL references..
+
+*Example commands:*
+```
+Create a high-priority bug for login timeout, assign to Sarah, and add label "authentication"
+Update WEB-123 to set priority to urgent and move to In Progress
+Delete all comments on MOB-456 that mention the old API
+Log 2 hours of work on CORE-789
+```
+
+**Projects**
+
+Manage your projects:
+- Create new projects with descriptions.
+- Update project details (name, description, identifier, cover image).
+- Delete projects.
+- Enable or disable project features (Epics, Cycles, Modules, Pages, Views).
+
+*Example commands:*
+```
+Create a new project called "Mobile App Redesign" with identifier MOB
+Enable Cycles and Modules for the Backend project
+Update the API project description to include our new architecture goals
+```
+
+**Cycles**
+
+Plan and manage your cycles:
+- Create new cycles with start and end dates.
+- Update cycle details (name, dates, description, owner).
+- Delete cycles.
+- Archive completed cycles or restore archived ones.
+- Add or remove work items from cycles.
+- Transfer all remaining work items from one cycle to another.
+
+*Example commands:*
+```
+Create a new cycle "Sprint 24" starting next Monday for 2 weeks
+Move all incomplete items from Sprint 23 to Sprint 24
+Archive the Q3 Planning cycle
+Add all authentication bugs to the current sprint
+```
+
+**Modules**
+
+Organize work into modules:
+- Create new modules.
+- Update module details (name, description, dates).
+- Delete or archive modules.
+- Add or remove work items from modules.
+
+*Example commands:*
+```
+Create a module called "User Authentication Overhaul"
+Add all login-related issues to the Authentication module
+Archive the Payment Gateway module
+```
+
+**Workflows and organization**
+
+Customize your project workflows:
+- Create custom workflow states (e.g., "In Review", "Ready for QA", "Deployed").
+- Update state properties (name, group,).
+- Delete workflow states.
+- Create, update, or delete work item labels.
+- Create, update, or delete custom work item types.
+
+*Example commands:*
+```
+Create a new workflow state "Pending Review" in the In Progress group
+Add a label "technical-debt" with red color
+Create a custom work item type called "Spike" for research tasks
+```
+
+**Custom properties**
+
+Extend work items with custom fields:
+- Create new custom property definitions.
+- Update property settings and options.
+- Delete custom properties.
+- Set or update property values on work items.
+- Manage dropdown options for select properties.
+
+*Example commands:*
+```
+Create a custom property "Severity" with options Critical, High, Medium, Low
+Update the "Customer Impact" property to add a new option "Revenue Blocking"
+Set the "Estimated Hours" property to 8 for all bugs in this sprint
+```
+
+**Pages and documentation**
+
+Create and organize knowledge:
+- Create new pages within projects.
+- Create new pages within workspaces.
+
+*Example commands:*
+```
+Create a project page titled "API Integration Guidelines"
+Create a workspace page for our Q4 OKRs
+```
+
+**Intake and triage**
+
+Manage incoming requests:
+- Create new intake items.
+- Update intake item details (title, description, priority).
+- Delete intake items.
+
+*Example commands:*
+```
+Create an intake item for the customer feature request about dark mode
+Update intake item INT-45 to high priority
+```
+
+**Initiatives**
+
+Align work with strategic goals:
+- Create, update, or delete initiatives.
+- Create, update, or delete initiative-specific labels.
+- Attach or remove labels from initiatives.
+- Link or unlink projects to initiatives.
+- Link or unlink epics to initiatives.
+
+*Example commands:*
+```
+Create an initiative "Improve Platform Performance"
+Link the Backend Optimization project to the Performance initiative
+Add the "Q4 Priority" label to the User Experience initiative
+```
+
+**Teamspaces**
+
+Manage teams and collaboration spaces:
+- Create, update, or delete teamspaces.
+- Add or remove members from teamspaces.
+- Add or remove projects from teamspaces.
+- Create, update, or delete sticky notes for brainstorming.
+
+*Example commands:*
+```
+Create a teamspace called "Frontend Team"
+Add Sarah and Mike to the Design teamspace
+```
+
+**Sticky notes**
+Brainstorm and capture ideas:
+- Create, update, or delete sticky notes.
+
+*Example commands:*
+```
+Create sticky notes for today's retrospective ideas
+Update the sticky note about API redesign to include performance concerns
+```
+
+**Customer management**
+
+Track and manage customer information:
+- Create new customer profiles.
+- Update customer information (name, contact details, revenue, industry).
+- Delete customer records.
+
+*Example commands:*
+```
+Create a customer profile for Acme Corp with $50k annual revenue
+Update the contact email for TechStart Inc
+```
+
+**Workspace configuration**
+
+Control workspace-level features:
+- Enable or disable workspace features (Initiatives, Teamspaces, Customers, Analytics).
+
+*Example commands:*
+```
+Enable Initiatives for this workspace
+Disable the Customers feature
+```
+
+:::tip
+**Be specific with commands** The more details you provide, the better Plane AI can execute your request. Instead of "create a bug", try "create a high-priority bug for the payment gateway timeout, assign to backend team, and add to Sprint 24".
+:::
 
 ### Attach files
 
@@ -309,11 +497,16 @@ If Plane AI doesn't understand your query or provides unexpected results:
 
 Plane AI is continuously learning and improving. The more you use it, the better it becomes at understanding your team's specific needs and terminology.
 
-## What's coming next
+Add this section at the very end of the document, after "What's coming next":
 
-We're actively working on expanding Plane AI's capabilities:
-- **Advanced action execution**: Handle bulk operations
-- **Advanced workflows**: Automate routine project management tasks
-- **Enhanced analytics**: Predictive insights and recommendations
+## Turn off Plane AI for your workspace
 
-Plane AI represents the future of project management, where natural conversation replaces complex interfaces, and your AI assistant helps you focus on what matters most: building great products.
+Workspace admins can disable Plane AI if your organization prefers not to use AI assistance.
+
+1. Navigate to **[Workspace Settings](/core-concepts/workspaces/overview#access-workspace-settings)**.
+2. Go to **Plane AI** in the sidebar.
+3. Toggle off **Turn on AI for this workspace**.
+
+![Disable Plane AI](https://media.docs.plane.so/pi-chat/turn-off-ai.webp#hero)
+
+Once disabled, Plane AI becomes inaccessible to all workspace members. Conversation history is preserved and restored when re-enabled.
