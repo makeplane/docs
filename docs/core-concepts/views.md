@@ -1,0 +1,86 @@
+---
+title: Save custom views for filtered work items
+description: Create, save, and share Views in Plane to quickly access filtered work items.
+---
+
+# Save custom views
+
+Views are saved collections of filters that you can apply to work items, allowing you to analyze and manage them efficiently. Instead of reapplying the same filters repeatedly, you can save them with a title for easy access and reuse.
+
+## View types
+
+In Plane, you can create two different types of views:
+
+- **Workspace Views**  
+  These are created at the Workspace level and are available to all Members, depending on whether they are marked as public or private. These include some default system-defined Views that cannot be removed.
+  
+  ![Workspace Views](https://media.docs.plane.so/views/workspace-views.webp#hero)
+
+- **Project Views**  
+  These Views are created within the specific project and are accessible to all Members of the project, depending on whether they are set as public or private. This feature is turned on by default and can be toggled on or off from the [project settings](/core-concepts/projects/overview#configure-project-settings).
+
+      ![Project Views](https://media.docs.plane.so/views/project-views.webp#hero)
+
+## Create Views
+
+To create a project View, press `V` anywhere within your project or click the **Add view** button in the project's **Views** section. Apply the desired filters and provide a name to save the view.
+
+![Create view](https://media.docs.plane.so/views/create-view-modal.webp#hero)
+
+Alternatively, spin off a View from within the project's Work items section after applying the filters and clicking **Save View**.
+
+![Create view from existing](https://media.docs.plane.so/views/view-create-from-existing.webp#hero)
+
+For Workspace Views, click the **Add view** button in the **Views** section of your Workspace.
+
+Learn more about how to apply filters [here](/core-concepts/issues/visualise_filter). After creating a view, you can share the link to collaborate and investigate with members.
+
+## Investigating with Views
+
+Saved filters can be accessed from the **Views** section.
+
+    ![view](https://media.docs.plane.so/views/views-overview.webp#hero)
+
+After creating a view, you can:
+
+- Adjust the layout.
+- Organize information using grouping or sorting options.
+- Apply additional filters to refine results.
+
+Workspace Views are visualized using the spreadsheet layout, while project Views support all layouts. Learn more about layouts and grouping options [here](/core-concepts/issues/layouts).
+
+<div class="tag-wrapper">
+  ## Publish Views
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+
+Publishing a View allows you to share it more interactively by enabling features like comments, reactions, and voting. Here's how to publish a view:
+
+1. Click the … icon on the View you want to publish.
+2. Select the **Publish** option.
+3. In the **Publish views** modal, toggle the settings for allowing comments, reactions, or voting.
+4. Once configured, click **Publish**. The view will now be accessible to anyone with the link.
+
+   ![Publish view](https://media.docs.plane.so/views/publish-view.webp#hero)
+
+## Update Views
+
+After creating a view, any modification to its filters will prompt you to update the view. Additionally, you can choose to change the name, description, and filters explicitly from the list of views by selecting the **Edit** option corresponding to the view you wish to update.
+
+## Delete Views
+
+You can remove views by deleting them from the list of views in your workspace or project. Deleting a view has no impact on the associated work items.
+
+## Additional features
+
+- Mark frequently used views as favorites for quick access. Favorited views appear on the sidebar under **Your Favorites** section.
+- Use the search bar in the **Views** section to locate specific views quickly.
+
+<div class="tag-wrapper">
+  ## Export views
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+
+You can export data from any saved view to analyze filtered work items, create custom reports, or share specific subsets of your project data. Exports respect all filters applied to the view.
+
+Learn more about [custom exports](/core-concepts/export#custom-exports).

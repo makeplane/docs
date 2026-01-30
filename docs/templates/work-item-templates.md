@@ -1,0 +1,74 @@
+---
+title: Work item templates for recurring tasks
+description: Create and use Work Item Templates to standardize recurring tasks, save setup time, and ensure consistency with predefined fields and properties.
+---
+
+<div class="tag-wrapper">
+  <h1>Create work items faster with templates</h1>
+  <Tags :tags='[{ name: "Pro", additionalClass: "pro" }]' />
+</div>
+
+Work Item Templates help you standardize and streamline your workflow by providing reusable templates for common tasks. Instead of manually recreating similar work items, templates allow you to quickly apply predefined structures, saving time and ensuring consistency.
+
+Templates are perfect for teams who:
+
+- Handle recurring tasks with similar structures
+- Need to maintain consistency across work items
+- Want to reduce setup time for new tasks
+- Need to ensure team members include all required information
+
+## Create work item template
+
+1. Navigate to [Project Settings](https://docs.plane.so/core-concepts/projects/overview#configure-project-settings).
+2. Select the **Templates** tab on the right pane.
+   
+   ![Create work item template](https://media.docs.plane.so/templates/create-work-item-template.webp#hero-bl)
+3. Click the **Create template** button in the top-right corner.
+4. Select **Work Item template** from the options.
+   
+   ![Add template details](https://media.docs.plane.so/templates/add-template-details.webp#hero)
+5. Fill in the template details:
+   - Give your template a clear, descriptive name.
+   - Add a description explaining when and how to use this template.
+   - Fill in any default fields you want pre-populated (title format, description,..)
+   - Configure properties like Labels, Assignees, and Modules.
+   - You can optionally define sub-work items that will automatically create along with the main work item, helping structure complex tasks from the start.
+6. Click **Create work item template** to save.
+
+## Use work item templates
+
+Once you've created templates, you can use them whenever you create a new work item:
+
+![Use Template when creating work items](https://media.docs.plane.so/templates/use-template-work-items.webp#hero-tr)
+
+1. Navigate to **Work Items** under your project.
+2. Click the **+** button to create a new work item.
+3. Select the work item type.
+4. Click the templates icon and choose and from available templates in the dropdown menu.
+5. Your new work item will be pre-populated with all the template information.
+6. Make any necessary adjustments to the work item.
+7. Click **Save**.
+
+Alternatively, from the Templates settings page:
+
+![Use Template in project settings](https://media.docs.plane.so/templates/use-template-in-settings.webp#hero-tr)
+
+1. Find your template in the list.
+2. Click the **Use template** button.
+3. This will immediately open the new work item creation form with all template fields pre-filled.
+
+## Manage templates
+
+You can manage your templates from two locations:
+
+- **Workspace-level templates**: Access from **Workspace Settings > Templates**
+- **Project-level templates**: Access from **Project Settings > Templates**
+
+From either location you can:
+
+From here you can:
+
+- View all existing templates
+- Create new templates
+- Use existing templates
+- Edit or delete templates

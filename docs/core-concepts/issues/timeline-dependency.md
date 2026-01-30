@@ -1,0 +1,48 @@
+---
+title: Task dependencies
+description: Create and manage visual task dependencies in Plane with timeline connectors.
+---
+
+<div class="tag-wrapper">
+  <h1>Set up task dependencies in Timeline layout</h1>
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+
+With dependencies, managing connected tasks has never been easier. This feature provides a clear, high-level view of task relationships, allowing you to quickly see which tasks depend on each other. It helps you plan tasks more efficiently, optimize resource allocation, and stay on top of critical tasks. By tracking dependencies, you can spot bottlenecks, prevent delays, and keep everything on track.
+
+## Timeline connectors
+
+::: info
+You need to set the Start date and Due date on work items for dependencies to appear in the Timeline layout.
+:::
+
+In the Timeline layout, you can easily set up dependencies by dragging connectors from one task to another. Once the dependency is established, a line appears between the tasks to visually represent the connection. Violated dependencies are shown as red lines, making it simple to spot any misaligned timelines.
+
+![Timeline dependencies](https://media.docs.plane.so/issues/timeline-dependencies.webp#hero)
+
+::: tip
+When you drag tasks along the timeline, dependent tasks will adjust automatically to stay in sync.
+:::
+
+Plane supports three main types of dependencies:
+
+- **Finish-to-Start (FS)**  
+  Task B can’t start until Task A finishes. This is shown by the relations Blocking (Task A is blocking Task B) or Blocked by (Task B is blocked by Task A). If Task B’s start date is earlier than Task A’s due date, the connecting line will turn red to indicate a conflict.
+
+  ![Finish to start](https://media.docs.plane.so/issues/finish-to-start.webp#hero)
+
+- **Start-to-Start (SS)**  
+  With this dependency, Task B can’t start until Task A begins, but both tasks can proceed simultaneously from that point onward. This is shown by the relations Starts before (Task A starts before Task B) or Starts after (Task B starts after Task A). If Task B’s start date is earlier than Task A’s start date, the connecting line will turn red to indicate a conflict.
+
+  ![Start to start](https://media.docs.plane.so/issues/start-to-start.webp#hero)
+
+- **Finish-to-Finish (FF)**  
+  Task B cannot be completed until Task A is finished, though both can be worked on simultaneously. This is shown by the relations Finishes Before (Task A finishes before Task B) or Finishes After (Task B finishes after Task A). If Task B’s due date is earlier than Task A’s, the connecting line will turn red to indicate a conflict.
+
+  ![Finish to finish](https://media.docs.plane.so/issues/finish-to-finish.webp#hero)
+
+## Dependency relations
+
+You can also set up dependencies between work items using the **Relations** property. However, for the connectors to show up in the Timeline layout, you'll need to set the **Start date** and **Due date** for the work items.
+
+![Dependency relations](https://media.docs.plane.so/issues/dependency-relations.webp#hero)

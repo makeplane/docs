@@ -1,0 +1,68 @@
+---
+title: Project Overview
+description: Track metrics, share status updates, and monitor overall project health from a centralized dashboard for better team alignment.
+---
+
+<div class="tag-wrapper">
+  # Monitor project progress at a glance
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+
+Without a centralized project view, teams often face challenges like fragmented information, inefficient progress tracking, and communication gaps.
+
+Project Overview offers a centralized space for teams to monitor project health, track progress, and collaborate effectively. It consolidates key project metrics, updates, and collaboration tools into a single view. Whether you're a project lead, team member, or stakeholder, this feature provides the visibility you need to stay informed and aligned.
+
+## Access project overview
+
+Navigate to **Work items** under your project and click **Overview** on the top bar. Alternatively, click the project name at the top left when working within other sections like Cycles or Pages.
+
+![Access Project Overview](https://media.docs.plane.so/projects/access-project-overview.webp#hero)
+
+## Project header
+
+The header includes the project details and quick access to essential actions.
+
+- Add a custom banner and project icon to personalize your dashboard.
+- Write key details about your project plan, goals, and success metrics, helping your team stay aligned and focused.
+- Attach links or resources directly to the dashboard.
+
+![Project header](https://media.docs.plane.so/projects/project-header.webp#hero)
+
+## Project metrics
+
+You can view overall project completion percentages. Metrics are displayed visually with status bars to help identify bottlenecks.
+
+![Project Progress](https://media.docs.plane.so/projects/project-progress.webp#hero)
+
+This helps to identify overdue tasks and track progress over time. Task status breakdown:
+
+- **Backlog**: Tasks that are planned but not yet prioritized.
+- **Unstarted**: Tasks yet to begin.
+- **Started**: Tasks currently in progress.
+- **Completed**: Tasks that are done.
+
+## Project properties
+
+![Project properties](https://media.docs.plane.so/projects/project-properties.webp#hero)
+
+Quickly view and edit project properties in the info icon tab on the side panel.
+
+- **State**: Displays the current state of the project (e.g., Execution).
+- **Priority**: Shows the priority level (e.g., Urgent, High, Medium, Low, or None).
+- **Team composition**: See the number of **Members** involved and the assigned Project **Lead**.
+- **Timeline**: Manage and monitor **Start date** and **Due date** for the project.
+
+## Project updates
+Communicate project status without meetings. Post updates with status indicators to keep your team aligned and create a historical record of progress. See **[Project updates](/communication-and-collaboration/project-updates)** for details.
+
+![Add project updates](https://media.docs.plane.so/projects/add-project-updates.webp#hero)
+
+## Activity feed
+
+Get real-time updates on project activities, such as task progress, state changes, and new members. Updates are listed chronologically, making it easy to follow the project’s history.
+
+![View activity feed](https://media.docs.plane.so/projects/activity-feed.webp#hero)
+
+## See also
+
+- [Project updates](/communication-and-collaboration/project-updates)

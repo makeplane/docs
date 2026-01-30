@@ -1,0 +1,20 @@
+---
+title:  Upgrade to paid plans
+description: Upgrade to paid plans in Plane, activate license keys on self-hosted instances, manage seats, and handle subscription changes.
+---
+# Upgrade to a paid plan
+
+You can upgrade from the Free plan to a paid plan to access premium features.
+
+1. Click your workspace name on the sidebar and select **Settings**.
+
+   ![Workspace settings](https://media.docs.plane.so/workspaces/workspace-settings.webp#hero-tl)
+
+2. Navigate to the **Billing and plans** tab. 
+
+   ![Billing and plans](https://media.docs.plane.so/activate-license/billing-and-plans-cloud.webp#hero-tl)
+3. Select the **Monthly** or **Yearly** tab to choose your billing cycle.
+4. Click the **Upgrade** button.
+5. This will redirect you to the Stripe payment page. Enter your payment info and click **Subscribe**.
+6. If your transaction goes through, you will see a confirmation that your plan is now active. 
+7. If you're self-hosting Plane, see **[Activate license](/workspaces-and-users/manage-licenses#activate-license)** for instructions on activating your workspace with the license key.
