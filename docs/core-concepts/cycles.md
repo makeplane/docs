@@ -29,11 +29,11 @@ If the Project Admin sets the **Timezone** in [Project settings](/core-concepts/
 ## Add work items to cycles
 
 - After you create a cycle, you can start adding new work items or bringing in existing work items right in the Cycle page.
-  
+
   ![Empty cycle](https://media.docs.plane.so/cycles/cycle-empty-state.webp#hero)
 
 - You can also link a Cycle directly as a property within any work item.
-  
+
   ![Cycle property](https://media.docs.plane.so/cycles/cycle-property.webp#hero-br)
 
 ## Cycle states
@@ -90,7 +90,6 @@ Once the due date of an active Cycle passes, it’s automatically marked as comp
 
 ![Transfer work items](https://media.docs.plane.so/cycles/transfer-issues.webp#hero-tr)
 
-
 <div class="tag-wrapper">
   ## Auto-schedule cycles
   <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
@@ -101,6 +100,7 @@ Automate the creation and management of cycles according to predefined configura
 ![Autoschedule cycles](https://media.docs.plane.so/cycles/auto-schedule-cycles.webp#hero-br)
 
 ### Benefits
+
 - Maintain regular cycle rhythms automatically without manual intervention.
 - Keep future cycles pre-scheduled so teams can plan ahead with confidence.
 - Eliminate repetitive administrative work from cycle creation.
@@ -110,12 +110,12 @@ Automate the creation and management of cycles according to predefined configura
 
 1. Navigate to **Project Settings → Features → Cycles**.
 2. Turn on the **Auto-schedule cycles** toggle and configure:
-    - Cycle Title — Set a naming convention for automatically created cycles.
-    - Cycle Duration — Define the length of each cycle in weeks (e.g., 1 week, 2 weeks).
-    - Cooldown Period — Add an optional buffer between cycles in days for planning and retrospectives.
-    - Cycle starts day — Choose the start date for the first auto-scheduled cycle.
-    - Number of future cycles — Specify how many upcoming cycles to keep pre-scheduled.
-    - Auto-rollover work items — Enable to automatically move incomplete work items from one cycle to the next.
+   - Cycle Title — Set a naming convention for automatically created cycles.
+   - Cycle Duration — Define the length of each cycle in weeks (e.g., 1 week, 2 weeks).
+   - Cooldown Period — Add an optional buffer between cycles in days for planning and retrospectives.
+   - Cycle starts day — Choose the start date for the first auto-scheduled cycle.
+   - Number of future cycles — Specify how many upcoming cycles to keep pre-scheduled.
+   - Auto-rollover work items — Enable to automatically move incomplete work items from one cycle to the next.
 
 Once enabled, the system automatically:
 

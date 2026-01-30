@@ -4,6 +4,7 @@ description: Learn how to set up recurring work items to automatically create re
 ---
 
 # Recurring work items to automate repetitive tasks
+
 <div class="tag-wrapper">
   # Automate repetitive tasks
   <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
@@ -27,16 +28,15 @@ Think of it like setting a recurring calendar appointment, but for your project 
 
 3. Click **Create recurring work item**.
 
-    ![Create recurring work items](https://media.docs.plane.so/projects/create-recurring-work-items.webp#hero)
+   ![Create recurring work items](https://media.docs.plane.so/projects/create-recurring-work-items.webp#hero)
 
 4. Fill out your recurring work item just like any regular task - add a title, description, assignees, and any custom properties your team uses. This becomes your template that gets copied each time a new instance is created.
 
 5. In the **Schedule** section, you'll configure when and how often your work item repeats:
-
    - **Start and end dates**  
-   When the recurring pattern begins and optionally when it should stop.
+     When the recurring pattern begins and optionally when it should stop.
    - **Frequency**  
-   Choose from daily, weekly, monthly, or yearly patterns. The system will continue creating items based on your frequency until the end date you specify, or indefinitely if you don't set an end date.
+     Choose from daily, weekly, monthly, or yearly patterns. The system will continue creating items based on your frequency until the end date you specify, or indefinitely if you don't set an end date.
 
 6. Click **Create recurring work item**.
 

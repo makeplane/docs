@@ -2,10 +2,10 @@
 title: Integrate Sentry for automatic error tracking sync
 description: Integrate Plane with Sentry to automatically create work items from Sentry issues, sync issue states, and streamline your error tracking workflow.
 ---
+
 # Integrate Sentry for automatic error tracking sync
 
 <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-
 
 Integrating Sentry with Plane allows your team to automatically create work items from Sentry issues and keep your error tracking workflow streamlined. Whether you're syncing issue states, creating work items from errors, or collaborating on bug fixes, this integration brings the power of Sentry and Plane together for a more connected development workflow.
 
@@ -89,8 +89,8 @@ On a Sentry issue, you can use Makeplane in the "Issue Tracking" section to link
 
 ![Create / Link Work Item](https://media.docs.plane.so/sentry/create_link.png#hero)
 
-
 Once linked, the Sentry issue and Plane work item will sync bi-directionally:
+
 - If the issue is resolved on Sentry, it will be closed on Plane.
 - If the work item is marked as done on Plane, it will be resolved on Sentry.
 
@@ -111,4 +111,3 @@ If the status is changed back to the unresolved state of your Sentry mapping, it
 ::: info
 This automatic status synchronization works both ways - changes in Plane reflect in Sentry, and changes in Sentry reflect in Plane, keeping your error tracking and project management perfectly synchronized.
 :::
-

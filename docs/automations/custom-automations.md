@@ -2,10 +2,10 @@
 title: Automate project tasks with trigger based workflows
 description: Automate repetitive project tasks with trigger-based workflows. Set up rules to automatically update work item properties, assign team members, and manage priorities when specific conditions are met.
 ---
+
 # Automate project tasks with trigger based workflows
 
 <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-
 
 Automations let you streamline your project management workflow by automatically performing actions based on specific triggers and conditions. This powerful feature eliminates repetitive manual tasks, ensures consistency in your processes, and helps your team maintain focus on high-value work by letting the system handle routine operations.
 
@@ -14,18 +14,19 @@ Think of automations as your digital assistant that watches for specific events 
 ![Create automations](https://media.docs.plane.so/automations/create-automation.webp#hero)
 
 ## What automations do
+
 Automations follow a simple but powerful logic: When [trigger] happens, if [conditions] are met, then perform [actions]. This trigger-condition-action framework allows you to create sophisticated workflows that adapt to your team's specific needs.
 
 ### Key components
 
 - **Triggers**  
-Events that start the automation (work item created, updated, state changed, assignee changed, comment created)
+  Events that start the automation (work item created, updated, state changed, assignee changed, comment created)
 
 - **Conditions**  
-Optional filters that must be met for the automation to proceed (specific state, type, label, assignee, creator, or priority)
+  Optional filters that must be met for the automation to proceed (specific state, type, label, assignee, creator, or priority)
 
-- **Actions**   
-What the automation does when triggered (add comments, change properties)
+- **Actions**  
+  What the automation does when triggered (add comments, change properties)
 
 You can create complex workflows by adding multiple conditions and multiple actions to a single trigger, giving you fine-grained control over when and how automations execute.
 
@@ -33,32 +34,31 @@ You can create complex workflows by adding multiple conditions and multiple acti
 
 ![Configure trigger and action](https://media.docs.plane.so/automations/configure-trigger-and-action.webp#hero)
 
-1. Navigate to your Project Settings. 
+1. Navigate to your Project Settings.
 
-2. Select **Automations** on the left pane. 
+2. Select **Automations** on the left pane.
 3. Click **Create automation** to start building your workflow.
-    - Give your automation a descriptive name and description.
-    - Save the configuration.
+   - Give your automation a descriptive name and description.
+   - Save the configuration.
 4. Click **Add trigger** in the trigger section.
 5. Choose from available trigger types:
-    - Work item created
-    - Work item updated
-    - State changed
-    - Assignee changed
-    - Comment created
+   - Work item created
+   - Work item updated
+   - State changed
+   - Assignee changed
+   - Comment created
 
 6. Click **Add condition** to specify when the automation should run. Select condition types such as:
-    - State (specific workflow status)
-    - Type (work item type)
-    - Label (project tags)
-    - Assignees (specific team members)
-    - Created by 
-    - Priority
-
+   - State (specific workflow status)
+   - Type (work item type)
+   - Label (project tags)
+   - Assignees (specific team members)
+   - Created by
+   - Priority
 
 7. Click **Add action** to specify what the automation should do. Choose from available actions:
-    - Add comment
-    - Change property (State, Priority, Assignee, Labels, Start Date, Due Date)
+   - Add comment
+   - Change property (State, Priority, Assignee, Labels, Start Date, Due Date)
 
 ::: tip
 You can add multiple conditions to create more specific rules and multiple actions to perform several operations in sequence on a single trigger.
@@ -71,6 +71,7 @@ You can add multiple conditions to create more specific rules and multiple actio
 ![Manage automations](https://media.docs.plane.so/automations/manage-automations.webp#hero)
 
 ### Activity monitoring
+
 Track your automation's performance through the Activity panel, which shows:
 
 - When the automation was created
@@ -82,6 +83,7 @@ Track your automation's performance through the Activity panel, which shows:
 Filter the activity view to see only relevant events or view the complete run history to understand your automation's impact.
 
 ### Enable or disable automations
+
 Toggle automations on or off as needed without deleting them. This is useful for:
 
 - Temporarily suspending automations during maintenance
@@ -90,23 +92,23 @@ Toggle automations on or off as needed without deleting them. This is useful for
 
 ### Edit and delete automations
 
--  Modify triggers, conditions, and actions using the **Edit** option
--  Remove automations that are no longer needed
-
+- Modify triggers, conditions, and actions using the **Edit** option
+- Remove automations that are no longer needed
 
 ## Common use cases
 
 - **State management**  
-Automatically transition work items between workflow states and update status when specific conditions are met. 
+  Automatically transition work items between workflow states and update status when specific conditions are met.
 
 - **Team assignment and handoffs**  
-Automatically assign team members when work items reach specific stages, reassign work based on type or priority, and ensure proper handoffs between different teams or departments.
+  Automatically assign team members when work items reach specific stages, reassign work based on type or priority, and ensure proper handoffs between different teams or departments.
 
 - **Priority and categorization**  
-Auto-adjust work item priorities based on labels or assignees, apply consistent labeling across similar work item types, and maintain project organization through automated property updates.
+  Auto-adjust work item priorities based on labels or assignees, apply consistent labeling across similar work item types, and maintain project organization through automated property updates.
 
 - **Communication and notifications**  
-Post automatic comments when work items are assigned or reassigned, add context when work items move between stages, and ensure stakeholders receive updates on critical changes.
+  Post automatic comments when work items are assigned or reassigned, add context when work items move between stages, and ensure stakeholders receive updates on critical changes.
 
 ---
+
 Automations transform reactive project management into proactive workflow orchestration, allowing teams to focus on solving problems rather than managing processes. With the ability to monitor, edit, and control when automations run, you maintain full control over your automated workflows while reducing manual overhead.

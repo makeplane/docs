@@ -2,20 +2,20 @@
 title: Integrate GitHub to sync repositories with projects
 description: Integrate Plane with GitHub Cloud and GitHub Enterprise Server to synchronize issues and pull requests. Connect repositories to projects for bidirectional updates and seamless workflows.
 ---
+
 # Integrate GitHub to sync repositories with projects
 
 <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-
 
 GitHub integration with Plane allows seamless synchronization between your GitHub repositories and Plane projects. By linking the two, your issues and pull requests stay updated across both platforms, enhancing collaboration and streamlining your workflow. Whether you're managing code, tasks, or both, this integration ensures your team stays in sync without the hassle of switching between platforms.
 
 Plane supports integration with:
 
 - **GitHub Cloud**  
-The standard cloud-hosted GitHub service
+  The standard cloud-hosted GitHub service
 
-- **GitHub Enterprise Server**   
-Self-hosted GitHub instances for organizations with specific compliance or security requirements
+- **GitHub Enterprise Server**  
+  Self-hosted GitHub instances for organizations with specific compliance or security requirements
 
 ## Set up GitHub integration
 
@@ -26,26 +26,28 @@ To get started, you'll need to connect your GitHub account, organization, and re
 3. [Configure PR state automation](/integrations/github#configure-pr-state-automation)
 
 ### Connect GitHub organization
-Link your GitHub organization to your Plane workspace to start syncing repositories. 
+
+Link your GitHub organization to your Plane workspace to start syncing repositories.
 
 :::tabs
-  == GitHub Cloud
-  ::: danger Plane self-hosted  instances
-   If you're running a self-hosted instance of Plane, you'll need to first create and configure a GitHub App to get GitHub integration working. Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github?edition=github-cloud#create-github-app) first before diving into the steps on this page.
-   :::
+== GitHub Cloud
+::: danger Plane self-hosted instances
+If you're running a self-hosted instance of Plane, you'll need to first create and configure a GitHub App to get GitHub integration working. Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github?edition=github-cloud#create-github-app) first before diving into the steps on this page.
+:::
 
       1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
       2. On the right pane, select **Integrations**.
       3. Find the **GitHub** integration and click **Configure**.
       4. In the **Connect Organization** section, click **Connect**.
-         
+
          ![Connect GitHub](https://media.docs.plane.so/integrations/github/connect-github.webp#hero)
       5. On the GitHub app installation page, choose the organization you want to connect.
       6. Select whether you want to sync all repositories or pick specific ones.
       7. Click **Install** to finalize the connection.
       8. After authorization, you’ll be redirected back to Plane, where your GitHub organization will appear as connected.
+
 == GitHub Enterprise Server
-      ::: danger Plane Cloud and self-hosted instances
+::: danger Plane Cloud and self-hosted instances
 
       Before you can integrate with GitHub Enterprise Server, you must first create and configure a GitHub App in your GitHub Enterprise Server instance. This is required for both Plane Cloud and self-hosted users.
 
@@ -56,16 +58,18 @@ Link your GitHub organization to your Plane workspace to start syncing repositor
       2. On the right pane, select **Integrations**.
       3. Find the **GitHub Enterprise** integration and click **Configure**.
       4. In the **Connect Organization** section, click **Connect**.
-         
+
          ![Connect GitHub Enterprise organization](https://media.docs.plane.so/integrations/github/connect-github-enterprise.webp#hero)
       5. Fill the form with the details of your GitHub Enterprise instance and click **Connect**.
-         
+
          ![Configure GitHub Enterprise organization](https://media.docs.plane.so/integrations/github/configure-github-enterprise.webp#hero)
       6. On the GitHub app installation page, choose the organization you want to connect.
       7. Select whether you want to sync all repositories or pick specific ones.
       8. Click **Install** to finalize the connection.
       9. After authorization, you’ll be redirected back to Plane, where your GitHub organization will appear as connected.
+
 :::
+
 ### Connect personal GitHub account
 
 This step allows you to make comments on issues and pull requests in GitHub through your Plane account, using your personal GitHub identity.
@@ -106,12 +110,14 @@ If you don’t have admin access, you can still connect your personal GitHub acc
 With the GitHub integration set up, you can sync issues between Plane and GitHub at the project level. This ensures GitHub issues and Plane work items stay synchronized within your configured repositories and projects.
 
 ### Add project work item sync
+
 Once GitHub is connected to Plane, workspace admins can link GitHub repositories with Plane projects.
 
 1. Navigate to the **Project Issue Sync** section under **Integrations**.
 2. Click the (+) button to create a new sync mapping.
-   
+
    ![Sync project to GitHub](https://media.docs.plane.so/integrations/github/sync-project-github.webp#hero)
+
 3. In the modal that appears, configure the following:
    1. **Plane project**  
       Select the Plane project you want to sync with.
@@ -124,43 +130,50 @@ Once GitHub is connected to Plane, workspace admins can link GitHub repositories
    4. **Select issue sync direction**  
       Choose how issues should sync:
       - Unidirectional → Sync issues from GitHub to Plane only.
-         :::warning
-         This will overwrite Plane work item content with GitHub issue data.
-         :::
+        :::warning
+        This will overwrite Plane work item content with GitHub issue data.
+        :::
       - Bidirectional → Sync issues both ways between GitHub and Plane.
 
       ![Sync direction](https://media.docs.plane.so/integrations/github/sync-direction.webp#hero)
+
    5. Click **Start Sync**.
 
 All configured project issue syncs will appear in a list where you can edit or remove them as needed.
 
 ### Sync issues to Plane
+
 After configuring project work item sync, you can link existing GitHub issues into your Plane project.
 
 #### GitHub → Plane
 
 1. In your GitHub repository, add the `Plane` label to any issue you want to sync.
-   
+
    ![Add Plane label](https://media.docs.plane.so/integrations/github/add-plane-label.webp#hero)
+
 2. The issue will automatically be created as a work item in the linked Plane project.
 3. Plane posts a comment on the GitHub issue with a link to the newly created work item, confirming the connection.
-   
+
    ![Synced issue from GitHub](https://media.docs.plane.so/integrations/github/synced-issue-from-github.webp#hero)
+
 4. The work item in Plane will include a link back to the original GitHub issue.
-   
+
    ![Creates issue in Plane](https://media.docs.plane.so/integrations/github/creates-plane-issue.webp#hero)
 
 ### Sync work items to GitHub
+
 If you have existing work items in Plane that you want to sync to GitHub, you can do so using labels.
 
 #### Plane → GitHub
 
 1. In your Plane project, add the `GitHub` label to any work item you want to sync.
-   
+
    ![Add GitHub label](https://media.docs.plane.so/integrations/github/add-github-label.webp#hero)
+
 2. A new issue will automatically be created in the linked GitHub repository.
-   
+
    ![Creates issue in GitHub](https://media.docs.plane.so/integrations/github/create-github-issue.webp#hero)
+
 3. The GitHub issue will be linked back to the Plane work item.
 4. Future updates will sync according to your configured sync direction (unidirectional or bidirectional).
 
@@ -210,15 +223,17 @@ Once GitHub is connected to Plane, workspace admins can configure pull request s
 
 1. Navigate to the **Pull request state mapping** section.
 2. Click the (+) button to create a new mapping.
-   
+
    ![Repository mapping](https://media.docs.plane.so/integrations/github/pr-state-mapping.webp#hero)
+
 3. In the modal that appears, configure the following:
    - **Plane project**  
      Select the Plane project where PR state automation should be enabled.
    - **Pull request automation**
-      Map GitHub pull request states to Plane work item states
-   
+     Map GitHub pull request states to Plane work item states
+
    ![Sync repo and project](https://media.docs.plane.so/integrations/github/pr-automation.webp#hero)
+
 4. Click **Save**.
 
 All configured pull request state mappings will appear in a list where you can edit or remove them as needed.
@@ -232,6 +247,7 @@ To automate pull request state changes with Plane work items:
 3. Automatic state updates will move the work item state in Plane based on the GitHub PR state defined in your mapping.
 
 #### Reference formats
+
 There are two ways to reference Plane work items in your GitHub PRs:
 
 ##### With brackets [WEB-344] - State automation
@@ -246,13 +262,15 @@ There are two ways to reference Plane work items in your GitHub PRs:
 - Adds a comment from Plane App showing referenced work items
 - Does not trigger automatic state updates
 
-*Example*
+_Example_
+
 ```bash
 PR Title: [WEB-344] Add user authentication feature
 PR Description: Implements login functionality for WEB-345
 ```
 
 In this example:
+
 - WEB-344 will be fully automated (state changes with PR state)
 - WEB-345 will be linked as a reference only (no state automation)
 

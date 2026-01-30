@@ -15,9 +15,11 @@ What you'll accomplish:
 - Sprint planning with cycles
 
 ## Before you begin
+
 - [Create a Plane account](/#get-plane)
 
-## Set up your Workspace 
+## Set up your Workspace
+
 When you sign up for the first time on Plane, we'll prompt you to create a new Workspace. In this guide, you'll see how to customize the Workspace and invite your team members. Your workspace is the central hub where all your projects and team collaboration will happen, so let’s make it feel like home.
 
 ### Customize workspace details
@@ -26,11 +28,12 @@ When you sign up for the first time on Plane, we'll prompt you to create a new W
 
 1. Click on the workspace logo at the top left.
 2. Select **Settings**.
-2. In the **General** tab under **Administration**:
-    - Upload your company logo.
-    - Update workspace name if you need to change it. 
+3. In the **General** tab under **Administration**:
+   - Upload your company logo.
+   - Update workspace name if you need to change it.
 
 ### Invite your team
+
 Get your team members into the workspace so they can start collaborating.
 
 ![Invite team members](https://media.docs.plane.so/quickstart/invite-team-members.webp#hero)
@@ -38,12 +41,12 @@ Get your team members into the workspace so they can start collaborating.
 1. Under Workspace Settings, click **Members** tab on the left pane.
 2. Click the **Add member** button.
 3. In the **Invite people to collaborate** dialog:
-    - Type the email address in the provided box.
-    - Select the role you want them to have. 
-       - Admin: Full workspace control and settings access.
-       - Member (Default): Can create projects, issues, and collaborate fully.
-       - Guest: Limited access to specific projects they're invited to.
-    - Use the **+ Add more** link to invite multiple people at once.
+   - Type the email address in the provided box.
+   - Select the role you want them to have.
+     - Admin: Full workspace control and settings access.
+     - Member (Default): Can create projects, issues, and collaborate fully.
+     - Guest: Limited access to specific projects they're invited to.
+   - Use the **+ Add more** link to invite multiple people at once.
 4. Click **Send invitation**.
 
 Team members will receive email invitations and can access the workspace.
@@ -56,14 +59,14 @@ Now that your workspace is ready, it’s time to create your first project. Proj
 
 1. Look for **Projects** tab under the **Workspace** section on your sidebar.
 2. Click the **Add Project** button.
-4. In the project creation form:
-    1. Enter the name  and write a brief description explaining what this project aims to accomplish.
-    2. Select `Planning` in the **State** dropdown.
-    3. By default, the project access is **Public** This means that all Workspace Admins and Members can see and join this project. Change this to **Private** if you want members to join only through invite.
-    4. Select start and end dates if you want to and set a priority level. 
-    5. Assign a project Lead and add the Members you want to part of this project. 
-5. Click **Create project** to finish the basic setup.
-6. You’ll see a modal with all the features enabled for this project. Leave the defaults as they are and click **Open project**.
+3. In the project creation form:
+   1. Enter the name and write a brief description explaining what this project aims to accomplish.
+   2. Select `Planning` in the **State** dropdown.
+   3. By default, the project access is **Public** This means that all Workspace Admins and Members can see and join this project. Change this to **Private** if you want members to join only through invite.
+   4. Select start and end dates if you want to and set a priority level.
+   5. Assign a project Lead and add the Members you want to part of this project.
+4. Click **Create project** to finish the basic setup.
+5. You’ll see a modal with all the features enabled for this project. Leave the defaults as they are and click **Open project**.
 
 Your team can see the project and access it from their workspace.
 
@@ -76,19 +79,19 @@ Add tasks so your team can start working immediately.
 1. Navigate to the **Work items** page under your new project.
 2. Click **Add work item**.
 3. Enter title and brief description about the work item.  
-   *Example:* 
+   _Example:_
    - **Title**  
-    *Design new homepage layout*
+     _Design new homepage layout_
    - **Description**  
-   *Create a fresh layout for the homepage focusing on improved navigation, modern visuals, and clear call-to-actions.*
-3. Set work item properties:   
-   - **Assignee**:  `You`
+     _Create a fresh layout for the homepage focusing on improved navigation, modern visuals, and clear call-to-actions._
+4. Set work item properties:
+   - **Assignee**: `You`
    - **Priority**: `Medium`
    - **Start date**: Today
    - **Due date**: One week from today
-6. Click **Save** to create the work item. 
-7. You'll see a new row added in the List layout. 
-8. Add a few more work items in the same manner.
+5. Click **Save** to create the work item.
+6. You'll see a new row added in the List layout.
+7. Add a few more work items in the same manner.
 
 Team members see their assigned work and can start immediately.
 
@@ -101,13 +104,13 @@ In this final step, you’ll learn how to organize your work into cycles (time-b
 1. Click **Cycles** in your project sidebar.
 2. Click the **Add cycle** button on the top right.
 3. In the Create cycle modal:
-    - Name your cycle: `Sprint 1`.
-    - Set date range: 2 weeks (today through next Friday)
-    - Click **Create cycle**.
+   - Name your cycle: `Sprint 1`.
+   - Set date range: 2 weeks (today through next Friday)
+   - Click **Create cycle**.
 4. Click on your newly created cycle name to open it.
 5. Click **Add existing work item**
-6. Select the issues you created earlier. 
-7. Click **Add to cycle**. 
+6. Select the issues you created earlier.
+7. Click **Add to cycle**.
 8. Return to the main Cycles page to view your active cycle with progress indicators.
 
 Your active cycle shows work items with progress tracking and burndown visualization.
@@ -120,6 +123,5 @@ Cycles work best when they're 1-2 weeks long and contain achievable goals for yo
 You've set up a complete workspace in under 20 minutes. Your team is ready to start collaborating effectively.
 
 ## What's next?
+
 - **Ready to level up?** Explore these detailed [tutorials](/introduction/tutorials/overview).
-
-

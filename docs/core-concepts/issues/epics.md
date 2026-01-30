@@ -4,6 +4,7 @@ description: Create and manage Epics in Plane to organize related work items, tr
 ---
 
 # Organize related work items with Epics
+
 <div class="tag-wrapper">
   # Organize and track your work items with Epics
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
@@ -98,9 +99,11 @@ When you need to create similar Epics or replicate an Epic's structure across pr
 To duplicate an Epic, click the ••• menu in the Epic header and select Make a copy. You'll see two options:
 
 ### Copy in same project
+
 Creates an identical Epic within the current project with all the same properties, description, and custom field values. The new Epic gets a fresh identifier and maintains the same title, description state, priority, start and due dates.
 
 ### Copy in different project
+
 Duplicates the Epic to another project in your workspace that has Epics enabled. This is particularly useful when you have similar large-scale objectives across multiple projects or want to replicate Epics between projects. The copied Epic adapts to the destination project's identifier format and default state.
 
 ## Work items list and relations
@@ -143,14 +146,15 @@ Share epic status using updates. This helps keep your team informed and create a
 ## Properties, comments, and activity
 
 - View and update the Epic’s key properties like assignee, priority, timelines, and other custom properties.
-  
+
   ![Epic properties](https://media.docs.plane.so/epics/epic-properties.webp#hero-tr)
 
 - Add comments to collaborate with your team and to discuss progress, blockers, or updates.
-  
+
   ![Epic comments](https://media.docs.plane.so/epics/epic-comments.webp#hero-tr)
+
 - Access the activity log for a history of changes made to the Epic, ensuring transparency and accountability.
-  
+
   ![Epic activity](https://media.docs.plane.so/epics/epic-activity.webp#hero-tr)
 
 ## Link Work items to Epics

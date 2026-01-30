@@ -42,5 +42,6 @@ You can setup Plane in two ways:
   Install and run Plane on your own servers if you want full control over your data and infrastructure.
 
 ## What's next
+
 - **New to Plane?** Start with [Tutorials](/introduction/tutorials/overview).
 - **Want to understand key concepts?** Explore [Core Concepts](/introduction/core-concepts).

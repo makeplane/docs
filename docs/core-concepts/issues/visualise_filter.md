@@ -19,10 +19,10 @@ Filters live in their own dedicated row below the main toolbar, making them alwa
 
 To start filtering your work items:
 
-1. Click the Filters icon button to open a dropdown with all the fields. 
+1. Click the Filters icon button to open a dropdown with all the fields.
 2. Select any field (State, Priority, Assignee, etc.) to add a filter condition.
 3. Choose your operator from the dropdown (like "is", "is not", "after", etc.).
-4. Select one or more values you want to filter the field by. 
+4. Select one or more values you want to filter the field by.
 5. Your work items update instantly to match your criteria.
 
 ### Build complex filters
@@ -30,15 +30,18 @@ To start filtering your work items:
 You can combine multiple filters to create powerful queries:
 
 **Find urgent items for your team:**
+
 - Set **Priority** → **is** → `High`
 - Add **Assignee** → **in** → [Select team members]
 - Add **State** → **is not** → `Done`
 
 **Track overdue work:**
+
 - Set **Target date** → **before** → [Select date]
 - Add **State group** → **is not** → `Completed`
 
 **Review items without assignments:**
+
 - Set **Assignee** → is → [Leave empty]
 - Add State → in → [Backlog, To Do]
 
@@ -47,33 +50,36 @@ You can combine multiple filters to create powerful queries:
 Date filters are particularly powerful for project management:
 
 **This week's deliverables:**
+
 - Set **Target date** → **between** → [[Select date range]
 
 **Items starting soon:**
+
 - Set **Start Date** → **after or on** → [Select date]
 - Add **Start Date** → **before or on** → [Select date]
 
 **Overdue items:**
+
 - Set **Target date** → **before** → [Select date]
 - Add **State group** → **is not** → [Completed]
 
 ## Manage your filters
 
 - **Clear specific filters:**  
-Click the **X** next to any filter condition to remove just that filter.
+  Click the **X** next to any filter condition to remove just that filter.
 
 - **Clear all filters:**  
-Use the **Clear all** button to start fresh.
+  Use the **Clear all** button to start fresh.
 
 - **Save your view:**  
-Once you've built the perfect filter combination, use **Save view** to preserve your configuration as a custom view for easy access in the future. Views allow you to quickly switch between different perspectives, such as a high-priority tasks dashboard or a specific team’s workload. See [Views](/core-concepts/views) for more details.
+  Once you've built the perfect filter combination, use **Save view** to preserve your configuration as a custom view for easy access in the future. Views allow you to quickly switch between different perspectives, such as a high-priority tasks dashboard or a specific team’s workload. See [Views](/core-concepts/views) for more details.
 
 ## Filter operators reference
 
 Each field supports different operators to give you precise control over your filtering.
 
 ::: info Operator availability
-**Free plan**   
+**Free plan**  
 You get essential filtering with the `is` operator, plus `between` for date fields. This covers the most common filtering needs.
 
 **Paid plans**  
@@ -84,132 +90,133 @@ Unlock advanced filtering with additional operators including `is not`, `is not 
 
 Filter by custom work item types, such as Bug, Feature, or Task.
 
-| Operator | Description | Use case |
-|----------|-------------|----------|
-| `is` | Exactly matches one type | Show only work items with type *Bug* |
-| `is any of` | Matches any of several types | Bugs or Tasks only |
-| `is not` | Excludes one type | Everything except Bug |
-| `is not any of` | Excludes several types | Not Bugs or Tasks |
+| Operator        | Description                  | Use case                             |
+| --------------- | ---------------------------- | ------------------------------------ |
+| `is`            | Exactly matches one type     | Show only work items with type _Bug_ |
+| `is any of`     | Matches any of several types | Bugs or Tasks only                   |
+| `is not`        | Excludes one type            | Everything except Bug                |
+| `is not any of` | Excludes several types       | Not Bugs or Tasks                    |
 
 ### State
 
 View work items based on their current state, such as Todo, In Progress, or Done.
 
-| Operator | Description | Use case |
-|----------|-------------|----------|
-| `is` | Exactly matches one state | Only items In Progress |
-| `is any of` | Matches any of several states | Todo or In Progress |
-| `is not` | Excludes one state | Everything except Done |
-| `is not any of` | Excludes several states | Not Done or Cancelled |
+| Operator        | Description                   | Use case               |
+| --------------- | ----------------------------- | ---------------------- |
+| `is`            | Exactly matches one state     | Only items In Progress |
+| `is any of`     | Matches any of several states | Todo or In Progress    |
+| `is not`        | Excludes one state            | Everything except Done |
+| `is not any of` | Excludes several states       | Not Done or Cancelled  |
 
 ### State Group
 
 View all, active or backlog work items.
 
-| Operator | Description | Use case |
-|----------|-------------|----------|
-| `is` | Exactly matches one group | Show only Started work items |
-| `is any of` | Matches any of several groups | Backlog or Unstarted |
-| `is not` | Excludes one group | Everything except Backlog |
-| `is not any of` | Excludes several groups | Not Backlog or Cancelled |
+| Operator        | Description                   | Use case                     |
+| --------------- | ----------------------------- | ---------------------------- |
+| `is`            | Exactly matches one group     | Show only Started work items |
+| `is any of`     | Matches any of several groups | Backlog or Unstarted         |
+| `is not`        | Excludes one group            | Everything except Backlog    |
+| `is not any of` | Excludes several groups       | Not Backlog or Cancelled     |
 
 ### Assignees
 
 Focus on work items assigned to specific team members to track workloads or identify pending tasks.
 
-| Operator | Description | Use case |
-|----------|-------------|----------|
-| `is` | Exactly matches one person | Find work assigned to Sarah |
-| `is any of` | Matches any of multiple people | Show work for the frontend team |
-| `is not` | Excludes one person | Hide items assigned to John |
-| `is not any of` | Excludes multiple people | Not assigned to John or Sarah |
+| Operator        | Description                    | Use case                        |
+| --------------- | ------------------------------ | ------------------------------- |
+| `is`            | Exactly matches one person     | Find work assigned to Sarah     |
+| `is any of`     | Matches any of multiple people | Show work for the frontend team |
+| `is not`        | Excludes one person            | Hide items assigned to John     |
+| `is not any of` | Excludes multiple people       | Not assigned to John or Sarah   |
 
 ### Priority
 
 Filter work items by their priority level (e.g., Urgent, High, Medium, Low) to focus on the most critical tasks.
 
-| Operator | Description | Use case |
-|----------|-------------|----------|
-| `is` | Exactly matches one priority | Only high priority items |
-| `is any of` | Matches any of several priorities | High or medium priority |
-| `is not` | Excludes one priority | Everything except low priority |
-| `is not any of` | Excludes several priorities | Not low or none priority |
+| Operator        | Description                       | Use case                       |
+| --------------- | --------------------------------- | ------------------------------ |
+| `is`            | Exactly matches one priority      | Only high priority items       |
+| `is any of`     | Matches any of several priorities | High or medium priority        |
+| `is not`        | Excludes one priority             | Everything except low priority |
+| `is not any of` | Excludes several priorities       | Not low or none priority       |
 
 ### Mentions
 
 Filter tasks where you or another team member has been mentioned to ensure no critical tasks are missed.
 
-| Operator | Description | Use case |
-|----------|-------------|----------|
-| `is` | Exactly matches one person | Items mentioning Sarah |
-| `is any of` | Matches any of multiple people | Mentioning team leads |
-| `is not` | Excludes one person | Not mentioning John |
-| `is not any of` | Excludes multiple people | Not mentioning John or Sarah |
+| Operator        | Description                    | Use case                     |
+| --------------- | ------------------------------ | ---------------------------- |
+| `is`            | Exactly matches one person     | Items mentioning Sarah       |
+| `is any of`     | Matches any of multiple people | Mentioning team leads        |
+| `is not`        | Excludes one person            | Not mentioning John          |
+| `is not any of` | Excludes multiple people       | Not mentioning John or Sarah |
 
 ### Label
 
 Filter work items based on custom tags, such as "Frontend", or "Marketing".
 
-| Operator | Description | Use case |
-|----------|-------------|----------|
-| `is` | Exact label match | Label exactly "bug" |
-| `is any of` | Matches any of the Labels| frontend or backend |
-| `is not` | Not exact label match | Label not exactly "bug" |
-| `is not any of` | Excludes several labels | Not frontend or backend |
+| Operator        | Description               | Use case                |
+| --------------- | ------------------------- | ----------------------- |
+| `is`            | Exact label match         | Label exactly "bug"     |
+| `is any of`     | Matches any of the Labels | frontend or backend     |
+| `is not`        | Not exact label match     | Label not exactly "bug" |
+| `is not any of` | Excludes several labels   | Not frontend or backend |
 
 ### Cycle
 
 View work items tied to specific cycles to monitor progress within a timeframe.
 
-| Operator | Description | Use case |
-|----------|-------------|----------|
-| `is` | Exactly this cycle | Items in Sprint 23 |
-| `is any of` | Any of these cycles | In Sprint 23 or 24 |
-| `is not` | Not this specific cycle | Not in Sprint 23 |
+| Operator        | Description                | Use case               |
+| --------------- | -------------------------- | ---------------------- |
+| `is`            | Exactly this cycle         | Items in Sprint 23     |
+| `is any of`     | Any of these cycles        | In Sprint 23 or 24     |
+| `is not`        | Not this specific cycle    | Not in Sprint 23       |
 | `is not any of` | Not in any of these cycles | Not in Sprint 23 or 24 |
 
 ### Module
 
 Filter work items by their associated module to analyze related tasks together.
 
-| Operator | Description | Use case |
-|----------|-------------|----------|
-| `is` | Exactly this module | Items in Authentication module |
-| `is any of` | Any of these modules | In API development or Data management modules |
-| `is not` | Not this specific module | Not in Authentication module |
-| `is not any of` | Not in any of these modules | Not in API or Data management |
+| Operator        | Description                 | Use case                                      |
+| --------------- | --------------------------- | --------------------------------------------- |
+| `is`            | Exactly this module         | Items in Authentication module                |
+| `is any of`     | Any of these modules        | In API development or Data management modules |
+| `is not`        | Not this specific module    | Not in Authentication module                  |
+| `is not any of` | Not in any of these modules | Not in API or Data management                 |
 
 ### Start date and Target date
 
 Filter work items by start dates to view tasks that are planned or already in progress, and by target dates to track upcoming deadlines or overdue tasks. For even more flexibility, you can specify a custom date range to focus on a specific timeframe.
 
-| Operator | Description | Use case |
-|----------|-------------|----------|
-| `is` | Exactly this date | Items due today |
-| `is not` | Not this specific date | Not due today |
-| `before` | Earlier than this date | Due before Monday |
-| `not before` | This date or later | Not due before Monday (due Monday or later) |
-| `before or on` | This date or earlier | Due Monday or earlier |
-| `not before or on` | Later than this date | Not due Monday or earlier (due after Monday) |
-| `after` | Later than this date | Due after Friday |
-| `not after` | This date or earlier | Not due after Friday (due Friday or earlier) |
-| `after or on` | This date or later | Due Friday or later |
-| `not after or on` | Earlier than this date | Not due Friday or later (due before Friday) |
-| `between` | Within date range | Due this week |
-| `not between` | Outside date range | Not due this week |
+| Operator           | Description            | Use case                                     |
+| ------------------ | ---------------------- | -------------------------------------------- |
+| `is`               | Exactly this date      | Items due today                              |
+| `is not`           | Not this specific date | Not due today                                |
+| `before`           | Earlier than this date | Due before Monday                            |
+| `not before`       | This date or later     | Not due before Monday (due Monday or later)  |
+| `before or on`     | This date or earlier   | Due Monday or earlier                        |
+| `not before or on` | Later than this date   | Not due Monday or earlier (due after Monday) |
+| `after`            | Later than this date   | Due after Friday                             |
+| `not after`        | This date or earlier   | Not due after Friday (due Friday or earlier) |
+| `after or on`      | This date or later     | Due Friday or later                          |
+| `not after or on`  | Earlier than this date | Not due Friday or later (due before Friday)  |
+| `between`          | Within date range      | Due this week                                |
+| `not between`      | Outside date range     | Not due this week                            |
 
 ### Created by
 
 Identify work items created by specific individuals.
 
-| Operator | Description | Use case |
-|----------|-------------|----------|
-| `is` | Exactly matches one person | Items created by Sarah |
-| `is any of` | Matches any of multiple people | Show work for the frontend team |
-| `is not` | Excludes one person | Not created by John |
-| `is not any of` | Excludes multiple people | Not created by John or Sarah |
+| Operator        | Description                    | Use case                        |
+| --------------- | ------------------------------ | ------------------------------- |
+| `is`            | Exactly matches one person     | Items created by Sarah          |
+| `is any of`     | Matches any of multiple people | Show work for the frontend team |
+| `is not`        | Excludes one person            | Not created by John             |
+| `is not any of` | Excludes multiple people       | Not created by John or Sarah    |
 
 ### Custom properties
+
 Filter work items by any custom properties defined for each work item type in your project. The available operators depend on the property type.
 
 **Text properties**
@@ -236,7 +243,7 @@ Filter work items by any custom properties defined for each work item type in yo
 | `between` | Within numeric range | Estimated hours between 5 and 10 |
 | `not between` | Outside numeric range | Priority score not between 20 and 40 |
 
-**Dropdown properties** 
+**Dropdown properties**
 | Operator | Description | Use case |
 |----------|-------------|----------|
 | `is` | Exactly this option | Severity is Critical |

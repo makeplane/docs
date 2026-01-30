@@ -4,6 +4,7 @@ description: Learn how to create and set up your first Plane workspace. Get star
 ---
 
 # Create workspace
+
 Let's get you set up your workspace where you and your team can collaborate on projects.
 
 In this tutorial, you'll:
@@ -14,6 +15,7 @@ In this tutorial, you'll:
 - Access workspace settings and support resources
 
 ## Create new workspace
+
 If you've already signed up for Plane, you have your first workspace created during [signup](https://app.plane.so/sign-up). This tutorial shows you how to create additional workspaces.
 
 ::: info
@@ -39,14 +41,14 @@ If you've already signed up for Plane, you have your first workspace created dur
 4. **Set workspace URL**
    - Your URL is auto-generated from the workspace name.
    - Customize it if needed: `app.plane.so/<your-custom-slug>`.
-   
+
    :::warning
    This URL choice is permanent and cannot be changed later. Make sure it's exactly how you want it.
    :::
 
 5. **Select team size**
    - Choose the range that matches your expected team size. This helps optimize your Plane experience.
-   - You can always invite more people later.   
+   - You can always invite more people later.
 
 6. **Complete setup**
    - Click **Create workspace** to finish
@@ -63,6 +65,7 @@ After creating your workspace, you'll land on the Home page.
 ### Understanding the Home page
 
 **Key sections you'll see:**
+
 - **Quicklinks:** Save links to frequently accessed resources
 - **Recents:** Recently accessed work items, pages, and projects
 - **Your stickies:** Personal notes and reminders
@@ -72,23 +75,27 @@ After creating your workspace, you'll land on the Home page.
 Understanding the sidebar helps you move efficiently around Plane.
 
 ### Personal section
+
 - **Home:** Your workspace home
 - **Inbox:** Notifications and mentions
 - **Your work:** All work items assigned to you across projects
 
 ### Workspace section
+
 - **Projects:** All projects in your workspace
 - **More:** Click to pin additional workspace features like Views, Analytics, Drafts, and Archives to your sidebar for quick access.
 
 ::: tip Search
- Use the search bar at the top to quickly find work items, projects, or pages across your workspace.
+Use the search bar at the top to quickly find work items, projects, or pages across your workspace.
 :::
 
 ### Projects section
+
 - Direct links to individual projects for both configuration and daily work
 - Shows all projects you're part of or have access to
 
 ### Additional options
+
 Click the **?** icon at the bottom of the sidebar to access:
 
 - Documentation: Help guides and tutorials
@@ -115,10 +122,12 @@ Learn to work with multiple workspaces effectively.
 ### Join other workspaces
 
 **When someone invites you:**
+
 - You'll receive an email notification
 - Accept from email or directly in Plane
 
 **To join from within Plane:**
+
 - Look for **Workspace invites** at the bottom of the switcher
 - Pending invitations appear here
 - Click to accept invitations from other teams
@@ -142,4 +151,5 @@ Customize your workspace to match your team's needs.
 You can successfully navigate to workspace settings and see customization options.
 
 ## What's next?
+
 - [Invite members](/introduction/tutorials/invite-members) to get your team on board

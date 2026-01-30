@@ -2,10 +2,10 @@
 title: Single sign-on (SSO)
 description: Configure SAML or OIDC authentication to let your team sign in to Plane using corporate identity provider credentials.
 ---
+
 # Single sign-on (SSO)
 
 <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-
 
 Single sign-on (SSO) lets your team sign in to Plane using your organization's identity provider instead of managing separate passwords. This centralizes authentication, improves security, and simplifies user management.
 
@@ -29,19 +29,20 @@ Each domain can only be verified in one workspace at a time. If you've already v
 
    ![Verify domain](https://media.docs.plane.so/sso/verify-domain.webp#hero)
    :::tip
-   Click **I'll do it later** if you need time to access your DNS. Your domain will appear with a *Pending* status. To resume verification later, click the **⋯** menu next to your domain and select **Verify**.
+   Click **I'll do it later** if you need time to access your DNS. Your domain will appear with a _Pending_ status. To resume verification later, click the **⋯** menu next to your domain and select **Verify**.
    :::
 
 ### Add the DNS record
+
 1. Sign in to your DNS provider.
 2. Create a new TXT record:
    - **Host/Name**: `@` (or leave blank for root domain).
    - **Value**: Paste the TXT record value from Plane.
    - **TTL**: Use default or 3600.
 3. Wait a few minutes for DNS propagation.
-4. Return to Plane and click **Verify domain**. 
+4. Return to Plane and click **Verify domain**.
 
-Once verified, the status changes to *Verified* and you can configure SSO.
+Once verified, the status changes to _Verified_ and you can configure SSO.
 
 ::: tip
 DNS propagation times vary by provider. If verification fails immediately, wait a few more minutes and try again. You can check if the TXT record is live using `dig TXT yourdomain.com` or online DNS lookup tools.
@@ -81,18 +82,18 @@ The exact steps vary by provider, but generally:
 
 #### Configure OIDC in Plane
 
-   ![Configure OIDC](https://media.docs.plane.so/sso/configure-oidc.webp#hero)
+![Configure OIDC](https://media.docs.plane.so/sso/configure-oidc.webp#hero)
 
 1. Return to Plane and enter the following details from your identity provider:
 
-   | Field | Description |
-   |-------|-------------|
-   | **Client ID** | The application ID from your IdP |
-   | **Client secret** | The secret key for authentication |
-   | **Authorize URL** | The endpoint where users see the login screen |
-   | **Token URL** | The endpoint Plane uses to exchange authorization codes for tokens |
-   | **Users' info URL** | The endpoint that returns user profile information |
-   | **Logout URL** | *(Optional)* Where users go after signing out |
+   | Field               | Description                                                        |
+   | ------------------- | ------------------------------------------------------------------ |
+   | **Client ID**       | The application ID from your IdP                                   |
+   | **Client secret**   | The secret key for authentication                                  |
+   | **Authorize URL**   | The endpoint where users see the login screen                      |
+   | **Token URL**       | The endpoint Plane uses to exchange authorization codes for tokens |
+   | **Users' info URL** | The endpoint that returns user profile information                 |
+   | **Logout URL**      | _(Optional)_ Where users go after signing out                      |
 
 2. Click **Save changes** to activate OIDC authentication.
 
@@ -125,16 +126,16 @@ SAML works well with traditional enterprise identity providers like Okta, Azure 
 
 #### Configure SAML in Plane
 
-   ![Configure SAML](https://media.docs.plane.so/sso/configure-saml.webp#hero)
+![Configure SAML](https://media.docs.plane.so/sso/configure-saml.webp#hero)
 
 1. Return to Plane and enter the following details from your identity provider:
 
-   | Field | Description |
-   |-------|-------------|
-   | **Entity ID** | Your IdP's unique identifier |
-   | **SSO URL** | The endpoint where Plane redirects users for authentication |
-   | **Logout URL** | *(Optional)* Where users go after signing out |
-   | **Certificate** | The X.509 certificate from your IdP |
+   | Field           | Description                                                 |
+   | --------------- | ----------------------------------------------------------- |
+   | **Entity ID**   | Your IdP's unique identifier                                |
+   | **SSO URL**     | The endpoint where Plane redirects users for authentication |
+   | **Logout URL**  | _(Optional)_ Where users go after signing out               |
+   | **Certificate** | The X.509 certificate from your IdP                         |
 
 2. Click **Configure and enable** to activate SAML authentication.
 
@@ -142,13 +143,10 @@ SAML works well with traditional enterprise identity providers like Okta, Azure 
 
 Once SSO is enabled:
 
-   - When users visit your Plane workspace, they see the **Sign in with Single Sign-On** button.
+- When users visit your Plane workspace, they see the **Sign in with Single Sign-On** button.
 
-      ![Sign in with SSO](https://media.docs.plane.so/sso/sign-in-with-sso.webp#hero)
+  ![Sign in with SSO](https://media.docs.plane.so/sso/sign-in-with-sso.webp#hero)
 
-   - Clicking it redirects them to your identity provider.
-   - After authentication, they're signed in to Plane automatically.
-   - Their Plane account is created automatically on first sign-in if it doesn't exist.
-
-
-
+- Clicking it redirects them to your identity provider.
+- After authentication, they're signed in to Plane automatically.
+- Their Plane account is created automatically on first sign-in if it doesn't exist.

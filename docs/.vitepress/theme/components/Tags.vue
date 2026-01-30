@@ -1,11 +1,11 @@
 <script setup lang="ts">
 interface Tag {
-  name: string
-  link?: string
-  additionalClass?: string
+  name: string;
+  link?: string;
+  additionalClass?: string;
 }
 
-defineProps<{ tags: Tag[] }>()
+defineProps<{ tags: Tag[] }>();
 </script>
 
 <template>
@@ -20,10 +20,7 @@ defineProps<{ tags: Tag[] }>()
       >
         {{ tag.name }}
       </a>
-      <span
-        v-else-if="tag && tag.name"
-        :class="['plantag', tag.additionalClass]"
-      >
+      <span v-else-if="tag && tag.name" :class="['plantag', tag.additionalClass]">
         {{ tag.name }}
       </span>
     </template>

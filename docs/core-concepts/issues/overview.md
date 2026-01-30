@@ -54,9 +54,11 @@ When you need to create similar work items or replicate a work item's structure 
 To duplicate a work item, click the **•••** menu in the work item header and select **Make a copy**. You'll see two options:
 
 ### Copy in same project
+
 Creates an identical work item within the current project with all the same properties, description, and settings. The new work item gets a fresh identifier and maintains the same title, description, state, and priority attributes.
 
 ### Copy in different project
+
 Duplicates the work item to another project in your workspace. This is particularly useful when you have similar tasks across multiple projects or want to move work items between teams. The copied work item adapts to the destination project's identifier format and default state.
 
 Duplicating work items is perfect for replicating recurring tasks, or moving work between project phases while maintaining all the essential context and settings.
@@ -130,8 +132,8 @@ Plane allows you to upload different file types directly to the work item. Use t
 </div>
 Connect relevant project pages and wiki documentation to your work items to provide instant access to related context, specifications, or reference materials.
 
-1. Use the **Link pages** button in the work item to open the page linking modal. 
-2. You can search through your project pages and use the **Show Wiki pages** toggle to include wiki documentation in your search results. 
+1. Use the **Link pages** button in the work item to open the page linking modal.
+2. You can search through your project pages and use the **Show Wiki pages** toggle to include wiki documentation in your search results.
 3. Select multiple pages by checking the boxes next to the pages you want to link, then click **Confirm** to establish the connections.
 
 Linked pages appear directly in the work item, making it easy for team members to access relevant documentation without leaving the context of their current task.
@@ -150,7 +152,8 @@ From any work item, find the **Convert to Epic** option. The system will ask you
 You can also [convert Epics to Work Items](/core-concepts/issues/epics#convert-epics-to-work-items).
 
 ## Comment on work items
-Collaborate on work items through comments. Tag team members, format text, and track all changes in the activity log. See [Work item comments](/communication-and-collaboration/comments-and-activity) for details. 
+
+Collaborate on work items through comments. Tag team members, format text, and track all changes in the activity log. See [Work item comments](/communication-and-collaboration/comments-and-activity) for details.
 
 ![Work item activity and comments](https://media.docs.plane.so/issues/issue-activity-comments.webp#hero)
 
@@ -192,12 +195,12 @@ Within your project, you can set up automations to perform the following tasks:
 
 - **Auto-archive closed work items**  
   You can set up an automation to archive work items that are marked as closed. This helps keep your active project board clean and organized, while still retaining closed work items for reference. You can customize the time period after which closed work items will automatically be moved to the archive.
-  
+
   ![Project archive automation](https://media.docs.plane.so/projects/auto-archive-closed-issues.webp#hero)
 
 - **Auto-close work items**  
   You can also automate the closing of work items that are still open after a certain period of time. This is useful for ensuring that work items don’t remain open unnecessarily, helping to keep your project board organized and up to date. The automation will move all open work items matching the time period to a selected closed state.
-  
+
   ![Project close automation](https://media.docs.plane.so/projects/auto-close-issues.webp#hero)
 
 <div class="tag-wrapper">

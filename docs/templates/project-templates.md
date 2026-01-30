@@ -2,10 +2,10 @@
 title: Project templates to standardize new project setup
 description: Create and use Project Templates to standardize projects, save setup time, and ensure consistency across your workspace with predefined settings.
 ---
+
 # Project templates to standardize new project setup
 
 <Tags :tags='[{ name: "Business", additionalClass: "business" }]' />
-
 
 Project Templates help you standardize and streamline your workflow by providing reusable structures for common project types. Instead of manually configuring similar projects from scratch, templates allow you to quickly apply predefined settings, saving time and ensuring consistency across your workspace.
 
@@ -21,6 +21,7 @@ Templates are perfect for teams who:
 1. Navigate to [Workspace Settings](https://docs.plane.so/core-concepts/workspaces/overview#access-workspace-settings).
 
    ![Create project template](https://media.docs.plane.so/templates/create-project-template.webp#hero-tr)
+
 2. Select the **Templates** tab on the right pane.
 3. Click the **Create template** button in the top-right corner.
 4. Select **Project template** from the options.
@@ -34,8 +35,10 @@ Templates are perfect for teams who:
    - Set up optional features like **States**, **Labels**, and **Work item types**.
 
      ![Configure project template](https://media.docs.plane.so/templates/configure-project-template.webp#hero)
+
    - Enable or disable **Epics** based on project needs.
    - You can optionally define initial work items that will automatically create when teams start new projects, helping them get up and running faster with pre-structured tasks.
+
 6. Click **Create project template** to save.
 
 ## Use project templates

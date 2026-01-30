@@ -4,9 +4,11 @@ description: Learn the essential building blocks of Plane - workspaces, projects
 ---
 
 # Core concepts
+
 This page explains how Plane is structured and how its features work together. Understanding these concepts helps you organize work effectively and collaborate with your team.
 
 ## Understand Plane's structure
+
 Plane is organized in a hierarchy that reflects how teams naturally work together:
 
 At the top level, **Workspaces** contain everything—typically one per organization, team, or client. Inside workspaces, you create **Projects** for specific products, initiatives, or goals. Within projects, you manage **Work items** (the individual tasks your team completes). You can organize these work items using **Cycles** (time-boxed periods) and **Views** (saved filters and layouts). Finally, **Pages** provide space to document context and decisions alongside your work.
@@ -14,6 +16,7 @@ At the top level, **Workspaces** contain everything—typically one per organiza
 This structure gives you flexibility to work at whatever level makes sense. Sometimes you'll focus on a single work item. Other times, you'll view an entire project or cycle to understand the bigger picture.
 
 ## How features connect
+
 Understanding relationships between Plane's features helps you use them effectively.
 
 ### Workspaces
@@ -49,6 +52,7 @@ Cycles help you organize work into time-bound periods, like sprints or phases. T
 Learn more about [Cycles](/core-concepts/cycles).
 
 ### Views
+
 Views help you filter and organize work items to see exactly what matters right now. Instead of manually configuring filters every time, views save your layout, filters, and display settings so you can access them instantly. The same work item can appear in multiple views simultaneously.
 
 Views exist at both project and workspace levels. Project views show work from a single project, while workspace views can display work items across all projects you have access to.

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = withDefaults(defineProps<{ cols?: number }>(), { cols: 2 })
+const props = withDefaults(defineProps<{ cols?: number }>(), { cols: 2 });
 </script>
 
 <template>

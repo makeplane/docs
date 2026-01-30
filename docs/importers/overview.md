@@ -18,12 +18,12 @@ Importers are available on Plane Cloud and on all plans of the Commercial Editio
 
 <Card title="Linear" icon="linear" href="/importers/linear">
 
-  Bring Linear tasks into Plane, ensuring smooth transitions and continued progress.
+Bring Linear tasks into Plane, ensuring smooth transitions and continued progress.
 </Card>
 
 <Card title="Asana" icon="asana" href="/importers/asana">
 
-  Migrate tasks from Asana to Plane, keeping your workflow intact and organized.
+Migrate tasks from Asana to Plane, keeping your workflow intact and organized.
 </Card>
 
 <Card title="CSV" icon="FaFileCsv" href="/importers/csv">

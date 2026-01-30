@@ -20,6 +20,7 @@ Use comments to discuss work items, ask questions, provide updates, and collabor
 Your comment appears immediately in the activity feed with a timestamp and your profile picture.
 
 ## Reply to comments
+
 Reply directly to specific comments to keep discussions organized and contextual. Threaded comments help you maintain focused conversations within a work item, especially when multiple topics are being discussed.
 
 ### Create a threaded reply
@@ -40,8 +41,9 @@ Replies appear nested under the original comment, making it easy to follow the c
 The comment editor supports rich text formatting for clear communication:
 
 **Available formatting:**
+
 - **Bold** - Emphasize important points
-- *Italic* - Add subtle emphasis
+- _Italic_ - Add subtle emphasis
 - `Code` - Share code snippets or technical terms
 - Bullet lists - Organize information
 - Numbered lists - Create step-by-step instructions
@@ -54,6 +56,7 @@ The comment editor supports rich text formatting for clear communication:
 Tag team members in comments to notify them and draw their attention to specific work items.
 
 **To mention someone**
+
 1. Type `@` in the comment field.
 2. Start typing the person's name.
 3. Select their name from the dropdown list.
@@ -61,6 +64,7 @@ Tag team members in comments to notify them and draw their attention to specific
 5. Post the comment.
 
 **What happens**
+
 - The mentioned person receives an email notification (if they have notifications enabled)
 - The work item appears in their Inbox
 
@@ -110,6 +114,7 @@ The Activity log shows a chronological history of everything that happens on a w
 ### Activity types tracked
 
 **System activities:**
+
 - Work item creation
 - Status changes (To Do → In Progress → Done)
 - Assignee changes
@@ -121,6 +126,7 @@ The Activity log shows a chronological history of everything that happens on a w
 - Relation changes (blocking, blocked by, etc.)
 
 **User activities:**
+
 - Comments posted
 - Time logged ([Worklogs](/core-concepts/issues/time-tracking))
 - Attachments uploaded
@@ -143,6 +149,7 @@ Show only specific types of activity to focus on what matters.
 Change the order in which activities appear.
 
 **Sort options:**
+
 - **Newest first** (default) - Most recent activity at the top
 - **Oldest first** - Original activity at the top
 

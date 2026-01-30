@@ -18,7 +18,7 @@ Pages are turned on by default when you create a new project. If needed, you can
   ![Create page](https://media.docs.plane.so/pages/create-page.webp#hero)
 
 - You can set pages to be either public or private. Public pages are visible to everyone in your workspace, while private pages are only accessible to you. To change a page’s visibility, just go to the **•••** menu on that page anytime.
-  
+
   ![Public or private pages](https://media.docs.plane.so/pages/public-private-page.webp#hero)
 
 ## Add content
@@ -29,16 +29,15 @@ Pages are turned on by default when you create a new project. If needed, you can
 
 - You can easily drag and drop content blocks in Plane to rearrange them on the page. Just hover over any block, grab the **⋮⋮** icon that shows up, and drag it to where you want. Let go of it to drop the block in its new spot.
 
-
 ### Format your content
 
 ![Static toolbar](https://media.docs.plane.so/pages/static-toolbar.webp#hero)
 
-+ The static toolbar at the top of the page offers a range of styling options for your content, including basic blocks like headings and lists, and advanced blocks like images, tables, and more.
+- The static toolbar at the top of the page offers a range of styling options for your content, including basic blocks like headings and lists, and advanced blocks like images, tables, and more.
 
-- Quickly adjust headings (H1-H6) to create a clear, structured hierarchy in your document. 
-- Add emphasis with text or background colors, and style important information with bold, italic, underline, and strikethrough options for better readability. 
-- Align your content to the left, right, or center to ensure proper layout and visual balance in your document.
+* Quickly adjust headings (H1-H6) to create a clear, structured hierarchy in your document.
+* Add emphasis with text or background colors, and style important information with bold, italic, underline, and strikethrough options for better readability.
+* Align your content to the left, right, or center to ensure proper layout and visual balance in your document.
 
 ### Markdown support
 
@@ -53,10 +52,10 @@ To use Markdown in Plane, simply type the relevant symbols (like # for headings 
 
 ![AI helper](https://media.docs.plane.so/pages/ai-helper.webp#hero-tl)
 
-Plane’s AI tools enhance content creation by helping you refine, reframe, and enrich your writing. Whether you need to paraphrase a sentence, simplify complex information, or elaborate on a topic, Pages offers quick solutions right within the editor. 
+Plane’s AI tools enhance content creation by helping you refine, reframe, and enrich your writing. Whether you need to paraphrase a sentence, simplify complex information, or elaborate on a topic, Pages offers quick solutions right within the editor.
 
-- Make your content clearer or concise by rephrasing text or breaking down complex ideas. 
-- Quickly generate summaries to highlight key points, ideal for meetings or lengthy documents. 
+- Make your content clearer or concise by rephrasing text or breaking down complex ideas.
+- Quickly generate summaries to highlight key points, ideal for meetings or lengthy documents.
 - Expand on ideas to add context, detail, or depth to your writing. - Get suggestions for clear, catchy titles.
 
 <div class="tag-wrapper">
@@ -94,9 +93,11 @@ You can perform several actions on any block within a page. Just hover over the 
 Get a direct URL to this specific block. When someone opens this link, they'll jump straight to this block in the page, making it easy to reference specific sections in discussions or work items.
 
 ### Duplicate block
+
 Create a copy of the block to reuse content without starting from scratch.
 
 ### Delete block
+
 Remove the block entirely from the page.
 These quick actions help you manage and reference your content efficiently, especially in longer documents where you need to point teammates to specific sections.
 

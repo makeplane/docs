@@ -24,45 +24,45 @@ To import Linear issues to a Plane project, follow these steps:
 1. Click the **∨** icon next to your workspace name on the sidebar and select **Workspace settings**.
 
 2. Select **Imports** on the right pane and click the **Import** button in the Linear section.
-   
+
    ![Import Linear](https://media.docs.plane.so/importers/linear/import-linear.webp#hero)
 
 3. In the **Linear to Plane Migration Assistant** screen, enter your **Personal Access Token** to allow Plane access to your Linear account.
-   
+
    ![Connect Linear](https://media.docs.plane.so/importers/linear/linear-plane-migration-assistant.webp#hero)
 
 4. Click the **Connect Linear** button to link the accounts.
 
 5. Click the **Import** button in the **Imports** section.
-   
+
    ![Import Linear data](https://media.docs.plane.so/importers/linear/import-linear-data.webp#hero)
 
 6. **Configure Plane**  
    Select the Plane project where you want to import your Linear data and and click **Next**.
-   
+
    ![Configure Plane](https://media.docs.plane.so/importers/linear/configure-plane.webp#hero)
 
 7. **Configure Linear**  
    Choose the Linear team from where you want to import data.
-   
+
    ![Configure Linear](https://media.docs.plane.so/importers/linear/configure-linear.webp#hero)
 
 8. **Map states**  
    Map **Linear states** to their equivalent **Plane states**.
-   
+
    ![Map states](https://media.docs.plane.so/importers/linear/map-states.webp#hero)
 
 9. **Summary**  
    Review the mappings and make any changes if needed. Click **Back** to adjust, or click **Confirm** to start the migration.
-   
+
    ![Review mappings](https://media.docs.plane.so/importers/linear/import-summary.webp#hero)
 
 10. The data migration begins and takes a few minutes to complete depending on the number of issues in your Linear workspace.
-    
+
     ![Migration complete](https://media.docs.plane.so/importers/linear/import-complete.webp#hero)
 
 11. Once it's done, go to **Work items** in your Plane project to confirm that the data import is successful.
-    
+
     ![Verify import](https://media.docs.plane.so/importers/linear/verify-import.webp#hero)
 
 ### Imported entities
@@ -98,5 +98,5 @@ After the import, if there are any new or updated issues in Linear, you can easi
 1. Go to **Workspace settings**.
 2. Select **Imports** on the right pane.
 3. Click the **Re run** button next to the project you want to sync.
-   
+
    ![Sync Linear](https://media.docs.plane.so/importers/linear/rerun-import.webp#hero)

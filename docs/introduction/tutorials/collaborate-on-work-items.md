@@ -1,9 +1,10 @@
 ---
 title: Collaborate on work items
-description:  Learn how to collaborate effectively on work items in Plane using comments, mentions, sub-work items, and activity tracking.
+description: Learn how to collaborate effectively on work items in Plane using comments, mentions, sub-work items, and activity tracking.
 ---
 
 # Collaborate on work items
+
 Now that you can create and manage work items, let's learn how to collaborate with your team.
 
 In this tutorial, you'll:
@@ -29,15 +30,16 @@ Start conversations that move work forward effectively.
    - Click in the **Add comment** text area.
    - Write a comment that provides value to the team.
 
-    *Example:*
-    ```
-    Started working on this - I've identified the CSS issue and should have a fix ready by tomorrow. The problem is with the media query breakpoint at 375px.
-    ```
+     _Example:_
+
+   ```
+   Started working on this - I've identified the CSS issue and should have a fix ready by tomorrow. The problem is with the media query breakpoint at 375px.
+   ```
 
 3. **Use formatting options**
    - Bold important information with **text**.
    - Create lists for multiple points.
-   - Add code snippets or quotes. 
+   - Add code snippets or quotes.
 
 4. **Post your comment**
    - Click **Comment** to publish.
@@ -45,11 +47,13 @@ Start conversations that move work forward effectively.
    - Relevant team members receive notifications.
 
 ## Use @mentions
+
 Ensure the right people see important messages and requests.
+
 1. Type @ followed by a team member's name.
 2. Select the person from the dropdown that appears.
-3. Continue writing your message with context.  
-    
+3. Continue writing your message with context.
+
 ## Divide work with sub-work items
 
 Organize large tasks into manageable, assignable pieces.
@@ -57,6 +61,7 @@ Organize large tasks into manageable, assignable pieces.
 ![Sub-work items](https://media.docs.plane.so/tutorials/create-sub-work-items.webp#hero)
 
 1. **Use sub-work items for:**
+
 - Large tasks requiring multiple steps
 - Tasks needing different skills or team members
 - Work that can be done in parallel
@@ -66,19 +71,19 @@ Organize large tasks into manageable, assignable pieces.
    - Click to create a related, smaller task.
    - Fill in the sub-item details with specificity.
 
-    *Example:*
-    - **Parent task:** "Implement user authentication system"
-    - **Sub-work items:**
-        - "Design login page wireframes" → Designer
-        - "Set up authentication database tables" → Backend developer  
-        - "Create password reset flow" → Frontend developer
-        - "Write user registration API endpoints" → Backend developer
+     _Example:_
+
+   - **Parent task:** "Implement user authentication system"
+   - **Sub-work items:**
+     - "Design login page wireframes" → Designer
+     - "Set up authentication database tables" → Backend developer
+     - "Create password reset flow" → Frontend developer
+     - "Write user registration API endpoints" → Backend developer
 
 3. **Understand sub-item benefits**
    - Each sub-item has independent lifecycle and can be worked on separately.
    - Team members focus on specific sub-items while staying connected to bigger picture.
    - Clear ownership and accountability for different aspects of complex work.
-
 
 ## Track activity and filter updates
 
@@ -92,9 +97,9 @@ Stay informed about work progress without information overload.
 2. **Use activity filters**
    - Click **Filters** button in the Activity section.
    - Control what information you see:
-        - **Updates:** Show only property changes (state, priority, assignments)
-        - **Comments:** Display only team discussions and communications
-        - **Worklogs:** View only time tracking entries
+     - **Updates:** Show only property changes (state, priority, assignments)
+     - **Comments:** Display only team discussions and communications
+     - **Worklogs:** View only time tracking entries
 
 3. **Use activity tracking strategically**
    - **Catch up quickly:** See what happened while you were away.
@@ -133,18 +138,19 @@ Set up email notifications to stay informed about important updates.
    - Select **Notifications** in the left pane.
 
 2. **Ensure all notifications are enabled**
-    - This ensures you receive email updates about all important work item activity.
+   - This ensures you receive email updates about all important work item activity.
 
 ### Understand notification triggers
 
 **You receive notifications when:**
+
 - Someone @mentions you in comments.
 - Work items assigned to you are updated.
 - Work items you created have activity.
 - Someone comments on work items you're subscribed to.
 
 ## What's next?
+
 Your collaboration skills are solid! You're ready to:
 
 - [Create custom views](/introduction/tutorials/organize-and-view-work) to filter and organize work items for different contexts.
-

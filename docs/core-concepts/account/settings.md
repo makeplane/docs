@@ -8,6 +8,7 @@ description: Reference for personal account settings including profile, preferen
 Account settings control your personal profile, interface preferences, notification preferences, security options, and activity history. These settings apply across all workspaces you belong to.
 
 ## Access account settings
+
 1. Click your profile picture in the sidebar.
 2. Select **Settings**
 
@@ -18,11 +19,13 @@ Account settings control your personal profile, interface preferences, notificat
 Manage your personal information and account visibility across workspaces. All profile information is visible to other members in your workspaces.
 
 **Profile picture and cover image**
+
 - Profile picture appears throughout Plane (work items, comments, assignments).
 - Cover image displays at the top of your profile page.
 - Click **Change cover** to upload a custom cover image.
 
 **Personal information**
+
 - **First name** - Your given name (required)
 - **Last name** - Your family name
 - **Display name** - Name shown in work items and mentions (required)
@@ -30,7 +33,6 @@ Manage your personal information and account visibility across workspaces. All p
 
 **Account deactivation**  
 You have the option to deactivate your account, which removes you from all the workspaces you are associated with. However, please note that deactivating your account will not delete the work items or any other entities created by you.
-
 
 ## Preferences
 
@@ -43,6 +45,7 @@ Your selected theme applies across all workspaces and devices where you're logge
 **Default:** Light theme
 
 **Theme options:**
+
 - **System** - Automatically matches your operating system's theme preference
 - **Light** - Light color scheme
 - **Dark** - Dark color scheme
@@ -53,6 +56,7 @@ Your selected theme applies across all workspaces and devices where you're logge
 When you select **Custom theme** from the theme dropdown, you can define your own color scheme by specifying hex color values for five interface elements:
 
 **Customizable colors:**
+
 - **Background color** - Sets the background for main content areas (dashboard, work items, pages, etc.)
 - **Text color** - Determines text color throughout the platform
 - **Primary (Theme) color** - Defines accent color for interactive elements
@@ -64,23 +68,27 @@ Click **Set theme** to apply your custom color scheme.
 ### First day of the week
 
 Changes the starting day for all calendar displays throughout Plane, including:
+
 - Project timelines
 - Due date pickers
 - Calendar views
 - Date range selectors
 
 ### Smooth cursor
+
 Adds animation to cursor movement for a more fluid experience when navigating through editors.
 
 ### Timezone and language
+
 **Timezone:**
+
 - Sets display format for all times throughout Plane.
 - Affects notifications, activity logs, start dates, end dates, and timestamps.
 
 **Language:**
+
 - Controls interface language.
 - Supported languages: English, French, Spanish, Japanese, Simplified Chinese, Traditional Chinese, Russian, Italian, Czech, Slovak, German, Ukrainian, Polish, Korean, Brazilian Portuguese, Indonesian, Romanian, Vietnamese, Turkish
-
 
 ## Notifications
 
@@ -91,24 +99,28 @@ All notifications apply only to work items where you are the creator, assigned t
 ### Notification types
 
 **Property changes**
+
 - Notifies when work item properties change (assignees, priority, estimates, etc.)
 - Applies to work items you created, are assigned to, or subscribed to
 
 **State change**
+
 - Notifies when work items move to different states
 - Applies to work items you created, are assigned to, or subscribed to
 
 **Work item completed**
+
 - Notifies only when work items reach completed state
 - Subset of state change notifications
 
 **Comments**
+
 - Notifies when someone adds a comment to work items you're involved with
 - Applies to work items you created, are assigned to, or subscribed to
 
 **Mentions**
-- Notifies when someone mentions you in comments or descriptions
 
+- Notifies when someone mentions you in comments or descriptions
 
 ## Security
 
@@ -124,14 +136,10 @@ Manage account access credentials. Password must meet security criteria (minimum
 
 View your recent actions and changes across all workspaces. Displays a chronological feed of your activities with timestamps.
 
-
 ## Connections
 
 Manage personal account connections on integrations with external services.
 
-
 ## Personal access tokens
 
 Generate secure API tokens for integrating Plane data with external systems and applications.
-
-

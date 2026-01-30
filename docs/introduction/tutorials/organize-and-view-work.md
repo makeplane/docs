@@ -4,15 +4,18 @@ description: Learn how to organize and visualize your work items using layouts, 
 ---
 
 # Organize and view your work
+
 Now that you can create and collaborate on work items, let's learn how to organize and view them effectively. Plane provides powerful tools to help you see exactly the work that matters to you, when you need to see it.
 
 In this tutorial, you'll:
+
 - Switch between different layout views to match your workflow
 - Navigate workspace and project level views
 - Use filters and display options to focus on relevant work
 - Create and save custom views for recurring organizational needs
 
 ## Explore different layouts
+
 Layouts change how your work items are visually organized. Each layout shows the same work items but optimized for different tasks.
 
 ![Explore layouts](https://media.docs.plane.so/tutorials/explore-layouts.webp#hero)
@@ -26,19 +29,19 @@ Layouts change how your work items are visually organized. Each layout shows the
    **List** - Text-based view for task organization
    - Best for: Quick scanning of all project activities, grouping work items by properties, viewing parent-child relationships
    - Use when: Reviewing status updates, bulk property changes, organizing tasks by priority/assignee
-   
-   **Board** - Visual workflow cards  
+
+   **Board** - Visual workflow cards
    - Best for: Drag-and-drop state management, team discussions
    - Use when: Sprint planning, workflow visualization
-   
+
    **Calendar** - Timeline view
    - Best for: Deadline management and scheduling
    - Use when: Planning due dates, avoiding conflicts
-   
+
    **Table** - Excel-like grid
    - Best for: Bulk editing and data manipulation
    - Use when: Mass updates, data analysis
-   
+
    **Timeline** - Project timeline view
    - Best for: Dependencies and milestone tracking
    - Use when: Project planning, dependency management
@@ -46,21 +49,22 @@ Layouts change how your work items are visually organized. Each layout shows the
 **Try switching between layouts** to see which feels more natural for your current work.
 
 ## Apply filters to work items
+
 Filters help you see only the work items relevant to your current task.
 
 ![Explore layouts](https://media.docs.plane.so/tutorials/filter-work-items.webp#hero)
 
 1. **Access the filters interface**
-    - Click the **Filters** button between the toolbar and your work items.
-    - Filters are applied as visual chips that you can see and modify easily.
+   - Click the **Filters** button between the toolbar and your work items.
+   - Filters are applied as visual chips that you can see and modify easily.
 
 2. **Smart filter combinations**
-    - Each filter appears as a chip showing the property and selected values:
-        - Priority: "Priority is any of High, Urgent"
-        - Assignee: "Assignees is any of alex, amara"
-        - State: "State is not Completed"
+   - Each filter appears as a chip showing the property and selected values:
+     - Priority: "Priority is any of High, Urgent"
+     - Assignee: "Assignees is any of alex, amara"
+     - State: "State is not Completed"
 
-    Multiple filters work together automatically, no need to manually combine them.
+   Multiple filters work together automatically, no need to manually combine them.
 
 3. Click the **x** on any filter chip to remove it.
 
@@ -69,22 +73,23 @@ Filters help you see only the work items relevant to your current task.
 The work items list updates in real-time as you add or remove filters, giving you exactly the view you need for your current context.
 
 ## Customize display options
+
 Display options control what information you see for each work item. The display options change based on your layout.
 
 ![Display options](https://media.docs.plane.so/tutorials/display-options.webp#hero)
 
-1. **Control visible information** 
-    - Click the **Display** dropdown on the top right of the screen.
-    - Toggle properties on/off to reduce visual clutter.
+1. **Control visible information**
+   - Click the **Display** dropdown on the top right of the screen.
+   - Toggle properties on/off to reduce visual clutter.
 
 2. **Organize your work items**
-    - **Group by:** Cluster work items logically (by State, Assignee, Priority, or Labels).
-    - **Order by:** Sort items within groups (by Priority for planning, Due date for deadlines, or Updated date for recent activity).
-    - **Sub-work items:** Show or hide nested tasks depending on detail needs.
+   - **Group by:** Cluster work items logically (by State, Assignee, Priority, or Labels).
+   - **Order by:** Sort items within groups (by Priority for planning, Due date for deadlines, or Updated date for recent activity).
+   - **Sub-work items:** Show or hide nested tasks depending on detail needs.
 
 ## Save and manage custom views
 
-Views save your perfect combination of layout, filters, and display settings so you can reuse them instantly. 
+Views save your perfect combination of layout, filters, and display settings so you can reuse them instantly.
 
 1. **Create a view from your current configuration**
    - Set up your ideal combination: Board layout + your assignee + active states
@@ -101,6 +106,7 @@ Views save your perfect combination of layout, filters, and display settings so 
 Both methods create views that appear in your project sidebar under **Views**.
 
 ## Use Your work dashboard
+
 Your work dashboard gives you a unified view of all your work across every project in your workspace.
 
 ![Your work dashboard](https://media.docs.plane.so/tutorials/explore-your-work.webp#hero)
@@ -136,6 +142,7 @@ Your work dashboard gives you a unified view of all your work across every proje
    - Use for: Catching up on updates and team progress
 
 ### Build a daily routine
+
 Use Your work as your starting point each morning.
 
 Check the Summary tab for workload balance and priority distribution, then switch to Assigned to see today's specific tasks. The Activity tab catches you up on overnight updates and team progress.
@@ -143,6 +150,7 @@ Check the Summary tab for workload balance and priority distribution, then switc
 This cross-project view helps you prioritize when you're working on multiple projects and ensures nothing falls through the cracks. Your work dashboard becomes your personal mission control for staying organized across your entire workspace.
 
 ## What's next?
+
 Your work organization skills are solid! You're ready to:
 
 - [Plan work with cycles](/introduction/tutorials/plan-and-create-cycles) to group work into time-based iterations.

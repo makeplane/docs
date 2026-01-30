@@ -13,7 +13,7 @@ In Plane, you can create two different types of views:
 
 - **Workspace Views**  
   These are created at the Workspace level and are available to all Members, depending on whether they are marked as public or private. These include some default system-defined Views that cannot be removed.
-  
+
   ![Workspace Views](https://media.docs.plane.so/views/workspace-views.webp#hero)
 
 - **Project Views**  

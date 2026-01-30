@@ -2,10 +2,10 @@
 title: Work item templates for recurring tasks
 description: Create and use Work Item Templates to standardize recurring tasks, save setup time, and ensure consistency with predefined fields and properties.
 ---
+
 # Work item templates for recurring tasks
 
 <Tags :tags='[{ name: "Pro", additionalClass: "pro" }]' />
-
 
 Work Item Templates help you standardize and streamline your workflow by providing reusable templates for common tasks. Instead of manually recreating similar work items, templates allow you to quickly apply predefined structures, saving time and ensuring consistency.
 
@@ -20,12 +20,14 @@ Templates are perfect for teams who:
 
 1. Navigate to [Project Settings](https://docs.plane.so/core-concepts/projects/overview#configure-project-settings).
 2. Select the **Templates** tab on the right pane.
-   
+
    ![Create work item template](https://media.docs.plane.so/templates/create-work-item-template.webp#hero-bl)
+
 3. Click the **Create template** button in the top-right corner.
 4. Select **Work Item template** from the options.
-   
+
    ![Add template details](https://media.docs.plane.so/templates/add-template-details.webp#hero)
+
 5. Fill in the template details:
    - Give your template a clear, descriptive name.
    - Add a description explaining when and how to use this template.

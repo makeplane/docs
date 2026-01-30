@@ -4,40 +4,40 @@
 
 /* ─── Fonts ─── */
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi/Satoshi-Variable.ttf') format('truetype');
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi/Satoshi-Variable.ttf") format("truetype");
   font-weight: 400 680;
   font-style: normal italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'IBM Mono';
-  src: url('/fonts/IBM/IBMPlexMono-Light.ttf') format('truetype');
+  font-family: "IBM Mono";
+  src: url("/fonts/IBM/IBMPlexMono-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'IBM Mono';
-  src: url('/fonts/IBM/IBMPlexMono-Regular.ttf') format('truetype');
+  font-family: "IBM Mono";
+  src: url("/fonts/IBM/IBMPlexMono-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'IBM Mono';
-  src: url('/fonts/IBM/IBMPlexMono-SemiBold.ttf') format('truetype');
+  font-family: "IBM Mono";
+  src: url("/fonts/IBM/IBMPlexMono-SemiBold.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'IBM Mono';
-  src: url('/fonts/IBM/IBMPlexMono-Bold.ttf') format('truetype');
+  font-family: "IBM Mono";
+  src: url("/fonts/IBM/IBMPlexMono-Bold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -49,8 +49,8 @@
   --vp-c-brand-2: #1b47c2;
   --vp-c-brand-3: #2257ed;
 
-  --vp-font-family-base: 'Satoshi', sans-serif;
-  --vp-font-family-mono: 'IBM Mono', monospace;
+  --vp-font-family-base: "Satoshi", sans-serif;
+  --vp-font-family-mono: "IBM Mono", monospace;
 
   --font-weight-light: 400;
   --font-weight-regular: 480;
@@ -60,7 +60,7 @@
 }
 
 .dark {
-  --vp-c-brand-1: #2690C9;
+  --vp-c-brand-1: #2690c9;
   --vp-c-brand-2: #2257ed;
   --vp-c-brand-3: #3e6ef0;
 }
@@ -85,7 +85,9 @@ h3 {
   font-size: 1.25rem;
   line-height: 140%;
 }
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   line-height: 140%;
 }
 
@@ -138,12 +140,7 @@ h4, h5, h6 {
   color: #1a1a1a;
   border-radius: 4px;
   border: 1px solid #7c3aed66;
-  background: linear-gradient(
-    167.44deg,
-    #a78bfa 0%,
-    #c4b5fd 67.25%,
-    #fcfcfc 98.9%
-  );
+  background: linear-gradient(167.44deg, #a78bfa 0%, #c4b5fd 67.25%, #fcfcfc 98.9%);
   padding: 0 15px;
 }
 
@@ -212,7 +209,7 @@ h4, h5, h6 {
 }
 
 .dark .card-icon {
-  color: #2690C9;
+  color: #2690c9;
 }
 
 .card-title {
@@ -283,7 +280,7 @@ h4, h5, h6 {
 article p:has(> img[src$="#hero"]) {
   max-width: 841px;
   padding: 36px 56px 0px 56px;
-  background: #F1F3F3;
+  background: #f1f3f3;
   border-radius: 12px;
   box-sizing: border-box;
   overflow: hidden;
@@ -298,7 +295,7 @@ article img[src$="#hero"] {
   border-radius: 8px 8px 0px 0px;
   border-width: 1px 1px 0px 1px;
   border-style: solid;
-  border-color: #EAEBEB;
+  border-color: #eaebeb;
   object-fit: cover;
   box-shadow:
     0px 2px 4px -1px rgba(41, 47, 61, 0.04),
@@ -309,7 +306,7 @@ article img[src$="#hero"] {
 article p:has(> img[src$="#hero-tl"]) {
   max-width: 841px;
   padding: 36px 0px 0px 56px;
-  background: #F1F3F3;
+  background: #f1f3f3;
   border-radius: 12px;
   box-sizing: border-box;
   overflow: hidden;
@@ -324,7 +321,7 @@ article img[src$="#hero-tl"] {
   border-radius: 8px 0px 0px 0px;
   border-width: 1px 0px 0px 1px;
   border-style: solid;
-  border-color: #EAEBEB;
+  border-color: #eaebeb;
   object-fit: cover;
   box-shadow:
     0px 2px 4px -1px rgba(41, 47, 61, 0.04),
@@ -335,7 +332,7 @@ article img[src$="#hero-tl"] {
 article p:has(> img[src$="#hero-tr"]) {
   max-width: 841px;
   padding: 36px 56px 0px 0px;
-  background: #F1F3F3;
+  background: #f1f3f3;
   border-radius: 12px;
   box-sizing: border-box;
   overflow: hidden;
@@ -350,7 +347,7 @@ article img[src$="#hero-tr"] {
   border-radius: 0px 8px 0px 0px;
   border-width: 1px 1px 0px 0px;
   border-style: solid;
-  border-color: #EAEBEB;
+  border-color: #eaebeb;
   object-fit: cover;
   box-shadow:
     0px 2px 4px -1px rgba(41, 47, 61, 0.04),
@@ -361,7 +358,7 @@ article img[src$="#hero-tr"] {
 article p:has(> img[src$="#hero-bl"]) {
   max-width: 841px;
   padding: 0px 0px 36px 56px;
-  background: #F1F3F3;
+  background: #f1f3f3;
   border-radius: 12px;
   box-sizing: border-box;
   overflow: hidden;
@@ -376,7 +373,7 @@ article img[src$="#hero-bl"] {
   border-radius: 0px 0px 0px 8px;
   border-width: 0px 0px 1px 1px;
   border-style: solid;
-  border-color: #EAEBEB;
+  border-color: #eaebeb;
   object-fit: cover;
   box-shadow:
     0px 2px 4px -1px rgba(41, 47, 61, 0.04),
@@ -387,7 +384,7 @@ article img[src$="#hero-bl"] {
 article p:has(> img[src$="#hero-br"]) {
   max-width: 841px;
   padding: 0px 56px 36px 0px;
-  background: #F1F3F3;
+  background: #f1f3f3;
   border-radius: 12px;
   box-sizing: border-box;
   overflow: hidden;
@@ -402,7 +399,7 @@ article img[src$="#hero-br"] {
   border-radius: 0px 0px 8px 0px;
   border-width: 0px 1px 1px 0px;
   border-style: solid;
-  border-color: #EAEBEB;
+  border-color: #eaebeb;
   object-fit: cover;
   box-shadow:
     0px 2px 4px -1px rgba(41, 47, 61, 0.04),

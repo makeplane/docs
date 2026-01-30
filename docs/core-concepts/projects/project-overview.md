@@ -4,6 +4,7 @@ description: Track metrics, share status updates, and monitor overall project he
 ---
 
 # Project Overview
+
 <div class="tag-wrapper">
   # Monitor project progress at a glance
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
@@ -54,6 +55,7 @@ Quickly view and edit project properties in the info icon tab on the side panel.
 - **Timeline**: Manage and monitor **Start date** and **Due date** for the project.
 
 ## Project updates
+
 Communicate project status without meetings. Post updates with status indicators to keep your team aligned and create a historical record of progress. See **[Project updates](/communication-and-collaboration/project-updates)** for details.
 
 ![Add project updates](https://media.docs.plane.so/projects/add-project-updates.webp#hero)

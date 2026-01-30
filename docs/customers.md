@@ -2,10 +2,10 @@
 title: Customer management to track client requests and priorities
 description: Track client requests, link work items to specific customers, and prioritize tasks based on customer importance.
 ---
+
 # Customer management to track client requests and priorities
 
 <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-
 
 The Customers feature transforms how you organize and prioritize work by placing your clients at the center of your process. Instead of managing tasks in isolation, Customers creates direct connections between your work items and the people they serve, helping teams make better decisions about what to prioritize and ensuring customer requests receive proper attention.
 
@@ -92,14 +92,14 @@ Customer requests serve as the bridge between what your clients need and the act
 ### Link work to requests
 
 - Add source information
-  
+
   ![Add source](https://media.docs.plane.so/customers/add-source.webp#hero)
   1. From a request, click **Add source**.
   2. Enter the URL for the source.
   3. Click **Submit**.
 
 - Connect existing work items
-  
+
   ![Link work items](https://media.docs.plane.so/customers/link-work-items.webp#hero)
   1. From a request, click **Link work items**.
   2. Search and select relevant Work Items or Epics.

@@ -2,10 +2,10 @@
 title: Time tracking to log hours on tasks
 description: Log hours on work items, view timesheet records, and download comprehensive reports for project time management.
 ---
+
 # Time tracking to log hours on tasks
 
 <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-
 
 > **Role**: Project Admins
 
@@ -33,11 +33,11 @@ Project members can easily log the time they spend working on specific work item
 To turn on the Time Tracking feature on your project, follow the steps below:
 
 1. Click the **…** icon next to your project name on the sidebar and click **Settings**.
-   
+
    ![Project settings](https://media.docs.plane.so/time-tracking/project-settings.webp#hero-bl)
 
 2. Select **Features** on the right pane. Turn on the **Time Tracking** toggle button.
-   
+
    ![Enable time tracking](https://media.docs.plane.so/time-tracking/enable-time-tracking.webp#hero)
 
 The Time Tracking feature is now turned on for your project.
@@ -48,10 +48,11 @@ To track time on your work items, follow the steps below:
 
 1. Under your project, open the work item on which you want to log time.
 2. Click the **+ Log work** button. Enter the hours, minutes, and description. Click **Save**.
-   
+
    ![Log work](https://media.docs.plane.so/time-tracking/log-work.webp#hero-br)
+
 3. The **Tracked time** property will display the logged time. Every time you log work to the work item, this property is updated.
-   
+
    ![Worklog created](https://media.docs.plane.so/time-tracking/worklog-created.webp#hero)
 
 ## View worklogs
@@ -59,11 +60,13 @@ To track time on your work items, follow the steps below:
 To view timesheet records and download reports, follow the steps below:
 
 1. Click the **&or;** icon next to your workspace name on the sidebar and click **Workspace Settings**.
-   
+
    ![Workspace settings](https://media.docs.plane.so/workspaces/workspace-settings.webp#hero-tl)
+
 2. Select **Worklogs** on the right pane to view the timesheet records.
-   
+
    ![View worklogs](https://media.docs.plane.so/time-tracking/view-worklogs.webp#hero)
+
 3. You can filter the records by **Users**, **Projects**, **Start date** and **End date**. It also allows you to download the timesheet reports as Excel or CSV files.
-   
+
    ![Filter and download worklogs](https://media.docs.plane.so/time-tracking/filter-and-download-worklogs.webp#hero)

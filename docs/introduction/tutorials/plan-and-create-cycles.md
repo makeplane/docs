@@ -8,6 +8,7 @@ description: Learn how to create and manage cycles in Plane to organize work int
 Cycles help you organize work into focused time periods - like sprints. Instead of endless lists of work items, cycles create clear boundaries with start dates, end dates, and specific goals your team can work toward together.
 
 In this tutorial, you'll:
+
 - Understand when and why to use cycles for time-based planning
 - Create cycles with clear timeframes and achievable goals
 - Add and organize work items within cycle boundaries
@@ -19,6 +20,7 @@ In this tutorial, you'll:
 **Cycles are time-boxed containers** for your work that create focused periods where your team commits to completing specific work items within set timeframes.
 
 **Key benefits:**
+
 - Clear deadlines create urgency and focus
 - Team alignment on what's being worked on when
 - Progress tracking shows velocity and capacity over time
@@ -32,12 +34,13 @@ In this tutorial, you'll:
 - **Goal-driven work** - Organize work around specific outcomes or milestones
 
 ## Create your first cycle
+
 Build a focused work period with clear boundaries and achievable goals.
 
 ![Create cycle dialog](https://media.docs.plane.so/tutorials/create-cycle.webp#hero)
 
 1. **Begin creating your cycle**
-    - In your project sidebar, click **Cycles**.
+   - In your project sidebar, click **Cycles**.
    - Click **Add cycle** button (top-right).
    - The cycle creation dialog opens.
 
@@ -68,13 +71,15 @@ Explore how Plane organizes your cycles and provides timeline visibility.
 ![Cycles overview](https://media.docs.plane.so/tutorials/cycles-interface.webp#hero)
 
 **Understand cycle organization:**
-   - **Active** - Currently running cycles
-   - **Upcoming** - Planned but not yet started
-   - **Completed** - Finished cycles with results
+
+- **Active** - Currently running cycles
+- **Upcoming** - Planned but not yet started
+- **Completed** - Finished cycles with results
 
 This gives you comprehensive perspective on your project's planned work across past, present, and future periods.
 
 ## Add work items to your cycle
+
 Populate your cycle with the right amount of work for your team's capacity.
 
 ![Cycle detail view](https://media.docs.plane.so/tutorials/add-work-items-to-cycle.webp#hero)
@@ -99,6 +104,7 @@ Populate your cycle with the right amount of work for your team's capacity.
    - You can always add more items if you finish early.
 
 ## Track cycle progress
+
 Once your cycle is active with work items, monitor progress regularly to ensure successful delivery and continuous improvement.
 
 ![Cycle progress tracking](https://media.docs.plane.so/tutorials/view-cycle-progress.webp#hero)
@@ -145,6 +151,7 @@ Finish cycles with clear outcomes and learning for future improvement.
 You've created your first cycle and learned the fundamentals of time-boxed work planning. This approach helps teams deliver consistently and makes progress visible to everyone.
 
 ## What's next?
+
 Your cycle planning skills are established! You're ready to:
 
 - [Create content with Pages](/introduction/tutorials/create-pages) for documentation, meeting notes, and other project requirements.

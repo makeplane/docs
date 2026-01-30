@@ -5,6 +5,7 @@ description: Learn how Plane's per-seat billing works, how to manage seats for a
 ---
 
 # How billing works
+
 Unlike a majority of SaaS, our subscription models on Pro and higher plans are per-seat, not per-users. Learn why this model works great for you and how to manage your members versus seats.
 
 ## Per-seat model and billing
@@ -59,6 +60,7 @@ We don’t offer refunds except in the most unusual circumstances. Your Plane bi
 Should you think you have an exceptional circumstance and deserve a refund, write to us.
 
 ## AI credits and usage
+
 Plane AI uses a separate credit-based system for AI features. Credits measure the computational work required for AI tasks, from quick queries to bulk automations.
 
 Each plan includes monthly AI credits per seat that pool at the workspace level.

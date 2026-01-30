@@ -24,27 +24,27 @@ To import Jira issues to a Plane project, follow these steps:
 1.  Click the **∨** icon next to your workspace name on the sidebar and select **Workspace Settings**.
 
 2.  Select **Imports** on the right pane and click the **Import** button in the Jira section.
-    
+
     ![Import from Jira](https://media.docs.plane.so/importers/jira/import-jira-cloud-server.webp#hero)
 
 3.  In the **Jira to Plane Migration Assistant** screen, enter your **Personal Access Token**, **User email** and the **Jira domain** to allow Plane access to your Atlassian account.
-    
+
     ![Connect Jira](https://media.docs.plane.so/importers/jira/jira-plane-migration-assitant.webp#hero)
 
 4.  Click the **Connect Jira** button to link the accounts.
 
 5.  Click the **Import** button.
-    
+
     ![Import Jira](https://media.docs.plane.so/importers/jira/import-jira-data.webp#hero)
 
 6.  **Configure Plane**  
     Select the Plane project where you want to import your Jira data and and click **Next**.
-    
+
     ![Configure Plane](https://media.docs.plane.so/importers/jira/configure-plane.webp#hero)
 
 7.  **Configure Jira**  
     Choose the workspace and project in Jira from where you want to import data.
-    
+
     ![Configure Jira](https://media.docs.plane.so/importers/jira/configure-jira.webp#hero)
 
     ::: info Work item types
@@ -67,27 +67,27 @@ To import Jira issues to a Plane project, follow these steps:
       :::warning
       If you skip user import, work items and comments will show the name of the person who performed the migration, and the Assignees field will be empty.
       :::
-      
+
       ![Import users](https://media.docs.plane.so/importers/jira/import-users.webp#hero)
 
 9.  **Map states**
     1. Map **Jira status** to their equivalent **Plane states**.
     2. Select the **Auto create and map the remaining Jira states** checkbox to automatically create and map any missing states.
-       
+
        ![Map states](https://media.docs.plane.so/importers/jira/map-states.webp#hero)
 
 10. **Map priorities**  
     Map the **Jira priorities** to the corresponding **Plane priorities**. If there's no match, select **None** in the **Plane priorities** list.
-    
+
     ![Map priorities](https://media.docs.plane.so/importers/jira/map-priorities.webp#hero)
 
 11. **Summary**  
     Review the mappings and make any changes if needed. Click **Back** to adjust, or click **Confirm** to start the migration.
-    
+
     ![Review mappings](https://media.docs.plane.so/importers/jira/import-summary.webp#hero)
 
 12. The data migration begins and takes a few minutes to complete depending on the number of issues in your Jira workspace.
-    
+
     ![Migration complete](https://media.docs.plane.so/importers/jira/jira-import-complete.webp#hero)
 
 13. Once it's done, go to **Work items** in your Plane project to confirm that the data import is successful.
@@ -125,5 +125,5 @@ After the import, if there are any new or updated issues in Jira, you can easily
 1. Go to **Workspace settings**.
 2. Select **Imports** on the right pane.
 3. Click the **Re run** button next to the project you want to sync.
-   
+
    ![Sync Jira](https://media.docs.plane.so/importers/jira/rerun-import.webp#hero)

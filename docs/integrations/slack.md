@@ -2,10 +2,10 @@
 title: Integrate Slack to sync threads and create work items
 description: Integrate Plane with Slack to create work items from messages, sync thread conversations, and take actions directly from your chat interface.
 ---
+
 # Integrate Slack to sync threads and create work items
 
 <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-
 
 Plane's Slack integration brings your project management directly into your team's communication flow. Create work items from conversations, get notified about updates, interact with Plane AI, and keep everyone aligned — all without leaving Slack.
 This guide will walk you through how to set up and connect your Slack account to Plane.
@@ -61,6 +61,7 @@ If you don’t have admin access, you can still connect your personal Slack acco
 3. In the dropdown menu, select the Plane workspace you want to connect your personal account to.
 
    ![Connect personal account member](https://media.docs.plane.so/integrations/slack/connect-personal-account-profile.webp#hero)
+
 4. Click **Connect** in the Slack section, which will redirect you to Slack to complete the connection.
    :::info
    If your workspace doesn’t have Slack integration enabled, you won’t be able to connect your personal account. In this case, contact your Workspace Admin.
@@ -82,17 +83,19 @@ There are two easy ways to create issues from Slack, depending on your workflow:
 ![Thread sync](https://media.docs.plane.so/integrations/slack/create-plane-work-item.webp#hero)
 
 Convert any Slack message into a Plane work item:
+
 1. Hover over any message in Slack.
-2. Click the three-dot menu. 
+2. Click the three-dot menu.
 3. Select **Create a Work Item**.
 4. A modal opens with options:
 
    ![Slack modal](https://media.docs.plane.so/integrations/slack/create-work-item-modal.webp#hero)
    - **Project** - Select which Plane project receives the work item.
    - **Add as** - Choose between:
-      - **Work Item** - Standard task in your project.
-      - **Intake** - Sends to your project's intake queue for triage.
-   - **Work Item Type** - Select from your project's work item types. This will also show mandatory custom properties associated with the work item type. 
+     - **Work Item** - Standard task in your project.
+     - **Intake** - Sends to your project's intake queue for triage.
+   - **Work Item Type** - Select from your project's work item types. This will also show mandatory custom properties associated with the work item type.
+
 5. Add a title and description. The original Slack message text auto-fills as the description.
 6. Assign Labels, State, Priority, and Assignees.
 7. Turn on Thread Sync (optional). When enabled, Thread Sync keeps your conversation and Plane work item comments in sync. Anything you say in the Slack thread appears in the Plane work item comments, and vice versa. It’s the easiest way to keep everyone aligned without repeating updates in two places.
@@ -117,8 +120,9 @@ If a Plane work item already exists, and you want to connect it to a Slack threa
 
 1. Hover over the relevant Slack message or thread.
 2. Click the three-dot menu and select **Link Work Item**.
-   
+
    ![Link Work Item](https://media.docs.plane.so/integrations/slack/link-work-item-to-slack.webp#hero)
+
 3. In the modal, search for the work item by title or ID.
 4. Select the right work item and hit **Link**.
 
@@ -127,6 +131,7 @@ That’s it. Now the thread and the work item are connected. Comments in the thr
 This is perfect for situations where someone logs a work item in Plane but the conversation about it happens in Slack. Just link them up and avoid duplication.
 
 ### Add Plane to private Slack channels
+
 When you use Plane in public Slack channels, it automatically adds the Plane bot to those channels. However, for private channels, you must manually add the bot before you can create or link work items.
 
 Here's how to add Plane to your private channels:
@@ -136,7 +141,7 @@ Here's how to add Plane to your private channels:
 3. Go to the **Integrations** tab.
 4. Click **Add apps** in the **Apps** section.
 5. Search for `Plane` in the app directory. You'll see the Plane app with the `/plane` slash command
-6. Click *Add* next to the Plane app.
+6. Click _Add_ next to the Plane app.
 
 This will add the Plane bot to your private channel, and Slack will show you a confirmation message.
 
@@ -169,7 +174,7 @@ To configure this:
 
 7. Click **Save**.
 
-**To edit or remove a project notification**. 
+**To edit or remove a project notification**.
 Find the project-channel mapping in the Project Notifications list. Click the edit icon to change notification settings or the delete icon to remove the connection entirely.
 
 ### Get DM notifications
@@ -187,10 +192,12 @@ Stay informed about work items that need your attention through Slack DMs.
 #### What triggers DM notifications
 
 Once enabled, you receive Slack DMs when:
+
 - **Someone mentions you** in a work item comment or description.
 - **You're assigned** to a work item.
 
 Each notification includes:
+
 - Direct link to the work item
 - Context about what triggered the notification
 - Quick actions (**View Work Item**, **Reply**)
@@ -206,6 +213,7 @@ Interact with Plane AI directly from Slack to create work items, check project s
 Tag `@Plane` in any Slack thread to ask questions or request actions:
 
 **Create work items conversationally:**
+
 ```
 @Plane create a work item 'live tail' and assign it to Mike.
 ```
@@ -213,11 +221,13 @@ Tag `@Plane` in any Slack thread to ask questions or request actions:
 Plane AI responds with clarifying questions if it needs more details (like which project), then creates the work item and confirms with a link.
 
 **Get project information:**
+
 ```
 @Plane can you provide the identifiers of these projects?
 ```
 
 **Check cycle progress:**
+
 ```
 @Plane how are we doing in the current cycle for the AI project?
 ```
@@ -249,6 +259,7 @@ This means you can triage work items, update priorities, reassign tasks, and man
 When you use the Slack integration with Plane, we take your privacy seriously. The integration only accesses the minimum permissions necessary to function properly, and we handle your data in accordance with our [Privacy Policy](https://plane.so/legals/privacy-policy).
 
 The integration may collect and process:
+
 - Messages and threads you choose to sync with Plane work items
 - Channel information for project notifications
 - Basic user information for authentication and personalization

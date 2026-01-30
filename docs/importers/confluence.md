@@ -23,12 +23,16 @@ First, you need to export your content from Confluence:
 3. In the left sidebar, expand **General** if it's not already expanded.
 4. Click on **Export space**.
 5. In the export options:
-  - **File format**: Select **HTML**.
+
+- **File format**: Select **HTML**.
+
 6. After selecting HTML, you'll see additional options:
-  - Choose **Export each item, with attachments. Comments are excluded.**
-    :::info
-    Only HTML exports from Confluence are supported. Make sure to select HTML as your export format.
-    :::
+
+- Choose **Export each item, with attachments. Comments are excluded.**
+  :::info
+  Only HTML exports from Confluence are supported. Make sure to select HTML as your export format.
+  :::
+
 7. Click **Export**.
 8. The system will process your export and show a progress bar with time elapsed, time remaining, and completion percentage.
 9. Once complete, you'll see "Export complete. Download here.". Click the download link.
@@ -44,14 +48,15 @@ Once you have your exported ZIP file:
 2. Click **Import** next to the Confluence option.
 3. On the Confluence import page, click **Upload Confluence Exported ZIP**.
 4. Select and upload the ZIP file you exported from Confluence.
-    
-    ![Upload confluence file](https://media.docs.plane.so/importers/confluence/upload-confluence-file.webp#hero)
+
+   ![Upload confluence file](https://media.docs.plane.so/importers/confluence/upload-confluence-file.webp#hero)
+
 5. Wait for the upload to complete. You'll see a "Upload complete!" message.
 6. Click **Start Import** to begin processing your Confluence data.
 
 7. The import will process in phases. Once finished, the status will change to "Finished".
-    
-    ![Confluence file uploaded](https://media.docs.plane.so/importers/confluence/confluence-file-uploaded.webp#hero)
+
+   ![Confluence file uploaded](https://media.docs.plane.so/importers/confluence/confluence-file-uploaded.webp#hero)
 
 8. After the import completes, your Confluence pages will be available in Plane's **Wiki** section. The page hierarchy from Confluence will be preserved, with main pages and their subpages organized in the same structure.
 
@@ -59,20 +64,20 @@ Once you have your exported ZIP file:
 
 Here's how different Confluence elements are handled during import:
 
-| Confluence | Plane |
-|-------------------|--------------|
-| Markdown | Markdown |
-| Videos | Links |
-| Embeds | Links |
-| Attachments | Links |
-| Text and background colors | Text and background colors |
-| Links | Links |
-| Subpages | Nested pages |
-| Page mentions | Links |
-| User mentions | Link (Atlassian user) |
-| Table background colors | Not imported |
-| Block highlight | Text highlight (not supported) |
-| Columns | Rendered Vertically (not supported) |
-| Comments | Not supported |
-| Databases | Tables |
-| Collapsible | Callout |
+| Confluence                 | Plane                               |
+| -------------------------- | ----------------------------------- |
+| Markdown                   | Markdown                            |
+| Videos                     | Links                               |
+| Embeds                     | Links                               |
+| Attachments                | Links                               |
+| Text and background colors | Text and background colors          |
+| Links                      | Links                               |
+| Subpages                   | Nested pages                        |
+| Page mentions              | Links                               |
+| User mentions              | Link (Atlassian user)               |
+| Table background colors    | Not imported                        |
+| Block highlight            | Text highlight (not supported)      |
+| Columns                    | Rendered Vertically (not supported) |
+| Comments                   | Not supported                       |
+| Databases                  | Tables                              |
+| Collapsible                | Callout                             |

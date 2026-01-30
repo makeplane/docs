@@ -8,6 +8,7 @@ description: Personalize your Plane sidebar by showing or hiding sections. Custo
 Personalize your sidebar by choosing which items stay visible and how your project navigation is displayed. These settings are personal to you and won't affect anyone else in your workspace.
 
 ## Customize sidebar items
+
 Control which sections appear in your sidebar to streamline your navigation and focus on what matters most to you.
 
 ![Customize personal and workspace items](https://media.docs.plane.so/workspaces/customize-personal-and-workspace-items.webp#hero)
@@ -25,14 +26,14 @@ Selected items will always appear in your sidebar. Unchecked items can still be 
 
 Choose how feature tabs appear within your projects:
 
-**Accordion navigation control**  
+**Accordion navigation control**
 
 ![Accordion navigation style](https://media.docs.plane.so/workspaces/accordion-navigation-style.webp#hero)
 
 Feature tabs appear as nested items under each project in the sidebar and act as an accordion. When you expand one project, others automatically collapse.
 This works well when you focus on one project at a time and want a compact sidebar.
 
-**Horizontal navigation bar**  
+**Horizontal navigation bar**
 
 ![Horizontal navigation bar](https://media.docs.plane.so/workspaces/horizontal-navigation-bar.webp#hero)
 
@@ -46,6 +47,7 @@ To change your project navigation:
 3. Choose either **Accordion navigation control** or **Horizontal navigation bar**.
 
 ## Limit sidebar projects
+
 If you're a member of many projects, you can limit how many appear directly in your sidebar to keep it manageable.
 
 ![Limit sidebar projects](https://media.docs.plane.so/workspaces/limit-sidebar-projects.webp#hero)

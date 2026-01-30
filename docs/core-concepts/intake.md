@@ -23,8 +23,9 @@ Users with a `Guest` role can create work items in Intake. To create a work item
 
 1. Click on **Intake** under the project on the sidebar.
 2. Click the **Add Work item** button at the top right corner.
-   
+
    ![create-work item-intake](https://media.docs.plane.so/intake/create-issue-intake.webp#hero)
+
 3. Enter the required details and click the **Create Work item** button.
 
    ![enter-work item-details](https://media.docs.plane.so/intake/enter-issue-details.webp#hero)
@@ -35,12 +36,12 @@ A `Guest` role can assign properties when creating an Intake work item. However,
 
 For a work item in the Intake, you can choose to assign the following properties:
 
-| Property  | Description                                                                                                                                         |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Priority  | Set the priority of the work item to align the expectations on how quickly the work item should be acted upon.                                      |
-| Assignees | Assign the team member who should triage or prioritize the work item.                                                                               |
-| Labels    | Categorize work items using the labels available in the project.                                                                                    |
-| Due date  | Set when the work item needs to be prioritized or triaged by adding a due date.                                                                     |
+| Property  | Description                                                                                                    |
+| --------- | -------------------------------------------------------------------------------------------------------------- |
+| Priority  | Set the priority of the work item to align the expectations on how quickly the work item should be acted upon. |
+| Assignees | Assign the team member who should triage or prioritize the work item.                                          |
+| Labels    | Categorize work items using the labels available in the project.                                               |
+| Due date  | Set when the work item needs to be prioritized or triaged by adding a due date.                                |
 
 All intake work items use the Triage state, which is specific to Intake and separate from your project's state groups. When you accept a work item into your project, you'll choose which project state it should move to.
 
@@ -53,7 +54,7 @@ When a Guest creates a work item in Intake, it is added to the `Pending` state. 
     ![accept-intake-work item](https://media.docs.plane.so/intake/accept-intake-issue.webp#hero)
 
 1. Open a pending work item in Intake.
-2. Click the **Accept** button on the top right. This will open a modal where you can change the work item details before moving it to your project. 
+2. Click the **Accept** button on the top right. This will open a modal where you can change the work item details before moving it to your project.
 3. Click the **Add to project** button to move the work item from **Intake** to **Work items** under the project. The work item will be visible under the **State** selected when accepting the Intake work item.
 
 ### Decline work item
@@ -110,16 +111,15 @@ Next to the Filters dropdown, you can use the sort drop-down to arrange Intake w
 
 - Intake work item description has a rich text editor that allows you to format text, attach pictures, links and files, or add tables and dividers.
 
-   ![intake-description-box](https://media.docs.plane.so/intake/intake-description-box.webp#hero)
+  ![intake-description-box](https://media.docs.plane.so/intake/intake-description-box.webp#hero)
 
 - Intake has an activity and comments section to know the status and see feedback from users and customers. All the changes made to the work item can be tracked in real-time under the **Activity** section.
-        
-   ![intake-activity](https://media.docs.plane.so/intake/intake-activity.webp#hero)
+
+  ![intake-activity](https://media.docs.plane.so/intake/intake-activity.webp#hero)
 
 - The **Add Comment** box has a rich text editor where you can react with emojis and mention your teammates to communicate.
-        
-   ![RTE-reactions-and-mentions](https://media.docs.plane.so/intake/RTE-reactions-and-mentions.webp#hero)
+
+  ![RTE-reactions-and-mentions](https://media.docs.plane.so/intake/RTE-reactions-and-mentions.webp#hero)
 
 - You can review pending requests in Intake sequentially using 🔼 or 🔽 button.
-        
-   ![intake-navigate](https://media.docs.plane.so/intake/intake-navigate.webp#hero)
+  ![intake-navigate](https://media.docs.plane.so/intake/intake-navigate.webp#hero)

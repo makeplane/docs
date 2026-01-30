@@ -4,6 +4,7 @@ description: Create structured documentation with Nested Pages. Build parent-chi
 ---
 
 # Nested pages for hierarchical documentation structure
+
 <div class="tag-wrapper">
   # Structure content with nested pages
   <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
@@ -13,7 +14,7 @@ Nested Pages allows you to create a hierarchical structure for your content, hel
 
 Nested pages are available in two contexts:
 
-- Wiki Pages (Workspace level) 
+- Wiki Pages (Workspace level)
 - Project Pages (Project level)
 
 ## Create nested pages
@@ -27,6 +28,7 @@ Wiki Pages offer an additional ways to create nested pages. Click the **+** icon
 ![Nested page on the wiki sidebar](https://media.docs.plane.so/pages/create-nested-page-sidebar.webp#hero)
 
 ## Move pages between levels
+
 Both Wiki Pages and Project Pages support reorganizing your page hierarchy.
 
 To promote a nested page to a higher level, drag it to the desired position in the hierarchy. To demote a page to become nested under another, drag it under the new parent.

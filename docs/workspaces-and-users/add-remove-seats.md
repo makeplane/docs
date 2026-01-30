@@ -18,20 +18,18 @@ Add seats when you need to invite more Admins or Members than your current seat 
 
 1. Navigate to **Workspace Settings > Members**.
 
-  ![Manage seats](https://media.docs.plane.so/activate-license/manage-seats.webp#hero-tr)
+![Manage seats](https://media.docs.plane.so/activate-license/manage-seats.webp#hero-tr)
 
 2. Click **Manage Seats**.
 3. Select **Add seats**.
 
-  ![Add seats](https://media.docs.plane.so/activate-license/add-paid-seats.webp#hero)
-4. Enter the number of seats to add.
-5. Click **Change**.
-6. Complete payment in Stripe.
+![Add seats](https://media.docs.plane.so/activate-license/add-paid-seats.webp#hero) 4. Enter the number of seats to add. 5. Click **Change**. 6. Complete payment in Stripe.
 
 ::: info Billing impact
+
 - New seats are charged immediately.
 - Future bills include the full price of all seats.
-:::
+  :::
 
 ## Remove unused seats
 
@@ -46,5 +44,3 @@ If you want to remove seats currently in use, remove the members first or change
 3. Select **Remove unused seats**.
 
 This removes all paid seats not currently assigned to Admins or Members.
-
-

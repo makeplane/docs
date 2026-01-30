@@ -2,10 +2,10 @@
 title: Page templates to standardize documentation structure
 description: Create Page templates to standardize documentation and build reusable page structures. Save time and ensure consistency with our step-by-step guide.
 ---
+
 # Page templates to standardize documentation structure
 
 <Tags :tags='[{ name: "Pro", additionalClass: "pro" }]' />
-
 
 Page Templates help you standardize and streamline your documentation workflow by providing reusable page structures for common content types. Instead of manually creating similar pages from scratch, templates allow you to quickly apply predefined formats and content, saving time and ensuring consistency across your workspace.
 
@@ -19,8 +19,9 @@ Templates are perfect for teams who:
 ## Create page template
 
 1. Navigate to [Workspace Settings](https://docs.plane.so/core-concepts/workspaces/overview#access-workspace-settings).
-   
+
    ![Create page template](https://media.docs.plane.so/templates/create-page-templates.webp#hero-tr)
+
 2. Select the **Templates** tab on the right pane.
 3. Click the **Create template** button in the top-right corner.
 4. Select **Page template** from the dropdown options.
@@ -32,6 +33,7 @@ Templates are perfect for teams who:
    - Design your page layout and add any standard content, headers, or formatting.
    - Include placeholder text or instructions for future users.
    - Set up any recurring elements like tables, checklists, or sections.
+
 6. Click **Create page template** to save.
 
 ## Use page templates

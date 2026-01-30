@@ -1,5 +1,5 @@
 ---
-title: Support and help resources 
+title: Support and help resources
 description: Find support for Plane through in-app chat, email, Discord community, and developer resources. Report bugs, request features, and get answers to your questions.
 ---
 
@@ -9,12 +9,11 @@ Need assistance with Plane? We're here to help you get unstuck and make the most
 
 ## Chat with us
 
-The fastest way to get help is through our in-app support chat. 
+The fastest way to get help is through our in-app support chat.
 
 ![Get help](https://media.docs.plane.so/support/get-help-plane.webp#hero-bl)
 
 Click the **?** icon in your Plane workspace to start a conversation with our team. We're available to answer questions, troubleshoot issues, and guide you through features.
-
 
 ## Join our community
 

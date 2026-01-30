@@ -2,10 +2,10 @@
 title: How AI credits work for team usage and billing
 description: Learn how Plane AI's credit system works, why different tasks consume different amounts, and how workspace pooling helps teams manage AI usage efficiently.
 ---
+
 # How Plane AI credits work
 
 Plane AI uses credits as a universal measure of AI processing. This system ensures fair usage while giving teams predictable costs and transparent billing.
-
 
 ::: warning IMPORTANT
 AI credits apply only to Plane Cloud.
@@ -33,20 +33,20 @@ Three factors influence how many credits a task consumes:
 
 Here's how these factors translate into typical usage:
 
-| Action type | Credit range | What this looks like |
-| --- | --- | --- |
-| **Short query** | ~10 credits | Quick questions, status checks, brief clarifications |
-| **Long query** | ~50 credits | Detailed explanations, code generation, analytical responses |
-| **Action** | ~100 credits | Creating or editing multiple work items, generating project structures |
-| **Heavy action** | ~250 credits | Bulk operations, file analysis, complex workflow automation |
+| Action type      | Credit range | What this looks like                                                   |
+| ---------------- | ------------ | ---------------------------------------------------------------------- |
+| **Short query**  | ~10 credits  | Quick questions, status checks, brief clarifications                   |
+| **Long query**   | ~50 credits  | Detailed explanations, code generation, analytical responses           |
+| **Action**       | ~100 credits | Creating or editing multiple work items, generating project structures |
+| **Heavy action** | ~250 credits | Bulk operations, file analysis, complex workflow automation            |
 
 To illustrate with a real workflow:
 
-| Task | Why this credit amount |
-| --- | --- |
-| Summarize yesterday's stand-up notes (10 credits) | Simple extraction and formatting of existing text |
-| Generate detailed project timeline (50 credits) | Requires analysis, structure creation, and detailed output |
-| Create 20 tasks from PRD (100 credits) | Multiple write operations with metadata for each work item |
+| Task                                                     | Why this credit amount                                       |
+| -------------------------------------------------------- | ------------------------------------------------------------ |
+| Summarize yesterday's stand-up notes (10 credits)        | Simple extraction and formatting of existing text            |
+| Generate detailed project timeline (50 credits)          | Requires analysis, structure creation, and detailed output   |
+| Create 20 tasks from PRD (100 credits)                   | Multiple write operations with metadata for each work item   |
 | Analyze project structure for optimization (250 credits) | Deep analysis across multiple projects, with recommendations |
 
 With 10,000 credits, you could handle approximately:
@@ -54,17 +54,17 @@ With 10,000 credits, you could handle approximately:
 - 1000 short queries, or
 - 200 long queries, or
 - 100 actions, or
-- 40 heavy actions, or 
+- 40 heavy actions, or
 - any mix that fits your workflow.
 
 ## Plan comparison
 
-| Plan | Monthly credits per user | Rollover period |
-| --- | --- | --- |
-| **Free** | 500 | No rollover |
-| **Pro** | 1,000 | 1 month |
-| **Business** | 2,000 | 3 months |
-| **Enterprise** | Flexible allocation | Up to 12 months |
+| Plan           | Monthly credits per user | Rollover period |
+| -------------- | ------------------------ | --------------- |
+| **Free**       | 500                      | No rollover     |
+| **Pro**        | 1,000                    | 1 month         |
+| **Business**   | 2,000                    | 3 months        |
+| **Enterprise** | Flexible allocation      | Up to 12 months |
 
 New workspaces receive 1,000 bonus credits upon signup. These onboarding credits expire after 30 days and help teams evaluate Plane AI before committing to a plan.
 
@@ -98,12 +98,12 @@ When you have credits from multiple sources (monthly allocation + rollover + top
 
 Top-ups exist for months when your team's usage exceeds the plan allocation. These are one-time purchases that don't auto-renew.
 
-| Pack size | Credits | Price (USD) | Best for |
-| --- | --- | --- | --- |
-| Standard pack | 1,000 | $2.00 | Light monthly overages |
-| Growth pack | 2,000 | $4.00 | Small active teams |
-| Scale pack | 5,000 | $9.00 | Moderate automation use |
-| Bulk pack | 10,000 | $17.00 | Larger workspaces (best value per credit) |
+| Pack size     | Credits | Price (USD) | Best for                                  |
+| ------------- | ------- | ----------- | ----------------------------------------- |
+| Standard pack | 1,000   | $2.00       | Light monthly overages                    |
+| Growth pack   | 2,000   | $4.00       | Small active teams                        |
+| Scale pack    | 5,000   | $9.00       | Moderate automation use                   |
+| Bulk pack     | 10,000  | $17.00      | Larger workspaces (best value per credit) |
 
 Top-up credits are added instantly to your workspace's shared balance and expire 12 months after purchase. All workspace members can use them, and admins can track consumption in the usage dashboard.
 
@@ -168,7 +168,7 @@ Yes, you can change plans anytime. When you switch, your unused credits carry fo
 The real-time dashboard shows your remaining balance, consumption history, and trends over time. Before executing any AI action, you'll see a credit cost preview.
 
 </details>
+
 ---
 
 Ready to explore how Plane AI can help your team? [View our pricing options](https://plane.so/pricing#ai-&-credits) or start with 1,000 free credits.
-

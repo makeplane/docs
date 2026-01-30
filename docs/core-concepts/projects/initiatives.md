@@ -4,6 +4,7 @@ description: Create and manage Initiatives to align multiple projects with strat
 ---
 
 # Align multiple projects with Initiatives
+
 <div class="tag-wrapper">
   # Group multiple projects using Initiatives
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
@@ -52,29 +53,34 @@ Once created, you can view all Initiatives in the **Initiatives** section on the
 
 ![View Initiatives](https://media.docs.plane.so/initiatives/view-initiatives.webp#hero)
 
-Selecting an Initiative opens its detailed view. 
+Selecting an Initiative opens its detailed view.
 
 ![Initiative overview](https://media.docs.plane.so/initiatives/initiative-overview.webp#hero)
 
 Initiatives now offer two distinct views to help you track progress and manage scope effectively. Use the dropdown in the top navigation to switch between Overview and Scope views depending on whether you need high-level progress insights or detailed scope management.
 
 ### Initiative layouts
+
 Initiatives offers three distinct layouts to help you visualize and manage your strategic goals. Use the layout selector in the top navigation bar to switch between views.
 
 ![Initiative layouts](https://media.docs.plane.so/initiatives/initiative-layouts.webp#hero)
 
 #### List layout
+
 The default view that displays Initiatives in a structured list format, showing key details like progress status, dates, connected projects and epics, leads, and states at a glance. This layout is ideal for quickly scanning through multiple Initiatives and comparing their high-level status.
 
 #### Board layout
+
 Organizes Initiatives into columns based on grouping criteria, providing a kanban-style view of your strategic work. This layout works well for tracking Initiatives through different stages or when you want to see how work is distributed across teams or states.
 
 #### Timeline layout
+
 Visualizes Initiative timelines on a gantt view, making it easy to see duration, overlaps, and scheduling across your strategic portfolio. Switch between Week, Month, Quarter, and Today views to adjust your time horizon. This layout is perfect for identifying timeline conflicts and understanding how Initiatives are sequenced over time.
 
 All three layouts support filtering and grouping in the top navigation.
 
 ### Initiative overview
+
 The **Overview** gives you a bird's-eye view of your Initiative's progress. You'll see a comprehensive scope breakdown that tracks both projects and epics within your initiative, showing completion percentages and recent updates at a glance.
 
 The progress visualization at the bottom provides an instant snapshot of work distribution across different states - from backlog items to completed work. The percentages and counts for each category are automatically calculated based on the associated projects. This makes it easy to understand where your initiative stands and identify any bottlenecks in your workflow.
@@ -84,6 +90,7 @@ Use Initiatives for a top-down view of progress. For detailed updates, navigate 
 :::
 
 ### Initiative scope
+
 ![Initiative scope](https://media.docs.plane.so/initiatives/initiative-scope.webp#hero)
 
 Use the dropdown in the top navigation to switch to the **Scope** view to see all the building blocks of your initiative. Here you'll find detailed lists of:
@@ -100,7 +107,6 @@ Here’s how it helps:
 After you create an Initiative and add Epics from any project. From there, you can monitor overall progress, update statuses, and ensure everything stays on track.
 
 This is perfect for cross-functional teams working on company-wide objectives, product launches, or any effort that spans multiple projects.
-
 
 **Projects**  
 Connected projects showing completion rates and key details like execution status, leads, and timelines.
@@ -154,7 +160,6 @@ This consolidated view enables Initiative owners to monitor progress across all 
 ## Properties, comments, and activity
 
 - The Info tab on the side panel of an Initiative provides a quick snapshot of key properties and metadata associated with the Initiative.
-
   - **State**: Track the Initiative's lifecycle phase (Drafts, Planned, Active, Completed, Closed)
   - **Projects**: Number of connected projects
   - **Epics**: Number of associated epics
@@ -167,11 +172,11 @@ This consolidated view enables Initiative owners to monitor progress across all 
   ![Initiative properties](https://media.docs.plane.so/initiatives/properties.webp#hero-tr)
 
 - Add comments to discuss updates or highlight issues.
-  
+
   ![Initiative comments](https://media.docs.plane.so/initiatives/comments.webp#hero-tr)
 
 - View the activity log for all updates related to the Initiative.
-  
+
   ![Initiative activity](https://media.docs.plane.so/initiatives/activity.webp#hero-tr)
 
 ## Sort and filter initiatives
@@ -193,6 +198,7 @@ Use the filter icon in the top navigation to apply filters:
 Click the **Display** dropdown in the top navigation to customize how Initiatives are organized and sorted:
 
 **Group by**
+
 - **Lead**: Group Initiatives by the person responsible for them
 - **Created By**: Group by the person who created the Initiative
 - **States**: Group by lifecycle phase (Drafts, Planned, Active, Completed, Closed)
@@ -200,6 +206,7 @@ Click the **Display** dropdown in the top navigation to customize how Initiative
 - **None**: View all Initiatives in a flat list without grouping
 
 **Order by**
+
 - **Manual**: Drag and drop to arrange Initiatives in your preferred order
 - **Last Created**: Sort by creation date, showing newest Initiatives first
 - **Last Updated**: Sort by last modification date, showing recently updated Initiatives first

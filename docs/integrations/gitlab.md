@@ -2,20 +2,20 @@
 title: Integrate GitLab to sync repositories with projects
 description: Integrate Plane with GitLab and Self-managed GitLab to automate pull requests and work item state mapping. Connect repositories to projects for bidirectional updates and seamless workflows.
 ---
+
 # Integrate GitLab to sync repositories with projects
 
 <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-
 
 Integrating GitLab with Plane allows you to sync your development workflow seamlessly by linking GitLab merge requests with Plane work items. This connection enables automated updates and enhances collaboration between developers and project managers.
 
 Plane supports integration with:
 
-- **GitLab.com**   
-The standard cloud-hosted GitLab service
+- **GitLab.com**  
+  The standard cloud-hosted GitLab service
 
-- **GitLab Self-managed**   
-Self-hosted GitLab instances for organizations with specific compliance or security requirements
+- **GitLab Self-managed**  
+  Self-hosted GitLab instances for organizations with specific compliance or security requirements
 
 This guide walks you through the steps to connect your GitLab account, link GitLab projects to Plane, and configure pull request automation.
 
@@ -36,48 +36,49 @@ To get started, you'll need to connect your GitLab account, organization, and re
 Link your GitLab organization to your Plane workspace to start syncing repositories. This step is crucial for enabling the full range of GitLab-Plane integration.
 
 :::tabs
-  == GitLab.com
-  ::: danger Self-hosted Plane instance (Commercial Edition)
-  If you're running a self-hosted instance of Plane, you'll need to set up a few extra configurations to get GitLab integration working. Check out the [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab?edition=gitlab-cloud) first before diving into the steps on this page.
-  :::
-
-  1. Navigate to Workspace **Settings** in Plane.
-
-  2. Go to the **Integrations** tab.
-
-  3. Locate the **GitLab** integration section.
-
-  4. Click **Connect** to authenticate your GitLab account and initiate the connection.
-
-     ![Connect GitLab](https://media.docs.plane.so/integrations/gitlab/connect-gitlab.webp#hero)
-
-  5. Review the requested permissions and click **Authorize Plane** to grant access.
-
-  6. Once authenticated, you should see your GitLab account listed as connected.
-== GitLab Self-managed
-  ::: danger Plane Cloud and self-hosted instances
-
-  Before you can integrate with GitLab Self-managed, you must first set up the necessary configurations in your GitLab instance. This is required for both Plane Cloud and self-hosted users.
-
-  Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab?edition=gitlab-self-managed) first before diving into the steps on this section.
-  :::
-
-  1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
-  2. On the right pane, select **Integrations**.
-  3. Find the **GitLab Self-managed** integration and click **Configure**.
-  4. In the **Connect Organization** section, click **Connect**.
-      
-      ![Connect GitLab Enterprise organization](https://media.docs.plane.so/integrations/gitlab/connect-gitlab-self-managed.webp#hero)
-  5. Fill the form with the details of your GitLab self-managed instance and click **Connect**.
-      
-      ![Configure GitLab Self-managed organization](https://media.docs.plane.so/integrations/gitlab/configure-gitlab-self-managed.webp#hero)
-  6. On the GitLab app installation page, choose the organization you want to connect.
-  7. Select whether you want to sync all repositories or pick specific ones.
-  8. Click **Install** to finalize the connection.
-  9. After authorization, you’ll be redirected back to Plane, where your GitLab organization will appear as connected.
+== GitLab.com
+::: danger Self-hosted Plane instance (Commercial Edition)
+If you're running a self-hosted instance of Plane, you'll need to set up a few extra configurations to get GitLab integration working. Check out the [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab?edition=gitlab-cloud) first before diving into the steps on this page.
 :::
-At this stage, your GitLab account is linked to Plane, but you still need to connect specific GitLab projects to Plane projects.
 
+1. Navigate to Workspace **Settings** in Plane.
+
+2. Go to the **Integrations** tab.
+
+3. Locate the **GitLab** integration section.
+
+4. Click **Connect** to authenticate your GitLab account and initiate the connection.
+
+   ![Connect GitLab](https://media.docs.plane.so/integrations/gitlab/connect-gitlab.webp#hero)
+
+5. Review the requested permissions and click **Authorize Plane** to grant access.
+
+6. Once authenticated, you should see your GitLab account listed as connected.
+   == GitLab Self-managed
+   ::: danger Plane Cloud and self-hosted instances
+
+Before you can integrate with GitLab Self-managed, you must first set up the necessary configurations in your GitLab instance. This is required for both Plane Cloud and self-hosted users.
+
+Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab?edition=gitlab-self-managed) first before diving into the steps on this section.
+:::
+
+1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
+2. On the right pane, select **Integrations**.
+3. Find the **GitLab Self-managed** integration and click **Configure**.
+4. In the **Connect Organization** section, click **Connect**.
+
+   ![Connect GitLab Enterprise organization](https://media.docs.plane.so/integrations/gitlab/connect-gitlab-self-managed.webp#hero)
+
+5. Fill the form with the details of your GitLab self-managed instance and click **Connect**.
+
+   ![Configure GitLab Self-managed organization](https://media.docs.plane.so/integrations/gitlab/configure-gitlab-self-managed.webp#hero)
+
+6. On the GitLab app installation page, choose the organization you want to connect.
+7. Select whether you want to sync all repositories or pick specific ones.
+8. Click **Install** to finalize the connection.
+9. After authorization, you’ll be redirected back to Plane, where your GitLab organization will appear as connected.
+   :::
+   At this stage, your GitLab account is linked to Plane, but you still need to connect specific GitLab projects to Plane projects.
 
 ### Connect GitLab project
 
@@ -112,12 +113,14 @@ After linking a GitLab project, the next step is to associate it with a Plane pr
 With the GitLab integration set up, you can sync issues between Plane and GitLab at the project level. This ensures GitLab issues and Plane work items stay synchronized within your configured GitLab Projects and Plane projects.
 
 ### Add project work item sync
+
 Once GitLab is connected to Plane, workspace admins can link GitLab Projects with Plane projects.
 
 1. Navigate to the **Project Issue Sync** section under **Integrations**.
 2. Click the (+) button to create a new sync mapping.
-   
+
    ![Sync project to GitLab](https://media.docs.plane.so/integrations/gitlab/sync-project-gitlab.webp#hero)
+
 3. In the modal that appears, configure the following:
    1. **Plane project**  
       Select the Plane project you want to sync with.
@@ -130,42 +133,47 @@ Once GitLab is connected to Plane, workspace admins can link GitLab Projects wit
    4. **Select issue sync direction**  
       Choose how issues should sync:
       - Unidirectional → Sync issues from GitLab to Plane only.
-         :::warning
-         This will overwrite Plane work item content with GitLab issue data.
-         :::
+        :::warning
+        This will overwrite Plane work item content with GitLab issue data.
+        :::
       - Bidirectional → Sync issues both ways between GitLab and Plane.
 
       ![Sync direction](https://media.docs.plane.so/integrations/gitlab/sync-direction.webp#hero)
+
    5. Click **Start Sync**.
 
 All configured project issue syncs will appear in a list where you can edit or remove them as needed.
 
 ### Sync issues to Plane
+
 After configuring project work item sync, you can link existing GitLab issues into your Plane project.
 
 #### GitLab → Plane
 
 1. In your GitLab project, add the `Plane` label to any issue you want to sync.
-   
+
    ![Add Plane label](https://media.docs.plane.so/integrations/gitlab/add-plane-label.webp#hero)
+
 2. The issue will automatically be created as a work item in the linked Plane project.
 3. Plane posts a comment on the GitLab issue with a link to the newly created work item, confirming the connection.
-   
 4. The work item in Plane will include a link back to the original GitLab issue.
-   
+
    ![Creates issue in Plane](https://media.docs.plane.so/integrations/gitlab/creates-plane-issue.webp#hero)
 
 ### Sync work items to GitLab
+
 If you have existing work items in Plane that you want to sync to GitLab, you can do so using labels.
 
 #### Plane → GitLab
 
 1. In your Plane project, add the `gitlab` label to any work item you want to sync.
-   
+
    ![Add gitlab label](https://media.docs.plane.so/integrations/gitlab/add-gitlab-label.webp#hero)
+
 2. A new issue will automatically be created in the linked GitLab project.
-   
+
    ![Creates issue in GitLab](https://media.docs.plane.so/integrations/gitlab/create-gitlab-issue.webp#hero)
+
 3. The GitLab issue will be linked back to the Plane work item.
 4. Future updates will sync according to your configured sync direction (unidirectional or bidirectional).
 
@@ -194,16 +202,15 @@ In unidirectional sync mode (GitLab → Plane only), data from GitLab issues wil
 
 Here’s what syncs automatically between Plane and GitLab:
 
-| Property&nbsp;&nbsp; | Sync&nbsp;direction&nbsp;&nbsp; | Notes                                                                                                                                                                                                                                                               |
-| -------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Title                | Both ways                       | Updates in either platform reflect in the other.                                                                                                                                                                                                                    |
-| Description          | Both ways                       | Content remains consistent between Plane and GitLab.                                                                                                                                                                                                                |
-| Labels               | Both ways                       | If a Label doesn’t exist in Plane, it will be created (and vice versa).                                                                                                                                                                                             |
-| States               | Both ways                       | Updates in either platform reflect in the other.                                                                                                                                                                                                                    |
-| Comments             | Both ways                       | Comments sync between platforms with source attribution. The comment appears as posted by the Admin with the username of the user who posted the comment.
-| Mentions             | Both ways                       | Mentioned users username will be displayed in Plane and in the GitLab issue.                                                                                                                                                                              |
-| Issue links          | GitLab → Plane                  | Any issue references in GitLab descriptions or comments will be displayed in Plane with a direct link to the issue including the project name and owner.                                                                                                         |
-
+| Property&nbsp;&nbsp; | Sync&nbsp;direction&nbsp;&nbsp; | Notes                                                                                                                                                     |
+| -------------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                | Both ways                       | Updates in either platform reflect in the other.                                                                                                          |
+| Description          | Both ways                       | Content remains consistent between Plane and GitLab.                                                                                                      |
+| Labels               | Both ways                       | If a Label doesn’t exist in Plane, it will be created (and vice versa).                                                                                   |
+| States               | Both ways                       | Updates in either platform reflect in the other.                                                                                                          |
+| Comments             | Both ways                       | Comments sync between platforms with source attribution. The comment appears as posted by the Admin with the username of the user who posted the comment. |
+| Mentions             | Both ways                       | Mentioned users username will be displayed in Plane and in the GitLab issue.                                                                              |
+| Issue links          | GitLab → Plane                  | Any issue references in GitLab descriptions or comments will be displayed in Plane with a direct link to the issue including the project name and owner.  |
 
 ## Configure PR state automation
 
@@ -215,6 +222,7 @@ To automate pull request state changes with Plane work items:
 2. Automatic state updates will move the work item state in Plane based on the GitLab PR state defined in your mapping.
 
 #### Reference formats
+
 There are two ways to reference Plane work items in your GitLab PRs:
 
 ##### With brackets [WEB-344] - State automation
@@ -229,13 +237,15 @@ There are two ways to reference Plane work items in your GitLab PRs:
 - Adds a comment from Plane App showing referenced work items
 - Does not trigger automatic state updates
 
-*Example*
+_Example_
+
 ```bash
 PR Title: [WEB-344] Add user authentication feature
 PR Description: Implements login functionality for WEB-345
 ```
 
 In this example:
+
 - WEB-344 will be fully automated (state changes with PR state)
 - WEB-345 will be linked as a reference only (no state automation)
 

@@ -8,6 +8,7 @@ description: Find work items, projects, pages, and other content across your wor
 Use workspace search to quickly find work items, projects, cycles, modules, pages, and other content across your entire workspace.
 
 ## Open search
+
 Click the search icon (🔍) in the top navigation or press `Cmd/Ctrl + K`.
 
 ![Search workspace](https://media.docs.plane.so/workspaces/search-workspace.webp#hero-tr)
@@ -18,7 +19,7 @@ Type your query and results appear instantly, organized by type. Use the tabs at
 
 - **All** - Shows everything across all categories
 - **Projects** - Your workspace projects
-- **Work items** -  Tasks across projects
+- **Work items** - Tasks across projects
 - **Cycles** - Project cycles
 - **Modules** - Project modules
 - **Views** - Saved views
@@ -54,6 +55,7 @@ Search finds comments containing your keywords.
 ## What you can search
 
 Search looks through:
+
 - Work item titles and descriptions
 - Project names and identifiers
 - Cycle and module names
@@ -63,6 +65,7 @@ Search looks through:
 - Teamspace names
 
 **Search features:**
+
 - **Real-time results** - Updates as you type
 - **Partial matching** - "dev" finds "development"
 - **Case insensitive** - Capitalization doesn't matter
@@ -70,6 +73,7 @@ Search looks through:
 ## What you won't see
 
 Search only shows content you have permission to access:
+
 - Private projects you're not a member of won't appear
 - Archived and deleted items are hidden
 - Work items from projects you can't access are filtered out
@@ -77,4 +81,5 @@ Search only shows content you have permission to access:
 This keeps your search results relevant and maintains project security.
 
 ## See also
+
 - [Power K](/core-concepts/power-k)

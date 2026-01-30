@@ -16,20 +16,20 @@ Plane allows you to export all your work items, from a single project or multipl
 
     ![Export data](https://media.docs.plane.so/workspaces/export-data.webp#hero)
 
-3.  **Select Project**  
+3.  **Select Project**
     - Choose to export work items from all projects or a specific project using the dropdown.
 
 4.  **Choose format**  
-    You can export work items in one of the following formats: 
-    - CSV: A plain text file with values separated by commas. 
-    - Excel: A formatted spreadsheet file. 
+    You can export work items in one of the following formats:
+    - CSV: A plain text file with values separated by commas.
+    - Excel: A formatted spreadsheet file.
     - JSON: A lightweight, machine-readable format.
 
-5. **Apply filters**  
-Narrow down your export by filtering work items based on available filters. 
+5.  **Apply filters**  
+    Narrow down your export by filtering work items based on available filters.
 
-6. **Click Export**    
-This will package the export into a ZIP file.
+6.  **Click Export**  
+    This will package the export into a ZIP file.
 
 ::: info
 Exporting large workspaces may take some time depending on the number of work items.
@@ -71,8 +71,8 @@ You can export data from:
 3. Click the ⋯ (more options) menu in the top right.
 4. Select **Export**.
 5. Choose your format:
-    - CSV: For spreadsheet applications.
-    - JSON: For programmatic use or data processing.
+   - CSV: For spreadsheet applications.
+   - JSON: For programmatic use or data processing.
 6. Click **Continue** to download your file.
 
 The exported file will include all visible work items based on your current filters and settings.

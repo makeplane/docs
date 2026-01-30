@@ -4,6 +4,7 @@ description: Collaborate directly in Plane pages with inline comments. Highlight
 ---
 
 # Inline comments for collaborative page discussions
+
 <div class="tag-wrapper">
   # Add inline comments in pages
   <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
@@ -22,13 +23,13 @@ When you need to discuss, clarify, or provide feedback on specific content in yo
 Inline comments work across three different page types in Plane:
 
 - **Project pages**  
-Collaborate on project-specific documentation with your project team. Comments are visible to all project members.
+  Collaborate on project-specific documentation with your project team. Comments are visible to all project members.
 
 - **Wiki pages**  
-Discuss workspace-wide documentation that spans multiple projects. All workspace members can view and participate in these conversations.
+  Discuss workspace-wide documentation that spans multiple projects. All workspace members can view and participate in these conversations.
 
 - **Teamspace pages**  
-Have focused discussions within your teamspace. Only teamspace members have access to these comments.
+  Have focused discussions within your teamspace. Only teamspace members have access to these comments.
 
 Each location functions independently, allowing you to keep conversations contextual to their scope.
 
@@ -48,12 +49,13 @@ To comment on specific text within any page:
 Your comment will be anchored to the selected text, indicated by highlighting on the page.
 
 ## Attach images to comments
+
 You can add images to any comment or reply to provide screenshots, diagrams, or visual references:
 
 - In the comment input field, click the attachment icon.
 - Select an image file from your device.
 - The image will be uploaded and attached to your comment.
-- You can attach multiple images to a single comment if needed. 
+- You can attach multiple images to a single comment if needed.
 
 ## Mention team members
 
@@ -106,11 +108,11 @@ The comment will return to the active comments list and become visible in the de
 Use the **Filters** button in the Comments panel to control which comments you see:
 
 - **Show active**  
-Displays only unresolved comments (default view).
+  Displays only unresolved comments (default view).
 - **Show resolved**  
-Displays only resolved comments.
+  Displays only resolved comments.
 - **Show all**  
-Displays all comments regardless of status.
+  Displays all comments regardless of status.
 
 This helps you focus on conversations that still need attention or review closed discussions when needed.
 
@@ -121,9 +123,9 @@ To modify or remove your own comments:
 1. Click the three-dot menu (•••) next to your comment.
 2. Choose either:
    - **Edit**  
-   Modify the comment text and save your changes.
-   - **Delete**   
-   Permanently remove the comment.
+     Modify the comment text and save your changes.
+   - **Delete**  
+     Permanently remove the comment.
 
 Note that only the comment author can edit or delete their own comments.
 
@@ -132,14 +134,14 @@ Note that only the comment author can edit or delete their own comments.
 Comment permissions align with page access:
 
 - **Project pages**  
-Project admins and members can view and comment on all project pages. If you have access to view the project page, you can participate in its comment threads.
+  Project admins and members can view and comment on all project pages. If you have access to view the project page, you can participate in its comment threads.
 
 - **Wiki pages**  
-Workspace admins and members can view and comment on wiki pages. For private pages that have been shared with you, you can also add and view comments based on your sharing permissions.
+  Workspace admins and members can view and comment on wiki pages. For private pages that have been shared with you, you can also add and view comments based on your sharing permissions.
 
 - **Teamspace pages**  
-Only teamspace members can view and comment on teamspace pages. These comments remain private to the teamspace and are not visible to users outside the teamspace.
+  Only teamspace members can view and comment on teamspace pages. These comments remain private to the teamspace and are not visible to users outside the teamspace.
 
 ::: info
-Guest users can only comment on pages they create. 
+Guest users can only comment on pages they create.
 :::

@@ -11,6 +11,7 @@ Project updates provide a way to share project status and create a timeline of p
 Updates are status posts that appear in your project's side panel. Each update includes a status indicator (On Track, At Risk, or Off Track) and a message describing the current state of the project. Updates appear in chronological order, creating a history of your project's progress over time.
 
 **When to use project updates**
+
 - Regular status reporting (weekly sprints, monthly milestones)
 - Communicating blockers or risks to stakeholders
 - Keeping remote or distributed teams aligned
@@ -60,14 +61,17 @@ The project has significant blockers or delays. Critical issues are preventing p
 Project updates support threaded discussions and reactions, allowing team members to engage with status updates directly.
 
 **Start discussions**
+
 - Add comments in the thread below the update.
 - Use threads to discuss specific points, ask questions, or provide additional context.
 - Threaded discussions keep conversations organized and connected to the relevant update.
 
 **Use emoji reactions**
+
 - React to updates with emojis for quick feedback.
 - Reactions provide lightweight acknowledgment without requiring a full comment.
 
-**Mention team members** *(Coming soon)*
+**Mention team members** _(Coming soon)_
+
 - Tag specific team members in update comments to notify them directly.
 - Use mentions to request input, escalate issues, or delegate follow-up actions.

@@ -4,6 +4,7 @@ description: Explore all available content blocks in Plane's Page editor.
 ---
 
 # Editor blocks for pages
+
 List of all the content blocks available in the page, description and comment editors.
 
 ## Text
@@ -43,7 +44,6 @@ Highlights quoted text or important statements with distinct formatting.
 
 Displays code snippets or command-line text with proper formatting and syntax highlighting.
 
-
 <div class="tag-wrapper">
   ## Embed
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
@@ -53,12 +53,13 @@ Seamlessly integrate external content directly into your documents with rich, in
 
 ![Embed](https://media.docs.plane.so/pages/external-embeds.webp#hero)
 
-  Use the `/embed` slash command to quickly insert an embed block. 
+Use the `/embed` slash command to quickly insert an embed block.
 
 This opens an embed dialog where you can paste any supported link. The system automatically detects the content type and creates an appropriate embed with a rich preview. This eliminates the need for users to navigate away from your content to view referenced materials.
 
 ## Image
-Inserts and displays images within your content. 
+
+Inserts and displays images within your content.
 
 <div class="tag-wrapper">
  ## Attachment
@@ -70,9 +71,10 @@ Inserts and displays images within your content.
 Uploads and embeds files directly into your content, supporting documents, images, and other file types up to 100MB each.
 
 #### Show video preview
+
 When you upload video files as attachments, you can display them with inline playback controls. Just hover over the block and click the **⋮⋮** icon that appears. Select **Show preview** to convert the file link into an embedded video player. This works for all supported video formats.
 
-  ![Show preview](https://media.docs.plane.so/pages/show-preview.webp#hero)
+![Show preview](https://media.docs.plane.so/pages/show-preview.webp#hero)
 
 <div class="tag-wrapper">
  ## Video
@@ -85,9 +87,10 @@ Embeds video content directly into your pages for rich multimedia documentation.
 
 ![Embed videos](https://media.docs.plane.so/pages/embed-videos.webp#hero)
 
-Type `/video` to insert a video block, then upload a video file. The video appears inline with playback controls, allowing viewers to watch without leaving the page. Supported video formats include MP4, MPEG, OGG Video, WebM, QuickTime, AVI, and WMV. 
+Type `/video` to insert a video block, then upload a video file. The video appears inline with playback controls, allowing viewers to watch without leaving the page. Supported video formats include MP4, MPEG, OGG Video, WebM, QuickTime, AVI, and WMV.
 
 #### Show as attachment
+
 If you have a video displayed with inline preview and want to convert it to a simple file link, hover over the video block and select **Show as attachment** from the actions menu. This collapses the video player into a compact attachment link.
 
 ![Show as attachment](https://media.docs.plane.so/pages/show-as-attachment.webp#hero)
@@ -104,31 +107,38 @@ Add mathematical expressions and formulas to your Pages using LaTeX syntax. Whet
 ![Math equations](https://media.docs.plane.so/pages/math-equations.webp#hero)
 
 ### Block equation
+
 Creates standalone mathematical expressions using LaTeX syntax. Block equations are displayed on their own line with centered formatting, perfect for formulas, theorems, and complex mathematical statements that need emphasis.
 
 Use the `/blockequation` slash command:
-  ```
-  \lim_{x \to \infty} \frac{1}{x} = 0
-  ```
+
+```
+\lim_{x \to \infty} \frac{1}{x} = 0
+```
+
 Or use double dollar syntax:
-  ```latex
-  $$ \int_a^b f(x)\,dx = F(b) - F(a) $$
-  ```
+
+```latex
+$$ \int_a^b f(x)\,dx = F(b) - F(a) $$
+```
 
 ### Inline equation
+
 Embeds mathematical expressions within regular text flow using LaTeX syntax. Inline equations maintain the same text baseline, allowing you to seamlessly integrate mathematical notation into sentences and paragraphs.
 
 Use the `/inlineequation` slash command:
-  ```
-  \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
-  ```
-Or use single dollar syntax: 
-  ```latex
-  $ a^2 + b^2 = c^2 $
-  ```
+
+```
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+```
+
+Or use single dollar syntax:
+
+```latex
+$ a^2 + b^2 = c^2 $
+```
 
 Both equation types support full LaTeX rendering with built-in validation and error handling for invalid mathematical expressions.
-
 
 <div class="tag-wrapper">
 ## Draw.io diagrams
@@ -146,16 +156,19 @@ Create and manage interactive diagrams and whiteboards directly within your Page
 ![Draw.io diagram](https://media.docs.plane.so/pages/draw-io-diagram.webp#hero)
 
 ### Diagram
+
 Create professional diagrams, flowcharts, and visual documentation using the full Draw.io editor with comprehensive shape libraries. Perfect for technical documentation, process flows, system architecture, network diagrams, and organizational charts.
 Use the `/diagram` or `/drawio-diagram` slash command to insert a diagram block. Click the placeholder to launch the Draw.io editor.
 
 ### Board
+
 Create whiteboards with freehand drawing and sketching capabilities using a simplified interface. Ideal for brainstorming sessions, quick mockups, concept visualization, and collaborative ideation.
 Use the `/board` or `/drawio-board` slash command to insert a whiteboard block. Click the placeholder that says "Click to start editing whiteboard" to launch the board interface.
 
 Both modes feature a consistent toolbar with **Save** and **Exit** buttons, making it easy to preserve your work and return to your Page. All diagrams are fully interactive—simply click any saved diagram to edit it again.
 
-## Callout   
+## Callout
+
 Creates visually distinct sections with customizable icons and colors for highlighting warnings, tips , and calls-to-action.
 
 <div class="tag-wrapper">
@@ -172,4 +185,3 @@ Adds a horizontal line to separate content sections visually.
 ## Emoji
 
 Add emojis to your content across all Plane editors. Type `/emoji` to open the picker or use `:` and start typing for suggestions like `:smile:`. Choose from standard Unicode emojis and GitHub's extended collection.
-

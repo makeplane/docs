@@ -1,6 +1,6 @@
 ---
 title: Invite members
-description:  Learn how to invite team members to your Plane workspace, assign roles, and manage member permissions.
+description: Learn how to invite team members to your Plane workspace, assign roles, and manage member permissions.
 ---
 
 # Invite members
@@ -8,22 +8,24 @@ description:  Learn how to invite team members to your Plane workspace, assign r
 Let's get your colleagues set up so you can start collaborating on projects together.
 
 In this tutorial, you'll:
+
 - Invite team members to your workspace with appropriate roles
 - Understand workspace roles and permissions
 - Manage team members after they join
 - Handle pending invitations and role adjustments
 
 ## Access Members page
+
 There are two ways to invite team members to your workspace:
 
-**From the workspace switcher**  
+**From the workspace switcher**
 
 ![Switcher invite members](https://media.docs.plane.so/tutorials/switcher-invite-members.webp#hero)
 
 1. Click on your workspace name in the top-left corner.
 2. Next to your current workspace, click **Invite members**.
 
-**From workspace settings**  
+**From workspace settings**
 
 ![Workspace members](https://media.docs.plane.so/tutorials/workspace-members.webp#hero)
 
@@ -34,20 +36,19 @@ There are two ways to invite team members to your workspace:
 Both options open the same invitation dialog.
 
 ## Add team members
+
 Configure who joins your workspace and what they can do.
 
 ![Add members](https://media.docs.plane.so/tutorials/add-members.webp#hero)
 
-In the **Invite people to collaborate** dialog:
-    - Type email address in the provided field.
-    - Use the **+ Add more** link to invite multiple people at once.
-    :::tip
-    💡 Start with core team members who will actively use Plane. You can always add more people later.
-    :::
+In the **Invite people to collaborate** dialog: - Type email address in the provided field. - Use the **+ Add more** link to invite multiple people at once.
+:::tip
+💡 Start with core team members who will actively use Plane. You can always add more people later.
+:::
 
 ### Choose member roles
 
-For each person you're inviting, select their role from the dropdown. 
+For each person you're inviting, select their role from the dropdown.
 
 #### 👑 Admin
 
@@ -72,6 +73,7 @@ For each person you're inviting, select their role from the dropdown.
 :::
 
 ## Send invitations
+
 Once you've added email addresses and selected roles:
 
 1. Review your invitation list.
@@ -87,6 +89,7 @@ Once you've added email addresses and selected roles:
 - Join with the role you assigned them
 
 ## Manage your members
+
 Learn to adjust roles and monitor team membership.
 
 ### View member information
@@ -96,6 +99,7 @@ Learn to adjust roles and monitor team membership.
 Go to **Settings → Members** to see complete member information:
 
 **Member details displayed:**
+
 - Full name and display name
 - Email address and account type
 - Current role (Admin/Member/Guest)
@@ -107,7 +111,7 @@ Go to **Settings → Members** to see complete member information:
 
 1. Click the role dropdown next to any member's name.
 2. Change between **Admin**, **Member**, or **Guest** as needed.
-3. Changes take effect immediately. 
+3. Changes take effect immediately.
 
 ### Remove members from workspace
 
@@ -120,7 +124,8 @@ Go to **Settings → Members** to see complete member information:
 Removed members lose access to all workspace projects and data immediately. They can be re-invited later if needed.
 
 ## What's next?
-Your team now has access to collaborate effectively in Plane. 
+
+Your team now has access to collaborate effectively in Plane.
 
 **Ready to start collaborating?**
 

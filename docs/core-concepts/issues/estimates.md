@@ -27,7 +27,7 @@ Getting started with estimates in your project is quick and easy. Here’s how y
 4. You can either choose a ready-made template and tweak it to fit your needs or create your own custom estimate system from scratch.
 
 5. When you are done, turn on the **Enable estimates for my project** toggle.
-   
+
    ![Enable estimate type](https://media.docs.plane.so/projects/enable-estimate-toggle.webp#hero-tr)
 
 ::: info

@@ -2,6 +2,7 @@
 title: Intake to collect and triage external work requests
 description: Set up public web forms to collect bug reports, feature requests, and support tickets from external users without giving them project access.
 ---
+
 # Intake to collect and triage external work requests
 
 <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
@@ -38,19 +39,21 @@ Plane provides a default intake form structure for quick setup. However, if you 
 When you build forms with work item types, you design the form around a specific type's properties.
 
 This approach lets you:
+
 - Build forms that match the structure of your work item types
 - Select exactly which properties appear on the form.
 - Create multiple forms for different purposes, each with its own structure.
 - Collect the right information based on what users are submitting.
 
 ### Create a custom form
+
 ![custom-intake-form](https://media.docs.plane.so/intake/custom-intake-forms.webp#hero-br)
 
-1. In your project settings, go to **Features > Intake > Forms**. 
+1. In your project settings, go to **Features > Intake > Forms**.
 2. Click **+** next to **Create Forms using work item types**.
-3. Enter a form title and select the work item type it should use to create the form. 
-3. Under **Properties**, choose which custom fields from that work item type to include.
-4. Use **Preview** to see how the form appears to external users.
-5. Click **Save** when you're ready to generate the form URL.
+3. Enter a form title and select the work item type it should use to create the form.
+4. Under **Properties**, choose which custom fields from that work item type to include.
+5. Use **Preview** to see how the form appears to external users.
+6. Click **Save** when you're ready to generate the form URL.
 
 Each custom form gets its own unique URL that you can share. Users filling out the form will only see the fields you've selected, keeping their experience focused and straightforward.

@@ -2,6 +2,7 @@
 title: Organize project features with Modules
 description: Use Modules to organize work items, track feature development, and break down projects into manageable components with progress tracking and multiple layouts.
 ---
+
 # Break your project down into Modules
 
 Modules are smaller, focused projects that help users group and organize work items within specific time frames. They allow teams to break down their work into manageable chunks and track progress towards specific goals or objectives. They can serve various purposes: tracking progress on a new feature, managing a milestone like a marketing campaign, or representing discrete pieces of your software architecture such as a microservice.
@@ -29,11 +30,11 @@ You can add Members to the Module irrespective of whether they are the assignees
 Once your Module is created, you can populate it with work items:
 
 - Add new or existing work items directly from the Module page.
-  
+
   ![Add work items to module](https://media.docs.plane.so/modules/add-issues-to-module.webp#hero)
 
 - Assign multiple Modules to a work item from its properties. For instance, a work item can belong to both a Feature module and a Release module simultaneously.
-  
+
   ![Work item module property](https://media.docs.plane.so/modules/issue-module-property.webp#hero)
 
 ## Module states
@@ -86,7 +87,7 @@ Visualize your Modules in different layouts:
 - **Gallery layout** – Displays Modules as cards, with a clear breakdown of work item counts by state for better visibility.
 
 - **Timeline layout** – Displays the sequence of goals and their progress, helping you ensure your project is on track.
-  
+
   ![Module layout](https://media.docs.plane.so/modules/module-gallery.webp#hero)
 
 ::: info

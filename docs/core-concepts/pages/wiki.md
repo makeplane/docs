@@ -4,6 +4,7 @@ description: Create and organize company-wide documentation, policies, guides, a
 ---
 
 # Wiki for company wide knowledge base
+
 <div class="tag-wrapper">
   # Centralized documentation with Wiki
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
@@ -48,23 +49,23 @@ Where project pages zoom in on team-specific details, the Wiki gives you a bird'
 </div>
 While private pages are typically only accessible to their creator, you can selectively share private wiki pages with specific team members in your workspace. This gives you granular control over who can access sensitive documentation without making it visible to your entire organization.
 
-![Wiki](https://media.docs.plane.so/wiki/share-private-pages.webp#hero)  
+![Wiki](https://media.docs.plane.so/wiki/share-private-pages.webp#hero)
 
 1. Open any private page you've created.
 2. Click the **Share** button in the top-right corner of the page.
 3. In the dialog box, use the search field to find and add specific team members.
 4. Set appropriate permissions for each person:
-    - Can view - Allows the person to read the page but not make changes
-    - Can edit - Gives full editing access to the page content
+   - Can view - Allows the person to read the page but not make changes
+   - Can edit - Gives full editing access to the page content
 5. Click **Share** to apply the changes.
 
-When you share a private wiki page, it will automatically appear in the **Shared** section of the Wiki sidebar. 
+When you share a private wiki page, it will automatically appear in the **Shared** section of the Wiki sidebar.
 
 ### Manage shared access
+
 The page creator always retains full control over sharing settings.
 
 Once you've shared a wiki page, you can easily modify permissions or remove access:
 
 1. Click the dropdown next to any shared member's name to change their permission level.
 2. Select **Remove** to revoke their access to the page.
-

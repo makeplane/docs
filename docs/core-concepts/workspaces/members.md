@@ -2,9 +2,10 @@
 title: Manage workspace members
 description: Add, update, and remove workspace members
 ---
+
 # Manage members
 
-Keeping your workspace organized and secure is essential for smooth project management. Plane makes it easy to control who can access your workspace, what they can do, and how they collaborate with others. 
+Keeping your workspace organized and secure is essential for smooth project management. Plane makes it easy to control who can access your workspace, what they can do, and how they collaborate with others.
 
 This guide shows you how to add members to your workspace, change their roles, and remove them when needed.
 
@@ -25,6 +26,7 @@ You can add members individually or in bulk using CSV import.
 The invited person receives an email notification with instructions to join your workspace.
 
 **If the invitation isn't accepted:**
+
 - The invitation remains pending until accepted or declined.
 - You can manually remove pending invitations using the Remove option (see below).
 
@@ -38,21 +40,24 @@ Workspace admins can bulk invite members by importing a CSV file. This is useful
 ![Import members from CSV](https://media.docs.plane.so/workspaces/import-members.webp#hero)
 
 **To import members:**
+
 1. Navigate to **Workspace settings → Members**.
 2. Click **Import**.
 3. Upload your CSV file (drag and drop or click to browse).
-4. Select **Import** to bulk invite the members. 
+4. Select **Import** to bulk invite the members.
 
 Imported users are added directly to the workspace. When they sign in using the imported email, they're automatically redirected to the workspace without going through onboarding.
 
 **CSV format requirements**
 
 Your CSV must contain these columns in this exact order:
+
 ```
 Email, Display Name, First Name, Last Name, Role
 ```
 
 **Example CSV:**
+
 ```
 Email,Display Name,First Name,Last Name,Role
 alex@company.com,Alex Chen,Alex,Chen,15
@@ -61,11 +66,13 @@ mike@company.com,Mike Rodriguez,Mike,Rodriguez,5
 ```
 
 **Role values:**
+
 - `5` – Guest
 - `15` – Member
 - `20` – Admin
 
 **Important notes**
+
 - Only `.csv` files are supported.
 - Valid users appear immediately in the Members list after import.
 - Invalid entries are skipped (check your CSV for errors if some users don't appear).
@@ -100,12 +107,14 @@ Track member actions like invitations, role changes, and removals to maintain vi
 2. Click **Activity** in the top right.
 
 The activity panel shows recent workspace member events:
+
 - **Member invitations** - Who invited which members and when
 - **Invitation acceptances** - When members accepted and joined the workspace
 - **Role changes** - Role updates with who made the change and when
 - **Member removals** - Who removed members from the workspace
 
 Each activity entry shows:
+
 - The action taken
 - Who performed the action
 - When it happened (relative time like "about 1 month ago" or "5 days ago")
@@ -128,4 +137,5 @@ Removing members doesn't change your seat count or billing. You must [remove sea
 :::
 
 ## See also
+
 - [Manage project members](/core-concepts/projects/manage-project-members)
