@@ -3,6 +3,7 @@ title: Project Overview
 description: Track metrics, share status updates, and monitor overall project health from a centralized dashboard for better team alignment.
 ---
 
+# Project Overview
 <div class="tag-wrapper">
   # Monitor project progress at a glance
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />

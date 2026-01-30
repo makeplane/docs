@@ -3,6 +3,7 @@ title: Track team work with Teamspaces
 description: Organize team members across projects, track team-specific work items, and create dedicated spaces for team knowledge and collaboration.
 ---
 
+# Track team work with Teamspaces
 <div class="tag-wrapper">
   # Track work by teams
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />

@@ -3,6 +3,7 @@ title: Integrations overview
 description: Connect your workspace to external tools for synchronized workflows, reduced context switching, and improved team efficiency.
 ---
 
+# Integrations overview
 Plane's integrations make it easy to connect your workspace and projects with your favorite tools to streamline your workflow and keep everything in sync. Instead of constantly switching between different platforms, you can access and manage your external tools directly inside Plane. This creates a more efficient workflow, keeping your team focused and your projects running smoothly.
 
 <CardGroup :cols="2">

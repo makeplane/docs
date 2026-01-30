@@ -2,11 +2,10 @@
 title: Bulk update multiple work items to save time
 description: Learn how to save time by updating multiple work items at once in Plane. Change states, priorities, assignees, dates, and more with efficient bulk operations.
 ---
+# Bulk update multiple work items to save time
 
-<div class="tag-wrapper">
-  <h1>Update multiple work items at once</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+
 
 Working with multiple work items at once can save you significant time.
 

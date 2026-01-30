@@ -2,6 +2,8 @@
 title: Work items
 ---
 
+# Work items
+
 Inside a work item, you can add as many details as you like to get your work done. Here are five critical things to kick-start:
 
 1.  **Work item description**: An enhanced markdown editor inside work items to write as much detail you want. Attachments can be added and dragged around with a simple click, no need to save anything. Everything is auto-saved for you.

@@ -3,6 +3,7 @@ title: Editor blocks for pages
 description: Explore all available content blocks in Plane's Page editor.
 ---
 
+# Editor blocks for pages
 List of all the content blocks available in the page, description and comment editors.
 
 ## Text

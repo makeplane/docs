@@ -3,6 +3,7 @@ title: Permissions matrix
 description: Manage user roles and permissions in workspaces.
 ---
 
+# Permissions matrix
 Permissions define what actions users can take within a workspace or project. 
 
 This reference provides a comprehensive breakdown of what each role can do across workspaces and projects. Use this matrix to understand exact permission boundaries when planning your team structure or troubleshooting access issues.

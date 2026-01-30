@@ -3,6 +3,7 @@ title: Power K
 description: Use the Power K command palette to quickly search across projects, access settings, create new items, and navigate efficiently with keyboard shortcuts.
 ---
 
+# Power K
 ![](https://media.docs.plane.so/power-k/power-k1.webp#hero)
 
 ## The power of Power K

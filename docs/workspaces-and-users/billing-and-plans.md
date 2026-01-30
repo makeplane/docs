@@ -4,6 +4,7 @@ toc_max_heading_level: 4
 description: Learn how Plane's per-seat billing works, how to manage seats for admins and members and upgrade workspaces.
 ---
 
+# How billing works
 Unlike a majority of SaaS, our subscription models on Pro and higher plans are per-seat, not per-users. Learn why this model works great for you and how to manage your members versus seats.
 
 ## Per-seat model and billing

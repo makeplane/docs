@@ -3,6 +3,7 @@ title: Align work toward target dates with Milestones
 description: Align work items toward shared completion dates with milestones. Track progress on quarterly objectives, product launches, and strategic initiatives in Plane.
 ---
 
+# Align work toward target dates with Milestones
 <div class="tag-wrapper">
   # Track goals with Milestones
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />

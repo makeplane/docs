@@ -2,11 +2,10 @@
 title: Automate project tasks with trigger based workflows
 description: Automate repetitive project tasks with trigger-based workflows. Set up rules to automatically update work item properties, assign team members, and manage priorities when specific conditions are met.
 ---
+# Automate project tasks with trigger based workflows
 
-<div class="tag-wrapper">
-  <h1>Automate your project workflow</h1>
-  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-</div>
+<Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
+
 
 Automations let you streamline your project management workflow by automatically performing actions based on specific triggers and conditions. This powerful feature eliminates repetitive manual tasks, ensures consistency in your processes, and helps your team maintain focus on high-value work by letting the system handle routine operations.
 

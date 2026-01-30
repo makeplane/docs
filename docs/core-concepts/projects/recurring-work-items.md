@@ -3,6 +3,7 @@ title: Recurring work items to automate repetitive tasks
 description: Learn how to set up recurring work items to automatically create repetitive tasks, maintenance schedules, and routine work on a predefined schedule.
 ---
 
+# Recurring work items to automate repetitive tasks
 <div class="tag-wrapper">
   # Automate repetitive tasks
   <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />

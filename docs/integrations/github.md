@@ -2,11 +2,10 @@
 title: Integrate GitHub to sync repositories with projects
 description: Integrate Plane with GitHub Cloud and GitHub Enterprise Server to synchronize issues and pull requests. Connect repositories to projects for bidirectional updates and seamless workflows.
 ---
+# Integrate GitHub to sync repositories with projects
 
-<div class="tag-wrapper">
-  <h1>Integrate with GitHub</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+
 
 GitHub integration with Plane allows seamless synchronization between your GitHub repositories and Plane projects. By linking the two, your issues and pull requests stay updated across both platforms, enhancing collaboration and streamlining your workflow. Whether you're managing code, tasks, or both, this integration ensures your team stays in sync without the hassle of switching between platforms.
 

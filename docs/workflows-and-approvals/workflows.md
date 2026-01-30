@@ -2,11 +2,10 @@
 title: Workflows to control work item state transitions
 description: Set up Workflows to control work item transitions, require approval from specific reviewers, and ensure work follows your team's established processes.
 ---
+# Workflows to control work item state transitions
 
-<div class="tag-wrapper">
-  <h1>Control your work item transitions</h1>
-  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-</div>
+<Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
+
 
 Workflows give you control over how work items move through your process. Think of it as creating guardrails that ensure work follows your team's agreed-upon path, with the right people making decisions at each step.
 

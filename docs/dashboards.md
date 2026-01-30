@@ -2,11 +2,10 @@
 title: Custom dashboards to visualize project metrics and data
 description: Build custom dashboards in Plane to visualize project metrics.
 ---
+# Custom dashboards to visualize project metrics and data
 
-<div class="tag-wrapper">
-  <h1>Build custom dashboards</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+
 
 Dashboards in Plane give you a bird's-eye view of your projects through customizable visualizations. They help you monitor progress, identify bottlenecks, and make data-driven decisions without diving into individual projects.
 

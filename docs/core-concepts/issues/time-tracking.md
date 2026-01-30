@@ -2,11 +2,10 @@
 title: Time tracking to log hours on tasks
 description: Log hours on work items, view timesheet records, and download comprehensive reports for project time management.
 ---
+# Time tracking to log hours on tasks
 
-<div class="tag-wrapper">
-  <h1>Log time on work items</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+
 
 > **Role**: Project Admins
 

@@ -2,11 +2,10 @@
 title: Work Item Types
 description: Create specialized work item types in Plane with custom properties, icons, and colors for different teams and workflows to streamline project management.
 ---
+# Work Item Types
 
-<div class="tag-wrapper">
-  <h1>Add, configure and control your work item types</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+
 
 Work item Types unlock a whole new way of adding, editing, and moving work forward in Plane. The default work item type called `Issue` is great for starting with Plane, but as you advance in your project management journey, you find the need for names and properties unique to the type of work you are doing.
 

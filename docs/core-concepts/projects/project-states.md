@@ -3,6 +3,7 @@ title: Project States
 description: Use Project States to categorize and track project progress across your workspace.
 ---
 
+# Project States
 <div class="tag-wrapper">
   # Track your projects with states
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />

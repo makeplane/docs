@@ -3,6 +3,7 @@ title: Core concepts
 description: Learn the essential building blocks of Plane - workspaces, projects, work items, cycles, views, and pages. Master these concepts to organize your team's workflow effectively.
 ---
 
+# Core concepts
 This page explains how Plane is structured and how its features work together. Understanding these concepts helps you organize work effectively and collaborate with your team.
 
 ## Understand Plane's structure

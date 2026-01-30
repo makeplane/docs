@@ -3,6 +3,7 @@ title: Wiki for company wide knowledge base
 description: Create and organize company-wide documentation, policies, guides, and knowledge that extends beyond individual projects.
 ---
 
+# Wiki for company wide knowledge base
 <div class="tag-wrapper">
   # Centralized documentation with Wiki
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />

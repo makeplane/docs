@@ -3,6 +3,7 @@ title: Align multiple projects with Initiatives
 description: Create and manage Initiatives to align multiple projects with strategic goals, track cross-project epics, and monitor aggregated progress.
 ---
 
+# Align multiple projects with Initiatives
 <div class="tag-wrapper">
   # Group multiple projects using Initiatives
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />

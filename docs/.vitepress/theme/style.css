@@ -65,6 +65,13 @@
   --vp-c-brand-3: #3e6ef0;
 }
 
+/* ─── Images ─── */
+.vp-doc img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 /* ─── Headings ─── */
 h1 {
   font-size: 2rem;

@@ -3,6 +3,7 @@ title: Write content with Pages
 description: Learn to create documentation, meeting notes, and project requirements using Plane's built-in rich text editor with blocks and formatting options.
 ---
 
+# Write content with Pages
 Learn to create and share documentation, meeting notes, and project requirements using Plane's powerful Pages. You'll master the basics of content creation, formatting, and sharing in just a few minutes.
 
 By the end of this tutorial, you'll:

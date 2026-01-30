@@ -3,6 +3,7 @@ title: Organize related work items with Epics
 description: Create and manage Epics in Plane to organize related work items, track progress across multiple tasks, and align your team around larger objectives.
 ---
 
+# Organize related work items with Epics
 <div class="tag-wrapper">
   # Organize and track your work items with Epics
   <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />

@@ -3,6 +3,7 @@ title: Running your project
 description: Projects have states, labels, estimations along with integrations and automations which can be setup to run your project smoothly.
 ---
 
+# Running your project
 ## Build project workflow with states
 
 Work items within a project can transition through various states to reflect the progression of work in your project. This movement of work items through states constitutes the project workflow.

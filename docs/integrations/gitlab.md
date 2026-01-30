@@ -2,11 +2,10 @@
 title: Integrate GitLab to sync repositories with projects
 description: Integrate Plane with GitLab and Self-managed GitLab to automate pull requests and work item state mapping. Connect repositories to projects for bidirectional updates and seamless workflows.
 ---
+# Integrate GitLab to sync repositories with projects
 
-<div class="tag-wrapper">
-  <h1>Integrate with GitLab</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+
 
 Integrating GitLab with Plane allows you to sync your development workflow seamlessly by linking GitLab merge requests with Plane work items. This connection enables automated updates and enhances collaboration between developers and project managers.
 

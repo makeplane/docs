@@ -3,6 +3,7 @@ title: Create projects
 description: Learn how to create and configure your first Plane project with the right features, workflow states, and team members
 ---
 
+# Create projects
 Set up your first project where your team can organize work, track progress, and collaborate effectively.
 
 In this tutorial, you'll:
