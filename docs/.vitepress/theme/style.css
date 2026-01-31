@@ -79,6 +79,11 @@
   --vp-button-brand-hover-text: #fff;
 }
 
+/* ─── Body text weight ─── */
+body {
+  font-weight: 480;
+}
+
 /* ─── Images ─── */
 .vp-doc img {
   width: 100%;
