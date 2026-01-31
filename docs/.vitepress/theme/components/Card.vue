@@ -22,7 +22,7 @@ const resolvedIcon = computed(() => {
 </script>
 
 <template>
-  <component :is="href ? 'a' : 'div'" :href="href" :class="['card-link', { card: !href }]">
+  <component :is="href ? 'a' : 'div'" :href="href" :class="['card', href && 'no-underline text-inherit']">
     <div class="card-icon">
       <!-- Brand SVGs -->
       <svg v-if="resolvedIcon === 'github'" viewBox="0 0 24 24" width="25" height="25" fill="currentColor">

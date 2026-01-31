@@ -116,6 +116,7 @@ export default defineConfig({
       light: "https://media.docs.plane.so/logo/new-logo-white.png",
       dark: "https://media.docs.plane.so/logo/new-logo-dark.png",
     },
+    siteTitle: false,
 
     nav: [{ text: "Sign in", link: "https://app.plane.so/sign-in" }],
 

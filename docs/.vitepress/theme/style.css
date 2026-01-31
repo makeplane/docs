@@ -49,6 +49,13 @@
   --vp-c-brand-2: #1b47c2;
   --vp-c-brand-3: #2257ed;
 
+  --vp-button-brand-border: #006399;
+  --vp-button-brand-bg: #006399;
+  --vp-button-brand-text: #fff;
+  --vp-button-brand-hover-border: #005580;
+  --vp-button-brand-hover-bg: #005580;
+  --vp-button-brand-hover-text: #fff;
+
   --vp-font-family-base: "Satoshi", sans-serif;
   --vp-font-family-mono: "IBM Mono", monospace;
 
@@ -63,6 +70,13 @@
   --vp-c-brand-1: #2690c9;
   --vp-c-brand-2: #2257ed;
   --vp-c-brand-3: #3e6ef0;
+
+  --vp-button-brand-border: #2690c9;
+  --vp-button-brand-bg: #2690c9;
+  --vp-button-brand-text: #fff;
+  --vp-button-brand-hover-border: #1f80b5;
+  --vp-button-brand-hover-bg: #1f80b5;
+  --vp-button-brand-hover-text: #fff;
 }
 
 /* ─── Images ─── */
@@ -72,22 +86,22 @@
   border-radius: 8px;
 }
 
-/* ─── Headings ─── */
-h1 {
+/* ─── Headings (scoped to doc content) ─── */
+.vp-doc h1 {
   font-size: 2rem;
   line-height: 120%;
 }
-h2 {
+.vp-doc h2 {
   font-size: 1.5rem;
   line-height: 140%;
 }
-h3 {
+.vp-doc h3 {
   font-size: 1.25rem;
   line-height: 140%;
 }
-h4,
-h5,
-h6 {
+.vp-doc h4,
+.vp-doc h5,
+.vp-doc h6 {
   line-height: 140%;
 }
 
@@ -279,7 +293,6 @@ h6 {
 .vp-doc p:has(> img[src$="#hero"]),
 article p:has(> img[src$="#hero"]) {
   max-width: 841px;
-  padding: 36px 56px 0px 56px;
   background: #f1f3f3;
   border-radius: 12px;
   box-sizing: border-box;
@@ -305,7 +318,6 @@ article img[src$="#hero"] {
 .vp-doc p:has(> img[src$="#hero-tl"]),
 article p:has(> img[src$="#hero-tl"]) {
   max-width: 841px;
-  padding: 36px 0px 0px 56px;
   background: #f1f3f3;
   border-radius: 12px;
   box-sizing: border-box;
