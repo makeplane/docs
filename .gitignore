@@ -1,14 +1,9 @@
 # Dependencies
 /node_modules
 
-.next
-
-# Production
-/build
-
-# Generated files
-.docusaurus
-.cache-loader
+# VitePress
+docs/.vitepress/cache
+docs/.vitepress/dist
 
 # Misc
 .DS_Store

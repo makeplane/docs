@@ -1,0 +1,231 @@
+---
+title: Pages for project documentation
+description: Create, format, and share project documentation with AI assistance, content blocks, version history, and web publishing options.
+---
+
+# Document with AI-powered Pages
+
+Pages in Plane let you easily capture and organize project-related information. Whether you’re documenting meeting notes or detailing technical or product requirements, Pages allow you to collaborate directly within the context of your project—no need for external tools.
+
+## Turn on Pages
+
+Pages are turned on by default when you create a new project. If needed, you can turn it on or off later in your project settings.
+
+## Create Page
+
+- To create a new page, simply press `D` within your project, or head to the **Pages** section in the sidebar and click the **Add page** button at the top right of your screen.
+
+  ![Create page](https://media.docs.plane.so/pages/create-page.webp#hero)
+
+- You can set pages to be either public or private. Public pages are visible to everyone in your workspace, while private pages are only accessible to you. To change a page’s visibility, just go to the **•••** menu on that page anytime.
+
+  ![Public or private pages](https://media.docs.plane.so/pages/public-private-page.webp#hero)
+
+## Add content
+
+- Once you've created a page, you can add content using the `/` command, which supports 16 different content blocks from lists to images to tables to work item embeds, giving you the flexibility to structure your content exactly how you need it. For a full list of content blocks and to explore each one in detail, see [Editor blocks](/core-concepts/pages/editor-blocks).
+
+  ![Slash commands](https://media.docs.plane.so/pages/slash-commands.webp#hero)
+
+- You can easily drag and drop content blocks in Plane to rearrange them on the page. Just hover over any block, grab the **⋮⋮** icon that shows up, and drag it to where you want. Let go of it to drop the block in its new spot.
+
+### Format your content
+
+![Static toolbar](https://media.docs.plane.so/pages/static-toolbar.webp#hero)
+
+- The static toolbar at the top of the page offers a range of styling options for your content, including basic blocks like headings and lists, and advanced blocks like images, tables, and more.
+
+* Quickly adjust headings (H1-H6) to create a clear, structured hierarchy in your document.
+* Add emphasis with text or background colors, and style important information with bold, italic, underline, and strikethrough options for better readability.
+* Align your content to the left, right, or center to ensure proper layout and visual balance in your document.
+
+### Markdown support
+
+Plane allows you to use Markdown in Pages, making it easy to format content quickly with familiar Markdown syntax. You can create headings, lists, links, and other common formats right in your page without switching to a separate editor.
+
+To use Markdown in Plane, simply type the relevant symbols (like # for headings or - for lists) directly within the page. Plane will automatically convert your Markdown into the appropriate format, helping you keep your workflow smooth and efficient.
+
+<div class="tag-wrapper">
+  ## AI helper
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+
+![AI helper](https://media.docs.plane.so/pages/ai-helper.webp#hero-tl)
+
+Plane’s AI tools enhance content creation by helping you refine, reframe, and enrich your writing. Whether you need to paraphrase a sentence, simplify complex information, or elaborate on a topic, Pages offers quick solutions right within the editor.
+
+- Make your content clearer or concise by rephrasing text or breaking down complex ideas.
+- Quickly generate summaries to highlight key points, ideal for meetings or lengthy documents.
+- Expand on ideas to add context, detail, or depth to your writing. - Get suggestions for clear, catchy titles.
+
+<div class="tag-wrapper">
+  ## Mention work items
+  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
+</div>
+
+Link directly to work items within your pages using the `@` mention feature. This creates a connection between your documentation and the actual work being tracked in your project.
+
+![Mention work items](https://media.docs.plane.so/pages/mention-work-items.webp#hero)
+
+To mention a work item:
+
+1. Type `@` anywhere in your page.
+2. Start typing the work item name or ID.
+3. Select the work item from the list that appears.
+
+The list shows your most recently created work items first, making it easy to reference new work. As you type, the suggestions filter to show relevant matches based on work item titles and IDs.
+
+![Mentioned work items](https://media.docs.plane.so/pages/mentioned-work-items.webp#hero)
+
+Mentioned work items appear as interactive links in your page. Clicking them takes you directly to the work item's details, making it easy to jump between documentation and tasks.
+
+## Block actions
+
+![Block actions](https://media.docs.plane.so/pages/block-actions.webp#hero)
+
+You can perform several actions on any block within a page. Just hover over the block and click the **⋮⋮ icon** that appears.
+
+<div class="tag-wrapper">
+  ### Copy link to block
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+
+Get a direct URL to this specific block. When someone opens this link, they'll jump straight to this block in the page, making it easy to reference specific sections in discussions or work items.
+
+### Duplicate block
+
+Create a copy of the block to reuse content without starting from scratch.
+
+### Delete block
+
+Remove the block entirely from the page.
+These quick actions help you manage and reference your content efficiently, especially in longer documents where you need to point teammates to specific sections.
+
+<div class="tag-wrapper">
+  ## Convert selected text to work items
+  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
+</div>
+
+Turn any text selection in your page into a work item instantly. This feature helps you capture action items or tasks directly from your documentation without interrupting your flow.
+
+![Convert selected text to work items](https://media.docs.plane.so/pages/convert-selected-text-to-work-items.webp#hero)
+
+To create a work item from selected text:
+
+1. Highlight the text you want to convert.
+2. Click **Create work item from selection** from the context menu.
+3. Plane creates a new work item in your project using the selected text as the title.
+4. The original text in your page automatically converts to a work item mention, linking back to the newly created item.
+
+This seamless workflow ensures nothing gets lost in translation between planning discussions and actual task tracking. Your documentation stays connected to the work being done, and your team can easily trace where work items originated.
+
+## Page actions
+
+::: info
+When a Member locks, unlocks, archives, or restores a Page, the action takes effect immediately for all users with access to the Page.
+:::
+
+![Page actions](https://media.docs.plane.so/pages/page-actions.webp#hero-tr)
+
+Once your page is created, you can click the **•••** menu in the top-right corner to perform the following actions:
+
+### Full width
+
+Make your content area wider and shrink the margins on any page.
+
+### Copy markdown
+
+Copy the page's content in markdown format for use in places like your wiki portal.
+
+### Copy page link
+
+Share the page by copying its link to send to your teammates or link it in a work item.
+
+### Make a copy
+
+Duplicate an existing page to jumpstart new content.
+
+<div class="tag-wrapper">
+  ### Move Page
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+Transfer a page to Wiki, Teamspace or a different Project in your workspace.
+
+### Lock Page
+
+Prevent others from editing a page by locking it.
+
+### Archive Page
+
+If a page is no longer needed, you can archive it. Archived pages are stored in the archives section, where you can either restore or permanently delete them.
+
+### Version history
+
+![Version history](https://media.docs.plane.so/pages/version-history.webp#hero)
+
+Pages includes a version history feature that lets you track all updates and edits made to a document. This is especially helpful when multiple users are collaborating, as you can easily see who made changes and when. Plus, you can restore the page to a previous version if needed.
+
+### Export Page
+
+![Export Page](https://media.docs.plane.so/pages/export-page.webp#hero)
+
+Pages lets you export your content in various formats, including PDF and Markdown. This feature is a game-changer for project managers and team members who need to share information with stakeholders, clients, or team members who might not be using Plane.
+
+When you export to PDF, your documents keep their formatting, making them easy to share and print without any hassle. If you choose to export to Markdown, you can seamlessly integrate your content into other tools or platforms, streamlining your workflow.
+
+## Real-time collaboration
+
+Pages comes with built-in real-time collaboration that makes working together seamless. When multiple team members are viewing or editing the same page, you'll see their profile pictures displayed at the top of the document, giving you instant visibility into who's currently active.
+But it goes beyond just knowing who's there - you can actually see where your teammates are working in real-time. Each collaborator gets their own colored cursor that moves around the page as they navigate and edit content. This makes it easy to avoid conflicts when multiple people are making changes, and you can even see what sections others are focusing on.
+
+The live cursors update instantly as people type, select text, or move around the document. It's like having everyone gathered around the same whiteboard, but digitally.
+
+<div class="tag-wrapper">
+  ## Publish Page
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+
+![Publish Page](https://media.docs.plane.so/pages/publish-page.webp#hero-tr)
+
+With Plane, you can publish Pages to the web, making them accessible to anyone with the link—no login required. This feature is perfect for sharing project updates, documentation, or any other information with external stakeholders. Published pages allow viewers to engage directly by leaving comments, providing an open channel for feedback without needing access to your workspace.
+
+To publish a page, click the **Publish** button at the top right of your screen. You’ll receive a unique link to share the page.
+
+## Table of contents
+
+The Table of contents panel gives you a bird's-eye view of your document's structure. Just click the panel icon on the right side of your screen to reveal all the sections and headings in your current document.
+
+![TOC](https://media.docs.plane.so/pages/toc-pages.webp#hero-tr)
+
+This feature is especially handy when you're working with longer guides - instead of scrolling through everything to find what you need, you can jump directly to any section with a single click. The table of contents automatically updates as you add or modify headings, so it always reflects your document's current structure.
+
+## Info panel
+
+The Info panel is your document's dashboard, showing you all the key stats at a glance. You'll find useful metrics like word count, character count, number of paragraphs, and estimated read time - perfect for keeping track of your document's scope and helping readers know what to expect.
+
+![Info panel](https://media.docs.plane.so/pages/info-panel-pages.webp#hero-tr)
+
+The panel also displays collaboration details, including who last edited the document and when it was created. This makes it easy to stay on top of recent changes and track your team's contributions.
+
+## Troubleshooting
+
+### Page content not visible
+
+**Issue**  
+Page content is not visible to Members, even when the page is set to public. While the page title appears, the content does not, and only the page creator can view it. In some cases, content is visible on certain pages but not others, making the issue inconsistent and unpredictable.
+
+**Cause**  
+When using an external reverse proxy, the necessary HTTP upgrade headers must be added to support WebSocket communication. The default configuration does not handle WebSocket connections correctly.
+
+**Solution**  
+To resolve this issue, enable WebSocket support by adding specific headers in your external proxy configuration file.
+
+For example, if you are using NGINX, include the following settings:
+
+```bash
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+```
+
+For more details on configuring an external reverse proxy for Plane and accessing different templates, refer to the [External reverse proxy](https://developers.plane.so/self-hosting/govern/reverse-proxy) guide.

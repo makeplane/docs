@@ -1,0 +1,141 @@
+---
+title: Manage workspace members
+description: Add, update, and remove workspace members
+---
+
+# Manage members
+
+Keeping your workspace organized and secure is essential for smooth project management. Plane makes it easy to control who can access your workspace, what they can do, and how they collaborate with others.
+
+This guide shows you how to add members to your workspace, change their roles, and remove them when needed.
+
+## Invite members to your workspace
+
+You can add members individually or in bulk using CSV import.
+
+![Invite user](https://media.docs.plane.so/workspaces/add-user.webp#hero)
+
+1. Navigate to **Workspace settings > Members**.
+2. Click **Add member**.
+3. In the modal:
+   - Enter the email address of the person you're inviting.
+   - Select their role: **Admin**, **Member**, or **Guest**.
+   - To invite multiple people at once, click **Add another** and repeat.
+4. Click **Invite**.
+
+The invited person receives an email notification with instructions to join your workspace.
+
+**If the invitation isn't accepted:**
+
+- The invitation remains pending until accepted or declined.
+- You can manually remove pending invitations using the Remove option (see below).
+
+<div class="tag-wrapper">
+  ## Import members from CSV
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+
+Workspace admins can bulk invite members by importing a CSV file. This is useful when onboarding teams or migrating users from another system.
+
+![Import members from CSV](https://media.docs.plane.so/workspaces/import-members.webp#hero)
+
+**To import members:**
+
+1. Navigate to **Workspace settings → Members**.
+2. Click **Import**.
+3. Upload your CSV file (drag and drop or click to browse).
+4. Select **Import** to bulk invite the members.
+
+Imported users are added directly to the workspace. When they sign in using the imported email, they're automatically redirected to the workspace without going through onboarding.
+
+**CSV format requirements**
+
+Your CSV must contain these columns in this exact order:
+
+```
+Email, Display Name, First Name, Last Name, Role
+```
+
+**Example CSV:**
+
+```
+Email,Display Name,First Name,Last Name,Role
+alex@company.com,Alex Chen,Alex,Chen,15
+sarah@company.com,Sarah Kim,Sarah,Kim,20
+mike@company.com,Mike Rodriguez,Mike,Rodriguez,5
+```
+
+**Role values:**
+
+- `5` – Guest
+- `15` – Member
+- `20` – Admin
+
+**Important notes**
+
+- Only `.csv` files are supported.
+- Valid users appear immediately in the Members list after import.
+- Invalid entries are skipped (check your CSV for errors if some users don't appear).
+
+::: warning Self-hosted Plane instance
+Ensure your SMTP server is properly configured to send invite emails successfully. See [Configure SMTP for email](https://developers.plane.so/self-hosting/govern/communication) for more information.
+:::
+
+## Change a member's role
+
+![Update user role](https://media.docs.plane.so/workspaces/update-user.webp#hero-tr)
+
+1. Navigate to **Workspace settings > Members**.
+2. Find the member whose role you need to change.
+3. Click the role dropdown next to their name.
+4. Select the new role.
+
+The role change takes effect immediately.
+
+<div class="tag-wrapper">
+  ## View workspace member activity
+  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
+</div>
+
+Track member actions like invitations, role changes, and removals to maintain visibility over workspace management.
+
+![Workspace member activity](https://media.docs.plane.so/workspaces/workspace-member-activity.webp#hero-bl)
+
+**To view member activity:**
+
+1. Navigate to **Workspace settings → Members**.
+2. Click **Activity** in the top right.
+
+The activity panel shows recent workspace member events:
+
+- **Member invitations** - Who invited which members and when
+- **Invitation acceptances** - When members accepted and joined the workspace
+- **Role changes** - Role updates with who made the change and when
+- **Member removals** - Who removed members from the workspace
+
+Each activity entry shows:
+
+- The action taken
+- Who performed the action
+- When it happened (relative time like "about 1 month ago" or "5 days ago")
+
+This audit trail helps workspace admins monitor membership changes and troubleshoot access issues. Activity is retained for workspace history and can be filtered by clicking on specific activity types.
+
+## Remove a member from your workspace
+
+![Remove user](https://media.docs.plane.so/workspaces/remove-user.webp#hero-bl)
+
+1. Navigate to **Workspace settings > Members**.
+2. Find the member you want to remove.
+3. Click **Remove** next to their name.
+4. Confirm the removal.
+
+The member loses access to the workspace and all its projects immediately.
+
+::: warning
+Removing members doesn't change your seat count or billing. You must [remove seats](/workspaces-and-users/add-remove-seats#remove-unused-seats) separately.
+:::
+
+## See also
+
+- [Manage project members](/core-concepts/projects/manage-project-members)

@@ -1,0 +1,27 @@
+---
+title: Integrations overview
+description: Connect your workspace to external tools for synchronized workflows, reduced context switching, and improved team efficiency.
+---
+
+# Integrations overview
+
+Plane's integrations make it easy to connect your workspace and projects with your favorite tools to streamline your workflow and keep everything in sync. Instead of constantly switching between different platforms, you can access and manage your external tools directly inside Plane. This creates a more efficient workflow, keeping your team focused and your projects running smoothly.
+
+<CardGroup :cols="2">
+  <Card title="GitHub" icon="FaGithub" href="/integrations/github">
+    Sync issues and pull requests between Plane and GitHub for a smooth, two-way workflow.
+  </Card>
+  <Card title="GitHub Enterprise" icon="FaGithub" href="/integrations/github?edition=github-enterprise#connect-github-organization">
+    Sync issues and pull requests between Plane and GitHub Enterprise for a smooth, two-way workflow.
+  </Card>
+  <Card title="Slack" icon="FaSlack" href="/integrations/slack">
+    Connect Plane with Slack to create work items, sync discussions, and take action on tasks—all without leaving Slack.
+  </Card>
+  <Card title="GitLab" icon="FaGitlab" href="/integrations/gitlab">
+    Connect GitLab to Plane to automate merge request tracking, link issues seamlessly, and streamline your development
+    workflow.
+  </Card>
+  <Card title="Sentry" icon="sentry" href="/integrations/sentry">
+    Connect Sentry to Plane to automatically create work items from Sentry issues, sync issue states, and streamline your error tracking workflow.
+  </Card>
+</CardGroup>
