@@ -1,0 +1,179 @@
+---
+title: Create work items via URL
+description: Use a URL to trigger the creation of a new work item in Plane and pre-fill fields using query parameters
+---
+
+# Create a new work item via URL
+
+Plane provides a special URL that triggers the creation of a new work item in any browser. You can add query parameters to this URL to pre-fill work item fields, making it easy to create work items from external tools, bookmarks, or shared links.
+
+## Base URL
+
+```
+https://<your-plane-instance>/work-items/new
+```
+
+When you visit this URL:
+
+1. You will be authenticated and redirected to your last active workspace.
+2. The work item creation modal will automatically open.
+3. Any query parameters provided will be used to pre-fill the form.
+
+## Pre-filling work item fields
+
+To pre-fill work item fields and properties:
+
+1. Add a `?` at the end of the URL.
+2. Include the field or property you want to pre-set.
+3. Add `=`.
+4. Add the value you want to set.
+5. Use `&` between each field when setting multiple properties.
+
+## Supported query parameters
+
+### `workspace`
+
+Redirects to the specified workspace instead of the default (last active workspace).
+
+- Accepts a valid workspace slug
+
+**Example:**
+
+```
+https://app.plane.so/work-items/new?workspace=plane
+```
+
+### `title`
+
+Pre-fills the work item title.
+
+- Use `+` or `%20` to indicate spaces in the title
+
+**Example:**
+
+```
+https://app.plane.so/work-items/new?title=Fix+login+bug
+
+https://app.plane.so/work-items/new?title=Implement%20new%20feature
+```
+
+### `description`
+
+Pre-fills the work item description.
+
+- Use `+` or `%20` to indicate spaces
+- URL-encode content for complex descriptions
+
+**Example:**
+
+```
+https://app.plane.so/work-items/new?description=This+is+a+bug+description
+
+https://app.plane.so/work-items/new?title=Bug+Report&description=Steps+to+reproduce
+```
+
+### `project`
+
+Pre-fills the project for the work item.
+
+- Can be set by project **identifier** (e.g., `PROJ`, `WEB`)
+- Can be set by project **UUID**
+
+**Example:**
+
+```
+https://app.plane.so/work-items/new?project=WEB
+
+https://app.plane.so/work-items/new?project=MOBILE&title=New+feature
+```
+
+### `priority`
+
+Pre-fills the work item priority.
+
+- Supported values: `urgent`, `high`, `medium`, `low`, `none`
+- Case-insensitive
+
+**Example:**
+
+```
+https://app.plane.so/work-items/new?priority=urgent
+
+https://app.plane.so/work-items/new?priority=high&title=Critical+fix
+
+https://app.plane.so/work-items/new?priority=Medium
+```
+
+### `assignee`
+
+Pre-fills the assignee(s) for the work item.
+
+- Can be set by user **UUID**
+- Can be set by user **display name**
+- Use `me` to assign to the current user (the person opening the URL)
+- Use comma-separated values to assign multiple users
+
+**Example:**
+
+```
+https://app.plane.so/work-items/new?assignee=me
+
+https://app.plane.so/work-items/new?assignee=john
+
+https://app.plane.so/work-items/new?assignee=Erin+Baker
+
+https://app.plane.so/work-items/new?assignee=me,john,jane
+```
+
+### `start_date`
+
+Pre-fills the start date for the work item.
+
+- Accepts any valid date format that JavaScript `Date` can parse
+- Recommended formats: `YYYY-MM-DD` or ISO 8601
+
+**Example:**
+
+```
+https://app.plane.so/work-items/new?start_date=2024-03-15
+```
+
+### `due_date`
+
+Pre-fills the due date (target date) for the work item.
+
+- Accepts any valid date format that JavaScript `Date` can parse
+- Recommended formats: `YYYY-MM-DD` or ISO 8601
+
+**Example:**
+
+```
+https://app.plane.so/work-items/new?due_date=2024-03-30
+```
+
+## Combined examples
+
+### Simple work item with title and description
+
+```
+https://app.plane.so/work-items/new?title=Login+button+not+working&description=Users+cannot+click+the+login+button+on+mobile
+```
+
+### Work item with project, priority, and assignee
+
+```
+https://app.plane.so/work-items/new?project=WEB&priority=high&assignee=me&title=Fix+authentication+bug
+```
+
+### Fully populated work item
+
+```
+https://app.plane.so/work-items/new?title=Implement+dark+mode&description=Add+dark+mode+support+to+the+dashboard&project=FRONTEND&priority=medium&assignee=me,john&start_date=2024-03-15&due_date=2024-03-30
+```
+
+## Notes
+
+- All query parameter values are case-insensitive where applicable (e.g., priority, project identifier).
+- If a project identifier or user display name doesn't match any existing record, that parameter will be ignored.
+- The user must be authenticated to use this URL. Unauthenticated users will be redirected to login first.
+- After the modal opens, users can modify any pre-filled values before creating the work item.

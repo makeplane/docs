@@ -121,6 +121,7 @@ const sidebars: SidebarsConfig = {
             "core-concepts/issues/overview",
             "core-concepts/issues/properties",
             "core-concepts/drafts",
+            "core-concepts/issues/work-item-url",
           ],
         },
 
