@@ -9,10 +9,10 @@ Plane provides a special URL that triggers the creation of a new work item in an
 
 ## Base URL
 
-The base URL for creating a new work item is `https://app.plane.so/work-items/new`.
+The base URL for creating a new work item is https://app.plane.so/work-items/new.
 
 :::tip
-If you are using a self-hosted instance of Plane, replace `app.plane.so` with your own domain (e.g., `https://plane.yourdomain.com/work-items/new`).
+If you are using a self-hosted instance of Plane, replace `app.plane.so` with your own domain, e.g., https://plane.yourdomain.com/work-items/new.
 :::
 
 When you visit this URL:
@@ -35,110 +35,73 @@ To pre-fill work item fields and properties:
 
 | Parameter    | Description                                                                                                  |
 | ------------ | ------------------------------------------------------------------------------------------------------------ |
-| `workspace`  | Redirects to the specified workspace instead of the default (last active workspace). Accepts a workspace slug. |
-| `title`      | Pre-fills the work item title. Use `+` or `%20` to indicate spaces.                                          |
-| `description`| Pre-fills the work item description. Use `+` or `%20` to indicate spaces. URL-encode complex content.         |
-| `project`    | Pre-fills the project. Can be set by project **identifier** (e.g., `PROJ`, `WEB`) or by project **UUID**.     |
-| `priority`   | Pre-fills the priority. Supported values: `urgent`, `high`, `medium`, `low`, `none`. Case-insensitive.        |
-| `assignee`   | Pre-fills the assignee(s). Can be set by **UUID**, **display name**, or `me` for the current user. Use commas to assign multiple users. |
-| `start_date` | Pre-fills the start date. Recommended format: `YYYY-MM-DD` or ISO 8601.                                      |
-| `due_date`   | Pre-fills the due date (target date). Recommended format: `YYYY-MM-DD` or ISO 8601.                          |
+| workspace    | Redirects to the specified workspace instead of the default (last active workspace). Accepts a workspace slug. |
+| title        | Pre-fills the work item title. Use `+` or `%20` to indicate spaces.                                          |
+| description  | Pre-fills the work item description. Use `+` or `%20` to indicate spaces. URL-encode complex content.         |
+| project      | Pre-fills the project. Can be set by project identifier (e.g., PROJ, WEB) or by project UUID.                 |
+| priority     | Pre-fills the priority. Supported values: urgent, high, medium, low, none. Case-insensitive.                  |
+| assignee     | Pre-fills the assignee(s). Accepts UUID, display name, or `me` for the current user. Use commas for multiple. |
+| start_date   | Pre-fills the start date. Recommended format: YYYY-MM-DD or ISO 8601.                                        |
+| due_date     | Pre-fills the due date (target date). Recommended format: YYYY-MM-DD or ISO 8601.                             |
 
 ### workspace
 
-Redirects to the specified workspace instead of the default (last active workspace).
+Redirects to the specified workspace instead of the default (last active workspace). Accepts a valid workspace slug.
 
-- Accepts a valid workspace slug
-
-**Example:** `https://app.plane.so/work-items/new?workspace=plane`
+For example, https://app.plane.so/work-items/new?workspace=plane.
 
 ### title
 
-Pre-fills the work item title.
+Pre-fills the work item title. Use `+` or `%20` to indicate spaces in the title.
 
-- Use `+` or `%20` to indicate spaces in the title
-
-**Examples:**
-- `https://app.plane.so/work-items/new?title=Fix+login+bug`
-- `https://app.plane.so/work-items/new?title=Implement%20new%20feature`
+For example, https://app.plane.so/work-items/new?title=Fix+login+bug or https://app.plane.so/work-items/new?title=Implement%20new%20feature.
 
 ### description
 
-Pre-fills the work item description.
+Pre-fills the work item description. Use `+` or `%20` to indicate spaces. URL-encode content for complex descriptions.
 
-- Use `+` or `%20` to indicate spaces
-- URL-encode content for complex descriptions
-
-**Examples:**
-- `https://app.plane.so/work-items/new?description=This+is+a+bug+description`
-- `https://app.plane.so/work-items/new?title=Bug+Report&description=Steps+to+reproduce`
+For example, https://app.plane.so/work-items/new?description=This+is+a+bug+description or https://app.plane.so/work-items/new?title=Bug+Report&description=Steps+to+reproduce.
 
 ### project
 
-Pre-fills the project for the work item.
+Pre-fills the project for the work item. Can be set by project **identifier** (e.g., PROJ, WEB) or by project **UUID**.
 
-- Can be set by project **identifier** (e.g., `PROJ`, `WEB`)
-- Can be set by project **UUID**
-
-**Examples:**
-- `https://app.plane.so/work-items/new?project=WEB`
-- `https://app.plane.so/work-items/new?project=MOBILE&title=New+feature`
+For example, https://app.plane.so/work-items/new?project=WEB or https://app.plane.so/work-items/new?project=MOBILE&title=New+feature.
 
 ### priority
 
-Pre-fills the work item priority.
+Pre-fills the work item priority. Supported values: **urgent**, **high**, **medium**, **low**, **none**. Values are case-insensitive.
 
-- Supported values: `urgent`, `high`, `medium`, `low`, `none`
-- Case-insensitive
-
-**Examples:**
-- `https://app.plane.so/work-items/new?priority=urgent`
-- `https://app.plane.so/work-items/new?priority=high&title=Critical+fix`
-- `https://app.plane.so/work-items/new?priority=Medium`
+For example, https://app.plane.so/work-items/new?priority=urgent or https://app.plane.so/work-items/new?priority=high&title=Critical+fix.
 
 ### assignee
 
-Pre-fills the assignee(s) for the work item.
+Pre-fills the assignee(s) for the work item. Can be set by user **UUID**, **display name**, or use **me** to assign to the current user (the person opening the URL). Use comma-separated values to assign multiple users.
 
-- Can be set by user **UUID**
-- Can be set by user **display name**
-- Use `me` to assign to the current user (the person opening the URL)
-- Use comma-separated values to assign multiple users
-
-**Examples:**
-- `https://app.plane.so/work-items/new?assignee=me`
-- `https://app.plane.so/work-items/new?assignee=john`
-- `https://app.plane.so/work-items/new?assignee=Erin+Baker`
-- `https://app.plane.so/work-items/new?assignee=me,john,jane`
+For example, https://app.plane.so/work-items/new?assignee=me or https://app.plane.so/work-items/new?assignee=john or https://app.plane.so/work-items/new?assignee=Erin+Baker or https://app.plane.so/work-items/new?assignee=me,john,jane.
 
 ### start_date
 
-Pre-fills the start date for the work item.
+Pre-fills the start date for the work item. Accepts any valid date format that JavaScript `Date` can parse. Recommended formats: YYYY-MM-DD or ISO 8601.
 
-- Accepts any valid date format that JavaScript `Date` can parse
-- Recommended formats: `YYYY-MM-DD` or ISO 8601
-
-**Example:** `https://app.plane.so/work-items/new?start_date=2024-03-15`
+For example, https://app.plane.so/work-items/new?start_date=2024-03-15.
 
 ### due_date
 
-Pre-fills the due date (target date) for the work item.
+Pre-fills the due date (target date) for the work item. Accepts any valid date format that JavaScript `Date` can parse. Recommended formats: YYYY-MM-DD or ISO 8601.
 
-- Accepts any valid date format that JavaScript `Date` can parse
-- Recommended formats: `YYYY-MM-DD` or ISO 8601
-
-**Example:** `https://app.plane.so/work-items/new?due_date=2024-03-30`
+For example, https://app.plane.so/work-items/new?due_date=2024-03-30.
 
 ## Combined examples
 
-- **Simple work item with title and description**
-  `https://app.plane.so/work-items/new?title=Login+button+not+working&description=Users+cannot+click+the+login+button+on+mobile`
+**Simple work item with title and description:**
+https://app.plane.so/work-items/new?title=Login+button+not+working&description=Users+cannot+click+the+login+button+on+mobile
 
-- **Work item with project, priority, and assignee**
-  `https://app.plane.so/work-items/new?project=WEB&priority=high&assignee=me&title=Fix+authentication+bug`
+**Work item with project, priority, and assignee:**
+https://app.plane.so/work-items/new?project=WEB&priority=high&assignee=me&title=Fix+authentication+bug
 
-- **Fully populated work item**
-  `https://app.plane.so/work-items/new?title=Implement+dark+mode&description=Add+dark+mode+support+to+the+dashboard&project=FRONTEND&priority=medium&assignee=me,john&start_date=2024-03-15&due_date=2024-03-30`
+**Fully populated work item:**
+https://app.plane.so/work-items/new?title=Implement+dark+mode&description=Add+dark+mode+support+to+the+dashboard&project=FRONTEND&priority=medium&assignee=me,john&start_date=2024-03-15&due_date=2024-03-30
 
 ## Notes
 
