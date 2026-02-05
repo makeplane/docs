@@ -120,6 +120,7 @@ const sidebars: SidebarsConfig = {
           items: [
             "core-concepts/issues/overview",
             "core-concepts/issues/properties",
+            "core-concepts/issues/work-item-url",
             "core-concepts/drafts",
           ],
         },
