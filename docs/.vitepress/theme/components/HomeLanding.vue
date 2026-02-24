@@ -91,7 +91,9 @@ function isExternal(href: string) {
   <div class="px-6 sm:px-12 min-[960px]:px-16 pt-12 pb-24">
     <div class="max-w-[1152px] mx-auto">
       <!-- Explore by Topic -->
-      <h2 class="!text-2xl !font-[640] !mb-6 !mt-0 !border-none !pt-0 tracking-tight text-[var(--vp-c-text-1)]">Explore by Topic</h2>
+      <h2 class="!text-2xl !font-[640] !mb-6 !mt-0 !border-none !pt-0 tracking-tight text-[var(--vp-c-text-1)]">
+        Explore by Topic
+      </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 min-[960px]:grid-cols-3 gap-4">
         <a
           v-for="topic in topics"
@@ -120,7 +122,9 @@ function isExternal(href: string) {
       </div>
 
       <!-- Get Plane -->
-      <h2 class="!text-2xl !font-[640] !mt-14 !mb-6 !border-none !pt-0 tracking-tight text-[var(--vp-c-text-1)]">Get Plane</h2>
+      <h2 class="!text-2xl !font-[640] !mt-14 !mb-6 !border-none !pt-0 tracking-tight text-[var(--vp-c-text-1)]">
+        Get Plane
+      </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-4">
         <!-- Plane Cloud -->
         <a
@@ -166,7 +170,9 @@ function isExternal(href: string) {
       </div>
 
       <!-- Resources -->
-      <h2 class="!text-2xl !font-[640] !mt-14 !mb-6 !border-none !pt-0 tracking-tight text-[var(--vp-c-text-1)]">Resources</h2>
+      <h2 class="!text-2xl !font-[640] !mt-14 !mb-6 !border-none !pt-0 tracking-tight text-[var(--vp-c-text-1)]">
+        Resources
+      </h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <a
           v-for="resource in resources"

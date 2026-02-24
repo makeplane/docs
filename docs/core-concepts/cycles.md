@@ -100,6 +100,7 @@ Automate the creation and management of cycles according to predefined configura
 ![Autoschedule cycles](https://media.docs.plane.so/cycles/auto-schedule-cycles.webp#hero-br)
 
 #### Benefits
+
 - Maintain regular cycle rhythms automatically without manual intervention.
 - Keep future cycles pre-scheduled so teams can plan ahead with confidence.
 - Eliminate repetitive administrative work from cycle creation.

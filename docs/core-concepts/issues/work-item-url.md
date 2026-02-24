@@ -19,6 +19,7 @@ When you visit this URL, Plane authenticates you, redirects to your last active 
 ## Build a URL with parameters
 
 Start with the base URL, add `?`, then append parameters in `name=value` format. Separate multiple parameters with `&`.
+
 ```bash
 https://app.plane.so/work-items/new?title=Fix+bug&priority=high&assignee=me
 ```
@@ -160,10 +161,10 @@ https://app.plane.so/work-items/new?title=Implement+dark+mode&description=Add+da
 ## Things to know
 
 - **Authentication required**  
-Users must be logged in. If they're not, Plane redirects them to sign in first, then continues to the work item modal.
-- **Invalid values are ignored**   
-If a project identifier or display name doesn't match an existing record, Plane skips that parameter and processes the rest.
-- **Case doesn't matter**   
-Values like priority and project identifier are case-insensitive.
-- **Users can still edit**   
-Pre-filled values aren't locked. After the modal opens, users can change any field before creating the work item.
+  Users must be logged in. If they're not, Plane redirects them to sign in first, then continues to the work item modal.
+- **Invalid values are ignored**  
+  If a project identifier or display name doesn't match an existing record, Plane skips that parameter and processes the rest.
+- **Case doesn't matter**  
+  Values like priority and project identifier are case-insensitive.
+- **Users can still edit**  
+  Pre-filled values aren't locked. After the modal opens, users can change any field before creating the work item.

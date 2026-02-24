@@ -233,8 +233,8 @@ Ensure the correct Redirect URI is configured in your OAuth service:
   ```
 - For GitHub Sign-In: Add the following URL to the Callback URL section in your GitHub OAuth app:
   `bash
-  https://<plane.example.com>/auth/mobile/github/callback/
-  `
+https://<plane.example.com>/auth/mobile/github/callback/
+`
   Verify that the `<plane.example.com>` part of the URL matches your self-hosted instance's domain.
 
 ### Link not opening iOS app
