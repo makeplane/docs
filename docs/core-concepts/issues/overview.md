@@ -1,0 +1,215 @@
+---
+title: Manage work items
+description: Create, manage and organize work items in Plane with sub-tasks, relations, file attachments, automations, and activity tracking for efficient project management
+---
+
+# Create, organize, and track project tasks
+
+In Plane, a work item serves as the fundamental unit of work. They represent the tasks you need to accomplish to make progress Think of work items as the to-dos of your project management flow—assignable, trackable, and actionable.
+
+## Create work item
+
+The quickest way to add a new work item is to press `C` on your keyboard. By default, the work item will be assigned to the project you are currently on or the one you last visited.
+
+You can also head over to the **Work items** tab in the sidebar and click **Add Work item** at the top right of the screen.
+
+![Create work item](https://media.docs.plane.so/issues/create-issue-modal.webp#hero)
+
+In the **Create new work item** modal, you can define all the attributes of the work item, including title, description, assignees, state, priority, labels, due dates, and more. You can also turn on the **Create more** option to add multiple work items one after the other.
+
+When you create a work item, Plane assigns it a sequential identifier based on your project (e.g., PROJ-1).
+
+::: tip
+Plane automatically saves your half-written work items so you can access them later in [Drafts](/core-concepts/drafts), in case you're not ready to finalize them or if you accidentally close the modal.
+:::
+
+### Quick add work items
+
+For when you're in the middle of your workflow and need to jot something down fast, Plane lets you create a work item with minimal input and come back to refine it later.
+
+![Quick add work item](https://media.docs.plane.so/issues/issue-quick-add.webp#hero-bl)
+
+## View work item details
+
+A work item in your layout opens by default in the peek overview mode, which allows for easy switching between contexts when browsing multiple work items simultaneously. In this mode, you can choose different styles, such as modal, full screen, or side peek, with side peek being the default option.
+
+![work item-side-peek](https://media.docs.plane.so/issues/issue-side-peek.webp#hero)
+
+## Set work item properties
+
+You can set various properties for a work item, including its state, assignees, priority, start date, and due date. For a complete list of all available properties, check out the [Properties](/core-concepts/issues/properties) page.
+
+## Create sub-work items
+
+Break down larger tasks into smaller, manageable components by creating sub-work items. Sub-work items can be either newly created or linked to existing work items, giving you flexibility in organizing work.
+
+![sub-work items](https://media.docs.plane.so/issues/issue-sub-issues.webp#hero)
+
+<div class="tag-wrapper">
+  ## Duplicate work items
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+When you need to create similar work items or replicate a work item's structure and properties, Plane lets you duplicate existing work items either within the same project or across different projects.
+
+To duplicate a work item, click the **•••** menu in the work item header and select **Make a copy**. You'll see two options:
+
+### Copy in same project
+
+Creates an identical work item within the current project with all the same properties, description, and settings. The new work item gets a fresh identifier and maintains the same title, description, state, and priority attributes.
+
+### Copy in different project
+
+Duplicates the work item to another project in your workspace. This is particularly useful when you have similar tasks across multiple projects or want to move work items between teams. The copied work item adapts to the destination project's identifier format and default state.
+
+Duplicating work items is perfect for replicating recurring tasks, or moving work between project phases while maintaining all the essential context and settings.
+
+## Add relations
+
+You can also set up relations and dependencies between work items using the **Relations** property. These relationships help clarify how work items are interconnected and how the completion of one task might affect another.
+
+![Work item relations](https://media.docs.plane.so/issues/issue-relations.webp#hero-br)
+
+- **Relates to**  
+  This relation is used when two work items are linked by some kind of context or dependency, but one does not directly affect the other’s completion.
+
+- **Duplicate of**  
+  This relation is used when one work item is a duplicate of another. The original work item remains active, while the duplicate work item is linked and typically closed or archived.
+
+- **Blocking**  
+  When a work item is marked as Blocking, it means that the work item needs to be resolved first before the second work item can progress.
+
+- **Blocked by**  
+  If a work item is marked as Blocked by, it indicates that the work item cannot proceed until the blocking work item is completed.
+
+## Add links and attachments
+
+You can easily add links and upload attachments to work items in Plane to provide additional context or resources.
+
+![Add links and attachments](https://media.docs.plane.so/issues/links-and-attachments.webp#hero)
+
+You can link to external resources, documentation, or related work items by adding URLs in the **Add link** modal. This helps in providing quick access to important references without cluttering the work item itself.
+
+Plane allows you to upload different file types directly to the work item. Use the **Attach** button to upload attachments.
+
+### Supported file types
+
+- **Images**  
+  JPEG, PNG, GIF, SVG, WebP, TIFF, BMP
+
+- **Documents**  
+  PDF, Microsoft Word, Microsoft Excel, Microsoft PowerPoint, Plain Text, Rich Text Format (RTF), OpenDocument Spreadsheet, OpenDocument Text, OpenDocument Presentation, OpenDocument Graphics
+
+- **Audio**  
+  MP3, WAV, OGG, MIDI, AAC, FLAC, M4A
+
+- **Video**  
+  MP4, MPEG, OGG Video, WebM, QuickTime, AVI, WMV
+
+- **Archives**  
+  ZIP, RAR, TAR, GZIP
+
+- **Microsoft Visio**  
+  Visio Files
+
+- **Netpbm formats**  
+  Portable Graymap, Portable Bitmap, Portable Pixmap
+
+- **OpenOffice Base**  
+  Database files
+
+- **3D models**  
+  GLTF Binary, GLTF JSON, OBJ
+
+- **Fonts**  
+  TrueType, OpenType, WOFF, WOFF2
+
+- **Other**  
+  CSS, JavaScript, JSON, XML, CSV, SQL
+
+<div class="tag-wrapper">
+  ## Link pages to work items
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+Connect relevant project pages and wiki documentation to your work items to provide instant access to related context, specifications, or reference materials.
+
+1. Use the **Link pages** button in the work item to open the page linking modal.
+2. You can search through your project pages and use the **Show Wiki pages** toggle to include wiki documentation in your search results.
+3. Select multiple pages by checking the boxes next to the pages you want to link, then click **Confirm** to establish the connections.
+
+Linked pages appear directly in the work item, making it easy for team members to access relevant documentation without leaving the context of their current task.
+
+<div class="tag-wrapper">
+  ## Convert work items to epics
+  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
+</div>
+
+Sometimes a work item grows in scope and complexity, and you realize it's actually big enough to be its own epic with multiple sub-tasks. This feature promotes a regular work item into an epic, giving you the structure and flexibility to break it down into smaller, manageable pieces.
+
+![convert work item to epic](https://media.docs.plane.so/issues/convert-work-item-to-epic.webp#hero)
+
+From any work item, find the **Convert to Epic** option. The system will ask you to confirm since this action detaches any associated cycles, modules, and parent items. Once converted, you'll have a new epic that you can start breaking down into sub-work items and organizing however makes sense for your project.
+
+You can also [convert Epics to Work Items](/core-concepts/issues/epics#convert-epics-to-work-items).
+
+## Comment on work items
+
+Collaborate on work items through comments. Tag team members, format text, and track all changes in the activity log. See [Work item comments](/communication-and-collaboration/comments-and-activity) for details.
+
+![Work item activity and comments](https://media.docs.plane.so/issues/issue-activity-comments.webp#hero)
+
+## Subscribe to notifications
+
+You’ll automatically receive email notifications for updates on work items that you’ve created or are assigned to. You can also view these notifications directly in **Inbox** on the sidebar. If you'd like to start receiving notifications for a work item you’re interested in, click **Subscribe** at the top right of the work item detail page.
+
+If you no longer want to receive updates, simply click **Unsubscribe** to stop the notifications.
+
+You can subscribe other users to the work item by mentioning them using `@username` in the comments or the work item description. This ensures they’re notified about the updates and stay in the loop.
+
+## View description edit history
+
+The work item editor now features an edit history viewer that tracks changes to work item descriptions.
+
+![Description edit history](https://media.docs.plane.so/issues/description-edit-history.webp#hero)
+
+Clicking on the last edited timestamp reveals a dropdown panel showing the complete editing history, including:
+
+- Who last edited the description
+- When edits occurred
+- A dropdown panel showing previous editors and timestamps
+
+This addition improves transparency in collaborative projects by making it easy to see how work items evolve over time and who contributed specific changes.
+
+## Archive work items
+
+Completed or canceled work items can be archived, and automations can be set up to archive such work items. Archived work items can be found under the three dots menu next to your project name.
+
+![archived-work items](https://media.docs.plane.so/issues/archived-issues.webp#hero)
+
+## Delete work items
+
+You can delete work items that were created accidentally or are no longer relevant to the project. Deleted work items cannot be recovered, so be sure to review them carefully before removal. Once deleted, the work item is permanently removed from the project.
+
+## Set up automations
+
+Within your project, you can set up automations to perform the following tasks:
+
+- **Auto-archive closed work items**  
+  You can set up an automation to archive work items that are marked as closed. This helps keep your active project board clean and organized, while still retaining closed work items for reference. You can customize the time period after which closed work items will automatically be moved to the archive.
+
+  ![Project archive automation](https://media.docs.plane.so/projects/auto-archive-closed-issues.webp#hero)
+
+- **Auto-close work items**  
+  You can also automate the closing of work items that are still open after a certain period of time. This is useful for ensuring that work items don’t remain open unnecessarily, helping to keep your project board organized and up to date. The automation will move all open work items matching the time period to a selected closed state.
+
+  ![Project close automation](https://media.docs.plane.so/projects/auto-close-issues.webp#hero)
+
+<div class="tag-wrapper">
+  ## Export work items
+  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+</div>
+
+You can export your work items to access and analyze your data outside of Plane. Exports support CSV and JSON formats, and you can filter exactly which work items to include.
+
+This is useful when you need to create reports, perform external analysis, or share data with stakeholders who don't use Plane.
+
+Learn more about [custom exports](/core-concepts/export#custom-exports).

@@ -1,0 +1,52 @@
+---
+title: Recurring work items to automate repetitive tasks
+description: Learn how to set up recurring work items to automatically create repetitive tasks, maintenance schedules, and routine work on a predefined schedule.
+---
+
+# Recurring work items to automate repetitive tasks
+
+<Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
+
+Keep your team on track with repetitive tasks by setting them up once and letting them automatically repeat on your schedule.
+
+## Overview
+
+Recurring work items are templates that automatically create new tasks based on a schedule you define. Instead of manually creating the same maintenance check, weekly report, or team standup every time, you set it up once and let the system handle the repetition.
+
+Think of it like setting a recurring calendar appointment, but for your project work. You define what needs to be done, how often it should happen, and who should do it - then the system takes care of creating these items automatically.
+
+## Set up recurring tasks
+
+![Recurring work items](https://media.docs.plane.so/projects/recurring-work-items.webp#hero)
+
+1. Navigate to your [Project Settings](/core-concepts/projects/overview#configure-project-settings).
+
+2. In the left pane, select **Recurring work items**.
+
+3. Click **Create recurring work item**.
+
+   ![Create recurring work items](https://media.docs.plane.so/projects/create-recurring-work-items.webp#hero)
+
+4. Fill out your recurring work item just like any regular task - add a title, description, assignees, and any custom properties your team uses. This becomes your template that gets copied each time a new instance is created.
+
+5. In the **Schedule** section, you'll configure when and how often your work item repeats:
+   - **Start and end dates**  
+     When the recurring pattern begins and optionally when it should stop.
+   - **Frequency**  
+     Choose from daily, weekly, monthly, or yearly patterns. The system will continue creating items based on your frequency until the end date you specify, or indefinitely if you don't set an end date.
+
+6. Click **Create recurring work item**.
+
+## Manage recurring tasks
+
+All your recurring work items appear in the Recurring work items section of your Project settings. Here you can:
+
+- See all your recurring patterns with their repeat frequency (like "repeats every week").
+- Edit the template or schedule for future instances by clicking the three-dot menu.
+- Delete recurring patterns you no longer need.
+
+When you edit a recurring work item, your changes only affect future instances. Work items that have already been created remain unchanged.
+
+---
+
+Recurring work items help ensure nothing falls through the cracks while reducing the administrative burden on your team. Set them up once, and focus your energy on the work that matters most.

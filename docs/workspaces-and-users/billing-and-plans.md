@@ -1,0 +1,68 @@
+---
+title: How billing works
+toc_max_heading_level: 4
+description: Learn how Plane's per-seat billing works, how to manage seats for admins and members and upgrade workspaces.
+---
+
+# How billing works
+
+Unlike a majority of SaaS, our subscription models on Pro and higher plans are per-seat, not per-users. Learn why this model works great for you and how to manage your members versus seats.
+
+## Per-seat model and billing
+
+- You are billed per workspace you upgrade. On both Cloud and self-hosted Plane you can upgrade your workspace from **Billing and plans**. On self-hosted instances, your license key only unlocks one workspace.
+
+  ![Billings and plans](https://media.docs.plane.so/activate-license/billing-and-plans-cloud.webp#hero)
+
+- You are billed by the total number of seats in a workspace. So, if you have 100 Admins and Members across projects in a workspace, you will be billed for 100 seats.
+- You get 5 Guests per paid seat.
+- In the upgrade flow, you get as many seats as paid users—Admins or Members already in your workspace. For self-hosted instances, if you upgrade through the Prime portal, you can specify the number of seats you would like to purchase. You can also change this number later from the **Members** screen in **Workspace settings**.
+
+  ![Add seats](https://media.docs.plane.so/activate-license/add-seats.webp#hero)
+
+- When you want to add members or change non-paid roles—Guests—to paid ones—Admins or Members—, you must add seats first. All new seats are immediately charged to the card on file. Depending on when you are adding more seats, your bill will either be prorated or show the full price of those seats.  
+   :::warning
+  If we don't have your card on file, you will have to reach out to us each time you want to increase the number of seats or get your bill adjusted to a lower number of seats.
+  :::
+
+- When you remove members, their seats are freed up and go to the available pool so you can assign them to other users.  
+  **Removing members doesn't automatically remove seats. You must remove seats separately to affect your billing.** See [Manage paid users](/workspaces-and-users/add-remove-seats) for more details.
+- When you remove seats, the reduced billing for those seats is added as a credit line item to your next bill, so your overall bill is reduced by the price of the removed seats.
+
+- Unless you change the number of seats in a month or year depending on your billing cycle, your subscription price for that cycle doesn't change. _The exception to that are limited-period discounts that some upgrades enjoy._
+
+- Your subscription renews automatically each month or year at the beginning of the billing cycle.
+
+### Free tiers, cancelations, and downgrades
+
+Starting with v1.3.0 of the Commercial Edition, the Free plan will have a 12-seat limit just as there is for the Free tier on Cloud. If you are getting a new Free workspace on either our Cloud or our self-hosted Commercial Edition, this is the seat limit you will start with.
+
+#### Older workspaces
+
+For everyone on the Free tier on both Cloud and the Commercial Edition before this change came in, you will see your workspace grandfathered to the same number of seats as the total number of admins or members in your workspace at the time of this change.
+
+Say, you had 20 members and admins on your workspace before this change. Now, you will see a limit of 20 seats in your workspace instead of 12 and they will work exactly as detailed above. If you want to upgrade this workspace to Pro, you will be charged for all 20 seats. If you remove one of your 20 grandfathered seats, your new limit will be 19.
+
+You can remove seats down to 12 on such accounts. At 12, your workspace will downgrade to a standard Free account and you will lose your grandfathered status.
+
+#### All workspaces
+
+If you have upgraded to a Pro or higher subscription and have unpaid bills, you will get a 30-day notice to pay them. After that period, your workspace will lock out all members except Workspace Admin to help them clear unpaid dues.
+
+Once you have paid your bills, you can continue with your subscription, change its frequency, adjust the number of seats, or downgrade to the Free tier by manually removing seats down to 12.
+
+Should you cancel your subscription outright, your workspace will retain your subscription until the end of the billing cycle and then lock out all members except Workspace Admins who can renew the subscription or downgrade to the Free tier.
+
+#### Refunds
+
+We don’t offer refunds except in the most unusual circumstances. Your Plane billing happens automatically and our payment partners send alerts before each bill is attempted to be paid.
+
+Should you think you have an exceptional circumstance and deserve a refund, write to us.
+
+## AI credits and usage
+
+Plane AI uses a separate credit-based system for AI features. Credits measure the computational work required for AI tasks, from quick queries to bulk automations.
+
+Each plan includes monthly AI credits per seat that pool at the workspace level.
+
+AI credits are separate from your seat-based subscription. You can run out of AI credits without affecting your paid seats, and vice versa. Learn more about [how AI credits work](/ai/plane-ai-credits) including consumption rates, rollover policies, and top-up options.

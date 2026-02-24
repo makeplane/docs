@@ -34,7 +34,7 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "Self-host Plane",
           href: "https://developers.plane.so/self-hosting/overview",
-        }
+        },
       ],
     },
     {
@@ -42,7 +42,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: "Workspace management",
       items: [
-         {
+        {
           type: "category",
           label: "Workspaces",
           items: [
@@ -50,18 +50,14 @@ const sidebars: SidebarsConfig = {
             "workspaces-and-users/search-workspace",
             "core-concepts/account/overview",
             "core-concepts/power-k",
-            "workspaces-and-users/customize-navigation"
+            "workspaces-and-users/customize-navigation",
           ],
         },
 
         {
           type: "category",
           label: "Members",
-          items: [
-            "core-concepts/workspaces/members",
-            "workspaces-and-users/roles",
-            "workspaces-and-users/permissions",
-          ],
+          items: ["core-concepts/workspaces/members", "workspaces-and-users/roles", "workspaces-and-users/permissions"],
         },
         {
           type: "category",
@@ -69,9 +65,9 @@ const sidebars: SidebarsConfig = {
           items: [
             "authentication/sso",
             {
-                  type: 'link',
-                  label: 'Self-hosted authentication', 
-                  href: 'https://developers.plane.so/self-hosting/govern/authentication',
+              type: "link",
+              label: "Self-hosted authentication",
+              href: "https://developers.plane.so/self-hosting/govern/authentication",
             },
           ],
         },
@@ -99,14 +95,13 @@ const sidebars: SidebarsConfig = {
           items: [
             "core-concepts/projects/overview",
             "core-concepts/projects/manage-project-members",
-            "core-concepts/deploy"
+            "core-concepts/deploy",
           ],
         },
         "core-concepts/projects/project-states",
         "core-concepts/issues/states",
         "core-concepts/projects/project-overview",
         "templates/project-templates",
-        
       ],
     },
     {
@@ -164,13 +159,10 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: "Knowledge management",
       items: [
-         {
+        {
           type: "category",
           label: "Pages",
-          items: [
-             "core-concepts/pages/overview",
-             "core-concepts/pages/editor-blocks",
-          ],
+          items: ["core-concepts/pages/overview", "core-concepts/pages/editor-blocks"],
         },
         "core-concepts/pages/wiki",
         "core-concepts/pages/nested-pages",
@@ -204,22 +196,13 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsed: false,
       label: "Intake and customers",
-      items: [
-        "intake/overview",
-        "core-concepts/intake",
-        "intake/intake-forms",
-        "intake/intake-email",
-        "customers",
-      ],
+      items: ["intake/overview", "core-concepts/intake", "intake/intake-forms", "intake/intake-email", "customers"],
     },
     {
       type: "category",
       collapsed: false,
       label: "Analytics and reporting",
-      items: [
-        "core-concepts/analytics",
-        "dashboards",
-      ],
+      items: ["core-concepts/analytics", "dashboards"],
     },
     {
       type: "category",
@@ -272,7 +255,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           collapsed: false,
           label: "Import",
-          link: { type: "doc", id: "importers/overview"},
+          link: { type: "doc", id: "importers/overview" },
           items: [
             "importers/asana",
             "importers/confluence",
@@ -298,7 +281,7 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "MCP Server",
           href: "https://developers.plane.so/dev-tools/mcp-server",
-        }
+        },
       ],
     },
     {
@@ -351,7 +334,7 @@ const sidebars: SidebarsConfig = {
           href: "https://status.plane.so/",
         },
       ],
-    }, 
+    },
   ],
 };
 

@@ -1,0 +1,165 @@
+---
+title: Track team work with Teamspaces
+description: Organize team members across projects, track team-specific work items, and create dedicated spaces for team knowledge and collaboration.
+---
+
+# Track team work with Teamspaces
+
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
+
+With Teamspaces, you can mirror your real-world teams of any kind and track work separately from a project. See your team's work automatically filtered across projects, and house your team's knowledge separate from anything else in Plane.
+
+## What is Teamspaces?
+
+Teamspaces brings together people and projects in a neat space tucked away from all else in Plane, offering you an overview of your teams' work. Track work items across projects, manage multiple cycles, share views and pages, and chat with team members—all without jumping around from one screen to another.
+
+## Turn on Teamspaces
+
+::: warning
+Once on, the feature cannot be turned off in a workspace.
+:::
+
+To start using Teamspaces, turn on the feature for your workspace:
+
+![Enable Teamspaces](https://media.docs.plane.so/teams/enable-teamspaces.webp#hero)
+
+1. Navigate to [Workspace Settings](/core-concepts/workspaces/overview#access-workspace-settings).
+2. Select the **Teamspaces** tab on the left pane.
+3. Toggle on the **Turn on Teamspaces for this workspace** option.
+
+Once turned on, the **Teamspaces** option will appear in the sidebar under **Workspaces**, giving you quick access to create and manage teams.
+
+## Create Teamspaces
+
+![Create Teams](https://media.docs.plane.so/teams/create-teamspace.webp#hero)
+
+Creating a Teamspace is quick and easy. Here's how:
+
+1. Navigate to the **Teamspaces** section from the sidebar.
+2. Click the **New Teamspace** button located at the top-right corner of the screen.
+3. Fill in the required details:
+   - **Name**: Provide a name that clearly represents the team.
+   - **Team lead**: Assign a team lead.
+   - **Team members**: Add members by selecting from the list of available users.
+4. Once all details are filled, click **Create Teamspace**.
+
+After creating a teamspace, you can view and manage all your teams in one place.
+
+![Teams page](https://media.docs.plane.so/teams/view-all-teamspaces.webp#hero)
+
+### Teamspaces and project access
+
+When you link a Teamspace to projects, it automatically affects how your team members access those projects. Understanding this relationship helps you manage permissions effectively across your organization.
+
+- All members of a teamspace automatically receive `Member` access to any projects linked to that teamspace. This means when you add someone to a teamspace, they immediately gain access to all associated projects without needing separate invitations.
+
+- Team members can have both direct project access and teamspace-based access simultaneously. When this happens, Plane applies whichever role gives them higher permissions. For example, if someone is a `Guest` on a project but joins a linked teamspace, they're automatically upgraded to `Member` access. If they're already an `Admin`, they keep their `Admin` role.
+
+- Removing someone from a project won't affect their access if they're still in the linked teamspace - they'll retain `Member` access through the teamspace connection. Similarly, removing someone from a teamspace only affects their teamspace-based access; any direct project roles they have remain unchanged.
+
+- If you unlink a teamspace from a project, members who had access only through the teamspace will lose access to that project, while those who were directly added to the project will keep their original roles.
+
+## Teamspaces Overview
+
+When you click on a Teamspace, you'll see a comprehensive dashboard that gives you visibility into all activities across your team's projects. The **Jump into** section serves as your navigation hub, providing quick access to your team's Work items, Cycles, Views and Pages.
+
+![Jump into section](https://media.docs.plane.so/teams/jump-into-section.webp#hero)
+
+### Teamspace Work Items
+
+The Work Items screen gives you a bird's-eye view of everything your team is working on across all projects. You'll see all work items assigned to your team members in one place, making it easy to track progress and understand what everyone's focused on without jumping between different projects.
+
+### Teamspace Cycles
+
+The Cycles screen brings together all your team's cycles from every project into one consolidated view. Whether you're looking at active cycles currently in progress, planning upcoming work, or reviewing what you've completed in the past, this screen helps you monitor project timelines and delivery schedules across your entire team's portfolio.
+
+### Teamspace Views
+
+Views let you create custom ways of organizing and viewing work that make sense for how your team collaborates. These views exist at the team level, so they're independent of individual projects and can pull together information in ways that work best for your team's workflow and processes.
+
+### Teamspace Pages
+
+The Pages screen is your team's documentation hub, where you can create and maintain knowledge that lives at the team level rather than within specific projects. It's perfect for building process documentation, team guidelines, and collaborative resources that everyone can access and contribute to.
+
+## Team's progress
+
+This section provides a visual representation and summary of the team's current workload and performance, helping managers track progress effectively. It highlights overdue work items, incomplete tasks, and pending actions, ensuring teams stay on top of their responsibilities.
+
+![Team progress](https://media.docs.plane.so/teams/team-progress.webp#hero)
+
+Here's a breakdown of its components:
+
+- **Overdue work items**  
+  A red-highlighted banner at the top shows the count of overdue work items, emphasizing the urgency to address them.
+  This feature encourages timely action to meet deadlines and reduce project delays.
+
+- **Progress chart**  
+  A bar chart displays the progress of work items categorized by selected criteria, such as Priority, Due date, or Start date.
+  Users can toggle between these views using the dropdown menu to focus on specific aspects of the team's work.
+  Each bar is segmented to show the percentage of completed and pending work items, offering a quick comparison.
+
+- **Summary of team's work items**  
+  A summary panel on the right provides a detailed breakdown of work item states. It displays counts for Pending and Completed work items and includes additional states like Backlog and Cancelled, ensuring all work items are accounted for.
+
+  It also highlights work items without due dates, helping team leads prioritize and assign deadlines.
+
+## Team's relations
+
+The Relations feature allows team members to track dependencies between work items. It has two main tabs - **Blocking** and **Blocked**.
+
+![Team relations](https://media.docs.plane.so/teams/team-relations.webp#hero)
+
+**Blocking**  
+This tab displays work items that are currently blocking other tasks, potentially causing delays in your team’s workflow.
+
+**Blocked**  
+This tab would display work items that are blocked by others. It helps in identifying bottlenecks and ensuring timely resolution to keep tasks moving.
+
+## Team's stats
+
+This section provides a high-level view of tasks across multiple projects or teams. It visualizes work items in a treemap format, where each section represents a project, and the size of each block is proportional to the number of work items.
+
+![Team stats](https://media.docs.plane.so/teams/teamspace-stats.webp#hero)
+
+You can group the stats based on filters like Projects, Members, State Groups, Dependency, and Due By to focus on specific areas of work.
+
+A legend at the bottom categorizes work items by their state or priority, making it easier to understand their progress.
+
+This feature helps you quickly assess the distribution of workload, identify where resources are focused, and monitor the health of ongoing efforts.
+
+## Team's info
+
+The Info tab on the right serves as a centralized space to view key details and linked entities.
+
+![Teams info](https://media.docs.plane.so/teams/teamspace-info.webp#hero)
+
+- **Properties**  
+  Displays primary details about the entity. For example, the lead or owner of the team is listed here.
+
+- **Linked entities**  
+  Provides a breakdown of related elements associated with the entity, including number of work items and cycles .
+
+- **Team's entities**
+  Displays the count of views and pages created at the team level.
+
+## Teams members
+
+The Members tab displays all members currently associated with the team. Clicking the **Add new member** button allows you to onboard teammates. You can remove team members through the menu (represented by the three dots) next to the member name.
+
+![Teams members](https://media.docs.plane.so/teams/team-members.webp#hero-tr)
+
+## Teams comments
+
+Add comments to collaborate with your team and to discuss progress, blockers, or updates.
+
+![Teams info](https://media.docs.plane.so/teams/team-comments.webp#hero-tr)
+
+## Teams activity feed
+
+Access the activity log for a history of changes made to the team, ensuring transparency and accountability.
+
+![Teams info](https://media.docs.plane.so/teams/team-activity.webp#hero-tr)
+
+---
+
+Teamspaces is your answer to scattered collaboration. It's where your team members and their work come together in perfect harmony. No more switching between multiple views or losing track of who's doing what – everything your team needs is right here in one organized space.

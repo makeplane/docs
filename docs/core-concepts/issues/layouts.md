@@ -1,0 +1,132 @@
+---
+title: Project layouts
+toc_max_heading_level: 2
+description: Use layouts to visualize, organize, and manage your work items based on your team's workflow preferences.
+---
+
+# Switch between layouts
+
+Plane provides five flexible layouts to view and manage your work items, tailored to suit different workflows. Each layout offers unique benefits, so you can easily switch perspectives and optimize your team’s productivity.
+
+## List layout
+
+The List layout is a straightforward, text-based view ideal for scanning and organizing tasks. It displays all your work items in an ordered list, which can be grouped by properties like priority, assignee, or labels. You can also drag and drop tasks to adjust their positions. This layout is particularly useful for getting a quick snapshot of all project activities.
+
+### Key features
+
+- **Grouping**: Group work items by properties such as priority or assignee.
+- **Hierarchy**: View parent-child work item relationships.
+- **Drag and Drop**: Rearrange tasks directly within the list.
+
+<div style="position: relative; padding-bottom: calc(56.67989417989418% + 41px); height: 0; width: 100%">
+  <iframe
+    src="https://demo.arcade.software/aMn1AOJX3fr7pRLQmGVJ?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+    frameborder="0"
+    loading="lazy"
+    webkitallowfullscreen
+    mozallowfullscreen
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light"
+    title="Set up your workspace"
+  ></iframe>
+</div>
+
+## Board layout
+
+The Board layout resembles a Kanban board, with work items represented as cards in vertical columns. It’s perfect for visualizing work stages like Backlog, In Progress, or Done.
+
+### Key features
+
+- **Column organization**: Define stages for workflows.
+- **Subgroups**: Subgroup tasks to add finer categorizations.
+- **Status updates**: Drag and drop cards between columns to reflect progress.
+
+<div style="position: relative; padding-bottom: calc(56.67989417989418% + 41px); height: 0; width: 100%">
+  <iframe
+    src="https://demo.arcade.software/OLwTdTUp6uyusI32iidp?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+    frameborder="0"
+    loading="lazy"
+    webkitallowfullscreen
+    mozallowfullscreen
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light"
+    title="Set up your workspace"
+  ></iframe>
+</div>
+
+## Calendar layout
+
+The Calendar layout maps out your work items by their due dates. It's perfect for tracking deadlines and planning ahead. Only tasks with defined due dates are displayed, allowing you to focus on what’s due and when.
+
+### Key features
+
+- **Date-based planning**: Displays work items based on their end dates.
+- **Drag and Drop**: Adjust due dates by moving tasks across the calendar.
+
+<div style="position: relative; padding-bottom: calc(56.67989417989418% + 41px); height: 0; width: 100%">
+  <iframe
+    src="https://demo.arcade.software/XGoIilNP1NOlUYt9lAAb?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+    frameborder="0"
+    loading="lazy"
+    webkitallowfullscreen
+    mozallowfullscreen
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light"
+    title="Set up your workspace"
+  ></iframe>
+</div>
+
+## Table layout
+
+The Table layout offers a spreadsheet-like interface, great for bulk editing and analyzing detailed work item data. Each row represents a work item, and columns display attributes like assignee, priority, and dates.
+
+### Key features
+
+- **Keyboard navigation**: Quickly update task properties.
+- **Bulk edits**: Modify multiple rows at once.
+
+<div style="position: relative; padding-bottom: calc(56.67989417989418% + 41px); height: 0; width: 100%">
+  <iframe
+    src="https://demo.arcade.software/TSIc61SiRJavqKmnvmG4?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+    frameborder="0"
+    loading="lazy"
+    webkitallowfullscreen
+    mozallowfullscreen
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light"
+    title="Set up your workspace"
+  ></iframe>
+</div>
+
+## Timeline layout
+
+The Timeline layout, similar to a Gantt chart, shows your project's progress over time. You can see how long tasks take, when they start and finish, and how they connect to each other. Tasks with start and end dates appear as bars, giving a clear picture of how work fits together.
+
+### Key features
+
+- **Drag and drop**: Adjust start and end dates directly.
+- **Critical path visualization**: Identify crucial tasks that could impact deadlines.
+- **Dependencies**: Link tasks to define order and precedence. See [Dependencies in Timeline](/core-concepts/issues/timeline-dependency) for more info.
+
+<div style="position: relative; padding-bottom: calc(56.67989417989418% + 41px); height: 0; width: 100%">
+  <iframe
+    src="https://demo.arcade.software/r1R9tGYjkMO0ljiRnmLr?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+    frameborder="0"
+    loading="lazy"
+    webkitallowfullscreen
+    mozallowfullscreen
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light"
+    title="Set up your workspace"
+  ></iframe>
+</div>
+
+## Choose the right layout
+
+Each layout offers a different lens to view your work. Switch between them to find the perspective that helps your team work best.
+
+- Use **List** for simplicity and quick overviews.
+- Choose **Board** for workflows that need a visual pipeline.
+- Try **Calendar** for deadline-focused planning.
+- Opt for **Table** when handling detailed data or performing bulk updates.
+- Go for **Timeline** when managing dependencies or seeing the big picture.

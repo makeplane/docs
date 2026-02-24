@@ -1,0 +1,86 @@
+---
+title: Create and manage workspaces
+description: Create and manage Workspaces in Plane.
+---
+
+# Create and manage workspaces
+
+Think of a Workspace in Plane as your command center, the place where everything comes together. It’s the top-level space that holds all your projects, work items, cycles, modules, and pages.
+
+Picture it like this. A Workspace in Plane is similar to a server in Discord or an organization in Slack. It’s where your team gathers to work on projects, track progress, and get things done. You can create your own projects, invite others to join, and collaborate as a group, or just do your own thing if that’s how you roll.
+
+## What's inside a workspace
+
+Every workspace in Plane has two main components:
+
+- **Projects**  
+  Projects serve as the cornerstone for all activities within the product. You can create work items, assign tasks to members, and track progress for whatever you’re working on. If you envision your organization as NASA, each mission can be likened to a project. [Learn more here](/core-concepts/projects/overview).
+- **Members**  
+  Invite your teammates, collaborators, or managers to join your workspace. Each user gets a role, like Admin, Member, or Guest, to control what they can do. [Explore roles here](/workspaces-and-users/roles).
+
+## Create workspace
+
+**First-time setup**  
+When you first sign up for Plane, you'll create your workspace during onboarding.
+
+**Create additional workspaces**
+
+1. Click your workspace name in the top-left corner of the sidebar.
+2. Select **Create workspace** from the dropdown menu.
+3. Enter your workspace name and URL slug.
+4. Click **Create**.
+
+![Create workspace](https://media.docs.plane.so/workspaces/workspace-creation-form.webp#hero)
+
+::: info Workspace URL
+Each workspace gets a unique URL (slug). You can have duplicate workspace names, but URLs must be unique.
+:::
+
+## Join an existing workspace
+
+If you are a team member or contributor and are invited to a workspace, you don’t need to create your own. Just accept the invitation through:
+
+**Email invitation**  
+Click the invitation link in the email you received.
+
+**Workspace invites page**
+
+1. Click your workspace name in the top-left corner.
+2. Select **Workspace invites** from the dropdown menu.
+3. View pending invitations.
+4. Click Accept on the workspace you want to join.
+
+## Access workspace settings
+
+1. Click your workspace name in the top-left corner.
+2. Select **Settings** from the dropdown menu.
+
+![workspace-settings](https://media.docs.plane.so/workspaces/workspace-settings.webp#hero-tl)
+
+From workspace settings, you can:
+
+- Manage workspace members and roles
+- Configure integrations
+- Import or export data
+- Manage workspace settings
+
+## Switch between workspaces
+
+If you belong to multiple workspaces:
+
+1. Click your current workspace name in the top-left corner.
+2. Select a different workspace from the dropdown menu.
+
+All your workspaces must be associated with the same email address.
+
+## Delete workspace
+
+Workspace admins are the only ones who can delete a workspace.
+
+::: warning
+Deleting a workspace permanently removes all data including projects, work items, cycles, modules, and pages. Plane does not provide automatic backups. Export any important data before deleting.
+:::
+
+1. Navigate to **Workspace Settings**.
+2. In the **General** tab, scroll to the **Delete workspace** section.
+3. Confirm the deletion.

@@ -1,0 +1,49 @@
+---
+title: Intake emails to collect work items from email submissions
+description: Set up a dedicated email address for your project that automatically converts incoming messages into work items for easy review and processing.
+---
+
+# Intake emails to collect work items from email submissions
+
+<Tags :tags='[{ name: "Business", additionalClass: "business" }]' />
+
+With Intake Emails, you get a dedicated email address where people can send requests that automatically appear in your project's Intake section.
+
+## How Intake emails work
+
+When someone sends an email to your project's dedicated address, our system automatically converts it into a work item in your Intake section. The email subject becomes the work item title, while the body becomes the description. Any attachments are preserved and added to the work item for easy reference.
+
+::: danger Self-hosted Plane instance
+If you're running a self-hosted instance of Plane, you'll need to set up a few extra configurations to get Intake Email working. Check out the [setup guide](https://developers.plane.so/self-hosting/govern/configure-dns-email-service) first before diving into the steps on this page.
+:::
+
+## Enable Intake Email
+
+![enable-intake-email](https://media.docs.plane.so/intake/enable-intake-email.webp#hero)
+
+1. Navigate to your project's **Settings**.
+2. Go to the **Features** tab.
+3. Toggle on the **Intake Email** option.
+4. We'll generate a unique email address for your project (something like `plane-master-be7b64a655d7484....`).
+5. If security is ever a concern, you can click **Renew** to get a fresh email address and invalidate the old one.
+
+## Share the email address
+
+Share your project's intake email address with clients, stakeholders, or team members who need to submit work items. There's no login required—they simply send an email as they normally would.
+
+## Review email submissions in Intake
+
+When someone emails your project address, their submission appears in your **Intake** section alongside items from other sources.
+From there, you can:
+
+- Review the content and attachments.
+- Accept items you want to work on (moving them into your project workflow).
+- Reject items that don't fit your current priorities.
+
+::: info
+All work items submitted through forms appear in Intake under the **Triage** state. When you accept an item into your project, you'll choose which project state it should move to.
+:::
+
+---
+
+Intake Emails is another powerful way to streamline how work enters your project, making it easier to collect feedback and manage requests without giving outside users direct access to your project environment.
