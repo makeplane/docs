@@ -56,11 +56,13 @@ These are globally registered and can be used directly in any Markdown file:
 </CardGroup>
 
 <!-- Admonitions -->
+
 ::: tip
 ::: warning
 ::: danger
 
 <!-- Tabs (via vitepress-plugin-tabs) -->
+
 :::tabs
 == Tab 1
 Content
@@ -69,8 +71,9 @@ Content
 :::
 
 <!-- Image styling via hash fragments -->
-![Alt](https://url#hero)       <!-- rounded corners + shadow -->
-![Alt](https://url#hero-tl)    <!-- top-left corner only -->
+
+![Alt](https://url#hero) <!-- rounded corners + shadow -->
+![Alt](https://url#hero-tl) <!-- top-left corner only -->
 ```
 
 ### Image Hosting
@@ -80,6 +83,7 @@ All documentation images are hosted externally at `https://media.docs.plane.so/`
 ## CI
 
 GitHub Actions (`.github/workflows/build.yml`) runs two jobs on PRs and pushes to `master`:
+
 1. **format** — `pnpm format:check`
 2. **build** — `pnpm build`
 
