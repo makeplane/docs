@@ -229,6 +229,7 @@ export default defineConfig({
             items: [
               { text: "Overview", link: "/core-concepts/issues/overview" },
               { text: "Properties", link: "/core-concepts/issues/properties" },
+              { text: "Create work items via URL", link: "/core-concepts/issues/work-item-url" },
               { text: "Drafts", link: "/core-concepts/drafts" },
             ],
           },
