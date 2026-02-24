@@ -5,10 +5,7 @@ description: Learn how to set up recurring work items to automatically create re
 
 # Recurring work items to automate repetitive tasks
 
-<div class="tag-wrapper">
-  # Automate repetitive tasks
-  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-</div>
+<Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
 
 Keep your team on track with repetitive tasks by setting them up once and letting them automatically repeat on your schedule.
 

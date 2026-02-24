@@ -5,10 +5,7 @@ description: Organize team members across projects, track team-specific work ite
 
 # Track team work with Teamspaces
 
-<div class="tag-wrapper">
-  # Track work by teams
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
 
 With Teamspaces, you can mirror your real-world teams of any kind and track work separately from a project. See your team's work automatically filtered across projects, and house your team's knowledge separate from anything else in Plane.
 

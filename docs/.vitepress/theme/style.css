@@ -117,13 +117,18 @@ body {
   gap: 8px;
 }
 
+.tag-wrapper h2,
+.tag-wrapper h3 {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
 .tags {
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
   align-items: center;
-  position: relative;
-  top: -10px !important;
 }
 
 @media (max-width: 768px) {

@@ -5,10 +5,7 @@ description: Create and manage Epics in Plane to organize related work items, tr
 
 # Organize related work items with Epics
 
-<div class="tag-wrapper">
-  # Organize and track your work items with Epics
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
 
 Epics help you group related tasks into a larger work item, providing a hierarchical structure for managing complex projects. This feature is ideal for breaking down major objectives into smaller, manageable pieces while keeping everything organized within a project.
 

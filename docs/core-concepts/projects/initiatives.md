@@ -5,10 +5,7 @@ description: Create and manage Initiatives to align multiple projects with strat
 
 # Align multiple projects with Initiatives
 
-<div class="tag-wrapper">
-  # Group multiple projects using Initiatives
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
 
 Initiatives is designed to help you manage and track progress across multiple related projects under a unified objective. This feature is particularly useful if you need a high-level view of how various projects align with strategic goals.
 

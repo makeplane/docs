@@ -3,12 +3,9 @@ title: Import data from Notion
 description: Import data from Notion to Plane.
 ---
 
-<div class="tag-wrapper">
 # Import your Notion data to Plane
-<Tags :tags='[ 
-    { name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }
-  ]' />
-</div>
+
+<Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
 
 The Notion to Plane importer lets you transfer your Notion pages and content to Plane's Wiki. This is useful when you want to bring your documentation, notes, and structured content from Notion into your Plane workspace as Wiki pages.
 

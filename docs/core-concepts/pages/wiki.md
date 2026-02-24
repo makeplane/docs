@@ -5,10 +5,7 @@ description: Create and organize company-wide documentation, policies, guides, a
 
 # Wiki for company wide knowledge base
 
-<div class="tag-wrapper">
-  # Centralized documentation with Wiki
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
 
 Plane's Wiki is a place to store and share company-wide information. Unlike project pages that focus on specific work, the Wiki helps you create documentation that matters to everyone in the organization.
 

@@ -5,10 +5,7 @@ description: Align work items toward shared completion dates with milestones. Tr
 
 # Align work toward target dates with Milestones
 
-<div class="tag-wrapper">
-  # Track goals with Milestones
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
 
 Milestones provide a layer to align work items and epics toward shared completion dates, helping teams focus on strategic objectives and critical deliverables. Whether tracking quarterly goals, product launches, or major feature releases, milestones give you visibility into progress and ensure teams stay on track.
 

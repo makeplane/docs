@@ -5,10 +5,7 @@ description: Track metrics, share status updates, and monitor overall project he
 
 # Project Overview
 
-<div class="tag-wrapper">
-  # Monitor project progress at a glance
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+<Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
 
 Without a centralized project view, teams often face challenges like fragmented information, inefficient progress tracking, and communication gaps.
 
