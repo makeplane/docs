@@ -86,6 +86,29 @@ You get essential filtering with the `is` operator, plus `between` for date fiel
 Unlock advanced filtering with additional operators including `is not`, `is not any of`, `after`, `before`, and more specialized conditions. We will be adding more conditions here such as `not in`, `contains`, `is empty`, etc. .
 :::
 
+### Title
+
+Filter work items by their title text to find specific work items.
+
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exact title match | Title is exactly "Login bug" |
+| `is not` | Not exact title match | Title is not "Login bug" |
+| `contains` | Title contains text | Title contains "authentication" |
+| `does not contain` | Title does not contain text | Title does not contain "deprecated" |
+
+### Milestone
+
+Filter work items by their associated milestone to track progress toward major goals or releases.
+
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exactly this milestone | Items in Q1 Launch milestone |
+| `is any of` | Any of these milestones | In Q1 Launch or Beta Release |
+| `is not` | Not this specific milestone | Not in Q1 Launch |
+| `is not any of` | Not in any of these milestones | Not in Q1 Launch or Beta Release |
+| `is empty` | No milestone assigned | Items without any milestone |
+
 ### Type
 
 Filter by custom work item types, such as Bug, Feature, or Task.
@@ -123,12 +146,13 @@ View all, active or backlog work items.
 
 Focus on work items assigned to specific team members to track workloads or identify pending tasks.
 
-| Operator        | Description                    | Use case                        |
-| --------------- | ------------------------------ | ------------------------------- |
-| `is`            | Exactly matches one person     | Find work assigned to Sarah     |
-| `is any of`     | Matches any of multiple people | Show work for the frontend team |
-| `is not`        | Excludes one person            | Hide items assigned to John     |
-| `is not any of` | Excludes multiple people       | Not assigned to John or Sarah   |
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exactly matches one person | Find work assigned to Sarah |
+| `is any of` | Matches any of multiple people | Show work for the frontend team |
+| `is not` | Excludes one person | Hide items assigned to John |
+| `is not any of` | Excludes multiple people | Not assigned to John or Sarah |
+| `is empty` | No assignee | Unassigned work items |
 
 ### Priority
 
@@ -145,23 +169,25 @@ Filter work items by their priority level (e.g., Urgent, High, Medium, Low) to f
 
 Filter tasks where you or another team member has been mentioned to ensure no critical tasks are missed.
 
-| Operator        | Description                    | Use case                     |
-| --------------- | ------------------------------ | ---------------------------- |
-| `is`            | Exactly matches one person     | Items mentioning Sarah       |
-| `is any of`     | Matches any of multiple people | Mentioning team leads        |
-| `is not`        | Excludes one person            | Not mentioning John          |
-| `is not any of` | Excludes multiple people       | Not mentioning John or Sarah |
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exactly matches one person | Items mentioning Sarah |
+| `is any of` | Matches any of multiple people | Mentioning team leads |
+| `is not` | Excludes one person | Not mentioning John |
+| `is not any of` | Excludes multiple people | Not mentioning John or Sarah |
+| `is empty` | No mentions | Items with no mentions |
 
 ### Label
 
 Filter work items based on custom tags, such as "Frontend", or "Marketing".
 
-| Operator        | Description               | Use case                |
-| --------------- | ------------------------- | ----------------------- |
-| `is`            | Exact label match         | Label exactly "bug"     |
-| `is any of`     | Matches any of the Labels | frontend or backend     |
-| `is not`        | Not exact label match     | Label not exactly "bug" |
-| `is not any of` | Excludes several labels   | Not frontend or backend |
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exact label match | Label exactly "bug" |
+| `is any of` | Matches any of the Labels| frontend or backend |
+| `is not` | Not exact label match | Label not exactly "bug" |
+| `is not any of` | Excludes several labels | Not frontend or backend |
+| `is empty` | No labels | Items without any labels |
 
 ### Cycle
 
@@ -173,36 +199,39 @@ View work items tied to specific cycles to monitor progress within a timeframe.
 | `is any of`     | Any of these cycles        | In Sprint 23 or 24     |
 | `is not`        | Not this specific cycle    | Not in Sprint 23       |
 | `is not any of` | Not in any of these cycles | Not in Sprint 23 or 24 |
+| `is empty` | No cycle assigned | Items not in any cycle |
 
 ### Module
 
 Filter work items by their associated module to analyze related tasks together.
 
-| Operator        | Description                 | Use case                                      |
-| --------------- | --------------------------- | --------------------------------------------- |
-| `is`            | Exactly this module         | Items in Authentication module                |
-| `is any of`     | Any of these modules        | In API development or Data management modules |
-| `is not`        | Not this specific module    | Not in Authentication module                  |
-| `is not any of` | Not in any of these modules | Not in API or Data management                 |
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exactly this module | Items in Authentication module |
+| `is any of` | Any of these modules | In API development or Data management modules |
+| `is not` | Not this specific module | Not in Authentication module |
+| `is not any of` | Not in any of these modules | Not in API or Data management |
+| `is empty` | No module assigned | Items not in any module |
 
-### Start date and Target date
+### Start date, Due date, Created at, and Updated at
 
 Filter work items by start dates to view tasks that are planned or already in progress, and by target dates to track upcoming deadlines or overdue tasks. For even more flexibility, you can specify a custom date range to focus on a specific timeframe.
 
-| Operator           | Description            | Use case                                     |
-| ------------------ | ---------------------- | -------------------------------------------- |
-| `is`               | Exactly this date      | Items due today                              |
-| `is not`           | Not this specific date | Not due today                                |
-| `before`           | Earlier than this date | Due before Monday                            |
-| `not before`       | This date or later     | Not due before Monday (due Monday or later)  |
-| `before or on`     | This date or earlier   | Due Monday or earlier                        |
-| `not before or on` | Later than this date   | Not due Monday or earlier (due after Monday) |
-| `after`            | Later than this date   | Due after Friday                             |
-| `not after`        | This date or earlier   | Not due after Friday (due Friday or earlier) |
-| `after or on`      | This date or later     | Due Friday or later                          |
-| `not after or on`  | Earlier than this date | Not due Friday or later (due before Friday)  |
-| `between`          | Within date range      | Due this week                                |
-| `not between`      | Outside date range     | Not due this week                            |
+| Operator | Description | Use case |
+|----------|-------------|----------|
+| `is` | Exactly this date | Items due today |
+| `is not` | Not this specific date | Not due today |
+| `before` | Earlier than this date | Due before Monday |
+| `not before` | This date or later | Not due before Monday (due Monday or later) |
+| `before or on` | This date or earlier | Due Monday or earlier |
+| `not before or on` | Later than this date | Not due Monday or earlier (due after Monday) |
+| `after` | Later than this date | Due after Friday |
+| `not after` | This date or earlier | Not due after Friday (due Friday or earlier) |
+| `after or on` | This date or later | Due Friday or later |
+| `not after or on` | Earlier than this date | Not due Friday or later (due before Friday) |
+| `between` | Within date range | Due this week |
+| `not between` | Outside date range | Not due this week |
+| `is empty` | No date set | Items without start date or target date |
 
 ### Created by
 
@@ -226,6 +255,7 @@ Filter work items by any custom properties defined for each work item type in yo
 | `is not` | Not exact text match | Name is not "Login feature" |
 | `contains` | Text contains value | Description contains "authentication" |
 | `does not contain` | Text does not contain value | Description does not contain "deprecated" |
+| `is empty` | No text entered | Items with empty description field |
 
 **Number properties**
 | Operator | Description | Use case |
@@ -242,6 +272,7 @@ Filter work items by any custom properties defined for each work item type in yo
 | `not greater than or equal` | Below this value | Severity not greater than or equal 8 |
 | `between` | Within numeric range | Estimated hours between 5 and 10 |
 | `not between` | Outside numeric range | Priority score not between 20 and 40 |
+| `is empty` | No number entered | Items without impact score |
 
 **Dropdown properties**
 | Operator | Description | Use case |
@@ -250,6 +281,7 @@ Filter work items by any custom properties defined for each work item type in yo
 | `is any of` | Any of these options | Status is Approved or Pending |
 | `is not` | Not this option | Category is not Bug |
 | `is not any of` | Not any of these options | Environment not Staging or Development |
+| `is empty` | No option selected | Items without severity set |
 
 **Boolean properties**
 | Operator | Description | Use case |
@@ -272,6 +304,7 @@ Filter work items by any custom properties defined for each work item type in yo
 | `not after or on` | Earlier than this date | Milestone not after or on sprint end |
 | `between` | Within date range | Review period between Jan 1 and Jan 31 |
 | `not between` | Outside date range | Availability not between holidays |
+| `is empty` | No date set | Items without start date or target date |
 
 **Member picker properties**
 | Operator | Description | Use case |
@@ -280,6 +313,7 @@ Filter work items by any custom properties defined for each work item type in yo
 | `is any of` | Any of these members | Code owner is John or Emily |
 | `is not` | Not this member | Quality checker is not Mike |
 | `is not any of` | Not any of these members | Approver not John or Sarah |
+| `is empty` | No member selected | Items without reviewers assigned |
 
 **URL properties**
 | Operator | Description | Use case |

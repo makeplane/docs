@@ -26,7 +26,7 @@ Sign-up isn't available through the mobile app. To use the app, you'll need to b
 
 ## Sign in
 
-The app is available on Cloud and for self-hosted instances on all plans of the Commercial Edition starting from version `v1.5.0`. Here’s how you can get started:
+The app is available on Cloud and for self-hosted instances on all plans of the Commercial Edition starting from version `v1.12.0`. Here’s how you can get started:
 
 - **For cloud users**  
   Tap **Cloud sign in** and enter your credentials to log in.

@@ -153,7 +153,7 @@ Create and manage work items with full control:
 - Create new work items with complete details (title, description, priority, assignees, labels, start/due dates).
 - Update any field on existing work items.
 - Delete work items permanently.
-- Add [relations](/core-concepts/issues/overview#add-relations to work items (blocking, blocked by, relates to, duplicate of, etc.).
+- Add [relations](/core-concepts/issues/overview#add-relations) to work items (blocking, blocked by, relates to, duplicate of, etc.).
 
 Add context and collaboration:
 
