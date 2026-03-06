@@ -68,11 +68,13 @@ const sidebars: SidebarsConfig = {
           label: "Authentication",
           items: [
             "authentication/sso",
+            "authentication/group-sync",
             {
                   type: 'link',
                   label: 'Self-hosted authentication', 
                   href: 'https://developers.plane.so/self-hosting/govern/authentication',
             },
+            
           ],
         },
         {
