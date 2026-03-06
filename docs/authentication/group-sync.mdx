@@ -1,5 +1,5 @@
 ---
-title: Group syncing
+title: Manage project access with IdP groups
 sidebar_label: Group Sync
 hide_title: true
 description: Automatically provision project memberships based on identity provider groups.
@@ -13,7 +13,7 @@ import Tags from "@site/src/components/Tags";
 </div>
 
 :::info
-Group syncing is currently available on the self-hosted Commercial Edition only and supports OIDC. We are also working on adding support for SAML and LDAP.
+Group syncing is currently available on the self-hosted Commercial Edition and supports OIDC only. SAML and LDAP support is coming soon.
 :::
 
 Group syncing lets workspace admins map identity provider groups to Plane projects. When users sign in via OIDC, their project memberships are provisioned and kept in sync automatically.
@@ -28,7 +28,7 @@ Group syncing lets workspace admins map identity provider groups to Plane projec
 1. Navigate to **Workspace Settings → Group syncing**.
 2. Toggle on **Enable group syncing**.
 
-  ![Group syncing](https://media.docs.plane.so/sso/group-syncing.webp#hero)
+  ![Group syncing](https://media.docs.plane.so/sso/enable-group-sync.webp#hero)
 
 ## Configure sync settings
 
@@ -51,7 +51,7 @@ Each mapping links an IdP group to a Plane project with a default role.
 4. Choose the **Project role**: Admin, Member, or Guest.
 5. Click **Add**.
 
-![Add new group sync](https://media.docs.plane.so/sso/add-group-sync.webp#hero)
+![Add new group sync](https://media.docs.plane.so/sso/add-new-group-sync.webp#hero)
 
 Repeat for additional group-to-project mappings.
 
