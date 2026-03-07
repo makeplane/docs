@@ -1,0 +1,103 @@
+---
+title: Import data from Asana
+description: Migrate your Asana data to Plane.
+---
+
+# Import your Asana data to Plane
+
+With the Asana importer, you can easily import issues, states, labels, priorities and user data from Asana to Plane and continue managing your existing projects.
+
+::: info
+The Asana importert is available on Plane Cloud and on all plans of the Commercial Edition for self-hosted instances.
+:::
+
+## Import from Asana
+
+> **Role**: Workspace admins
+
+::: tip
+To import issue types from Asana, make sure the [Work item types](/core-concepts/issues/issue-types) feature is enabled in your Plane project.
+:::
+
+To import Asana issues to a Plane project, follow these steps:
+
+1. Click the **∨** icon next to your workspace name on the sidebar and select **Workspace Settings**.
+
+2. Select **Imports** on the right pane and click the **Import** button in the Asana section.
+
+   ![Import from Asana](https://media.docs.plane.so/importers/asana/import-asana.webp#hero)
+
+3. In the **Asana to Plane Migration Assistant** screen, enter your **Personal Access Token** to allow Plane access to your Asana account.
+
+   ![Connect Asana](https://media.docs.plane.so/importers/asana/asana-plane-migration-assistant.webp#hero)
+
+4. Click the **Connect Asana** button to link the accounts.
+
+5. Click the **Import** button under the **Imports** section.
+
+   ![Import Asana](https://media.docs.plane.so/importers/asana/import-asana-data.webp#hero)
+
+6. **Configure Plane**  
+   Select the Plane project where you want to import your Asana data and and click **Next**.
+
+   ![Configure Plane](https://media.docs.plane.so/importers/asana/configure-plane.webp#hero)
+
+7. **Configure Asana**  
+   Choose the workspace and project in Asana from where you want to import data.
+
+   ![Configure Asana](https://media.docs.plane.so/importers/asana/configure-asana.webp#hero)
+
+8. **Map states**  
+   Map **Asana sections** to their equivalent **Plane states**.
+
+   ![Map states](https://media.docs.plane.so/importers/asana/map-states.webp#hero)
+
+9. **Map priorities**  
+   Map the **Asana priorities** to the corresponding **Plane priorities**. If there's no match, select **None** in the **Plane priorities** list.
+
+   ![Map priorities](https://media.docs.plane.so/importers/asana/map-priorities.webp#hero)
+
+10. **Summary**  
+    Review the mappings and make any changes if needed. Click **Back** to adjust, or click **Confirm** to start the migration.
+
+    ![Review mappings](https://media.docs.plane.so/importers/asana/import-summary.webp#hero)
+
+11. The data migration begins and takes a few minutes to complete depending on the number of issues in your Asana workspace.
+
+    ![Migration complete](https://media.docs.plane.so/importers/asana/import-complete.webp#hero)
+
+12. Once it's done, go to **Work items** in your Plane project to confirm that the data import is successful.
+
+## Imported entities
+
+Here’s a quick look at what gets imported during the migration from Asana to Plane:
+
+| Asana                           | Plane                               | Notes                                                                                                                                           |
+| ------------------------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Labels                          | Labels                              |                                                                                                                                                 |
+| Status                          | States                              |                                                                                                                                                 |
+| Issue priorities                | Priorities                          |                                                                                                                                                 |
+| Users                           | Users                               |                                                                                                                                                 |
+| Issues                          | Work items                          |                                                                                                                                                 |
+| Relations                       | Parent                              | Includes only parent-child relationships                                                                                                        |
+| Issue&nbsp;comments             | Work item&nbsp;comments             | Includes username and timestamp. If you skip user import during migration, comments will show the name of the user who performed the migration. |
+| Issue attachments               | Work item attachments               |                                                                                                                                                 |
+| Reporter                        | Created by                          |                                                                                                                                                 |
+| Created                         | Created at                          |                                                                                                                                                 |
+| Assignee                        | Assignees                           | If you skip user import during migration, this will be blank.                                                                                   |
+| Issue types                     | Labels \| Prefix in Work item title |                                                                                                                                                 |
+| Images in the Issue description | Images in the Work item description |                                                                                                                                                 |
+| Summary                         | Work item title                     |                                                                                                                                                 |
+| Start date                      | Start date                          |                                                                                                                                                 |
+| Due date                        | Due date                            |                                                                                                                                                 |
+| Linked Issues                   | Links                               | Includes backlinks to the original Asana issue.                                                                                                 |
+
+## Sync Asana to Plane
+
+After the import, if there are any new or updated issues in Asana, you can easily sync these changes to Plane:
+
+1. Go to **Workspace settings**.
+2. Select **Imports** on the right pane.
+3. Click the **Re run** button next to the project you want to sync.
+
+   ![Sync Asana](https://media.docs.plane.so/importers/asana/rerun-import.webp#hero)
