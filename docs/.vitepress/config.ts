@@ -244,6 +244,7 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: "SSO", link: "/authentication/sso" },
+              { text: "Group sync", link: "/authentication/group-sync" },
               {
                 text: "Self-hosted authentication",
                 link: "https://developers.plane.so/self-hosting/govern/authentication",
