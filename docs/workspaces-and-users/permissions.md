@@ -11,9 +11,9 @@ This reference provides a comprehensive breakdown of what each role can do acros
 
 ## Permission levels
 
-<details>
-    <summary><b>Workspaces</b></summary>
-                <table class="" style="">
+::: details Workspaces
+
+<table style="width: 100%; display: table;">
                 <thead>
                     <tr>
                         <th>Permission</th>
@@ -25,182 +25,180 @@ This reference provides a comprehensive breakdown of what each role can do acros
                 <tbody>
                     <tr>
                         <td> Access Workspace settings</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr>  
                     <tr>
                         <td> Create Workspace</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr>  
                     <tr>
                         <td>Update Workspace</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Delete Workspace</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Add user</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Remove user</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Change user role</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Manage Project states</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Manage Billing and plans</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Manage Integrations</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Manage Imports</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Manage Exports</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Manage Webhooks</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Manage API tokens</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Manage Worklogs</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>Home</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
                     </tr> 
                     <tr>
                         <td>Your work</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr>
                     <tr>
                         <td>Inbox</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
                     </tr>
                     <tr>
                         <td>Drafts</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr>
                     <tr>
                         <td>Projects</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr>
                     <tr>
                         <td>View private projects</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr> 
                     <tr>
                         <td>View public projects</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr>
                     <tr>
                         <td>Join private projects</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr>
                     <tr>
                         <td>Join public projects</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr>
                     <tr>
                         <td>Cycles</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr>
                     <tr>
                         <td>Views</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
                     </tr>
                     <tr>
                         <td>Analytics</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr>
                     <tr>
                         <td>Your favourites</td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">✓</span></td>
-                        <td align="center"><span style="">x</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: green; font-weight: bold; font-size: 16px">✓</span></td>
+                        <td align="center"><span style="color: red; font-weight: bold; font-size: 16px">x</span></td>
                     </tr>
                 </tbody>
             </table>
 
-</details>
+:::
 
-<details>
-  <summary>
-    <b>Projects</b>
-  </summary>
-        <table class="" style="width: 100%; display: table; margin-left: 2px">
+::: details Projects
+
+<table class="" style="width: 100%; display: table; margin-left: 2px">
         <thead>
           <tr>
             <th width="350">Permission</th>
@@ -483,13 +481,11 @@ This reference provides a comprehensive breakdown of what each role can do acros
           </tr>
         </tbody>
       </table>
-</details>
+:::
 
-<details>
-  <summary>
-    <b>Work items</b>
-  </summary>
-        <table class="" style="width: 100%; display: table; margin-left: 2px">
+::: details Work items
+
+<table class="" style="width: 100%; display: table; margin-left: 2px">
         <thead>
           <tr>
             <th>Permission</th>
@@ -791,13 +787,11 @@ This reference provides a comprehensive breakdown of what each role can do acros
           </tr>
         </tbody>
       </table>
-</details>
+:::
 
-<details>
-  <summary>
-    <b>Cycles</b>
-  </summary>
-        <table class="" style="width: 100%; display: table; margin-left: 2px">
+::: details Cycles
+
+<table class="" style="width: 100%; display: table; margin-left: 2px">
         <thead>
           <tr>
             <th>Permission</th>
@@ -990,13 +984,11 @@ This reference provides a comprehensive breakdown of what each role can do acros
           </tr>
         </tbody>
       </table>
-</details>
+:::
 
-<details>
-  <summary>
-    <b>Modules</b>
-  </summary>
-        <table class="" style="width: 100%; display: table; margin-left: 2px">
+::: details Modules
+
+<table class="" style="width: 100%; display: table; margin-left: 2px">
         <thead>
           <tr>
             <th>Permission</th>
@@ -1219,13 +1211,11 @@ This reference provides a comprehensive breakdown of what each role can do acros
           </tr>
         </tbody>
       </table>
-</details>
+:::
 
-<details>
-  <summary>
-    <b>Views</b>
-  </summary>
-        <table class="" style="width: 100%; display: table; margin-left: 2px">
+::: details Views
+
+<table class="" style="width: 100%; display: table; margin-left: 2px">
         <thead>
           <tr>
             <th>Permission</th>
@@ -1451,13 +1441,11 @@ This reference provides a comprehensive breakdown of what each role can do acros
           </tr>
         </tbody>
       </table>
-</details>
+:::
 
-<details>
-  <summary>
-    <b>Pages</b>
-  </summary>
-        <table class="" style="width: 100%; display: table; margin-left: 2px">
+::: details Pages
+
+<table class="" style="width: 100%; display: table; margin-left: 2px">
         <thead>
           <tr>
             <th>Permission</th>
@@ -1671,13 +1659,11 @@ This reference provides a comprehensive breakdown of what each role can do acros
           </tr>
         </tbody>
       </table>
-</details>
+:::
 
-<details>
-  <summary>
-    <b>Intake</b>
-  </summary>
-        <table class="" style="width: 100%; display: table; margin-left: 2px">
+::: details Intake
+
+<table class="" style="width: 100%; display: table; margin-left: 2px">
         <thead>
           <tr>
             <th>Permission</th>
@@ -1998,7 +1984,7 @@ This reference provides a comprehensive breakdown of what each role can do acros
           </tr>
         </tbody>
       </table>
-</details>
+:::
 
 ## See also
 

@@ -3,10 +3,7 @@ title: Project Overview
 description: Track metrics, share status updates, and monitor overall project health from a centralized dashboard for better team alignment.
 ---
 
-<div class="tag-wrapper">
-  <h1>Monitor project progress at a glance</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+# Monitor project progress at a glance <Badge type="info" text="Pro" />
 
 Without a centralized project view, teams often face challenges like fragmented information, inefficient progress tracking, and communication gaps.
 

@@ -3,10 +3,7 @@ title: Integrate GitLab to sync repositories with projects
 description: Integrate Plane with GitLab and Self-managed GitLab to automate pull requests and work item state mapping. Connect repositories to projects for bidirectional updates and seamless workflows.
 ---
 
-<div class="tag-wrapper">
-  <h1>Integrate with GitLab</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+# Integrate with GitLab <Badge type="info" text="Pro" />
 
 Integrating GitLab with Plane allows you to sync your development workflow seamlessly by linking GitLab merge requests with Plane work items. This connection enables automated updates and enhances collaboration between developers and project managers.
 
@@ -22,10 +19,6 @@ This guide walks you through the steps to connect your GitLab account, link GitL
 
 ## Set up GitLab integration
 
-::: danger Self-hosted Plane instance (Commercial Edition)
-If you're running a self-hosted instance of Plane, you'll need to set up a few extra configurations to get GitLab integration working. Check out the [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab) first before diving into the steps on this page.
-:::
-
 To get started, you'll need to connect your GitLab account, organization, and repositories with Plane. Follow the steps below to complete the setup:
 
 1. [Connect your GitLab organization](/integrations/gitlab#connect-gitlab-organization)
@@ -36,34 +29,29 @@ To get started, you'll need to connect your GitLab account, organization, and re
 
 Link your GitLab organization to your Plane workspace to start syncing repositories. This step is crucial for enabling the full range of GitLab-Plane integration.
 
-### GitLab.com
+:::tabs key:gitlab-edition
 
-::: danger Self-hosted Plane instance (Commercial Edition)
-If you're running a self-hosted instance of Plane, you'll need to set up a few extra configurations to get GitLab integration working. Check out the [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab?edition=gitlab-cloud) first before diving into the steps on this page.
-:::
+== GitLab.com {#gitlab-cloud}
+
+> [!CAUTION] Self-hosted Plane instance (Commercial Edition)
+> If you're running a self-hosted instance of Plane, you'll need to set up a few extra configurations to get GitLab integration working. Check out the [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab?edition=gitlab-cloud) first before diving into the steps on this page.
 
 1. Navigate to Workspace **Settings** in Plane.
-
 2. Go to the **Integrations** tab.
-
 3. Locate the **GitLab** integration section.
-
 4. Click **Connect** to authenticate your GitLab account and initiate the connection.
 
    ![Connect GitLab](https://media.docs.plane.so/integrations/gitlab/connect-gitlab.webp#hero)
 
 5. Review the requested permissions and click **Authorize Plane** to grant access.
-
 6. Once authenticated, you should see your GitLab account listed as connected.
 
-### GitLab Self-managed
+== GitLab Self-managed {#gitlab-self-managed}
 
-::: danger Plane Cloud and self-hosted instances
-
-Before you can integrate with GitLab Self-managed, you must first set up the necessary configurations in your GitLab instance. This is required for both Plane Cloud and self-hosted users.
-
-Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab?edition=gitlab-self-managed) first before diving into the steps on this section.
-:::
+> [!CAUTION] Plane Cloud and self-hosted instances
+> Before you can integrate with GitLab Self-managed, you must first set up the necessary configurations in your GitLab instance. This is required for both Plane Cloud and self-hosted users.
+>
+> Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/gitlab?edition=gitlab-self-managed) first before diving into the steps on this section.
 
 1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
 2. On the right pane, select **Integrations**.
@@ -79,7 +67,9 @@ Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integr
 6. On the GitLab app installation page, choose the organization you want to connect.
 7. Select whether you want to sync all repositories or pick specific ones.
 8. Click **Install** to finalize the connection.
-9. After authorization, you’ll be redirected back to Plane, where your GitLab organization will appear as connected.
+9. After authorization, you'll be redirected back to Plane, where your GitLab organization will appear as connected.
+
+:::
 
 At this stage, your GitLab account is linked to Plane, but you still need to connect specific GitLab projects to Plane projects.
 

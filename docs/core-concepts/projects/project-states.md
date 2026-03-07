@@ -3,10 +3,7 @@ title: Project States
 description: Use Project States to categorize and track project progress across your workspace.
 ---
 
-<div class="tag-wrapper">
-  <h1>Track your projects with states</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+# Track your projects with states <Badge type="info" text="Pro" />
 
 Project States allows you to track the overall progress of your projects. With this tool, you can categorize projects into different states, helping you quickly identify which projects need attention and which are on track.
 

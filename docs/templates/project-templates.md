@@ -3,10 +3,7 @@ title: Project templates to standardize new project setup
 description: Create and use Project Templates to standardize projects, save setup time, and ensure consistency across your workspace with predefined settings.
 ---
 
-<div class="tag-wrapper">
-  <h1>Create projects faster with templates</h1>
-  <Tags :tags='[{ name: "Business", additionalClass: "business" }]' />
-</div>
+# Create projects faster with templates <Badge type="tip" text="Business" />
 
 Project Templates help you standardize and streamline your workflow by providing reusable structures for common project types. Instead of manually configuring similar projects from scratch, templates allow you to quickly apply predefined settings, saving time and ensuring consistency across your workspace.
 

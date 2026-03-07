@@ -3,13 +3,13 @@ title: Import data from Notion
 description: Import data from Notion to Plane.
 ---
 
-<div class="tag-wrapper">
-  <h1>Import your Notion data to Plane</h1>
-<Tags 
-  :tags='[{ name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }]'/>
-</div>
+# Import your Notion data to Plane <Badge type="tip" text="Business" />
 
 The Notion to Plane importer lets you transfer your Notion pages and content to Plane's Wiki. This is useful when you want to bring your documentation, notes, and structured content from Notion into your Plane workspace as Wiki pages.
+
+::: info
+The Notion importer is available on Plane Cloud and on all plans of the Commercial Edition for self-hosted instances.
+:::
 
 The importer takes exported Notion content and converts it into Plane wiki pages. It preserves your page structure, including subpages, and maintains the hierarchical organization of your Notion workspace within Plane's wiki system.
 
@@ -36,7 +36,7 @@ Only HTML exports from Notion are supported. Make sure to select HTML as your ex
 
 ## Import Notion content
 
-    ![Import from Notion](https://media.docs.plane.so/importers/notion/import-notion.webp#hero)
+  ![Import from Notion](https://media.docs.plane.so/importers/notion/import-notion.webp#hero)
 
 Once you have your exported ZIP file:
 
@@ -47,13 +47,13 @@ Once you have your exported ZIP file:
 3. On the Notion import page, click **Upload Notion Exported ZIP**.
 4. Select and upload the ZIP file you exported from Notion.
 
-   ![Upload notion file](https://media.docs.plane.so/importers/notion/upload-notion-file.webp#hero)
+  ![Upload notion file](https://media.docs.plane.so/importers/notion/upload-notion-file.webp#hero)
 
 5. Wait for the upload to complete. You'll see a "Upload complete!" message.
 6. Click **Start Import** to begin processing your Notion data.
 7. The import will process in phases. Once finished, the status will change to "Finished".
 
-   ![Notion file uploaded](https://media.docs.plane.so/importers/notion/notion-file-uploaded.webp#hero)
+  ![Notion file uploaded](https://media.docs.plane.so/importers/notion/notion-file-uploaded.webp#hero)
 
 8. After the import completes, your Notion pages will be available in Plane's **Wiki** section. The page hierarchy from Notion will be preserved, with main pages and their nested pages organized in the same structure.
 

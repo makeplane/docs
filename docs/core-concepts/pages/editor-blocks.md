@@ -44,10 +44,7 @@ Highlights quoted text or important statements with distinct formatting.
 
 Displays code snippets or command-line text with proper formatting and syntax highlighting.
 
-<div class="tag-wrapper">
-  <h2>Embed</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Embed <Badge type="info" text="Pro" />
 
 Seamlessly integrate external content directly into your documents with rich, interactive embeds. The embed feature supports a wide variety of platforms and content types, making it easy to enhance your documentation with multimedia and interactive elements.
 
@@ -61,11 +58,7 @@ This opens an embed dialog where you can paste any supported link. The system au
 
 Inserts and displays images within your content.
 
-<div class="tag-wrapper">
-  <h2>Attachment</h2>
-<Tags 
-  :tags='[{ name: "Pro", link:"https://plane.so/pricing", additionalClass: "pro" }]'/>
-</div>
+## Attachment <Badge type="info" text="Pro" />
 
 Uploads and embeds files directly into your content, supporting documents, images, and other file types up to 100MB each.
 
@@ -75,11 +68,7 @@ When you upload video files as attachments, you can display them with inline pla
 
 ![Show preview](https://media.docs.plane.so/pages/show-preview.webp#hero)
 
-<div class="tag-wrapper">
-  <h2>Video</h2>
-<Tags 
-  :tags='[{ name: "Pro", link:"https://plane.so/pricing", additionalClass: "pro" }]'/>
-</div>
+## Video <Badge type="info" text="Pro" />
 
 Embeds video content directly into your pages for rich multimedia documentation.
 
@@ -93,11 +82,7 @@ If you have a video displayed with inline preview and want to convert it to a si
 
 ![Show as attachment](https://media.docs.plane.so/pages/show-as-attachment.webp#hero)
 
-<div class="tag-wrapper">
-  <h2>Math equations</h2>
-<Tags 
-  :tags='[{ name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }]'/>
-</div>
+## Math equations <Badge type="tip" text="Business" />
 
 Add mathematical expressions and formulas to your Pages using LaTeX syntax. Whether you need to document complex calculations, display statistical formulas, or include scientific notations, Plane supports both inline and block-style mathematical equations. This is perfect for technical documentation, engineering specs, data analysis reports, and any content requiring precise mathematical notation.
 
@@ -137,11 +122,7 @@ $ a^2 + b^2 = c^2 $
 
 Both equation types support full LaTeX rendering with built-in validation and error handling for invalid mathematical expressions.
 
-<div class="tag-wrapper">
-  <h2>Draw.io diagrams</h2>
-<Tags 
-  :tags='[{ name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }]'/>
-</div>
+## Draw.io diagrams <Badge type="tip" text="Business" />
 
 ::: tip Prerequisites
 Before you can add Draw.io diagrams to Pages or Wiki, you need to [connect the Draw.io integration](/integrations/draw-io) from Workspace Settings.
@@ -167,10 +148,7 @@ Both modes feature a consistent toolbar with **Save** and **Exit** buttons, maki
 
 Creates visually distinct sections with customizable icons and colors for highlighting warnings, tips , and calls-to-action.
 
-<div class="tag-wrapper">
-  <h2>Work item embed</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Work item embed <Badge type="info" text="Pro" />
 
 References work items directly in the editor to track details and progress.
 

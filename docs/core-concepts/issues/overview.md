@@ -45,10 +45,7 @@ Break down larger tasks into smaller, manageable components by creating sub-work
 
 ![sub-work items](https://media.docs.plane.so/issues/issue-sub-issues.webp#hero)
 
-<div class="tag-wrapper">
-  <h2>Duplicate work items</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Duplicate work items <Badge type="info" text="Pro" />
 When you need to create similar work items or replicate a work item's structure and properties, Plane lets you duplicate existing work items either within the same project or across different projects.
 
 To duplicate a work item, click the **•••** menu in the work item header and select **Make a copy**. You'll see two options:
@@ -126,10 +123,7 @@ Plane allows you to upload different file types directly to the work item. Use t
 - **Other**  
   CSS, JavaScript, JSON, XML, CSV, SQL
 
-<div class="tag-wrapper">
-  <h2>Link pages to work items</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Link pages to work items <Badge type="info" text="Pro" />
 Connect relevant project pages and wiki documentation to your work items to provide instant access to related context, specifications, or reference materials.
 
 1. Use the **Link pages** button in the work item to open the page linking modal.
@@ -138,10 +132,7 @@ Connect relevant project pages and wiki documentation to your work items to prov
 
 Linked pages appear directly in the work item, making it easy for team members to access relevant documentation without leaving the context of their current task.
 
-<div class="tag-wrapper">
-  <h2>Convert work items to epics</h2>
-  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-</div>
+## Convert work items to epics <Badge type="tip" text="Business" />
 
 Sometimes a work item grows in scope and complexity, and you realize it's actually big enough to be its own epic with multiple sub-tasks. This feature promotes a regular work item into an epic, giving you the structure and flexibility to break it down into smaller, manageable pieces.
 
@@ -203,10 +194,7 @@ Within your project, you can set up automations to perform the following tasks:
 
   ![Project close automation](https://media.docs.plane.so/projects/auto-close-issues.webp#hero)
 
-<div class="tag-wrapper">
-  <h2>Export work items</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Export work items <Badge type="info" text="Pro" />
 
 You can export your work items to access and analyze your data outside of Plane. Exports support CSV and JSON formats, and you can filter exactly which work items to include.
 

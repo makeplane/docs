@@ -8,7 +8,7 @@ description: Import work items from CSV files to Plane.
 With the CSV importer, you can easily import work items from your CSV file to Plane.
 
 ::: info
-The CSV importer is only available on Plane Cloud.
+The CSV importer is available on Plane Cloud and on all plans of the Commercial Edition for self-hosted instances.
 :::
 
 ## Import from CSV

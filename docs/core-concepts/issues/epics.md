@@ -3,10 +3,7 @@ title: Organize related work items with Epics
 description: Create and manage Epics in Plane to organize related work items, track progress across multiple tasks, and align your team around larger objectives.
 ---
 
-<div class="tag-wrapper">
-  <h1>Organize and track your work items with Epics</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+# Organize and track work items with Epics <Badge type="info" text="Pro" />
 
 Epics help you group related tasks into a larger work item, providing a hierarchical structure for managing complex projects. This feature is ideal for breaking down major objectives into smaller, manageable pieces while keeping everything organized within a project.
 
@@ -88,10 +85,7 @@ You can add existing work items to the Epic or create new ones directly from the
 A work item can belong to only one Epic. This ensures clarity in organization and avoids overlapping tasks across multiple Epics.
 :::
 
-<div class="tag-wrapper">
-  <h2>Duplicate Epics</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Duplicate Epics <Badge type="info" text="Pro" />
 When you need to create similar Epics or replicate an Epic's structure across projects, Plane allows you to duplicate existing Epics either within the same project or to different projects in your workspace.
 
 To duplicate an Epic, click the ••• menu in the Epic header and select Make a copy. You'll see two options:
@@ -161,10 +155,7 @@ For each work item, you can assign or change a work item's Epic directly in the 
 
 ![Link Work items to Epics](https://media.docs.plane.so/epics/link-issue-epic.webp#hero)
 
-<div class="tag-wrapper">
-  <h2>Convert Epics to Work Items</h2>
-  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-</div>
+## Convert Epics to Work Items <Badge type="tip" text="Business" />
 
 Sometimes you realize that what you thought was a big, complex epic is actually something smaller and more focused. That's where converting an epic to a work item comes in handy. This feature lets you transform an epic into a regular work item, making it easier to track and manage as a single deliverable rather than a collection of tasks.
 

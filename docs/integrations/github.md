@@ -3,10 +3,7 @@ title: Integrate GitHub to sync repositories with projects
 description: Integrate Plane with GitHub Cloud and GitHub Enterprise Server to synchronize issues and pull requests. Connect repositories to projects for bidirectional updates and seamless workflows.
 ---
 
-<div class="tag-wrapper">
-  <h1>Integrate with GitHub</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+# Integrate with GitHub <Badge type="info" text="Pro" />
 
 GitHub integration with Plane allows seamless synchronization between your GitHub repositories and Plane projects. By linking the two, your issues and pull requests stay updated across both platforms, enhancing collaboration and streamlining your workflow. Whether you're managing code, tasks, or both, this integration ensures your team stays in sync without the hassle of switching between platforms.
 
@@ -30,44 +27,50 @@ To get started, you'll need to connect your GitHub account, organization, and re
 
 Link your GitHub organization to your Plane workspace to start syncing repositories.
 
-### GitHub Cloud
+:::tabs key:github-edition
 
-::: danger Plane self-hosted instances
-If you're running a self-hosted instance of Plane, you'll need to first create and configure a GitHub App to get GitHub integration working. Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github?edition=github-cloud#create-github-app) first before diving into the steps on this page.
+== GitHub Cloud {#github-cloud}
+
+> [!CAUTION] Plane self-hosted instances
+> If you're running a self-hosted instance of Plane, you'll need to first create and configure a GitHub App to get GitHub integration working. Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github?edition=github-cloud#create-github-app) first before diving into the steps on this page.
+
+
+1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
+2. On the right pane, select **Integrations**.
+3. Find the **GitHub** integration and click **Configure**.
+4. In the **Connect Organization** section, click **Connect**.
+
+   ![Connect GitHub](https://media.docs.plane.so/integrations/github/connect-github.webp#hero)
+
+5. On the GitHub app installation page, choose the organization you want to connect.
+6. Select whether you want to sync all repositories or pick specific ones.
+7. Click **Install** to finalize the connection.
+8. After authorization, you'll be redirected back to Plane, where your GitHub organization will appear as connected.
+
+== GitHub Enterprise Server {#github-enterprise-server}
+
+> [!CAUTION] Plane Cloud and self-hosted instances
+> Before you can integrate with GitHub Enterprise Server, you must first create and configure a GitHub App in your GitHub Enterprise Server instance. This is required for both Plane Cloud and self-hosted users.
+>
+> Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github?edition=github-enterprise#create-github-app) first before diving into the steps on this section.
+
+1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
+2. On the right pane, select **Integrations**.
+3. Find the **GitHub Enterprise** integration and click **Configure**.
+4. In the **Connect Organization** section, click **Connect**.
+
+   ![Connect GitHub Enterprise organization](https://media.docs.plane.so/integrations/github/connect-github-enterprise.webp#hero)
+
+5. Fill the form with the details of your GitHub Enterprise instance and click **Connect**.
+
+   ![Configure GitHub Enterprise organization](https://media.docs.plane.so/integrations/github/configure-github-enterprise.webp#hero)
+
+6. On the GitHub app installation page, choose the organization you want to connect.
+7. Select whether you want to sync all repositories or pick specific ones.
+8. Click **Install** to finalize the connection.
+9. After authorization, you'll be redirected back to Plane, where your GitHub organization will appear as connected.
+
 :::
-
-      1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
-      2. On the right pane, select **Integrations**.
-      3. Find the **GitHub** integration and click **Configure**.
-      4. In the **Connect Organization** section, click **Connect**.
-
-         ![Connect GitHub](https://media.docs.plane.so/integrations/github/connect-github.webp#hero)
-      5. On the GitHub app installation page, choose the organization you want to connect.
-      6. Select whether you want to sync all repositories or pick specific ones.
-      7. Click **Install** to finalize the connection.
-      8. After authorization, you’ll be redirected back to Plane, where your GitHub organization will appear as connected.
-
-      ### GitHub Enterprise Server
-      ::: danger Plane Cloud and self-hosted instances
-
-      Before you can integrate with GitHub Enterprise Server, you must first create and configure a GitHub App in your GitHub Enterprise Server instance. This is required for both Plane Cloud and self-hosted users.
-
-      Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github?edition=github-enterprise#create-github-app) first before diving into the steps on this section.
-      :::
-
-      1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
-      2. On the right pane, select **Integrations**.
-      3. Find the **GitHub Enterprise** integration and click **Configure**.
-      4. In the **Connect Organization** section, click **Connect**.
-
-         ![Connect GitHub Enterprise organization](https://media.docs.plane.so/integrations/github/connect-github-enterprise.webp#hero)
-      5. Fill the form with the details of your GitHub Enterprise instance and click **Connect**.
-
-         ![Configure GitHub Enterprise organization](https://media.docs.plane.so/integrations/github/configure-github-enterprise.webp#hero)
-      6. On the GitHub app installation page, choose the organization you want to connect.
-      7. Select whether you want to sync all repositories or pick specific ones.
-      8. Click **Install** to finalize the connection.
-      9. After authorization, you’ll be redirected back to Plane, where your GitHub organization will appear as connected.
 
 ### Connect personal GitHub account
 

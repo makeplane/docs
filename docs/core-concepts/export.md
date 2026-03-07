@@ -48,10 +48,7 @@ Once completed, click **Download** to get your file. Use the **Refresh status** 
 Exported files remain downloadable for a limited time (7 days). After this period, they will show as "Expired" and you'll need to create a new export.
 :::
 
-<div class="tag-wrapper">
-  <h2>Custom exports</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Custom exports <Badge type="info" text="Pro" />
 
 Export filtered work items, cycles, views, or modules directly from your project. Custom exports let you export exactly what you see after applying filters and display options—perfect for reports, analysis, or sharing specific data sets.
 

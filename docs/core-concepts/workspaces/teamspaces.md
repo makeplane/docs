@@ -3,10 +3,7 @@ title: Track team work with Teamspaces
 description: Organize team members across projects, track team-specific work items, and create dedicated spaces for team knowledge and collaboration.
 ---
 
-<div class="tag-wrapper">
-  <h1>Track work by teams</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+# Track work by teams <Badge type="info" text="Pro" />
 
 With Teamspaces, you can mirror your real-world teams of any kind and track work separately from a project. See your team's work automatically filtered across projects, and house your team's knowledge separate from anything else in Plane.
 
@@ -82,7 +79,7 @@ Views let you create custom ways of organizing and viewing work that make sense 
 
 The Pages screen is your team's documentation hub, where you can create and maintain knowledge that lives at the team level rather than within specific projects. It's perfect for building process documentation, team guidelines, and collaborative resources that everyone can access and contribute to.
 
-## Team's progress
+## Team progress
 
 This section provides a visual representation and summary of the team's current workload and performance, helping managers track progress effectively. It highlights overdue work items, incomplete tasks, and pending actions, ensuring teams stay on top of their responsibilities.
 
@@ -104,7 +101,7 @@ Here's a breakdown of its components:
 
   It also highlights work items without due dates, helping team leads prioritize and assign deadlines.
 
-## Team's relations
+## Team relations
 
 The Relations feature allows team members to track dependencies between work items. It has two main tabs - **Blocking** and **Blocked**.
 
@@ -116,7 +113,7 @@ This tab displays work items that are currently blocking other tasks, potentiall
 **Blocked**  
 This tab would display work items that are blocked by others. It helps in identifying bottlenecks and ensuring timely resolution to keep tasks moving.
 
-## Team's stats
+## Team stats
 
 This section provides a high-level view of tasks across multiple projects or teams. It visualizes work items in a treemap format, where each section represents a project, and the size of each block is proportional to the number of work items.
 
@@ -128,7 +125,7 @@ A legend at the bottom categorizes work items by their state or priority, making
 
 This feature helps you quickly assess the distribution of workload, identify where resources are focused, and monitor the health of ongoing efforts.
 
-## Team's info
+## Team info
 
 The Info tab on the right serves as a centralized space to view key details and linked entities.
 
@@ -143,19 +140,19 @@ The Info tab on the right serves as a centralized space to view key details and 
 - **Team's entities**
   Displays the count of views and pages created at the team level.
 
-## Teams members
+## Team members
 
 The Members tab displays all members currently associated with the team. Clicking the **Add new member** button allows you to onboard teammates. You can remove team members through the menu (represented by the three dots) next to the member name.
 
 ![Teams members](https://media.docs.plane.so/teams/team-members.webp#hero-tr)
 
-## Teams comments
+## Team comments
 
 Add comments to collaborate with your team and to discuss progress, blockers, or updates.
 
 ![Teams info](https://media.docs.plane.so/teams/team-comments.webp#hero-tr)
 
-## Teams activity feed
+## Team activity feed
 
 Access the activity log for a history of changes made to the team, ensuring transparency and accountability.
 

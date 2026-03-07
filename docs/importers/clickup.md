@@ -7,6 +7,10 @@ description: Import work items from ClickUp to Plane.
 
 The ClickUp importer helps you transfer your project data from ClickUp to Plane. It pulls information from your ClickUp workspace and maps it to the corresponding structure in Plane. This includes your projects, tasks, team members, custom fields, attachments, and comments.
 
+::: info
+The ClickUp importer is available on Plane Cloud and on all plans of the Commercial Edition for self-hosted instances.
+:::
+
 ## Prerequisites
 
 - A ClickUp Personal Access Token from your ClickUp App Settings.
@@ -20,7 +24,7 @@ To import custom task types from ClickUp, make sure the [Work item types](/core-
 
 > **Role**: Workspace admins
 
-    ![Import from ClickUp](https://media.docs.plane.so/importers/clickup/import-clickup.webp#hero)
+   ![Import from ClickUp](https://media.docs.plane.so/importers/clickup/import-clickup.webp#hero)
 
 1. Go to your Workspace Settings.
 2. Select **Imports** on the left pane and click **Import** next to ClickUp.

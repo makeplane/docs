@@ -3,7 +3,7 @@ title: Intake to collect and triage external work requests
 description: Use Intake feature to collect, triage, and manage external work item submissions from stakeholders, clients, and guests before adding them to your workflow.
 ---
 
-# Triage work items before adding them to your project
+# Triage work items before adding them to project
 
 Intake is a Plane-only feature that lets `Guests` create work items following which `Admins` and `Members` can move these work items inside a project. Intake can take bug reports, feature or service requests, or raise a ticket by stakeholders, customers, or clients. Work items created in Intake can then be accepted to move them to the Project’s workflow.
 
@@ -51,7 +51,7 @@ When a Guest creates a work item in Intake, it is added to the `Pending` state. 
 
 ### Accept work item
 
-    ![accept-intake-work item](https://media.docs.plane.so/intake/accept-intake-issue.webp#hero)
+![accept-intake-work item](https://media.docs.plane.so/intake/accept-intake-issue.webp#hero)
 
 1. Open a pending work item in Intake.
 2. Click the **Accept** button on the top right. This will open a modal where you can change the work item details before moving it to your project.
@@ -65,7 +65,7 @@ If the work item is not relevant to your project, you can choose to decline it. 
 
 A work item can be snoozed to review it at a later time.
 
-    ![snooze-intake-work item](https://media.docs.plane.so/intake/snooze-intake-issue.webp#hero-bl)
+![snooze-intake-work item](https://media.docs.plane.so/intake/snooze-intake-issue.webp#hero-bl)
 
 1. Open a pending work item in Intake.
 2. Click on the three dots icon in the top right corner.
@@ -83,7 +83,7 @@ In cases where a similar work item exists in your project, an Intake work item c
 3. Select the **Mark as duplicate** option in the menu.
 4. Select a work item in the project that is a duplicate of the Intake work item.
 
-   ![mark-duplicate-intake-work items](https://media.docs.plane.so/intake/mark-duplicate-intake-issues.webp#hero)
+![mark-duplicate-intake-work items](https://media.docs.plane.so/intake/mark-duplicate-intake-issues.webp#hero)
 
 The work item is now declined with a ‘Duplicate’ label on it. It will also appear in the `Cancelled` state under your project.
 

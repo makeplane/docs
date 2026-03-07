@@ -53,26 +53,26 @@ The navigation bar at the bottom of your screen helps you quickly access key are
 - **Projects** <br/>
   This screen shows all the projects you have access to, along with your role and the active work items count. Tap the star icon to add a project to your **Favorites** for quick access.
 
-      <div class="mobile-img-container">
-          <div class="box">
-              <img src="https://media.docs.plane.so/mobile/app-home.webp" alt="Home" width="320"/>
-          </div>
-          <div class="box">
-              <img src="https://media.docs.plane.so/mobile/app-projects.webp" alt="Projects" width="320"/>
-          </div>
+    <div class="mobile-img-container">
+      <div class="box">
+        <img src="https://media.docs.plane.so/mobile/app-home.webp" alt="Home" width="320"/>
       </div>
+      <div class="box">
+      <img src="https://media.docs.plane.so/mobile/app-projects.webp" alt="Projects" width="320"/>
+      </div>
+    </div>
 
 - **Create** <br/>
   Need to create a new project, work item, or page? Tap the + Create button.
 
-      - **New project**
-          Add the project details such as icon, name, description, and the lead. Mark it public or private. Hit the **Create** button.
+    - **New project**  
+      Add the project details such as icon, name, description, and the lead. Mark it public or private. Hit the **Create** button.
 
-      - **New page**
-          - Select the project by clicking the project name at the top.
-          - Add an icon and the page title.
-          - You can use the toolbar at the bottom to add different content blocks and format them as needed.
-          - Hit the **Create** button to add it to your project.
+    - **New page**
+      - Select the project by clicking the project name at the top.
+      - Add an icon and the page title.
+      - You can use the toolbar at the bottom to add different content blocks and format them as needed.
+      - Hit the **Create** button to add it to your project.
 
       <div class="mobile-img-container">
           <div class="box">
@@ -83,11 +83,11 @@ The navigation bar at the bottom of your screen helps you quickly access key are
           </div>
       </div>
 
-      - **New work item**
-          - Select the project by clicking the project name at the top.
-          - Add work item details like title and description. For the description, you can use the toolbar at the bottom to add different blocks and format the text as needed.
-          - Tap the **+** icon at the bottom left to assign members, priority, state, and other properties.
-          - Hit the **Create** button to add it to your project.
+    - **New work item**
+      - Select the project by clicking the project name at the top.
+      - Add work item details like title and description. For the description, you can use the toolbar at the bottom to add different blocks and format the text as needed.
+      - Tap the **+** icon at the bottom left to assign members, priority, state, and other properties.
+      - Hit the **Create** button to add it to your project.
 
       <div class="mobile-img-container">
           <div class="box">
@@ -104,14 +104,14 @@ The navigation bar at the bottom of your screen helps you quickly access key are
 - **Profile** <br/>
   View your profile and manage your account here. You can also switch between workspaces or log out of the app from this screen.
 
-      <div class="mobile-img-container">
-          <div class="box">
-              <img src="https://media.docs.plane.so/mobile/app-inbox.webp" alt="Inbox" width="320"/>
-          </div>
-          <div class="box">
-              <img src="https://media.docs.plane.so/mobile/app-profile.webp" alt="Profile" width="320"/>
-          </div>
+    <div class="mobile-img-container">
+      <div class="box">
+      <img src="https://media.docs.plane.so/mobile/app-inbox.webp" alt="Inbox" width="320"/>
       </div>
+      <div class="box">
+      <img src="https://media.docs.plane.so/mobile/app-profile.webp" alt="Profile" width="320"/>
+      </div>
+    </div>
 
 ### Global search
 
@@ -133,11 +133,11 @@ You will notice that the bottom navigation bar now shows different buttons:
 - **Work items** <br/>
   View a list of all, active and backlog work items.
 
-      - You can search, sort, and filter work items using the icon buttons on the top right.
+    - You can search, sort, and filter work items using the icon buttons on the top right.
 
-      - Tap any work item to view or modify work item details and view the activity. You can also add comments, copy the link, and share the work item with a personalized message via other apps.
+    - Tap any work item to view or modify work item details and view the activity. You can also add comments, copy the link, and share the work item with a personalized message via other apps.
 
-      - Click the **+ Add** button on the bottom left to add sub-work items and relations. You can also swipe left or right to view sub-work items, relations, links, and attachments.
+    - Click the **+ Add** button on the bottom left to add sub-work items and relations. You can also swipe left or right to view sub-work items, relations, links, and attachments.
 
       <div class="mobile-img-container">
           <div class="box">
@@ -212,16 +212,19 @@ Make sure you have a browser (like Chrome, Firefox, or Edge) installed on your p
 **Browser opens, but sign-in keeps looping?**  
 This might be due to default browser settings. Try the following:
 
-    1. Open your device’s **Settings**.
-    2. Go to **Apps** or **Default Apps**.
-    3. Find and tap on the browser you're using.
-    4. Look for an option like **Clear defaults** or **Reset default app**
-    5. Clear the defaults, then try signing in again.
+  1. Open your device’s **Settings**.
+  2. Go to **Apps** or **Default Apps**.
+  3. Find and tap on the browser you're using.
+  4. Look for an option like **Clear defaults** or **Reset default app**
+  5. Clear the defaults, then try signing in again.
 
-    You’ll be prompted to choose a browser. Choose one that's in the same profile as the Plane app.
+  You’ll be prompted to choose a browser. Choose one that's in the same profile as the Plane app.
 
-**Still stuck?**  
-Try clearing site data: 1. When the web sign-in page opens, tap the three-dot menu (usually in the top-right corner of the browser). 2. Go to **Settings → Site settings → Clear data** (wording may vary slightly by browser). 3. Try the sign-in process again.
+**Still stuck?**    
+Try clearing site data: 
+1. When the web sign-in page opens, tap the three-dot menu (usually in the top-right corner of the browser). 
+2. Go to **Settings → Site settings → Clear data** (wording may vary slightly by browser). 
+3. Try the sign-in process again.
 
 ### Unable to log in using SSO
 
@@ -232,9 +235,9 @@ Ensure the correct Redirect URI is configured in your OAuth service:
   https://<plane.example.com>/auth/mobile/google/callback/
   ```
 - For GitHub Sign-In: Add the following URL to the Callback URL section in your GitHub OAuth app:
-  `bash
-https://<plane.example.com>/auth/mobile/github/callback/
-`
+  ```bash
+  https://<plane.example.com>/auth/mobile/github/callback/
+  ```
   Verify that the `<plane.example.com>` part of the URL matches your self-hosted instance's domain.
 
 ### Link not opening iOS app

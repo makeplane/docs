@@ -3,13 +3,13 @@ title: Import data from Confluence
 description: Import data from Confluence to Plane.
 ---
 
-<div class="tag-wrapper">
-  <h1>Import your Confluence data to Plane</h1>
-<Tags 
-  :tags='[{ name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }]'/>
-</div>
+# Import your Confluence data to Plane <Badge type="tip" text="Business" />
 
 The Confluence to Plane importer lets you transfer your Confluence pages and content to Plane's Wiki. This is useful when you want to bring your documentation, notes, and structured content from Confluence into your Plane workspace as Wiki pages.
+
+::: info
+The Confluence importer is available on Plane Cloud and on all plans of the Commercial Edition for self-hosted instances.
+:::
 
 The importer takes exported Confluence content and converts it into Plane Wiki pages. It preserves your page structure, including subpages, and maintains the hierarchical organization of your Confluence space within Plane's Wiki system.
 
