@@ -1,6 +1,11 @@
 ---
 title: GitHub Importer
 sidebarTitle: Github
+search: false
+head:
+  - - meta
+    - name: robots
+      content: noindex, nofollow
 ---
 
 # GitHub Importer

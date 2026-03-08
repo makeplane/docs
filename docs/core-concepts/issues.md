@@ -1,5 +1,10 @@
 ---
 title: Work items
+search: false
+head:
+  - - meta
+    - name: robots
+      content: noindex, nofollow
 ---
 
 # Work items

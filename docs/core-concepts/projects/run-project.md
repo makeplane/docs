@@ -1,6 +1,11 @@
 ---
 title: Running your project
 description: Projects have states, labels, estimations along with integrations and automations which can be setup to run your project smoothly.
+search: false
+head:
+  - - meta
+    - name: robots
+      content: noindex, nofollow
 ---
 
 # Running your project
