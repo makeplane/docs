@@ -187,11 +187,11 @@
 
   /* Fonts */
   --vp-font-family-base:
-    "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, sans-serif;
+    "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    sans-serif;
   --vp-font-family-mono:
-    "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco,
-    Consolas, "Liberation Mono", "Courier New", monospace;
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 /* Dark mode */
@@ -635,9 +635,7 @@ a.VPLink.VPNavBarMenuLink[href*="sign-in"],
 /* Hide the external link arrow icon */
 .VPNavBarMenuLink.VPLink[href*="sign-in"] .vp-external-link-icon,
 a.VPLink.VPNavBarMenuLink[href*="sign-in"] .vp-external-link-icon,
-.VPNavBarMenu
-  .VPLink[href="https://app.plane.so/sign-in"]
-  .vp-external-link-icon,
+.VPNavBarMenu .VPLink[href="https://app.plane.so/sign-in"] .vp-external-link-icon,
 .VPNavBarMenuLink.VPLink[href*="sign-in"] svg,
 a.VPLink.VPNavBarMenuLink[href*="sign-in"] svg,
 .VPNavBarMenuLink.VPLink[href*="sign-in"] .VPImage,
