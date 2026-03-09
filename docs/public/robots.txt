@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Pages not shown in sidebar
-Disallow: /core-concepts/issues$
+Disallow: /core-concepts/issues.html
 Disallow: /core-concepts/projects/run-project
 Disallow: /importers/github-imp
 
