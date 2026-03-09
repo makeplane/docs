@@ -844,3 +844,18 @@ article img[src$="#hero-br"] {
   margin: 10px;
 }
 
+/* ================================================
+   HOMEPAGE FEATURE ICONS - DARK MODE
+   ================================================ */
+
+/* Feature card icons use currentColor in SVG, but since they're
+   loaded as <img> tags, currentColor defaults to black. This filter
+   inverts them for visibility in dark mode. */
+.dark .VPFeature .VPImage {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.dark .VPFeatures .VPFeature .icon img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
