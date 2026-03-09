@@ -859,3 +859,19 @@ article img[src$="#hero-br"] {
   filter: invert(1) hue-rotate(180deg);
 }
 
+/* ================================================
+   MEDIUM ZOOM - IMAGE LIGHTBOX
+   ================================================ */
+
+.vp-doc img {
+  cursor: zoom-in;
+}
+
+.medium-zoom-overlay {
+  z-index: 999;
+}
+
+.medium-zoom-image--opened {
+  z-index: 1000;
+}
+
