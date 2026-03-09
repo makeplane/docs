@@ -30,7 +30,7 @@ Start conversations that move work forward effectively.
    - Click in the **Add comment** text area.
    - Write a comment that provides value to the team.  
      ::: tip Example
-      Started working on this - I've identified the CSS issue and should have a fix ready by tomorrow. The problem is with the media query breakpoint at 375px.
+     Started working on this - I've identified the CSS issue and should have a fix ready by tomorrow. The problem is with the media query breakpoint at 375px.
      :::
 
 3. **Use formatting options**
@@ -67,14 +67,14 @@ Organize large tasks into manageable, assignable pieces.
    - In your work item, look for **Add sub-work item** button.
    - Click to create a related, smaller task.
    - Fill in the sub-item details with specificity.  
-   ::: tip Example
-      **Parent task:** "Implement user authentication system"
-      **Sub-work items:**
-      - "Design login page wireframes" → Designer
-      - "Set up authentication database tables" → Backend developer
-      - "Create password reset flow" → Frontend developer
-      - "Write user registration API endpoints" → Backend developer
-   :::
+     ::: tip Example
+     **Parent task:** "Implement user authentication system"
+     **Sub-work items:**
+     - "Design login page wireframes" → Designer
+     - "Set up authentication database tables" → Backend developer
+     - "Create password reset flow" → Frontend developer
+     - "Write user registration API endpoints" → Backend developer
+       :::
 3. **Understand sub-item benefits**
    - Each sub-item has independent lifecycle and can be worked on separately.
    - Team members focus on specific sub-items while staying connected to bigger picture.

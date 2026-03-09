@@ -57,10 +57,9 @@ To import Jira issues to a Plane project, follow these steps:
     - **Upload CSV**  
       Click the **Upload CSV** button to import users to your Plane project. Refer to [Export users from a site](https://support.atlassian.com/organization-administration/docs/export-users-from-a-site/) to download the CSV file from Jira. _(recommended)_
 
-        Admin or Member role users invited to your workspace count toward your billed seats right away, but the importer only treats them as active members once they accept the invitation. So, when importing users, you have two options:
-
-        - Don't invite users to the workspace manually and let the importer handle user creation.
-        - Invite users first and wait for all of them to accept before running the import.
+      Admin or Member role users invited to your workspace count toward your billed seats right away, but the importer only treats them as active members once they accept the invitation. So, when importing users, you have two options:
+      - Don't invite users to the workspace manually and let the importer handle user creation.
+      - Invite users first and wait for all of them to accept before running the import.
 
     - **Skip user import**  
       You can select the **Skip Importing User data** checkbox and manually add users later.

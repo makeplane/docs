@@ -36,7 +36,7 @@ Only HTML exports from Notion are supported. Make sure to select HTML as your ex
 
 ## Import Notion content
 
-  ![Import from Notion](https://media.docs.plane.so/importers/notion/import-notion.webp#hero)
+![Import from Notion](https://media.docs.plane.so/importers/notion/import-notion.webp#hero)
 
 Once you have your exported ZIP file:
 
@@ -47,13 +47,13 @@ Once you have your exported ZIP file:
 3. On the Notion import page, click **Upload Notion Exported ZIP**.
 4. Select and upload the ZIP file you exported from Notion.
 
-  ![Upload notion file](https://media.docs.plane.so/importers/notion/upload-notion-file.webp#hero)
+![Upload notion file](https://media.docs.plane.so/importers/notion/upload-notion-file.webp#hero)
 
 5. Wait for the upload to complete. You'll see a "Upload complete!" message.
 6. Click **Start Import** to begin processing your Notion data.
 7. The import will process in phases. Once finished, the status will change to "Finished".
 
-  ![Notion file uploaded](https://media.docs.plane.so/importers/notion/notion-file-uploaded.webp#hero)
+![Notion file uploaded](https://media.docs.plane.so/importers/notion/notion-file-uploaded.webp#hero)
 
 8. After the import completes, your Notion pages will be available in Plane's **Wiki** section. The page hierarchy from Notion will be preserved, with main pages and their nested pages organized in the same structure.
 

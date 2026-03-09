@@ -14,7 +14,8 @@
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs",
-    "format": "oxfmt --write ."
+    "fix:format": "oxfmt --write .",
+    "check:format": "oxfmt --check ."
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",

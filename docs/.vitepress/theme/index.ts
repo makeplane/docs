@@ -106,7 +106,7 @@ export default {
           handleTabHash();
           setupTabHashUpdates();
         });
-      }
+      },
     );
   },
 } satisfies Theme;
