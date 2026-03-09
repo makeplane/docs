@@ -46,6 +46,7 @@ Break down larger tasks into smaller, manageable components by creating sub-work
 ![sub-work items](https://media.docs.plane.so/issues/issue-sub-issues.webp#hero)
 
 ## Duplicate work items <Badge type="info" text="Pro" />
+
 When you need to create similar work items or replicate a work item's structure and properties, Plane lets you duplicate existing work items either within the same project or across different projects.
 
 To duplicate a work item, click the **•••** menu in the work item header and select **Make a copy**. You'll see two options:
@@ -124,6 +125,7 @@ Plane allows you to upload different file types directly to the work item. Use t
   CSS, JavaScript, JSON, XML, CSV, SQL
 
 ## Link pages to work items <Badge type="info" text="Pro" />
+
 Connect relevant project pages and wiki documentation to your work items to provide instant access to related context, specifications, or reference materials.
 
 1. Use the **Link pages** button in the work item to open the page linking modal.

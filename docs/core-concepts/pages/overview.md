@@ -134,6 +134,7 @@ Share the page by copying its link to send to your teammates or link it in a wor
 Duplicate an existing page to jumpstart new content.
 
 ### Move Page <Badge type="info" text="Pro" />
+
 Transfer a page to Wiki, Teamspace or a different Project in your workspace.
 
 ### Lock Page

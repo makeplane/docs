@@ -64,39 +64,38 @@ The navigation bar at the bottom of your screen helps you quickly access key are
 
 - **Create** <br/>
   Need to create a new project, work item, or page? Tap the + Create button.
+  - **New project**  
+    Add the project details such as icon, name, description, and the lead. Mark it public or private. Hit the **Create** button.
 
-    - **New project**  
-      Add the project details such as icon, name, description, and the lead. Mark it public or private. Hit the **Create** button.
+  - **New page**
+    - Select the project by clicking the project name at the top.
+    - Add an icon and the page title.
+    - You can use the toolbar at the bottom to add different content blocks and format them as needed.
+    - Hit the **Create** button to add it to your project.
 
-    - **New page**
-      - Select the project by clicking the project name at the top.
-      - Add an icon and the page title.
-      - You can use the toolbar at the bottom to add different content blocks and format them as needed.
-      - Hit the **Create** button to add it to your project.
+    <div class="mobile-img-container">
+        <div class="box">
+            <img src="https://media.docs.plane.so/mobile/app-create-project.webp" alt="Create project" width="320"/>
+        </div>
+        <div class="box">
+            <img src="https://media.docs.plane.so/mobile/app-create-page.webp" alt="Create page" width="320"/>
+        </div>
+    </div>
 
-      <div class="mobile-img-container">
-          <div class="box">
-              <img src="https://media.docs.plane.so/mobile/app-create-project.webp" alt="Create project" width="320"/>
-          </div>
-          <div class="box">
-              <img src="https://media.docs.plane.so/mobile/app-create-page.webp" alt="Create page" width="320"/>
-          </div>
-      </div>
+  - **New work item**
+    - Select the project by clicking the project name at the top.
+    - Add work item details like title and description. For the description, you can use the toolbar at the bottom to add different blocks and format the text as needed.
+    - Tap the **+** icon at the bottom left to assign members, priority, state, and other properties.
+    - Hit the **Create** button to add it to your project.
 
-    - **New work item**
-      - Select the project by clicking the project name at the top.
-      - Add work item details like title and description. For the description, you can use the toolbar at the bottom to add different blocks and format the text as needed.
-      - Tap the **+** icon at the bottom left to assign members, priority, state, and other properties.
-      - Hit the **Create** button to add it to your project.
-
-      <div class="mobile-img-container">
-          <div class="box">
-              <img src="https://media.docs.plane.so/mobile/app-create-issue.webp" alt="Create work item" width="320"/>
-          </div>
-          <div class="box">
-              <img src="https://media.docs.plane.so/mobile/app-issue-properties.webp" alt="Work item properties" width="320"/>
-          </div>
-      </div>
+    <div class="mobile-img-container">
+        <div class="box">
+            <img src="https://media.docs.plane.so/mobile/app-create-issue.webp" alt="Create work item" width="320"/>
+        </div>
+        <div class="box">
+            <img src="https://media.docs.plane.so/mobile/app-issue-properties.webp" alt="Work item properties" width="320"/>
+        </div>
+    </div>
 
 - **Inbox** <br/>
   Stay updated with notifications about work items you’ve created, are assigned to, or where you’ve been mentioned. You’ll never miss an important update again.
@@ -132,26 +131,25 @@ You will notice that the bottom navigation bar now shows different buttons:
 
 - **Work items** <br/>
   View a list of all, active and backlog work items.
+  - You can search, sort, and filter work items using the icon buttons on the top right.
 
-    - You can search, sort, and filter work items using the icon buttons on the top right.
+  - Tap any work item to view or modify work item details and view the activity. You can also add comments, copy the link, and share the work item with a personalized message via other apps.
 
-    - Tap any work item to view or modify work item details and view the activity. You can also add comments, copy the link, and share the work item with a personalized message via other apps.
+  - Click the **+ Add** button on the bottom left to add sub-work items and relations. You can also swipe left or right to view sub-work items, relations, links, and attachments.
 
-    - Click the **+ Add** button on the bottom left to add sub-work items and relations. You can also swipe left or right to view sub-work items, relations, links, and attachments.
+    <div class="mobile-img-container">
+        <div class="box">
+            <img src="https://media.docs.plane.so/mobile/app-issues.webp" alt="Work items" width="320"/>
+        </div>
+        <div class="box">
+            <img src="https://media.docs.plane.so/mobile/app-issue-details.webp" alt="Work item details" width="320"/>
+        </div>
+    </div>
+    <br/>
 
-      <div class="mobile-img-container">
-          <div class="box">
-              <img src="https://media.docs.plane.so/mobile/app-issues.webp" alt="Work items" width="320"/>
-          </div>
-          <div class="box">
-              <img src="https://media.docs.plane.so/mobile/app-issue-details.webp" alt="Work item details" width="320"/>
-          </div>
-      </div>
-      <br/>
-
-      ::: tip
-      You can add or edit the priority, state, start date, target date, cycle, and module by tapping the pencil icon in the **Properties** section. Alternatively, use the icons on the top right for choosing Priority, Cycle, and Module.
-      :::
+    ::: tip
+    You can add or edit the priority, state, start date, target date, cycle, and module by tapping the pencil icon in the **Properties** section. Alternatively, use the icons on the top right for choosing Priority, Cycle, and Module.
+    :::
 
 - **Cycles** <br/>
   Track active and upcoming cycles, and dive into the work items within each cycle.
@@ -212,18 +210,19 @@ Make sure you have a browser (like Chrome, Firefox, or Edge) installed on your p
 **Browser opens, but sign-in keeps looping?**  
 This might be due to default browser settings. Try the following:
 
-  1. Open your device’s **Settings**.
-  2. Go to **Apps** or **Default Apps**.
-  3. Find and tap on the browser you're using.
-  4. Look for an option like **Clear defaults** or **Reset default app**
-  5. Clear the defaults, then try signing in again.
+1. Open your device’s **Settings**.
+2. Go to **Apps** or **Default Apps**.
+3. Find and tap on the browser you're using.
+4. Look for an option like **Clear defaults** or **Reset default app**
+5. Clear the defaults, then try signing in again.
 
-  You’ll be prompted to choose a browser. Choose one that's in the same profile as the Plane app.
+You’ll be prompted to choose a browser. Choose one that's in the same profile as the Plane app.
 
-**Still stuck?**    
-Try clearing site data: 
-1. When the web sign-in page opens, tap the three-dot menu (usually in the top-right corner of the browser). 
-2. Go to **Settings → Site settings → Clear data** (wording may vary slightly by browser). 
+**Still stuck?**  
+Try clearing site data:
+
+1. When the web sign-in page opens, tap the three-dot menu (usually in the top-right corner of the browser).
+2. Go to **Settings → Site settings → Clear data** (wording may vary slightly by browser).
 3. Try the sign-in process again.
 
 ### Unable to log in using SSO

@@ -37,6 +37,7 @@ Where project pages zoom in on team-specific details, the Wiki gives you a bird'
 4. Need to find something quick? Use the sidebar's search function to locate specific pages or information.
 
 ## Share private pages <Badge type="tip" text="Business" />
+
 While private pages are typically only accessible to their creator, you can selectively share private wiki pages with specific team members in your workspace. This gives you granular control over who can access sensitive documentation without making it visible to your entire organization.
 
 ![Wiki](https://media.docs.plane.so/wiki/share-private-pages.webp#hero)
