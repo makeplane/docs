@@ -1,0 +1,36 @@
+---
+title: Personalize your homepage
+description: Customize your Home page with quick links, recent activity, and sticky notes to create a personalized dashboard for improved productivity.
+---
+
+# Personalize your homepage
+
+The Home page serves as your personalized page, giving you quick access to essential tools, recent activity, and key features to enhance productivity. Here's everything you need to know about setting up and using the Home page efficiently.
+
+![Home](https://media.docs.plane.so/account/home-page.webp#hero)
+
+### Manage widgets
+
+This section allows you to customize the visibility of different content areas on the Home page. You can choose to show or hide the **Quick links**, **Recents**, and **Your stickies** sections as per your preferences. This flexibility enables you to tailor the Home page to display only the information you find most relevant and useful.
+
+### Add quick links
+
+Pin links to projects, pages, or external resources you frequently access. Save time by jumping directly to important destinations without navigating through menus.
+
+### See recent visits
+
+This section helps you quickly pick up where you left off or revisit items you've recently worked on. You can customize the view to show specific types of activity, such as only recent work items or projects.
+
+### Manage stickies
+
+Stickies allow you to create, organize, and personalize notes or reminders directly on your Home page:
+
+- Click **Add Sticky** to quickly jot down ideas, tasks, or important reminders.
+- Edit and modify your notes as needed.
+- Format the content and choose colors for your stickies to match your preferences or highlight priorities.
+- Keep all your notes in one easily accessible and visible place, ensuring nothing gets overlooked.
+
+## See also
+
+- [Your work](/your-work)
+- [Stickies](/core-concepts/stickies)

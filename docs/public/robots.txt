@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Pages not shown in sidebar
+Disallow: /core-concepts/issues$
+Disallow: /core-concepts/projects/run-project
+Disallow: /importers/github-imp
+
+Sitemap: https://docs.plane.so/sitemap.xml

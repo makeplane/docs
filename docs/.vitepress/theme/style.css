@@ -1,0 +1,861 @@
+/* ================================================
+   TAILWIND CSS
+   ================================================ */
+/* Import Tailwind theme + utilities WITHOUT Preflight (CSS reset).
+   VitePress has its own base/reset styles for markdown rendering,
+   so Tailwind's Preflight conflicts with headings, links, lists, etc.
+   The layer() wrappers ensure Tailwind utilities don't override
+   VitePress's unlayered default theme styles. */
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
+
+@source "../../**/*.{vue,md}";
+@source "../**/*.{vue,md}";
+
+@theme {
+  --color-plane-400: #0088cc;
+  --color-plane-500: #006399;
+  --color-plane-600: #005280;
+}
+
+/* ================================================
+   THEME VARIANTS
+   ================================================ */
+
+@custom-variant light (&:where([data-theme*="light"], [data-theme*="light"] *));
+@custom-variant dark (&:where([data-theme*="dark"], [data-theme*="dark"] *));
+
+/* ================================================
+   COLOR SYSTEM
+   ================================================ */
+
+@layer base {
+  :root {
+    /* Alpha colors - for transparency effects */
+    --alpha-white-0: oklch(1 0 0 / 0%);
+    --alpha-white-200: oklch(1 0 0 / 10%);
+    --alpha-white-500: oklch(1 0 0 / 30%);
+    --alpha-white-700: oklch(1 0 0 / 50%);
+    --alpha-black-0: oklch(0.1482 0.0034 196.79 / 0%);
+    --alpha-black-200: oklch(0.1482 0.0034 196.79 / 10%);
+    --alpha-black-500: oklch(0.1482 0.0034 196.79 / 30%);
+    --alpha-black-700: oklch(0.1482 0.0034 196.79 / 50%);
+
+    /* Neutral colors - for text and backgrounds */
+    --neutral-white: oklch(1 0 0);
+    --neutral-100: oklch(0.9848 0.0003 230.66);
+    --neutral-200: oklch(0.9696 0.0007 230.67);
+    --neutral-300: oklch(0.9543 0.001 230.67);
+    --neutral-500: oklch(0.9235 0.001733 230.6853);
+    --neutral-700: oklch(0.8612 0.0032 230.71);
+    --neutral-800: oklch(0.6668 0.0079 230.82);
+    --neutral-1000: oklch(0.5288 0.0083 230.88);
+    --neutral-1100: oklch(0.4377 0.0066 230.87);
+    --neutral-1200: oklch(0.2378 0.0029 230.83);
+    --neutral-black: oklch(0.1472 0.0034 230.83);
+
+    /* Brand colors */
+    --brand-100: oklch(0.9847 0.0083 236.56);
+    --brand-300: oklch(0.9428 0.0341 230.22);
+    --brand-500: oklch(0.8414 0.0947 233.08);
+    --brand-700: oklch(0.6766 0.1665 243.91);
+    --brand-900: oklch(0.4347 0.104093 242.4823);
+    --brand-default: oklch(0.4799 0.1158 242.91);
+
+    /* Semantic colors */
+    --green-100: oklch(0.9819 0.0181 155.83);
+    --green-500: oklch(0.7914 0.2091 151.66);
+    --green-700: oklch(0.632 0.185972 147.3695);
+    --amber-100: oklch(0.9869 0.0214 95.28);
+    --amber-500: oklch(0.829 0.1712 81.04);
+    --amber-700: oklch(0.6671 0.1685 53.38);
+    --red-100: oklch(0.9705 0.0129 17.38);
+    --red-500: oklch(0.7022 0.1892 22.23);
+    --red-700: oklch(0.583 0.238666 28.4765);
+
+    /* Font sizes */
+    --text-xs: 0.75rem; /* 12px */
+    --text-sm: 0.875rem; /* 14px */
+    --text-base: 1rem; /* 16px */
+    --text-lg: 1.125rem; /* 18px */
+    --text-xl: 1.25rem; /* 20px */
+    --text-2xl: 1.5rem; /* 24px */
+    --text-3xl: 1.875rem; /* 30px */
+    --text-4xl: 2.25rem; /* 36px */
+
+    /* Font weights */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+  }
+}
+
+/* ================================================
+   SATOSHI FONT
+   ================================================ */
+
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi/Satoshi-Light.woff2") format("woff2"),
+    url("/fonts/Satoshi/Satoshi-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2"),
+    url("/fonts/Satoshi/Satoshi-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2"),
+    url("/fonts/Satoshi/Satoshi-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi/Satoshi-Bold.woff2") format("woff2"),
+    url("/fonts/Satoshi/Satoshi-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================================================
+   IBM PLEX MONO FONT (FOR CODE BLOCKS)
+   ================================================ */
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/IBMPlexMono/IBMPlexMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/IBMPlexMono/IBMPlexMono-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/IBMPlexMono/IBMPlexMono-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/IBMPlexMono/IBMPlexMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================================================
+   PLANE DEVELOPER DOCS - CUSTOM STYLES
+   ================================================ */
+
+/* Brand colors and fonts */
+:root {
+  /* Brand colors */
+  --vp-c-brand-1: #006399;
+  --vp-c-brand-2: #006399;
+  --vp-c-brand-3: #006399;
+  --vp-c-brand-soft: rgba(0, 99, 153, 0.14);
+  --plane-500: #006399;
+
+  /* Fonts */
+  --vp-font-family-base:
+    "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --vp-font-family-mono:
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+/* Dark mode */
+.dark {
+  --vp-c-bg: #0a0a0a;
+  --vp-c-bg-soft: #141414;
+  --vp-c-bg-mute: #1f1f1f;
+
+  /* Brand colors */
+  --vp-c-brand-1: #2f9bd5;
+  --vp-c-brand-2: #2f9bd5;
+  --vp-c-brand-3: #2f9bd5;
+  --vp-c-brand-soft: rgba(0, 99, 153, 0.14);
+  --plane-500: #2f9bd5;
+}
+
+/* ================================================
+   HIDE ASIDE FOR API PAGES
+   ================================================ */
+
+/* Hide ALL aside elements when .api-page is present */
+.api-page .aside,
+.api-page .aside-container,
+.api-page .VPDocAside,
+.api-page aside,
+.api-page .VPDocAsideOutline {
+  display: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Remove the aside column entirely */
+.api-page.VPDoc > .container {
+  display: block !important;
+  max-width: 100% !important;
+}
+
+.api-page .VPDoc > .container > .content {
+  max-width: 100% !important;
+  padding-right: 24px !important;
+}
+
+/* Target specific VitePress structure */
+.api-page .content-container {
+  max-width: 100% !important;
+}
+
+.api-page .main {
+  max-width: 100% !important;
+}
+
+/* Force full width on content */
+.api-page .vp-doc {
+  max-width: 100% !important;
+}
+
+/* ================================================
+   TWO-COLUMN API LAYOUT
+   ================================================ */
+
+.api-two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .api-two-column {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.api-left {
+  min-width: 0;
+}
+
+.api-right {
+  position: sticky;
+  top: 100px;
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .api-right {
+    position: static;
+  }
+}
+
+/* ================================================
+   API ENDPOINT BADGE
+   ================================================ */
+
+.api-endpoint-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.api-endpoint-badge .method {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  text-transform: uppercase;
+}
+
+.api-endpoint-badge .method.get {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.api-endpoint-badge .method.post {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.api-endpoint-badge .method.patch,
+.api-endpoint-badge .method.put {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.api-endpoint-badge .method.delete {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.dark .api-endpoint-badge .method.get {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.dark .api-endpoint-badge .method.post {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+.dark .api-endpoint-badge .method.patch,
+.dark .api-endpoint-badge .method.put {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
+
+.dark .api-endpoint-badge .method.delete {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.api-endpoint-badge .path {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.dark .api-endpoint-badge .path {
+  color: #9ca3af;
+}
+
+/* ================================================
+   SECTION HEADERS
+   ================================================ */
+
+.params-section {
+  margin: 24px 0;
+}
+
+.params-section h3 {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #6b7280 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 12px 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.dark .params-section h3 {
+  color: #9ca3af !important;
+}
+
+.params-list {
+  border-top: 1px solid #e5e7eb;
+}
+
+.dark .params-list {
+  border-top-color: #2a2a2a;
+}
+
+.returns-section {
+  margin: 24px 0;
+}
+
+.returns-section h3 {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #6b7280 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 12px 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.dark .returns-section h3 {
+  color: #9ca3af !important;
+}
+
+/* ================================================
+   CODE BLOCKS - DARK MODE FIX
+   ================================================ */
+
+div[class*="language-"] {
+  border-radius: 8px !important;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  background: #fafafa !important;
+}
+
+.dark div[class*="language-"] {
+  background: #0f0f0f !important;
+  border-color: #2a2a2a !important;
+}
+
+div[class*="language-"] pre {
+  background: transparent !important;
+}
+
+.dark div[class*="language-"] pre {
+  background: transparent !important;
+}
+
+.dark .shiki,
+.dark .shiki span {
+  background: transparent !important;
+}
+
+/* Language label */
+div[class*="language-"] > span.lang {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+/* ================================================
+   UTILITY CLASSES
+   ================================================ */
+
+.hidden {
+  display: none !important;
+}
+
+/* Remove default VitePress h2/h3 borders */
+.vp-doc h2 {
+  border-top: none !important;
+  margin-top: 32px;
+}
+
+.vp-doc h3 {
+  border-top: none !important;
+}
+
+/* ================================================
+   CARD GROUP COMPONENT STYLES
+   ================================================ */
+
+.card-group {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.card-group-2 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .card-group-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card-group-3 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .card-group-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-group-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card-group-4 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .card-group-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-group-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ================================================
+   CARD COMPONENT STYLES
+   ================================================ */
+
+.card-link {
+  display: block;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.card-link:hover {
+  border-color: #006399;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  text-decoration: none !important;
+}
+
+.dark .card-link {
+  border-color: #2a2a2a;
+  background: rgba(20, 20, 20, 0.5);
+}
+
+.dark .card-link:hover {
+  border-color: #0088cc;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.card-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  margin: 0 0 12px 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  transition: color 0.2s ease;
+}
+
+.card-link:hover .card-title {
+  color: #006399 !important;
+}
+
+.dark .card-title {
+  color: #f9fafb !important;
+}
+
+.dark .card-link:hover .card-title {
+  color: #0088cc !important;
+}
+
+.card-description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.dark .card-description {
+  color: #9ca3af;
+}
+
+/* ================================================
+   SEARCH BOX WIDTH IN HEADER
+   ================================================ */
+
+/* Make the header search box wider */
+.DocSearch.DocSearch-Button {
+  justify-content: space-between !important;
+}
+
+@media (min-width: 768px) {
+  .DocSearch.DocSearch-Button {
+    width: 280px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .DocSearch.DocSearch-Button {
+    width: 400px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .DocSearch.DocSearch-Button {
+    width: 500px !important;
+  }
+}
+
+/* ================================================
+   SIGN IN BUTTON STYLING
+   ================================================ */
+
+/* Target the Sign in link using multiple class combinations */
+.VPNavBarMenuLink.VPLink[href*="sign-in"],
+a.VPLink.VPNavBarMenuLink[href*="sign-in"],
+.VPNavBarMenu .VPLink[href="https://app.plane.so/sign-in"] {
+  background: #006399 !important;
+  color: #ffffff !important;
+  padding: 6px 14px !important;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  transition: all 0.2s ease !important;
+  line-height: normal !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
+}
+
+/* Hide the external link arrow icon */
+.VPNavBarMenuLink.VPLink[href*="sign-in"] .vp-external-link-icon,
+a.VPLink.VPNavBarMenuLink[href*="sign-in"] .vp-external-link-icon,
+.VPNavBarMenu .VPLink[href="https://app.plane.so/sign-in"] .vp-external-link-icon,
+.VPNavBarMenuLink.VPLink[href*="sign-in"] svg,
+a.VPLink.VPNavBarMenuLink[href*="sign-in"] svg,
+.VPNavBarMenuLink.VPLink[href*="sign-in"] .VPImage,
+a.VPLink.VPNavBarMenuLink[href*="sign-in"] .VPImage {
+  display: none !important;
+}
+
+/* Also hide the icon using ::after if it's a pseudo-element */
+.VPNavBarMenuLink.VPLink[href*="sign-in"]::after,
+a.VPLink.VPNavBarMenuLink[href*="sign-in"]::after {
+  display: none !important;
+  content: none !important;
+}
+
+.VPNavBarMenuLink.VPLink[href*="sign-in"]:hover,
+a.VPLink.VPNavBarMenuLink[href*="sign-in"]:hover {
+  background: #0078b8 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px rgba(0, 99, 153, 0.25) !important;
+  text-decoration: none !important;
+}
+
+/* Dark mode variant */
+.dark .VPNavBarMenuLink.VPLink[href*="sign-in"],
+.dark a.VPLink.VPNavBarMenuLink[href*="sign-in"] {
+  background: #006399 !important;
+  color: #ffffff !important;
+}
+
+.dark .VPNavBarMenuLink.VPLink[href*="sign-in"]:hover,
+.dark a.VPLink.VPNavBarMenuLink[href*="sign-in"]:hover {
+  background: #0078b8 !important;
+  box-shadow: 0 2px 8px rgba(0, 99, 153, 0.35) !important;
+}
+
+/* ================================================
+   CENTER SEARCH BAR IN NAVBAR
+   ================================================ */
+
+@media (min-width: 768px) {
+  .VPNavBarSearch {
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 0 !important;
+    height: var(--vp-nav-height) !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+
+/* ================================================
+   HERO IMAGE STYLES
+   ================================================ */
+
+.vp-doc p:has(> img[src$="#hero"]),
+article p:has(> img[src$="#hero"]) {
+  max-width: 841px;
+  padding: 36px 56px 0px 56px;
+  background: #f1f3f3;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.vp-doc img[src$="#hero"],
+article img[src$="#hero"] {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 8px 8px 0px 0px;
+  border-width: 1px 1px 0px 1px;
+  border-style: solid;
+  border-color: #eaebeb;
+  object-fit: cover;
+  box-shadow:
+    0px 2px 4px -1px rgba(41, 47, 61, 0.04),
+    0px 4px 6px -1px rgba(41, 47, 61, 0.05);
+}
+
+.vp-doc p:has(> img[src$="#hero-tl"]),
+article p:has(> img[src$="#hero-tl"]) {
+  max-width: 841px;
+  padding: 36px 0px 0px 56px;
+  background: #f1f3f3;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.vp-doc img[src$="#hero-tl"],
+article img[src$="#hero-tl"] {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 8px 0px 0px 0px;
+  border-width: 1px 0px 0px 1px;
+  border-style: solid;
+  border-color: #eaebeb;
+  object-fit: cover;
+  box-shadow:
+    0px 2px 4px -1px rgba(41, 47, 61, 0.04),
+    0px 4px 6px -1px rgba(41, 47, 61, 0.05);
+}
+
+.vp-doc p:has(> img[src$="#hero-tr"]),
+article p:has(> img[src$="#hero-tr"]) {
+  max-width: 841px;
+  padding: 36px 56px 0px 0px;
+  background: #f1f3f3;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.vp-doc img[src$="#hero-tr"],
+article img[src$="#hero-tr"] {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 0px 8px 0px 0px;
+  border-width: 1px 1px 0px 0px;
+  border-style: solid;
+  border-color: #eaebeb;
+  object-fit: cover;
+  box-shadow:
+    0px 2px 4px -1px rgba(41, 47, 61, 0.04),
+    0px 4px 6px -1px rgba(41, 47, 61, 0.05);
+}
+
+.vp-doc p:has(> img[src$="#hero-bl"]),
+article p:has(> img[src$="#hero-bl"]) {
+  max-width: 841px;
+  padding: 0px 0px 36px 56px;
+  background: #f1f3f3;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.vp-doc img[src$="#hero-bl"],
+article img[src$="#hero-bl"] {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 0px 0px 0px 8px;
+  border-width: 0px 0px 1px 1px;
+  border-style: solid;
+  border-color: #eaebeb;
+  object-fit: cover;
+  box-shadow:
+    0px 2px 4px -1px rgba(41, 47, 61, 0.04),
+    0px 4px 6px -1px rgba(41, 47, 61, 0.05);
+}
+
+.vp-doc p:has(> img[src$="#hero-br"]),
+article p:has(> img[src$="#hero-br"]) {
+  max-width: 841px;
+  padding: 0px 56px 36px 0px;
+  background: #f1f3f3;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.vp-doc img[src$="#hero-br"],
+article img[src$="#hero-br"] {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 0px 0px 8px 0px;
+  border-width: 0px 1px 1px 0px;
+  border-style: solid;
+  border-color: #eaebeb;
+  object-fit: cover;
+  box-shadow:
+    0px 2px 4px -1px rgba(41, 47, 61, 0.04),
+    0px 4px 6px -1px rgba(41, 47, 61, 0.05);
+}
+
+/* ================================================
+   MOBILE IMAGE LAYOUT
+   ================================================ */
+
+.mobile-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mobile-img-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 25rem;
+  min-width: 15rem;
+  text-align: center;
+  margin: 10px;
+}
+
+/* ================================================
+   HOMEPAGE FEATURE ICONS - DARK MODE
+   ================================================ */
+
+/* Feature card icons use currentColor in SVG, but since they're
+   loaded as <img> tags, currentColor defaults to black. This filter
+   inverts them for visibility in dark mode. */
+.dark .VPFeature .VPImage {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.dark .VPFeatures .VPFeature .icon img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
