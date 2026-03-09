@@ -3,10 +3,7 @@ title: Inline comments for collaborative page discussions
 description: Collaborate directly in Plane pages with inline comments. Highlight text, mention teammates, and resolve discussions across projects, wikis, and teamspaces.
 ---
 
-<div class="tag-wrapper">
-  <h1>Add inline comments in pages</h1>
-  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-</div>
+# Add inline comments in pages <Badge type="tip" text="Business" />
 
 Inline comments allow you to collaborate directly within your documentation by highlighting specific text and starting focused discussions. This feature is available across Project pages, Wiki pages, and Teamspace pages.
 

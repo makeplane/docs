@@ -51,10 +51,7 @@ If the Project Admin sets the **Timezone** in [Project settings](/core-concepts/
 You can modify the name, description, start and due dates of active and upcoming cycles at any time.
 :::
 
-<div class="tag-wrapper">
-  <h2>Start and stop cycles</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Start and stop cycles <Badge type="info" text="Pro" />
 
 While Cycles typically run for their set duration, sometimes you need more flexibility in managing your work periods. You can manually control when a Cycle begins or ends using the interface controls.
 
@@ -90,10 +87,7 @@ Once the due date of an active Cycle passes, it’s automatically marked as comp
 
 ![Transfer work items](https://media.docs.plane.so/cycles/transfer-issues.webp#hero-tr)
 
-<div class="tag-wrapper">
-  <h2>Auto-schedule cycles</h2>
-  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-</div>
+## Auto-schedule cycles <Badge type="tip" text="Business" />
 
 Automate the creation and management of cycles according to predefined configurations, eliminating manual setup while ensuring consistent cycle planning and team predictability.
 
@@ -132,10 +126,7 @@ Once a cycle is active and contains work items, you can monitor its progress, as
 
 ![Track cycle progress](https://media.docs.plane.so/cycles/track-cycle-progress.webp#hero)
 
-<div class="tag-wrapper">
-  <h2>Cycle progress charts</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Cycle progress charts <Badge type="info" text="Pro" />
 
 This feature provides powerful visualization tools to help you track project cycles more effectively. With real-time insights, you can see exactly how your cycle is performing against the planned progress, making it easier to stay on top of deadlines and adjust as needed.
 
@@ -194,10 +185,7 @@ The build-up chart helps track how much work has already been completed in the c
 - **Trailing**\
   If fewer tasks are completed than expected, the chart shows a red downward trend, with a light red fill between the ideal and actual lines, indicating the need to speed up progress.
 
-<div class="tag-wrapper">
-  <h2>Active cycles across projects</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Active cycles across projects <Badge type="info" text="Pro" />
 
 If you have multiple projects with Cycles running at the same time, you can easily track the progress of all active cycles in the **Cycles** section under the **Workspace** section in the sidebar. This gives you a quick overview of each project’s progress and helps you spot any potential issues early on. Each cycle displays its status—whether it’s ahead of schedule or falling behind—based on the burn-down and build-up metrics.
 
@@ -211,10 +199,7 @@ You can archive completed cycles, allowing you to conceal significantly older cy
 
 You can delete a Cycle to remove it entirely. When you do, all associated analytics and progress reports will be erased. Any work items linked to that Cycle will also be automatically unlinked.
 
-<div class="tag-wrapper">
-  <h2>Export cycles</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Export cycles <Badge type="info" text="Pro" />
 
 You can export cycle data to analyze sprint performance, create reports, or share progress with stakeholders outside of Plane. Exports include all work items within the cycle along with their key details.
 

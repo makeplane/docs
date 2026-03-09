@@ -5,12 +5,7 @@ hide_title: true
 description: Automatically provision project memberships based on identity provider groups.
 ---
 
-import Tags from "@site/src/components/Tags";
-
-<div className="tag-wrapper">
-  <h1>Group syncing</h1>
-  <Tags tags={[{ name: "Enterprise", link: "https://plane.so/pricing", additionalClass: "enterprise" }]} />
-</div>
+# Manage project access with IdP groups <Badge type="warning" text="Enterprise" />
 
 :::info
 Group syncing is currently available on the self-hosted Commercial Edition and supports OIDC only. SAML and LDAP support is coming soon.

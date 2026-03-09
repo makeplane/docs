@@ -19,7 +19,7 @@ In Plane, you can create two different types of views:
 - **Project Views**  
   These Views are created within the specific project and are accessible to all Members of the project, depending on whether they are set as public or private. This feature is turned on by default and can be toggled on or off from the [project settings](/core-concepts/projects/overview#configure-project-settings).
 
-      ![Project Views](https://media.docs.plane.so/views/project-views.webp#hero)
+  ![Project Views](https://media.docs.plane.so/views/project-views.webp#hero)
 
 ## Create Views
 
@@ -39,7 +39,7 @@ Learn more about how to apply filters [here](/core-concepts/issues/visualise_fil
 
 Saved filters can be accessed from the **Views** section.
 
-    ![view](https://media.docs.plane.so/views/views-overview.webp#hero)
+![view](https://media.docs.plane.so/views/views-overview.webp#hero)
 
 After creating a view, you can:
 
@@ -49,10 +49,7 @@ After creating a view, you can:
 
 Workspace Views are visualized using the spreadsheet layout, while project Views support all layouts. Learn more about layouts and grouping options [here](/core-concepts/issues/layouts).
 
-<div class="tag-wrapper">
-  <h2>Publish Views</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Publish Views <Badge type="info" text="Pro" />
 
 Publishing a View allows you to share it more interactively by enabling features like comments, reactions, and voting. Here's how to publish a view:
 
@@ -76,10 +73,7 @@ You can remove views by deleting them from the list of views in your workspace o
 - Mark frequently used views as favorites for quick access. Favorited views appear on the sidebar under **Your Favorites** section.
 - Use the search bar in the **Views** section to locate specific views quickly.
 
-<div class="tag-wrapper">
-  <h2>Export views</h2>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+## Export views <Badge type="info" text="Pro" />
 
 You can export data from any saved view to analyze filtered work items, create custom reports, or share specific subsets of your project data. Exports respect all filters applied to the view.
 

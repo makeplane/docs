@@ -3,10 +3,7 @@ title: Nested pages for hierarchical documentation structure
 description: Create structured documentation with Nested Pages. Build parent-child hierarchies, organize content logically, and improve navigation for your team's knowledge base.
 ---
 
-<div class="tag-wrapper">
-  <h1>Structure content with nested pages</h1>
-  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-</div>
+# Structure content with nested pages <Badge type="tip" text="Business" />
 
 Nested Pages allows you to create a hierarchical structure for your content, helping you organize documentation logically and improve navigation for your team. This feature enables you to build robust knowledge architecture with parent and child pages, similar to folders and files.
 

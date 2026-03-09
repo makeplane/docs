@@ -76,7 +76,9 @@ Customize your project to match how your team works.
 
 2. **Customize project details**
 
-![Project general settings](https://media.docs.plane.so/tutorials/project-general-settings.webp#hero) - **Project icon and cover**: Choose an emoji and a header image for your project.
+![Project general settings](https://media.docs.plane.so/tutorials/project-general-settings.webp#hero) 
+
+- **Project icon and cover**: Choose an emoji and a header image for your project.
 
     - **Project visibility (Network)**: Choose based on your team's collaboration needs.
         - **Public**: All workspace members can see and join the project.

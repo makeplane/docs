@@ -32,10 +32,8 @@ The new analytics experience provides comprehensive views across six key areas:
 
 Get a bird's-eye view of your entire workspace with essential performance indicators that drive strategic decision-making. The workspace metrics section displays comprehensive user statistics including total users, admins, members, and guests, alongside project count and distribution across your organization. You can monitor the overall work item count across all projects and track active cycles and intake statistics to understand your team's current workload.
 
-<div class="tag-wrapper">
-  <h3>Projects analysis</h3>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+### Projects analysis <Badge type="info" text="Pro" />
+
 ![Analytics Projects](https://media.docs.plane.so/analytics/projects-analytics.webp#hero)
 
 The Projects analytics tab gives you a clear snapshot of how all your projects are performing across your workspace. Right at the top, you'll see the big picture numbers - your total project count along with a health check showing how many are on-track, off-track, or at risk. This instant overview helps you quickly spot if anything needs your attention.
@@ -62,10 +60,7 @@ The interactive chart builder lets you choose what you want to measure and then 
 
 You can easily export all your analytics data to CSV format, making it simple to dive deeper into the numbers using spreadsheets or other analysis tools you prefer.
 
-<div class="tag-wrapper">
-  <h3>Cycles analysis</h3>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+### Cycles analysis <Badge type="info" text="Pro" />
 
 ![Analytics Cycles](https://media.docs.plane.so/analytics/cycle-analytics.webp#hero)
 
@@ -79,10 +74,7 @@ The cycle table at the bottom provides all the essential management information 
 
 This kind of cycle analysis is invaluable for sprint retrospectives and improving your team's estimation accuracy over time. You can identify patterns in cycle performance and use that data to make better decisions about sprint planning and workload distribution.
 
-<div class="tag-wrapper">
-  <h3>Modules analysis</h3>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+### Modules analysis <Badge type="info" text="Pro" />
 
 ![Analytics Modules](https://media.docs.plane.so/analytics/module-analytics.webp#hero)
 
@@ -94,10 +86,7 @@ When you hover over any module in the chart, you get a detailed breakdown of the
 
 The table gives you all the management essentials - who's leading each module, which project it belongs to, planned timelines, and current completion status. This makes it easy to identify modules that might need attention, whether that's because they're running behind schedule, don't have a clear lead assigned, or are sitting at 0% completion when they should have started by now.
 
-<div class="tag-wrapper">
-  <h3>Intake analysis</h3>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+### Intake analysis <Badge type="info" text="Pro" />
 
 ![Analytics Intake](https://media.docs.plane.so/analytics/Intake-analytics.webp#hero)
 

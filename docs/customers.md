@@ -3,10 +3,7 @@ title: Customer management to track client requests and priorities
 description: Track client requests, link work items to specific customers, and prioritize tasks based on customer importance.
 ---
 
-<div class="tag-wrapper">
-  <h1>Manage your work by customer priorities</h1>
-  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-</div>
+# Manage your work by customer priorities <Badge type="tip" text="Business" />
 
 The Customers feature transforms how you organize and prioritize work by placing your clients at the center of your process. Instead of managing tasks in isolation, Customers creates direct connections between your work items and the people they serve, helping teams make better decisions about what to prioritize and ensuring customer requests receive proper attention.
 
@@ -109,7 +106,3 @@ Customer requests serve as the bridge between what your clients need and the act
   5. Admins can hover over the **Customer** name to view details.
 
   ![Customer property](https://media.docs.plane.so/customers/customer-property.webp#hero)
-
-::: info What's next
-Soon, you'll be able to bulk upload customer records via CSV files.
-:::

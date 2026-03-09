@@ -3,10 +3,7 @@ title: Workflows to control work item state transitions
 description: Set up Workflows to control work item transitions, require approval from specific reviewers, and ensure work follows your team's established processes.
 ---
 
-<div class="tag-wrapper">
-  <h1>Control your work item transitions</h1>
-  <Tags :tags='[{ name: "Business", link: "https://plane.so/pricing", additionalClass: "business" }]' />
-</div>
+# Control your work item transitions <Badge type="tip" text="Business" />
 
 Workflows give you control over how work items move through your process. Think of it as creating guardrails that ensure work follows your team's agreed-upon path, with the right people making decisions at each step.
 
@@ -30,7 +27,7 @@ This means you can:
   ></iframe>
 </div>
 
-## Set up your Workflow
+## Set up your workflow
 
 Getting started with Workflows takes just a few minutes:
 
@@ -63,7 +60,7 @@ Getting started with Workflows takes just a few minutes:
    - **View change history**  
      See a log of modifications made to your workflow
 
-## How Workflows work
+## How workflows work
 
 Once your workflow is live, you'll notice some changes in how work items behave:
 

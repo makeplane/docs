@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 
 export default defineConfig({
   title: "Plane",
@@ -17,9 +18,9 @@ export default defineConfig({
       "link",
       {
         rel: "preload",
-        href: "/fonts/Satoshi/Satoshi-Variable.ttf",
+        href: "/fonts/Satoshi/Satoshi-Regular.woff2",
         as: "font",
-        type: "font/ttf",
+        type: "font/woff2",
         crossorigin: "anonymous",
       },
     ],
@@ -27,9 +28,9 @@ export default defineConfig({
       "link",
       {
         rel: "preload",
-        href: "/fonts/IBM/IBMPlexMono-Light.ttf",
+        href: "/fonts/Satoshi/Satoshi-Medium.woff2",
         as: "font",
-        type: "font/ttf",
+        type: "font/woff2",
         crossorigin: "anonymous",
       },
     ],
@@ -37,27 +38,7 @@ export default defineConfig({
       "link",
       {
         rel: "preload",
-        href: "/fonts/IBM/IBMPlexMono-Regular.ttf",
-        as: "font",
-        type: "font/ttf",
-        crossorigin: "anonymous",
-      },
-    ],
-    [
-      "link",
-      {
-        rel: "preload",
-        href: "/fonts/IBM/IBMPlexMono-SemiBold.ttf",
-        as: "font",
-        type: "font/ttf",
-        crossorigin: "anonymous",
-      },
-    ],
-    [
-      "link",
-      {
-        rel: "preload",
-        href: "/fonts/IBM/IBMPlexMono-Bold.ttf",
+        href: "/fonts/IBMPlexMono/IBMPlexMono-Regular.ttf",
         as: "font",
         type: "font/ttf",
         crossorigin: "anonymous",
@@ -78,6 +59,29 @@ export default defineConfig({
         "data-domain": "docs.plane.so",
       },
     ],
+    // Google Analytics
+    [
+      "script",
+      {
+        async: "true",
+        src: "https://www.googletagmanager.com/gtag/js?id=G-G578SD4VZD",
+      },
+    ],
+    [
+      "script",
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-G578SD4VZD');`,
+    ],
+    // PostHog
+    [
+      "script",
+      {},
+      `!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_HskAKGRy7x0BEoWfyeHzYWWzcMmKG9DCail7ot7WQkA', {api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only'});`,
+    ],
     [
       "script",
       {
@@ -95,8 +99,36 @@ export default defineConfig({
     [
       "meta",
       {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+    ],
+    [
+      "meta",
+      {
+        name: "twitter:site",
+        content: "@planepowers",
+      },
+    ],
+    [
+      "meta",
+      {
         name: "twitter:image",
         content: "https://media.docs.plane.so/logo/og-docs.webp",
+      },
+    ],
+    [
+      "meta",
+      {
+        property: "og:type",
+        content: "website",
+      },
+    ],
+    [
+      "meta",
+      {
+        property: "og:site_name",
+        content: "Plane Docs",
       },
     ],
     [
@@ -116,6 +148,11 @@ export default defineConfig({
     },
     siteTitle: "",
 
+    outline: {
+      level: [2, 3],
+      label: "On this page",
+    },
+
     search: {
       provider: "algolia",
       options: {
@@ -126,14 +163,10 @@ export default defineConfig({
     },
 
     socialLinks: [
-      {
-        icon: "discord",
-        link: "https://discord.com/invite/A92xrEGCge",
-      },
-      {
-        icon: "github",
-        link: "https://github.com/makeplane/plane",
-      },
+      { icon: "github", link: "https://github.com/makeplane/plane" },
+        { icon: "discord", link: "https://discord.com/invite/A92xrEGCge" },
+        { icon: "twitter", link: "https://twitter.com/planepowers" },
+        { icon: "linkedin", link: "https://www.linkedin.com/company/planepowers/" },
     ],
 
     nav: [
@@ -146,11 +179,10 @@ export default defineConfig({
     sidebar: [
       {
         text: "Get started",
-        collapsed: false,
         items: [
           { text: "Introduction", link: "/" },
-          { text: "Quickstart", link: "/introduction/quickstart" },
-          { text: "Core Concepts", link: "/introduction/core-concepts" },
+          { text: "Quickstart guide", link: "/introduction/quickstart" },
+          { text: "Core concepts", link: "/introduction/core-concepts" },
           {
             text: "Tutorials",
             link: "/introduction/tutorials/overview",
@@ -181,11 +213,11 @@ export default defineConfig({
                 link: "/introduction/tutorials/organize-and-view-work",
               },
               {
-                text: "Plan and create cycles",
+                text: "Plan work with cycles",
                 link: "/introduction/tutorials/plan-and-create-cycles",
               },
               {
-                text: "Create pages",
+                text: "Write content with pages",
                 link: "/introduction/tutorials/create-pages",
               },
             ],
@@ -202,21 +234,20 @@ export default defineConfig({
       },
       {
         text: "Workspace management",
-        collapsed: false,
         items: [
           {
             text: "Workspaces",
             collapsed: true,
             items: [
               {
-                text: "Overview",
+                text: "Manage workspace",
                 link: "/core-concepts/workspaces/overview",
               },
               {
                 text: "Search workspace",
                 link: "/workspaces-and-users/search-workspace",
               },
-              { text: "Account", link: "/core-concepts/account/overview" },
+              { text: "Personalize homepage", link: "/core-concepts/account/overview" },
               { text: "Power K", link: "/core-concepts/power-k" },
               {
                 text: "Customize navigation",
@@ -232,9 +263,9 @@ export default defineConfig({
                 text: "Manage members",
                 link: "/core-concepts/workspaces/members",
               },
-              { text: "Roles", link: "/workspaces-and-users/roles" },
+              { text: "Member roles", link: "/workspaces-and-users/roles" },
               {
-                text: "Permissions",
+                text: "Permissions matrix",
                 link: "/workspaces-and-users/permissions",
               },
             ],
@@ -243,8 +274,8 @@ export default defineConfig({
             text: "Authentication",
             collapsed: true,
             items: [
-              { text: "SSO", link: "/authentication/sso" },
-              { text: "Group sync", link: "/authentication/group-sync" },
+              { text: "Single sign-on (SSO)", link: "/authentication/sso" },
+              { text: "Group Sync", link: "/authentication/group-sync" },
               {
                 text: "Self-hosted authentication",
                 link: "https://developers.plane.so/self-hosting/govern/authentication",
@@ -264,93 +295,90 @@ export default defineConfig({
                 link: "/workspaces-and-users/manage-licenses",
               },
               {
-                text: "Add/remove seats",
+                text: "Add or remove seats",
                 link: "/workspaces-and-users/add-remove-seats",
               },
               {
-                text: "Billing and plans",
+                text: "How billing works",
                 link: "/workspaces-and-users/billing-and-plans",
               },
             ],
           },
-          { text: "Settings", link: "/core-concepts/account/settings" },
+          { text: "Account settings", link: "/core-concepts/account/settings" },
         ],
       },
       {
         text: "Project management",
-        collapsed: false,
         items: [
           {
             text: "Projects",
             collapsed: true,
             items: [
-              { text: "Overview", link: "/core-concepts/projects/overview" },
+              { text: "Manage projects", link: "/core-concepts/projects/overview" },
               {
-                text: "Manage project members",
+                text: "Manage members",
                 link: "/core-concepts/projects/manage-project-members",
               },
-              { text: "Publish", link: "/core-concepts/deploy" },
+              { text: "Publish projects", link: "/core-concepts/deploy" },
             ],
           },
           {
-            text: "Project states",
+            text: "Project States",
             link: "/core-concepts/projects/project-states",
           },
-          { text: "States", link: "/core-concepts/issues/states" },
+          { text: "Workflow States", link: "/core-concepts/issues/states" },
           {
-            text: "Project overview",
+            text: "Project Overview",
             link: "/core-concepts/projects/project-overview",
           },
           {
-            text: "Project templates",
+            text: "Project Templates",
             link: "/templates/project-templates",
           },
         ],
       },
       {
         text: "Work item management",
-        collapsed: false,
         items: [
           {
             text: "Work Items",
             collapsed: true,
             items: [
-              { text: "Overview", link: "/core-concepts/issues/overview" },
+              { text: "Manage work items", link: "/core-concepts/issues/overview" },
               {
-                text: "Properties",
+                text: "Work item properties",
                 link: "/core-concepts/issues/properties",
               },
               {
-                text: "Work item URL",
+                text: "Create work items via URL",
                 link: "/core-concepts/issues/work-item-url",
               },
-              { text: "Drafts", link: "/core-concepts/drafts" },
+              { text: "Save draft work items", link: "/core-concepts/drafts" },
             ],
           },
           {
-            text: "Work item types",
+            text: "Work Item Types",
             link: "/core-concepts/issues/issue-types",
           },
           {
-            text: "Work item templates",
+            text: "Work Item Templates",
             link: "/templates/work-item-templates",
           },
           {
-            text: "Recurring work items",
+            text: "Recurring Work Items",
             link: "/core-concepts/projects/recurring-work-items",
           },
         ],
       },
       {
         text: "Planning and organization",
-        collapsed: false,
         items: [
           { text: "Labels", link: "/core-concepts/issues/labels" },
           { text: "Cycles", link: "/core-concepts/cycles" },
           { text: "Modules", link: "/core-concepts/modules" },
           { text: "Epics", link: "/core-concepts/issues/epics" },
           {
-            text: "Timeline and dependency",
+            text: "Dependencies in Timeline",
             link: "/core-concepts/issues/timeline-dependency",
           },
           {
@@ -370,11 +398,10 @@ export default defineConfig({
       },
       {
         text: "Views and layouts",
-        collapsed: false,
         items: [
           { text: "Layouts", link: "/core-concepts/issues/layouts" },
           {
-            text: "Filters",
+            text: "Work Item Filters",
             link: "/core-concepts/issues/visualise_filter",
           },
           {
@@ -382,18 +409,17 @@ export default defineConfig({
             link: "/core-concepts/issues/display-options",
           },
           { text: "Views", link: "/core-concepts/views" },
-          { text: "Your work", link: "/your-work" },
+          { text: "Your Work", link: "/your-work" },
         ],
       },
       {
         text: "Knowledge management",
-        collapsed: false,
         items: [
           {
             text: "Pages",
             collapsed: true,
             items: [
-              { text: "Overview", link: "/core-concepts/pages/overview" },
+              { text: "Manage project pages", link: "/core-concepts/pages/overview" },
               {
                 text: "Editor blocks",
                 link: "/core-concepts/pages/editor-blocks",
@@ -401,41 +427,39 @@ export default defineConfig({
             ],
           },
           { text: "Wiki", link: "/core-concepts/pages/wiki" },
-          { text: "Nested pages", link: "/core-concepts/pages/nested-pages" },
-          { text: "Page templates", link: "/templates/page-templates" },
+          { text: "Nested Pages", link: "/core-concepts/pages/nested-pages" },
+          { text: "Page Templates", link: "/templates/page-templates" },
         ],
       },
       {
         text: "Advanced management",
-        collapsed: false,
         items: [
           { text: "Estimates", link: "/core-concepts/issues/estimates" },
-          { text: "Bulk operations", link: "/core-concepts/issues/bulk-ops" },
+          { text: "Bulk Operations", link: "/core-concepts/issues/bulk-ops" },
           {
-            text: "Time tracking",
+            text: "Time Tracking",
             link: "/core-concepts/issues/time-tracking",
           },
           { text: "Workflows", link: "/workflows-and-approvals/workflows" },
           {
-            text: "Custom automations",
+            text: "Automations",
             link: "/automations/custom-automations",
           },
         ],
       },
       {
-        text: "Collaboration and communication",
-        collapsed: false,
+        text: "Collaboration",
         items: [
           {
-            text: "Project updates",
+            text: "Project Updates",
             link: "/communication-and-collaboration/project-updates",
           },
           {
-            text: "Comments and activity",
+            text: "Work Item Comments",
             link: "/communication-and-collaboration/comments-and-activity",
           },
           {
-            text: "Inline comments",
+            text: "Page Inline Comments",
             link: "/core-concepts/pages/inline-comments",
           },
           { text: "Inbox", link: "/core-concepts/inbox" },
@@ -443,18 +467,16 @@ export default defineConfig({
       },
       {
         text: "Intake and customers",
-        collapsed: false,
         items: [
           { text: "Overview", link: "/intake/overview" },
-          { text: "Intake", link: "/core-concepts/intake" },
-          { text: "Intake forms", link: "/intake/intake-forms" },
-          { text: "Intake email", link: "/intake/intake-email" },
+          { text: "Intake In-app", link: "/core-concepts/intake" },
+          { text: "Intake Forms", link: "/intake/intake-forms" },
+          { text: "Intake Email", link: "/intake/intake-email" },
           { text: "Customers", link: "/customers" },
         ],
       },
       {
         text: "Analytics and reporting",
-        collapsed: false,
         items: [
           { text: "Analytics", link: "/core-concepts/analytics" },
           { text: "Dashboards", link: "/dashboards" },
@@ -462,7 +484,6 @@ export default defineConfig({
       },
       {
         text: "Integrations",
-        collapsed: false,
         items: [
           {
             text: "Native integrations",
@@ -498,7 +519,6 @@ export default defineConfig({
       },
       {
         text: "Import and export",
-        collapsed: false,
         items: [
           {
             text: "Import",
@@ -519,10 +539,9 @@ export default defineConfig({
       },
       {
         text: "AI",
-        collapsed: false,
         items: [
-          { text: "Pi Chat", link: "/ai/pi-chat" },
-          { text: "Plane AI credits", link: "/ai/plane-ai-credits" },
+          { text: "Plane AI", link: "/ai/pi-chat" },
+          { text: "AI credits", link: "/ai/plane-ai-credits" },
           {
             text: "MCP Server",
             link: "https://developers.plane.so/dev-tools/mcp-server",
@@ -531,12 +550,10 @@ export default defineConfig({
       },
       {
         text: "Devices",
-        collapsed: false,
         items: [{ text: "Mobile", link: "/devices/mobile" }],
       },
       {
         text: "Support and resources",
-        collapsed: false,
         items: [
           { text: "Get help", link: "/support/get-help" },
           {
@@ -579,6 +596,9 @@ export default defineConfig({
     theme: {
       light: "github-light",
       dark: "dracula",
+    },
+    config(md) {
+      md.use(tabsMarkdownPlugin);
     },
   },
 });

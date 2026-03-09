@@ -3,10 +3,7 @@ title: Wiki for company wide knowledge base
 description: Create and organize company-wide documentation, policies, guides, and knowledge that extends beyond individual projects.
 ---
 
-<div class="tag-wrapper">
-  <h1>Centralized documentation with Wiki</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+# Centralized documentation with Wiki <Badge type="info" text="Pro" />
 
 Plane's Wiki is a place to store and share company-wide information. Unlike project pages that focus on specific work, the Wiki helps you create documentation that matters to everyone in the organization.
 
@@ -39,11 +36,7 @@ Where project pages zoom in on team-specific details, the Wiki gives you a bird'
 
 4. Need to find something quick? Use the sidebar's search function to locate specific pages or information.
 
-<div class="tag-wrapper">
-  <h2>Share private pages</h2>
-<Tags 
-  :tags='[{ name: "Business", link:"https://plane.so/pricing", additionalClass: "business" }]'/>
-</div>
+## Share private pages <Badge type="tip" text="Business" />
 While private pages are typically only accessible to their creator, you can selectively share private wiki pages with specific team members in your workspace. This gives you granular control over who can access sensitive documentation without making it visible to your entire organization.
 
 ![Wiki](https://media.docs.plane.so/wiki/share-private-pages.webp#hero)

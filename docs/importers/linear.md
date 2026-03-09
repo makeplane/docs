@@ -8,7 +8,7 @@ description: Migrate your Linear data to Plane.
 With the Linear importer, you can easily import issues, states, labels, priorities and user data from Linear to Plane and continue managing your existing projects.
 
 ::: info
-The Linear importert is available on Plane Cloud and on all plans of the Commercial Edition for self-hosted instances.
+The Linear importer is available on Plane Cloud and on all plans of the Commercial Edition for self-hosted instances.
 :::
 
 ## Import from Linear

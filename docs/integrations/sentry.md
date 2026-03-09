@@ -3,16 +3,17 @@ title: Integrate Sentry for automatic error tracking sync
 description: Integrate Plane with Sentry to automatically create work items from Sentry issues, sync issue states, and streamline your error tracking workflow.
 ---
 
-<div class="tag-wrapper">
-  <h1>Integrate with Sentry</h1>
-  <Tags :tags='[{ name: "Pro", link: "https://plane.so/pricing", additionalClass: "pro" }]' />
-</div>
+# Integrate with Sentry <Badge type="info" text="Pro" />
 
 Integrating Sentry with Plane allows your team to automatically create work items from Sentry issues and keep your error tracking workflow streamlined. Whether you're syncing issue states, creating work items from errors, or collaborating on bug fixes, this integration brings the power of Sentry and Plane together for a more connected development workflow.
 
 This guide will walk you through how to set up and connect your Sentry account to Plane.
 
 ## Set up Sentry integration
+
+::: danger Self-hosted Plane instance (Commercial Edition)
+If you're running a self-hosted instance of Plane, you'll need to set up a few extra configurations to get Sentry integration working. Check out the [setup guide](https://developers.plane.so/self-hosting/govern/integrations/sentry) first before diving into the steps on this page.
+:::
 
 Follow the steps below to complete the setup:
 
@@ -33,7 +34,7 @@ To get started, you need to connect your Sentry account to Plane.
 
 That's it! Your Sentry account is now integrated with Plane.
 
-### Set up Resolution States
+### Set up resolution states
 
 Select resolution states for Sentry issues. Configure which states to use when a Sentry issue is resolved or unresolved and vice versa.
 

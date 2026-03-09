@@ -127,47 +127,28 @@ Alerts notify workspace admins when the balance reaches 20% and 5% of total capa
 
 ## FAQs
 
-<details>
-  <summary>
-    <b>Why this pricing model?</b>
-  </summary>
-      Credits provide granular control while remaining predictable. Unlike token-based pricing (which fluctuates based on AI model costs), credits give you stable rates. Unlike subscription tiers with arbitrary limits, credits scale naturally with your actual usage.
-</details>
+::: details Why this pricing model?
+Credits provide granular control while remaining predictable. Unlike token-based pricing (which fluctuates based on AI model costs), credits give you stable rates. Unlike subscription tiers with arbitrary limits, credits scale naturally with your actual usage.
+:::
 
-<details>
-  <summary>
-    <b>How long do credits last?</b>
-  </summary>
-      It depends on your plan and how you acquired them. Free plan credits reset monthly with no rollover. Pro plan credits roll over for 1 month, Business for 3 months, and Enterprise plans roll over for up to 12 months. Top-up credits purchased separately are valid for 12 months on all paid plans, regardless of your base plan's rollover period.
-</details>
+::: details How long do credits last?
+It depends on your plan and how you acquired them. Free plan credits reset monthly with no rollover. Pro plan credits roll over for 1 month, Business for 3 months, and Enterprise plans roll over for up to 12 months. Top-up credits purchased separately are valid for 12 months on all paid plans, regardless of your base plan's rollover period.
+:::
 
-<details>
-  <summary>
-    <b>Do all workspace members share the same credit pool?</b>
-  </summary>
-      Yes. Credits are allocated at the workspace level, creating a shared balance that all members draw from. This prevents the problem of some team members having unused credits while others run out. Admins can set per-user limits if needed to prevent any single member from consuming the entire pool.
-</details>
+::: details Do all workspace members share the same credit pool? 
+Yes. Credits are allocated at the workspace level, creating a shared balance that all members draw from. This prevents the problem of some team members having unused credits while others run out. Admins can set per-user limits if needed to prevent any single member from consuming the entire pool.
+:::
 
-<details>
-  <summary>
-    <b>What happens when my workspace runs out of credits?</b>
-  </summary>
-     You'll receive alerts when your balance reaches 20% and 5% of total capacity, giving you time to respond. Once you hit zero, AI features become unavailable until you top up or your monthly allocation renews. Your existing data, past AI results, and all non-AI functionality remain fully accessible. You just can't request new AI operations.
-</details>
+::: details What happens when my workspace runs out of credits? 
+You'll receive alerts when your balance reaches 20% and 5% of total capacity, giving you time to respond. Once you hit zero, AI features become unavailable until you top up or your monthly allocation renews. Your existing data, past AI results, and all non-AI functionality remain fully accessible. You just can't request new AI operations.
+:::
 
-<details>
-  <summary>
-    <b>Can I switch between plans without losing credits?</b>
-  </summary>
-      Yes, you can change plans anytime. When you switch, your unused credits carry forward and adopt the new plan's rollover rules. If you upgrade mid-month, your increased allocation takes effect immediately. If you downgrade, the change happens at your next billing cycle to avoid losing paid credits.
-</details>
+::: details Can I switch between plans without losing credits? 
+Yes, you can change plans anytime. When you switch, your unused credits carry forward and adopt the new plan's rollover rules. If you upgrade mid-month, your increased allocation takes effect immediately. If you downgrade, the change happens at your next billing cycle to avoid losing paid credits.
+:::
 
-<details>
-  <summary>
-    <b>How can I monitor my workspace's credit usage?</b>
-  </summary>
-      The real-time dashboard shows your remaining balance, consumption history, and trends over time. Before executing any AI action, you'll see a credit cost preview.
-</details>
----
+::: details How can I monitor my workspace's credit usage? 
+The real-time dashboard shows your remaining balance, consumption history, and trends over time. Before executing any AI action, you'll see a credit cost preview.
+:::
 
 Ready to explore how Plane AI can help your team? [View our pricing options](https://plane.so/pricing#ai-&-credits) or start with 1,000 free credits.
