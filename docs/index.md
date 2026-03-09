@@ -1,47 +1,49 @@
 ---
-title: Modern project management software
-description: Discover Plane, the enterprise project management software for teams of all sizes. Learn how our issue tracking, sprint management, and knowledge tools can streamline your workflow.
+layout: home
+title: Plane Docs
+description: Everything you need to learn Plane, manage projects, and build powerful workflows.
+
+hero:
+  name: "Plane Documentation"
+  text: "Plan, track, and ship your work"
+  tagline: Guides and reference for using Plane to manage projects, collaborate with teams, and automate workflows.
+  actions:
+    - theme: brand
+      text: Get Started
+      link: /introduction/home
+    - theme: alt
+      text: Tutorials
+      link: /introduction/tutorials/overview
+
+features:
+  - icon: 👥
+    title: Workspaces
+    details: Set up workspaces, invite members, configure roles and permissions, and collaborate effectively.
+    link: /core-concepts/workspaces/overview
+    linkText: Configure workspaces
+  - icon: 📋
+    title: Projects
+    details: Create projects, manage work items, plan with cycles and modules, and track progress.
+    link: /core-concepts/projects/overview
+    linkText: Manage projects
+  - icon: 📄
+    title: Pages and Wiki
+    details: Create pages, build wikis, and keep your team's knowledge organized and accessible.
+    link: /core-concepts/pages/overview
+    linkText: Explore pages
+  - icon: 🔗
+    title: Integrations
+    details: Connect Plane with GitHub, GitLab, Slack, Sentry, and more to streamline your workflow.
+    link: /integrations/about
+    linkText: View integrations
+  - icon: 📥
+    title: Import and export
+    details: Migrate from Jira, Asana, Linear, ClickUp, and other tools with our importers.
+    link: /importers/overview
+    linkText: Import data
+  - icon: 🛠️
+    title: Developers
+    details: Self-host Plane, use the API, and extend Plane with MCP servers, agents, and custom integrations.
+    link: https://developers.plane.so/self-hosting/overview
+    linkText: Developer docs
 ---
-
-# Welcome to Plane
-
-This page gives you a quick rundown of Plane and highlights why it's a great choice for managing your projects.
-
-![Plane interface](https://media.docs.plane.so/introduction/introduction-plane.webp#hero)
-
-## What is Plane
-
-Plane is modern project management software that helps teams plan, track, and manage their work more efficiently.
-
-Whether you're a startup, a growing business, or a large enterprise, Plane can adapt to your team’s specific needs, making it a perfect solution for smooth, collaborative project management.
-
-## Why Plane
-
-Plane strikes a balance between simplicity, adaptability, and powerful features:
-
-- **Flexible and adaptable** <br/>
-  Plane adjusts to your team's unique workflow. It evolves with your processes, whether you follow Agile, Scrum, or a hybrid approach.
-
-- **Intuitive and easy to use** <br/>
-  With a simple, user-friendly interface, Plane has a minimal learning curve. Anyone from startup founders to project managers can quickly get started without much setup or training.
-
-- **Cloud and self-hosted options** <br/>
-  Choose between cloud or self-hosted solutions. For regulated industries, running Plane on your own infrastructure provides crucial data control.
-
-- **Integrated workspace** <br/>
-  Combine project management and knowledge management in one software, reducing silos and keeping everything centralized.
-
-## Get Plane
-
-You can setup Plane in two ways:
-
-- **[Plane Cloud](https://app.plane.so/sign-up)** <br/>
-  Sign up for a free cloud account - it's the easiest and quickest way to start using Plane.
-
-- **[Self-host Plane](https://developers.plane.so/self-hosting/overview)** <br/>
-  Install and run Plane on your own servers if you want full control over your data and infrastructure.
-
-## What's next
-
-- **New to Plane?** Start with [Tutorials](/introduction/tutorials/overview).
-- **Want to understand key concepts?** Explore [Core Concepts](/introduction/core-concepts).
