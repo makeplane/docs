@@ -180,7 +180,7 @@ export default defineConfig({
       {
         text: "Get started",
         items: [
-          { text: "Introduction", link: "/" },
+          { text: "Introduction", link: "/introduction/home" },
           { text: "Quickstart guide", link: "/introduction/quickstart" },
           { text: "Core concepts", link: "/introduction/core-concepts" },
           {
