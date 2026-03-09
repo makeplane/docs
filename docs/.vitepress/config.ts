@@ -1,5 +1,49 @@
-import { defineConfig } from "vitepress";
+import { readFileSync } from "fs";
+import { resolve } from "path";
+import { defineConfig, type HeadConfig } from "vitepress";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
+
+function loadEnvVar(key: string): string | undefined {
+  // process.env takes precedence (CI/hosting platforms set vars here)
+  if (key in process.env) return process.env[key] || undefined;
+  // Fall back to .env file for local development
+  try {
+    const envFile = readFileSync(resolve(process.cwd(), ".env"), "utf-8");
+    const match = envFile.match(new RegExp(`^${key}=(.+)$`, "m"));
+    return match?.[1]?.trim();
+  } catch {
+    return undefined;
+  }
+}
+
+const posthogKey = loadEnvVar("VITE_POSTHOG_KEY");
+const algoliaAppId = loadEnvVar("VITE_ALGOLIA_APP_ID");
+const algoliaApiKey = loadEnvVar("VITE_ALGOLIA_API_KEY");
+const algoliaIndexName = loadEnvVar("VITE_ALGOLIA_INDEX_NAME");
+
+const posthogHead: HeadConfig[] = posthogKey
+  ? [
+      [
+        "script",
+        {},
+        `!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('${posthogKey}', {api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only'});`,
+      ],
+    ]
+  : [];
+
+const searchConfig =
+  algoliaAppId && algoliaApiKey && algoliaIndexName
+    ? {
+        provider: "algolia" as const,
+        options: {
+          appId: algoliaAppId,
+          apiKey: algoliaApiKey,
+          indexName: algoliaIndexName,
+          insights: true,
+        },
+      }
+    : { provider: "local" as const };
 
 export default defineConfig({
   title: "Plane",
@@ -75,13 +119,8 @@ export default defineConfig({
       gtag('js', new Date());
       gtag('config', 'G-G578SD4VZD');`,
     ],
-    // PostHog
-    [
-      "script",
-      {},
-      `!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-      posthog.init('phc_HskAKGRy7x0BEoWfyeHzYWWzcMmKG9DCail7ot7WQkA', {api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only'});`,
-    ],
+    // PostHog (conditionally injected)
+    ...posthogHead,
     [
       "script",
       {
@@ -153,14 +192,7 @@ export default defineConfig({
       label: "On this page",
     },
 
-    search: {
-      provider: "algolia",
-      options: {
-        appId: "AXICJJC8RP",
-        apiKey: "23df4157dee1d9a8d435cadd6cae3f26",
-        indexName: "plane-docs-v3",
-      },
-    },
+    search: searchConfig,
 
     socialLinks: [
       { icon: "github", link: "https://github.com/makeplane/plane" },
