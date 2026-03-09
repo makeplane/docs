@@ -100,18 +100,16 @@ Track member actions like invitations, role changes, and removals to maintain vi
 1. Navigate to **Workspace settings → Members**.
 2. Click **Activity** in the top right.
 
-    The activity panel shows recent workspace member events:
+   The activity panel shows recent workspace member events:
+   - **Member invitations** - Who invited which members and when
+   - **Invitation acceptances** - When members accepted and joined the workspace
+   - **Role changes** - Role updates with who made the change and when
+   - **Member removals** - Who removed members from the workspace
 
-    - **Member invitations** - Who invited which members and when
-    - **Invitation acceptances** - When members accepted and joined the workspace
-    - **Role changes** - Role updates with who made the change and when
-    - **Member removals** - Who removed members from the workspace
-
-    Each activity entry shows:
-
-    - The action taken
-    - Who performed the action
-    - When it happened (relative time like "about 1 month ago" or "5 days ago")
+   Each activity entry shows:
+   - The action taken
+   - Who performed the action
+   - When it happened (relative time like "about 1 month ago" or "5 days ago")
 
 This audit trail helps workspace admins monitor membership changes and troubleshoot access issues. Activity is retained for workspace history and can be filtered by clicking on specific activity types.
 

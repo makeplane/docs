@@ -86,6 +86,7 @@ A work item can belong to only one Epic. This ensures clarity in organization an
 :::
 
 ## Duplicate Epics <Badge type="info" text="Pro" />
+
 When you need to create similar Epics or replicate an Epic's structure across projects, Plane allows you to duplicate existing Epics either within the same project or to different projects in your workspace.
 
 To duplicate an Epic, click the ••• menu in the Epic header and select Make a copy. You'll see two options:

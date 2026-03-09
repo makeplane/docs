@@ -23,16 +23,16 @@ Group syncing lets workspace admins map identity provider groups to Plane projec
 1. Navigate to **Workspace Settings → Group syncing**.
 2. Toggle on **Enable group syncing**.
 
-  ![Group syncing](https://media.docs.plane.so/sso/enable-group-sync.webp#hero)
+![Group syncing](https://media.docs.plane.so/sso/enable-group-sync.webp#hero)
 
 ## Configure sync settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Sync on login** | Update group membership and project access when a user signs in | Enabled (recommended) |
-| **Offline sync** | Run sync automatically every six hours, without waiting for users to log in | Disabled |
-| **Auto remove** | Automatically remove users from projects when they no longer match the group | Disabled |
-| **Group attribute key** | The identity provider attribute used to identify and sync user groups | `groups` |
+| Setting                 | Description                                                                  | Default               |
+| ----------------------- | ---------------------------------------------------------------------------- | --------------------- |
+| **Sync on login**       | Update group membership and project access when a user signs in              | Enabled (recommended) |
+| **Offline sync**        | Run sync automatically every six hours, without waiting for users to log in  | Disabled              |
+| **Auto remove**         | Automatically remove users from projects when they no longer match the group | Disabled              |
+| **Group attribute key** | The identity provider attribute used to identify and sync user groups        | `groups`              |
 
 Set **Group attribute key** to match exactly what your IdP sends. Common values include `groups` (default), `roles`, `memberOf`, or `custom:groups`.
 
@@ -52,18 +52,19 @@ Repeat for additional group-to-project mappings.
 
 ## What happens on login
 
-| Condition | Result |
-|-----------|--------|
-| User not in workspace, but in a mapped group | Added to workspace as Member, then added to mapped project(s) |
-| User in workspace, in mapped group, not yet in project | Added to project with configured role |
-| User in workspace, in mapped group, already in project | No change |
-| User in workspace, not in any mapped group | No action |
+| Condition                                              | Result                                                        |
+| ------------------------------------------------------ | ------------------------------------------------------------- |
+| User not in workspace, but in a mapped group           | Added to workspace as Member, then added to mapped project(s) |
+| User in workspace, in mapped group, not yet in project | Added to project with configured role                         |
+| User in workspace, in mapped group, already in project | No change                                                     |
+| User in workspace, not in any mapped group             | No action                                                     |
 
 ## When users leave IdP groups
 
 If a user is removed from an IdP group and **Auto remove** is enabled, they're removed from the corresponding project. They are never removed from the workspace.
 
 **These users are never auto-removed**
+
 - Users who were manually added to the project
 - Users who are the sole project admin
 

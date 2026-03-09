@@ -24,7 +24,7 @@ To import custom task types from ClickUp, make sure the [Work item types](/core-
 
 > **Role**: Workspace admins
 
-   ![Import from ClickUp](https://media.docs.plane.so/importers/clickup/import-clickup.webp#hero)
+![Import from ClickUp](https://media.docs.plane.so/importers/clickup/import-clickup.webp#hero)
 
 1. Go to your Workspace Settings.
 2. Select **Imports** on the left pane and click **Import** next to ClickUp.

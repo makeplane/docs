@@ -3,6 +3,7 @@ import type { Theme } from "vitepress";
 import { onMounted, watch, nextTick } from "vue";
 import { useRoute } from "vitepress";
 import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
+import mediumZoom from "medium-zoom";
 import Card from "./components/Card.vue";
 import CardGroup from "./components/CardGroup.vue";
 import Tags from "./components/Tags.vue";
@@ -85,6 +86,10 @@ export default {
 
     const route = useRoute();
 
+    const zoom = mediumZoom(".vp-doc img", {
+      background: "rgba(0, 0, 0, 0.8)",
+    });
+
     onMounted(() => {
       // Delay tab hash handling to ensure tabs are rendered
       setTimeout(() => {
@@ -103,10 +108,12 @@ export default {
       () => route.path,
       () => {
         nextTick(() => {
+          zoom.detach();
+          zoom.attach(":not(a) > img:not(.VPImage)");
           handleTabHash();
           setupTabHashUpdates();
         });
-      }
+      },
     );
   },
 } satisfies Theme;

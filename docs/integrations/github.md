@@ -34,7 +34,6 @@ Link your GitHub organization to your Plane workspace to start syncing repositor
 > [!CAUTION] Plane self-hosted instances
 > If you're running a self-hosted instance of Plane, you'll need to first create and configure a GitHub App to get GitHub integration working. Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github?edition=github-cloud#create-github-app) first before diving into the steps on this page.
 
-
 1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
 2. On the right pane, select **Integrations**.
 3. Find the **GitHub** integration and click **Configure**.
