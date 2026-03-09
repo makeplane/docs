@@ -1,6 +1,6 @@
 ---
 title: Support and help resources
-description: Find support for Plane through in-app chat, email, Discord community, and developer resources. Report bugs, request features, and get answers to your questions.
+description: Find support for Plane through in-app chat, email, community forum, and developer resources. Report bugs, request features, and get answers to your questions.
 ---
 
 # Get help
@@ -17,7 +17,7 @@ Click the **?** icon in your Plane workspace to start a conversation with our te
 
 ## Join our community
 
-Connect with other Plane users, share tips, and get community support on our [Discord server](https://discord.com/invite/A92xrEGCge). It's a great place to see how others are using Plane, get quick answers, and stay updated on what's new.
+Connect with other Plane users, share tips, and get community support on the [Plane Forum](https://forum.plane.so). It's a great place to see how others are using Plane, get quick answers, and stay updated on what's new.
 
 ## Email support
 

@@ -196,7 +196,7 @@ export default defineConfig({
 
     socialLinks: [
       { icon: "github", link: "https://github.com/makeplane/plane" },
-        { icon: "discord", link: "https://discord.com/invite/A92xrEGCge" },
+        { icon: "mastodon", link: "https://forum.plane.so" },
         { icon: "twitter", link: "https://twitter.com/planepowers" },
         { icon: "linkedin", link: "https://www.linkedin.com/company/planepowers/" },
     ],
