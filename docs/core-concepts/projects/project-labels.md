@@ -16,7 +16,7 @@ Project labels let you categorize projects across your workspace by team, functi
 4. Enter a label name and choose a color.
 5. Click **Add**.
 
-![Project labels](https://media.docs.plane.so/projects/project-labels.webp#hero)
+![Work Item Labels](https://media.docs.plane.so/projects/project-labels.webp#hero)
 
 You can also create labels directly from the label picker when assigning them to a project.
 
@@ -40,6 +40,6 @@ This makes it easier to scan and manage projects by custom categories.
 **Delete a label:**
 1. Click the **…** icon on the label and select **Delete**.
 
-:::warning
+::: warning
 Deleting a label removes it from all projects that had it assigned.
 :::
