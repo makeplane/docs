@@ -68,7 +68,7 @@ When you upload video files as attachments, you can display them with inline pla
 
 ![Show preview](https://media.docs.plane.so/pages/show-preview.webp#hero)
 
-## Columns
+## Columns <Badge type="info" text="Pro" />
 
 Organize content side-by-side using multi-column layouts. Columns help you create visually structured pages for comparisons, parallel information, or more efficient use of horizontal space.
 
