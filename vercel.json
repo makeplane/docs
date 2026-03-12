@@ -7,8 +7,16 @@
       "destination": "/introduction/quickstart"
     },
     {
+      "source": "/quickstart",
+      "destination": "/introduction/quickstart"
+    },
+    {
       "source": "/sign-up-sign-in",
       "destination": "/introduction/signup-signin"
+    },
+    {
+      "source": "/introduction/signup-signin",
+      "destination": "/introduction/home"
     },
     {
       "source": "/docker-compose",
@@ -31,8 +39,16 @@
       "destination": "/core-concepts/workspaces"
     },
     {
+      "source": "/core-concepts/workspaces",
+      "destination": "/core-concepts/workspaces/overview"
+    },
+    {
       "source": "/projects",
       "destination": "/core-concepts/projects"
+    },
+    {
+      "source": "/core-concepts/projects",
+      "destination": "/core-concepts/projects/overview"
     },
     {
       "source": "/issues",
@@ -67,6 +83,10 @@
       "destination": "/core-concepts/power-k"
     },
     {
+      "source": "/integrations",
+      "destination": "/integrations/about"
+    },
+    {
       "source": "/plane-integrations/about",
       "destination": "/integrations/about"
     },
@@ -83,12 +103,20 @@
       "destination": "/importers/github"
     },
     {
+      "source": "/importers/github",
+      "destination": "/importers/overview"
+    },
+    {
       "source": "/importers/jira-imp",
       "destination": "/importers/jira"
     },
     {
       "source": "/webhooks/introduction",
       "destination": "/webhooks/intro-webhooks"
+    },
+    {
+      "source": "/api",
+      "destination": "/api-reference/introduction"
     },
     {
       "source": "/apis/introduction",
@@ -204,7 +232,7 @@
     },
     {
       "source": "/webhooks/:path*",
-      "destination": "https://developers.plane.so/webhooks/:path*"
+      "destination": "https://developers.plane.so/dev-tools/intro-webhooks/:path*"
     },
     {
       "source": "/plane-one/governance/workspaces-and-teams",
@@ -231,7 +259,7 @@
       "destination": "/importers/jira"
     },
     {
-      "source": "/performance/hyper-mode#use-hyper-mode",
+      "source": "/performance/hyper-mode",
       "destination": "/"
     }
   ]
