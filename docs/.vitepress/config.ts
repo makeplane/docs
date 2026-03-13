@@ -436,6 +436,7 @@ export default defineConfig({
             text: "Work Item Filters",
             link: "/core-concepts/issues/visualise_filter",
           },
+          { text: "Plane Query Language", link: "/core-concepts/issues/plane-query-language" },
           {
             text: "Display options",
             link: "/core-concepts/issues/display-options",
