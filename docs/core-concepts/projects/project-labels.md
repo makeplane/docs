@@ -15,7 +15,7 @@ Project labels let you categorize projects across your workspace by team, functi
 4. Enter a label name and choose a color.
 5. Click **Add**.
 
-![Work Item Labels](https://media.docs.plane.so/projects/project-labels.webp#hero)
+![Project Labels](https://media.docs.plane.so/projects/project-labels.webp#hero)
 
 You can also create labels directly from the label picker when assigning them to a project.
 
