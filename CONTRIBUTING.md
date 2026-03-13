@@ -56,4 +56,4 @@ We follow a simple and structured process for submitting changes.
 
 After you submit your PR, a member of the Plane team will review it. Depending on our workload, response times may vary, but we'll do our best to get back to you as soon as possible. Thank you for your patience!
 
-If you need any help or have any questions, join us on [Discord](https://discord.com/invite/A92xrEGCge).
+If you need any help or have any questions, join us on the [Plane Forum](https://forum.plane.so).
