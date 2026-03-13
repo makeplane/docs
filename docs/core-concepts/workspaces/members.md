@@ -43,7 +43,7 @@ Workspace admins can bulk invite members by importing a CSV file. This is useful
 3. Upload your CSV file (drag and drop or click to browse).
 4. Select **Import** to bulk invite the members.
 
-Imported users are added directly to the workspace. When they sign in using the imported email, they're automatically redirected to the workspace without going through onboarding.
+Imported users are added directly to the workspace.
 
 **CSV format requirements**
 

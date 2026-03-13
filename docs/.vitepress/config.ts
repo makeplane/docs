@@ -358,7 +358,10 @@ export default defineConfig({
             text: "Project States",
             link: "/core-concepts/projects/project-states",
           },
-          { text: "Workflow States", link: "/core-concepts/issues/states" },
+          {
+            text: "Project Labels",
+            link: "/core-concepts/projects/project-labels",
+          },
           {
             text: "Project Overview",
             link: "/core-concepts/projects/project-overview",
@@ -392,6 +395,8 @@ export default defineConfig({
             text: "Work Item Types",
             link: "/core-concepts/issues/issue-types",
           },
+          { text: "Workflow States", link: "/core-concepts/issues/states" },
+          { text: "Work Item Labels", link: "/core-concepts/issues/labels" },
           {
             text: "Work Item Templates",
             link: "/templates/work-item-templates",
@@ -405,7 +410,6 @@ export default defineConfig({
       {
         text: "Planning and organization",
         items: [
-          { text: "Labels", link: "/core-concepts/issues/labels" },
           { text: "Cycles", link: "/core-concepts/cycles" },
           { text: "Modules", link: "/core-concepts/modules" },
           { text: "Epics", link: "/core-concepts/issues/epics" },
