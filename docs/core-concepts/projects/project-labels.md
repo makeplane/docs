@@ -32,11 +32,13 @@ This makes it easier to scan and manage projects by custom categories.
 ## Edit and delete labels
 
 **Edit a label:**
+
 1. Go to **Workspace Settings → Projects → Project labels**.
 2. Click the **…** icon on the label and select **Edit label**.
 3. Update the name or color and click **Update**.
 
 **Delete a label:**
+
 1. Click the **…** icon on the label and select **Delete**.
 
 ::: warning
