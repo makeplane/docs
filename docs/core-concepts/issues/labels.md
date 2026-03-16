@@ -11,7 +11,7 @@ Labels can be used to group work items by common attributes, such as type, featu
 
 ## Manage labels
 
-![Project labels](https://media.docs.plane.so/projects/project-labels.webp#hero)
+![Project labels](https://media.docs.plane.so/issues/work-item-labels.webp#hero)
 
 You can manage your labels in the **Labels** tab in your project settings. From here, you can create, edit, and delete labels.
 
