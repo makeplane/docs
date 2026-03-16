@@ -7,7 +7,7 @@ description: Filter work items using text-based queries with Plane Query Languag
 
 Plane Query Language (PQL) lets you filter work items using text-based queries. Write structured expressions to quickly find exactly what you need.
 
-![PQL editor](https://media.docs.plane.so/work-items/pql-editor.webp#hero)
+![PQL editor](https://media.docs.plane.so/issues/pql-editor.webp#hero)
 
 ## Use the PQL editor
 
@@ -21,8 +21,6 @@ When you start typing in the PQL field:
 2. After selecting a field, you see **operators**
 3. Then you choose or type **values**
 4. Continue building your query using **AND** or **OR**
-
-![PQL autocomplete](https://media.docs.plane.so/work-items/pql-autocomplete.webp#hero)
 
 This guided experience lets you construct queries without memorizing syntax.
 
