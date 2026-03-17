@@ -196,7 +196,12 @@ export default defineConfig({
 
     socialLinks: [
       { icon: "github", link: "https://github.com/makeplane/plane" },
-      { icon: "discord", link: "https://discord.com/invite/A92xrEGCge" },
+      {
+        icon: {
+          svg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>',
+        },
+        link: "https://forum.plane.so",
+      },
       { icon: "twitter", link: "https://twitter.com/planepowers" },
       { icon: "linkedin", link: "https://www.linkedin.com/company/planepowers/" },
     ],
