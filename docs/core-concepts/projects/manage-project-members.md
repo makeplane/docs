@@ -145,7 +145,7 @@ Users can become project members in two different ways, and understanding both h
 
 Users can have both types of access simultaneously. When this happens, Plane automatically applies whichever role gives them higher permissions. For example, if someone is a `Guest` on your project but joins a linked teamspace, they're automatically upgraded to `Member` access. If they're already an `Admin`, they keep their `Admin` role.
 
-## View project member activity <Badge type="warning" text="Enterprise" />
+## View project member activity <Badge type="warning" text="Enterprise Grid" />
 
 ::: info
 The Enterprise plan is currently only available for self-hosted instances. If you're interested in Enterprise features for your self-hosted deployment, contact [sales@plane.so](mailto:sales@plane.so) for pricing and licensing information.
