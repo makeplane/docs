@@ -17,7 +17,7 @@ Most SaaS tools charge per user. Every person who accesses the system counts tow
 For example, a typical workspace might have 20 Admins and Members (your core team) and 100 Guests (stakeholders, clients, contractors). With per-seat pricing, you pay for 20 seats and get 5 Guest slots per paid seat (100 total Guest slots). The Guests cost nothing extra. This model becomes more cost-effective as your Guest population grows.
 
 :::warning
-Guest allocation works differently on Enterprise Grid. Since Enterprise includes Granular Access Control(GAC) where any role can have any permission, the preset system-defined roles don't apply. All users at the instance level are billable seats.
+Guest allocation works differently on Enterprise Grid. Since Enterprise includes Granular Access Control (GAC) where any role can have any permission, the preset system-defined roles don't apply. All users at the instance level are billable seats.
 :::
 
 ## How seat-based billing works
