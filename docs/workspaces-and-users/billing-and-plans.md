@@ -44,7 +44,7 @@ For example, you might upgrade with 50 seats, assign 45 to current Admins and Me
 
 On Pro and Business plans, every paid seat includes 5 Guest slots. These Guest slots are pooled at the workspace level, just like seats. If you have 20 paid seats, you get 100 Guest slots total (20 × 5).
 
-This does not apply to the Enterprise Grid. There, all users are billable seats at the instance level regardless of role. The rationale is that GAC (Granular Access Control) is coming on Enterprise Grid, which lets you define custom permissions for any role. This means our preset system-defined roles no longer apply in the same way. Plus, your Enterprise Grid license isn't tied to a single workspace. You can have multiple workspaces with Enterprise features turned on.
+This does not apply to the Enterprise Grid. All users are billable seats at the instance level regardless of role. This is because Enterprise Grid will include Global Access Control, which lets you define custom permissions for any role. This means our preset system-defined roles no longer apply in the same way. Plus, your Enterprise Grid license isn't tied to a single workspace. You can have multiple workspaces with Enterprise features turned on.
 
 ## Managing seats over time
 
@@ -97,14 +97,14 @@ Stripe, Plane's payment processor, handles the renewal:
 1. An invoice is generated at the renewal date.
 2. The charge is attempted on your payment method.
 3. If successful, your subscription continues.
-4. If unsuccessful, Stripe retries the payment 3–5 times over 14 days.
+4. If unsuccessful, Stripe retries the payment 3-5 times over 14 days.
 5. After 14 days of failed attempts, the subscription is automatically cancelled.
 
 You receive email alerts before each billing attempt and after failed payments.
 
 ### Mid-cycle changes
 
-**Billing frequency changes** (monthly to annual, or vice versa) take effect at your next billing cycle. You can request this change from **Workspace Settings > Billing & Plans > Manage Subscription**.
+**Billing frequency changes** (monthly to annual, or vice versa) take effect at your next billing cycle. You can request this change from **Workspace Settings > Billing and plans > Manage Subscription**.
 
 On Cloud, the change happens automatically. On self-hosted instances, you accept the change in the Stripe portal, then return to Plane and click [Sync plan](/workspaces-and-users/manage-licenses#sync-plan) from Workspace Settings to apply the changes locally.
 
@@ -132,7 +132,7 @@ The downgrade takes effect at the end of your current billing cycle. You keep ac
 
 ### Cancel and return to the Free plan
 
-1. Go to **Workspace Settings > Billing & Plans**.
+1. Go to **Workspace Settings > Billing and Plans**.
 2. Click **Manage Subscription**. This opens the Stripe portal.
 3. Click **Cancel subscription**.
 4. Confirm the cancellation.
@@ -155,7 +155,8 @@ After 14 days, your workspace automatically reverts to the Free plan if you have
 
 The Free plan supports up to 12 seats.
 
-**Grandfathered workspaces** — Cloud workspaces on the Free tier before v1.3.0 were grandfathered at their current seat count. If you had 20 Admins and Members when the limit was introduced, your Free workspace retains 20 seats.
+**Grandfathered workspaces**  
+Cloud workspaces on the Free tier before v1.3.0 were grandfathered at their current seat count. If you had 20 Admins and Members when the limit was introduced, your Free workspace retains 20 seats.
 
 Grandfathered workspaces keep their higher seat count until you manually remove seats. Once you drop to 12 seats, you lose grandfathered status and cannot add seats without upgrading.
 
@@ -165,7 +166,7 @@ If you upgrade a grandfathered workspace to a paid plan, you're charged for all 
 
 Plane AI uses a separate credit-based system for AI features. Credits measure the computational work required for AI tasks, from quick queries to bulk automations.
 
-Each plan includes monthly AI credits per seat that pool at the workspace level. AI credits are separate from your seat-based subscription — you can run out of AI credits without affecting your paid seats, and vice versa. Learn more about [how AI credits work](/ai/plane-ai-credits) including consumption rates, rollover policies, and top-up options.
+Each plan includes monthly AI credits per seat that pool at the workspace level. AI credits are separate from your seat-based subscription - you can run out of AI credits without affecting your paid seats, and vice versa. Learn more about [how AI credits work](/ai/plane-ai-credits) including consumption rates, rollover policies, and top-up options.
 
 ## Payment and invoicing
 
@@ -173,21 +174,21 @@ Each plan includes monthly AI credits per seat that pool at the workspace level.
 
 Plane requires a payment method on file for all paid subscriptions created through the standard upgrade flow. Stripe (Plane's payment processor) doesn't allow removing all payment methods once a subscription is active.
 
-You can update your payment method anytime from **Workspace Settings > Billing & Plans > Manage Subscription**.
+You can update your payment method anytime from **Workspace Settings > Billing and plans > Manage Subscription**.
 
 ### Download invoices
 
-All invoices are available from **Workspace Settings > Billing & Plans > Manage Subscription**. You can view and download past invoices for accounting purposes.
+All invoices are available from **Workspace Settings > Billing and plans > Manage Subscription**. You can view and download past invoices for accounting purposes.
 
 ### Failed payments
 
-When a payment fails, Stripe attempts to collect payment 3–5 times over 14 days. You receive email notifications after each failed attempt.
+When a payment fails, Stripe attempts to collect payment 3-5 times over 14 days. You receive email notifications after each failed attempt.
 
 If all payment attempts fail, Cloud workspaces are cancelled after 14 days. Self-hosted workspaces are cancelled 7 days after the failed payment cycle.
 
 ## Unpaid bills
 
-If you have an active subscription with unpaid invoices, you receive a 30-day notice to clear the balance. After 30 days, your workspace enters a restricted state where all members except Workspace Admins are locked out. Workspace Admins can access **Workspace Settings > Billing & Plans** but no project work is accessible until bills are paid.
+If you have an active subscription with unpaid invoices, you receive a 30-day notice to clear the balance. After 30 days, your workspace enters a restricted state where all members except Workspace Admins are locked out. Workspace Admins can access **Billing and plans** page, but no project work is accessible until bills are paid.
 
 Once you pay outstanding invoices, full workspace access is restored immediately.
 
@@ -196,13 +197,13 @@ Once you pay outstanding invoices, full workspace access is restored immediately
 Most billing mechanics work identically across Cloud and self-hosted instances, with a few key differences:
 
 **License activation**  
-Self-hosted instances require [license key activation](/workspaces-and-users/manage-licenses#activate-license). Each license key unlocks one workspace on one instance. Cloud workspaces activate directly through the Stripe integration.
+Self-hosted instances require [license key activation](https://developers.plane.so/self-hosting/manage/manage-licenses/activate-pro-and-business). On Pro and Business, each license key unlocks one workspace on one instance. On Enterprise, the license activates at the instance level, covering all workspaces within it. Cloud workspaces activate directly through the billing portal. There is no need to activate using a license key.
 
 **Plan changes**  
-Cloud workspaces handle plan changes (upgrades, frequency changes) automatically. Self-hosted instances require using [Sync plan](/workspaces-and-users/manage-licenses#sync-plan) from Workspace Settings after accepting changes in the Stripe portal.
+Cloud workspaces handle plan changes (upgrades, frequency changes) automatically. Self-hosted instances require using [Sync plan](/workspaces-and-users/manage-licenses#sync-plan) from Workspace Settings after accepting changes in the billing portal.
 
 **License portability**  
-Self-hosted license keys are tied to both a workspace and a machine. If you switch servers or workspaces, you must [delink your license key](/workspaces-and-users/manage-licenses#delink-license-key) from the old workspace before reactivating it elsewhere.
+On Pro and Business, license keys are tied to both a workspace and a machine. If you switch servers or workspaces, you must [delink your license key](https://developers.plane.so/self-hosting/manage/manage-licenses/activate-pro-and-business#delink-license-key) from the old workspace before reactivating it elsewhere. On Enterprise Grid, [license activation](https://developers.plane.so/self-hosting/manage/manage-licenses/activate-enterprise) and delinking happens at the instance level through [God mode](https://developers.plane.so/self-hosting/govern/instance-admin).
 
 ## Refund policy
 
