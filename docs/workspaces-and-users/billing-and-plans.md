@@ -195,11 +195,14 @@ Once you pay outstanding invoices, full workspace access is restored immediately
 
 Most billing mechanics work identically across Cloud and self-hosted instances, with a few key differences:
 
-**License activation** — Self-hosted instances require [license key activation](/workspaces-and-users/manage-licenses#activate-license). Each license key unlocks one workspace on one instance. Cloud workspaces activate directly through the Stripe integration.
+**License activation**  
+Self-hosted instances require [license key activation](/workspaces-and-users/manage-licenses#activate-license). Each license key unlocks one workspace on one instance. Cloud workspaces activate directly through the Stripe integration.
 
-**Plan changes** — Cloud workspaces handle plan changes (upgrades, frequency changes) automatically. Self-hosted instances require using [Sync plan](/workspaces-and-users/manage-licenses#sync-plan) from Workspace Settings after accepting changes in the Stripe portal.
+**Plan changes**  
+Cloud workspaces handle plan changes (upgrades, frequency changes) automatically. Self-hosted instances require using [Sync plan](/workspaces-and-users/manage-licenses#sync-plan) from Workspace Settings after accepting changes in the Stripe portal.
 
-**License portability** — Self-hosted license keys are tied to both a workspace and a machine. If you switch servers or workspaces, you must [delink your license key](/workspaces-and-users/manage-licenses#delink-license-key) from the old workspace before reactivating it elsewhere.
+**License portability**  
+Self-hosted license keys are tied to both a workspace and a machine. If you switch servers or workspaces, you must [delink your license key](/workspaces-and-users/manage-licenses#delink-license-key) from the old workspace before reactivating it elsewhere.
 
 ## Refund policy
 
