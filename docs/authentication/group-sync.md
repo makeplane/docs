@@ -5,7 +5,7 @@ hide_title: true
 description: Automatically provision project memberships based on identity provider groups.
 ---
 
-# Manage project access with IdP groups <Badge type="warning" text="Enterprise" />
+# Manage project access with IdP groups <Badge type="warning" text="Enterprise Grid" />
 
 :::info
 Group syncing is currently available on the self-hosted Commercial Edition and supports OIDC only. SAML and LDAP support is coming soon.
