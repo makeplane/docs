@@ -27,6 +27,7 @@ Guest allocation works differently on Enterprise Grid. Since Enterprise Grid inc
 Billing happens per workspace. If you have multiple workspaces, each requires its own subscription. When you upgrade a workspace to a paid plan, you're charged for all seats, regardless of how those seats are distributed across projects.
 
 ### Enterprise Grid
+
 Billing happens at the instance or the tenant level. A single Enterprise Grid license covers the entire instance, including all workspaces within it. This means you can have multiple workspaces under one license.
 
 ### Seat allocation and usage
@@ -113,7 +114,7 @@ On Cloud, the change happens automatically. On self-hosted instances, you accept
 
 Your subscription price doesn't change mid-cycle unless you add or remove seats. Monthly subscriptions renew at the same price each month. Annual subscriptions remain constant for the full year.
 
-**The exception** 
+**The exception**  
 Limited-period discounts that some workspaces get during promotional periods expire according to their specific terms.
 
 ## Downgrade your plan
@@ -177,7 +178,7 @@ On self-hosted instances, you use your own AI provider's API keys, and all AI us
 
 ### Payment methods
 
-Plane requires a payment method on file for all paid subscriptions created through the standard upgrade flow. Stripe, Plane's payment processor,  doesn't allow removing all payment methods once a subscription is active.
+Plane requires a payment method on file for all paid subscriptions created through the standard upgrade flow. Stripe, Plane's payment processor, doesn't allow removing all payment methods once a subscription is active.
 
 You can update your payment method anytime from **Workspace Settings > Billing and plans > Manage Subscription**.
 
