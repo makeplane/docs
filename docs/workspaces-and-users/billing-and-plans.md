@@ -14,7 +14,7 @@ Most SaaS tools charge per user. Every person who accesses the system counts tow
 
 **The per-seat model separates billing from user roles.** You purchase seats for users who need full access—Admins and Members—while users who need limited access—Guests—are not billed at all. This reflects how teams actually work. Not everyone needs the same level of access.
 
-For example, a typical workspace might have 20 Admins and Members and 100 Guests 100 Guests spanning non-participating stakeholders, clients, contractors, and other users. With per-seat pricing, you pay for 20 seats and get 5 Guest slots per paid seat for a total 100 Guest slots. Guests cost nothing extra. This model becomes more cost-effective as your Guest population grows.
+For example, a typical workspace might have 20 Admins and Members and 100 Guests spanning non-participating stakeholders, clients, contractors, and other users. With per-seat pricing, you pay for 20 seats and get 5 Guest slots per paid seat for a total 100 Guest slots. Guests cost nothing extra. This model becomes more cost-effective as your Guest population grows.
 
 :::warning
 Guest allocation works differently on Enterprise Grid. Since Enterprise Grid includes Granular Access Control (GAC) where any role can have any permission, the preset system-defined roles don't apply. All users at the instance level are billable seats.
@@ -90,7 +90,7 @@ Proration applies to both monthly and annual billing cycles, calculated proporti
 
 ### Automatic renewals
 
-Subscriptions renew automatically at the start of each billing cycle, monthly or annua, depending on what you selected. The renewal charge is processed through your payment method on file.
+Subscriptions renew automatically at the start of each billing cycle, monthly or annual, depending on what you selected. The renewal charge is processed through your payment method on file.
 
 Stripe, Plane's payment processor, handles the renewal.
 
