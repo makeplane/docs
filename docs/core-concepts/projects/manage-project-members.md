@@ -163,6 +163,7 @@ Each activity entry shows:
 This audit trail helps project admins monitor membership changes and verify that access permissions are correct. Activity is retained for project history.
 
 ## Leave a project
+
 If you no longer need access to a project, you can leave it yourself. Click the … menu next to your own name in Project Settings > Members & Teamspaces and select Leave.
 
 You'll lose access to the project immediately but remain in the workspace. If you need to rejoin later, a Project Admin or Workspace Admin will need to add you again.
@@ -176,8 +177,6 @@ Users can become project members in two different ways, and understanding both h
 **Teamspace-based membership** happens automatically when your project is linked to a [Teamspace](/core-concepts/workspaces/teamspaces). All members of that teamspace automatically receive `Member` access to your project, making it perfect for teams that collaborate across multiple projects.
 
 Users can have both types of access simultaneously. When this happens, Plane automatically applies whichever role gives them higher permissions. For example, if someone is a `Guest` on your project but joins a linked teamspace, they're automatically upgraded to `Member` access. If they're already an `Admin`, they keep their `Admin` role.
-
-
 
 ## See also
 

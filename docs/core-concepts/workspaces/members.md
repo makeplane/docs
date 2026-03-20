@@ -129,6 +129,7 @@ Removing members doesn't change your seat count or billing. You must [remove sea
 :::
 
 ## Leave a workspace
+
 If you no longer need access to a workspace, you can leave it yourself. Click the … menu next to your own name in Workspace Settings > Members and select **Leave**.
 You'll lose access to the workspace and all its projects immediately. If you need to rejoin later, a Workspace Admin will need to invite you again.
 

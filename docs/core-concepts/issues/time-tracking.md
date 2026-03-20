@@ -54,6 +54,7 @@ To track time on your work items, follow the steps below:
    ![Worklog created](https://media.docs.plane.so/time-tracking/worklog-created.webp#hero)
 
 ## Edit or delete a time log
+
 To update or remove a time entry, find the worklog in the work item's activity trail. Click the … menu on the entry to see two options:
 
 - **Edit** — opens the log with editable hours, minutes, and description fields. Adjust the values and click Update.

@@ -36,10 +36,10 @@ For Workspace Views, click the **Add view** button in the **Views** section of y
 Learn more about how to apply filters [here](/core-concepts/issues/visualise_filter). After creating a view, you can share the link to collaborate and investigate with members.
 
 ## Private views <Badge type="info" text="Pro" />
+
 By default, views are visible to all members. On Pro and above, you can make a view private so only you can see it. Toggle between public and private using the globe and lock icons in the create or edit view modal.
 
 ![Private view](https://media.docs.plane.so/views/private-view.webp#hero)
-
 
 ## Work with Views
 
