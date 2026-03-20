@@ -398,7 +398,17 @@ export default defineConfig({
           },
           {
             text: "Work Item Types",
-            link: "/core-concepts/issues/issue-types",
+            collapsed: true,
+            items: [
+              {
+                text: "Project-level",
+                link: "/core-concepts/issues/issue-types",
+              },
+              {
+                text: "Workspace-level",
+                link: "/core-concepts/workspaces/work-item-types",
+              },
+            ],
           },
           { text: "Workflow States", link: "/core-concepts/issues/states" },
           { text: "Work Item Labels", link: "/core-concepts/issues/labels" },

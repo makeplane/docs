@@ -5,11 +5,13 @@ description: Create specialized work item types in Plane with custom properties,
 
 # Add and configure your work item types <Badge type="info" text="Pro" />
 
-Work item Types unlock a whole new way of adding, editing, and moving work forward in Plane. The default work item type called `Issue` is great for starting with Plane, but as you advance in your project management journey, you find the need for names and properties unique to the type of work you are doing.
+Work item Types unlock a whole new way of adding, editing, and moving work forward in Plane. The default work item type called `Task` is great for starting with Plane, but as you advance in your project management journey, you find the need for names and properties unique to the type of work you are doing.
 
 For example, your Marketing team may need a work item type called `Content` with the properties, `Channel`, `SEO done?`, and `Reviewer` — properties that aren't available on the default Work items. Your Engineering team, on the other hand, may want a work item type called `Bugs` with the properties `Version` and `Environment` to have more upfront info per bug reported.
 
 Work item Types make these and infinite other use cases possible.
+
+On the Enterprise Grid, work item types are managed at the workspace level for consistency across projects. See [Workspace Work Item Types](/core-concepts/workspaces/work-item-types).
 
 <div style="position: relative; padding-bottom: calc(56.67989417989418% + 41px); height: 0; width: 100%">
   <iframe
@@ -103,6 +105,7 @@ Here's a list of all the property types and attributes that Plane provides for c
 | **Boolean**            | True/False                               | Default value is false. This attribute cannot be marked as mandatory.                                            |
 | **Date**               | Date Format                              | Consistent date format across all properties.                                                                    |
 | **Member&nbsp;picker** | Single Select, Multi select              | Displays a list of all project members.                                                                          |
+| **URL** | A URL field for linking to external resources. |
 
 ### Examples of custom properties
 
