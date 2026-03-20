@@ -158,6 +158,10 @@ If you no longer want to receive updates, simply click **Unsubscribe** to stop t
 
 You can subscribe other users to the work item by mentioning them using `@username` in the comments or the work item description. This ensures they’re notified about the updates and stay in the loop.
 
+## Copy branch name
+
+When working with Git, you can copy a pre-formatted branch name directly from a work item. Click the Copy branch name button in the work item header toolbar. Plane generates a branch name from your username and the work item ID (e.g., sarah/DOCSW-606) and copies it to your clipboard. This keeps branch naming consistent across your team when creating PRs.
+
 ## View description edit history
 
 The work item editor now features an edit history viewer that tracks changes to work item descriptions.

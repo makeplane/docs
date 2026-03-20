@@ -49,12 +49,9 @@ Click on a milestone to expand and see all linked work items. The progress bar u
 
 ### View milestones in Timeline layout
 
-Milestones appear as visual indicators in the Timeline layout, making it easy to see important deadlines alongside your work items.
+Milestones appear in the Timeline layout as vertical dashed lines at their due date. Hover over it to reveal a diamond marker with the milestone name, progress percentage, and linked work item count.
 
 ![Milestone indicator in Timeline](https://media.docs.plane.so/milestones/milestone-indicator.webp#hero)
-
-- The vertical dashed line shows when the milestone is due.
-- Hover over a milestone to see its name, progress percentage, and linked work item count.
 
 This helps you quickly identify whether work is on track to meet milestone deadlines and spot potential scheduling conflicts.
 

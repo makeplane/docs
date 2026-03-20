@@ -8,7 +8,7 @@ description: Learn how Plane's per-seat billing works, and how billing cycles, u
 
 Plane uses a per-seat billing model for paid plans. You pay for the number of seats in your workspace, not the total number of users. Understanding this distinction helps you manage costs effectively while giving you the flexibility to map seats to your teams.
 
-## Why per-seat instead of per-user?
+## Why per-seat instead of per-user
 
 Most SaaS tools charge per user. Every person who accesses the system counts toward your bill. Plane takes a different approach.
 
