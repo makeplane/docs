@@ -95,7 +95,6 @@ If the modal shows "No properties available," either all existing properties are
 | **Member&nbsp;picker** | Single-select or multi-select from the list of project members. |
 | **Release&nbsp;picker** | Select from available Releases in the project. |
 | **URL** | A URL field for linking to external resources. |
-| **Formula** | A computed field that supports a single function using {startdate} and {duedate} with basic arithmetic (+, -, *, /). Custom boolean and numeric fields can also be used, and combined with date functions using the & operator. |
 
 ## Import types into a project
 
