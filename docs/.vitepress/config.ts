@@ -62,17 +62,7 @@ export default defineConfig({
       "link",
       {
         rel: "preload",
-        href: "/fonts/Satoshi/Satoshi-Regular.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossorigin: "anonymous",
-      },
-    ],
-    [
-      "link",
-      {
-        rel: "preload",
-        href: "/fonts/Satoshi/Satoshi-Medium.woff2",
+        href: "/fonts/Inter/InterVariable.woff2",
         as: "font",
         type: "font/woff2",
         crossorigin: "anonymous",
