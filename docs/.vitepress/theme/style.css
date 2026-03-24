@@ -93,45 +93,13 @@
 }
 
 /* ================================================
-   SATOSHI FONT
+   INTER VARIABLE FONT
    ================================================ */
 
 @font-face {
-  font-family: "Satoshi";
-  src:
-    url("/fonts/Satoshi/Satoshi-Light.woff2") format("woff2"),
-    url("/fonts/Satoshi/Satoshi-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Satoshi";
-  src:
-    url("/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2"),
-    url("/fonts/Satoshi/Satoshi-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Satoshi";
-  src:
-    url("/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2"),
-    url("/fonts/Satoshi/Satoshi-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Satoshi";
-  src:
-    url("/fonts/Satoshi/Satoshi-Bold.woff2") format("woff2"),
-    url("/fonts/Satoshi/Satoshi-Bold.woff") format("woff");
-  font-weight: 700;
+  font-family: "Inter";
+  src: url("/fonts/Inter/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -187,11 +155,40 @@
 
   /* Fonts */
   --vp-font-family-base:
-    "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     sans-serif;
   --vp-font-family-mono:
     "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
+}
+
+/* Font rendering optimizations */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv01", "cv02", "zero";
+}
+
+/* Typography tuning */
+.vp-doc {
+  line-height: 1.7;
+  letter-spacing: -0.011em;
+}
+
+.vp-doc h1 {
+  letter-spacing: -0.022em;
+  line-height: 1.2;
+}
+
+.vp-doc h2 {
+  letter-spacing: -0.017em;
+  line-height: 1.3;
+}
+
+.vp-doc h3 {
+  letter-spacing: -0.014em;
+  line-height: 1.4;
 }
 
 /* Dark mode */
@@ -300,7 +297,7 @@
   font-weight: 700;
   padding: 5px 12px;
   border-radius: 6px;
-  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-family: var(--vp-font-family-mono);
   text-transform: uppercase;
 }
 
@@ -347,7 +344,7 @@
 }
 
 .api-endpoint-badge .path {
-  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-family: var(--vp-font-family-mono);
   font-size: 14px;
   color: #6b7280;
 }
