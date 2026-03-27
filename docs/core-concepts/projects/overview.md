@@ -9,7 +9,7 @@ Projects organize your team's work within a workspace. Each project contains wor
 
 ## Create a project
 
-**Quick access:** Press `P` from anywhere in Plane.
+**Quick access:** Press `N` then `P` from anywhere in Plane.
 
 1. Navigate to **Projects** in the sidebar.
 2. Click **Add Project**.

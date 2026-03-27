@@ -302,7 +302,7 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: "Single sign-on (SSO)", link: "/authentication/sso" },
-              { text: "Group Sync", link: "/authentication/group-sync" },
+              { text: "IdP Group Sync", link: "/authentication/group-sync" },
               {
                 text: "Self-hosted authentication",
                 link: "https://developers.plane.so/self-hosting/govern/authentication",
@@ -472,7 +472,7 @@ export default defineConfig({
             text: "Time Tracking",
             link: "/core-concepts/issues/time-tracking",
           },
-          { text: "Workflows", link: "/workflows-and-approvals/workflows" },
+          { text: "Workflows and Approvals", link: "/workflows-and-approvals/workflows" },
           {
             text: "Automations",
             link: "/automations/custom-automations",
@@ -561,6 +561,7 @@ export default defineConfig({
               { text: "Confluence", link: "/importers/confluence" },
               { text: "ClickUp", link: "/importers/clickup" },
               { text: "CSV", link: "/importers/csv" },
+              { text: "Flatfile", link: "/importers/flatfile" },
               { text: "Jira", link: "/importers/jira" },
               { text: "Linear", link: "/importers/linear" },
               { text: "Notion", link: "/importers/notion" },

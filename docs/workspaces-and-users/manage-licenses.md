@@ -52,7 +52,9 @@ Use this whenever you see a mismatch between what's in the Prime portal and what
 
 Your license key is linked to both a workspace and an instance, meaning it can only be used on one workspace on one machine at a time. If you switch machines or reinstall the Commercial edition, you’ll need to reactivate your workspace. This helps prevent any misuse of the license on multiple machines or workspaces.
 
-To make it easier for you to move between machines or workspaces, we've added a new Delink feature. This lets you free up your license from its current workspace, so you can reuse it on a new machine or workspace.
+To make it easier for you to move between machines or workspaces, we've added a Delink feature. This lets you free up your license from its current workspace, so you can reuse it on a new machine or workspace.
+
+### In Workspace Settings
 
 Here’s how to delink your license key from a workspace:
 
@@ -64,3 +66,17 @@ Here’s how to delink your license key from a workspace:
 3. Restart the instance using `prime-cli restart`.
 4. If you’re switching machines or reinstalling the Commercial edition, see [Move Plane instance to another server](https://developers.plane.so/self-hosting/manage/migrate-plane).
 5. Ensure you are connected to the internet and reactivate the new workspace using the license key you delinked earlier.
+
+### In Prime portal
+
+You can also delink a license key directly from the Prime portal without accessing the Plane instance. This is useful if you've lost access to the instance or can't reach Workspace Settings.
+
+1. Log in to the [Prime portal](https://prime.plane.so/licenses).
+2. Click on the license you want to delink.
+3. Click Delink license.
+
+   ![Delink license key in Prime portal](https://media.docs.plane.so/activate-license/delink-license-prime-portal.webp#hero-tl)
+
+A confirmation dialog warns that your workspace will be disconnected and you'll lose access to paid features. Click Delink license to confirm.
+
+The license key is now released and available for reactivation on another workspace or instance.

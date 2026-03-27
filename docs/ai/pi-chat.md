@@ -7,6 +7,9 @@ description: Plane AI is your intelligent assistant for finding project data, an
 
 Plane AI is an AI assistant that helps you interact with your Plane workspace using natural language. Instead of navigating through menus and filters, you can simply ask Plane AI questions about your projects, work items, and documentation in plain English.
 
+> [!CAUTION] Plane self-hosted instances
+> If you're running a self-hosted instance of Plane, you'll need to first configure Plane AI services to get it working. Follow this [setup guide](https://developers.plane.so/self-hosting/govern/plane-ai) first to use Plane AI.
+
 Think of Plane AI as a knowledgeable team member who has instant access to all your project data. You can ask it to find specific issues, analyze project progress, search through documentation, or help you understand complex relationships between work items.
 
 ![Plane AI chat sidebar](https://media.docs.plane.so/pi-chat/pi-chat-sidebar.webp#hero)
