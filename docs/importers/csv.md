@@ -26,6 +26,10 @@ Update vendor contracts,,medium,2025-04-05,2025-04-20,unstarted
 Office supply restock,,low,,,backlog
 ```
 
+:::tip
+Save your CSV file with UTF-8 encoding.
+:::
+
 A few things to note:
 
 - **description_html** supports HTML markup. Plain text works too, but wrap it in `<p>` tags if you want paragraph formatting preserved.
@@ -45,7 +49,7 @@ Make sure your CSV is properly formatted before uploading. Malformed rows or mis
 
 2. Find the **CSV** tile and click **Import**.
 
-   ![CSV Importer](https://media.docs.plane.so/csv-importer/csv-importer-landing.webp#hero)
+   ![CSV Importer](https://media.docs.plane.so/importers/csv/csv-importer-landing.webp#hero)
 
 3. On the **Select Project** step, choose the Plane project where you want to import your work items. The project must already exist — create it first if needed.
 
