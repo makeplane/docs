@@ -75,11 +75,11 @@ The CSV Importer creates new work items on every import — it does not update e
 
 ## Imported fields
 
-| Column | Notes |
-| --- | --- |
-| `name` | Required. Used as the work item title. |
-| `description_html` | Supports HTML markup. Plain text is also accepted. |
-| `priority` | Accepts `urgent`, `high`, `medium`, `low`, or `none`. |
-| `start_date` | Format: `YYYY-MM-DD`. |
-| `target_date` | Format: `YYYY-MM-DD`. Used as the work item's due date. |
-| `state_group` | Maps to Plane's state groups: `backlog`, `unstarted`, `started`, `completed`, or `cancelled`. |
+| Column             | Notes                                                                                         |
+| ------------------ | --------------------------------------------------------------------------------------------- |
+| `name`             | Required. Used as the work item title.                                                        |
+| `description_html` | Supports HTML markup. Plain text is also accepted.                                            |
+| `priority`         | Accepts `urgent`, `high`, `medium`, `low`, or `none`.                                         |
+| `start_date`       | Format: `YYYY-MM-DD`.                                                                         |
+| `target_date`      | Format: `YYYY-MM-DD`. Used as the work item's due date.                                       |
+| `state_group`      | Maps to Plane's state groups: `backlog`, `unstarted`, `started`, `completed`, or `cancelled`. |
