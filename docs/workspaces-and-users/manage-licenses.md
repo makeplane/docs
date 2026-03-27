@@ -67,7 +67,7 @@ Here’s how to delink your license key from a workspace:
 4. If you’re switching machines or reinstalling the Commercial edition, see [Move Plane instance to another server](https://developers.plane.so/self-hosting/manage/migrate-plane).
 5. Ensure you are connected to the internet and reactivate the new workspace using the license key you delinked earlier.
 
-### In Portal portal
+### In Prime portal
 
 You can also delink a license key directly from the Prime portal without accessing the Plane instance. This is useful if you've lost access to the instance or can't reach Workspace Settings.
 
@@ -75,7 +75,7 @@ You can also delink a license key directly from the Prime portal without accessi
 2. Click on the license you want to delink.
 3. Click Delink license.
 
-   ![Delink license key in Prime portal](https://media.docs.plane.so/activate-license/ .webp#hero-tl)
+   ![Delink license key in Prime portal](https://media.docs.plane.so/activate-license/delink-license-prime-portal.webp#hero-tl)
 
 A confirmation dialog warns that your workspace will be disconnected and you'll lose access to paid features. Click Delink license to confirm.
 
