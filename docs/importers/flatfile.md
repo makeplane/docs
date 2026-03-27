@@ -27,7 +27,7 @@ Here's how to get started:
 
 3. In the right pane, click on **Imports**.
 
-4. You'll see several import options - look for the **Flatfile Importers** tile and click the **Import** button.
+4. You'll see several import options - look for the **Flatfile Importer** tile and click the **Import** button.
 
 5. Use the dropdown to select the project where you want your CSV data to go. If you haven't created your destination project yet, you'll need to create it first.
 
