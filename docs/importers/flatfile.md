@@ -44,8 +44,8 @@ Here's how to get started:
    You can either drag and drop your file onto the upload area, click to browse your files, or manually enter data if you prefer to input information directly.
 
    ::: tip Sample CSV template
-   Download our [sample CSV file](https://media.docs.plane.so/importers/flatfile/flatfile-import-sample.csv) to see the correct format and field structure for importing your data. 
-   
+   Download our [sample CSV file](https://media.docs.plane.so/importers/flatfile/flatfile-import-sample.csv) to see the correct format and field structure for importing your data.
+
    Make sure your CSV is properly formatted before uploading. Save your CSV file with UTF-8 encoding. Malformed rows or mismatched columns may cause individual rows to fail during import.
    :::
 
@@ -59,7 +59,7 @@ Here's how to get started:
 
    The importer automatically maps fields when column names match Plane's field names. You can adjust any mapping by clicking the dropdown next to each incoming field.
 
-   Required fields are marked with an asterisk (*).
+   Required fields are marked with an asterisk (\*).
 
    ::: warning User fields require email addresses
    For fields like **Assignees** and **Created By**, you must use email addresses rather than usernames. This ensures team members are correctly linked to their work items in Plane.
@@ -83,7 +83,6 @@ Here's how to get started:
    You'll see a table preview of your data with all mapped fields. This is your last chance to verify everything looks correct before import.
 
    ![Data preview table](https://media.docs.plane.so/importers/flatfile/data-preview.webp#hero)
-
    - Review each row to ensure the data appears as expected
    - Check that field mappings are correct
    - If something's not right, click **Back** to adjust your field mapping
@@ -106,7 +105,6 @@ Here's how to get started:
 
     After the import shows "Finished" status, navigate to **Work Items** in your Plane project to confirm your data imported successfully.
 
-
 ## Imported fields
 
 When bringing your data from CSV into Plane, here's exactly what you can transfer over:
@@ -126,7 +124,6 @@ When bringing your data from CSV into Plane, here's exactly what you can transfe
 | Cycle          |                                                                                                             |
 | Module         |                                                                                                             |
 | Created At     |                                                                                                             |
-
 
 ## Managing your imports
 
