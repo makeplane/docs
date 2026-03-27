@@ -121,7 +121,7 @@ You'll land on the workflow detail page, where you can [define its states and fl
 
 Once a workflow is active, work items in the project follow its rules:
 
-**State creation restrictions**
+**State creation restrictions**  
 Items can only be created in states where **Allow new work items** is enabled. If a member tries to create a work item in a restricted state, they won't be able to.
 
 **Transition enforcement**  
@@ -134,5 +134,5 @@ When a work item reaches a state with an approval flow, it enters a pending stat
 
 ![Approve and reject buttons on a work item](https://media.docs.plane.so/workflows/approval-buttons.webp#hero)
 
-**Workflow precedence**
+**Workflow precedence**   
 If a work item's type matches a type-specific workflow, that workflow's rules apply instead of the default. For example, if you have a type-specific workflow for bugs, any bug in the project follows that workflow's transition and approval rules. All other work item types continue to follow the default workflow.
