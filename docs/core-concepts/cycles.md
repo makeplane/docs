@@ -81,6 +81,33 @@ Any unfinished work items in the ended Cycle will remain in their current state.
 
 This manual control gives you the flexibility to adapt your Cycles to your team's actual work rhythm, rather than being strictly bound to predetermined dates.
 
+## Run parallel cycles <Badge type="warning" text="Enterprise Grid" />
+
+By default, only one cycle can be active at a time, and cycles cannot have overlapping dates. With parallel cycles enabled, you can run multiple cycles simultaneously with overlapping date ranges. This is useful when your team manages parallel workstreams — for example, a two-week sprint running alongside a longer release cycle.
+
+### Turn on parallel cycles
+
+1. Go to **Project Settings > Features > Cycles**.
+2. Toggle on **Parallel cycles**.
+
+![Parallel cycles setting](https://media.docs.plane.so/cycles/parallel-cycles-setting.webp#hero)
+
+Once enabled, you can create cycles with overlapping dates and start multiple cycles at the same time. Each active cycle appears independently in the Cycles page with its own progress breakdown and burn-down chart.
+
+![Multiple active cycles](https://media.docs.plane.so/cycles/multiple-active-cycles.webp#hero)
+
+### How parallel cycles work
+
+Even with parallel cycles enabled, a work item can only belong to one cycle at a time. This prevents duplicate tracking and keeps cycle metrics accurate. If you try to add a work item that already belongs to another cycle, the system will block the action.
+
+When you end a parallel cycle, you're prompted to choose what happens to incomplete work items — leave them in the ended cycle or transfer them to an upcoming cycle.
+
+Parallel cycles also appear in the workspace-level Active Cycles view and in any connected Teamspace Cycles view, so managers can track overlapping cycles across projects.
+
+### Turn off parallel cycles
+
+If you turn off the parallel cycles toggle after overlapping cycles already exist, those cycles continue to run normally. You just won't be able to create new overlapping cycles going forward. No existing data is disrupted.
+
 ## Transfer work items
 
 Once the due date of an active Cycle passes, it’s automatically marked as completed. After that, you can easily transfer any unfinished work items to an active or upcoming cycle, making it simple to move any leftover tasks to the next cycle.
