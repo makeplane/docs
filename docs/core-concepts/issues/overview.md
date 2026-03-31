@@ -63,7 +63,7 @@ Duplicating work items is perfect for replicating recurring tasks, or moving wor
 
 ## Add dependencies
 
-Set up scheduling dependencies between work items using the **Add dependency** button. Dependencies control the order in which work happens and are visualized as connectors in the [Timeline layout](/core-concepts/issues/timeline-dependencies).
+Set up scheduling dependencies between work items using the **Add dependency** button. Dependencies control the order in which work happens and are visualized as connectors in the [Timeline layout](/core-concepts/issues/timeline-dependency).
 
 - **Blocked by** — this work item cannot proceed until the other work item is completed.
 - **Blocking** — this work item must be completed before the other work item can proceed.
@@ -82,6 +82,8 @@ Link work items that are logically connected using the **Add relation** button. 
 - **Duplicate** — this work item is a duplicate of another. The original remains active while the duplicate is typically closed.
 - **Implements** — this work item implements or fulfills the other work item.
 - **Implemented By** — this work item is implemented by the other work item.
+
+To create custom relation types for your workspace, see [Custom relations](/advanced-management/custom-relations).
 
 ## Add links and attachments
 
