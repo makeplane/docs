@@ -3,7 +3,7 @@ title: Personalize your homepage
 description: Customize your Home page with quick links, recent activity, and sticky notes to create a personalized dashboard for improved productivity.
 ---
 
-# Personalize your homepage
+# Personalize homepage
 
 The Home page serves as your personalized page, giving you quick access to essential tools, recent activity, and key features to enhance productivity. Here's everything you need to know about setting up and using the Home page efficiently.
 

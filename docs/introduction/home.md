@@ -3,7 +3,7 @@ title: Modern project management software
 description: Discover Plane, the enterprise project management software for teams of all sizes. Learn how our issue tracking, sprint management, and knowledge tools can streamline your workflow.
 ---
 
-# Welcome to Plane
+# Introduction
 
 This page gives you a quick rundown of Plane and highlights why it's a great choice for managing your projects.
 

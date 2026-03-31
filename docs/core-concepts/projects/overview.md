@@ -3,7 +3,7 @@ title: Create and manage projects
 description: Create and manage projects, configure settings, add team members, and enable features.
 ---
 
-# Create and manage projects
+# Manage projects
 
 Projects organize your team's work within a workspace. Each project contains work items, cycles, modules, pages, and other resources needed to accomplish your goals.
 

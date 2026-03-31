@@ -3,7 +3,7 @@ title: Manage licenses
 description: Upgrade to paid plans in Plane, activate license keys on self-hosted instances, manage seats, and handle subscription changes.
 ---
 
-# Manage licenses for Commercial Edition
+# Manage licenses
 
 ::: warning
 If you are on the self-hosted Community edition and want to upgrade to the Commercial Edition, see [Upgrade from Community](https://developers.plane.so/self-hosting/upgrade-from-community).

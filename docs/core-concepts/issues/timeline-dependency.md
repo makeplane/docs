@@ -3,7 +3,7 @@ title: Task dependencies
 description: Create and manage visual task dependencies in Plane with timeline connectors.
 ---
 
-# Set up task dependencies in Timeline layout <Badge type="info" text="Pro" />
+# Dependencies in Timeline <Badge type="info" text="Pro" />
 
 With dependencies, managing connected tasks has never been easier. This feature provides a clear, high-level view of task relationships, allowing you to quickly see which tasks depend on each other. It helps you plan tasks more efficiently, optimize resource allocation, and stay on top of critical tasks. By tracking dependencies, you can spot bottlenecks, prevent delays, and keep everything on track.
 

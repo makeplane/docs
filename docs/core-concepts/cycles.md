@@ -3,7 +3,7 @@ title: Manage sprints and track agile workflows
 description: Create and manage sprints using Cycles in Plane. Track progress, transfer incomplete tasks, and monitor active cycles across projects for efficient Agile workflows.
 ---
 
-# Manage and track your sprints using Cycles
+# Cycles
 
 A Cycle is a set period of time where your team focuses on completing specific tasks or work items, similar to sprints in Agile. Each Cycle is flexible, allowing you to prioritize and tackle backlog items at your own pace.
 

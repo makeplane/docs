@@ -3,7 +3,7 @@ title: Time tracking to log hours on tasks
 description: Log hours on work items, view timesheet records, and download comprehensive reports for project time management.
 ---
 
-# Log time on work items <Badge type="info" text="Pro" />
+# Time Tracking <Badge type="info" text="Pro" />
 
 > **Role**: Project Admins
 

@@ -3,7 +3,7 @@ title: Search your workspace
 description: Find work items, projects, pages, and other content across your workspace.
 ---
 
-# Search your workspace
+# Search workspace
 
 Use workspace search to quickly find work items, projects, cycles, modules, pages, and other content across your entire workspace.
 

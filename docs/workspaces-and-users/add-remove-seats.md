@@ -4,7 +4,7 @@ toc_max_heading_level: 4
 description: Manage paid seats in your workspace
 ---
 
-# Manage paid seats in your workspace
+# Add or remove seats
 
 Manage the number of paid seats in your workspace to control your subscription costs. Seats determine how many Admins and Members you can have.
 

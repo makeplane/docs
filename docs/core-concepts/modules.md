@@ -3,7 +3,7 @@ title: Organize project features with Modules
 description: Use Modules to organize work items, track feature development, and break down projects into manageable components with progress tracking and multiple layouts.
 ---
 
-# Break your project down into Modules
+# Modules
 
 Modules are smaller, focused projects that help users group and organize work items within specific time frames. They allow teams to break down their work into manageable chunks and track progress towards specific goals or objectives. They can serve various purposes: tracking progress on a new feature, managing a milestone like a marketing campaign, or representing discrete pieces of your software architecture such as a microservice.
 

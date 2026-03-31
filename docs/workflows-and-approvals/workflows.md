@@ -3,7 +3,7 @@ title: Workflows to control work item state transitions
 description: Set up workflows to control how work items move through states, define transition rules, and require approvals before work progresses.
 ---
 
-# Control how work items move <Badge type="tip" text="Business" />
+# Workflows and Approvals <Badge type="tip" text="Business" />
 
 Workflows give you control over how work items move through states in your project. Think of it as creating guardrails that ensure work follows your team's agreed-upon path, with the right people making decisions at each step.
 

@@ -3,7 +3,7 @@ title: Publish projects
 description: Publish your projects as public boards with customizable layouts, commenting, and voting features. Share your roadmap with zero setup on a free domain.
 ---
 
-# Create public project boards
+# Publish projects
 
 Any project you build in Plane can be turned into a public page, creating a fully navigable website. This makes it easy for your users and customers to see your latest features or when bug fixes roll out—no sign-up required.
 

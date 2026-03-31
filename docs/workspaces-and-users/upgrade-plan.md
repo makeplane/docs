@@ -3,7 +3,7 @@ title: Upgrade to paid plans
 description: Upgrade to paid plans in Plane, activate license keys on self-hosted instances, manage seats, and handle subscription changes.
 ---
 
-# Upgrade to a paid plan
+# Upgrade plan
 
 You can upgrade from the Free plan to a paid plan to access premium features.
 
