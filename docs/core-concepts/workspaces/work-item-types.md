@@ -85,16 +85,16 @@ If the modal shows "No properties available," either all existing properties are
 
 ### Property types
 
-| Property&nbsp;type | Description |
-| --- | --- |
-| **Text** | Single line or paragraph text. Can be set to read-only with a default value. Read-only properties cannot be marked as mandatory. |
-| **Number** | Numeric value with an optional default. |
-| **Dropdown** | Single-select or multi-select from a defined list of options. |
-| **Boolean** | True/false toggle. Defaults to false. Cannot be marked as mandatory. |
-| **Date** | Date picker with a consistent format across all properties. |
-| **Member&nbsp;picker** | Single-select or multi-select from the list of project members. |
-| **Release&nbsp;picker** | Select from available Releases in the project. |
-| **URL** | A URL field for linking to external resources. |
+| Property&nbsp;type      | Description                                                                                                                      |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **Text**                | Single line or paragraph text. Can be set to read-only with a default value. Read-only properties cannot be marked as mandatory. |
+| **Number**              | Numeric value with an optional default.                                                                                          |
+| **Dropdown**            | Single-select or multi-select from a defined list of options.                                                                    |
+| **Boolean**             | True/false toggle. Defaults to false. Cannot be marked as mandatory.                                                             |
+| **Date**                | Date picker with a consistent format across all properties.                                                                      |
+| **Member&nbsp;picker**  | Single-select or multi-select from the list of project members.                                                                  |
+| **Release&nbsp;picker** | Select from available Releases in the project.                                                                                   |
+| **URL**                 | A URL field for linking to external resources.                                                                                   |
 
 ## Import types into a project
 
