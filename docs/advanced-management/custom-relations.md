@@ -5,7 +5,7 @@ description: Define custom relation types at the workspace level to represent ho
 
 # Custom relations <Badge type="warning" text="Enterprise Grid" />
 
-Relations describe how work items are connected to each other. 
+Relations describe how work items are connected to each other.
 
 Plane includes three [default relation types](/core-concepts/issues/overview#add-relations) that cover common use cases. You can create additional relation types tailored to how your organization thinks about work. For example, a team might define a "Tests" relation so QA work items link back to the features they validate, or a "Depends On" relation to model logical dependencies that don't map to scheduling constraints.
 
@@ -23,16 +23,16 @@ Custom relations are workspace-level configurations. Once created, they're avail
    - **Outward name** — how the relation reads from the perspective of the work item you're linking to (e.g., "blocked by," "depends on," "tests").
 4. Click **Save**.
 
-![Create custom relation](https://media.docs.plane.so/relations/create-custom-relation.webp#hero)
+![Create custom relation](https://media.docs.plane.so/workspaces/custom-relation.webp#hero)
 
 The directional naming ensures the relation reads correctly from either side. The inward name appears on the work item you're adding the relation to, and the outward name appears on the work item you're linking.
 
 ### Examples
 
-| Title | Inward name | Outward name |
-| --- | --- | --- |
-| Tests | tested by | tests |
-| Caused by | caused | caused by |
+| Title     | Inward name | Outward name |
+| --------- | ----------- | ------------ |
+| Tests     | tested by   | tests        |
+| Caused by | caused      | caused by    |
 
 ## Edit or delete a custom relation
 
