@@ -61,23 +61,27 @@ Duplicates the work item to another project in your workspace. This is particula
 
 Duplicating work items is perfect for replicating recurring tasks, or moving work between project phases while maintaining all the essential context and settings.
 
+## Add dependencies
+
+Set up scheduling dependencies between work items using the **Add dependency** button. Dependencies control the order in which work happens and are visualized as connectors in the [Timeline layout](/core-concepts/issues/timeline-dependencies).
+
+- **Blocked by** — this work item cannot proceed until the other work item is completed.
+- **Blocking** — this work item must be completed before the other work item can proceed.
+- **Starts Before** — this work item must start before the other work item starts.
+- **Starts After** — this work item can only start after the other work item starts.
+- **Finishes Before** — this work item must finish before the other work item finishes.
+- **Finishes After** — this work item can only finish after the other work item finishes.
+
+When both work items have start and due dates set, dependencies appear as visual connectors in the Timeline layout. Violated dependencies — where the dates conflict with the dependency type — are shown as red lines.
+
 ## Add relations
 
-You can also set up relations and dependencies between work items using the **Relations** property. These relationships help clarify how work items are interconnected and how the completion of one task might affect another.
+Link work items that are logically connected using the **Add relation** button. Relations describe how work items relate to each other but don't enforce scheduling constraints.
 
-![Work item relations](https://media.docs.plane.so/issues/issue-relations.webp#hero-br)
-
-- **Relates to**  
-  This relation is used when two work items are linked by some kind of context or dependency, but one does not directly affect the other’s completion.
-
-- **Duplicate of**  
-  This relation is used when one work item is a duplicate of another. The original work item remains active, while the duplicate work item is linked and typically closed or archived.
-
-- **Blocking**  
-  When a work item is marked as Blocking, it means that the work item needs to be resolved first before the second work item can progress.
-
-- **Blocked by**  
-  If a work item is marked as Blocked by, it indicates that the work item cannot proceed until the blocking work item is completed.
+- **Relates To** — the two work items are connected by context but don't directly affect each other's completion.
+- **Duplicate** — this work item is a duplicate of another. The original remains active while the duplicate is typically closed.
+- **Implements** — this work item implements or fulfills the other work item.
+- **Implemented By** — this work item is implemented by the other work item.
 
 ## Add links and attachments
 

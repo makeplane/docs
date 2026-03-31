@@ -473,6 +473,7 @@ export default defineConfig({
             link: "/core-concepts/issues/time-tracking",
           },
           { text: "Workflows and Approvals", link: "/workflows-and-approvals/workflows" },
+          { text: "Custom Relations", link: "/advanced-management/custom-relations" },
           {
             text: "Automations",
             link: "/automations/custom-automations",
