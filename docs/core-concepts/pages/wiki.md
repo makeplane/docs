@@ -3,7 +3,7 @@ title: Wiki for company wide knowledge base
 description: Create and organize company-wide documentation, policies, guides, and knowledge that extends beyond individual projects.
 ---
 
-# Centralized documentation with Wiki <Badge type="info" text="Pro" />
+# Wiki <Badge type="info" text="Pro" />
 
 Plane's Wiki is a place to store and share company-wide information. Unlike project pages that focus on specific work, the Wiki helps you create documentation that matters to everyone in the organization.
 

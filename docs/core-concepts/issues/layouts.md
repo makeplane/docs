@@ -4,7 +4,7 @@ toc_max_heading_level: 2
 description: Use layouts to visualize, organize, and manage your work items based on your team's workflow preferences.
 ---
 
-# Switch between layouts
+# Layouts
 
 Plane provides five flexible layouts to view and manage your work items, tailored to suit different workflows. Each layout offers unique benefits, so you can easily switch perspectives and optimize your team’s productivity.
 

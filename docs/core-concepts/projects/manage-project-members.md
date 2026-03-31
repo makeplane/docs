@@ -3,7 +3,7 @@ title: Manage project members
 description: Add members to projects, assign roles, and configure access
 ---
 
-# Manage project members
+# Manage members
 
 Manage who has access to your project and what they can do by adding members and assigning roles.
 

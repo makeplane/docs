@@ -3,7 +3,7 @@ title: Save draft work items
 description: Drafts feature automatically saves your work item progress. Create, edit, copy, and move drafts to projects when ready, with no risk of losing your work.
 ---
 
-# Save your progress in drafts
+# Save draft work items
 
 We've all been there—clicking outside a modal or navigating away from a page, only to lose all our progress. With Drafts, you don’t have to worry about that anymore. If you're interrupted when writing a work item or a comment or accidentally click away, Plane automatically saves your half-written text so you can pick up right where you left off.
 

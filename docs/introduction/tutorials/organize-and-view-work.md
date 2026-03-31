@@ -3,7 +3,7 @@ title: Organize and view your work
 description: Learn how to organize and visualize your work items using layouts, filters, display options, and custom views in Plane to boost your team's productivity.
 ---
 
-# Organize and view your work
+# Organize and view work
 
 Now that you can create and collaborate on work items, let's learn how to organize and view them effectively. Plane provides powerful tools to help you see exactly the work that matters to you, when you need to see it.
 

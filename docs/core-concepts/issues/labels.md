@@ -3,7 +3,7 @@ title: Categorize and tag project tasks
 description: Use labels to categorize work items, simplify filtering, and organize tasks by component, feature, or custom attributes beyond standard properties.
 ---
 
-# Tag work items with Labels
+# Work Item Labels
 
 Labels are keywords or tags that you can assign to work items in order to categorize and differentiate them within your project. They are ideal for tracking components or other unique identifiers that don’t fall under the standard work item properties.
 

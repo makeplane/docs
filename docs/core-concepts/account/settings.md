@@ -3,7 +3,7 @@ title: Account settings
 description: Reference for personal account settings including profile, preferences, notifications, security, and activity.
 ---
 
-# Customize your account and preferences
+# Account settings
 
 Account settings control your personal profile, interface preferences, notification preferences, security options, and activity history. These settings apply across all workspaces you belong to.
 

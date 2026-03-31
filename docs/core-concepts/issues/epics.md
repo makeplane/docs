@@ -3,7 +3,7 @@ title: Organize related work items with Epics
 description: Create and manage Epics in Plane to organize related work items, track progress across multiple tasks, and align your team around larger objectives.
 ---
 
-# Organize and track work items with Epics <Badge type="info" text="Pro" />
+# Epics <Badge type="info" text="Pro" />
 
 Epics help you group related tasks into a larger work item, providing a hierarchical structure for managing complex projects. This feature is ideal for breaking down major objectives into smaller, manageable pieces while keeping everything organized within a project.
 
