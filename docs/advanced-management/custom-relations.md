@@ -23,7 +23,7 @@ Custom relations are workspace-level configurations. Once created, they're avail
    - **Outward name** — how the relation reads from the perspective of the work item you're linking to (e.g., "blocked by," "depends on," "tests").
 4. Click **Save**.
 
-![Create custom relation](https://media.docs.plane.so/workspaces/custom-relation.webp#hero)
+![Create custom relation](https://media.docs.plane.so/workspaces/custom-relations.webp#hero)
 
 The directional naming ensures the relation reads correctly from either side. The inward name appears on the work item you're adding the relation to, and the outward name appears on the work item you're linking.
 
