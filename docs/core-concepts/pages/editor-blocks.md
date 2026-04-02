@@ -190,7 +190,7 @@ Type `/ai` to insert an AI Block. The block appears with a prompt input area and
 Generates a concise summary of your page content. Useful for creating executive summaries, TL;DRs, or quick overviews of longer documents.
 
 **Custom prompt**  
-Write your own instructions to generate or transform content. Use this for drafting sections, rewriting text, structuring notes, expanding ideas, or any other AI-assisted writing task. 
+Write your own instructions to generate or transform content. Use this for drafting sections, rewriting text, structuring notes, expanding ideas, or any other AI-assisted writing task.
 
 ## Work item
 
