@@ -5,7 +5,7 @@ description: Integrate Plane with GitHub Cloud and GitHub Enterprise Server to s
 
 # Integrate with GitHub
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 GitHub integration with Plane allows seamless synchronization between your GitHub repositories and Plane projects. By linking the two, your issues and pull requests stay updated across both platforms, enhancing collaboration and streamlining your workflow. Whether you're managing code, tasks, or both, this integration ensures your team stays in sync without the hassle of switching between platforms.
 

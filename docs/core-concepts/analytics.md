@@ -34,7 +34,7 @@ Get a bird's-eye view of your entire workspace with essential performance indica
 
 ### Projects analysis
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 ![Analytics Projects](https://media.docs.plane.so/analytics/projects-analytics.webp#hero)
 
@@ -64,7 +64,7 @@ You can easily export all your analytics data to CSV format, making it simple to
 
 ### Cycles analysis
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 ![Analytics Cycles](https://media.docs.plane.so/analytics/cycle-analytics.webp#hero)
 
@@ -80,7 +80,7 @@ This kind of cycle analysis is invaluable for sprint retrospectives and improvin
 
 ### Modules analysis
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 ![Analytics Modules](https://media.docs.plane.so/analytics/module-analytics.webp#hero)
 
@@ -94,7 +94,7 @@ The table gives you all the management essentials - who's leading each module, w
 
 ### Intake analysis
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 ![Analytics Intake](https://media.docs.plane.so/analytics/Intake-analytics.webp#hero)
 

@@ -5,7 +5,7 @@ description: Log hours on work items, view timesheet records, and download compr
 
 # Time Tracking
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 > **Role**: Project Admins
 

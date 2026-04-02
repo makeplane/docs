@@ -5,7 +5,7 @@ description: Filter work items using text-based queries with Plane Query Languag
 
 # Plane Query Language
 
-Plan - Enterprise Grid
+Plan - <Badge type="warning" text="Enterprise Grid" />
 
 Plane Query Language (PQL) lets you filter work items using text-based queries. Write structured expressions to quickly find exactly what you need.
 

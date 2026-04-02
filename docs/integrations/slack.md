@@ -5,7 +5,7 @@ description: Integrate Plane with Slack to create work items from messages, sync
 
 # Integrate with Slack
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 Plane's Slack integration brings your project management directly into your team's communication flow. Create work items from conversations, get notified about updates, interact with Plane AI, and keep everyone aligned — all without leaving Slack.
 This guide will walk you through how to set up and connect your Slack account to Plane.

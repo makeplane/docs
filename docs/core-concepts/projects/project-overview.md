@@ -5,7 +5,7 @@ description: Track metrics, share status updates, and monitor overall project he
 
 # Project Overview
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 Without a centralized project view, teams often face challenges like fragmented information, inefficient progress tracking, and communication gaps.
 

@@ -5,7 +5,7 @@ description: Automate repetitive project tasks with trigger-based workflows. Set
 
 # Automations
 
-Plan - Business
+Plan - <Badge type="tip" text="Business" />
 
 Automations let you streamline your project management workflow by automatically performing actions based on specific triggers and conditions. This powerful feature eliminates repetitive manual tasks, ensures consistency in your processes, and helps your team maintain focus on high-value work by letting the system handle routine operations.
 

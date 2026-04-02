@@ -5,7 +5,7 @@ description: Integrate Plane with GitLab and Self-managed GitLab to automate pul
 
 # Integrate with GitLab
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 Integrating GitLab with Plane allows you to sync your development workflow seamlessly by linking GitLab merge requests with Plane work items. This connection enables automated updates and enhances collaboration between developers and project managers.
 

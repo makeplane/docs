@@ -5,7 +5,7 @@ description: Create Page templates to standardize documentation and build reusab
 
 # Page Templates
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 Page Templates help you standardize and streamline your documentation workflow by providing reusable page structures for common content types. Instead of manually creating similar pages from scratch, templates allow you to quickly apply predefined formats and content, saving time and ensuring consistency across your workspace.
 

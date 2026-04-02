@@ -5,7 +5,7 @@ description: Set up a dedicated email address for your project that automaticall
 
 # Collect work items via email
 
-Plan - Business
+Plan - <Badge type="tip" text="Business" />
 
 With Intake Emails, you get a dedicated email address where people can send requests that automatically appear in your project's Intake section.
 

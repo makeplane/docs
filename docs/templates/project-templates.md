@@ -5,7 +5,7 @@ description: Create and use Project Templates to standardize projects, save setu
 
 # Project Templates
 
-Plan - Business
+Plan - <Badge type="tip" text="Business" />
 
 Project Templates help you standardize and streamline your workflow by providing reusable structures for common project types. Instead of manually configuring similar projects from scratch, templates allow you to quickly apply predefined settings, saving time and ensuring consistency across your workspace.
 

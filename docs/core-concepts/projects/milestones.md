@@ -5,7 +5,7 @@ description: Align work items toward shared completion dates with milestones. Tr
 
 # Milestones
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 Milestones provide a layer to align work items and epics toward shared completion dates, helping teams focus on strategic objectives and critical deliverables. Whether tracking quarterly goals, product launches, or major feature releases, milestones give you visibility into progress and ensure teams stay on track.
 

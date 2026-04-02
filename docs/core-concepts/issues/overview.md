@@ -47,7 +47,7 @@ Break down larger tasks into smaller, manageable components by creating sub-work
 
 ## Duplicate work items
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 When you need to create similar work items or replicate a work item's structure and properties, Plane lets you duplicate existing work items either within the same project or across different projects.
 
@@ -128,7 +128,7 @@ Plane allows you to upload different file types directly to the work item. Use t
 
 ## Link pages to work items
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 Connect relevant project pages and wiki documentation to your work items to provide instant access to related context, specifications, or reference materials.
 
@@ -140,7 +140,7 @@ Linked pages appear directly in the work item, making it easy for team members t
 
 ## Convert work items to epics
 
-Plan - Business
+Plan - <Badge type="tip" text="Business" />
 
 Sometimes a work item grows in scope and complexity, and you realize it's actually big enough to be its own epic with multiple sub-tasks. This feature promotes a regular work item into an epic, giving you the structure and flexibility to break it down into smaller, manageable pieces.
 
@@ -208,7 +208,7 @@ Within your project, you can set up automations to perform the following tasks:
 
 ## Export work items
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 You can export your work items to access and analyze your data outside of Plane. Exports support CSV and JSON formats, and you can filter exactly which work items to include.
 

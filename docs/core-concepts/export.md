@@ -50,7 +50,7 @@ Exported files remain downloadable for a limited time (7 days). After this perio
 
 ## Custom exports
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 Export filtered work items, cycles, views, or modules directly from your project. Custom exports let you export exactly what you see after applying filters and display options—perfect for reports, analysis, or sharing specific data sets.
 

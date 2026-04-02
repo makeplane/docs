@@ -5,7 +5,7 @@ description: Learn how to save time by updating multiple work items at once in P
 
 # Bulk Operations
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 Working with multiple work items at once can save you significant time.
 

@@ -5,7 +5,7 @@ description: Configure SAML or OIDC authentication to let your team sign in to P
 
 # Single sign-on (SSO)
 
-Plan - Business
+Plan - <Badge type="tip" text="Business" />
 
 Single sign-on (SSO) lets your team sign in to Plane using your organization's identity provider instead of managing separate passwords. This centralizes authentication, improves security, and simplifies user management.
 

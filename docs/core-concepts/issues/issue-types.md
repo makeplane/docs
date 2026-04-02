@@ -5,7 +5,7 @@ description: Create specialized work item types in Plane with custom properties,
 
 # Work Item Types
 
-Plan - Pro
+Plan - <Badge type="info" text="Pro" />
 
 Work item Types unlock a whole new way of adding, editing, and moving work forward in Plane. The default work item type called `Issue` is great for starting with Plane, but as you advance in your project management journey, you find the need for names and properties unique to the type of work you are doing.
 
