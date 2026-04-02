@@ -3,7 +3,7 @@ title: Integrate Slack to sync threads and create work items
 description: Integrate Plane with Slack to create work items from messages, sync thread conversations, and take actions directly from your chat interface.
 ---
 
-# Integrate with Slack <Badge type="info" text="Pro" />
+# Slack Integration <Badge type="info" text="Pro" />
 
 Plane's Slack integration brings your project management directly into your team's communication flow. Create work items from conversations, get notified about updates, interact with Plane AI, and keep everyone aligned — all without leaving Slack.
 This guide will walk you through how to set up and connect your Slack account to Plane.

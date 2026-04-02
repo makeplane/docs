@@ -3,7 +3,7 @@ title: Project management mobile app for iOS and Android
 description: Learn how to use Plane's mobile app for iOS and Android.
 ---
 
-# Manage projects on your mobile
+# Plane Mobile App
 
 The Plane mobile app is available on Android and iOS devices.
 
