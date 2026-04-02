@@ -3,7 +3,7 @@ title: Import data from Notion
 description: Import data from Notion to Plane.
 ---
 
-# Import your Notion data to Plane
+# Notion importer
 
 Plan - <Badge type="tip" text="Business" />
 

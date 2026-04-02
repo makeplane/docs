@@ -3,7 +3,7 @@ title: Project updates to share status and track progress
 description: Share project status and track progress over time
 ---
 
-# Share project status with Project Updates
+# Project Updates
 
 Plan - <Badge type="info" text="Pro" />
 

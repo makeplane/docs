@@ -390,7 +390,7 @@ export default defineConfig({
             text: "Work Item Types",
             link: "/core-concepts/issues/issue-types",
           },
-          { text: "Workflow States", link: "/core-concepts/issues/states" },
+          { text: "Work Item States", link: "/core-concepts/issues/states" },
           { text: "Work Item Labels", link: "/core-concepts/issues/labels" },
           {
             text: "Work Item Templates",
@@ -435,7 +435,10 @@ export default defineConfig({
             text: "Work Item Filters",
             link: "/core-concepts/issues/visualise_filter",
           },
-          { text: "Plane Query Language", link: "/core-concepts/issues/plane-query-language" },
+          {
+            text: "Plane Query Language (PQL)",
+            link: "/core-concepts/issues/plane-query-language",
+          },
           {
             text: "Display options",
             link: "/core-concepts/issues/display-options",
@@ -500,7 +503,7 @@ export default defineConfig({
       {
         text: "Intake and customers",
         items: [
-          { text: "Overview", link: "/intake/overview" },
+          { text: "Intake Overview", link: "/intake/overview" },
           { text: "Intake In-app", link: "/core-concepts/intake" },
           { text: "Intake Forms", link: "/intake/intake-forms" },
           { text: "Intake Email", link: "/intake/intake-email" },
@@ -553,7 +556,7 @@ export default defineConfig({
         text: "Import and export",
         items: [
           {
-            text: "Import",
+            text: "Import data",
             link: "/importers/overview",
             collapsed: false,
             items: [
@@ -567,7 +570,7 @@ export default defineConfig({
               { text: "Notion", link: "/importers/notion" },
             ],
           },
-          { text: "Export", link: "/core-concepts/export" },
+          { text: "Export data", link: "/core-concepts/export" },
         ],
       },
       {

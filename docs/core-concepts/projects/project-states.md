@@ -3,7 +3,7 @@ title: Project States
 description: Use Project States to categorize and track project progress across your workspace.
 ---
 
-# Track your projects with states
+# Project States
 
 Plan - <Badge type="info" text="Pro" />
 

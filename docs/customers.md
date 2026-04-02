@@ -3,7 +3,7 @@ title: Customer management to track client requests and priorities
 description: Track client requests, link work items to specific customers, and prioritize tasks based on customer importance.
 ---
 
-# Manage your work by customer priorities
+# Customers
 
 Plan - <Badge type="tip" text="Business" />
 

@@ -3,7 +3,7 @@ title: Integrate Slack to sync threads and create work items
 description: Integrate Plane with Slack to create work items from messages, sync thread conversations, and take actions directly from your chat interface.
 ---
 
-# Integrate with Slack
+# Slack Integration
 
 Plan - <Badge type="info" text="Pro" />
 

@@ -3,7 +3,7 @@ title: Import data from Confluence
 description: Import data from Confluence to Plane.
 ---
 
-# Import your Confluence data to Plane
+# Confluence importer
 
 Plan - <Badge type="tip" text="Business" />
 

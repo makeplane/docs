@@ -3,7 +3,7 @@ title: Plane Query Language
 description: Filter work items using text-based queries with Plane Query Language (PQL).
 ---
 
-# Plane Query Language
+# Plane Query Language (PQL)
 
 Plan - <Badge type="warning" text="Enterprise Grid" />
 

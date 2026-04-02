@@ -3,7 +3,7 @@ title: Inline comments for collaborative page discussions
 description: Collaborate directly in Plane pages with inline comments. Highlight text, mention teammates, and resolve discussions across projects, wikis, and teamspaces.
 ---
 
-# Add inline comments in pages
+# Page Inline Comments
 
 Plan - <Badge type="tip" text="Business" />
 

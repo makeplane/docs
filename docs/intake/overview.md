@@ -3,7 +3,7 @@ title: Collect and triage external work requests
 description: Use Intake to collect work items from guests, forms, and email submissions, then triage and manage them before adding to your project workflow.
 ---
 
-# Intake overview
+# Intake Overview
 
 Intake helps you collect, review, and triage work items from external sources before adding them to your project workflow. Whether you're gathering bug reports from customers, feature requests from stakeholders, or support tickets from clients, Intake provides a dedicated space to evaluate and organize incoming requests.
 

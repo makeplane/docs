@@ -3,9 +3,9 @@ title: Project labels
 description: Organize and categorize projects across your workspace with reusable labels.
 ---
 
-# Tag projects with Labels
+# Project Labels
 
-Plan - <Badge type="info" text="Pro" />
+Plan - <Badge type="tip" text="Business" />
 
 Project labels let you categorize projects across your workspace by team, function, priority, or any custom classification. Labels are defined at the workspace level and can be applied to any project. A project can have multiple labels.
 

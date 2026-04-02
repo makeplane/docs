@@ -3,7 +3,7 @@ title: Import data from Asana
 description: Migrate your Asana data to Plane.
 ---
 
-# Import your Asana data to Plane
+# Asana importer
 
 With the Asana importer, you can easily import issues, states, labels, priorities and user data from Asana to Plane and continue managing your existing projects.
 

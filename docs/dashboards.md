@@ -3,7 +3,7 @@ title: Custom dashboards to visualize project metrics and data
 description: Build custom dashboards in Plane to visualize project metrics.
 ---
 
-# Build custom dashboards
+# Dashboards
 
 Plan - <Badge type="info" text="Pro" />
 

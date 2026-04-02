@@ -3,7 +3,7 @@ title: Importers overview
 description: Importers to migrate your project data to Plane
 ---
 
-# Easily migrate your project data with Plane Importers
+# Import data
 
 Switching to Plane? No need to start from scratch. Our importers make it simple to move your project data from other tools, saving you time and effort. Instead of manually setting up your structure and history, you can directly transfer your existing issues into Plane, keeping your team's progress intact for a smooth transition.
 

@@ -3,7 +3,7 @@ title: Inbox for in app notifications and work item updates
 description: Use Inbox to monitor task updates, filter notifications, and manage mentions.
 ---
 
-# Get in-app notifications
+# Inbox
 
 The Inbox is a space for tracking and managing updates to work items you're connected with. Whether you're assigned to a work item, its creator, mentioned in a discussion, or subscribed to its updates, you'll find everything here.
 
