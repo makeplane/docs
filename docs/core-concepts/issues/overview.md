@@ -45,7 +45,9 @@ Break down larger tasks into smaller, manageable components by creating sub-work
 
 ![sub-work items](https://media.docs.plane.so/issues/issue-sub-issues.webp#hero)
 
-## Duplicate work items <Badge type="info" text="Pro" />
+## Duplicate work items
+
+Plan - Pro
 
 When you need to create similar work items or replicate a work item's structure and properties, Plane lets you duplicate existing work items either within the same project or across different projects.
 
@@ -124,7 +126,9 @@ Plane allows you to upload different file types directly to the work item. Use t
 - **Other**  
   CSS, JavaScript, JSON, XML, CSV, SQL
 
-## Link pages to work items <Badge type="info" text="Pro" />
+## Link pages to work items
+
+Plan - Pro
 
 Connect relevant project pages and wiki documentation to your work items to provide instant access to related context, specifications, or reference materials.
 
@@ -134,7 +138,9 @@ Connect relevant project pages and wiki documentation to your work items to prov
 
 Linked pages appear directly in the work item, making it easy for team members to access relevant documentation without leaving the context of their current task.
 
-## Convert work items to epics <Badge type="tip" text="Business" />
+## Convert work items to epics
+
+Plan - Business
 
 Sometimes a work item grows in scope and complexity, and you realize it's actually big enough to be its own epic with multiple sub-tasks. This feature promotes a regular work item into an epic, giving you the structure and flexibility to break it down into smaller, manageable pieces.
 
@@ -200,7 +206,9 @@ Within your project, you can set up automations to perform the following tasks:
 
   ![Project close automation](https://media.docs.plane.so/projects/auto-close-issues.webp#hero)
 
-## Export work items <Badge type="info" text="Pro" />
+## Export work items
+
+Plan - Pro
 
 You can export your work items to access and analyze your data outside of Plane. Exports support CSV and JSON formats, and you can filter exactly which work items to include.
 

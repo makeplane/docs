@@ -3,7 +3,9 @@ title: Project Overview
 description: Track metrics, share status updates, and monitor overall project health from a centralized dashboard for better team alignment.
 ---
 
-# Project Overview <Badge type="info" text="Pro" />
+# Project Overview
+
+Plan - Pro
 
 Without a centralized project view, teams often face challenges like fragmented information, inefficient progress tracking, and communication gaps.
 

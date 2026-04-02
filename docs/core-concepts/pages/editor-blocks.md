@@ -44,7 +44,9 @@ Highlights quoted text or important statements with distinct formatting.
 
 Displays code snippets or command-line text with proper formatting and syntax highlighting.
 
-## Embed <Badge type="info" text="Pro" />
+## Embed
+
+Plan - Pro
 
 Seamlessly integrate external content directly into your documents with rich, interactive embeds. The embed feature supports a wide variety of platforms and content types, making it easy to enhance your documentation with multimedia and interactive elements.
 
@@ -58,7 +60,9 @@ This opens an embed dialog where you can paste any supported link. The system au
 
 Inserts and displays images within your content.
 
-## Attachment <Badge type="info" text="Pro" />
+## Attachment
+
+Plan - Pro
 
 Uploads and embeds files directly into your content, supporting documents, images, and other file types up to 100MB each.
 
@@ -68,7 +72,9 @@ When you upload video files as attachments, you can display them with inline pla
 
 ![Show preview](https://media.docs.plane.so/pages/show-preview.webp#hero)
 
-## Columns <Badge type="info" text="Pro" />
+## Columns
+
+Plan - Pro
 
 Organize content side-by-side using multi-column layouts. Columns help you create visually structured pages for comparisons, parallel information, or more efficient use of horizontal space.
 
@@ -82,7 +88,9 @@ Use the slash command to insert the layout you need:
 
 Each column appears with an "Add content" placeholder where you can add any block type - text, lists, code, images, and more.
 
-## Video <Badge type="info" text="Pro" />
+## Video
+
+Plan - Pro
 
 Embeds video content directly into your pages for rich multimedia documentation.
 
@@ -96,7 +104,9 @@ If you have a video displayed with inline preview and want to convert it to a si
 
 ![Show as attachment](https://media.docs.plane.so/pages/show-as-attachment.webp#hero)
 
-## Math equations <Badge type="tip" text="Business" />
+## Math equations
+
+Plan - Business
 
 Add mathematical expressions and formulas to your Pages using LaTeX syntax. Whether you need to document complex calculations, display statistical formulas, or include scientific notations, Plane supports both inline and block-style mathematical equations. This is perfect for technical documentation, engineering specs, data analysis reports, and any content requiring precise mathematical notation.
 
@@ -136,7 +146,9 @@ $ a^2 + b^2 = c^2 $
 
 Both equation types support full LaTeX rendering with built-in validation and error handling for invalid mathematical expressions.
 
-## Draw.io diagrams <Badge type="tip" text="Business" />
+## Draw.io diagrams
+
+Plan - Business
 
 ::: tip Prerequisites
 Before you can add Draw.io diagrams to Pages or Wiki, you need to [connect the Draw.io integration](/integrations/draw-io) from Workspace Settings.
@@ -162,7 +174,9 @@ Both modes feature a consistent toolbar with **Save** and **Exit** buttons, maki
 
 Creates visually distinct sections with customizable icons and colors for highlighting warnings, tips , and calls-to-action.
 
-## AI block <Badge type="info" text="Pro" />
+## AI block
+
+Plan - Pro
 
 Generate or transform content directly within your pages using AI. The AI Block lets you draft new content, summarize existing text, or run custom prompts without leaving the editor.
 
@@ -176,9 +190,11 @@ Type `/ai` to insert an AI Block. The block appears with a prompt input area and
 Generates a concise summary of your page content. Useful for creating executive summaries, TL;DRs, or quick overviews of longer documents.
 
 **Custom prompt**  
-Write your own instructions to generate or transform content. Use this for drafting sections, rewriting text, structuring notes, expanding ideas, or any other AI-assisted writing task. 
+Write your own instructions to generate or transform content. Use this for drafting sections, rewriting text, structuring notes, expanding ideas, or any other AI-assisted writing task. 
 
-## Work item <Badge type="info" text="Pro" />
+## Work item
+
+Plan - Pro
 
 References work items directly in the editor to track details and progress.
 

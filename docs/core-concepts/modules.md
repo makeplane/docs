@@ -102,7 +102,9 @@ Archive completed Modules to declutter your views while preserving historical da
 
 If a Module is no longer needed, you can delete it. Deleting a Module removes its progress analytics and de-links all associated work items.
 
-## Export modules <Badge type="info" text="Pro" />
+## Export modules
+
+Plan - Pro
 
 You can export module data to track progress, create reports, or share module updates with stakeholders outside of Plane. Exports include all work items within the module along with their key details.
 

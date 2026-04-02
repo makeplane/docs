@@ -67,7 +67,9 @@ If you prefer to estimate effort by text categories rather than numbers, this is
 
 This system provides a high-level estimate of effort based on intuitive categories, which is especially helpful in teams where relative effort matters more than precise numeric estimates.
 
-### Time <Badge type="info" text="Pro" />
+### Time
+
+Plan - Pro
 
 This system uses time durations to estimate how long work items will take to complete. It's ideal for teams that need to plan based on actual time investments or track billable hours. Plane offers two ways to set up your time estimates:
 

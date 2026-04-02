@@ -3,7 +3,9 @@ title: Nested pages for hierarchical documentation structure
 description: Create structured documentation with Nested Pages. Build parent-child hierarchies, organize content logically, and improve navigation for your team's knowledge base.
 ---
 
-# Nested Pages <Badge type="tip" text="Business" />
+# Nested Pages
+
+Plan - Business
 
 Nested Pages allows you to create a hierarchical structure for your content, helping you organize documentation logically and improve navigation for your team. This feature enables you to build robust knowledge architecture with parent and child pages, similar to folders and files.
 

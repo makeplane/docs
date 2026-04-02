@@ -3,7 +3,9 @@ title: Bulk update multiple work items to save time
 description: Learn how to save time by updating multiple work items at once in Plane. Change states, priorities, assignees, dates, and more with efficient bulk operations.
 ---
 
-# Bulk Operations <Badge type="info" text="Pro" />
+# Bulk Operations
+
+Plan - Pro
 
 Working with multiple work items at once can save you significant time.
 

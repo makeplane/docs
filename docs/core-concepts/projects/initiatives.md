@@ -3,7 +3,9 @@ title: Align multiple projects with Initiatives
 description: Create and manage Initiatives to align multiple projects with strategic goals, track cross-project epics, and monitor aggregated progress.
 ---
 
-# Initiatives <Badge type="info" text="Pro" />
+# Initiatives
+
+Plan - Pro
 
 Initiatives is designed to help you manage and track progress across multiple related projects under a unified objective. This feature is particularly useful if you need a high-level view of how various projects align with strategic goals.
 

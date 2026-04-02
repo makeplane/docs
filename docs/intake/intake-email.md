@@ -3,7 +3,9 @@ title: Intake emails to collect work items from email submissions
 description: Set up a dedicated email address for your project that automatically converts incoming messages into work items for easy review and processing.
 ---
 
-# Collect work items via email <Badge type="tip" text="Business" />
+# Collect work items via email
+
+Plan - Business
 
 With Intake Emails, you get a dedicated email address where people can send requests that automatically appear in your project's Intake section.
 

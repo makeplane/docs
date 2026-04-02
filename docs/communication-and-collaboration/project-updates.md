@@ -3,7 +3,9 @@ title: Project updates to share status and track progress
 description: Share project status and track progress over time
 ---
 
-# Share project status with Project Updates <Badge type="info" text="Pro" />
+# Share project status with Project Updates
+
+Plan - Pro
 
 Project updates provide a way to share project status and create a timeline of project progress. Use updates to communicate where your project stands, highlight blockers, and keep stakeholders informed without requiring meetings or status check-ins.
 

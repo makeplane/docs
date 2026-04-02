@@ -3,7 +3,9 @@ title: Customer management to track client requests and priorities
 description: Track client requests, link work items to specific customers, and prioritize tasks based on customer importance.
 ---
 
-# Manage your work by customer priorities <Badge type="tip" text="Business" />
+# Manage your work by customer priorities
+
+Plan - Business
 
 The Customers feature transforms how you organize and prioritize work by placing your clients at the center of your process. Instead of managing tasks in isolation, Customers creates direct connections between your work items and the people they serve, helping teams make better decisions about what to prioritize and ensuring customer requests receive proper attention.
 

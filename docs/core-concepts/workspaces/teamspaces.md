@@ -3,7 +3,9 @@ title: Track team work with Teamspaces
 description: Organize team members across projects, track team-specific work items, and create dedicated spaces for team knowledge and collaboration.
 ---
 
-# Teamspaces <Badge type="info" text="Pro" />
+# Teamspaces
+
+Plan - Pro
 
 With Teamspaces, you can mirror your real-world teams of any kind and track work separately from a project. See your team's work automatically filtered across projects, and house your team's knowledge separate from anything else in Plane.
 

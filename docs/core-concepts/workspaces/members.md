@@ -30,7 +30,9 @@ The invited person receives an email notification with instructions to join your
 - The invitation remains pending until accepted or declined.
 - You can manually remove pending invitations using the Remove option (see below).
 
-## Import members from CSV <Badge type="info" text="Pro" />
+## Import members from CSV
+
+Plan - Pro
 
 Workspace admins can bulk invite members by importing a CSV file. This is useful when onboarding teams or migrating users from another system.
 
@@ -89,7 +91,9 @@ Ensure your SMTP server is properly configured to send invite emails successfull
 
 The role change takes effect immediately.
 
-## View workspace member activity <Badge type="tip" text="Business" />
+## View workspace member activity
+
+Plan - Business
 
 Track member actions like invitations, role changes, and removals to maintain visibility over workspace management.
 

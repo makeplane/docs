@@ -3,7 +3,9 @@ title: Wiki for company wide knowledge base
 description: Create and organize company-wide documentation, policies, guides, and knowledge that extends beyond individual projects.
 ---
 
-# Wiki <Badge type="info" text="Pro" />
+# Wiki
+
+Plan - Pro
 
 Plane's Wiki is a place to store and share company-wide information. Unlike project pages that focus on specific work, the Wiki helps you create documentation that matters to everyone in the organization.
 
@@ -36,7 +38,9 @@ Where project pages zoom in on team-specific details, the Wiki gives you a bird'
 
 4. Need to find something quick? Use the sidebar's search function to locate specific pages or information.
 
-## Share private pages <Badge type="tip" text="Business" />
+## Share private pages
+
+Plan - Business
 
 While private pages are typically only accessible to their creator, you can selectively share private wiki pages with specific team members in your workspace. This gives you granular control over who can access sensitive documentation without making it visible to your entire organization.
 

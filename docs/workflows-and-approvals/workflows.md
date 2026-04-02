@@ -3,7 +3,9 @@ title: Workflows to control work item state transitions
 description: Set up workflows to control how work items move through states, define transition rules, and require approvals before work progresses.
 ---
 
-# Workflows and Approvals <Badge type="tip" text="Business" />
+# Workflows and Approvals
+
+Plan - Business
 
 Workflows give you control over how work items move through states in your project. Think of it as creating guardrails that ensure work follows your team's agreed-upon path, with the right people making decisions at each step.
 
@@ -74,7 +76,9 @@ A transition flow defines a permitted state change. When you add one, you config
 
 Click **Save** to confirm the flow, or **Discard** to cancel it.
 
-#### Approval flows <Badge type="warning" text="Enterprise Grid" />
+#### Approval flows
+
+Plan - Enterprise Grid
 
 An approval flow adds a gate: the work item won't move forward until designated approvers accept or reject it. When you add one, you configure:
 
@@ -99,7 +103,9 @@ The three-dot menu on each workflow provides three options:
 - **View change history** - see a log of all modifications made to the workflow, including who made each change and when.
 - **Delete** - permanently remove the workflow. Work items previously governed by this workflow will fall back to the default workflow.
 
-## Create a custom workflow <Badge type="warning" text="Enterprise Grid" />
+## Create a custom workflow
+
+Plan - Enterprise Grid
 
 A custom workflow lets you define separate rules for different kinds of work. For example, you might want bug fixes to go through a stricter approval process than feature work, or you might want improvements to skip certain states entirely. When a work item matches a type-specific workflow, that workflow takes precedence over the default.
 

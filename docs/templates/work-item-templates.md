@@ -3,7 +3,9 @@ title: Work item templates for recurring tasks
 description: Create and use Work Item Templates to standardize recurring tasks, save setup time, and ensure consistency with predefined fields and properties.
 ---
 
-# Work Item Templates <Badge type="info" text="Pro" />
+# Work Item Templates
+
+Plan - Pro
 
 Work Item Templates help you standardize and streamline your workflow by providing reusable templates for common tasks. Instead of manually recreating similar work items, templates allow you to quickly apply predefined structures, saving time and ensuring consistency.
 

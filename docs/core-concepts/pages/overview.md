@@ -45,7 +45,9 @@ Plane allows you to use Markdown in Pages, making it easy to format content quic
 
 To use Markdown in Plane, simply type the relevant symbols (like # for headings or - for lists) directly within the page. Plane will automatically convert your Markdown into the appropriate format, helping you keep your workflow smooth and efficient.
 
-## AI helper <Badge type="info" text="Pro" />
+## AI helper
+
+Plan - Pro
 
 ![AI helper](https://media.docs.plane.so/pages/ai-helper.webp#hero-tl)
 
@@ -55,7 +57,9 @@ Plane’s AI tools enhance content creation by helping you refine, reframe, and 
 - Quickly generate summaries to highlight key points, ideal for meetings or lengthy documents.
 - Expand on ideas to add context, detail, or depth to your writing. - Get suggestions for clear, catchy titles.
 
-## Mention work items <Badge type="tip" text="Business" />
+## Mention work items
+
+Plan - Business
 
 Link directly to work items within your pages using the `@` mention feature. This creates a connection between your documentation and the actual work being tracked in your project.
 
@@ -79,7 +83,9 @@ Mentioned work items appear as interactive links in your page. Clicking them tak
 
 You can perform several actions on any block within a page. Just hover over the block and click the **⋮⋮ icon** that appears.
 
-### Copy link to block <Badge type="info" text="Pro" />
+### Copy link to block
+
+Plan - Pro
 
 Get a direct URL to this specific block. When someone opens this link, they'll jump straight to this block in the page, making it easy to reference specific sections in discussions or work items.
 
@@ -92,7 +98,9 @@ Create a copy of the block to reuse content without starting from scratch.
 Remove the block entirely from the page.
 These quick actions help you manage and reference your content efficiently, especially in longer documents where you need to point teammates to specific sections.
 
-## Convert selected text to work items <Badge type="tip" text="Business" />
+## Convert selected text to work items
+
+Plan - Business
 
 Turn any text selection in your page into a work item instantly. This feature helps you capture action items or tasks directly from your documentation without interrupting your flow.
 
@@ -133,7 +141,9 @@ Share the page by copying its link to send to your teammates or link it in a wor
 
 Duplicate an existing page to jumpstart new content.
 
-### Move Page <Badge type="info" text="Pro" />
+### Move Page
+
+Plan - Pro
 
 Transfer a page to Wiki, Teamspace or a different Project in your workspace.
 
@@ -188,7 +198,9 @@ But it goes beyond just knowing who's there - you can actually see where your te
 
 The live cursors update instantly as people type, select text, or move around the document. It's like having everyone gathered around the same whiteboard, but digitally.
 
-## Publish Page <Badge type="info" text="Pro" />
+## Publish Page
+
+Plan - Pro
 
 ![Publish Page](https://media.docs.plane.so/pages/publish-page.webp#hero-tr)
 
