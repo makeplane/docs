@@ -3,7 +3,7 @@ title: Custom dashboards to visualize project metrics and data
 description: Build custom dashboards in Plane to visualize project metrics.
 ---
 
-# Build custom dashboards <Badge type="info" text="Pro" />
+# Dashboards <Badge type="info" text="Pro" />
 
 Dashboards in Plane give you a bird's-eye view of your projects through customizable visualizations. They help you monitor progress, identify bottlenecks, and make data-driven decisions without diving into individual projects.
 

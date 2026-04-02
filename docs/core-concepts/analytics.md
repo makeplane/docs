@@ -3,7 +3,7 @@ title: Analytics to visualize work data and track performance
 description: Visualize work item data, track team capacity, measure progress, and create custom charts.
 ---
 
-# View analytics at different levels
+# Analytics
 
 Transform your entire workspace data into actionable insights with Analytics. Get instant answers to complex questions, forecast demand, track progress across all dimensions, and make data-driven decisions with confidence.
 

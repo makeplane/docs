@@ -3,7 +3,7 @@ title: Import data from ClickUp
 description: Import work items from ClickUp to Plane.
 ---
 
-# Import your ClickUp data to Plane
+# ClickUp importer
 
 The ClickUp importer helps you transfer your project data from ClickUp to Plane. It pulls information from your ClickUp workspace and maps it to the corresponding structure in Plane. This includes your projects, tasks, team members, custom fields, attachments, and comments.
 
