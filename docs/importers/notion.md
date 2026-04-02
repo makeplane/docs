@@ -5,7 +5,7 @@ description: Import data from Notion to Plane.
 
 # Notion importer
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 The Notion to Plane importer lets you transfer your Notion pages and content to Plane's Wiki. This is useful when you want to bring your documentation, notes, and structured content from Notion into your Plane workspace as Wiki pages.
 

@@ -5,7 +5,7 @@ description: Create and manage Epics in Plane to organize related work items, tr
 
 # Epics
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Epics help you group related tasks into a larger work item, providing a hierarchical structure for managing complex projects. This feature is ideal for breaking down major objectives into smaller, manageable pieces while keeping everything organized within a project.
 
@@ -89,7 +89,7 @@ A work item can belong to only one Epic. This ensures clarity in organization an
 
 ## Duplicate Epics
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 When you need to create similar Epics or replicate an Epic's structure across projects, Plane allows you to duplicate existing Epics either within the same project or to different projects in your workspace.
 
@@ -162,7 +162,7 @@ For each work item, you can assign or change a work item's Epic directly in the 
 
 ## Convert Epics to Work Items
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Sometimes you realize that what you thought was a big, complex epic is actually something smaller and more focused. That's where converting an epic to a work item comes in handy. This feature lets you transform an epic into a regular work item, making it easier to track and manage as a single deliverable rather than a collection of tasks.
 

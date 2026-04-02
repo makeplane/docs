@@ -5,7 +5,7 @@ description: Track client requests, link work items to specific customers, and p
 
 # Customers
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 The Customers feature transforms how you organize and prioritize work by placing your clients at the center of your process. Instead of managing tasks in isolation, Customers creates direct connections between your work items and the people they serve, helping teams make better decisions about what to prioritize and ensuring customer requests receive proper attention.
 

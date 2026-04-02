@@ -37,7 +37,7 @@ Learn more about how to apply filters [here](/core-concepts/issues/visualise_fil
 
 ## Private views
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 By default, views are visible to all members. On Pro and above, you can make a view private so only you can see it. Toggle between public and private using the globe and lock icons in the create or edit view modal.
 
@@ -59,7 +59,7 @@ Workspace Views are visualized using the spreadsheet layout, while project Views
 
 ## Publish Views
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Publishing a View allows you to share it more interactively by enabling features like comments, reactions, and voting. Here's how to publish a view:
 
@@ -85,7 +85,7 @@ You can remove views by deleting them from the list of views in your workspace o
 
 ## Export views
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 You can export data from any saved view to analyze filtered work items, create custom reports, or share specific subsets of your project data. Exports respect all filters applied to the view.
 

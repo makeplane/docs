@@ -47,7 +47,7 @@ To use Markdown in Plane, simply type the relevant symbols (like # for headings 
 
 ## AI helper
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 ![AI helper](https://media.docs.plane.so/pages/ai-helper.webp#hero-tl)
 
@@ -59,7 +59,7 @@ Plane’s AI tools enhance content creation by helping you refine, reframe, and 
 
 ## Mention work items
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Link directly to work items within your pages using the `@` mention feature. This creates a connection between your documentation and the actual work being tracked in your project.
 
@@ -85,7 +85,7 @@ You can perform several actions on any block within a page. Just hover over the 
 
 ### Copy link to block
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Get a direct URL to this specific block. When someone opens this link, they'll jump straight to this block in the page, making it easy to reference specific sections in discussions or work items.
 
@@ -100,7 +100,7 @@ These quick actions help you manage and reference your content efficiently, espe
 
 ## Convert selected text to work items
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Turn any text selection in your page into a work item instantly. This feature helps you capture action items or tasks directly from your documentation without interrupting your flow.
 
@@ -143,7 +143,7 @@ Duplicate an existing page to jumpstart new content.
 
 ### Move Page
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Transfer a page to Wiki, Teamspace or a different Project in your workspace.
 
@@ -200,7 +200,7 @@ The live cursors update instantly as people type, select text, or move around th
 
 ## Publish Page
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 ![Publish Page](https://media.docs.plane.so/pages/publish-page.webp#hero-tr)
 

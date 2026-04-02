@@ -5,7 +5,7 @@ description: Organize and categorize projects across your workspace with reusabl
 
 # Project Labels
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Project labels let you categorize projects across your workspace by team, function, priority, or any custom classification. Labels are defined at the workspace level and can be applied to any project. A project can have multiple labels.
 

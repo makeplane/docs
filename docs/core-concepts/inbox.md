@@ -40,7 +40,7 @@ In the top-right corner of the Inbox pane, you’ll find the filters dropdown. U
 
 ## Stacked notifications
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 We’ve introduced stacked notifications to make your Inbox even more efficient. When there are changes to the same work item, they’ll be grouped into a parent notification. Hover over the notification to see all the grouped changes without sifting through a cluttered list.
 

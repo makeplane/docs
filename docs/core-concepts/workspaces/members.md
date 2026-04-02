@@ -32,7 +32,7 @@ The invited person receives an email notification with instructions to join your
 
 ## Import members from CSV
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Workspace admins can bulk invite members by importing a CSV file. This is useful when onboarding teams or migrating users from another system.
 
@@ -93,7 +93,7 @@ The role change takes effect immediately.
 
 ## View workspace member activity
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Track member actions like invitations, role changes, and removals to maintain visibility over workspace management.
 

@@ -5,7 +5,7 @@ description: Set up public web forms to collect bug reports, feature requests, a
 
 # Intake Forms
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Now, you can easily gather bug reports, feature requests, or support tickets from external users, all by sharing a
 simple form link.

@@ -69,7 +69,7 @@ This system provides a high-level estimate of effort based on intuitive categori
 
 ### Time
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 This system uses time durations to estimate how long work items will take to complete. It's ideal for teams that need to plan based on actual time investments or track billable hours. Plane offers two ways to set up your time estimates:
 

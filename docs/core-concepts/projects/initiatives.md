@@ -5,7 +5,7 @@ description: Create and manage Initiatives to align multiple projects with strat
 
 # Initiatives
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Initiatives is designed to help you manage and track progress across multiple related projects under a unified objective. This feature is particularly useful if you need a high-level view of how various projects align with strategic goals.
 

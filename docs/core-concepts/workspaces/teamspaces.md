@@ -5,7 +5,7 @@ description: Organize team members across projects, track team-specific work ite
 
 # Teamspaces
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 With Teamspaces, you can mirror your real-world teams of any kind and track work separately from a project. See your team's work automatically filtered across projects, and house your team's knowledge separate from anything else in Plane.
 

@@ -104,7 +104,7 @@ If a Module is no longer needed, you can delete it. Deleting a Module removes it
 
 ## Export modules
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 You can export module data to track progress, create reports, or share module updates with stakeholders outside of Plane. Exports include all work items within the module along with their key details.
 

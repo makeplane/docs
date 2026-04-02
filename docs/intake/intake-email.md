@@ -5,7 +5,7 @@ description: Set up a dedicated email address for your project that automaticall
 
 # Intake Email
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 With Intake Emails, you get a dedicated email address where people can send requests that automatically appear in your project's Intake section.
 

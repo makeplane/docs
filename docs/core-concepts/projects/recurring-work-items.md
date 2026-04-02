@@ -5,7 +5,7 @@ description: Learn how to set up recurring work items to automatically create re
 
 # Recurring Work Items
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Keep your team on track with repetitive tasks by setting them up once and letting them automatically repeat on your schedule.
 

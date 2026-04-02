@@ -5,7 +5,7 @@ description: Share project status and track progress over time
 
 # Project Updates
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Project updates provide a way to share project status and create a timeline of project progress. Use updates to communicate where your project stands, highlight blockers, and keep stakeholders informed without requiring meetings or status check-ins.
 

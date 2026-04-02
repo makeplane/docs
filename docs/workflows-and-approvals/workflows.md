@@ -5,7 +5,7 @@ description: Set up workflows to control how work items move through states, def
 
 # Workflows and Approvals
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Workflows give you control over how work items move through states in your project. Think of it as creating guardrails that ensure work follows your team's agreed-upon path, with the right people making decisions at each step.
 
@@ -78,7 +78,7 @@ Click **Save** to confirm the flow, or **Discard** to cancel it.
 
 #### Approval flows
 
-Plan - <Badge type="warning" text="Enterprise Grid" />
+<div align="right"><Badge type="warning" text="Enterprise Grid" /></div>
 
 An approval flow adds a gate: the work item won't move forward until designated approvers accept or reject it. When you add one, you configure:
 
@@ -105,7 +105,7 @@ The three-dot menu on each workflow provides three options:
 
 ## Create a custom workflow
 
-Plan - <Badge type="warning" text="Enterprise Grid" />
+<div align="right"><Badge type="warning" text="Enterprise Grid" /></div>
 
 A custom workflow lets you define separate rules for different kinds of work. For example, you might want bug fixes to go through a stricter approval process than feature work, or you might want improvements to skip certain states entirely. When a work item matches a type-specific workflow, that workflow takes precedence over the default.
 

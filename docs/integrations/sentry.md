@@ -5,7 +5,7 @@ description: Integrate Plane with Sentry to automatically create work items from
 
 # Sentry Integration
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Integrating Sentry with Plane allows your team to automatically create work items from Sentry issues and keep your error tracking workflow streamlined. Whether you're syncing issue states, creating work items from errors, or collaborating on bug fixes, this integration brings the power of Sentry and Plane together for a more connected development workflow.
 

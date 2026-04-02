@@ -53,7 +53,7 @@ You can modify the name, description, start and due dates of active and upcoming
 
 ## Start and stop cycles
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 While Cycles typically run for their set duration, sometimes you need more flexibility in managing your work periods. You can manually control when a Cycle begins or ends using the interface controls.
 
@@ -91,7 +91,7 @@ Once the due date of an active Cycle passes, it’s automatically marked as comp
 
 ## Auto-schedule cycles
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Automate the creation and management of cycles according to predefined configurations, eliminating manual setup while ensuring consistent cycle planning and team predictability.
 
@@ -132,7 +132,7 @@ Once a cycle is active and contains work items, you can monitor its progress, as
 
 ## Cycle progress charts
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 This feature provides powerful visualization tools to help you track project cycles more effectively. With real-time insights, you can see exactly how your cycle is performing against the planned progress, making it easier to stay on top of deadlines and adjust as needed.
 
@@ -193,7 +193,7 @@ The build-up chart helps track how much work has already been completed in the c
 
 ## Active cycles across projects
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 If you have multiple projects with Cycles running at the same time, you can easily track the progress of all active cycles in the **Cycles** section under the **Workspace** section in the sidebar. This gives you a quick overview of each project’s progress and helps you spot any potential issues early on. Each cycle displays its status—whether it’s ahead of schedule or falling behind—based on the burn-down and build-up metrics.
 
@@ -209,7 +209,7 @@ You can delete a Cycle to remove it entirely. When you do, all associated analyt
 
 ## Export cycles
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 You can export cycle data to analyze sprint performance, create reports, or share progress with stakeholders outside of Plane. Exports include all work items within the cycle along with their key details.
 

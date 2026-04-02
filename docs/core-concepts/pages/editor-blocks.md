@@ -46,7 +46,7 @@ Displays code snippets or command-line text with proper formatting and syntax hi
 
 ## Embed
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Seamlessly integrate external content directly into your documents with rich, interactive embeds. The embed feature supports a wide variety of platforms and content types, making it easy to enhance your documentation with multimedia and interactive elements.
 
@@ -62,7 +62,7 @@ Inserts and displays images within your content.
 
 ## Attachment
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Uploads and embeds files directly into your content, supporting documents, images, and other file types up to 100MB each.
 
@@ -74,7 +74,7 @@ When you upload video files as attachments, you can display them with inline pla
 
 ## Columns
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Organize content side-by-side using multi-column layouts. Columns help you create visually structured pages for comparisons, parallel information, or more efficient use of horizontal space.
 
@@ -90,7 +90,7 @@ Each column appears with an "Add content" placeholder where you can add any bloc
 
 ## Video
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Embeds video content directly into your pages for rich multimedia documentation.
 
@@ -106,7 +106,7 @@ If you have a video displayed with inline preview and want to convert it to a si
 
 ## Math equations
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Add mathematical expressions and formulas to your Pages using LaTeX syntax. Whether you need to document complex calculations, display statistical formulas, or include scientific notations, Plane supports both inline and block-style mathematical equations. This is perfect for technical documentation, engineering specs, data analysis reports, and any content requiring precise mathematical notation.
 
@@ -148,7 +148,7 @@ Both equation types support full LaTeX rendering with built-in validation and er
 
 ## Draw.io diagrams
 
-Plan - <Badge type="tip" text="Business" />
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 ::: tip Prerequisites
 Before you can add Draw.io diagrams to Pages or Wiki, you need to [connect the Draw.io integration](/integrations/draw-io) from Workspace Settings.
@@ -176,7 +176,7 @@ Creates visually distinct sections with customizable icons and colors for highli
 
 ## AI block
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Generate or transform content directly within your pages using AI. The AI Block lets you draft new content, summarize existing text, or run custom prompts without leaving the editor.
 
@@ -194,7 +194,7 @@ Write your own instructions to generate or transform content. Use this for draft
 
 ## Work item
 
-Plan - <Badge type="info" text="Pro" />
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 References work items directly in the editor to track details and progress.
 
