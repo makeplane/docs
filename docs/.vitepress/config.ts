@@ -480,6 +480,10 @@ export default defineConfig({
             text: "Automations",
             link: "/automations/custom-automations",
           },
+           {
+            text: "Plane Runner",
+            link: "/automations/plane-runner",
+          },
         ],
       },
       {
