@@ -46,15 +46,15 @@ Labels organize releases visually with a name and color. These are separate from
 2. Click **Add Release**.
 3. Fill in the release details:
 
-   | Field | Description |
-   | --- | --- |
-   | **Title** | Required. A short name for the release — for example, "v2.4 — Dashboard refresh." |
-   | **Description** | Goals, notes, or relevant links. |
-   | **Status** | Unreleased (default), Released, or Cancelled. |
-   | **Tag** | One or more tags from workspace settings. |
-   | **Labels** | One or more labels from workspace settings. |
-   | **Target date** | Planned ship date. |
-   | **Lead** | Responsible owner, selected from workspace members. |
+   | Field           | Description                                                                       |
+   | --------------- | --------------------------------------------------------------------------------- |
+   | **Title**       | Required. A short name for the release — for example, "v2.4 — Dashboard refresh." |
+   | **Description** | Goals, notes, or relevant links.                                                  |
+   | **Status**      | Unreleased (default), Released, or Cancelled.                                     |
+   | **Tag**         | One or more tags from workspace settings.                                         |
+   | **Labels**      | One or more labels from workspace settings.                                       |
+   | **Target date** | Planned ship date.                                                                |
+   | **Lead**        | Responsible owner, selected from workspace members.                               |
 
 4. Click **Create Release**.
 
@@ -120,7 +120,7 @@ To add the Release property to a work item type:
 2. Select the work item type you want to extend.
 3. Add a custom property of type **Release**.
 
-Once added, the **Release picker** field appears in the work item detail view. Any project member can set which release a work item belongs to directly from there, and the work item will automatically appear in that release's Scope tab. 
+Once added, the **Release picker** field appears in the work item detail view. Any project member can set which release a work item belongs to directly from there, and the work item will automatically appear in that release's Scope tab.
 
 With release as a work item attribute, you can group, filter, and build dashboard views around release milestones, giving leadership visibility into delivery velocity per release.
 
