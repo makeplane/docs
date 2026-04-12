@@ -98,7 +98,7 @@ A work item's existing state drives the progress calculation automatically — y
 
 The Changelog tab provides a rich text editor where you write and publish a summary of what changed in the release.
 
-The editor supports . Changes save automatically as you type. The changelog is visible to all workspace members who can access the release.
+The editor supports all the same [blocks](/core-concepts/pages/editor-blocks) available in Pages and Wiki. Changes save automatically as you type, and the changelog is visible to all workspace members who can access the release.
 
 ![Release changelog](https://media.docs.plane.so/releases/release-changelog.webp#hero)
 
