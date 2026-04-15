@@ -13,7 +13,7 @@ For the conceptual background, see [Roles and permissions](/roles-and-permission
 
 Workspace roles control access to workspace-level resources — settings, members, billing, integrations, the wiki, workspace views, initiatives, and the project list. They also determine what a user can do across the projects they're added to.
 
-### Owner <Badge type="tip" text="Business" /> <Badge type="warning" text=" Grid" />
+### Owner <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" />
 
 Owner is the highest workspace role. It carries full access to everything in the workspace, including the two operations no other role can perform: deleting the workspace and transferring ownership to another user.
 
