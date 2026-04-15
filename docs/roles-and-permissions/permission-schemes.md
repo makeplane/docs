@@ -7,7 +7,7 @@ description: Build reusable permission bundles that can be combined to compose c
 
 A **permission scheme** is a named bundle of permissions that you can attach to one or more roles. Schemes are the modular building blocks of custom roles — instead of defining every permission individually for each role, you create reusable schemes and combine them.
 
-For background, see [Roles and permissions](/roles-and-permissions/member-roles-and-permissions). To create roles that use schemes, see [Create custom roles](/workspaces-and-users/create-custom-roles).
+For background, see [Roles and permissions](/roles-and-permissions/overview). To create roles that use schemes, see [Create custom roles](/roles-and-permissions/custom-roles).
 
 ## Why use permission schemes
 
@@ -91,7 +91,6 @@ When a role has multiple schemes attached, the effective permission set is the u
 
 ## See also
 
-- [Create custom roles](/workspaces-and-users/create-custom-roles)
-- [Disable system roles](/workspaces-and-users/disable-system-roles)
-- [Roles and permissions](/roles-and-permissions/member-roles-and-permissions)
+- [Create custom roles](/roles-and-permissions/custom-roles)
+- [Roles and permissions](/roles-and-permissions/overview)
 - [Permissions matrix](/roles-and-permissions/permissions-matrix)

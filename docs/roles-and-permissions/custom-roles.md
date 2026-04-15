@@ -9,7 +9,7 @@ Custom roles let you define exactly what users in your workspace can do.
 
 Build a "Release Manager" role that can publish but not delete, a "QA Reviewer" who can comment and edit but not create, or anything else your organization needs.
 
-For background, see [Roles and permissions](/roles-and-permissions/member-roles-and-permissions). To understand permission schemes (the building blocks of custom roles), see [Create permission schemes](/workspaces-and-users/create-permission-schemes).
+For background, see [Roles and permissions](/roles-and-permissions/overview). To understand permission schemes (the building blocks of custom roles), see [Create permission schemes](/roles-and-permissions/permission-schemes).
 
 ![Custom roles](https://media.docs.plane.so/roles-and-permissions/workspace-custom-role.webp#hero)
 
@@ -45,7 +45,7 @@ A role's effective permissions are the combined set of all schemes attached to i
 2. In the **Permissions Schemes** section, click **Attach Permissions Schemes**.
 3. Select one or more schemes from the right-hand panel:
    - System schemes (e.g., **Workspace Member**, **Workspace Admin**, **Project Contributor**) come pre-built and cannot be modified.
-   - Custom schemes can be created and edited — see [Create permission schemes](/workspaces-and-users/create-permission-schemes).
+   - Custom schemes can be created and edited — see [Create permission schemes](/roles-and-permissions/permission-schemes).
 4. Click **Add**.
 
 The role now has all permissions from the selected schemes. If a scheme grants `workitem:edit` and another scheme grants `workitem:edit+creator`, the unconditional permission wins — the role can edit any work item.
@@ -92,6 +92,6 @@ The custom role inherits the system scheme's permissions at the moment of attach
 
 ## See also
 
-- [Create permission schemes](/workspaces-and-users/create-permission-schemes)
-- [Roles and permissions](/roles-and-permissions/member-roles-and-permissions)
+- [Create permission schemes](/roles-and-permissions/permission-schemes)
+- [Roles and permissions](/roles-and-permissions/overview)
 - [Permissions matrix](/roles-and-permissions/permissions-matrix)

@@ -7,7 +7,7 @@ description: Complete permissions reference for every role in Plane. Organized b
 
 This is the exhaustive permissions reference for every system defined role in Plane.
 
-For conceptual background, see [Roles and permissions](/roles-and-permissions/member-roles-and-permissions). For the role catalog, see [Member roles](/roles-and-permissions/member-roles).
+For conceptual background, see [Roles and permissions](/roles-and-permissions/overview). For the role catalog, see [Member roles](/roles-and-permissions/member-roles).
 
 ## How to read this page
 
@@ -563,8 +563,8 @@ For convenience, here are all the conditional grants in the system:
 
 ## See also
 
-- [Roles and permissions](/roles-and-permissions/member-roles-and-permissions)
+- [Roles and permissions](/roles-and-permissions/overview)
 - [Member roles](/roles-and-permissions/member-roles)
 - [Manage workspace members](/core-concepts/workspaces/members)
 - [Manage project members](/core-concepts/projects/manage-project-members)
-- [Create custom roles](/workspaces-and-users/create-custom-roles)
+- [Create custom roles](/roles-and-permissions/custom-roles)

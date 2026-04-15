@@ -7,7 +7,7 @@ description: Reference for every system role in Plane — Owner, Admin, Member, 
 
 Every user in Plane holds a role at the workspace level and, for each project they're added to, a role at the project level. This page is a reference for all system roles, what they're for, and which plans they're available on.
 
-For the conceptual background, see [Roles and permissions](/roles-and-permissions/member-roles-and-permissions). For exhaustive permission breakdowns, see the [Permissions matrix](/roles-and-permissions/permissions-matrix).
+For the conceptual background, see [Roles and permissions](/roles-and-permissions/overview). For exhaustive permission breakdowns, see the [Permissions matrix](/roles-and-permissions/permissions-matrix).
 
 ## Workspace roles
 
@@ -130,7 +130,7 @@ Practical implications:
 
 Workspace admins can create custom roles composed from any combination of permissions. Custom roles cannot include workspace deletion or ownership transfer (those are reserved for Owner).
 
-For details, see [Create custom roles](/workspaces-and-users/create-custom-roles).
+For details, see [Create custom roles](/roles-and-permissions/custom-roles).
 
 ## Paid seat classification
 
@@ -146,7 +146,7 @@ Most roles count as paid seats for billing purposes. Workspace Guest is the only
 
 ## See also
 
-- [Roles and permissions](/roles-and-permissions/member-roles-and-permissions)
+- [Roles and permissions](/roles-and-permissions/overview)
 - [Permissions matrix](/roles-and-permissions/permissions-matrix)
 - [Manage workspace members](/core-concepts/workspaces/members)
 - [Manage project members](/core-concepts/projects/manage-project-members)

@@ -132,5 +132,5 @@ This audit trail is available to workspace admins for compliance reporting and a
 - For the system role catalog, see [Member roles](/roles-and-permissions/member-roles).
 - To add and manage workspace members, see [Manage workspace members](/core-concepts/workspaces/members).
 - To add and manage project members, see [Manage project members](/core-concepts/projects/manage-project-members).
-- To create custom roles, see [Create custom roles](/workspaces-and-users/create-custom-roles).
-- To build reusable permission bundles, see [Create permission schemes](/workspaces-and-users/create-permission-schemes).
+- To create custom roles, see [Create custom roles](/roles-and-permissions/custom-roles).
+- To build reusable permission bundles, see [Create permission schemes](/roles-and-permissions/permission-schemes).
