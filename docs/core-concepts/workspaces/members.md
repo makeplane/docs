@@ -5,7 +5,7 @@ description: Add, update, and remove workspace members
 
 # Manage workspace members
 
-Manage who can access your workspace and what they can do. 
+Manage who can access your workspace and what they can do.
 
 This guide covers inviting members, importing them in bulk, changing roles, removing members, and viewing audit history.
 

@@ -28,15 +28,15 @@ For conceptual background, see [Roles and permissions](/roles-and-permissions/ov
 
 Core workspace configuration: name, logo, currency, domain, archival, deletion, and ownership transfer.
 
-| Permission           | Owner | Admin | Member | Guest |
-| -------------------- | ----- | ----- | ------ | ----- |
-| View Workspace       | ✓     | ✓     | ✓      | ✓     |
-| Edit Workspace Settings | ✓ | ✓     | x      | x     |
-| Manage Workspace     | ✓     | ✓     | x      | x     |
-| Invite Members       | ✓     | ✓     | x      | x     |
-| Archive Workspace    | ✓     | ✓     | x      | x     |
-| Delete Workspace     | ✓     | x     | x      | x     |
-| Transfer Ownership   | ✓     | x     | x      | x     |
+| Permission              | Owner | Admin | Member | Guest |
+| ----------------------- | ----- | ----- | ------ | ----- |
+| View Workspace          | ✓     | ✓     | ✓      | ✓     |
+| Edit Workspace Settings | ✓     | ✓     | x      | x     |
+| Manage Workspace        | ✓     | ✓     | x      | x     |
+| Invite Members          | ✓     | ✓     | x      | x     |
+| Archive Workspace       | ✓     | ✓     | x      | x     |
+| Delete Workspace        | ✓     | x     | x      | x     |
+| Transfer Ownership      | ✓     | x     | x      | x     |
 
 Only Owner can delete the workspace or transfer ownership.
 
@@ -44,14 +44,14 @@ Only Owner can delete the workspace or transfer ownership.
 
 Inviting, editing, importing, and removing workspace members.
 
-| Permission                | Owner | Admin | Member | Guest |
-| ------------------------- | ----- | ----- | ------ | ----- |
-| View Members              | ✓     | ✓     | ✓      | ✓     |
-| Invite Members            | ✓     | ✓     | x      | x     |
-| Edit Member Details       | ✓     | ✓     | x      | x     |
-| Import Members (CSV / SSO) | ✓    | ✓     | x      | x     |
-| Change Member Role        | ✓     | ✓     | x      | x     |
-| Remove Members            | ✓     | ✓     | x      | x     |
+| Permission                 | Owner | Admin | Member | Guest |
+| -------------------------- | ----- | ----- | ------ | ----- |
+| View Members               | ✓     | ✓     | ✓      | ✓     |
+| Invite Members             | ✓     | ✓     | x      | x     |
+| Edit Member Details        | ✓     | ✓     | x      | x     |
+| Import Members (CSV / SSO) | ✓     | ✓     | x      | x     |
+| Change Member Role         | ✓     | ✓     | x      | x     |
+| Remove Members             | ✓     | ✓     | x      | x     |
 
 Role hierarchy is enforced. Admins cannot modify members at the same or higher level than their own.
 
@@ -59,17 +59,17 @@ Role hierarchy is enforced. Admins cannot modify members at the same or higher l
 
 Creating and managing projects from the workspace context.
 
-| Permission              | Owner | Admin | Member | Guest |
-| ----------------------- | ----- | ----- | ------ | ----- |
-| Browse Projects         | ✓     | ✓     | ✓      | x     |
-| View Project Details    | ✓     | ✓     | ✓      | x     |
-| Create Projects         | ✓     | ✓     | ✓      | x     |
-| Edit Project Settings   | ✓     | ✓     | x      | x     |
-| React to Projects       | ✓     | ✓     | ✓      | x     |
-| Publish Projects (make public) | ✓ | ✓   | ✓      | x     |
-| Archive Projects        | ✓     | ✓     | x      | x     |
-| Delete Projects         | ✓     | ✓     | x      | x     |
-| Manage Project Access   | ✓     | ✓     | x      | x     |
+| Permission                     | Owner | Admin | Member | Guest |
+| ------------------------------ | ----- | ----- | ------ | ----- |
+| Browse Projects                | ✓     | ✓     | ✓      | x     |
+| View Project Details           | ✓     | ✓     | ✓      | x     |
+| Create Projects                | ✓     | ✓     | ✓      | x     |
+| Edit Project Settings          | ✓     | ✓     | x      | x     |
+| React to Projects              | ✓     | ✓     | ✓      | x     |
+| Publish Projects (make public) | ✓     | ✓     | ✓      | x     |
+| Archive Projects               | ✓     | ✓     | x      | x     |
+| Delete Projects                | ✓     | ✓     | x      | x     |
+| Manage Project Access          | ✓     | ✓     | x      | x     |
 
 Guests can only see projects they've been explicitly added to.
 
@@ -95,14 +95,14 @@ Custom roles and permission schemes are an Enterprise feature.
 
 Workspace-level wikis.
 
-| Permission         | Owner | Admin | Member | Guest |
-| ------------------ | ----- | ----- | ------ | ----- |
-| View Wiki          | ✓     | ✓     | ✓      | x     |
-| Create Wiki Pages  | ✓     | ✓     | ✓      | x     |
-| Edit Wiki Pages    | ✓     | ✓     | ✓      | x     |
-| Share Wiki Pages   | ✓     | ✓     | ✓      | x     |
-| Delete Wiki Pages  | ✓     | ✓     | ✓      | x     |
-| Comment on Wiki Pages | ✓  | ✓     | ✓      | x     |
+| Permission            | Owner | Admin | Member | Guest |
+| --------------------- | ----- | ----- | ------ | ----- |
+| View Wiki             | ✓     | ✓     | ✓      | x     |
+| Create Wiki Pages     | ✓     | ✓     | ✓      | x     |
+| Edit Wiki Pages       | ✓     | ✓     | ✓      | x     |
+| Share Wiki Pages      | ✓     | ✓     | ✓      | x     |
+| Delete Wiki Pages     | ✓     | ✓     | ✓      | x     |
+| Comment on Wiki Pages | ✓     | ✓     | ✓      | x     |
 
 ### Workspace Views
 
@@ -124,32 +124,32 @@ Members can only edit and delete views they created themselves.
 
 Cross-project initiative tracking, including comments, attachments, links, and updates.
 
-| Permission                     | Owner | Admin | Member   | Guest |
-| ------------------------------ | ----- | ----- | -------- | ----- |
-| View Initiatives               | ✓     | ✓     | ✓        | x     |
-| Create Initiatives             | ✓     | ✓     | x        | x     |
-| Edit Initiatives               | ✓     | ✓     | x        | x     |
-| Manage Initiatives             | ✓     | ✓     | x        | x     |
-| Delete Initiatives             | ✓     | ✓     | x        | x     |
-| Edit Initiative Comments       | ✓     | ✓     | +Creator | x     |
-| Delete Initiative Comments     | ✓     | ✓     | +Creator | x     |
-| Delete Initiative Attachments  | ✓     | ✓     | +Creator | x     |
-| Post Initiative Updates        | ✓     | ✓     | ✓        | x     |
-| Edit Initiative Updates        | ✓     | ✓     | ✓        | x     |
-| Delete Initiative Updates      | ✓     | ✓     | ✓        | x     |
+| Permission                    | Owner | Admin | Member   | Guest |
+| ----------------------------- | ----- | ----- | -------- | ----- |
+| View Initiatives              | ✓     | ✓     | ✓        | x     |
+| Create Initiatives            | ✓     | ✓     | x        | x     |
+| Edit Initiatives              | ✓     | ✓     | x        | x     |
+| Manage Initiatives            | ✓     | ✓     | x        | x     |
+| Delete Initiatives            | ✓     | ✓     | x        | x     |
+| Edit Initiative Comments      | ✓     | ✓     | +Creator | x     |
+| Delete Initiative Comments    | ✓     | ✓     | +Creator | x     |
+| Delete Initiative Attachments | ✓     | ✓     | +Creator | x     |
+| Post Initiative Updates       | ✓     | ✓     | ✓        | x     |
+| Edit Initiative Updates       | ✓     | ✓     | ✓        | x     |
+| Delete Initiative Updates     | ✓     | ✓     | ✓        | x     |
 
 ### Teamspaces
 
 Browsing, creating, and managing teamspaces.
 
-| Permission              | Owner | Admin | Member | Guest |
-| ----------------------- | ----- | ----- | ------ | ----- |
-| Browse Teamspaces       | ✓     | ✓     | ✓      | x     |
-| View Teamspace Details  | ✓     | ✓     | ✓      | x     |
-| Create Teamspaces       | ✓     | ✓     | x      | x     |
-| Edit Teamspaces         | ✓     | ✓     | +Lead  | x     |
-| Manage Teamspace Members | ✓    | ✓     | +Lead  | x     |
-| Delete Teamspaces       | ✓     | ✓     | +Lead  | x     |
+| Permission               | Owner | Admin | Member | Guest |
+| ------------------------ | ----- | ----- | ------ | ----- |
+| Browse Teamspaces        | ✓     | ✓     | ✓      | x     |
+| View Teamspace Details   | ✓     | ✓     | ✓      | x     |
+| Create Teamspaces        | ✓     | ✓     | x      | x     |
+| Edit Teamspaces          | ✓     | ✓     | +Lead  | x     |
+| Manage Teamspace Members | ✓     | ✓     | +Lead  | x     |
+| Delete Teamspaces        | ✓     | ✓     | +Lead  | x     |
 
 Editing, deleting, or managing members on a teamspace requires being the teamspace lead. Workspace Admin role alone is not sufficient.
 
@@ -157,59 +157,59 @@ Editing, deleting, or managing members on a teamspace requires being the teamspa
 
 Third-party integrations, webhooks, and API tokens.
 
-| Permission           | Owner | Admin | Member | Guest |
-| -------------------- | ----- | ----- | ------ | ----- |
-| View Integrations    | ✓     | ✓     | ✓      | x     |
-| Create Integrations  | ✓     | ✓     | ✓      | x     |
-| Configure Integrations | ✓   | ✓     | ✓      | x     |
-| Delete Integrations  | ✓     | ✓     | x      | x     |
-| View Webhooks        | ✓     | ✓     | x      | x     |
-| Create Webhooks      | ✓     | ✓     | x      | x     |
-| Edit Webhooks        | ✓     | ✓     | x      | x     |
-| Delete Webhooks      | ✓     | ✓     | x      | x     |
-| View API Tokens      | ✓     | ✓     | ✓      | x     |
-| Create API Tokens    | ✓     | ✓     | ✓      | x     |
-| Delete API Tokens    | ✓     | ✓     | ✓      | x     |
+| Permission             | Owner | Admin | Member | Guest |
+| ---------------------- | ----- | ----- | ------ | ----- |
+| View Integrations      | ✓     | ✓     | ✓      | x     |
+| Create Integrations    | ✓     | ✓     | ✓      | x     |
+| Configure Integrations | ✓     | ✓     | ✓      | x     |
+| Delete Integrations    | ✓     | ✓     | x      | x     |
+| View Webhooks          | ✓     | ✓     | x      | x     |
+| Create Webhooks        | ✓     | ✓     | x      | x     |
+| Edit Webhooks          | ✓     | ✓     | x      | x     |
+| Delete Webhooks        | ✓     | ✓     | x      | x     |
+| View API Tokens        | ✓     | ✓     | ✓      | x     |
+| Create API Tokens      | ✓     | ✓     | ✓      | x     |
+| Delete API Tokens      | ✓     | ✓     | ✓      | x     |
 
 ### Analytics and reporting
 
 Dashboards, analytics, and work logs.
 
-| Permission         | Owner | Admin | Member | Guest |
-| ------------------ | ----- | ----- | ------ | ----- |
-| View Analytics     | ✓     | ✓     | ✓      | x     |
-| Export Analytics   | ✓     | ✓     | ✓      | x     |
-| View Dashboards    | ✓     | ✓     | ✓      | x     |
-| Create Dashboards  | ✓     | ✓     | x      | x     |
-| Edit Dashboards    | ✓     | ✓     | x      | x     |
-| Delete Dashboards  | ✓     | ✓     | x      | x     |
-| View Work Logs     | ✓     | ✓     | ✓      | x     |
-| Export Work Logs   | ✓     | ✓     | ✓      | x     |
-| Use AI Features    | ✓     | ✓     | ✓      | x     |
+| Permission        | Owner | Admin | Member | Guest |
+| ----------------- | ----- | ----- | ------ | ----- |
+| View Analytics    | ✓     | ✓     | ✓      | x     |
+| Export Analytics  | ✓     | ✓     | ✓      | x     |
+| View Dashboards   | ✓     | ✓     | ✓      | x     |
+| Create Dashboards | ✓     | ✓     | x      | x     |
+| Edit Dashboards   | ✓     | ✓     | x      | x     |
+| Delete Dashboards | ✓     | ✓     | x      | x     |
+| View Work Logs    | ✓     | ✓     | ✓      | x     |
+| Export Work Logs  | ✓     | ✓     | ✓      | x     |
+| Use AI Features   | ✓     | ✓     | ✓      | x     |
 
 ### Customers
 
 Customer and customer request management.
 
-| Permission                    | Owner | Admin | Member | Guest |
-| ----------------------------- | ----- | ----- | ------ | ----- |
-| View Customers                | ✓     | ✓     | x      | x     |
-| Create Customers              | ✓     | ✓     | x      | x     |
-| Edit Customers                | ✓     | ✓     | x      | x     |
-| Delete Customers              | ✓     | ✓     | x      | x     |
-| Add Customer Attachments      | ✓     | ✓     | x      | x     |
-| Delete Customer Attachments   | ✓     | ✓     | x      | x     |
+| Permission                  | Owner | Admin | Member | Guest |
+| --------------------------- | ----- | ----- | ------ | ----- |
+| View Customers              | ✓     | ✓     | x      | x     |
+| Create Customers            | ✓     | ✓     | x      | x     |
+| Edit Customers              | ✓     | ✓     | x      | x     |
+| Delete Customers            | ✓     | ✓     | x      | x     |
+| Add Customer Attachments    | ✓     | ✓     | x      | x     |
+| Delete Customer Attachments | ✓     | ✓     | x      | x     |
 
 ### Work Item Relations
 
 Managing custom relation type definitions for work items.
 
-| Permission                    | Owner | Admin | Member | Guest |
-| ----------------------------- | ----- | ----- | ------ | ----- |
-| View Relation Definitions     | ✓     | ✓     | ✓      | ✓     |
-| Create Relation Definitions   | ✓     | ✓     | x      | x     |
-| Edit Relation Definitions     | ✓     | ✓     | x      | x     |
-| Delete Relation Definitions   | ✓     | ✓     | x      | x     |
+| Permission                  | Owner | Admin | Member | Guest |
+| --------------------------- | ----- | ----- | ------ | ----- |
+| View Relation Definitions   | ✓     | ✓     | ✓      | ✓     |
+| Create Relation Definitions | ✓     | ✓     | x      | x     |
+| Edit Relation Definitions   | ✓     | ✓     | x      | x     |
+| Delete Relation Definitions | ✓     | ✓     | x      | x     |
 
 ### Templates
 
@@ -226,12 +226,12 @@ Creating and managing workspace-level work item, page, and project templates.
 
 Workspace-level automation rules and configurations.
 
-| Permission                    | Owner | Admin | Member | Guest |
-| ----------------------------- | ----- | ----- | ------ | ----- |
-| View Workspace Automations    | ✓     | ✓     | ✓      | x     |
-| Create Workspace Automations  | ✓     | ✓     | x      | x     |
-| Edit Workspace Automations    | ✓     | ✓     | x      | x     |
-| Delete Workspace Automations  | ✓     | ✓     | x      | x     |
+| Permission                   | Owner | Admin | Member | Guest |
+| ---------------------------- | ----- | ----- | ------ | ----- |
+| View Workspace Automations   | ✓     | ✓     | ✓      | x     |
+| Create Workspace Automations | ✓     | ✓     | x      | x     |
+| Edit Workspace Automations   | ✓     | ✓     | x      | x     |
+| Delete Workspace Automations | ✓     | ✓     | x      | x     |
 
 ## Project permissions
 
@@ -253,28 +253,28 @@ Inviting, editing, and removing project members.
 
 The primary issue surface, including comments, attachments, links, relations, and custom properties.
 
-| Permission              | P-Admin | Contributor | Commenter | Guest    |
-| ----------------------- | ------- | ----------- | --------- | -------- |
-| View Issues             | ✓       | ✓           | ✓         | +Creator |
-| Create Issues           | ✓       | ✓           | x         | x        |
-| Edit Issues             | ✓       | ✓           | +Creator  | +Creator |
-| Bulk Edit Issues        | ✓       | ✓           | x         | x        |
-| Export Issues           | ✓       | ✓           | x         | x        |
-| React to Issues         | ✓       | ✓           | ✓         | x        |
-| Delete Issues           | ✓       | +Creator    | x         | x        |
-| Add Comments            | ✓       | ✓           | ✓         | x        |
-| Edit Comments           | ✓       | +Creator    | +Creator  | x        |
-| React to Comments       | ✓       | ✓           | ✓         | ✓        |
-| Delete Comments         | ✓       | +Creator    | +Creator  | x        |
-| View Attachments        | ✓       | ✓           | ✓         | ✓        |
-| Add Attachments         | ✓       | ✓           | ✓         | x        |
-| Delete Attachments      | ✓       | +Creator    | +Creator  | x        |
-| View Work Item Links    | ✓       | ✓           | ✓         | x        |
-| Add Work Item Links     | ✓       | ✓           | x         | x        |
-| Edit Work Item Links    | ✓       | ✓           | x         | x        |
-| Delete Work Item Links  | ✓       | ✓           | x         | x        |
-| View Custom Properties  | ✓       | ✓           | ✓         | x        |
-| Edit Custom Properties  | ✓       | ✓           | x         | x        |
+| Permission             | P-Admin | Contributor | Commenter | Guest    |
+| ---------------------- | ------- | ----------- | --------- | -------- |
+| View Issues            | ✓       | ✓           | ✓         | +Creator |
+| Create Issues          | ✓       | ✓           | x         | x        |
+| Edit Issues            | ✓       | ✓           | +Creator  | +Creator |
+| Bulk Edit Issues       | ✓       | ✓           | x         | x        |
+| Export Issues          | ✓       | ✓           | x         | x        |
+| React to Issues        | ✓       | ✓           | ✓         | x        |
+| Delete Issues          | ✓       | +Creator    | x         | x        |
+| Add Comments           | ✓       | ✓           | ✓         | x        |
+| Edit Comments          | ✓       | +Creator    | +Creator  | x        |
+| React to Comments      | ✓       | ✓           | ✓         | ✓        |
+| Delete Comments        | ✓       | +Creator    | +Creator  | x        |
+| View Attachments       | ✓       | ✓           | ✓         | ✓        |
+| Add Attachments        | ✓       | ✓           | ✓         | x        |
+| Delete Attachments     | ✓       | +Creator    | +Creator  | x        |
+| View Work Item Links   | ✓       | ✓           | ✓         | x        |
+| Add Work Item Links    | ✓       | ✓           | x         | x        |
+| Edit Work Item Links   | ✓       | ✓           | x         | x        |
+| Delete Work Item Links | ✓       | ✓           | x         | x        |
+| View Custom Properties | ✓       | ✓           | ✓         | x        |
+| Edit Custom Properties | ✓       | ✓           | x         | x        |
 
 Project Guest sees only their own work items (issues created via intake). All other Guest views of issues are filtered to creator.
 
@@ -282,57 +282,57 @@ Project Guest sees only their own work items (issues created via intake). All ot
 
 Epic lifecycle, including links, properties, and update threads.
 
-| Permission                 | P-Admin | Contributor | Commenter | Guest |
-| -------------------------- | ------- | ----------- | --------- | ----- |
-| View Epics                 | ✓       | ✓           | ✓         | x     |
-| Create Epics               | ✓       | ✓           | x         | x     |
-| Edit Epics                 | ✓       | ✓           | x         | x     |
-| Delete Epics               | ✓       | +Creator    | x         | x     |
-| View Epic Properties       | ✓       | ✓           | ✓         | x     |
-| Edit Epic Properties       | ✓       | ✓           | x         | x     |
-| View Epic Updates          | ✓       | ✓           | ✓         | x     |
-| Post Epic Updates          | ✓       | ✓           | x         | x     |
-| Edit Epic Updates          | ✓       | +Creator    | x         | x     |
-| Delete Epic Updates        | ✓       | +Creator    | x         | x     |
-| Edit Epic Update Comments  | ✓       | +Creator    | x         | x     |
-| Delete Epic Update Comments | ✓      | +Creator    | x         | x     |
+| Permission                  | P-Admin | Contributor | Commenter | Guest |
+| --------------------------- | ------- | ----------- | --------- | ----- |
+| View Epics                  | ✓       | ✓           | ✓         | x     |
+| Create Epics                | ✓       | ✓           | x         | x     |
+| Edit Epics                  | ✓       | ✓           | x         | x     |
+| Delete Epics                | ✓       | +Creator    | x         | x     |
+| View Epic Properties        | ✓       | ✓           | ✓         | x     |
+| Edit Epic Properties        | ✓       | ✓           | x         | x     |
+| View Epic Updates           | ✓       | ✓           | ✓         | x     |
+| Post Epic Updates           | ✓       | ✓           | x         | x     |
+| Edit Epic Updates           | ✓       | +Creator    | x         | x     |
+| Delete Epic Updates         | ✓       | +Creator    | x         | x     |
+| Edit Epic Update Comments   | ✓       | +Creator    | x         | x     |
+| Delete Epic Update Comments | ✓       | +Creator    | x         | x     |
 
 ### Modules and Cycles
 
 Feature grouping and sprint/cycle management.
 
-| Permission              | P-Admin | Contributor | Commenter | Guest |
-| ----------------------- | ------- | ----------- | --------- | ----- |
-| View Modules            | ✓       | ✓           | ✓         | x     |
-| Create Modules          | ✓       | ✓           | x         | x     |
-| Edit Modules            | ✓       | ✓           | x         | x     |
-| Manage Module Members   | ✓       | ✓           | x         | x     |
-| Archive Modules         | ✓       | ✓           | x         | x     |
-| Export Modules          | ✓       | ✓           | x         | x     |
-| Delete Modules          | ✓       | +Creator    | x         | x     |
-| View Cycles             | ✓       | ✓           | ✓         | x     |
-| Create Cycles           | ✓       | ✓           | x         | x     |
-| Edit Cycles             | ✓       | ✓           | x         | x     |
-| Delete Cycles           | ✓       | +Creator    | x         | x     |
+| Permission            | P-Admin | Contributor | Commenter | Guest |
+| --------------------- | ------- | ----------- | --------- | ----- |
+| View Modules          | ✓       | ✓           | ✓         | x     |
+| Create Modules        | ✓       | ✓           | x         | x     |
+| Edit Modules          | ✓       | ✓           | x         | x     |
+| Manage Module Members | ✓       | ✓           | x         | x     |
+| Archive Modules       | ✓       | ✓           | x         | x     |
+| Export Modules        | ✓       | ✓           | x         | x     |
+| Delete Modules        | ✓       | +Creator    | x         | x     |
+| View Cycles           | ✓       | ✓           | ✓         | x     |
+| Create Cycles         | ✓       | ✓           | x         | x     |
+| Edit Cycles           | ✓       | ✓           | x         | x     |
+| Delete Cycles         | ✓       | +Creator    | x         | x     |
 
 ### Pages and Views
 
 Project-level pages and saved views.
 
-| Permission              | P-Admin | Contributor | Commenter | Guest |
-| ----------------------- | ------- | ----------- | --------- | ----- |
-| View Pages              | ✓       | ✓           | ✓         | ✓     |
-| Create Pages            | ✓       | ✓           | x         | x     |
-| Edit Pages              | ✓       | ✓           | x         | x     |
-| Share Pages             | ✓       | ✓           | x         | x     |
-| Delete Pages            | ✓       | x           | x         | x     |
-| View Project Views      | ✓       | ✓           | ✓         | ✓     |
-| Create Project Views    | ✓       | ✓           | x         | x     |
-| Edit Project Views      | ✓       | +Creator    | x         | x     |
-| Share Project Views     | ✓       | +Creator    | x         | x     |
-| Publish Project Views   | ✓       | +Creator    | x         | x     |
-| Export Project Views    | ✓       | ✓           | x         | x     |
-| Delete Project Views    | ✓       | +Creator    | x         | x     |
+| Permission            | P-Admin | Contributor | Commenter | Guest |
+| --------------------- | ------- | ----------- | --------- | ----- |
+| View Pages            | ✓       | ✓           | ✓         | ✓     |
+| Create Pages          | ✓       | ✓           | x         | x     |
+| Edit Pages            | ✓       | ✓           | x         | x     |
+| Share Pages           | ✓       | ✓           | x         | x     |
+| Delete Pages          | ✓       | x           | x         | x     |
+| View Project Views    | ✓       | ✓           | ✓         | ✓     |
+| Create Project Views  | ✓       | ✓           | x         | x     |
+| Edit Project Views    | ✓       | +Creator    | x         | x     |
+| Share Project Views   | ✓       | +Creator    | x         | x     |
+| Publish Project Views | ✓       | +Creator    | x         | x     |
+| Export Project Views  | ✓       | ✓           | x         | x     |
+| Delete Project Views  | ✓       | +Creator    | x         | x     |
 
 Page deletion is restricted to project Admins only. Contributors can edit pages but cannot delete them.
 
@@ -340,17 +340,17 @@ Page deletion is restricted to project Admins only. Contributors can edit pages 
 
 Issue intake and triage workflow.
 
-| Permission                  | P-Admin | Contributor | Commenter | Guest    |
-| --------------------------- | ------- | ----------- | --------- | -------- |
-| View Intake                 | ✓       | ✓           | ✓         | x        |
-| Create Intake Items         | ✓       | ✓           | ✓         | ✓        |
-| Submit Intake Requests      | ✓       | ✓           | ✓         | ✓        |
-| Edit Intake Items           | ✓       | +Creator    | +Creator  | +Creator |
-| React to Intake Items       | ✓       | ✓           | ✓         | x        |
-| Manage Intake Items (accept/reject/snooze) | ✓ | x      | x         | x        |
-| Configure Intake            | ✓       | x           | x         | x        |
-| Export Intake               | ✓       | ✓           | x         | x        |
-| Delete Intake Items         | ✓       | +Creator    | +Creator  | +Creator |
+| Permission                                 | P-Admin | Contributor | Commenter | Guest    |
+| ------------------------------------------ | ------- | ----------- | --------- | -------- |
+| View Intake                                | ✓       | ✓           | ✓         | x        |
+| Create Intake Items                        | ✓       | ✓           | ✓         | ✓        |
+| Submit Intake Requests                     | ✓       | ✓           | ✓         | ✓        |
+| Edit Intake Items                          | ✓       | +Creator    | +Creator  | +Creator |
+| React to Intake Items                      | ✓       | ✓           | ✓         | x        |
+| Manage Intake Items (accept/reject/snooze) | ✓       | x           | x         | x        |
+| Configure Intake                           | ✓       | x           | x         | x        |
+| Export Intake                              | ✓       | ✓           | x         | x        |
+| Delete Intake Items                        | ✓       | +Creator    | +Creator  | +Creator |
 
 Status changes (accept, reject, snooze, mark duplicate) are admin-only. Editing is restricted to creators for non-admin roles, with editable fields limited to name, description, priority, target/start dates, labels, and assignees.
 
@@ -381,20 +381,20 @@ Labels, states, estimates, and milestones.
 
 Automations, workflow rules, and recurring work items.
 
-| Permission              | P-Admin | Contributor | Commenter | Guest |
-| ----------------------- | ------- | ----------- | --------- | ----- |
-| View Automations        | ✓       | ✓           | x         | x     |
-| Create Automations      | ✓       | x           | x         | x     |
-| Edit Automations        | ✓       | x           | x         | x     |
-| Delete Automations      | ✓       | x           | x         | x     |
-| View Workflows          | ✓       | ✓           | ✓         | ✓     |
-| Create Workflows        | ✓       | x           | x         | x     |
-| Edit Workflows          | ✓       | x           | x         | x     |
-| Delete Workflows        | ✓       | x           | x         | x     |
-| View Recurring Items    | ✓       | ✓           | x         | x     |
-| Create Recurring Items  | ✓       | ✓           | x         | x     |
-| Edit Recurring Items    | ✓       | ✓           | x         | x     |
-| Delete Recurring Items  | ✓       | ✓           | x         | x     |
+| Permission             | P-Admin | Contributor | Commenter | Guest |
+| ---------------------- | ------- | ----------- | --------- | ----- |
+| View Automations       | ✓       | ✓           | x         | x     |
+| Create Automations     | ✓       | x           | x         | x     |
+| Edit Automations       | ✓       | x           | x         | x     |
+| Delete Automations     | ✓       | x           | x         | x     |
+| View Workflows         | ✓       | ✓           | ✓         | ✓     |
+| Create Workflows       | ✓       | x           | x         | x     |
+| Edit Workflows         | ✓       | x           | x         | x     |
+| Delete Workflows       | ✓       | x           | x         | x     |
+| View Recurring Items   | ✓       | ✓           | x         | x     |
+| Create Recurring Items | ✓       | ✓           | x         | x     |
+| Edit Recurring Items   | ✓       | ✓           | x         | x     |
+| Delete Recurring Items | ✓       | ✓           | x         | x     |
 
 ### Project Updates
 
@@ -445,31 +445,31 @@ Teamspace content access requires teamspace membership. Workspace Owner has full
 
 ### Teamspace
 
-| Permission              | TS-Member     | TS-Member +Lead |
-| ----------------------- | ------------- | --------------- |
-| View                    | ✓             | ✓               |
-| Edit settings           | x             | ✓ +Lead         |
-| Delete                  | x             | ✓ +Lead         |
-| Manage members          | x             | ✓ +Lead         |
+| Permission     | TS-Member | TS-Member +Lead |
+| -------------- | --------- | --------------- |
+| View           | ✓         | ✓               |
+| Edit settings  | x         | ✓ +Lead         |
+| Delete         | x         | ✓ +Lead         |
+| Manage members | x         | ✓ +Lead         |
 
 ### Teamspace Comments
 
-| Permission   | TS-Member     | TS-Member +Lead |
-| ------------ | ------------- | --------------- |
-| View         | ✓             | ✓               |
-| Create       | ✓             | ✓               |
-| Edit (own)   | +Creator      | ✓ (any)         |
-| Delete (own/any) | +Creator only | ✓ (any)     |
-| React        | ✓             | ✓               |
+| Permission       | TS-Member     | TS-Member +Lead |
+| ---------------- | ------------- | --------------- |
+| View             | ✓             | ✓               |
+| Create           | ✓             | ✓               |
+| Edit (own)       | +Creator      | ✓ (any)         |
+| Delete (own/any) | +Creator only | ✓ (any)         |
+| React            | ✓             | ✓               |
 
 ### Teamspace Views
 
-| Permission   | TS-Member     | TS-Member +Lead |
-| ------------ | ------------- | --------------- |
-| View         | ✓             | ✓               |
-| Create       | ✓             | ✓               |
-| Edit         | +Creator only | ✓ (any)         |
-| Delete       | +Creator only | ✓ (any)         |
+| Permission | TS-Member     | TS-Member +Lead |
+| ---------- | ------------- | --------------- |
+| View       | ✓             | ✓               |
+| Create     | ✓             | ✓               |
+| Edit       | +Creator only | ✓ (any)         |
+| Delete     | +Creator only | ✓ (any)         |
 
 ### Teamspace Pages
 
@@ -500,12 +500,12 @@ Removing a workspace Owner or Admin from a project removes the project-level mem
 
 ### Hidden permissions reserved for specific roles
 
-| Permission           | Holder              | Notes                                |
-| -------------------- | ------------------- | ------------------------------------ |
-| Delete Workspace     | Owner only          | Cannot be granted via custom roles   |
-| Transfer Ownership   | Owner only          | Cannot be granted via custom roles   |
-| Manage Billing       | Owner + Admin       | Billing access                       |
-| Manage Integrations (uninstall) | Admin only | Some destructive integration operations |
+| Permission                      | Holder        | Notes                                   |
+| ------------------------------- | ------------- | --------------------------------------- |
+| Delete Workspace                | Owner only    | Cannot be granted via custom roles      |
+| Transfer Ownership              | Owner only    | Cannot be granted via custom roles      |
+| Manage Billing                  | Owner + Admin | Billing access                          |
+| Manage Integrations (uninstall) | Admin only    | Some destructive integration operations |
 
 ### Creator-only business rules
 
@@ -516,11 +516,11 @@ Some restrictions apply regardless of role level. Even an Admin cannot bypass th
 
 ### Permissions that cannot be added to custom roles
 
-| Permission         | Why                                |
-| ------------------ | ---------------------------------- |
-| Full access (`*`)  | Reserved for Owner                 |
-| Delete Workspace   | Reserved for Owner                 |
-| Transfer Ownership | Reserved for Owner                 |
+| Permission         | Why                |
+| ------------------ | ------------------ |
+| Full access (`*`)  | Reserved for Owner |
+| Delete Workspace   | Reserved for Owner |
+| Transfer Ownership | Reserved for Owner |
 
 ### Permission dependencies
 
@@ -540,26 +540,26 @@ Some permissions only become available when the corresponding feature is enabled
 
 For convenience, here are all the conditional grants in the system:
 
-| Role                     | Permission                              | Condition |
-| ------------------------ | --------------------------------------- | --------- |
-| Project Contributor      | Delete work items, epics, modules, cycles | Creator |
-| Project Contributor      | Edit and delete comments and attachments | Creator  |
-| Project Contributor      | Edit, delete, share, and publish views  | Creator   |
-| Project Contributor      | Edit and delete intake items            | Creator   |
-| Project Contributor      | Edit and delete project, epic, and cycle updates | Creator |
-| Project Contributor      | Edit and delete project assets          | Creator   |
-| Project Commenter        | Edit and delete work items              | Creator   |
-| Project Commenter        | Edit and delete comments                | Creator   |
-| Project Commenter        | Edit and delete intake items            | Creator   |
-| Project Guest            | View, edit, and delete intake items     | Creator   |
-| Workspace Member         | Edit and delete workspace views         | Creator   |
-| Workspace Member         | Edit and delete wiki collections        | Creator   |
-| Workspace Member         | Edit and delete initiative comments     | Creator   |
-| Workspace Member         | Delete initiative attachments           | Creator   |
-| Workspace Member         | Delete workspace drafts                 | Creator   |
-| Teamspace Member         | Edit, delete, and manage teamspace      | Lead      |
-| Teamspace Member         | Edit and delete teamspace comments      | Creator   |
-| Teamspace Member         | Edit and delete teamspace views         | Creator   |
+| Role                | Permission                                       | Condition |
+| ------------------- | ------------------------------------------------ | --------- |
+| Project Contributor | Delete work items, epics, modules, cycles        | Creator   |
+| Project Contributor | Edit and delete comments and attachments         | Creator   |
+| Project Contributor | Edit, delete, share, and publish views           | Creator   |
+| Project Contributor | Edit and delete intake items                     | Creator   |
+| Project Contributor | Edit and delete project, epic, and cycle updates | Creator   |
+| Project Contributor | Edit and delete project assets                   | Creator   |
+| Project Commenter   | Edit and delete work items                       | Creator   |
+| Project Commenter   | Edit and delete comments                         | Creator   |
+| Project Commenter   | Edit and delete intake items                     | Creator   |
+| Project Guest       | View, edit, and delete intake items              | Creator   |
+| Workspace Member    | Edit and delete workspace views                  | Creator   |
+| Workspace Member    | Edit and delete wiki collections                 | Creator   |
+| Workspace Member    | Edit and delete initiative comments              | Creator   |
+| Workspace Member    | Delete initiative attachments                    | Creator   |
+| Workspace Member    | Delete workspace drafts                          | Creator   |
+| Teamspace Member    | Edit, delete, and manage teamspace               | Lead      |
+| Teamspace Member    | Edit and delete teamspace comments               | Creator   |
+| Teamspace Member    | Edit and delete teamspace views                  | Creator   |
 
 ## See also
 

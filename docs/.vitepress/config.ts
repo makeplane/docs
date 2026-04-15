@@ -306,7 +306,7 @@ export default defineConfig({
               {
                 text: "Permissions matrix",
                 link: "/roles-and-permissions/permissions-matrix",
-              }
+              },
             ],
           },
           {

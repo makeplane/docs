@@ -5,7 +5,7 @@ description: Create custom workspace and project roles tailored to your organiza
 
 # Custom roles <Badge type="warning" text="Enterprise Grid" />
 
-Custom roles let you define exactly what users in your workspace can do. 
+Custom roles let you define exactly what users in your workspace can do.
 
 Build a "Release Manager" role that can publish but not delete, a "QA Reviewer" who can comment and edit but not create, or anything else your organization needs.
 

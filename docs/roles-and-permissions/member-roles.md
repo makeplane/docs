@@ -111,13 +111,13 @@ For project assignments:
 
 Roles have an internal authority level used to enforce who can manage whom. A user can only modify members whose role level is lower than their own.
 
-| Role                   | Level |
-| ---------------------- | ----- |
-| Owner (workspace)      | 25    |
-| Admin (workspace, project) | 20 |
-| Member (workspace), Contributor (project), Member (teamspace) | 15 |
-| Commenter (project)    | 10    |
-| Guest (workspace, project) | 5  |
+| Role                                                          | Level |
+| ------------------------------------------------------------- | ----- |
+| Owner (workspace)                                             | 25    |
+| Admin (workspace, project)                                    | 20    |
+| Member (workspace), Contributor (project), Member (teamspace) | 15    |
+| Commenter (project)                                           | 10    |
+| Guest (workspace, project)                                    | 5     |
 
 Practical implications:
 
