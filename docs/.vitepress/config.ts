@@ -271,6 +271,10 @@ export default defineConfig({
                 link: "/core-concepts/workspaces/overview",
               },
               {
+                text: "Manage members",
+                link: "/core-concepts/workspaces/members",
+              },
+              {
                 text: "Search workspace",
                 link: "/workspaces-and-users/search-workspace",
               },
@@ -283,18 +287,26 @@ export default defineConfig({
             ],
           },
           {
-            text: "Members",
+            text: "Roles and permissions",
             collapsed: true,
+            link: "/roles-and-permissions/overview",
             items: [
               {
-                text: "Manage members",
-                link: "/core-concepts/workspaces/members",
+                text: "Member roles",
+                link: "/roles-and-permissions/member-roles",
               },
-              { text: "Member roles", link: "/workspaces-and-users/roles" },
+              {
+                text: "Permission schemes",
+                link: "/roles-and-permissions/permission-schemes",
+              },
+              {
+                text: "Custom roles",
+                link: "/roles-and-permissions/custom-roles",
+              },
               {
                 text: "Permissions matrix",
-                link: "/workspaces-and-users/permissions",
-              },
+                link: "/roles-and-permissions/permissions-matrix",
+              }
             ],
           },
           {

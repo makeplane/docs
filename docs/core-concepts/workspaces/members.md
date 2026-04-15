@@ -3,11 +3,13 @@ title: Manage workspace members
 description: Add, update, and remove workspace members
 ---
 
-# Manage members
+# Manage workspace members
 
-Keeping your workspace organized and secure is essential for smooth project management. Plane makes it easy to control who can access your workspace, what they can do, and how they collaborate with others.
+Manage who can access your workspace and what they can do. 
 
-This guide shows you how to add members to your workspace, change their roles, and remove them when needed.
+This guide covers inviting members, importing them in bulk, changing roles, removing members, and viewing audit history.
+
+For background on the available roles, see [Member roles](/roles-and-permissions/member-roles).
 
 ## Invite members to your workspace
 
@@ -19,7 +21,7 @@ You can add members individually or in bulk using CSV import.
 2. Click **Add member**.
 3. In the modal:
    - Enter the email address of the person you're inviting.
-   - Select their role: **Admin**, **Member**, or **Guest**.
+   - Select their role.
    - To invite multiple people at once, click **Add another** and repeat.
 4. Click **Invite**.
 
@@ -57,16 +59,21 @@ Email, Display Name, First Name, Last Name, Role
 
 ```
 Email,Display Name,First Name,Last Name,Role
-alex@company.com,Alex Chen,Alex,Chen,15
-sarah@company.com,Sarah Kim,Sarah,Kim,20
-mike@company.com,Mike Rodriguez,Mike,Rodriguez,5
+alex@company.com,Alex Chen,Alex,Chen,member
+sarah@company.com,Sarah Kim,Sarah,Kim,admin
+mike@company.com,Mike Rodriguez,Mike,Rodriguez,guest
 ```
 
-**Role values:**
+**Valid roles:**
 
-- `5` – Guest
-- `15` – Member
-- `20` – Admin
+- `owner` — Workspace Owner
+- `admin` — Workspace Admin
+- `member` — Workspace Member
+- `guest` — Workspace Guest
+
+::: info Backward compatibility
+For backward compatibility, numeric role values still work: `5` for Guest, `15` for Member, `20` for Admin. We recommend using slugs.
+:::
 
 **Important notes**
 
@@ -130,9 +137,16 @@ Removing members doesn't change your seat count or billing. You must [remove sea
 
 ## Leave a workspace
 
-If you no longer need access to a workspace, you can leave it yourself. Click the … menu next to your own name in Workspace Settings > Members and select **Leave**.
-You'll lose access to the workspace and all its projects immediately. If you need to rejoin later, a Workspace Admin will need to invite you again.
+If you no longer need access to a workspace, you can leave it yourself. Click the … menu next to your own name in **Workspace Settings > Members** and select **Leave**.
+
+You'll lose access to the workspace and all its projects immediately. If you need to rejoin later, a Workspace Admin or Owner will need to invite you again.
+
+::: warning Last admin protection
+If you're the only Owner or Admin in the workspace, you cannot leave. Promote another user to Owner or Admin first.
+:::
 
 ## See also
 
+- [Member roles](/roles-and-permissions/member-roles)
 - [Manage project members](/core-concepts/projects/manage-project-members)
+- [Permissions matrix](/roles-and-permissions/permissions-matrix)

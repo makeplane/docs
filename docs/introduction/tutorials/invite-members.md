@@ -69,7 +69,7 @@ For each person you're inviting, select their role from the dropdown.
 - Best for external contractors, clients, temporary collaborators.
 
 ::: tip
-💡 Want a deeper breakdown? Check out the [full guide](/workspaces-and-users/permissions) on roles and permissions.
+💡 Want a deeper breakdown? Check out the [full guide](/roles-and-permissions/permissions-matrix) on roles and permissions.
 :::
 
 ## Send invitations

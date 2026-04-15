@@ -261,6 +261,14 @@
     {
       "source": "/performance/hyper-mode",
       "destination": "/"
+    },
+    {
+      "source": "/workspaces-and-users/permissions",
+      "destination": "/roles-and-permissions/permissions-matrix"
+    },
+    {
+      "source": "/workspaces-and-users/roles",
+      "destination": "/roles-and-permissions/member-roles"
     }
   ]
 }
