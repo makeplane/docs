@@ -15,7 +15,7 @@ Plane combines two access control models.
 
 **Role-Based Access Control (RBAC)** is the foundation. Every user holds a role — Owner, Admin, Member, Guest, Contributor, Commenter, or a custom role you've defined — and that role carries a defined set of permissions.
 
-**Granular Access Control (GAC)** sits on top. It lets you grant or deny specific permissions to specific users on specific resources, independent of their role. A Member could be denied "delete work items" on one particular project, or a Guest could be granted "edit" on a specific page. GAC is for the exceptions — situations where role-level access is too coarse.
+**Granular Access Control (GAC)** sits on top. It lets you grant or deny specific permissions to specific users on specific resources, independent of their role. A Contributor could be denied "delete work items" on one particular project while keeping that permission everywhere else, or a specific user could be granted temporary edit access to a single page for the duration of an external review — all without changing anyone's role. GAC is for the exceptions — situations where role-level access is too coarse.
 
 ## Scope hierarchy
 
@@ -32,7 +32,7 @@ Workspace
   └── Integrations, Webhooks, Analytics, ...
 ```
 
-Permissions inherit upward. If a user has Admin on a project, they have access to everything inside that project. If a user has Admin on the workspace, they have access to all projects and their content via wildcard grants.
+Permissions inherit upward. If a user has Admin on a project, they have access to everything inside that project. If a user has Admin on the workspace, they have access to all projects and their content.
 
 ## Plan availability
 
@@ -40,19 +40,18 @@ Different roles and capabilities are available on different plans.
 
 | Capability                                   | Free | Pro | Business | Enterprise |
 | -------------------------------------------- | ---- | --- | -------- | ---------- |
-| Workspace Admin, Member, Guest               | ✓    | ✓   | ✓        | ✓          |
+| Workspace Owner, Member, Guest               | ✓    | ✓   | ✓        | ✓          |
 | Project Admin, Contributor, Commenter, Guest | ✓    | ✓   | ✓        | ✓          |
-| **Workspace Owner role**                     | —    | —   | ✓        | ✓          |
+| **Workspace Admin role**                     | —    | —   | ✓        | ✓          |
 | **Custom roles**                             | —    | —   | —        | ✓          |
 | **Custom permission schemes**                | —    | —   | —        | ✓          |
-
-On Free and Pro, Admin is the highest workspace role. From Business onwards, Owner sits above Admin and is the only role that can delete the workspace or transfer ownership.
 
 ## What changed from earlier versions
 
 Two things were renamed or restructured rather than added:
 
-- **"Project Member" is now called "Contributor."** The role name changed; the permissions did not.
+- **"Workspace Admin" is now called "Workspace Owner."** 
+- **"Project Member" is now called "Contributor."** 
 - **"Guest view access to Guests" is now the Commenter role.** Previously, you toggled "Grant guest users view access to all the project work items" on a Guest. Now, instead of toggling, you assign the user the Commenter role. The role gives view access to project content plus the ability to add comments.
 
 If you've used Plane before, your existing assignments are mapped automatically — no action required.
@@ -78,14 +77,12 @@ When permissions combine, an unconditional grant always wins over a conditional 
 
 When a user attempts an action, the system evaluates access in a fixed order, starting at the most specific scope and walking upward.
 
-1. **Explicit DENY** on this exact resource → access denied.
-2. **Explicit GRANT** on this exact resource → access allowed.
-3. **Role permissions** on this scope:
+1. **Role permissions** on this scope:
    - Unconditional match → allowed.
    - Conditional match → check the condition (creator, lead). If it's satisfied, allowed.
-4. **Link relations** — does the user have access via a Teamspace linked to this project?
-5. **Inherit from parent scope** — repeat the same checks one level up (project → workspace).
-6. If nothing matched after walking the full chain → **denied by default**.
+2. **Link relations** — does the user have access via a Teamspace linked to this project?
+3. **Inherit from parent scope** — repeat the same checks one level up (project → workspace).
+4. If nothing matched after walking the full chain → **denied by default**.
 
 A few worked examples make this concrete.
 
@@ -112,7 +109,7 @@ Permissions check from the most specific scope upward, which means workspace-lev
 
 **Teamspace → project link relations.** A teamspace can be linked to one or more projects, and the link carries a role. All teamspace members get that role on the linked project without a separate project membership being created. A user can have both a direct project membership and teamspace-derived access — both are evaluated, and access resolves to whichever permits the action.
 
-**Guest ceiling.** Workspace Guests are restricted from receiving high-privilege project roles. When you add a workspace Guest to a project, you can only assign them the Guest or Commenter role. Attempting to assign Admin or Contributor returns an error. This prevents privilege escalation through project assignment.
+**Guest ceiling.** Workspace Guests are restricted from receiving high-privilege project roles. When you add a workspace Guest to a project, you can only assign them the Guest or Commenter role — both default and custom project roles beyond these are blocked. Attempting to assign Admin, Contributor, or any custom project role returns an error. This prevents privilege escalation through project assignment.
 
 ## Caching and timing
 

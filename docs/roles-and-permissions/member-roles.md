@@ -13,15 +13,13 @@ For the conceptual background, see [Roles and permissions](/roles-and-permission
 
 Workspace roles control access to workspace-level resources — settings, members, billing, integrations, the wiki, workspace views, initiatives, and the project list. They also determine what a user can do across the projects they're added to.
 
-### Owner <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" />
+### Owner
 
 Owner is the highest workspace role. It carries full access to everything in the workspace, including the two operations no other role can perform: deleting the workspace and transferring ownership to another user.
 
-Owner exists from the Business plan onwards. On Free and Pro, Admin is the highest role and there is no separate Owner.
-
 Use Owner for the founder or principal administrator of the workspace. Most workspaces only have one Owner.
 
-### Admin
+### Admin <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" />
 
 Admin gives full management of the workspace — settings, members, billing, projects, integrations, webhooks, and roles — without the ability to delete the workspace or transfer ownership.
 
@@ -111,16 +109,6 @@ For project assignments:
 
 Roles have an internal authority level used to enforce who can manage whom. A user can only modify members whose role level is lower than their own.
 
-| Role                                                          | Level |
-| ------------------------------------------------------------- | ----- |
-| Owner (workspace)                                             | 25    |
-| Admin (workspace, project)                                    | 20    |
-| Member (workspace), Contributor (project), Member (teamspace) | 15    |
-| Commenter (project)                                           | 10    |
-| Guest (workspace, project)                                    | 5     |
-
-Practical implications:
-
 - Only Owners can manage other Owners.
 - Owners and Admins can manage Admins.
 - The last Admin or Owner of a workspace cannot leave or be demoted (last-admin protection).
@@ -143,6 +131,7 @@ Most roles count as paid seats for billing purposes. Workspace Guest is the only
 | Member       | Yes                 |
 | Guest        | No                  |
 | Custom roles | Yes                 |
+
 
 ## See also
 

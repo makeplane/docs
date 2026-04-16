@@ -11,7 +11,7 @@ For background, see [Roles and permissions](/roles-and-permissions/overview). To
 
 ## Why use permission schemes
 
-You could theoretically attach permissions directly to a role, but schemes give you three advantages:
+Permission schemes give you three advantages:
 
 - **Reuse.** The same scheme can power multiple roles. Update the scheme once, and every role using it picks up the change.
 - **Modularity.** Build focused schemes that do one thing well, then combine them. A "Release Manager" role might combine **Project Contributor** + a custom **Release Publishing** scheme.

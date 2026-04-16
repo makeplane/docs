@@ -286,6 +286,7 @@ export default defineConfig({
               },
             ],
           },
+         /* 
           {
             text: "Roles and permissions",
             collapsed: true,
@@ -309,6 +310,7 @@ export default defineConfig({
               },
             ],
           },
+          */
           {
             text: "Authentication",
             collapsed: true,

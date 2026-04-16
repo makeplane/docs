@@ -24,7 +24,7 @@ For conceptual background, see [Roles and permissions](/roles-and-permissions/ov
 
 ## Workspace permissions
 
-### Workspace settings
+### Workspace management
 
 Core workspace configuration: name, logo, currency, domain, archival, deletion, and ownership transfer.
 
@@ -63,10 +63,9 @@ Creating and managing projects from the workspace context.
 | ------------------------------ | ----- | ----- | ------ | ----- |
 | Browse Projects                | ✓     | ✓     | ✓      | x     |
 | View Project Details           | ✓     | ✓     | ✓      | x     |
-| Create Projects                | ✓     | ✓     | ✓      | x     |
+| Create Projects                | ✓     | ✓     | x      | x     |
 | Edit Project Settings          | ✓     | ✓     | x      | x     |
-| React to Projects              | ✓     | ✓     | ✓      | x     |
-| Publish Projects (make public) | ✓     | ✓     | ✓      | x     |
+| Publish Projects (make public) | ✓     | ✓     | x      | x     |
 | Archive Projects               | ✓     | ✓     | x      | x     |
 | Delete Projects                | ✓     | ✓     | x      | x     |
 | Manage Project Access          | ✓     | ✓     | x      | x     |
