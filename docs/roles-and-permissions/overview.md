@@ -50,8 +50,8 @@ Different roles and capabilities are available on different plans.
 
 Two things were renamed or restructured rather than added:
 
-- **"Workspace Admin" is now called "Workspace Owner."** 
-- **"Project Member" is now called "Contributor."** 
+- **"Workspace Admin" is now called "Workspace Owner."**
+- **"Project Member" is now called "Contributor."**
 - **"Guest view access to Guests" is now the Commenter role.** Previously, you toggled "Grant guest users view access to all the project work items" on a Guest. Now, instead of toggling, you assign the user the Commenter role. The role gives view access to project content plus the ability to add comments.
 
 If you've used Plane before, your existing assignments are mapped automatically — no action required.

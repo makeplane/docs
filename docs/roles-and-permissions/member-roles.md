@@ -132,7 +132,6 @@ Most roles count as paid seats for billing purposes. Workspace Guest is the only
 | Guest        | No                  |
 | Custom roles | Yes                 |
 
-
 ## See also
 
 - [Roles and permissions](/roles-and-permissions/overview)
