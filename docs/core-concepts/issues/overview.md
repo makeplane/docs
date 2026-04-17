@@ -5,35 +5,86 @@ description: Create, manage and organize work items in Plane with sub-tasks, rel
 
 # Manage work items
 
-In Plane, a work item serves as the fundamental unit of work. They represent the tasks you need to accomplish to make progress Think of work items as the to-dos of your project management flow—assignable, trackable, and actionable.
+A work item is the fundamental unit of work — a task, bug, feature, or any piece of work your team needs to track. Work items are assignable, trackable, and connected to the rest of your project through properties, relations, and project structure.
 
 ## Create work item
 
-The quickest way to add a new work item is to press `C` on your keyboard. By default, the work item will be assigned to the project you are currently on or the one you last visited.
+The quickest way to add a new work item is to press `N` then `I` on your keyboard. The work item defaults to the project you're currently viewing or the one you last visited.
 
-You can also head over to the **Work items** tab in the sidebar and click **Add Work item** at the top right of the screen.
+You can also navigate to the **Work items** tab in the sidebar under your project and click **Add Work item** at the top right.
 
-![Create work item](https://media.docs.plane.so/issues/create-issue-modal.webp#hero)
+![Create work item](https://media.docs.plane.so/work-items/create-work-item.webp#hero)
 
-In the **Create new work item** modal, you can define all the attributes of the work item, including title, description, assignees, state, priority, labels, due dates, and more. You can also turn on the **Create more** option to add multiple work items one after the other.
+In the **Create new work item** modal, define the work item's attributes — title, description, assignees, state, priority, labels, dates, and more. The project's default work item type is pre-selected, and you can switch to a different type from the dropdown at the top left.
+
+Turn on **Create more** to add multiple work items in sequence without closing the modal.
 
 When you create a work item, Plane assigns it a sequential identifier based on your project (e.g., PROJ-1).
 
 ::: tip
-Plane automatically saves your half-written work items so you can access them later in [Drafts](/core-concepts/drafts), in case you're not ready to finalize them or if you accidentally close the modal.
+Plane automatically saves half-written work items to [Drafts](/core-concepts/drafts), so you can access them later if you close the modal before finishing.
 :::
 
 ### Quick add work items
 
-For when you're in the middle of your workflow and need to jot something down fast, Plane lets you create a work item with minimal input and come back to refine it later.
+For quick capture without opening the full modal, use the inline quick-add row available in the List and Board layouts. Type a title and press Enter — the work item is created immediately with default properties, and you can refine it later.
 
-![Quick add work item](https://media.docs.plane.so/issues/issue-quick-add.webp#hero-bl)
+![Quick add work item](https://media.docs.plane.so/work-items/quick-add-work-item.webp#hero-bl)
 
 ## View work item details
 
-A work item in your layout opens by default in the peek overview mode, which allows for easy switching between contexts when browsing multiple work items simultaneously. In this mode, you can choose different styles, such as modal, full screen, or side peek, with side peek being the default option.
+Click any work item to open its detail view. The detail view is your workspace for everything about a single work item — editing its description, setting properties, managing sub-work items, tracking activity, and collaborating with your team.
 
-![work item-side-peek](https://media.docs.plane.so/issues/issue-side-peek.webp#hero)
+![work item details](https://media.docs.plane.so/work-items/work-item-detail.webp#hero)
+
+### Layout options
+
+The detail view opens in **peek overview** mode by default, which lets you browse work items without losing your list context. You can switch between three styles:
+
+- **Side peek** (default) — opens as a panel alongside your list.
+- **Modal** — opens as a centered overlay.
+- **Full screen** — takes over the entire view.
+
+![Work item side peek](https://media.docs.plane.so/work-items/work-item-side-peek.webp#hero)
+
+### Header
+
+The header shows the work item's breadcrumb path (Project > Work Items > ID), the work item type badge, and several quick actions:
+
+- **Approval status** — shows "Approval pending" when the work item is awaiting approval.
+- **Upvote / downvote** — vote on work items to signal priority to your team. Counts are shown in the header.
+- **Subscriber avatars** — shows who's subscribed to updates. Click **Unsubscribe** to stop receiving notifications for this work item.
+
+### Parent work item
+
+When a work item has a parent, the parent appears as a breadcrumb above the title with its type badge and ID. Click the **…** menu on the parent to:
+
+- **View sibling work items** — see other sub-work items under the same parent.
+- **Remove parent work item** — detach this work item from its parent.
+
+![Parent and child work items](https://media.docs.plane.so/work-items/parent-child-work-items.webp#hero)
+
+### Properties panel
+
+The right-side properties panel is organized into collapsible sections:
+
+- **Details** — state, priority, assignees, labels, start/due dates, estimate, tracked time.
+- **Project structure** — cycle, modules, customers, milestone, releases.
+- **Custom properties** — any custom fields defined for this work item type.
+
+Metadata (created by, created on, updated on) appears at the bottom.
+
+For a full reference of every property, see [Work item properties](/core-concepts/issues/properties).
+
+### Toolbar
+
+Below the description, a toolbar provides quick access to:
+
+- **Add sub-work item** — create or link sub-tasks.
+- **Relations and dependencies** — connect this work item to others.
+- **Links** — add external URLs.
+- **Attachments** — upload files.
+- **Pages** — link project or wiki pages.
 
 ## Set work item properties
 
@@ -43,7 +94,7 @@ You can set various properties for a work item, including its state, assignees, 
 
 Break down larger tasks into smaller, manageable components by creating sub-work items. Sub-work items can be either newly created or linked to existing work items, giving you flexibility in organizing work.
 
-![sub-work items](https://media.docs.plane.so/issues/issue-sub-issues.webp#hero)
+![Sub-work items](https://media.docs.plane.so/work-items/sub-work-items.webp#hero)
 
 ## Duplicate work items <Badge type="info" text="Pro" />
 
@@ -149,11 +200,49 @@ From any work item, find the **Convert to Epic** option. The system will ask you
 
 You can also [convert Epics to Work Items](/core-concepts/issues/epics#convert-epics-to-work-items).
 
-## Comment on work items
+## Activity and collaboration
 
-Collaborate on work items through comments. Tag team members, format text, and track all changes in the activity log. See [Work item comments](/communication-and-collaboration/comments-and-activity) for details.
+The bottom section of the work item detail view contains tabs for tracking everything that happens on the work item.
 
-![Work item activity and comments](https://media.docs.plane.so/issues/issue-activity-comments.webp#hero)
+### All
+
+Shows a unified feed combining comments, system activity, worklogs, transitions, and history in chronological order. Use this for a complete picture of the work item's lifecycle.
+
+### Activity
+
+Shows system-generated events: state changes, assignee updates, priority changes, label additions, cycle/module assignments, date modifications, estimate changes, custom property value changes, and relation changes. Bot-initiated actions (such as cycle automations) also appear here, attributed to the automation that triggered them.
+
+### Comments
+
+Shows only comments posted by team members. Add a comment using the rich text editor at the top — it supports formatting, mentions (`@username`), images, code blocks, and attachments.
+
+Comments support threaded replies. Click the **…** menu on any comment and select **Reply** to start a nested conversation. Team members are notified when you reply to their comments.
+
+For full details on commenting, see [Work item comments](/communication-and-collaboration/comments-and-activity).
+
+### Worklogs
+
+Shows time entries logged against this work item. Click **+ Log work** to add a new entry with hours, minutes, and an optional description.
+
+For full details, see [Time tracking](/core-concepts/issues/time-tracking).
+
+### Transition
+
+Shows every state transition the work item has gone through — from when it was created to its current state. Each entry shows who changed the state, when, and the from→to states with color-coded status icons.
+
+Between transitions, a **time-in-state badge** shows how long the work item stayed in the previous state (e.g., "54m", "1m"). This makes it easy to spot bottlenecks — if a work item sat in "In Review" for 3 days but only spent 10 minutes in "QA", you know where the delay was.
+
+### History
+
+Shows a detailed changelog of every property modification made to the work item. Each entry shows the property that changed, the before→after values with matching icons, who made the change, and when. Unlike the Activity tab which shows summary text, History shows the full structured before→after for each change.
+
+History tracks all property types including state changes, cycle assignments, estimate changes, label additions, custom property value changes, and actions performed by automation bots (e.g., "Cycle Automation Bot set the cycle to Cycle 1").
+
+Use History to audit specific changes, trace when a due date was moved, or understand who changed an assignee.
+
+### Filter and sort activity
+
+Click **Filters** in the activity area to show only specific types of activity. Use the sort toggle to switch between newest-first (default) and oldest-first ordering.
 
 ## Subscribe to notifications
 
@@ -181,6 +270,14 @@ Clicking on the last edited timestamp reveals a dropdown panel showing the compl
 
 This addition improves transparency in collaborative projects by making it easy to see how work items evolve over time and who contributed specific changes.
 
+## Export work items <Badge type="info" text="Pro" />
+
+You can export your work items to access and analyze your data outside of Plane. Exports support CSV and JSON formats, and you can filter exactly which work items to include.
+
+This is useful when you need to create reports, perform external analysis, or share data with stakeholders who don't use Plane.
+
+Learn more about [custom exports](/core-concepts/export#custom-exports).
+
 ## Archive work items
 
 Completed or canceled work items can be archived, and automations can be set up to archive such work items. Archived work items can be found under the three dots menu next to your project name.
@@ -190,25 +287,3 @@ Completed or canceled work items can be archived, and automations can be set up 
 ## Delete work items
 
 You can delete work items that were created accidentally or are no longer relevant to the project. Deleted work items cannot be recovered, so be sure to review them carefully before removal. Once deleted, the work item is permanently removed from the project.
-
-## Set up automations
-
-Within your project, you can set up automations to perform the following tasks:
-
-- **Auto-archive closed work items**  
-  You can set up an automation to archive work items that are marked as closed. This helps keep your active project board clean and organized, while still retaining closed work items for reference. You can customize the time period after which closed work items will automatically be moved to the archive.
-
-  ![Project archive automation](https://media.docs.plane.so/projects/auto-archive-closed-issues.webp#hero)
-
-- **Auto-close work items**  
-  You can also automate the closing of work items that are still open after a certain period of time. This is useful for ensuring that work items don’t remain open unnecessarily, helping to keep your project board organized and up to date. The automation will move all open work items matching the time period to a selected closed state.
-
-  ![Project close automation](https://media.docs.plane.so/projects/auto-close-issues.webp#hero)
-
-## Export work items <Badge type="info" text="Pro" />
-
-You can export your work items to access and analyze your data outside of Plane. Exports support CSV and JSON formats, and you can filter exactly which work items to include.
-
-This is useful when you need to create reports, perform external analysis, or share data with stakeholders who don't use Plane.
-
-Learn more about [custom exports](/core-concepts/export#custom-exports).

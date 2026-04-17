@@ -483,7 +483,14 @@ export default defineConfig({
           { text: "Custom Relations", link: "/work-items/custom-relations" },
           {
             text: "Automations",
-            link: "/automations/custom-automations",
+            collapsed: true,
+            link: "/automations/overview",
+            items: [
+              {
+                text: "Custom automations",
+                link: "/automations/custom-automations",
+              },
+            ],
           },
         ],
       },

@@ -95,14 +95,14 @@ Before you delete properties, switch off the **Active** toggle button to avoid d
 
 Here's a list of all the property types and attributes that Plane provides for creating custom fields:
 
-| Property&nbsp;type     | Attributes                               | Notes                                                                                                            |
-| ---------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **Text**               | Single line, Paragraph, Read-only        | The **Read-only** attribute cannot be marked as mandatory. Enter text in the Read only data box for this option. |
-| **Number**             | Default value                            | An optional default value can be given to this property type.                                                    |
-| **Dropdown**           | Single select, Multi select, Add options | Specify the values for the dropdown under **Add options**.                                                       |
-| **Boolean**            | True/False                               | Default value is false. This attribute cannot be marked as mandatory.                                            |
-| **Date**               | Date Format                              | Consistent date format across all properties.                                                                    |
-| **Member&nbsp;picker** | Single Select, Multi select              | Displays a list of all project members.                                                                          |
+| Property&nbsp;type     | Attributes                               | Notes                                                                                                                                                                                                                   |
+| ---------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Text**               | Single line, Paragraph, Read-only        | The **Read-only** attribute cannot be marked as mandatory. Enter text in the Read only data box for this option.                                                                                                        |
+| **Number**             | Default value                            | An optional default value can be given to this property type.                                                                                                                                                           |
+| **Dropdown**           | Single select, Multi select, Add options | Specify the values for the dropdown under **Add options**.                                                                                                                                                              |
+| **Boolean**            | True/False                               | Default value is false. This attribute cannot be marked as mandatory.                                                                                                                                                   |
+| **Date**               | Date Format                              | Consistent date format across all properties.                                                                                                                                                                           |
+| **Member&nbsp;picker** | Single Select, Multi select              | Displays a list of all project members. Members selected via a member picker property are automatically added as subscribers to the work item, so they receive notifications for updates, comments, and status changes. |
 
 ### Examples of custom properties
 
@@ -121,6 +121,7 @@ Once the project Admin sets up the work item types any project member can use th
 
 - In the **Create new work item** modal, the user can choose the desired work item type from the list at the top left corner. By default, the work item type `Issue` is selected displaying both system-defined and custom properties.
 - Changing the work item type will update the modal to display the relevant properties for that type.
+- When a member picker property is filled in, the selected members are automatically subscribed to the work item. This means reviewers, stakeholders, or anyone added through a member picker stay informed without needing to be manually subscribed.
 - The system ensures that all properties marked as mandatory are filled before creating the work item.
 
   ![Use work item types](https://media.docs.plane.so/issues/use-issue-type.webp#hero-tl)
@@ -153,6 +154,22 @@ You can change the work item types for several work items at once. Here’s how:
    ![Bulk update work item types](https://media.docs.plane.so/issues/bulk-update-issue-types.webp#hero-br)
 
 4. Click **Update** to apply the changes.
+
+## Set the default work item type
+
+The default work item type is pre-selected whenever someone creates a new work item. Initially this is set to the built-in `Issue` type, but you can change it to any active work item type.
+
+1. Navigate to **Project Settings → Work item Types**.
+2. Click the **…** menu next to the work item type you want to make the default.
+3. Select **Set as default**.
+
+The selected type now shows a **Default** badge and is automatically pre-selected in the Create new work item modal. You can change the default at any time by repeating these steps for a different type.
+
+## Edit or delete work item types
+
+To modify an existing work item type, click the **…** menu next to it and select **Edit**. You can update the name, description, icon, and background color.
+
+To remove a work item type, click the **…** menu and select **Delete**. Existing work items of that type are not deleted — they retain the type until individually changed.
 
 ## Disable work item types
 

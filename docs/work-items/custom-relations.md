@@ -27,7 +27,7 @@ Custom relations are workspace-level configurations. Once created, they're avail
 
 The directional naming ensures the relation reads correctly from either side. The inward name appears on the work item you're adding the relation to, and the outward name appears on the work item you're linking.
 
-### Examples
+#### Examples
 
 | Title     | Inward name | Outward name |
 | --------- | ----------- | ------------ |
