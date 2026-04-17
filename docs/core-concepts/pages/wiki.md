@@ -24,7 +24,7 @@ Home is the landing page you see when you open Wiki. It gives you a personalized
 The Wiki sidebar organizes content into sections:
 
 - **Home** - your personalized landing page with recents and stickies.
-- **Collections** - your folders of pages. Each collection can hold pages and nested pages. The *General* collection is created automatically and holds any pages that haven't been moved elsewhere.
+- **Collections** - your folders of pages. Each collection can hold pages and nested pages. The _General_ collection is created automatically and holds any pages that haven't been moved elsewhere.
 - **Shared** - private pages that have been shared with you by other members.
 - **Private** - pages only you can see (unless you share them).
 - **Archived** - pages that have been archived for reference.
