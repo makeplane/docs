@@ -5,7 +5,7 @@ description: Understand how roles, permissions, and access control work in Plane
 
 # Roles and permissions
 
-Plane uses a layered access control system to determine what every user can see and do. This page explains how that system works conceptually so you can design role assignments confidently and troubleshoot access issues when they come up.
+Plane uses a layered access control system to determine what every user can see and do. This page explains how that system works conceptually so you can design role assignments confidently.
 
 If you're looking for what a specific role can or can't do, see the [Permissions matrix](/roles-and-permissions/permissions-matrix). If you want a list of system roles, see [Member roles](/roles-and-permissions/member-roles). If you want to perform a task, see the how-to guides linked at the bottom of this page.
 
@@ -48,7 +48,7 @@ Different roles and capabilities are available on different plans.
 
 ## What changed from earlier versions
 
-Two things were renamed or restructured rather than added:
+Three things were renamed or restructured:
 
 - **"Workspace Admin" is now called "Workspace Owner."**
 - **"Project Member" is now called "Contributor."**
@@ -86,11 +86,11 @@ When a user attempts an action, the system evaluates access in a fixed order, st
 
 A few worked examples make this concrete.
 
-**Can Bob edit Issue #123?** Bob has the Contributor role on the project. The system finds no per-resource grant on the issue, walks up to the project, finds Bob's Contributor role, sees that Contributor includes `workitem:edit`, and allows the edit.
+**Can Bob edit work items** Bob has the Contributor role on the project. The system finds no per-resource grant on the issue, walks up to the project, finds Bob's Contributor role, sees that Contributor includes `workitem:edit`, and allows the edit.
 
-**Can Carol delete Module #456?** Carol has the Contributor role on the project. Contributor has `module:delete+creator`. The system checks whether Carol created the module — if yes, allowed; if no, denied.
+**Can Carol delete modules?** Carol has the Contributor role on the project. Contributor has `module:delete+creator`. The system checks whether Carol created the module — if yes, allowed; if no, denied.
 
-**Can Dave (a workspace Admin with no project membership) view Issue #789?** No project-level grant exists for Dave. The system walks up to the workspace, finds Dave's Admin role, which includes wildcard access to all project resource types, and allows the view.
+**Can Dave (a workspace Admin with no project membership) view work items?** No project-level grant exists for Dave. The system walks up to the workspace, finds Dave's Admin role, which includes wildcard access to all project resource types, and allows the view.
 
 ## How workspace, project, and teamspace roles interact
 
@@ -114,8 +114,6 @@ Permissions check from the most specific scope upward, which means workspace-lev
 ## Caching and timing
 
 Permission decisions are cached per user for 5 minutes, and role definitions are cached for 24 hours. When an admin changes a user's role or modifies a role definition, the relevant caches are invalidated immediately. The user's next request fetches fresh permissions.
-
-Effective propagation is near-instant.
 
 ## Audit trail (coming soon)
 

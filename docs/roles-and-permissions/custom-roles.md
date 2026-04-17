@@ -57,7 +57,7 @@ The role now has all permissions from the selected schemes. If a scheme grants `
 3. Select **Edit role**.
 4. Update the title, description, or attached permission schemes.
 
-Changes take effect immediately for all members assigned the role. Cached permission decisions for affected users are invalidated automatically.
+Changes take effect immediately for all members assigned the role.
 
 ## Delete a custom role
 
@@ -74,7 +74,7 @@ System roles (Owner, Admin, Member, Guest, Contributor, Commenter) cannot be del
 
 A few rules govern what custom roles can and cannot do:
 
-- **Cannot include reserved permissions.** Custom roles cannot grant **Delete Workspace**, **Transfer Ownership**, or full-access wildcards. These are reserved for the Owner role.
+- **Cannot include reserved permissions.** Custom roles cannot grant **Delete Workspace**, **Transfer Ownership**, or full access. These are reserved for the Owner role.
 - **Workspace-scoped.** Custom roles are defined per workspace. They don't propagate to other workspaces.
 - **Counted as paid seats.** Members assigned custom roles count as paid seats for billing.
 
@@ -86,8 +86,8 @@ A common pattern is to create a custom role that's "system role X plus extra per
 2. Attach the system permission scheme (e.g., **Project Contributor**) to inherit those permissions.
 3. Create or attach a custom scheme that adds the extra permissions you want.
 
-::: info One-time inheritance
-The custom role inherits the system scheme's permissions at the moment of attachment. If the system scheme is updated later, your custom role automatically reflects the changes (since it references the same scheme).
+::: info
+The custom role inherits the system scheme's permissions at the moment of attachment. If the system scheme changes later, your custom role automatically reflects the changes (since it references the same scheme).
 :::
 
 ## See also

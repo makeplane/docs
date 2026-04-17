@@ -531,7 +531,7 @@ Common dependencies:
 - Delete requires View on the same resource type.
 - Member management actions require View Members on the relevant scope.
 
-## Feature flags that gate permissions
+## Permission gates
 
 Some permissions only become available when the corresponding feature is enabled at the workspace or project level. If a feature is disabled, the related permissions exist in the role definition but have no effect.
 
@@ -547,9 +547,8 @@ For convenience, here are all the conditional grants in the system:
 | Project Contributor | Edit and delete intake items                     | Creator   |
 | Project Contributor | Edit and delete project, epic, and cycle updates | Creator   |
 | Project Contributor | Edit and delete project assets                   | Creator   |
-| Project Commenter   | Edit and delete work items                       | Creator   |
+| Project Commenter   | Edit and delete intake work items                | Creator   |
 | Project Commenter   | Edit and delete comments                         | Creator   |
-| Project Commenter   | Edit and delete intake items                     | Creator   |
 | Project Guest       | View, edit, and delete intake items              | Creator   |
 | Workspace Member    | Edit and delete workspace views                  | Creator   |
 | Workspace Member    | Edit and delete wiki collections                 | Creator   |

@@ -3,9 +3,9 @@ title: Create permission schemes
 description: Build reusable permission bundles that can be combined to compose custom roles. Permission schemes group related permissions so you can manage access in modular pieces.
 ---
 
-# Create permission schemes <Badge type="warning" text="Enterprise Grid" />
+# Permission schemes <Badge type="warning" text="Enterprise Grid" />
 
-A **permission scheme** is a named bundle of permissions that you can attach to one or more roles. Schemes are the modular building blocks of custom roles — instead of defining every permission individually for each role, you create reusable schemes and combine them.
+A **permission scheme** is a named bundle of permissions that you can attach to one or more custom roles. Schemes are the modular building blocks of custom roles — instead of defining every permission individually for each role, you create reusable schemes and combine them.
 
 For background, see [Roles and permissions](/roles-and-permissions/overview). To create roles that use schemes, see [Create custom roles](/roles-and-permissions/custom-roles).
 

@@ -5,7 +5,7 @@ description: Reference for every system role in Plane — Owner, Admin, Member, 
 
 # Member roles
 
-Every user in Plane holds a role at the workspace level and, for each project they're added to, a role at the project level. This page is a reference for all system roles, what they're for, and which plans they're available on.
+Every user in Plane holds a role at the workspace level and, for each project they're added to, a role at the project level. This page is a reference for all system roles and what they're for.
 
 For the conceptual background, see [Roles and permissions](/roles-and-permissions/overview). For exhaustive permission breakdowns, see the [Permissions matrix](/roles-and-permissions/permissions-matrix).
 
@@ -18,6 +18,10 @@ Workspace roles control access to workspace-level resources — settings, member
 Owner is the highest workspace role. It carries full access to everything in the workspace, including the two operations no other role can perform: deleting the workspace and transferring ownership to another user.
 
 Use Owner for the founder or principal administrator of the workspace. Most workspaces only have one Owner.
+
+::: info Renamed from "Admin"
+The role previously called "Admin" at the workspace level is now called "Owner."
+:::
 
 ### Admin <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" />
 
@@ -45,7 +49,7 @@ Use Guest for clients, contractors, or external stakeholders who need restricted
 
 ## Project roles
 
-Project roles control what a user can do inside a specific project — work items, epics, modules, cycles, pages, views, intake, and project settings.
+Project roles control what a user can do inside a specific project.
 
 ### Project Admin
 
@@ -77,7 +81,7 @@ Use Commenter for stakeholders who need to follow along, leave feedback, and sub
 
 ### Guest
 
-Project Guest is the most restricted project role. They can submit intake forms and view, edit, and delete intake issues they created themselves. They cannot see work items they didn't create through Intake.
+Project Guest is the most restricted project role. They can submit intake forms and view, edit, and delete intake issues they created themselves. They cannot see or create work items in the project.
 
 Use Guest for external collaborators whose only interaction with the project is submitting requests through intake.
 
@@ -111,18 +115,18 @@ Roles have an internal authority level used to enforce who can manage whom. A us
 
 - Only Owners can manage other Owners.
 - Owners and Admins can manage Admins.
-- The last Admin or Owner of a workspace cannot leave or be demoted (last-admin protection).
-- The last Admin of a project cannot leave (last-admin protection).
+- The last Admin or Owner of a workspace cannot leave or be demoted.
+- The last Admin of a project cannot leave.
 
 ## Custom roles <Badge type="warning" text="Enterprise Grid" />
 
-Workspace admins can create custom roles composed from any combination of permissions. Custom roles cannot include workspace deletion or ownership transfer (those are reserved for Owner).
+Workspace owners and admins can create custom roles composed from any combination of permission schemes. Custom roles cannot include workspace deletion or ownership transfer (those are reserved for Owner).
 
 For details, see [Create custom roles](/roles-and-permissions/custom-roles).
 
 ## Paid seat classification
 
-Most roles count as paid seats for billing purposes. Workspace Guest is the only role that does not.
+Most workspace roles count as paid seats for billing purposes. Workspace Guest is the only role that does not.
 
 | Role         | Counts as paid seat |
 | ------------ | ------------------- |
