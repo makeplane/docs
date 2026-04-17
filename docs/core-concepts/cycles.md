@@ -59,7 +59,8 @@ While Cycles typically run for their set duration, sometimes you need more flexi
 To start a Cycle, simply click the **Start Cycle** button next to your upcoming Cycle. This is particularly useful when you want to begin a planned Cycle earlier than its scheduled start date or if you need to start a fresh Cycle immediately.
 
 ::: tip
-By default, you can't start a new Cycle while another is in progress — you'll need to stop the active one first. With [parallel cycles](/core-concepts/cycles#parallel-cycles) enabled, this restriction is removed and multiple cycles can run simultaneously.:::
+By default, you can't start a new Cycle while another is in progress — you'll need to stop the active one first. With [parallel cycles](/core-concepts/cycles#parallel-cycles) enabled, this restriction is removed and multiple cycles can run simultaneously.
+:::
 
 ![Start Cycle](https://media.docs.plane.so/cycles/start-cycle.webp#hero-br)
 
