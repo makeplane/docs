@@ -424,6 +424,10 @@ export default defineConfig({
             text: "Milestones",
             link: "/core-concepts/projects/milestones",
           },
+          {
+            text: "Releases",
+            link: "/releases",
+          },
           { text: "Stickies", link: "/core-concepts/stickies" },
         ],
       },
