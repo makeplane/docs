@@ -3,7 +3,7 @@ title: Import data from Jira
 description: Import your projects and issues from Jira Cloud, Jira Server, or Jira Data Center into Plane.
 ---
 
-# Import from Jira (Cloud, Server, or Data Center)
+# Jira importer (Cloud, Server, and Data Center)
 
 Plane supports importing from Jira Cloud, Jira Server, and Jira Data Center. Choose the import option that matches your Jira deployment.
 

@@ -3,7 +3,7 @@ title: Import data from Linear
 description: Migrate your Linear data to Plane.
 ---
 
-# Import your Linear data to Plane
+# Linear Importer
 
 With the Linear importer, you can easily import issues, states, labels, priorities and user data from Linear to Plane and continue managing your existing projects.
 

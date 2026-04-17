@@ -3,7 +3,7 @@ title: Quick notes and reminders for project tasks
 description: Use Stickies in Plane to capture quick ideas, reminders, and notes without leaving your workspace.
 ---
 
-# Take notes using Stickies
+# Stickies
 
 Imagine having a digital bulletin board that follows you through every project and task. Stickies is your personal memo pad, seamlessly integrated into the Plane interface, ensuring that no brilliant idea or critical reminder ever gets lost in the shuffle.
 

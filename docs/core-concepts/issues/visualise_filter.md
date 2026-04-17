@@ -3,7 +3,7 @@ title: Filter work items
 description: Learn how to filter work items in Plane.
 ---
 
-# Filter work items
+# Work Item Filters
 
 Filters help you find exactly the work items you need by applying conditions across multiple fields. Whether you're looking for overdue tasks assigned to your team or tracking items in specific states, filters give you the control to slice through your work items with precision.
 

@@ -3,7 +3,7 @@ title: Create work items
 description: Learn how to create, organize, and track work items in Plane with titles, descriptions, priorities, assignments, and workflow states.
 ---
 
-# Create and manage work items
+# Create work items
 
 Now that your project is set up, let's add your first piece of work to track. Work items are the fundamental building blocks in Plane - they represent any task or piece of work your team needs to complete.
 

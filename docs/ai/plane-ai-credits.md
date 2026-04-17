@@ -3,7 +3,7 @@ title: How AI credits work for team usage and billing
 description: Learn how Plane AI's credit system works, why different tasks consume different amounts, and how workspace pooling helps teams manage AI usage efficiently.
 ---
 
-# How Plane AI credits work
+# Plane AI credits
 
 Plane AI uses credits as a universal measure of AI processing. This system ensures fair usage while giving teams predictable costs and transparent billing.
 

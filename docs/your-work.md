@@ -3,7 +3,7 @@ title: Dashboard to track assigned tasks and workload
 description: Track assigned tasks, monitor your workload, visualize priorities, and stay on top of your personal project contributions.
 ---
 
-# See all your work
+# Your Work
 
 The **Your work** page serves as a centralized hub for managing your individual responsibilities and progress within the workspace. This comprehensive dashboard gives you a clear, at-a-glance view of your current workload, work item prioritization, and overall activity.
 

@@ -3,7 +3,7 @@ title: Import data from CSV file
 description: Import work items from CSV files to Plane using the CSV Importer
 ---
 
-# Import your CSV data to Plane
+# CSV importer
 
 The CSV Importer lets you bring work items into Plane from a CSV file.
 

@@ -3,7 +3,7 @@ title: Create and manage workspaces
 description: Create and manage Workspaces in Plane.
 ---
 
-# Create and manage workspaces
+# Manage workspace
 
 Think of a Workspace in Plane as your command center, the place where everything comes together. It’s the top-level space that holds all your projects, work items, cycles, modules, and pages.
 
