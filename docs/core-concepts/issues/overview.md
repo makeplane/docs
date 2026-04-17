@@ -81,9 +81,8 @@ Link work items that are logically connected using the **Add relation** button. 
 - **Relates To** — the two work items are connected by context but don't directly affect each other's completion.
 - **Duplicate** — this work item is a duplicate of another. The original remains active while the duplicate is typically closed.
 - **Implements** — this work item implements or fulfills the other work item.
-- **Implemented By** — this work item is implemented by the other work item.
 
-To create custom relation types for your workspace, see [Custom relations](/advanced-management/custom-relations).
+To create custom relation types for your workspace, see [Custom relations](/work-items/custom-relations).
 
 ## Add links and attachments
 
