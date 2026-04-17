@@ -3,7 +3,9 @@ title: Project States
 description: Use Project States to categorize and track project progress across your workspace.
 ---
 
-# Project States <Badge type="info" text="Pro" />
+# Project States
+
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Project States allows you to track the overall progress of your projects. With this tool, you can categorize projects into different states, helping you quickly identify which projects need attention and which are on track.
 

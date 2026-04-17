@@ -3,7 +3,9 @@ title: Automate project tasks with trigger based workflows
 description: Automate repetitive project tasks with trigger-based workflows. Set up rules to automatically update work item properties, assign team members, and manage priorities when specific conditions are met.
 ---
 
-# Automations <Badge type="tip" text="Business" />
+# Automations
+
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Automations let you streamline your project management workflow by automatically performing actions based on specific triggers and conditions. This powerful feature eliminates repetitive manual tasks, ensures consistency in your processes, and helps your team maintain focus on high-value work by letting the system handle routine operations.
 

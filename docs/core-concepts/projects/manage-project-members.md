@@ -135,7 +135,9 @@ By default, Guests can only see work items they've created through the Intake se
 
 This setting is project-specific. Enabling it in one project doesn't affect Guest permissions in other projects. Even with view access, Guests remain isolated to invited projects only.
 
-## View project member activity <Badge type="warning" text="Enterprise Grid" />
+## View project member activity
+
+<div align="right"><Badge type="warning" text="Enterprise Grid" /></div>
 
 ::: info
 The Enterprise plan is currently only available for self-hosted instances. If you're interested in Enterprise features for your self-hosted deployment, contact [sales@plane.so](mailto:sales@plane.so) for pricing and licensing information.

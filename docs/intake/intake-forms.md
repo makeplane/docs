@@ -3,7 +3,9 @@ title: Intake to collect and triage external work requests
 description: Set up public web forms to collect bug reports, feature requests, and support tickets from external users without giving them project access.
 ---
 
-# Intake Forms <Badge type="tip" text="Business" />
+# Intake Forms
+
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Now, you can easily gather bug reports, feature requests, or support tickets from external users, all by sharing a
 simple form link.

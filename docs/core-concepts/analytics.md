@@ -32,7 +32,9 @@ The new analytics experience provides comprehensive views across six key areas:
 
 Get a bird's-eye view of your entire workspace with essential performance indicators that drive strategic decision-making. The workspace metrics section displays comprehensive user statistics including total users, admins, members, and guests, alongside project count and distribution across your organization. You can monitor the overall work item count across all projects and track active cycles and intake statistics to understand your team's current workload.
 
-### Projects analysis <Badge type="info" text="Pro" />
+### Projects analysis
+
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 ![Analytics Projects](https://media.docs.plane.so/analytics/projects-analytics.webp#hero)
 
@@ -60,7 +62,9 @@ The interactive chart builder lets you choose what you want to measure and then 
 
 You can easily export all your analytics data to CSV format, making it simple to dive deeper into the numbers using spreadsheets or other analysis tools you prefer.
 
-### Cycles analysis <Badge type="info" text="Pro" />
+### Cycles analysis
+
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 ![Analytics Cycles](https://media.docs.plane.so/analytics/cycle-analytics.webp#hero)
 
@@ -74,7 +78,9 @@ The cycle table at the bottom provides all the essential management information 
 
 This kind of cycle analysis is invaluable for sprint retrospectives and improving your team's estimation accuracy over time. You can identify patterns in cycle performance and use that data to make better decisions about sprint planning and workload distribution.
 
-### Modules analysis <Badge type="info" text="Pro" />
+### Modules analysis
+
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 ![Analytics Modules](https://media.docs.plane.so/analytics/module-analytics.webp#hero)
 
@@ -86,7 +92,9 @@ When you hover over any module in the chart, you get a detailed breakdown of the
 
 The table gives you all the management essentials - who's leading each module, which project it belongs to, planned timelines, and current completion status. This makes it easy to identify modules that might need attention, whether that's because they're running behind schedule, don't have a clear lead assigned, or are sitting at 0% completion when they should have started by now.
 
-### Intake analysis <Badge type="info" text="Pro" />
+### Intake analysis
+
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 ![Analytics Intake](https://media.docs.plane.so/analytics/Intake-analytics.webp#hero)
 

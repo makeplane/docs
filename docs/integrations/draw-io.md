@@ -3,7 +3,9 @@ title: Connect Draw.io integration
 description: Connect Draw.io to your Plane workspace to create and edit diagrams and whiteboards directly inside Plane Pages.
 ---
 
-# Draw.io Integration <Badge type="tip" text="Business" />
+# Draw.io Integration
+
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Connect Draw.io to create and edit powerful diagrams and whiteboards directly inside Plane Pages and Wiki.
 

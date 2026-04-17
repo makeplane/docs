@@ -3,7 +3,9 @@ title: AI powered assistant for project management
 description: Plane AI is your intelligent assistant for finding project data, analyzing work items, and managing tasks using natural language.
 ---
 
-# Plane AI <Badge type="info" text="Pro" />
+# Plane AI
+
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Plane AI is an AI assistant that helps you interact with your Plane workspace using natural language. Instead of navigating through menus and filters, you can simply ask Plane AI questions about your projects, work items, and documentation in plain English.
 

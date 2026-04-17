@@ -51,7 +51,9 @@ Intake operates at the project level and is disabled by default. Project admins 
 
 Once enabled, you'll see an **Intake** section under your project in the sidebar where all incoming work items appear.
 
-## Intake responsbility <Badge type="tip" text="Business" />
+## Intake responsbility
+
+<div align="right"><Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Assign a team member to take ownership of incoming work items and ensure nothing falls through the cracks. When you designate an intake responsible person, they'll automatically be assigned to and notified about every new work item that comes through any intake channel (in-app, forms, or email).
 

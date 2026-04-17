@@ -35,7 +35,9 @@ For Workspace Views, click the **Add view** button in the **Views** section of y
 
 Learn more about how to apply filters [here](/core-concepts/issues/visualise_filter). After creating a view, you can share the link to collaborate and investigate with members.
 
-## Private views <Badge type="info" text="Pro" />
+## Private views
+
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 By default, views are visible to all members. On Pro and above, you can make a view private so only you can see it. Toggle between public and private using the globe and lock icons in the create or edit view modal.
 
@@ -55,7 +57,9 @@ After creating a view, you can:
 
 Workspace Views are visualized using the spreadsheet layout, while project Views support all layouts. Learn more about layouts and grouping options [here](/core-concepts/issues/layouts).
 
-## Publish Views <Badge type="info" text="Pro" />
+## Publish Views
+
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 Publishing a View allows you to share it more interactively by enabling features like comments, reactions, and voting. Here's how to publish a view:
 
@@ -79,7 +83,9 @@ You can remove views by deleting them from the list of views in your workspace o
 - Mark frequently used views as favorites for quick access. Favorited views appear on the sidebar under **Your Favorites** section.
 - Use the search bar in the **Views** section to locate specific views quickly.
 
-## Export views <Badge type="info" text="Pro" />
+## Export views
+
+<div align="right"><Badge type="info" text="Pro" /> <Badge type="tip" text="Business" /> <Badge type="warning" text="Enterprise Grid" /></div>
 
 You can export data from any saved view to analyze filtered work items, create custom reports, or share specific subsets of your project data. Exports respect all filters applied to the view.
 
