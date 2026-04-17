@@ -482,7 +482,14 @@ export default defineConfig({
           { text: "Workflows and Approvals", link: "/workflows-and-approvals/workflows" },
           {
             text: "Automations",
-            link: "/automations/custom-automations",
+            collapsed: true,
+            link: "/automations/overview",
+            items: [
+              {
+                text: "Custom automations",
+                link: "/automations/custom-automations",
+              },
+            ],
           },
         ],
       },

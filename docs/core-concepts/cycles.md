@@ -87,7 +87,7 @@ Once the due date of an active Cycle passes, it’s automatically marked as comp
 
 ![Transfer work items](https://media.docs.plane.so/cycles/transfer-issues.webp#hero-tr)
 
-## Auto-schedule cycles <Badge type="tip" text="Business" />
+## Auto schedule cycles <Badge type="tip" text="Business" />
 
 Automate the creation and management of cycles according to predefined configurations, eliminating manual setup while ensuring consistent cycle planning and team predictability.
 
@@ -104,7 +104,7 @@ Automate the creation and management of cycles according to predefined configura
 
 1. Navigate to **Project Settings → Features → Cycles**.
 2. Turn on the **Auto-schedule cycles** toggle and configure:
-   - Cycle Title — Set a naming convention for automatically created cycles.
+   - Cycle Title — Set a base name for automatically created cycles. Each cycle gets a numerical suffix appended automatically (e.g., if you set the title to "Sprint", cycles are created as "Sprint 1", "Sprint 2", "Sprint 3", and so on).
    - Cycle Duration — Define the length of each cycle in weeks (e.g., 1 week, 2 weeks).
    - Cooldown Period — Add an optional buffer between cycles in days for planning and retrospectives.
    - Cycle starts day — Choose the start date for the first auto-scheduled cycle.
@@ -115,6 +115,7 @@ Once enabled, the system automatically:
 
 - Generates the configured number of future cycles based on your settings.
 - Creates a new cycle when the current one concludes to maintain the specified schedule.
+- Numbers each new cycle sequentially, continuing from the last created cycle.
 - Ensures cycles don't overlap and follow the defined cadence.
 - Applies consistent naming conventions and durations across all cycles.
 

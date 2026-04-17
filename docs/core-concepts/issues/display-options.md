@@ -43,18 +43,25 @@ Grouping helps you organize work items based on shared attributes, making it eas
 - Created By
 - Milestones
 - Epics
+- Releases
+- Work Item Types
 - None
 
 ## Sub-group by
 
 You can further refine your view by adding a sub-grouping. For example, you could group by State and then sub-group by Assignees to see the state of tasks per team member. Sub-grouping options include:
 
+- State
 - Priority
 - Cycle
 - Module
 - Labels
 - Assignees
 - Created By
+- Milestones
+- Epics
+- Releases
+- Work Item Types
 - None
 
 ## Order by
