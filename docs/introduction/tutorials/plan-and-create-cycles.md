@@ -3,7 +3,7 @@ title: Plan work with Cycles
 description: Learn how to create and manage cycles in Plane to organize work into time-boxed periods, track progress, and deliver results as a team.
 ---
 
-# Plan work with Cycles
+# Plan work with cycles
 
 Cycles help you organize work into focused time periods - like sprints. Instead of endless lists of work items, cycles create clear boundaries with start dates, end dates, and specific goals your team can work toward together.
 

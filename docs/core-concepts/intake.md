@@ -3,7 +3,7 @@ title: Intake to collect and triage external work requests
 description: Use Intake feature to collect, triage, and manage external work item submissions from stakeholders, clients, and guests before adding them to your workflow.
 ---
 
-# Triage work items before adding them to project
+# Intake In-app
 
 Intake is a Plane-only feature that lets `Guests` create work items following which `Admins` and `Members` can move these work items inside a project. Intake can take bug reports, feature or service requests, or raise a ticket by stakeholders, customers, or clients. Work items created in Intake can then be accepted to move them to the Project’s workflow.
 

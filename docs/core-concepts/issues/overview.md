@@ -3,7 +3,7 @@ title: Manage work items
 description: Create, manage and organize work items in Plane with sub-tasks, relations, file attachments, automations, and activity tracking for efficient project management
 ---
 
-# Create, organize, and track project tasks
+# Manage work items
 
 In Plane, a work item serves as the fundamental unit of work. They represent the tasks you need to accomplish to make progress Think of work items as the to-dos of your project management flow—assignable, trackable, and actionable.
 

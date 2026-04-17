@@ -3,7 +3,7 @@ title: Save custom views for filtered work items
 description: Create, save, and share Views in Plane to quickly access filtered work items.
 ---
 
-# Save custom views
+# Views
 
 Views are saved collections of filters that you can apply to work items, allowing you to analyze and manage them efficiently. Instead of reapplying the same filters repeatedly, you can save them with a title for easy access and reuse.
 

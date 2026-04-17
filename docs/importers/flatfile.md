@@ -3,7 +3,7 @@ title: Import data from CSV file
 description: Import work items from CSV files to Plane using the Flatfile importer.
 ---
 
-# Import your CSV data to Plane
+# Flatfile importer
 
 The Flatfile importer provides a streamlined way to bring your work items into Plane from CSV files. With intelligent field mapping and data validation, you can migrate your data accurately and efficiently.
 

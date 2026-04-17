@@ -3,7 +3,7 @@ title: Set up Plane for your team
 description: Get a functional workspace with team members working on their first project.
 ---
 
-# Set up Plane for your team
+# Quickstart guide
 
 This walkthrough will help you get up and running with Plane in no time. You’ll learn how to set up your workspace, create projects, add and manage work items, and organize work into cycles, all through easy-to-follow steps.
 
