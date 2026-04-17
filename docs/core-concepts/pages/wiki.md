@@ -63,6 +63,15 @@ From here you can:
 - **Filter pages** by Favorites, Created date (1 week, 2 weeks, 1 month, or a custom range), or Created by (any workspace member).
 - **Search** within the collection using the search icon.
 
+### Delete a collection
+
+1. Open the collection you want to delete.
+2. Click the ellipsis icon next to the collection on the sidebar to select **Delete**.
+3. In the **Delete collection** dialog, choose what happens to the pages inside:
+   - **Transfer pages and delete collection** — moves all pages to another collection you select. Pages and their permissions are preserved. Note that moved pages will inherit the permissions of the destination collection.
+   - **Delete collection with pages** — permanently deletes the collection and all its pages. This action can't be undone.
+4. Click **Delete collection**.
+
 ## Create and manage Wiki pages
 
 ### Create a new page
