@@ -95,14 +95,14 @@ Before you delete properties, switch off the **Active** toggle button to avoid d
 
 Here's a list of all the property types and attributes that Plane provides for creating custom fields:
 
-| Property&nbsp;type     | Attributes                               | Notes                                                                                                            |
-| ---------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **Text**               | Single line, Paragraph, Read-only        | The **Read-only** attribute cannot be marked as mandatory. Enter text in the Read only data box for this option. |
-| **Number**             | Default value                            | An optional default value can be given to this property type.                                                    |
-| **Dropdown**           | Single select, Multi select, Add options | Specify the values for the dropdown under **Add options**.                                                       |
-| **Boolean**            | True/False                               | Default value is false. This attribute cannot be marked as mandatory.                                            |
-| **Date**               | Date Format                              | Consistent date format across all properties.                                                                    |
-| **Member&nbsp;picker** | Single Select, Multi select              | Displays a list of all project members. Members selected via a member picker property are automatically added as subscribers to the work item, so they receive notifications for updates, comments, and status changes.                                                                         |
+| Property&nbsp;type     | Attributes                               | Notes                                                                                                                                                                                                                   |
+| ---------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Text**               | Single line, Paragraph, Read-only        | The **Read-only** attribute cannot be marked as mandatory. Enter text in the Read only data box for this option.                                                                                                        |
+| **Number**             | Default value                            | An optional default value can be given to this property type.                                                                                                                                                           |
+| **Dropdown**           | Single select, Multi select, Add options | Specify the values for the dropdown under **Add options**.                                                                                                                                                              |
+| **Boolean**            | True/False                               | Default value is false. This attribute cannot be marked as mandatory.                                                                                                                                                   |
+| **Date**               | Date Format                              | Consistent date format across all properties.                                                                                                                                                                           |
+| **Member&nbsp;picker** | Single Select, Multi select              | Displays a list of all project members. Members selected via a member picker property are automatically added as subscribers to the work item, so they receive notifications for updates, comments, and status changes. |
 
 ### Examples of custom properties
 

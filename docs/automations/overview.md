@@ -9,7 +9,7 @@ Automations handle repetitive project work so your team can focus on the work th
 
 - **Built-in automations** are ready-to-use toggles for common housekeeping tasks — archiving closed work items, closing stale ones, and sending deadline reminders.
 
-- **[Custom automations](/core-concepts/projects/custom-automations)** let you build your own trigger-condition-action workflows — like auto-assigning a reviewer when a work item moves to QA, or adding a label when priority changes.
+- **[Custom automations](/automations/custom-automations)** let you build your own trigger-condition-action workflows — like auto-assigning a reviewer when a work item moves to QA, or adding a label when priority changes.
 
 ![Automations](https://media.docs.plane.so/automations/automations.webp#hero)
 
@@ -42,4 +42,4 @@ Send automatic reminders via email and in-app notifications to keep your team on
 2. Toggle on **Auto-reminders**.
 3. Set the **Send reminder before** timing — for example, 3 days before the due date.
 
-Once enabled, assignees receive both an email and an in-app notification at the configured interval before each work item's due date. Only work items with a due date and at least one assignee trigger reminders.
+Once enabled, assignees and work item subscribers receive both an email and an in-app notification at the configured interval before each work item's due date. Only work items with a due date and at least one assignee or subscriber trigger reminders.
