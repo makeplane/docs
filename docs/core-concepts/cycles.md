@@ -15,9 +15,10 @@ By default, Cycles are automatically turned on when you create a new project. If
 
 ## Create cycles
 
-::: warning Caution
-Two cycles cannot have overlapping dates.
+:::warning
+By default, two cycles cannot have overlapping dates. If you need overlapping cycles, see [Parallel cycles](/core-concepts/cycles#parallel-cycles).
 :::
+
 To create a new Cycle, just press `Q` from anywhere in your project. Or, you can head to the **Cycles** page under your project in the sidebar and click the **Add Cycle** button. You’ll need to give it a name and set the start and due dates. If you want, you can also add a description—either right away or later on!
 
 ![Create cycle](https://media.docs.plane.so/cycles/create-cycles.webp#hero)
@@ -39,7 +40,7 @@ If the Project Admin sets the **Timezone** in [Project settings](/core-concepts/
 ## Cycle states
 
 - **Active cycle**  
-  An active cycle is the current, ongoing cycle (the current date falls within the cycle's start and due dates) in which a team is working to complete a set of tasks or user stories within a defined time period. Only one cycle can be active at a time.
+  An active cycle is the current, ongoing cycle (the current date falls within the cycle's start and due dates) in which a team is working to complete a set of tasks or user stories within a defined time period. By default, only one cycle can be active at a time. To run multiple active cycles simultaneously, see [Parallel cycles](/core-concepts/cycles#parallel-cycles).
 
 - **Upcoming cycle**  
   A cycle with a start date in the future is considered upcoming. This allows teams to plan their next phase of work in advance, ensuring a seamless transition from the current active cycle to the next, with everything lined up and ready to go.
@@ -58,8 +59,7 @@ While Cycles typically run for their set duration, sometimes you need more flexi
 To start a Cycle, simply click the **Start Cycle** button next to your upcoming Cycle. This is particularly useful when you want to begin a planned Cycle earlier than its scheduled start date or if you need to start a fresh Cycle immediately.
 
 ::: tip
-You can't start a new Cycle while another is in progress. To begin a new Cycle, you'll need to stop the currently active one first.
-:::
+By default, you can't start a new Cycle while another is in progress — you'll need to stop the active one first. With [parallel cycles](/core-concepts/cycles#parallel-cycles) enabled, this restriction is removed and multiple cycles can run simultaneously.:::
 
 ![Start Cycle](https://media.docs.plane.so/cycles/start-cycle.webp#hero-br)
 
@@ -81,7 +81,7 @@ Any unfinished work items in the ended Cycle will remain in their current state.
 
 This manual control gives you the flexibility to adapt your Cycles to your team's actual work rhythm, rather than being strictly bound to predetermined dates.
 
-## Run parallel cycles <Badge type="warning" text="Enterprise Grid" />
+## Parallel cycles <Badge type="warning" text="Enterprise Grid" />
 
 By default, only one cycle can be active at a time, and cycles cannot have overlapping dates. With parallel cycles enabled, you can run multiple cycles simultaneously with overlapping date ranges. This is useful when your team manages parallel workstreams — for example, a two-week sprint running alongside a longer release cycle.
 
