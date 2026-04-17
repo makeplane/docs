@@ -115,7 +115,7 @@ Once the due date of an active Cycle passes, it’s automatically marked as comp
 
 ![Transfer work items](https://media.docs.plane.so/cycles/transfer-issues.webp#hero-tr)
 
-## Auto schedule cycles <Badge type="tip" text="Business" />
+## Auto-schedule cycles <Badge type="tip" text="Business" />
 
 Automate the creation and management of cycles according to predefined configurations, eliminating manual setup while ensuring consistent cycle planning and team predictability.
 
