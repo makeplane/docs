@@ -1,5 +1,5 @@
-import { readFileSync } from "fs";
-import { resolve } from "path";
+import { copyFileSync, mkdirSync, readFileSync, readdirSync, statSync } from "fs";
+import { dirname, join, relative, resolve } from "path";
 import { defineConfig, type HeadConfig } from "vitepress";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 
@@ -49,6 +49,30 @@ export default defineConfig({
   title: "Plane",
   description: "Modern project management software",
   cleanUrls: true,
+
+  buildEnd(siteConfig) {
+    // Copy source .md files into dist/ for Accept: text/markdown negotiation.
+    const srcDir = siteConfig.srcDir;
+    const outDir = siteConfig.outDir;
+
+    function walk(dir: string): void {
+      for (const entry of readdirSync(dir)) {
+        if (entry === ".vitepress" || entry === "public" || entry === "node_modules") continue;
+        const abs = join(dir, entry);
+        const stat = statSync(abs);
+        if (stat.isDirectory()) {
+          walk(abs);
+        } else if (stat.isFile() && abs.endsWith(".md")) {
+          const rel = relative(srcDir, abs);
+          const dest = join(outDir, rel);
+          mkdirSync(dirname(dest), { recursive: true });
+          copyFileSync(abs, dest);
+        }
+      }
+    }
+
+    walk(srcDir);
+  },
 
   head: [
     [
