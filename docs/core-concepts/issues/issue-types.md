@@ -106,7 +106,7 @@ Here's a list of all the property types and attributes that Plane provides for c
 | **Date**               | Date Format                              | Consistent date format across all properties.                                                                                                                                                                           |
 | **Member&nbsp;picker** | Single Select, Multi select              | Displays a list of all project members. Members selected via a member picker property are automatically added as subscribers to the work item, so they receive notifications for updates, comments, and status changes. |
 
-| **URL**                | A URL field for linking to external resources. |
+| **URL** | A URL field for linking to external resources. |
 
 ### Examples of custom properties
 
