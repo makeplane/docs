@@ -3,13 +3,9 @@ title: Import data from Notion
 description: Import data from Notion to Plane.
 ---
 
-# Import your Notion data to Plane <Badge type="tip" text="Business" />
+# Notion importer <Badge type="tip" text="Business" />
 
 The Notion to Plane importer lets you transfer your Notion pages and content to Plane's Wiki. This is useful when you want to bring your documentation, notes, and structured content from Notion into your Plane workspace as Wiki pages.
-
-::: info
-The Notion importer is available on Plane Cloud and on all plans of the Commercial Edition for self-hosted instances.
-:::
 
 The importer takes exported Notion content and converts it into Plane wiki pages. It preserves your page structure, including subpages, and maintains the hierarchical organization of your Notion workspace within Plane's wiki system.
 

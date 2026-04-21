@@ -3,7 +3,7 @@ title: Comments for collaboration and activity tracking
 description: Add comments, mention team members, and track activity on work items
 ---
 
-# Work item comments
+# Work Item Comments
 
 Use comments to discuss work items, ask questions, provide updates, and collaborate with your team. Every work item includes a comment section and activity log.
 

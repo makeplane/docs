@@ -3,7 +3,7 @@ title: Display options for viewing work items
 description: Customize display by showing specific properties, grouping by attributes, subgrouping, and ordering items to create the perfect project view.
 ---
 
-# Configure layout display
+# Display options
 
 The Display dropdown in Plane gives you full control over how your work items are presented, grouped, and ordered. This flexibility ensures that you can tailor the layout to suit your workflow, whether you're a developer working through a backlog, a manager tracking priorities, or a QA engineer validating tasks. Let’s break down how you can make the most of this feature.
 
@@ -43,18 +43,25 @@ Grouping helps you organize work items based on shared attributes, making it eas
 - Created By
 - Milestones
 - Epics
+- Releases
+- Work Item Types
 - None
 
 ## Sub-group by
 
 You can further refine your view by adding a sub-grouping. For example, you could group by State and then sub-group by Assignees to see the state of tasks per team member. Sub-grouping options include:
 
+- State
 - Priority
 - Cycle
 - Module
 - Labels
 - Assignees
 - Created By
+- Milestones
+- Epics
+- Releases
+- Work Item Types
 - None
 
 ## Order by

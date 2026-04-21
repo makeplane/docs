@@ -3,7 +3,7 @@ title: Save custom views for filtered work items
 description: Create, save, and share Views in Plane to quickly access filtered work items.
 ---
 
-# Save custom views
+# Views
 
 Views are saved collections of filters that you can apply to work items, allowing you to analyze and manage them efficiently. Instead of reapplying the same filters repeatedly, you can save them with a title for easy access and reuse.
 
@@ -12,12 +12,12 @@ Views are saved collections of filters that you can apply to work items, allowin
 In Plane, you can create two different types of views:
 
 - **Workspace Views**  
-  These are created at the Workspace level and are available to all Members, depending on whether they are marked as public or private. These include some default system-defined Views that cannot be removed.
+  Workspace views are created at the workspace level and available to all workspace members. These include some default system-defined views that cannot be removed. Workspace views are visualized using the spreadsheet layout.
 
   ![Workspace Views](https://media.docs.plane.so/views/workspace-views.webp#hero)
 
 - **Project Views**  
-  These Views are created within the specific project and are accessible to all Members of the project, depending on whether they are set as public or private. This feature is turned on by default and can be toggled on or off from the [project settings](/core-concepts/projects/overview#configure-project-settings).
+  Project views are created within a specific project and accessible to all members of that project. This feature is enabled by default and can be toggled from [Project Settings](/core-concepts/projects/overview#configure-project-settings). Project views support all layouts.
 
   ![Project Views](https://media.docs.plane.so/views/project-views.webp#hero)
 
@@ -35,7 +35,13 @@ For Workspace Views, click the **Add view** button in the **Views** section of y
 
 Learn more about how to apply filters [here](/core-concepts/issues/visualise_filter). After creating a view, you can share the link to collaborate and investigate with members.
 
-## Investigating with Views
+## Private views <Badge type="info" text="Pro" />
+
+By default, views are visible to all members. On Pro and above, you can make a view private so only you can see it. Toggle between public and private using the globe and lock icons in the create or edit view modal.
+
+![Private view](https://media.docs.plane.so/views/private-view.webp#hero)
+
+## Work with Views
 
 Saved filters can be accessed from the **Views** section.
 

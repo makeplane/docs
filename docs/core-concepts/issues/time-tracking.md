@@ -3,7 +3,7 @@ title: Time tracking to log hours on tasks
 description: Log hours on work items, view timesheet records, and download comprehensive reports for project time management.
 ---
 
-# Log time on work items <Badge type="info" text="Pro" />
+# Time Tracking <Badge type="info" text="Pro" />
 
 > **Role**: Project Admins
 
@@ -52,6 +52,13 @@ To track time on your work items, follow the steps below:
 3. The **Tracked time** property will display the logged time. Every time you log work to the work item, this property is updated.
 
    ![Worklog created](https://media.docs.plane.so/time-tracking/worklog-created.webp#hero)
+
+## Edit or delete a time log
+
+To update or remove a time entry, find the worklog in the work item's activity trail. Click the … menu on the entry to see two options:
+
+- **Edit** — opens the log with editable hours, minutes, and description fields. Adjust the values and click Update.
+- **Delete** — permanently removes the entry. The Tracked time property on the work item updates automatically.
 
 ## View worklogs
 

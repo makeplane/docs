@@ -3,11 +3,11 @@ title: Create and manage workspaces
 description: Create and manage Workspaces in Plane.
 ---
 
-# Create and manage workspaces
+# Manage workspace
 
 Think of a Workspace in Plane as your command center, the place where everything comes together. It’s the top-level space that holds all your projects, work items, cycles, modules, and pages.
 
-Picture it like this. A Workspace in Plane is similar to a workspace in Slack. It’s where your team gathers to work on projects, track progress, and get things done. You can create your own projects, invite others to join, and collaborate as a group, or just do your own thing if that’s how you roll.
+The workspace is where your team gathers to work on projects, track progress, and get things done. You can create your own projects, invite others to join, and collaborate as a group, or just do your own thing if that’s how you roll.
 
 ## What's inside a workspace
 

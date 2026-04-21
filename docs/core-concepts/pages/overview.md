@@ -3,7 +3,7 @@ title: Pages for project documentation
 description: Create, format, and share project documentation with AI assistance, content blocks, version history, and web publishing options.
 ---
 
-# Document with AI-powered Pages
+# Manage project pages
 
 Pages in Plane let you easily capture and organize project-related information. Whether you’re documenting meeting notes or detailing technical or product requirements, Pages allow you to collaborate directly within the context of your project—no need for external tools.
 

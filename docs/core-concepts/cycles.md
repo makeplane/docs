@@ -3,7 +3,7 @@ title: Manage sprints and track agile workflows
 description: Create and manage sprints using Cycles in Plane. Track progress, transfer incomplete tasks, and monitor active cycles across projects for efficient Agile workflows.
 ---
 
-# Manage and track your sprints using Cycles
+# Cycles
 
 A Cycle is a set period of time where your team focuses on completing specific tasks or work items, similar to sprints in Agile. Each Cycle is flexible, allowing you to prioritize and tackle backlog items at your own pace.
 
@@ -15,9 +15,10 @@ By default, Cycles are automatically turned on when you create a new project. If
 
 ## Create cycles
 
-::: warning Caution
-Two cycles cannot have overlapping dates.
+:::warning
+By default, two cycles cannot have overlapping dates. If you need overlapping cycles, see [Parallel cycles](/core-concepts/cycles#parallel-cycles).
 :::
+
 To create a new Cycle, just press `Q` from anywhere in your project. Or, you can head to the **Cycles** page under your project in the sidebar and click the **Add Cycle** button. You’ll need to give it a name and set the start and due dates. If you want, you can also add a description—either right away or later on!
 
 ![Create cycle](https://media.docs.plane.so/cycles/create-cycles.webp#hero)
@@ -39,7 +40,7 @@ If the Project Admin sets the **Timezone** in [Project settings](/core-concepts/
 ## Cycle states
 
 - **Active cycle**  
-  An active cycle is the current, ongoing cycle (the current date falls within the cycle's start and due dates) in which a team is working to complete a set of tasks or user stories within a defined time period. Only one cycle can be active at a time.
+  An active cycle is the current, ongoing cycle (the current date falls within the cycle's start and due dates) in which a team is working to complete a set of tasks or user stories within a defined time period. By default, only one cycle can be active at a time. To run multiple active cycles simultaneously, see [Parallel cycles](/core-concepts/cycles#parallel-cycles).
 
 - **Upcoming cycle**  
   A cycle with a start date in the future is considered upcoming. This allows teams to plan their next phase of work in advance, ensuring a seamless transition from the current active cycle to the next, with everything lined up and ready to go.
@@ -58,7 +59,7 @@ While Cycles typically run for their set duration, sometimes you need more flexi
 To start a Cycle, simply click the **Start Cycle** button next to your upcoming Cycle. This is particularly useful when you want to begin a planned Cycle earlier than its scheduled start date or if you need to start a fresh Cycle immediately.
 
 ::: tip
-You can't start a new Cycle while another is in progress. To begin a new Cycle, you'll need to stop the currently active one first.
+By default, you can't start a new Cycle while another is in progress — you'll need to stop the active one first. With [parallel cycles](/core-concepts/cycles#parallel-cycles) enabled, this restriction is removed and multiple cycles can run simultaneously.
 :::
 
 ![Start Cycle](https://media.docs.plane.so/cycles/start-cycle.webp#hero-br)
@@ -80,6 +81,33 @@ To end a Cycle before its scheduled completion date, you can:
 Any unfinished work items in the ended Cycle will remain in their current state. The burn-down chart and progress metrics will be finalized based on the completion status at the time you end the Cycle.
 
 This manual control gives you the flexibility to adapt your Cycles to your team's actual work rhythm, rather than being strictly bound to predetermined dates.
+
+## Parallel cycles <Badge type="warning" text="Enterprise Grid" />
+
+By default, only one cycle can be active at a time, and cycles cannot have overlapping dates. With parallel cycles enabled, you can run multiple cycles simultaneously with overlapping date ranges. This is useful when your team manages parallel workstreams — for example, a two-week sprint running alongside a longer release cycle.
+
+### Turn on parallel cycles
+
+1. Go to **Project Settings > Features > Cycles**.
+2. Toggle on **Parallel cycles**.
+
+![Parallel cycles setting](https://media.docs.plane.so/cycles/parallel-cycles-setting.webp#hero)
+
+Once enabled, you can create cycles with overlapping dates and start multiple cycles at the same time. Each active cycle appears independently in the Cycles page with its own progress breakdown and burn-down chart.
+
+![Multiple active cycles](https://media.docs.plane.so/cycles/multiple-active-cycles.webp#hero)
+
+### How parallel cycles work
+
+Even with parallel cycles enabled, a work item can only belong to one cycle at a time. This prevents duplicate tracking and keeps cycle metrics accurate. If you try to add a work item that already belongs to another cycle, the system will block the action.
+
+When you end a parallel cycle, you're prompted to choose what happens to incomplete work items — leave them in the ended cycle or transfer them to an upcoming cycle.
+
+Parallel cycles also appear in the workspace-level Active Cycles view and in any connected Teamspace Cycles view, so managers can track overlapping cycles across projects.
+
+### Turn off parallel cycles
+
+If you turn off the parallel cycles toggle after overlapping cycles already exist, those cycles continue to run normally. You just won't be able to create new overlapping cycles going forward. No existing data is disrupted.
 
 ## Transfer work items
 
@@ -104,7 +132,7 @@ Automate the creation and management of cycles according to predefined configura
 
 1. Navigate to **Project Settings → Features → Cycles**.
 2. Turn on the **Auto-schedule cycles** toggle and configure:
-   - Cycle Title — Set a naming convention for automatically created cycles.
+   - Cycle Title — Set a base name for automatically created cycles. Each cycle gets a numerical suffix appended automatically (e.g., if you set the title to "Sprint", cycles are created as "Sprint 1", "Sprint 2", "Sprint 3", and so on).
    - Cycle Duration — Define the length of each cycle in weeks (e.g., 1 week, 2 weeks).
    - Cooldown Period — Add an optional buffer between cycles in days for planning and retrospectives.
    - Cycle starts day — Choose the start date for the first auto-scheduled cycle.
@@ -115,6 +143,7 @@ Once enabled, the system automatically:
 
 - Generates the configured number of future cycles based on your settings.
 - Creates a new cycle when the current one concludes to maintain the specified schedule.
+- Numbers each new cycle sequentially, continuing from the last created cycle.
 - Ensures cycles don't overlap and follow the defined cadence.
 - Applies consistent naming conventions and durations across all cycles.
 

@@ -1,5 +1,5 @@
-import { readFileSync } from "fs";
-import { resolve } from "path";
+import { copyFileSync, mkdirSync, readFileSync, readdirSync, statSync } from "fs";
+import { dirname, join, relative, resolve } from "path";
 import { defineConfig, type HeadConfig } from "vitepress";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 
@@ -50,6 +50,30 @@ export default defineConfig({
   description: "Modern project management software",
   cleanUrls: true,
 
+  buildEnd(siteConfig) {
+    // Copy source .md files into dist/ for Accept: text/markdown negotiation.
+    const srcDir = siteConfig.srcDir;
+    const outDir = siteConfig.outDir;
+
+    function walk(dir: string): void {
+      for (const entry of readdirSync(dir)) {
+        if (entry === ".vitepress" || entry === "public" || entry === "node_modules") continue;
+        const abs = join(dir, entry);
+        const stat = statSync(abs);
+        if (stat.isDirectory()) {
+          walk(abs);
+        } else if (stat.isFile() && abs.endsWith(".md")) {
+          const rel = relative(srcDir, abs);
+          const dest = join(outDir, rel);
+          mkdirSync(dirname(dest), { recursive: true });
+          copyFileSync(abs, dest);
+        }
+      }
+    }
+
+    walk(srcDir);
+  },
+
   head: [
     [
       "link",
@@ -62,17 +86,7 @@ export default defineConfig({
       "link",
       {
         rel: "preload",
-        href: "/fonts/Satoshi/Satoshi-Regular.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossorigin: "anonymous",
-      },
-    ],
-    [
-      "link",
-      {
-        rel: "preload",
-        href: "/fonts/Satoshi/Satoshi-Medium.woff2",
+        href: "/fonts/Inter/InterVariable.woff2",
         as: "font",
         type: "font/woff2",
         crossorigin: "anonymous",
@@ -312,7 +326,7 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: "Single sign-on (SSO)", link: "/authentication/sso" },
-              { text: "Group Sync", link: "/authentication/group-sync" },
+              { text: "IdP Group Sync", link: "/authentication/group-sync" },
               {
                 text: "Self-hosted authentication",
                 link: "https://developers.plane.so/self-hosting/govern/authentication",
@@ -410,7 +424,7 @@ export default defineConfig({
               },
             ],
           },
-          { text: "Workflow States", link: "/core-concepts/issues/states" },
+          { text: "Work Item States", link: "/core-concepts/issues/states" },
           { text: "Work Item Labels", link: "/core-concepts/issues/labels" },
           {
             text: "Work Item Templates",
@@ -444,6 +458,10 @@ export default defineConfig({
             text: "Milestones",
             link: "/core-concepts/projects/milestones",
           },
+          {
+            text: "Releases",
+            link: "/releases",
+          },
           { text: "Stickies", link: "/core-concepts/stickies" },
         ],
       },
@@ -455,7 +473,10 @@ export default defineConfig({
             text: "Work Item Filters",
             link: "/core-concepts/issues/visualise_filter",
           },
-          { text: "Plane Query Language", link: "/core-concepts/issues/plane-query-language" },
+          {
+            text: "Plane Query Language (PQL)",
+            link: "/core-concepts/issues/plane-query-language",
+          },
           {
             text: "Display options",
             link: "/core-concepts/issues/display-options",
@@ -492,10 +513,18 @@ export default defineConfig({
             text: "Time Tracking",
             link: "/core-concepts/issues/time-tracking",
           },
-          { text: "Workflows", link: "/workflows-and-approvals/workflows" },
+          { text: "Workflows and Approvals", link: "/workflows-and-approvals/workflows" },
+          { text: "Custom Relations", link: "/work-items/custom-relations" },
           {
             text: "Automations",
-            link: "/automations/custom-automations",
+            collapsed: true,
+            link: "/automations/overview",
+            items: [
+              {
+                text: "Custom automations",
+                link: "/automations/custom-automations",
+              },
+            ],
           },
         ],
       },
@@ -520,7 +549,7 @@ export default defineConfig({
       {
         text: "Intake and customers",
         items: [
-          { text: "Overview", link: "/intake/overview" },
+          { text: "Intake Overview", link: "/intake/overview" },
           { text: "Intake In-app", link: "/core-concepts/intake" },
           { text: "Intake Forms", link: "/intake/intake-forms" },
           { text: "Intake Email", link: "/intake/intake-email" },
@@ -573,7 +602,7 @@ export default defineConfig({
         text: "Import and export",
         items: [
           {
-            text: "Import",
+            text: "Import data",
             link: "/importers/overview",
             collapsed: false,
             items: [
@@ -581,12 +610,13 @@ export default defineConfig({
               { text: "Confluence", link: "/importers/confluence" },
               { text: "ClickUp", link: "/importers/clickup" },
               { text: "CSV", link: "/importers/csv" },
+              { text: "Flatfile", link: "/importers/flatfile" },
               { text: "Jira", link: "/importers/jira" },
               { text: "Linear", link: "/importers/linear" },
               { text: "Notion", link: "/importers/notion" },
             ],
           },
-          { text: "Export", link: "/core-concepts/export" },
+          { text: "Export data", link: "/core-concepts/export" },
         ],
       },
       {

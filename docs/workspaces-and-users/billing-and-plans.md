@@ -150,7 +150,7 @@ When you create a new Plane workspace on our Cloud, you automatically start a 14
 
 The trial includes all Business plan features, full seat capacity for your team, and AI credits for Plane AI features. No payment method is required.
 
-After 14 days, your workspace automatically reverts to the Free plan if you haven't upgraded to a paid subscription.
+After 14 days, your workspace automatically reverts to the Free plan if you haven't upgraded to a paid subscription, and you won’t be charged if a payment method was never added.
 
 ### Free plan seat limits
 

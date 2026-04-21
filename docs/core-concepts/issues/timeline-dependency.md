@@ -3,7 +3,7 @@ title: Task dependencies
 description: Create and manage visual task dependencies in Plane with timeline connectors.
 ---
 
-# Set up task dependencies in Timeline layout <Badge type="info" text="Pro" />
+# Dependencies in Timeline <Badge type="info" text="Pro" />
 
 With dependencies, managing connected tasks has never been easier. This feature provides a clear, high-level view of task relationships, allowing you to quickly see which tasks depend on each other. It helps you plan tasks more efficiently, optimize resource allocation, and stay on top of critical tasks. By tracking dependencies, you can spot bottlenecks, prevent delays, and keep everything on track.
 
@@ -40,6 +40,4 @@ Plane supports three main types of dependencies:
 
 ## Dependency relations
 
-You can also set up dependencies between work items using the **Relations** property. However, for the connectors to show up in the Timeline layout, you'll need to set the **Start date** and **Due date** for the work items.
-
-![Dependency relations](https://media.docs.plane.so/issues/dependency-relations.webp#hero)
+You can also set up dependencies between work items using the **Add dependency** button. However, for the connectors to show up in the Timeline layout, you'll need to set the **Start date** and **Due date** for the work items. See [Add dependencies](/core-concepts/issues/overview#add-dependencies) for more information.
