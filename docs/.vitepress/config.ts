@@ -520,6 +520,10 @@ export default defineConfig({
               },
             ],
           },
+          {
+            text: "Plane Runner",
+            link: "/automations/plane-runner",
+          },
         ],
       },
       {
