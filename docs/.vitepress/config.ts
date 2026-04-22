@@ -415,12 +415,12 @@ export default defineConfig({
             collapsed: true,
             items: [
               {
-                text: "Project-level",
-                link: "/core-concepts/issues/issue-types",
+                text: "Project Work Item Types",
+                link: "/work-items/project-work-item-types",
               },
               {
-                text: "Workspace-level",
-                link: "/core-concepts/workspaces/work-item-types",
+                text: "Workspace Work Item Types",
+                link: "/work-items/workspace-work-item-types",
               },
             ],
           },
