@@ -69,6 +69,7 @@ A transition flow defines a permitted state change. When you add one, you config
 - **via** - shows **Transition** to indicate the flow type.
 - **move to** - the destination state. Click to select from available project states on the right pane.
 - **by** - who can make this transition. Defaults to **All**, meaning any project member. To restrict it, open the Members panel and select specific individuals.
+- **with** - optional conditions that run before or after the transition. See [Transition conditions](#transition-conditions) below.
 
 ![Transition flow](https://media.docs.plane.so/workflows/transition-flow.webp#hero)
 
@@ -82,10 +83,66 @@ An approval flow adds a gate: the work item won't move forward until designated 
 - **on approve, move to** - the state the item moves to when approved.
 - **on reject, move to** - the state the item falls back to when rejected.
 - **by** - who can approve or reject. Defaults to **All**, but you can restrict it to specific members.
+- **with** — optional conditions that run before or after the approval decision. See [Transition conditions](#transition-conditions) below.
 
 ![Approval flow](https://media.docs.plane.so/workflows/approval-flow.webp#hero)
 
 For example, you might add an approval flow on "Testing" so that moving to "Ready for Release" requires sign-off from a QA lead. If rejected, the item moves back to "In Development" for further work.
+
+## Transition conditions <Badge type="warning" text="Enterprise Grid" />
+
+Transition conditions let you attach custom logic to any transition or approval flow. They use [Plane Runner](/automations/plane-runner) scripts to validate whether a transition should proceed and to perform follow-up actions after it completes.
+
+When you click the **Conditions** option in the "with" column of a flow, a panel opens on the right with two sections:
+
+### Pre-validation
+
+Pre-validation scripts run **before** a transition happens. They verify that the work item is ready to move — for example, checking that all required fields are filled, that an estimate exists, or that a linked document has been approved.
+
+If a pre-validation script returns `{ success: false }` or throws an error, the transition is blocked and the user sees an error message explaining why. If all pre-validation scripts return `{ success: true }`, the transition proceeds.
+
+You can chain multiple pre-validation scripts — they run in the numbered order shown (#1, #2, etc.). All must pass for the transition to proceed.
+
+**To add a pre-validation script:**
+
+1. In the Conditions panel, under **Pre validation**, click **+ Select script**.
+2. Choose an existing Runner script of type "Workflow Transition" from the list.
+3. Or click **New Script** to create one inline — the script editor opens with the type pre-set to "Workflow Transition" and a template showing the return rules:
+   - `return { success: true }` — allow the transition.
+   - `return { success: false }` — block the transition.
+   - `throw new Error("reason")` — block the transition with a specific message shown to the user.
+4. Click **Save and use** to save the script and attach it to the condition in one step.
+5. Click **+ Add more** to chain additional pre-validation scripts.
+
+### Post actions
+
+Post-action scripts run **after** a transition completes successfully. They handle follow-up work — posting a Slack notification, creating a linked work item in another project, adding a comment, updating a custom property, or calling an external API.
+
+Post-action scripts don't block the transition (it has already happened). If a post-action script fails, the transition still stands, but the error is logged in the script's execution history.
+
+**To add a post-action script:**
+
+1. Under **Post actions**, click **+ Select script**.
+2. Choose an existing Runner script or create one inline.
+3. Click **+ Add more** to chain additional post-action scripts.
+
+### Example: enforcing quality gates
+
+A common pattern is combining pre-validation and post-actions on a single transition:
+
+**Transition: "In Development" → "In Review"**
+
+Pre-validation:
+- Script #1: Verify the work item has at least one assignee and an estimate.
+- Script #2: Verify all sub-work items are completed.
+
+Post actions:
+- Script #1: Post a message to Slack notifying the review channel.
+- Script #2: Add a "Ready for Review" label to the work item.
+
+If either pre-validation script fails, the developer sees an error message and the work item stays in "In Development." If both pass, the transition happens and the post-action scripts fire in sequence.
+
+For details on writing Runner scripts, including the full SDK reference, available globals, and security model, see [Plane Runner](/automations/plane-runner).
 
 ### Activate the workflow
 

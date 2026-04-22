@@ -69,11 +69,11 @@ export async function main(variables: Record<string, string>) {
 
 ### Workflow transitions
 
-[Workflow transitions](/workflows-and-approvals/workflows#transition-flows) invoke scripts during state changes. They serve two purposes:
+Run a script during state changes defined in [Workflows](/workflows-and-approvals/workflows). Workflow transition scripts serve two purposes:
 
-**Pre-conditions** run before a transition to validate whether it should proceed. If the script returns an error or throws, the transition is blocked and the user sees the error message.
+**Pre-validation** scripts run before a transition to check whether it should proceed. If the script returns an error or throws, the transition is blocked and the user sees the error message. These are attached to the **Conditions > Pre validation** section of a workflow transition flow.
 
-**Post-operations** run after a transition completes to perform follow-up actions like notifying a channel or creating related items.
+**Post-action** scripts run after a transition completes to perform follow-up work like notifying a channel, creating related items, or updating properties. These are attached to the **Conditions > Post actions** section.
 
 ```typescript
 export async function main(input: WorkflowTransitionEventInput, variables: Record<string, string>) {
@@ -83,6 +83,16 @@ export async function main(input: WorkflowTransitionEventInput, variables: Recor
   // variables — key-value pairs configured on the rule
 }
 ```
+
+Pre-validation scripts follow these return rules:
+
+- `return { success: true }` — allow the transition to proceed.
+- `return { success: false }` — block the transition.
+- `throw new Error("reason")` — block the transition with a specific message shown to the user.
+
+Post-action scripts don't block transitions. If they fail, the transition still stands and the error is logged.
+
+For details on attaching scripts to workflow transitions, see [Transition conditions](/workflows-and-approvals/workflows#transition-conditions).
 
 ## Create a script
 
