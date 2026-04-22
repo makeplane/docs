@@ -10,7 +10,7 @@ On the Enterprise Grid, work item types are defined at the workspace level by Wo
 This ensures consistency — a "Bug" in one project has the same properties and structure as a "Bug" in another — while keeping centralized governance over how work is tracked across your organization.
 
 :::info
-On Pro and Business plans, work item types are managed at the project level. See [Project Work Item Types](/core-concepts/issues/issue-types).
+On Pro and Business plans, work item types are managed at the project level. See [Project Work Item Types](/work-items/project-work-item-types).
 :::
 
 ## How workspace work item types work

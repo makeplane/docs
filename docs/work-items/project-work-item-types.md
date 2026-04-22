@@ -11,7 +11,7 @@ For example, your Marketing team may need a work item type called `Content` with
 
 Work item Types make these and infinite other use cases possible.
 
-On the Enterprise Grid, work item types are managed at the workspace level for consistency across projects. See [Workspace Work Item Types](/core-concepts/workspaces/work-item-types).
+On the Enterprise Grid, work item types are managed at the workspace level for consistency across projects. See [Workspace Work Item Types](/work-items/workspace-work-item-types).
 
 <div style="position: relative; padding-bottom: calc(56.67989417989418% + 41px); height: 0; width: 100%">
   <iframe
