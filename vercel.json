@@ -272,6 +272,10 @@
     {
       "source": "/performance/hyper-mode",
       "destination": "/"
+    },
+    {
+      "source": "/core-concepts/issues/issue-types",
+      "destination": "/work-items/project-work-item-types"
     }
   ],
   "rewrites": [

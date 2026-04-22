@@ -16,7 +16,7 @@ The Asana importer is available on Plane Cloud and on all plans of the Commercia
 > **Role**: Workspace admins
 
 ::: tip
-To import issue types from Asana, make sure the [Work item types](/core-concepts/issues/issue-types) feature is enabled in your Plane project.
+To import issue types from Asana, make sure the [Work item types](/work-items/project-work-item-types) feature is enabled in your Plane project.
 :::
 
 To import Asana issues to a Plane project, follow these steps:
