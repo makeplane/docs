@@ -40,6 +40,4 @@ Plane supports three main types of dependencies:
 
 ## Dependency relations
 
-You can also set up dependencies between work items using the **Relations** property. However, for the connectors to show up in the Timeline layout, you'll need to set the **Start date** and **Due date** for the work items.
-
-![Dependency relations](https://media.docs.plane.so/issues/dependency-relations.webp#hero)
+You can also set up dependencies between work items using the **Add dependency** button. However, for the connectors to show up in the Timeline layout, you'll need to set the **Start date** and **Due date** for the work items. See [Add dependencies](/core-concepts/issues/overview#add-dependencies) for more information.

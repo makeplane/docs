@@ -32,7 +32,7 @@ All work items submitted through forms appear in Intake under the **Triage** sta
 
 ## Custom intake forms
 
-Plane provides a default intake form structure for quick setup. However, if you need more control over what information you collect, you can build custom forms using your project's [work item types](/core-concepts/issues/issue-types).
+Plane provides a default intake form structure for quick setup. However, if you need more control over what information you collect, you can build custom forms using your project's [work item types](/work-items/project-work-item-types).
 
 When you build forms with work item types, you design the form around a specific type's properties.
 

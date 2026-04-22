@@ -1,6 +1,17 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</api-reference/introduction>; rel=\"service-doc\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+        }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/quick-start",
@@ -261,6 +272,17 @@
     {
       "source": "/performance/hyper-mode",
       "destination": "/"
+    },
+    {
+      "source": "/core-concepts/issues/issue-types",
+      "destination": "/work-items/project-work-item-types"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/:path*.md"
     }
   ]
 }
