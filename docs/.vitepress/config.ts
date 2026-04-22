@@ -411,18 +411,12 @@ export default defineConfig({
             ],
           },
           {
-            text: "Work Item Types",
-            collapsed: true,
-            items: [
-              {
-                text: "Project Work Item Types",
-                link: "/work-items/project-work-item-types",
-              },
-              {
-                text: "Workspace Work Item Types",
-                link: "/work-items/workspace-work-item-types",
-              },
-            ],
+            text: "Project Work Item Types",
+            link: "/work-items/project-work-item-types",
+          },
+          {
+            text: "Workspace Work Item Types",
+            link: "/work-items/workspace-work-item-types",
           },
           { text: "Work Item States", link: "/core-concepts/issues/states" },
           { text: "Work Item Labels", link: "/core-concepts/issues/labels" },
