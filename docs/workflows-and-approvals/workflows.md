@@ -133,10 +133,12 @@ A common pattern is combining pre-validation and post-actions on a single transi
 **Transition: "In Development" → "In Review"**
 
 Pre-validation:
+
 - Script #1: Verify the work item has at least one assignee and an estimate.
 - Script #2: Verify all sub-work items are completed.
 
 Post actions:
+
 - Script #1: Post a message to Slack notifying the review channel.
 - Script #2: Add a "Ready for Review" label to the work item.
 
