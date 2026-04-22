@@ -5,7 +5,7 @@ description: Define work item types and custom properties at the workspace level
 
 # Workspace Work Item Types <Badge type="warning" text="Enterprise Grid" />
 
-On the Enterprise Grid, work item types are defined at the workspace level by Workspace Admins and imported into projects. 
+On the Enterprise Grid, work item types are defined at the workspace level by Workspace Admins and imported into projects.
 
 This ensures consistency — a "Bug" in one project has the same properties and structure as a "Bug" in another — while keeping centralized governance over how work is tracked across your organization.
 
@@ -155,7 +155,7 @@ Before deleting, consider whether disabling the type would be a better option �
 
 ## Hierarchy
 
-Hierarchy lets you define structured parent-child relationships between work item types at the workspace level. 
+Hierarchy lets you define structured parent-child relationships between work item types at the workspace level.
 
 Once configured, it controls which types can be nested under which — ensuring that work is organized consistently across every project in the workspace.
 
@@ -173,11 +173,11 @@ Level 0 is the default — types that sit here are leaf-level work items with no
 
 For example, a product engineering team might define:
 
-| Level | Types               | Role in the hierarchy            |
-| ----- | ------------------- | -------------------------------- |
-| 2     | Epic                | Major feature or deliverable     |
-| 1     | Story, Bug          | Individual units of work         |
-| 0     | Task, Spike         | Leaf-level execution items       |
+| Level | Types       | Role in the hierarchy        |
+| ----- | ----------- | ---------------------------- |
+| 2     | Epic        | Major feature or deliverable |
+| 1     | Story, Bug  | Individual units of work     |
+| 0     | Task, Spike | Leaf-level execution items   |
 
 In this setup, an Epic can contain Stories and Bugs, and a Story can contain Tasks and Spikes. But a Task cannot contain an Epic — the hierarchy enforces the defined structure.
 
