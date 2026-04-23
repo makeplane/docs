@@ -200,7 +200,7 @@ The distinction comes down to scope and reuse.
 
 Either way, automations always act on individual work items. Workspace automations aren't doing anything different — they're just defined once and applied more broadly.
 
-### What "Automation Bot" is and why you'll see it
+### Automation bot
 
 Every custom automation acts through its own dedicated bot account. When an automation changes a field or posts a comment, the activity log shows it came from "Automation Bot" — not from any person on your team.
 
