@@ -15,7 +15,12 @@ const props = defineProps({
   cta: String,
 });
 
-const resolvedHref = computed(() => props.link || props.href || "#");
+const hasDestination = computed(() => Boolean((props.link || props.href || "").toString().trim()));
+
+const resolvedHref = computed(() => {
+  const h = (props.link || props.href || "").toString().trim();
+  return h;
+});
 
 // Custom SVG icons for brands
 const customSvgIcons = {
@@ -53,8 +58,9 @@ const IconComponent = computed(() => {
 </script>
 
 <template>
-  <a
-    :href="resolvedHref"
+  <component
+    :is="hasDestination ? 'a' : 'div'"
+    :href="hasDestination ? resolvedHref : undefined"
     class="card-link"
     :class="{ 'card-link--with-cta': cta }"
   >
@@ -72,5 +78,5 @@ const IconComponent = computed(() => {
       <slot />
     </p>
     <span v-if="cta" class="card-cta">{{ cta }} →</span>
-  </a>
+  </component>
 </template>

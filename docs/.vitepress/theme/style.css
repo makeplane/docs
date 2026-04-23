@@ -609,7 +609,7 @@ div[class*="language-"] > span.lang {
   color: #0a0a0a;
 }
 
-.vp-doc .home-feature-cards .card-icon :deep(svg) {
+.vp-doc .home-feature-cards .card-icon svg {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
@@ -744,12 +744,6 @@ div[class*="language-"] > span.lang {
     background 0.2s ease,
     box-shadow 0.2s ease,
     transform 0.2s ease !important;
-}
-
-/* Prevent first-paint flash in left nav before JS relocates Sign in. */
-.docs-layout header .VPLink[href*="sign-in"]:not(.sign-in-relocated) {
-  opacity: 0 !important;
-  pointer-events: none !important;
 }
 
 .docs-layout header a.VPLink[href*="sign-in"] .vp-external-link-icon {

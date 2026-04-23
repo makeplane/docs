@@ -8,7 +8,9 @@ description:
 
 <!-- @format -->
 
-# Plane Documentation Plan, track, and ship your work with Plane.
+# Plane documentation
+
+Plan, track, and ship your work with Plane.
 
 This documentation helps you learn Plane, manage projects, collaborate with
 teams, and automate workflows.

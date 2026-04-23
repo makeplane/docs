@@ -2,7 +2,7 @@ import type { Theme } from "vitepress";
 import type { ThemeContext } from "@voidzero-dev/vitepress-theme";
 import VoidZeroTheme from "@voidzero-dev/vitepress-theme";
 import { themeContextKey } from "@voidzero-dev/vitepress-theme";
-import { onMounted, watch, nextTick } from "vue";
+import { onMounted, onUnmounted, watch, nextTick } from "vue";
 import { useRoute } from "vitepress";
 import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
 import mediumZoom from "medium-zoom";
@@ -93,18 +93,39 @@ function updateHashOnTabClick(event: Event) {
 /**
  * Move "Sign in" CTA to the right utility area (between search and theme toggle).
  * The upstream OSSHeader renders nav links on the left; we remap only this CTA.
+ * Returns true if the link was found and moved (or already in the target region).
  */
-function moveSignInToUtilityArea() {
-  if (typeof document === "undefined") return;
+function moveSignInToUtilityArea(): boolean {
+  if (typeof document === "undefined") return false;
 
   const signInLink = document.querySelector(
-    '.docs-layout header .VPNavBarMenu a.VPLink[href*="sign-in"]',
+    '.docs-layout header a.VPLink[href*="sign-in"]',
   ) as HTMLAnchorElement | null;
-  if (!signInLink) return;
+  if (!signInLink) return false;
+
+  if (signInLink.classList.contains("sign-in-relocated")) {
+    return true;
+  }
 
   const appearanceToggle = document.querySelector(
     ".docs-layout header .VPNavBarAppearance",
   ) as HTMLElement | null;
+
+  if (
+    appearanceToggle?.parentElement &&
+    signInLink.parentElement === appearanceToggle.parentElement
+  ) {
+    signInLink.classList.add("sign-in-relocated");
+    return true;
+  }
+
+  const extraMenu = document.querySelector(
+    ".docs-layout header .VPNavBarExtra",
+  ) as HTMLElement | null;
+  if (extraMenu?.parentElement && signInLink.parentElement === extraMenu.parentElement) {
+    signInLink.classList.add("sign-in-relocated");
+    return true;
+  }
 
   // Desktop (xl+): insert before theme toggle inside the utilities row.
   if (
@@ -113,25 +134,60 @@ function moveSignInToUtilityArea() {
   ) {
     signInLink.classList.add("sign-in-relocated");
     appearanceToggle.parentElement.insertBefore(signInLink, appearanceToggle);
-    return;
+    return true;
   }
 
   // Tablet fallback (lg-xl): keep it in right controls row before the extra menu.
-  const extraMenu = document.querySelector(
-    ".docs-layout header .VPNavBarExtra",
-  ) as HTMLElement | null;
   if (extraMenu?.parentElement && signInLink.parentElement !== extraMenu.parentElement) {
     signInLink.classList.add("sign-in-relocated");
     extraMenu.parentElement.insertBefore(signInLink, extraMenu);
+    return true;
   }
+
+  return false;
+}
+
+let signInRelocateWarned = false;
+
+function runSignInRelocationWithRetries() {
+  if (typeof document === "undefined" || !document.querySelector(".docs-layout")) {
+    return;
+  }
+
+  const tryOnce = (attempt: number) => {
+    if (moveSignInToUtilityArea()) {
+      return;
+    }
+    if (attempt < 40) {
+      window.setTimeout(() => tryOnce(attempt + 1), 75);
+    } else if (!signInRelocateWarned) {
+      const link = document.querySelector('.docs-layout header a.VPLink[href*="sign-in"]');
+      if (link && !link.classList.contains("sign-in-relocated")) {
+        signInRelocateWarned = true;
+        console.warn(
+          "[plane-docs] Sign-in could not be relocated (header not ready or selectors changed).",
+        );
+      }
+    }
+  };
+
+  tryOnce(0);
+}
+
+function debounce(fn: () => void, ms: number) {
+  let t: ReturnType<typeof setTimeout> | undefined;
+  return () => {
+    if (t) clearTimeout(t);
+    t = setTimeout(fn, ms);
+  };
 }
 
 export default {
   extends: VoidZeroTheme,
   Layout,
   enhanceApp(ctx) {
+    VoidZeroTheme.enhanceApp?.(ctx);
     ctx.app.provide(themeContextKey, planeThemeContext);
-    VoidZeroTheme.enhanceApp(ctx);
     enhanceAppWithTabs(ctx.app);
     ctx.app.component("Card", Card);
     ctx.app.component("CardGroup", CardGroup);
@@ -146,18 +202,57 @@ export default {
       background: "rgba(0, 0, 0, 0.8)",
     });
 
+    let headerObserver: MutationObserver | null = null;
+    let onResize: (() => void) | null = null;
+
     onMounted(() => {
       // Delay tab hash handling to ensure tabs are rendered
       setTimeout(() => {
         handleTabHash();
         setupTabHashUpdates();
-        moveSignInToUtilityArea();
+        runSignInRelocationWithRetries();
       }, 100);
+
+      const onHeaderMutations = debounce(() => {
+        runSignInRelocationWithRetries();
+      }, 100);
+
+      const tryAttachHeaderObserver = () => {
+        if (headerObserver) return;
+        const h = document.querySelector(".docs-layout header");
+        if (!h) return;
+        headerObserver = new MutationObserver(onHeaderMutations);
+        headerObserver.observe(h, { childList: true, subtree: true });
+      };
+      tryAttachHeaderObserver();
+      if (!headerObserver) {
+        const id = window.setInterval(() => {
+          tryAttachHeaderObserver();
+          if (headerObserver) {
+            clearInterval(id);
+          }
+        }, 120);
+        window.setTimeout(() => clearInterval(id), 5000);
+      }
+
+      onResize = debounce(() => {
+        runSignInRelocationWithRetries();
+      }, 150);
+      window.addEventListener("resize", onResize);
 
       // Listen for hash changes
       window.addEventListener("hashchange", () => {
         nextTick(handleTabHash);
       });
+    });
+
+    onUnmounted(() => {
+      headerObserver?.disconnect();
+      headerObserver = null;
+      if (onResize) {
+        window.removeEventListener("resize", onResize);
+        onResize = null;
+      }
     });
 
     // Watch for route changes
@@ -169,7 +264,7 @@ export default {
           zoom.attach(":not(a) > img:not(.VPImage)");
           handleTabHash();
           setupTabHashUpdates();
-          moveSignInToUtilityArea();
+          runSignInRelocationWithRetries();
         });
       },
     );
