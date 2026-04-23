@@ -27,7 +27,7 @@ Inbox notifications always come through regardless of these settings. These togg
 
 ## Events that trigger notifications
 
-| Event                                                             | Notifies?                                                |
+| Event                                                             | Notifies?                                                            |
 | ----------------------------------------------------------------- | -------------------------------------------------------------------- |
 | Work item created                                                 | Yes                                                                  |
 | Any field updated (state, priority, assignee, label, dates, etc.) | Yes                                                                  |
