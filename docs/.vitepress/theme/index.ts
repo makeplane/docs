@@ -3,7 +3,7 @@ import type { ThemeContext } from "@voidzero-dev/vitepress-theme";
 import VoidZeroTheme from "@voidzero-dev/vitepress-theme";
 import { themeContextKey } from "@voidzero-dev/vitepress-theme";
 import { onMounted, onUnmounted, watch, nextTick } from "vue";
-import { useRoute } from "vitepress";
+import { useData, useRoute } from "vitepress";
 import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
 import mediumZoom from "medium-zoom";
 import Card from "./components/Card.vue";
@@ -197,6 +197,22 @@ export default {
     if (typeof window === "undefined") return;
 
     const route = useRoute();
+    const { isDark } = useData();
+
+    /**
+     * VitePress’s inline "check-dark-mode" script only adds the `dark` class and
+     * never removes it, so a stale `class="dark"` on <html> (e.g. after SSG) can
+     * persist in light mode. That leaves `.dark …` global/navbar rules applied
+     * until a theme toggle re-syncs. Keep `documentElement` in lockstep with
+     * `isDark` (same source of truth as the toggle).
+     */
+    watch(
+      isDark,
+      (dark) => {
+        document.documentElement.classList.toggle("dark", dark);
+      },
+      { immediate: true },
+    );
 
     const zoom = mediumZoom(".vp-doc img", {
       background: "rgba(0, 0, 0, 0.8)",
