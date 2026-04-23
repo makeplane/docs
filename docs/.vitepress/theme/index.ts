@@ -206,13 +206,28 @@ export default {
      * until a theme toggle re-syncs. Keep `documentElement` in lockstep with
      * `isDark` (same source of truth as the toggle).
      */
+    const syncOssHeaderThemeAttr = (dark: boolean) => {
+      const header = document.querySelector(
+        ".docs-layout header",
+      ) as HTMLElement | null;
+      const bar = header?.parentElement;
+      if (!bar) return;
+      if (dark) bar.setAttribute("data-theme", "dark");
+      else bar.removeAttribute("data-theme");
+    };
+
     watch(
       isDark,
       (dark) => {
         document.documentElement.classList.toggle("dark", dark);
+        syncOssHeaderThemeAttr(dark);
       },
       { immediate: true },
     );
+
+    onMounted(() => {
+      syncOssHeaderThemeAttr(isDark.value);
+    });
 
     const zoom = mediumZoom(".vp-doc img", {
       background: "rgba(0, 0, 0, 0.8)",

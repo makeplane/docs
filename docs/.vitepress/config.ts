@@ -193,6 +193,33 @@ const config = defineConfig({
           "project management, issue tracking, sprint management, agile, scrum, create projects, track sprints",
       },
     ],
+    /**
+     * SSG inlines OSSHeader with data-theme from server isDark. Tailwind `dark:…`
+     * keys off [data-theme*="dark"] on that wrapper, so the bar can stay dark
+     * until Vue hydrates. The built-in "check-dark-mode" also only add()s
+     * html.dark. Run in setTimeout(0) so it executes after that script, then
+     * clear stale data-theme as soon as the bar exists.
+     */
+    [
+      "script",
+      {},
+      `!function(){setTimeout(function(){
+var k="vitepress-theme-appearance";
+var p=localStorage.getItem(k)||"dark";
+var m=matchMedia("(prefers-color-scheme: dark)").matches;
+var d=!p||p==="auto"?m:p==="dark";
+document.documentElement.classList.toggle("dark",d);
+function bar(n){
+var h=document.querySelector(".docs-layout header");
+if(h&&h.parentElement){
+var w=h.parentElement;
+if(d)w.setAttribute("data-theme","dark");else w.removeAttribute("data-theme");
+return;
+}
+if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n+1)});
+}bar(0);
+},0);}();`,
+    ],
   ],
 
   themeConfig: {
