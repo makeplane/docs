@@ -1,6 +1,7 @@
 import { copyFileSync, mkdirSync, readFileSync, readdirSync, statSync } from "fs";
 import { dirname, join, relative, resolve } from "path";
 import { defineConfig, type HeadConfig } from "vitepress";
+import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 
 function loadEnvVar(key: string): string | undefined {
@@ -45,7 +46,7 @@ const searchConfig =
       }
     : { provider: "local" as const };
 
-export default defineConfig({
+const config = defineConfig({
   title: "Plane",
   description: "Modern project management software",
   cleanUrls: true,
@@ -195,11 +196,12 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    variant: "voidzero",
     logo: {
       light: "https://media.docs.plane.so/logo/new-logo-white.png",
       dark: "https://media.docs.plane.so/logo/new-logo-dark.png",
     },
-    siteTitle: "",
+    siteTitle: "Plane",
 
     outline: {
       level: [2, 3],
@@ -224,6 +226,7 @@ export default defineConfig({
       {
         text: "Sign in",
         link: "https://app.plane.so/sign-in",
+        noIcon: true,
       },
     ],
 
@@ -682,3 +685,5 @@ export default defineConfig({
     },
   },
 });
+
+export default extendConfig(config);

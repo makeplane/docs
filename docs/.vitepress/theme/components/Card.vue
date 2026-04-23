@@ -5,8 +5,17 @@ import * as LucideIcons from "lucide-vue-next";
 const props = defineProps({
   title: String,
   icon: String,
+  /** Doc path or full URL */
   href: String,
+  /** Alias for `href` (common in markdown) */
+  link: String,
+  /** When set, used instead of the default slot for body text */
+  description: String,
+  /** Bottom link label (shown with →). Home feature cards only. */
+  cta: String,
 });
+
+const resolvedHref = computed(() => props.link || props.href || "#");
 
 // Custom SVG icons for brands
 const customSvgIcons = {
@@ -44,18 +53,24 @@ const IconComponent = computed(() => {
 </script>
 
 <template>
-  <a :href="href" class="card-link">
-    <div v-if="icon" class="card-icon">
-      <!-- Render custom SVG if available -->
+  <a
+    :href="resolvedHref"
+    class="card-link"
+    :class="{ 'card-link--with-cta': cta }"
+  >
+    <div v-if="icon" class="card-icon" aria-hidden="true">
       <div v-if="customSvgIcons[icon]" v-html="customSvgIcons[icon]"></div>
-      <!-- Otherwise render Lucide icon -->
-      <component v-else :is="IconComponent" :size="24" />
+      <component v-else :is="IconComponent" :size="24" stroke-width="1.5" />
     </div>
     <h3 class="card-title">
       {{ title }}
     </h3>
-    <p class="card-description">
+    <p v-if="description" class="card-description">
+      {{ description }}
+    </p>
+    <p v-else class="card-description">
       <slot />
     </p>
+    <span v-if="cta" class="card-cta">{{ cta }} →</span>
   </a>
 </template>
