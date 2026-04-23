@@ -101,24 +101,24 @@ Open any automation and click the **Activity** button on the top right. You'll s
 
 ### Triggers
 
-| Trigger | Fires when |
-|---|---|
-| Work item created | A work item is created |
-| Work item updated | Any field on a work item changes |
-| State changed | A work item's state changes |
-| Assignee changed | An assignee is added or removed |
-| Comment added | A comment is added to a work item |
-| Scheduled | A configured time or cron schedule is reached |
+| Trigger           | Fires when                                    |
+| ----------------- | --------------------------------------------- |
+| Work item created | A work item is created                        |
+| Work item updated | Any field on a work item changes              |
+| State changed     | A work item's state changes                   |
+| Assignee changed  | An assignee is added or removed               |
+| Comment added     | A comment is added to a work item             |
+| Scheduled         | A configured time or cron schedule is reached |
 
 #### Scheduled trigger options
 
-| Option | Notes |
-|---|---|
-| Daily | Runs once a day at the time you set |
-| Weekly | Runs on the days of the week you pick, at the time you set |
-| Monthly | Runs on the day of the month you pick (1–31), at the time you set |
-| Cron | Enter a 5-field cron expression for custom schedules |
-| Time | Hour and minute (0–23 and 0–59) |
+| Option   | Notes                                                               |
+| -------- | ------------------------------------------------------------------- |
+| Daily    | Runs once a day at the time you set                                 |
+| Weekly   | Runs on the days of the week you pick, at the time you set          |
+| Monthly  | Runs on the day of the month you pick (1–31), at the time you set   |
+| Cron     | Enter a 5-field cron expression for custom schedules                |
+| Time     | Hour and minute (0–23 and 0–59)                                     |
 | Timezone | Defaults to the project timezone, then workspace timezone, then UTC |
 
 ### Conditions
@@ -127,27 +127,27 @@ Conditions let you filter which work items an automation acts on. You can combin
 
 #### Fields you can filter on
 
-| Field | What it checks |
-|---|---|
-| State | The work item's current state |
-| Priority | Urgent, High, Medium, Low, or None |
-| Assignees | Who the work item is assigned to |
-| Labels | Labels applied to the work item |
-| Work item type | The type set on the work item |
-| Created by | Who created the work item |
+| Field          | What it checks                     |
+| -------------- | ---------------------------------- |
+| State          | The work item's current state      |
+| Priority       | Urgent, High, Medium, Low, or None |
+| Assignees      | Who the work item is assigned to   |
+| Labels         | Labels applied to the work item    |
+| Work item type | The type set on the work item      |
+| Created by     | Who created the work item          |
 
 #### Operators
 
-| Operator | Use when |
-|---|---|
-| Is | The field exactly matches a specific value |
-| Is not | The field does not match a specific value |
-| In | The field matches any value in a set |
-| Contains | The field includes the value |
-| Greater than | The field is greater than the value |
+| Operator                 | Use when                                        |
+| ------------------------ | ----------------------------------------------- |
+| Is                       | The field exactly matches a specific value      |
+| Is not                   | The field does not match a specific value       |
+| In                       | The field matches any value in a set            |
+| Contains                 | The field includes the value                    |
+| Greater than             | The field is greater than the value             |
 | Greater than or equal to | The field is greater than or equal to the value |
-| Less than | The field is less than the value |
-| Less than or equal to | The field is less than or equal to the value |
+| Less than                | The field is less than the value                |
+| Less than or equal to    | The field is less than or equal to the value    |
 
 ### Actions
 
@@ -155,14 +155,14 @@ Conditions let you filter which work items an automation acts on. You can combin
 
 Updates a field on the work item.
 
-| Property | What you can do |
-|---|---|
-| Priority | Set, add, or remove a priority level (Urgent, High, Medium, Low, None) |
-| State | Move the work item to a specific state |
-| Assignees | Add or remove assignees |
-| Labels | Add, remove, or replace all labels |
-| Start date | Set, update, or remove the start date |
-| Due date | Set, update, or remove the due date |
+| Property   | What you can do                                                        |
+| ---------- | ---------------------------------------------------------------------- |
+| Priority   | Set, add, or remove a priority level (Urgent, High, Medium, Low, None) |
+| State      | Move the work item to a specific state                                 |
+| Assignees  | Add or remove assignees                                                |
+| Labels     | Add, remove, or replace all labels                                     |
+| Start date | Set, update, or remove the start date                                  |
+| Due date   | Set, update, or remove the due date                                    |
 
 #### Add comment
 
@@ -218,17 +218,15 @@ Since there's no work item that kicked off the run, Plane has nothing to apply a
 
 Scheduled automations check whether they're due roughly every 5 minutes. The time you configure follows your project's timezone, falling back to the workspace timezone, then UTC.
 
-
 ### Why your trigger isn't enough on its own
 
-Triggers tell Plane *what type of event* to watch for — not which work items to care about. A "state changed" trigger fires for every single state change in the project, across every work item, regardless of type, priority, or who it's assigned to.
+Triggers tell Plane _what type of event_ to watch for — not which work items to care about. A "state changed" trigger fires for every single state change in the project, across every work item, regardless of type, priority, or who it's assigned to.
 
 Without conditions, an action like "set priority to Urgent" would run on every state change in the project. That's almost never what you want.
 
 Conditions are what make an automation surgical. They let you say "only run this when the work item is a Bug, assigned to this person, with no due date set" — whatever combination of criteria actually defines the case you're building for.
 
 One thing worth knowing: when a work item is first created, some fields like assignees and labels can take a moment to register, even if someone filled them in during creation. Plane handles this — it checks the latest state of those fields before evaluating your conditions, so a filter like "assignee is X" on a creation trigger will work as expected.
-
 
 ## Common use cases
 

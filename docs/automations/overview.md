@@ -48,7 +48,6 @@ Plane sends in-app and email notifications to assignees and subscribers when a w
 2. Toggle on **Auto-reminders**.
 3. Set the **Send reminder before** timing — for example, 3 days before the due date.
 
-
-Only work items with a due date and at least one assignee or subscriber trigger reminders. 
+Only work items with a due date and at least one assignee or subscriber trigger reminders.
 
 Plane sends one reminder per window — not a daily flood. If you've set a 3-day reminder and the due date is 3 days away, each person gets one notification.
