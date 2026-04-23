@@ -7,7 +7,7 @@ description: Learn how to use Plane's notifications inbox — filter by type, ma
 
 The Inbox is a space for tracking and managing updates to work items you're connected with. Whether you're assigned to a work item, its creator, mentioned in a discussion, or subscribed to its updates, you'll find everything here. It's where all your in-app notifications live.
 
-The inbox has two tabs: **All** and **Mentions**. Each tracks its own unread count. The sidebar icon shows a red dot when either tab h
+The inbox has two tabs: **All** and **Mentions**. Each tracks its own unread count. The sidebar icon shows a red dot when either tab has unread notifications.
 
 ## Where to find Inbox
 

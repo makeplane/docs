@@ -27,7 +27,7 @@ Inbox notifications always come through regardless of these settings. These togg
 
 ## Events that trigger notifications
 
-| Event                                                             | Notifies subscribers?                                                |
+| Event                                                             | Notifies?                                                |
 | ----------------------------------------------------------------- | -------------------------------------------------------------------- |
 | Work item created                                                 | Yes                                                                  |
 | Any field updated (state, priority, assignee, label, dates, etc.) | Yes                                                                  |
@@ -95,7 +95,7 @@ Email notifications are the ones you can control. Your preferences in Profile Se
 
 Due date reminders are a special notification type configured at the project level (in Project Settings → Automations). When enabled, Plane sends a notification to both the work item's subscribers and its assignees when the due date is within the configured window — say, 3 days out.
 
-These are one-time per window. If you've set a 3-day reminder and someone already received it, they won't get another one until the window resets. Reminders only go out for work items that are still in progress — completed and cancelled items are skipped. See [Set up due date reminders](/automations/overview#set-up-due-date-reminders)
+These are one-time per window. If you've set a 3-day reminder and someone already received it, they won't get another one until the window resets. Reminders only go out for work items that are still in progress — completed and cancelled items are skipped. See [Set up due date reminders](/automations/overview#set-up-due-date-reminders).
 
 ## See also
 

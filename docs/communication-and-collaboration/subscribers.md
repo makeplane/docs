@@ -1,5 +1,5 @@
 ---
-title: Subscriptions
+title: Subscribers
 description: Learn how to subscribe to work items and epics in Plane, manage subscriber lists, set up project-level auto-subscriptions, and understand how Plane subscribes you automatically.
 ---
 
@@ -53,11 +53,9 @@ Project subscribers are members who are automatically subscribed to every work i
 2. Find the **Project subscribers** section.
 3. Add the members you want to auto-subscribe.
 
-When you add someone as a project subscriber, Plane subscribes them to all current work items in the project in the background. New work items they'll be subscribed to automatically at creation.
+When you add someone as a project subscriber, Plane subscribes them to all current work items in the project in the background. They'll also be subscribed automatically to any new work items created afterward.
 
 The trade-off is volume. Project subscribers get notifications for every tracked change on every work item in the project. If a project is active, that adds up quickly. Notification preferences help here — you can reduce the email noise without losing in-app visibility.
-
-This feature requires the Enterprise plan and is only accessible to Project Admins.
 
 ## Manage who's subscribed to a work item <Badge type="warning" text="Enterprise Grid" />
 
