@@ -92,7 +92,7 @@ Adds animation to cursor movement for a more fluid experience when navigating th
 
 ## Notifications
 
-Control email notification preferences for work item updates. Email notifications supplement in-app notifications visible in the [Inbox](/core-concepts/inbox) section.
+Control email notification preferences for work item updates. Email notifications supplement in-app notifications visible in the [Inbox](/communication-and-collaboration/inbox) section.
 
 All notifications apply only to work items where you are the creator, assigned to, or explicitly subscribed.
 
