@@ -37,40 +37,40 @@ If you can't access the report option - for example, the page has already been t
 The following types of content and activity are not permitted on publicly published Plane pages.
 
 - **Phishing and impersonation**  
-Pages designed to impersonate other services, brands, or individuals, or to harvest credentials, payment details, or personal information under false pretences.
+  Pages designed to impersonate other services, brands, or individuals, or to harvest credentials, payment details, or personal information under false pretences.
 
 - **Malware and malicious code**  
-Hosting, distributing, or linking to malware, viruses, ransomware, or any code intended to harm users or systems.
+  Hosting, distributing, or linking to malware, viruses, ransomware, or any code intended to harm users or systems.
 
 - **Illegal activity**  
-Content that encourages, plans, or facilitates activity that breaks the law, or instructs others on how to do so.
+  Content that encourages, plans, or facilitates activity that breaks the law, or instructs others on how to do so.
 
 - **Harmful or graphic content**  
-Sexually explicit material, graphic violence, content promoting self-harm, or anything else that endangers public safety.
+  Sexually explicit material, graphic violence, content promoting self-harm, or anything else that endangers public safety.
 
 - **Child safety violations**  
-Any content that exploits, abuses, endangers, or sexualizes minors.
+  Any content that exploits, abuses, endangers, or sexualizes minors.
 
 - **Harassment and threats**  
-Bullying, threatening, or defaming individuals or groups.
+  Bullying, threatening, or defaming individuals or groups.
 
 - **Hate speech and discrimination**  
-Content that promotes violence or discrimination based on race, ethnicity, religion, gender, sexual orientation, disability, age, nationality, or any other protected characteristic.
+  Content that promotes violence or discrimination based on race, ethnicity, religion, gender, sexual orientation, disability, age, nationality, or any other protected characteristic.
 
 - **Fraud and scams**  
-Fake giveaways, investment schemes, deceptive offers, or any content designed to defraud readers.
+  Fake giveaways, investment schemes, deceptive offers, or any content designed to defraud readers.
 
 - **Privacy violations**  
-Publishing someone's personal or confidential information without their consent.
+  Publishing someone's personal or confidential information without their consent.
 
 - **Intellectual property infringement**  
-Content that reproduces copyrighted material, trademarks, or other intellectual property without permission.
+  Content that reproduces copyrighted material, trademarks, or other intellectual property without permission.
 
 - **Spam and deceptive practices**  
-SEO manipulation, link farms, misleading redirects, or other deceptive distribution tactics.
+  SEO manipulation, link farms, misleading redirects, or other deceptive distribution tactics.
 
 - **Disruption of Plane**  
-Using Plane in ways that interfere with our service, infrastructure, or users.
+  Using Plane in ways that interfere with our service, infrastructure, or users.
 
 This isn't an exhaustive list. If something feels wrong, report it.
 
