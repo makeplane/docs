@@ -9,9 +9,9 @@ This is the exhaustive permissions reference for every system defined role in Pl
 
 For conceptual background, see [Roles and permissions](/roles-and-permissions/overview). For the role catalog, see [Member roles](/roles-and-permissions/member-roles).
 
-## How to read this page
+Plane has two sets of roles: workspace roles that control what someone can do across the entire workspace, and project roles that control what they can do inside a specific project. A person's project role is independent of their workspace role — you can be a workspace Member but a project Admin.
 
-**Legend**
+## Symbols used on this page`
 
 - ✓ - the role has unconditional access to this permission.
 - **+Creator** - the role can perform the action only on resources they created.
@@ -21,6 +21,312 @@ For conceptual background, see [Roles and permissions](/roles-and-permissions/ov
 **Owner has full access.** Workspace Owner holds a full-access wildcard and matches every permission in this document. The Owner column is omitted from individual tables and assumed ✓ throughout.
 
 **Workspace Admin and Owner bypass projects.** Both have wildcard access to every project resource type, so they appear as ✓ on all project-level permissions even without explicit project membership.
+
+## Workspace permissions
+
+### Workspace settings
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | ✓ |
+| Edit | ✓ | ✓ | — | — |
+| Delete workspace | ✓ | — | — | — |
+| Transfer ownership | ✓ | — | — | — |
+
+### Members
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | ✓ |
+| Invite | ✓ | ✓ | — | — |
+| Change role | ✓ | ✓ | — | — |
+| Remove | ✓ | ✓ | — | — |
+| Import members (CSV / SSO) | ✓ | ✓ | — | — |
+| Assign Owner role | ✓ | — | — | — |
+| Assign Admin role | ✓ | ✓ | — | — |
+| Leave workspace | ✓ | ✓ | ✓ | ✓ |
+
+### Custom roles
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+---
+
+### Projects
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| Browse all projects | ✓ | ✓ | ✓ | — |
+| Create project | ✓ | ✓ | — | — |
+| Join a public project | ✓ | ✓ | ✓ | — |
+| Join a private project | ✓ | ✓ | — | — |
+| Edit project settings | ✓ | ✓ | — | — |
+| Archive project | ✓ | ✓ | — | — |
+| Delete project | ✓ | ✓ | — | — |
+| Publish project | ✓ | ✓ | — | — |
+
+> Workspace Owners and Admins have full access to all project content without needing explicit project membership.
+
+---
+
+### Initiatives
+
+| Action | Owner | Admin | Member | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| View  | ✓ | ✓ | ✓ | — | |
+| Create | ✓ | ✓ | — | — | |
+| Edit | ✓ | ✓ | — | — | |
+| Delete | ✓ | ✓ | — | — | |
+| React | ✓ | ✓ | ✓ | — | |
+| Add / remove epics | ✓ | ✓ | — | — | |
+| Add / remove projects in scope | ✓ | ✓ | — | — | |
+| Add link | ✓ | ✓ | — | — | |
+| Edit link | ✓ | ✓ | — | — | |
+| Delete link | ✓ | ✓ | — | — | |
+| Add attachment | ✓ | ✓ | — | — | |
+| Delete own attachment | ✓ | ✓ | Own | — | |
+| Delete any attachment | ✓ | ✓ | — | — | Admin only |
+| Drag and drop (reorder) | ✓ | ✓ | — | — | |
+
+#### Initiative comments
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Create comment | ✓ | ✓ | ✓ | — |
+| Edit own comment | ✓ | ✓ | Own | — |
+| Delete own comment | ✓ | ✓ | Own | — |
+| Delete any comment | ✓ | ✓ | — | — |
+| React to comment | ✓ | ✓ | ✓ | — |
+
+#### Initiative updates
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| React | ✓ | ✓ | ✓ | — |
+| Comment on update | ✓ | ✓ | ✓ | — |
+
+### Wiki pages
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Create | ✓ | ✓ | ✓ | — |
+| Edit | ✓ | ✓ | ✓ | — |
+| Share | ✓ | ✓ | ✓ | — |
+| Delete | ✓ | ✓ | ✓ | — |
+| Comment | ✓ | ✓ | ✓ | — |
+
+> Individual pages can have their own access control set by the page owner.
+
+### Workspace views
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | ✓ |
+| Create | ✓ | ✓ | ✓ | — |
+| Edit | ✓ | ✓ | Own | — |
+| Share | ✓ | ✓ | — | — |
+| Publish | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | Own | — |
+| Export | ✓ | ✓ | ✓ | — |
+
+### Workspace drafts
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View (own) | ✓ | ✓ | ✓ | — |
+| Create | ✓ | ✓ | ✓ | — |
+| Edit (own) | ✓ | ✓ | ✓ | — |
+| Delete | ✓ | ✓ | Own | — |
+| Duplicate | ✓ | ✓ | ✓ | — |
+| Move to project | ✓ | ✓ | ✓ | — |
+
+---
+
+### Teamspaces
+
+#### Teamspace management
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| Browse | ✓ | ✓ | ✓ | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+| Manage members | ✓ | ✓ | — | — |
+
+> Workspace Members can browse teamspaces but need explicit teamspace membership for full access.
+
+#### Within a teamspace (teamspace roles)
+
+| Action | Member | Lead |
+|---|:---:|:---:|
+| View content | ✓ | ✓ |
+| Edit teamspace settings | — | ✓ |
+| Delete teamspace | — | ✓ |
+| Manage members | — | ✓ |
+| Create pages | ✓ | ✓ |
+| Edit pages | ✓ | ✓ |
+| Delete pages | Own | ✓ |
+| Archive pages | Own | ✓ |
+| Create views | ✓ | ✓ |
+| Edit views | Own | ✓ |
+| Delete views | Own | ✓ |
+| Create comments | ✓ | ✓ |
+| Edit comments | Own | Own |
+| Delete comments | Own | ✓ |
+| React | ✓ | ✓ |
+| Resolve page comments | ✓ | ✓ |
+
+---
+
+### Analytics
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Export | ✓ | ✓ | ✓ | — |
+
+### Dashboards
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+---
+
+### Worklogs
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Export | ✓ | ✓ | ✓ | — |
+
+---
+
+### Workspace automations
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+---
+
+### Customers
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+| Add / remove attachments | ✓ | ✓ | — | — |
+
+---
+
+### Templates
+
+#### Work item templates
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+#### Page templates
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+#### Project templates
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Use | ✓ | ✓ | ✓ | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+---
+
+### Integrations
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Connect | ✓ | ✓ | ✓ | — |
+| Configure | ✓ | ✓ | ✓ | — |
+| Disconnect | ✓ | ✓ | ✓ | — |
+| Admin operations | ✓ | ✓ | — | — |
+
+> First-time install requires Workspace Admin role. Members can install after admin has installed. 
+
+### Webhooks
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+### API tokens
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Create | ✓ | ✓ | ✓ | — |
+| Delete | ✓ | ✓ | ✓ | — |
+
+---
+
+### Billing
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Manage | ✓ | ✓ | — | — |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------
+
 
 ## Workspace permissions
 
