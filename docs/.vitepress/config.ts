@@ -557,7 +557,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
         ],
       },
       {
-        text: "Collaboration",
+        text: "Communication",
         items: [
           {
             text: "Project Updates",
@@ -571,7 +571,9 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
             text: "Page Inline Comments",
             link: "/core-concepts/pages/inline-comments",
           },
-          { text: "Inbox", link: "/core-concepts/inbox" },
+          { text: "Subscribers", link: "/communication-and-collaboration/subscribers" },
+          { text: "Notifications", link: "/communication-and-collaboration/notifications" },
+          { text: "Inbox", link: "/communication-and-collaboration/inbox" },
         ],
       },
       {

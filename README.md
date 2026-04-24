@@ -1,6 +1,6 @@
 # Plane Documentation
 
-This website is built using [Docusaurus v3](https://docusaurus.io/) and hosted at [docs.plane.so](https://docs.plane.so/). If you are looking for the developer documentation, see [Plane developer documentation](https://github.com/makeplane/developer-docs).
+This website is built using [VitePress v1.6.3](https://vitepress.dev/) and hosted at [docs.plane.so](https://docs.plane.so/). If you are looking for the developer documentation, see [Plane developer documentation](https://github.com/makeplane/developer-docs).
 
 ## Overview
 
@@ -25,13 +25,13 @@ The Plane documentation provides detailed information on the following topics:
 
 3. Install dependencies.
    ```bash
-   yarn
+   pnpm install
    ```
 
 ## Local development
 
 ```bash
-yarn start
+pnpm dev
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
@@ -39,10 +39,10 @@ This command starts a local development server and opens up a browser window. Mo
 ## Build
 
 ```bash
-yarn build
+pnpm build
 ```
 
-This command generates static files into the `build` directory.
+This command generates static files into the `docs/.vitepress/dist` directory.
 
 ## Contributing
 

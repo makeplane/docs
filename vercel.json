@@ -276,6 +276,10 @@
     {
       "source": "/core-concepts/issues/issue-types",
       "destination": "/work-items/project-work-item-types"
+    },
+    {
+      "source": "/core-concepts/inbox",
+      "destination": "/communication-and-collaboration/inbox"
     }
   ],
   "rewrites": [

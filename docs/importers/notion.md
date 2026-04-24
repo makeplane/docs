@@ -30,6 +30,18 @@ Only HTML exports from Notion are supported. Make sure to select HTML as your ex
 5. Click **Export**.
 6. Notion will generate a ZIP file containing your exported content.
 
+::: warning Nested ZIP files
+Some Notion exports contain a nested ZIP file inside the main export ZIP. If your export has this structure, you'll need to extract the inner ZIP file before uploading to Plane.
+
+To check and extract on Mac or Linux, run this in terminal:
+
+```bash
+unzip your-notion-export.zip
+```
+
+This will extract the contents, including any inner ZIP file. Upload the extracted inner ZIP file to Plane, not the outer one.
+:::
+
 ## Import Notion content
 
 ![Import from Notion](https://media.docs.plane.so/importers/notion/import-notion.webp#hero)
