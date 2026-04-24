@@ -832,6 +832,36 @@ div[class*="language-"] > span.lang {
   }
 }
 
+/* Right "On this page" column: theme keeps has-aside when outline is enabled, but
+   the outline is display:none until .has-outline. Hide the whole column and let
+   the main column use that space (unless Carbon ads fill the rail). */
+@media (min-width: 1280px) {
+  .docs-layout
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
+    .aside {
+    display: none !important;
+    flex: 0 0 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .docs-layout
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
+    .content-container {
+    max-width: 100% !important;
+  }
+
+  .docs-layout
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
+    .content {
+    max-width: 100% !important;
+  }
+}
+
 /* ================================================
    HERO IMAGE STYLES
    ================================================ */

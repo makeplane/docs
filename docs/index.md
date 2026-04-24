@@ -18,7 +18,7 @@ teams, and automate workflows.
 [Get Started](/introduction/home) ·
 [Tutorials](/introduction/tutorials/overview)
 
-<CardGroup class="home-feature-cards" columns="2">
+<CardGroup class="home-feature-cards" columns="3">
   <Card
     title="Workspaces"
     icon="building-2"
