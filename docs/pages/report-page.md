@@ -1,6 +1,6 @@
 ---
 title: Report a published page
-description: "Learn how to report a publicly published Plane Space page that contains harmful, misleading, or policy-violating content."
+description: Learn how to report a publicly published Plane page that contains harmful, misleading, or policy-violating content.
 ---
 
 # Report page
@@ -10,6 +10,8 @@ When someone publishes a page on Plane and makes it publicly accessible, anyone 
 Reporting sends a flagged notice directly to Plane's support team, who review it and decide what action to take. You don't need a Plane account to file a report — if you can see the page, you can report it.
 
 ## How to report a published page
+
+![Report page](https://media.docs.plane.so/pages/report-page.webp#hero)
 
 1. Open the published page you want to report.
 2. Click the **...** menu in the top-right corner of the page.
