@@ -40,7 +40,7 @@ Auto-close moves unfinished work items — those in Backlog, Unstarted, or Start
 3. Set the **Auto-close work items that are inactive for** duration — for example, 1 month.
 4. Choose the **Auto-close status** — the state that inactive work items will be moved to (e.g., Cancelled).
 
-### Set up due date reminders <Badge type="tip" text="Business" />
+### Set up due date reminders <Badge type="warning" text="Enterprise Grid" />
 
 Plane sends in-app and email notifications to assignees and subscribers when a work item's due date is approaching.
 
