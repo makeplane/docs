@@ -207,9 +207,7 @@ export default {
      * `isDark` (same source of truth as the toggle).
      */
     const syncOssHeaderThemeAttr = (dark: boolean) => {
-      const header = document.querySelector(
-        ".docs-layout header",
-      ) as HTMLElement | null;
+      const header = document.querySelector(".docs-layout header") as HTMLElement | null;
       const bar = header?.parentElement;
       if (!bar) return;
       if (dark) bar.setAttribute("data-theme", "dark");

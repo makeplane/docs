@@ -1,9 +1,7 @@
 ---
 layout: doc
 title: Plane Docs
-description:
-  Everything you need to learn Plane, manage projects, and build powerful
-  workflows.
+description: Everything you need to learn Plane, manage projects, and build powerful workflows.
 ---
 
 <!-- @format -->
