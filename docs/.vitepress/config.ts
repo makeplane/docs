@@ -491,6 +491,7 @@ export default defineConfig({
                 text: "Editor blocks",
                 link: "/core-concepts/pages/editor-blocks",
               },
+              { text: "Report page", link: "/pages/report-page" },
             ],
           },
           { text: "Wiki", link: "/core-concepts/pages/wiki" },
