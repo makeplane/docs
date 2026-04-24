@@ -103,7 +103,16 @@ function moveSignInToUtilityArea(): boolean {
   ) as HTMLAnchorElement | null;
   if (!signInLink) return false;
 
+  // Keep the CTA hidden while we're still deciding where it belongs.
+  signInLink.classList.add("sign-in-relocating");
+
+  const markRelocated = () => {
+    signInLink.classList.add("sign-in-relocated");
+    signInLink.classList.remove("sign-in-relocating");
+  };
+
   if (signInLink.classList.contains("sign-in-relocated")) {
+    signInLink.classList.remove("sign-in-relocating");
     return true;
   }
 
@@ -115,7 +124,7 @@ function moveSignInToUtilityArea(): boolean {
     appearanceToggle?.parentElement &&
     signInLink.parentElement === appearanceToggle.parentElement
   ) {
-    signInLink.classList.add("sign-in-relocated");
+    markRelocated();
     return true;
   }
 
@@ -123,7 +132,7 @@ function moveSignInToUtilityArea(): boolean {
     ".docs-layout header .VPNavBarExtra",
   ) as HTMLElement | null;
   if (extraMenu?.parentElement && signInLink.parentElement === extraMenu.parentElement) {
-    signInLink.classList.add("sign-in-relocated");
+    markRelocated();
     return true;
   }
 
@@ -132,15 +141,15 @@ function moveSignInToUtilityArea(): boolean {
     appearanceToggle?.parentElement &&
     signInLink.parentElement !== appearanceToggle.parentElement
   ) {
-    signInLink.classList.add("sign-in-relocated");
     appearanceToggle.parentElement.insertBefore(signInLink, appearanceToggle);
+    markRelocated();
     return true;
   }
 
   // Tablet fallback (lg-xl): keep it in right controls row before the extra menu.
   if (extraMenu?.parentElement && signInLink.parentElement !== extraMenu.parentElement) {
-    signInLink.classList.add("sign-in-relocated");
     extraMenu.parentElement.insertBefore(signInLink, extraMenu);
+    markRelocated();
     return true;
   }
 
@@ -162,6 +171,9 @@ function runSignInRelocationWithRetries() {
       window.setTimeout(() => tryOnce(attempt + 1), 75);
     } else if (!signInRelocateWarned) {
       const link = document.querySelector('.docs-layout header a.VPLink[href*="sign-in"]');
+      if (link) {
+        link.classList.remove("sign-in-relocating");
+      }
       if (link && !link.classList.contains("sign-in-relocated")) {
         signInRelocateWarned = true;
         console.warn(
@@ -235,11 +247,12 @@ export default {
     let onResize: (() => void) | null = null;
 
     onMounted(() => {
+      runSignInRelocationWithRetries();
+
       // Delay tab hash handling to ensure tabs are rendered
       setTimeout(() => {
         handleTabHash();
         setupTabHashUpdates();
-        runSignInRelocationWithRetries();
       }, 100);
 
       const onHeaderMutations = debounce(() => {

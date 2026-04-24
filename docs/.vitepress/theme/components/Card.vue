@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <script setup>
 import { computed } from "vue";
 import * as LucideIcons from "lucide-vue-next";
@@ -68,9 +70,7 @@ const IconComponent = computed(() => {
       <div v-if="customSvgIcons[icon]" v-html="customSvgIcons[icon]"></div>
       <component v-else :is="IconComponent" :size="24" stroke-width="1.5" />
     </div>
-    <h3 class="card-title">
-      {{ title }}
-    </h3>
+    <h3 class="card-title">{{ title }}</h3>
     <p v-if="description" class="card-description">
       {{ description }}
     </p>

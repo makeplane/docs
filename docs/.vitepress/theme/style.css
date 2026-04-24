@@ -558,7 +558,7 @@ div[class*="language-"] > span.lang {
 }
 
 .dark .card-link:hover .card-title {
-  color: #0088cc !important;
+  color: #f9fafb !important;
 }
 
 .card-description {
@@ -666,6 +666,10 @@ div[class*="language-"] > span.lang {
   color: #f4f4f4 !important;
 }
 
+.dark .vp-doc .home-feature-cards .card-link:hover .card-title {
+  color: #f4f4f4 !important;
+}
+
 .dark .vp-doc .home-feature-cards .card-description {
   color: #a1a1aa;
 }
@@ -744,6 +748,10 @@ div[class*="language-"] > span.lang {
     background 0.2s ease,
     box-shadow 0.2s ease,
     transform 0.2s ease !important;
+}
+
+.docs-layout header a.VPLink[href*="sign-in"].sign-in-relocating {
+  visibility: hidden !important;
 }
 
 .docs-layout header a.VPLink[href*="sign-in"] .vp-external-link-icon {
