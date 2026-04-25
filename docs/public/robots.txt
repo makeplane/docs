@@ -6,4 +6,8 @@ Disallow: /core-concepts/issues.html
 Disallow: /core-concepts/projects/run-project
 Disallow: /importers/github-imp
 
+# Content Signals — AI content usage preferences
+# https://contentsignals.org/
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
 Sitemap: https://docs.plane.so/sitemap.xml

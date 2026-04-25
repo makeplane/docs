@@ -1,5 +1,5 @@
-import { readFileSync } from "fs";
-import { resolve } from "path";
+import { copyFileSync, mkdirSync, readFileSync, readdirSync, statSync } from "fs";
+import { dirname, join, relative, resolve } from "path";
 import { defineConfig, type HeadConfig } from "vitepress";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 
@@ -49,6 +49,30 @@ export default defineConfig({
   title: "Plane",
   description: "Modern project management software",
   cleanUrls: true,
+
+  buildEnd(siteConfig) {
+    // Copy source .md files into dist/ for Accept: text/markdown negotiation.
+    const srcDir = siteConfig.srcDir;
+    const outDir = siteConfig.outDir;
+
+    function walk(dir: string): void {
+      for (const entry of readdirSync(dir)) {
+        if (entry === ".vitepress" || entry === "public" || entry === "node_modules") continue;
+        const abs = join(dir, entry);
+        const stat = statSync(abs);
+        if (stat.isDirectory()) {
+          walk(abs);
+        } else if (stat.isFile() && abs.endsWith(".md")) {
+          const rel = relative(srcDir, abs);
+          const dest = join(outDir, rel);
+          mkdirSync(dirname(dest), { recursive: true });
+          copyFileSync(abs, dest);
+        }
+      }
+    }
+
+    walk(srcDir);
+  },
 
   head: [
     [
@@ -401,8 +425,12 @@ export default defineConfig({
             ],
           },
           {
-            text: "Work Item Types",
-            link: "/core-concepts/issues/issue-types",
+            text: "Project Work Item Types",
+            link: "/work-items/project-work-item-types",
+          },
+          {
+            text: "Workspace Work Item Types",
+            link: "/work-items/workspace-work-item-types",
           },
           { text: "Work Item States", link: "/core-concepts/issues/states" },
           { text: "Work Item Labels", link: "/core-concepts/issues/labels" },
@@ -437,6 +465,10 @@ export default defineConfig({
           {
             text: "Milestones",
             link: "/core-concepts/projects/milestones",
+          },
+          {
+            text: "Releases",
+            link: "/releases",
           },
           { text: "Stickies", link: "/core-concepts/stickies" },
         ],
@@ -473,6 +505,7 @@ export default defineConfig({
                 text: "Editor blocks",
                 link: "/core-concepts/pages/editor-blocks",
               },
+              { text: "Report page", link: "/pages/report-page" },
             ],
           },
           { text: "Wiki", link: "/core-concepts/pages/wiki" },
@@ -490,14 +523,26 @@ export default defineConfig({
             link: "/core-concepts/issues/time-tracking",
           },
           { text: "Workflows and Approvals", link: "/workflows-and-approvals/workflows" },
+          { text: "Custom Relations", link: "/work-items/custom-relations" },
           {
             text: "Automations",
-            link: "/automations/custom-automations",
+            collapsed: true,
+            link: "/automations/overview",
+            items: [
+              {
+                text: "Custom automations",
+                link: "/automations/custom-automations",
+              },
+            ],
+          },
+          {
+            text: "Plane Runner",
+            link: "/automations/plane-runner",
           },
         ],
       },
       {
-        text: "Collaboration",
+        text: "Communication",
         items: [
           {
             text: "Project Updates",
@@ -511,7 +556,9 @@ export default defineConfig({
             text: "Page Inline Comments",
             link: "/core-concepts/pages/inline-comments",
           },
-          { text: "Inbox", link: "/core-concepts/inbox" },
+          { text: "Subscribers", link: "/communication-and-collaboration/subscribers" },
+          { text: "Notifications", link: "/communication-and-collaboration/notifications" },
+          { text: "Inbox", link: "/communication-and-collaboration/inbox" },
         ],
       },
       {

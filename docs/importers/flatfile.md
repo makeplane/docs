@@ -109,21 +109,21 @@ Here's how to get started:
 
 When bringing your data from CSV into Plane, here's exactly what you can transfer over:
 
-| Field          | Notes                                                                                                       |
-| -------------- | ----------------------------------------------------------------------------------------------------------- |
-| Title          | Required for all items                                                                                      |
-| Description    | Plain text only - any formatting, images, or tags will be imported as raw text                              |
-| Work Item Type | Make sure the [Work item types](/core-concepts/issues/issue-types) feature is enabled in your Plane project |
-| State          | Must map to valid states in your Plane project                                                              |
-| Assignees      | **Must be email addresses**, not usernames - this is how Plane connects work items to users                 |
-| Priority       | Must map to valid priority values in your Plane project                                                     |
-| Created By     | **Must be email addresses** - allows Plane to track who originally created the item                         |
-| Start Date     |                                                                                                             |
-| Target Date    |                                                                                                             |
-| Labels         |                                                                                                             |
-| Cycle          |                                                                                                             |
-| Module         |                                                                                                             |
-| Created At     |                                                                                                             |
+| Field          | Notes                                                                                                         |
+| -------------- | ------------------------------------------------------------------------------------------------------------- |
+| Title          | Required for all items                                                                                        |
+| Description    | Plain text only - any formatting, images, or tags will be imported as raw text                                |
+| Work Item Type | Make sure the [Work item types](/work-items/project-work-item-types) feature is enabled in your Plane project |
+| State          | Must map to valid states in your Plane project                                                                |
+| Assignees      | **Must be email addresses**, not usernames - this is how Plane connects work items to users                   |
+| Priority       | Must map to valid priority values in your Plane project                                                       |
+| Created By     | **Must be email addresses** - allows Plane to track who originally created the item                           |
+| Start Date     |                                                                                                               |
+| Target Date    |                                                                                                               |
+| Labels         |                                                                                                               |
+| Cycle          |                                                                                                               |
+| Module         |                                                                                                               |
+| Created At     |                                                                                                               |
 
 ## Managing your imports
 

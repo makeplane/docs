@@ -17,7 +17,7 @@ The ClickUp importer is available on Plane Cloud and on all plans of the Commerc
 - ClickUp Lists organized within Folders.
 
 ::: tip
-To import custom task types from ClickUp, make sure the [Work item types](/core-concepts/issues/issue-types) feature is enabled in your Plane project.
+To import custom task types from ClickUp, make sure the [Work item types](/work-items/project-work-item-types) feature is enabled in your Plane project.
 :::
 
 ## Import from ClickUp

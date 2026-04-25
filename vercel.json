@@ -1,6 +1,17 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</api-reference/introduction>; rel=\"service-doc\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+        }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/quick-start",
@@ -269,6 +280,21 @@
     {
       "source": "/workspaces-and-users/roles",
       "destination": "/roles-and-permissions/member-roles"
+    },
+    {
+      "source": "/core-concepts/issues/issue-types",
+      "destination": "/work-items/project-work-item-types"
+    },
+    {
+      "source": "/core-concepts/inbox",
+      "destination": "/communication-and-collaboration/inbox"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/:path*.md"
     }
   ]
 }
