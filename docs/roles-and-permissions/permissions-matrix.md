@@ -256,7 +256,7 @@ The primary issue surface, including comments, attachments, links, relations, an
 | ---------------------- | ------- | ----------- | --------- | -------- |
 | View Issues            | ✓       | ✓           | ✓         | +Creator |
 | Create Issues          | ✓       | ✓           | x         | x        |
-| Edit Issues            | ✓       | ✓           | x  | x |
+| Edit Issues            | ✓       | ✓           | x         | x        |
 | Bulk Edit Issues       | ✓       | ✓           | x         | x        |
 | Export Issues          | ✓       | ✓           | x         | x        |
 | React to Issues        | ✓       | ✓           | ✓         | x        |
