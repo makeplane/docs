@@ -148,11 +148,11 @@
 
   /* Fonts */
   --vp-font-family-base:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, sans-serif;
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    sans-serif;
   --vp-font-family-mono:
-    "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco,
-    Consolas, "Liberation Mono", "Courier New", monospace;
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 /* Font rendering optimizations */
@@ -925,11 +925,7 @@ div[class*="language-"] > span.lang {
     margin-top: 6px;
   }
 
-  .docs-layout
-    .VPDocAsideOutline
-    .VPDocOutlineItem
-    li
-    > .VPDocOutlineItem.nested {
+  .docs-layout .VPDocAsideOutline .VPDocOutlineItem li > .VPDocOutlineItem.nested {
     margin-top: 4px;
   }
 
@@ -944,9 +940,7 @@ div[class*="language-"] > span.lang {
    the main column use that space (unless Carbon ads fill the rail). */
 @media (min-width: 1280px) {
   .docs-layout
-    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(
-      :has(.VPDocAsideCarbonAds)
-    )
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
     .aside {
     display: none !important;
     flex: 0 0 0 !important;
@@ -959,17 +953,13 @@ div[class*="language-"] > span.lang {
   }
 
   .docs-layout
-    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(
-      :has(.VPDocAsideCarbonAds)
-    )
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
     .content-container {
     max-width: 100% !important;
   }
 
   .docs-layout
-    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(
-      :has(.VPDocAsideCarbonAds)
-    )
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
     .content {
     max-width: 100% !important;
   }
