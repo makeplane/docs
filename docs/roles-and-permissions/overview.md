@@ -9,13 +9,15 @@ Plane uses a layered access control system to determine what every user can see 
 
 If you're looking for what a specific role can or can't do, see the [Permissions matrix](/roles-and-permissions/permissions-matrix). If you want a list of system roles, see [Member roles](/roles-and-permissions/member-roles). If you want to perform a task, see the how-to guides linked at the bottom of this page.
 
-## Two layers: RBAC and GAC
+## Essential differences between RBAC and GAC
 
-Plane combines two access control models.
+RBAC is the default inside Plane. GAC lets you define roles with fine-grained permissions.
 
-**Role-Based Access Control (RBAC)** is the foundation. Every user holds a role — either a system-defined role (Owner, Admin, Member, Guest, Contributor, or Commenter) or a [custom role](/roles-and-permissions/custom-roles) — and that role carries a defined set of permissions.
+**Role-Based Access Control (RBAC)**  
+Every user holds a role—either a system-defined one like Owner, Admin, Member, Guest, Contributor, or Commenter or a [custom one](/roles-and-permissions/custom-roles)—and that role carries a defined set of permissions. All of our plans come with pre-set system-defined roles. 
 
-**Granular Access Control (GAC)** sits on top. It lets you grant or deny specific permissions to specific users on specific resources, independent of their role. A Contributor could be denied "delete work items" on one particular project while keeping that permission everywhere else, or a specific user could be granted temporary edit access to a single page for the duration of an external review — all without changing anyone's role. GAC is for the exceptions — situations where role-level access is too coarse.
+**Granular Access Control (GAC)**  
+GAC unlocks custom roles, each composed of one or more permission schemes. This lets you go beyond system-defined roles to create and control exactly what a role can and cannot do.
 
 :::tip
 Owner, Member, and Guest are available on all plans. Other system-defined roles are exclusive to the Business plan and higher. See [Plan availability](/roles-and-permissions/overview#plan-availability).
@@ -90,7 +92,7 @@ When a user attempts an action, the system evaluates access in a fixed order, st
 
 A few worked examples make this concrete.
 
-**Can Bob edit work items** Bob has the Contributor role on the project. The system finds no per-resource grant on the issue, walks up to the project, finds Bob's Contributor role, sees that Contributor includes `workitem:edit`, and allows the edit.
+**Can Bob edit work items? ** Bob has the Contributor role on the project. The system walks up to the project, finds Bob's Contributor role, sees that Contributor includes `workitem:edit`, and allows the edit.
 
 **Can Carol delete modules?** Carol has the Contributor role on the project. Contributor has `module:delete+creator`. The system checks whether Carol created the module — if yes, allowed; if no, denied.
 
