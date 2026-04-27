@@ -5,22 +5,17 @@ description: Understand how roles, permissions, and access control work in Plane
 
 # Roles and permissions
 
-Plane uses a layered access control system to determine what every user can see and do. This page explains how that system works conceptually so you can design role assignments confidently.
+Plane's access control system determines what every user can see and do. This page explains how that system works conceptually so you can design role assignments confidently.
 
 If you're looking for what a specific role can or can't do, see the [Permissions matrix](/roles-and-permissions/permissions-matrix). If you want a list of system roles, see [Member roles](/roles-and-permissions/member-roles). If you want to perform a task, see the how-to guides linked at the bottom of this page.
 
-## Two layers: RBAC and GAC
+## How RBAC and GAC fit together
 
-Plane combines two access control models.
+Plane uses **Role-Based Access Control (RBAC)**. Every user holds a role — either a system-defined role (Owner, Admin, Member, Guest, Contributor, or Commenter) or a [custom role](/roles-and-permissions/custom-roles) — and that role carries a defined set of permissions.
 
-**Role-Based Access Control (RBAC)** is the foundation. Every user holds a role — either a system-defined role (Owner, Admin, Member, Guest, Contributor, or Commenter) or a [custom role](/roles-and-permissions/custom-roles) — and that role carries a defined set of permissions.
+The permissions inside a role are fine-grained. **Granular Access Control (GAC)** is the term for that granularity: each capability the system can permit (creating a work item, deleting a module, editing project settings, publishing a page) is its own permission. RBAC is what bundles those granular permissions into a role you can assign.
 
-**Granular Access Control (GAC)** sits on top. It lets you grant or deny specific permissions to specific users on specific resources, independent of their role. For example, a Contributor could be denied "delete work items" on one particular project while keeping that permission everywhere else, or a specific user could be granted edit access to a single private page for the duration of an external review — all without changing anyone's role. GAC is for the exceptions — situations where role-level access is too coarse.
-
-GAC is available in two forms:
-
-- **[Share private Wiki pages](/core-concepts/pages/wiki#share-private-pages)** with specific members at view, comment, or edit level. Available on the Business plan and higher.
-- **Resource-level grants and denials** across work items, projects, pages, and other resources, including the "negative override" needed when [permission schemes](/roles-and-permissions/permission-schemes) combine. Available on Enterprise Grid.
+On Enterprise Grid, [custom roles](/roles-and-permissions/custom-roles) and [permission schemes](/roles-and-permissions/permission-schemes) are the user-facing way to compose any combination of granular permissions into a role tailored to your organization. Custom roles aren't a separate layer above RBAC — they are RBAC with the permission catalog opened up for you to pick from.
 
 :::tip
 Owner, Member, and Guest are available on all plans. Other system-defined roles are exclusive to the Business plan and higher. See [Plan availability](/roles-and-permissions/overview#plan-availability).
@@ -70,10 +65,8 @@ Different roles and capabilities are available on different plans.
 | Workspace Owner, Member, Guest               | ✓    | ✓   | ✓        | ✓               |
 | Project Admin, Contributor, Commenter, Guest | ✓    | ✓   | ✓        | ✓               |
 | **Workspace Admin role**                     | —    | —   | ✓        | ✓               |
-| **Share private Wiki pages**                 | —    | —   | ✓        | ✓               |
 | **Custom roles**                             | —    | —   | —        | ✓               |
 | **Custom permission schemes**                | —    | —   | —        | ✓               |
-| **Granular Access Control (GAC)**            | —    | —   | —        | ✓               |
 
 ## Conditional grants
 
@@ -97,7 +90,7 @@ When a user attempts an action, the system evaluates access in a fixed order, st
 
 A few worked examples make this concrete.
 
-**Can Bob edit work items** Bob has the Contributor role on the project. The system finds no per-resource grant on the issue, walks up to the project, finds Bob's Contributor role, sees that Contributor includes `workitem:edit`, and allows the edit.
+**Can Bob edit work items?** Bob has the Contributor role on the project. The system finds Bob's Contributor role on the project, sees that Contributor includes `workitem:edit`, and allows the edit.
 
 **Can Carol delete modules?** Carol has the Contributor role on the project. Contributor has `module:delete+creator`. The system checks whether Carol created the module — if yes, allowed; if no, denied.
 

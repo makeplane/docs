@@ -44,7 +44,7 @@ For example, you might upgrade with 50 seats, assign 45 to current Admins and Me
 
 On Pro and Business plans, every paid seat includes 5 Guest slots. These Guest slots are pooled at the workspace level, just like seats. If you have 20 paid seats, you get 100 Guest slots total (20 × 5).
 
-This does not apply to Enterprise Grid. All users are billable seats at the instance level regardless of role. This is because Enterprise Grid includes [Granular Access Control (GAC)](/roles-and-permissions/overview#two-layers-rbac-and-gac), which lets you define custom permissions for any role. The preset system-defined roles no longer apply in the same way. In addition, your Enterprise Grid license isn't tied to a single workspace — you can have multiple workspaces with Enterprise features turned on under one license.
+This does not apply to Enterprise Grid. All users are billable seats at the instance level regardless of role. This is because Enterprise Grid includes [Granular Access Control (GAC)](/roles-and-permissions/overview#how-rbac-and-gac-fit-together), which lets you compose any combination of permissions into any role. The preset system-defined roles no longer apply in the same way. In addition, your Enterprise Grid license isn't tied to a single workspace — you can have multiple workspaces with Enterprise features turned on under one license.
 
 ## Managing seats over time
 

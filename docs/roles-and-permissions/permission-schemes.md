@@ -86,7 +86,7 @@ The role's effective permissions become the union of all attached schemes.
 When a role has multiple schemes attached, the effective permission set is the union of all of them. The combination rules are:
 
 - **Unconditional grants win over conditional ones.** If one scheme grants `workitem:delete` and another grants `workitem:delete+creator`, the role gets unconditional `workitem:delete`.
-- **More permissive wins.** If schemes grant the same permission, it's still granted (there's no "negative override" within scheme combinations — that requires GAC).
+- **More permissive wins.** Schemes are additive. If two schemes grant the same permission, it's granted; if only one grants it, it's still granted. There is no way for one scheme to revoke a permission that another scheme grants.
 - **Permission dependencies are auto-managed.** Enabling a permission auto-enables its prerequisites (e.g., enabling Edit auto-enables View). Disabling a prerequisite auto-disables permissions that depend on it.
 
 ## See also
