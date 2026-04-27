@@ -13,7 +13,7 @@ If you're looking for what a specific role can or can't do, see the [Permissions
 
 Plane combines two access control models.
 
-**Role-Based Access Control (RBAC)** is the foundation. Every user holds a role — Owner, Admin, Member, Guest, Contributor, Commenter, or a custom role you've defined — and that role carries a defined set of permissions.
+**Role-Based Access Control (RBAC)** is the foundation. Every user holds a role — either a system-defined role (Owner, Admin, Member, Guest, Contributor, or Commenter) or a [custom role](/roles-and-permissions/custom-roles) — and that role carries a defined set of permissions.
 
 **Granular Access Control (GAC)** sits on top. It lets you grant or deny specific permissions to specific users on specific resources, independent of their role. A Contributor could be denied "delete work items" on one particular project while keeping that permission everywhere else, or a specific user could be granted temporary edit access to a single page for the duration of an external review — all without changing anyone's role. GAC is for the exceptions — situations where role-level access is too coarse.
 
