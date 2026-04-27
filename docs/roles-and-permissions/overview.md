@@ -9,13 +9,15 @@ Plane uses a layered access control system to determine what every user can see 
 
 If you're looking for what a specific role can or can't do, see the [Permissions matrix](/roles-and-permissions/permissions-matrix). If you want a list of system roles, see [Member roles](/roles-and-permissions/member-roles). If you want to perform a task, see the how-to guides linked at the bottom of this page.
 
-## How GAC and RBAC fit together
+## Essential differences between RBAC and GAC
 
-Plane's permission system pairs two complementary concepts.
+RBAC is the default inside Plane. GAC lets you define roles with fine-grained permissions.
 
-**Granular Access Control (GAC)** is the catalog of fine-grained permissions — actions like editing a work item, publishing a page, archiving a project, or managing labels. Every action a user takes in Plane is one of these granular permissions.
+**Role-Based Access Control (RBAC)**  
+Every user holds a role—either a system-defined one like Owner, Admin, Member, Guest, Contributor, or Commenter or a [custom one](/roles-and-permissions/custom-roles)—and that role carries a defined set of permissions. All of our plans come with pre-set system-defined roles.
 
-**Role-Based Access Control (RBAC)** is how those permissions get assigned. Every user holds a role — either a system-defined role (Owner, Admin, Member, Guest, Contributor, or Commenter) or a [custom role](/roles-and-permissions/custom-roles) — and the role bundles a defined set of GAC permissions.
+**Granular Access Control (GAC)**  
+GAC unlocks custom roles, each composed of one or more permission schemes. This lets you go beyond system-defined roles to create and control exactly what a role can and cannot do.
 
 :::tip
 Owner, Member, and Guest are available on all plans. Other system-defined roles are exclusive to the Business plan and higher. See [Plan availability](/roles-and-permissions/overview#plan-availability).
