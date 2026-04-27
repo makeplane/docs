@@ -114,7 +114,7 @@ Pages can be exported for use outside of Plane. Open the page and use the export
 
 ## Share private pages <Badge type="tip" text="Business" />
 
-Private pages are only visible to their creator by default. On the Business plan and above, you can selectively share private Wiki pages with specific workspace members, giving you fine-grained control over who sees sensitive documentation.
+Private pages are only visible to their creator by default. On the Business plan and above, you can selectively share private Wiki pages with specific workspace members, giving you fine-grained control over who sees sensitive documentation. This is the [Granular Access Control (GAC)](/roles-and-permissions/overview#two-layers-rbac-and-gac) layer applied to a single page — you grant specific permissions to specific users on a specific resource, independent of their workspace role.
 
 ![Share private pages](https://media.docs.plane.so/wiki/share-private-pages.webp#hero)
 

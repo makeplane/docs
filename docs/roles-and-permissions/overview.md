@@ -15,7 +15,12 @@ Plane combines two access control models.
 
 **Role-Based Access Control (RBAC)** is the foundation. Every user holds a role — either a system-defined role (Owner, Admin, Member, Guest, Contributor, or Commenter) or a [custom role](/roles-and-permissions/custom-roles) — and that role carries a defined set of permissions.
 
-**Granular Access Control (GAC)** sits on top. It lets you grant or deny specific permissions to specific users on specific resources, independent of their role. A Contributor could be denied "delete work items" on one particular project while keeping that permission everywhere else, or a specific user could be granted temporary edit access to a single page for the duration of an external review — all without changing anyone's role. GAC is for the exceptions — situations where role-level access is too coarse.
+**Granular Access Control (GAC)** sits on top. It lets you grant or deny specific permissions to specific users on specific resources, independent of their role. For example, a Contributor could be denied "delete work items" on one particular project while keeping that permission everywhere else, or a specific user could be granted edit access to a single private page for the duration of an external review — all without changing anyone's role. GAC is for the exceptions — situations where role-level access is too coarse.
+
+GAC is available in two forms:
+
+- **[Share private Wiki pages](/core-concepts/pages/wiki#share-private-pages)** with specific members at view, comment, or edit level. Available on the Business plan and higher.
+- **Resource-level grants and denials** across work items, projects, pages, and other resources, including the "negative override" needed when [permission schemes](/roles-and-permissions/permission-schemes) combine. Available on Enterprise Grid.
 
 :::tip
 Owner, Member, and Guest are available on all plans. Other system-defined roles are exclusive to the Business plan and higher. See [Plan availability](/roles-and-permissions/overview#plan-availability).
@@ -25,7 +30,7 @@ Owner, Member, and Guest are available on all plans. Other system-defined roles 
 
 Three things were renamed or restructured:
 
-- **"Workspace Admin" is now called "Workspace Owner."**
+- **"Workspace Admin" is now called "Workspace Owner."** The highest-privilege workspace role — the one that can delete the workspace and transfer ownership — was renamed from "Admin" to "Owner." On Business and Enterprise Grid, a separate "Admin" role exists below Owner (full workspace management without the ability to delete the workspace or transfer ownership). See [Workspace roles](/roles-and-permissions/member-roles#workspace-roles).
 - **"Project Member" is now called "Contributor."**
 - **"Guest view access to Guests" is now the Commenter role.** Previously, you toggled "Grant guest users view access to all the project work items" on a Guest. Now, instead of toggling, you assign the user the Commenter role. The role gives view access to project content plus the ability to add comments.
 
@@ -60,13 +65,15 @@ This design exists so admins can build roles by combining focused, reusable sche
 
 Different roles and capabilities are available on different plans.
 
-| Capability                                   | Free | Pro | Business | Enterprise |
-| -------------------------------------------- | ---- | --- | -------- | ---------- |
-| Workspace Owner, Member, Guest               | ✓    | ✓   | ✓        | ✓          |
-| Project Admin, Contributor, Commenter, Guest | ✓    | ✓   | ✓        | ✓          |
-| **Workspace Admin role**                     | —    | —   | ✓        | ✓          |
-| **Custom roles**                             | —    | —   | —        | ✓          |
-| **Custom permission schemes**                | —    | —   | —        | ✓          |
+| Capability                                   | Free | Pro | Business | Enterprise Grid |
+| -------------------------------------------- | ---- | --- | -------- | --------------- |
+| Workspace Owner, Member, Guest               | ✓    | ✓   | ✓        | ✓               |
+| Project Admin, Contributor, Commenter, Guest | ✓    | ✓   | ✓        | ✓               |
+| **Workspace Admin role**                     | —    | —   | ✓        | ✓               |
+| **Share private Wiki pages**                 | —    | —   | ✓        | ✓               |
+| **Custom roles**                             | —    | —   | —        | ✓               |
+| **Custom permission schemes**                | —    | —   | —        | ✓               |
+| **Granular Access Control (GAC)**            | —    | —   | —        | ✓               |
 
 ## Conditional grants
 
