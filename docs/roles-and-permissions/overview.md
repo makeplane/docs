@@ -17,6 +17,16 @@ Plane combines two access control models.
 
 **Granular Access Control (GAC)** sits on top. It lets you grant or deny specific permissions to specific users on specific resources, independent of their role. A Contributor could be denied "delete work items" on one particular project while keeping that permission everywhere else, or a specific user could be granted temporary edit access to a single page for the duration of an external review — all without changing anyone's role. GAC is for the exceptions — situations where role-level access is too coarse.
 
+## What changed from earlier versions
+
+Three things were renamed or restructured:
+
+- **"Workspace Admin" is now called "Workspace Owner."**
+- **"Project Member" is now called "Contributor."**
+- **"Guest view access to Guests" is now the Commenter role.** Previously, you toggled "Grant guest users view access to all the project work items" on a Guest. Now, instead of toggling, you assign the user the Commenter role. The role gives view access to project content plus the ability to add comments.
+
+If you've used Plane before, your existing assignments are mapped automatically — no action required.
+
 ## Scope hierarchy
 
 Plane's permission system operates at three scopes:
@@ -34,6 +44,14 @@ Workspace
 
 Permissions inherit upward. If a user has Admin on a project, they have access to everything inside that project. If a user has Admin on the workspace, they have access to all projects and their content.
 
+## Roles, schemes, and how they fit together
+
+A **role** is what you assign to a user. A **permission scheme** is a named bundle of permissions that a role is built from.
+
+System roles ship with a single matching scheme — for example, the "Workspace Owner" role uses the "Workspace Owner" scheme. Custom roles can compose from one scheme or several. The role's effective permissions are the union of all schemes attached to it.
+
+This design exists so admins can build roles by combining focused, reusable scheme bundles rather than ticking hundreds of individual checkboxes for every role.
+
 ## Plan availability
 
 Different roles and capabilities are available on different plans.
@@ -46,30 +64,12 @@ Different roles and capabilities are available on different plans.
 | **Custom roles**                             | —    | —   | —        | ✓          |
 | **Custom permission schemes**                | —    | —   | —        | ✓          |
 
-## What changed from earlier versions
-
-Three things were renamed or restructured:
-
-- **"Workspace Admin" is now called "Workspace Owner."**
-- **"Project Member" is now called "Contributor."**
-- **"Guest view access to Guests" is now the Commenter role.** Previously, you toggled "Grant guest users view access to all the project work items" on a Guest. Now, instead of toggling, you assign the user the Commenter role. The role gives view access to project content plus the ability to add comments.
-
-If you've used Plane before, your existing assignments are mapped automatically — no action required.
-
-## Roles, schemes, and how they fit together
-
-A **role** is what you assign to a user. A **permission scheme** is a named bundle of permissions that a role is built from.
-
-System roles ship with a single matching scheme — for example, the "Workspace Owner" role uses the "Workspace Owner" scheme. Custom roles can compose from one scheme or several. The role's effective permissions are the union of all schemes attached to it.
-
-This design exists so admins can build roles by combining focused, reusable scheme bundles rather than ticking hundreds of individual checkboxes for every role.
-
 ## Conditional grants
 
 Some permissions only apply when a condition is met. The two conditions used in Plane are:
 
-- **+creator** — the user must have created the resource. A Contributor can delete work items they created, but not work items created by others.
-- **+lead** — the user must be the lead of the teamspace. A teamspace Member can edit teamspace settings only if they're the lead.
+- **Creator** — the user must have created the resource. A Contributor can delete work items they created, but not work items created by others.
+- **Lead** — the user must be the lead of the teamspace. A teamspace Member can edit teamspace settings only if they're the lead.
 
 When permissions combine, an unconditional grant always wins over a conditional one. If a user holds both `workitem:delete` and `workitem:delete+creator`, they can delete any work item — the unconditional grant takes effect and the condition is irrelevant.
 
