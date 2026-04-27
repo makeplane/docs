@@ -16,7 +16,7 @@ Plane has two sets of roles: workspace roles that control what someone can do ac
 - ✓ - Permitted for any item
 - Own - Permitted only on items the user created (creator condition)
 - Lead - Permitted only when the user holds the Lead designation in that teamspace
-- - - Not permitted
+- — - Not permitted
 - \* - All actions permitted (wildcard grant in permission scheme)
 
 ## Workspace permissions
@@ -25,7 +25,7 @@ Plane has two sets of roles: workspace roles that control what someone can do ac
 
 ### Workspace settings
 
-| Action                  | Owner | Admin | Member | Guest |
+| Permission              | Owner | Admin | Member | Guest |
 | ----------------------- | :---: | :---: | :----: | :---: |
 | View workspace settings |   ✓   |   ✓   |   ✓    |   ✓   |
 | Edit workspace settings |   ✓   |   ✓   |   —    |   —   |
@@ -34,7 +34,7 @@ Plane has two sets of roles: workspace roles that control what someone can do ac
 
 ### Workspace members
 
-| Action                     | Owner | Admin | Member | Guest |
+| Permission                 | Owner | Admin | Member | Guest |
 | -------------------------- | :---: | :---: | :----: | :---: |
 | View member list           |   ✓   |   ✓   |   ✓    |   ✓   |
 | Invite by email            |   ✓   |   ✓   |   —    |   —   |
@@ -48,7 +48,7 @@ Plane has two sets of roles: workspace roles that control what someone can do ac
 
 Custom roles are workspace-defined role definitions extending the base system roles.
 
-| Action               | Owner | Admin | Member | Guest |
+| Permission           | Owner | Admin | Member | Guest |
 | -------------------- | :---: | :---: | :----: | :---: |
 | View custom roles    |   ✓   |   ✓   |   —    |   —   |
 | Create a custom role |   ✓   |   ✓   |   —    |   —   |
@@ -59,7 +59,7 @@ Custom roles are workspace-defined role definitions extending the base system ro
 
 This covers project creation, discovery, and admin operations from the workspace level. For content access inside a project, see [Project permissions](#project-permissions).
 
-| Action                        | Owner | Admin | Member | Guest |
+| Permission                    | Owner | Admin | Member | Guest |
 | ----------------------------- | :---: | :---: | :----: | :---: |
 | Browse / list all projects    |   ✓   |   ✓   |   ✓    |   —   |
 | Create a project              |   ✓   |   ✓   |   —    |   —   |
@@ -84,7 +84,7 @@ This covers project creation, discovery, and admin operations from the workspace
 
 ### Initiatives
 
-| Action                         | Owner | Admin | Member | Guest |
+| Permission                     | Owner | Admin | Member | Guest |
 | ------------------------------ | :---: | :---: | :----: | :---: |
 | View initiatives               |   ✓   |   ✓   |   ✓    |   —   |
 | Create                         |   ✓   |   ✓   |   —    |   —   |
@@ -97,7 +97,7 @@ This covers project creation, discovery, and admin operations from the workspace
 
 #### Initiative links
 
-| Action        | Owner | Admin | Member | Guest |
+| Permission    | Owner | Admin | Member | Guest |
 | ------------- | :---: | :---: | :----: | :---: |
 | View links    |   ✓   |   ✓   |   ✓    |   —   |
 | Add a link    |   ✓   |   ✓   |   —    |   —   |
@@ -106,7 +106,7 @@ This covers project creation, discovery, and admin operations from the workspace
 
 #### Initiative attachments
 
-| Action                | Owner | Admin | Member | Guest |
+| Permission            | Owner | Admin | Member | Guest |
 | --------------------- | :---: | :---: | :----: | :---: |
 | View                  |   ✓   |   ✓   |   ✓    |   —   |
 | Add attachment        |   ✓   |   ✓   |   —    |   —   |
@@ -115,7 +115,7 @@ This covers project creation, discovery, and admin operations from the workspace
 
 #### Initiative comments
 
-| Action             | Owner | Admin | Member | Guest |
+| Permission         | Owner | Admin | Member | Guest |
 | ------------------ | :---: | :---: | :----: | :---: |
 | View comments      |   ✓   |   ✓   |   ✓    |   —   |
 | Create a comment   |   ✓   |   ✓   |   ✓    |   —   |
@@ -126,7 +126,7 @@ This covers project creation, discovery, and admin operations from the workspace
 
 #### Initiative updates
 
-| Action                     | Owner | Admin | Member | Guest |
+| Permission                 | Owner | Admin | Member | Guest |
 | -------------------------- | :---: | :---: | :----: | :---: |
 | View updates               |   ✓   |   ✓   |   ✓    |   —   |
 | Create an update           |   ✓   |   ✓   |   —    |   —   |
@@ -144,7 +144,7 @@ This covers project creation, discovery, and admin operations from the workspace
 
 This covers workspace-admin operations over teamspaces. For actions taken by teamspace members inside a teamspace, see [Teamspace permissions](#teamspace-permissions).
 
-| Action                          | Owner | Admin |    Member     | Guest |
+| Permission                      | Owner | Admin |    Member     | Guest |
 | ------------------------------- | :---: | :---: | :-----------: | :---: |
 | Browse / list teamspaces        |   ✓   |   ✓   |       —       |   —   |
 | Create a teamspace              |   ✓   |   ✓   |       —       |   —   |
@@ -161,7 +161,7 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 
 ### Wiki
 
-| Action                     | Owner | Admin | Member | Guest |
+| Permission                 | Owner | Admin | Member | Guest |
 | -------------------------- | :---: | :---: | :----: | :---: |
 | View a page                |   ✓   |   ✓   |   ✓    |   —   |
 | Create a page              |   ✓   |   ✓   |   ✓    |   —   |
@@ -183,7 +183,7 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 
 #### Wiki Collections
 
-| Action                | Owner | Admin | Member | Guest |
+| Permission            | Owner | Admin | Member | Guest |
 | --------------------- | :---: | :---: | :----: | :---: |
 | View collections      |   ✓   |   ✓   |   ✓    |   —   |
 | Create a collection   |   ✓   |   ✓   |   ✓    |   —   |
@@ -194,7 +194,7 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 
 ### Workspace Views
 
-| Action                   | Owner | Admin | Member | Guest |
+| Permission               | Owner | Admin | Member | Guest |
 | ------------------------ | :---: | :---: | :----: | :---: |
 | View all workspace views |   ✓   |   ✓   |   ✓    |  ✓¹   |
 | Create a view            |   ✓   |   ✓   |   ✓    |   —   |
@@ -211,7 +211,7 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 
 ### Workspace Drafts
 
-| Action                          | Owner | Admin | Member | Guest |
+| Permission                      | Owner | Admin | Member | Guest |
 | ------------------------------- | :---: | :---: | :----: | :---: |
 | View drafts                     |   ✓   |   ✓   |   ✓    |   —   |
 | Create a draft                  |   ✓   |   ✓   |   ✓    |   —   |
@@ -224,7 +224,7 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 
 ### Releases
 
-| Action                           | Owner | Admin | Member | Guest |
+| Permission                       | Owner | Admin | Member | Guest |
 | -------------------------------- | :---: | :---: | :----: | :---: |
 | View releases                    |   ✓   |   ✓   |   ✓    |   —   |
 | Create a release                 |   ✓   |   ✓   |   —    |   —   |
@@ -245,7 +245,7 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 
 ### Customers
 
-| Action            | Owner | Admin | Member | Guest |
+| Permission        | Owner | Admin | Member | Guest |
 | ----------------- | :---: | :---: | :----: | :---: |
 | View customers    |   ✓   |   ✓   |   —    |   —   |
 | Create a customer |   ✓   |   ✓   |   —    |   —   |
@@ -256,7 +256,7 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 
 ### Workspace Analytics
 
-| Action        | Owner | Admin | Member | Guest |
+| Permission    | Owner | Admin | Member | Guest |
 | ------------- | :---: | :---: | :----: | :---: |
 | View          |   ✓   |   ✓   |   ✓    |   —   |
 | Export        |   ✓   |   ✓   |   ✓    |   —   |
@@ -264,7 +264,7 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 
 ### Dashboards
 
-| Action                              | Owner | Admin | Member | Guest |
+| Permission                          | Owner | Admin | Member | Guest |
 | ----------------------------------- | :---: | :---: | :----: | :---: |
 | View dashboards                     |   ✓   |   ✓   |   ✓    |   —   |
 | Create a dashboard                  |   ✓   |   ✓   |   —    |   —   |
@@ -279,16 +279,16 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 
 ### Worklogs
 
-| Action | Owner | Admin | Member | Guest |
-| ------ | :---: | :---: | :----: | :---: |
-| View   |   ✓   |   ✓   |   ✓    |   —   |
-| Export |   ✓   |   ✓   |   ✓    |   —   |
+| Permission | Owner | Admin | Member | Guest |
+| ---------- | :---: | :---: | :----: | :---: |
+| View       |   ✓   |   ✓   |   ✓    |   —   |
+| Export     |   ✓   |   ✓   |   ✓    |   —   |
 
 ### Workspace Activity Logs
 
 Audit trail of all changes made across the workspace.
 
-| Action                    | Owner | Admin | Member | Guest |
+| Permission                | Owner | Admin | Member | Guest |
 | ------------------------- | :---: | :---: | :----: | :---: |
 | View workspace activity   |   ✓   |   ✓   |   ✓    |   —   |
 | Export workspace activity |   ✓   |   ✓   |   ✓    |   —   |
@@ -297,14 +297,14 @@ Audit trail of all changes made across the workspace.
 
 Per-member activity history showing what a specific workspace member has done.
 
-| Action               | Owner | Admin | Member | Guest |
+| Permission           | Owner | Admin | Member | Guest |
 | -------------------- | :---: | :---: | :----: | :---: |
 | View user activity   |   ✓   |   ✓   |   ✓    |   —   |
 | Export user activity |   ✓   |   ✓   |   ✓    |   —   |
 
 ### Workspace Automations
 
-| Action           | Owner | Admin | Member | Guest |
+| Permission       | Owner | Admin | Member | Guest |
 | ---------------- | :---: | :---: | :----: | :---: |
 | View             |   ✓   |   ✓   |   —    |   —   |
 | Create           |   ✓   |   ✓   |   —    |   —   |
@@ -316,7 +316,7 @@ Per-member activity history showing what a specific workspace member has done.
 
 Files and images uploaded at workspace scope (logos, avatars, rich-text embeds not tied to a specific project).
 
-| Action          | Owner | Admin | Member | Guest |
+| Permission      | Owner | Admin | Member | Guest |
 | --------------- | :---: | :---: | :----: | :---: |
 | View / download |   ✓   |   ✓   |   ✓    |   ✓   |
 | Upload          |   ✓   |   ✓   |   ✓    |   —   |
@@ -328,52 +328,52 @@ Files and images uploaded at workspace scope (logos, avatars, rich-text embeds n
 
 Workspace-level project status definitions used for project grouping (Enterprise).
 
-| Action | Owner | Admin | Member | Guest |
-| ------ | :---: | :---: | :----: | :---: |
-| View   |   ✓   |   ✓   |   ✓    |   ✓   |
-| Create |   ✓   |   ✓   |   ✓    |   —   |
-| Edit   |   ✓   |   ✓   |   ✓    |   —   |
-| Delete |   ✓   |   ✓   |   ✓    |   —   |
+| Permission | Owner | Admin | Member | Guest |
+| ---------- | :---: | :---: | :----: | :---: |
+| View       |   ✓   |   ✓   |   ✓    |   ✓   |
+| Create     |   ✓   |   ✓   |   ✓    |   —   |
+| Edit       |   ✓   |   ✓   |   ✓    |   —   |
+| Delete     |   ✓   |   ✓   |   ✓    |   —   |
 
 ### Workspace Features
 
 Controls for toggling workspace-level features on or off.
 
-| Action                    | Owner | Admin | Member | Guest |
+| Permission                | Owner | Admin | Member | Guest |
 | ------------------------- | :---: | :---: | :----: | :---: |
 | View feature settings     |   ✓   |   ✓   |   —    |   —   |
 | Enable / disable features |   ✓   |   ✓   |   —    |   —   |
 
 ### Workspace Work Item Types
 
-| Action | Owner | Admin | Member | Guest |
-| ------ | :---: | :---: | :----: | :---: |
-| View   |   ✓   |   ✓   |   —    |   —   |
-| Create |   ✓   |   ✓   |   —    |   —   |
-| Edit   |   ✓   |   ✓   |   —    |   —   |
-| Delete |   ✓   |   ✓   |   —    |   —   |
+| Permission | Owner | Admin | Member | Guest |
+| ---------- | :---: | :---: | :----: | :---: |
+| View       |   ✓   |   ✓   |   —    |   —   |
+| Create     |   ✓   |   ✓   |   —    |   —   |
+| Edit       |   ✓   |   ✓   |   —    |   —   |
+| Delete     |   ✓   |   ✓   |   —    |   —   |
 
 ### Workspace Custom Properties
 
-| Action | Owner | Admin | Member | Guest |
-| ------ | :---: | :---: | :----: | :---: |
-| View   |   ✓   |   ✓   |   —    |   —   |
-| Create |   ✓   |   ✓   |   —    |   —   |
-| Edit   |   ✓   |   ✓   |   —    |   —   |
-| Delete |   ✓   |   ✓   |   —    |   —   |
+| Permission | Owner | Admin | Member | Guest |
+| ---------- | :---: | :---: | :----: | :---: |
+| View       |   ✓   |   ✓   |   —    |   —   |
+| Create     |   ✓   |   ✓   |   —    |   —   |
+| Edit       |   ✓   |   ✓   |   —    |   —   |
+| Delete     |   ✓   |   ✓   |   —    |   —   |
 
-### 1.21 Custom Relations
+### Custom Relations
 
-| Action | Owner | Admin | Member | Guest |
-| ------ | :---: | :---: | :----: | :---: |
-| View   |   ✓   |   ✓   |   ✓    |   ✓   |
-| Create |   ✓   |   ✓   |   ✓    |   —   |
-| Edit   |   ✓   |   ✓   |   ✓    |   —   |
-| Delete |   ✓   |   ✓   |   ✓    |   —   |
+| Permission | Owner | Admin | Member | Guest |
+| ---------- | :---: | :---: | :----: | :---: |
+| View       |   ✓   |   ✓   |   ✓    |   ✓   |
+| Create     |   ✓   |   ✓   |   ✓    |   —   |
+| Edit       |   ✓   |   ✓   |   ✓    |   —   |
+| Delete     |   ✓   |   ✓   |   ✓    |   —   |
 
 ### Favorites
 
-| Action                   | Owner | Admin | Member | Guest |
+| Permission               | Owner | Admin | Member | Guest |
 | ------------------------ | :---: | :---: | :----: | :---: |
 | View own favorites       |   ✓   |   ✓   |   ✓    |   —   |
 | Add a favorite           |   ✓   |   ✓   |   ✓    |   —   |
@@ -384,7 +384,7 @@ Controls for toggling workspace-level features on or off.
 
 Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
-| Action                         | Owner | Admin | Member | Guest |
+| Permission                     | Owner | Admin | Member | Guest |
 | ------------------------------ | :---: | :---: | :----: | :---: |
 | View integrations              |   ✓   |   ✓   |   ✓    |   —   |
 | Connect an integration         |   ✓   |   ✓   |   —    |   —   |
@@ -396,55 +396,55 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Webhooks
 
-| Action | Owner | Admin | Member | Guest |
-| ------ | :---: | :---: | :----: | :---: |
-| View   |   ✓   |   ✓   |   —    |   —   |
-| Create |   ✓   |   ✓   |   —    |   —   |
-| Edit   |   ✓   |   ✓   |   —    |   —   |
-| Delete |   ✓   |   ✓   |   —    |   —   |
+| Permission | Owner | Admin | Member | Guest |
+| ---------- | :---: | :---: | :----: | :---: |
+| View       |   ✓   |   ✓   |   —    |   —   |
+| Create     |   ✓   |   ✓   |   —    |   —   |
+| Edit       |   ✓   |   ✓   |   —    |   —   |
+| Delete     |   ✓   |   ✓   |   —    |   —   |
 
 ### Workspace API Tokens
 
-| Action | Owner | Admin | Member | Guest |
-| ------ | :---: | :---: | :----: | :---: |
-| View   |   ✓   |   ✓   |   —    |   —   |
-| Create |   ✓   |   ✓   |   —    |   —   |
-| Delete |   ✓   |   ✓   |   —    |   —   |
+| Permission | Owner | Admin | Member | Guest |
+| ---------- | :---: | :---: | :----: | :---: |
+| View       |   ✓   |   ✓   |   —    |   —   |
+| Create     |   ✓   |   ✓   |   —    |   —   |
+| Delete     |   ✓   |   ✓   |   —    |   —   |
 
 ### Billing
 
-| Action         | Owner | Admin | Member | Guest |
+| Permission     | Owner | Admin | Member | Guest |
 | -------------- | :---: | :---: | :----: | :---: |
 | View billing   |   ✓   |   ✓   |   —    |   —   |
 | Manage billing |   ✓   |   ✓   |   —    |   —   |
 
 ### Plane AI
 
-| Action          | Owner | Admin | Member | Guest |
+| Permission      | Owner | Admin | Member | Guest |
 | --------------- | :---: | :---: | :----: | :---: |
 | Use AI features |   ✓   |   ✓   |   ✓    |   —   |
 
 ### Work Item Templates
 
-| Action | Owner | Admin | Member | Guest |
-| ------ | :---: | :---: | :----: | :---: |
-| View   |   ✓   |   ✓   |   —    |   —   |
-| Create |   ✓   |   ✓   |   —    |   —   |
-| Edit   |   ✓   |   ✓   |   —    |   —   |
-| Delete |   ✓   |   ✓   |   —    |   —   |
+| Permission | Owner | Admin | Member | Guest |
+| ---------- | :---: | :---: | :----: | :---: |
+| View       |   ✓   |   ✓   |   —    |   —   |
+| Create     |   ✓   |   ✓   |   —    |   —   |
+| Edit       |   ✓   |   ✓   |   —    |   —   |
+| Delete     |   ✓   |   ✓   |   —    |   —   |
 
 ### Page Templates
 
-| Action | Owner | Admin | Member | Guest |
-| ------ | :---: | :---: | :----: | :---: |
-| View   |   ✓   |   ✓   |   —    |   —   |
-| Create |   ✓   |   ✓   |   —    |   —   |
-| Edit   |   ✓   |   ✓   |   —    |   —   |
-| Delete |   ✓   |   ✓   |   —    |   —   |
+| Permission | Owner | Admin | Member | Guest |
+| ---------- | :---: | :---: | :----: | :---: |
+| View       |   ✓   |   ✓   |   —    |   —   |
+| Create     |   ✓   |   ✓   |   —    |   —   |
+| Edit       |   ✓   |   ✓   |   —    |   —   |
+| Delete     |   ✓   |   ✓   |   —    |   —   |
 
 ### Project Templates
 
-| Action                  | Owner | Admin | Member | Guest |
+| Permission              | Owner | Admin | Member | Guest |
 | ----------------------- | :---: | :---: | :----: | :---: |
 | View                    |   ✓   |   ✓   |   —    |   —   |
 | Use to create a project |   ✓   |   ✓   |   ✓    |   —   |
@@ -459,7 +459,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Project Settings
 
-| Action                        | Admin | Contributor | Commenter | Guest |
+| Permission                    | Admin | Contributor | Commenter | Guest |
 | ----------------------------- | :---: | :---------: | :-------: | :---: |
 | View project settings         |   ✓   |      ✓      |     ✓     |   ✓   |
 | Edit project settings         |   ✓   |      —      |     —     |   —   |
@@ -470,7 +470,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Project Members
 
-| Action                           | Admin | Contributor | Commenter | Guest |
+| Permission                       | Admin | Contributor | Commenter | Guest |
 | -------------------------------- | :---: | :---------: | :-------: | :---: |
 | View member list                 |   ✓   |      ✓      |     ✓     |   ✓   |
 | Invite by email                  |   ✓   |      —      |     —     |   —   |
@@ -483,7 +483,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 #### Core actions
 
-| Action                  | Admin | Contributor | Commenter | Guest | Notes                                   |
+| Permission              | Admin | Contributor | Commenter | Guest | Notes                                   |
 | ----------------------- | :---: | :---------: | :-------: | :---: | --------------------------------------- |
 | View work items         |   ✓   |      ✓      |     ✓     |  Own  | Guest: own intake submissions only      |
 | Create a work item      |   ✓   |      ✓      |     —     |   —   |                                         |
@@ -523,7 +523,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 #### Conversion and structure
 
-| Action                | Admin | Contributor | Commenter | Guest | Notes                     |
+| Permission            | Admin | Contributor | Commenter | Guest | Notes                     |
 | --------------------- | :---: | :---------: | :-------: | :---: | ------------------------- |
 | Add sub-work item     |   ✓   |      ✓      |     —     |   —   | Blocked on archived items |
 | Convert to epic       |   ✓   |      ✓      |     —     |   —   | Blocked on archived items |
@@ -532,7 +532,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 #### Work Item Relations
 
-| Action            | Admin | Contributor | Commenter | Guest | Notes |
+| Permission        | Admin | Contributor | Commenter | Guest | Notes |
 | ----------------- | :---: | :---------: | :-------: | :---: | ----- |
 | Add relation      |   ✓   |      ✓      |     —     |   —   |       |
 | Edit a relation   |   ✓   |      ✓      |     —     |   —   |       |
@@ -541,7 +541,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 #### Work Item Links
 
-| Action        | Admin | Contributor | Commenter | Guest | Notes |
+| Permission    | Admin | Contributor | Commenter | Guest | Notes |
 | ------------- | :---: | :---------: | :-------: | :---: | ----- |
 | Add a link    |   ✓   |      ✓      |     —     |   —   |       |
 | Edit a link   |   ✓   |      ✓      |     —     |   —   |       |
@@ -550,7 +550,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 #### Work Item Attachments
 
-| Action                | Admin | Contributor | Commenter | Guest | Notes                  |
+| Permission            | Admin | Contributor | Commenter | Guest | Notes                  |
 | --------------------- | :---: | :---------: | :-------: | :---: | ---------------------- |
 | View attachments      |   ✓   |      ✓      |     ✓     |   —   |                        |
 | Add attachment        |   ✓   |      ✓      |     ✓     |   —   | Commenter: upload only |
@@ -560,7 +560,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 #### Worklogs
 
-| Action                  | Admin | Contributor | Commenter | Guest | Notes                        |
+| Permission              | Admin | Contributor | Commenter | Guest | Notes                        |
 | ----------------------- | :---: | :---------: | :-------: | :---: | ---------------------------- |
 | Log work (add work log) |   ✓   |      ✓      |     —     |   —   | Blocked on intake work items |
 | Edit own work log       |   ✓   |     Own     |     —     |   —   |                              |
@@ -568,7 +568,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Comments
 
-| Action             | Admin | Contributor | Commenter | Guest | Notes                          |
+| Permission         | Admin | Contributor | Commenter | Guest | Notes                          |
 | ------------------ | :---: | :---------: | :-------: | :---: | ------------------------------ |
 | Create comment     |   ✓   |      ✓      |     ✓     |   —   | Blocked on archived work items |
 | Edit own comment   |   ✓   |     Own     |    Own    |   —   | Blocked on archived work items |
@@ -581,7 +581,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 #### Core actions
 
-| Action                  | Admin | Contributor | Commenter | Guest | Notes                     |
+| Permission              | Admin | Contributor | Commenter | Guest | Notes                     |
 | ----------------------- | :---: | :---------: | :-------: | :---: | ------------------------- |
 | View epics              |   ✓   |      ✓      |     ✓     |   —   |                           |
 | Create an epic          |   ✓   |      ✓      |     —     |   —   |                           |
@@ -598,7 +598,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 #### Epic Links
 
-| Action        | Admin | Contributor | Commenter | Guest |
+| Permission    | Admin | Contributor | Commenter | Guest |
 | ------------- | :---: | :---------: | :-------: | :---: |
 | View links    |   ✓   |      ✓      |     ✓     |   —   |
 | Add a link    |   ✓   |      ✓      |     —     |   —   |
@@ -607,7 +607,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 #### Epic Custom Properties
 
-| Action                                    | Admin | Contributor | Commenter | Guest |
+| Permission                                | Admin | Contributor | Commenter | Guest |
 | ----------------------------------------- | :---: | :---------: | :-------: | :---: |
 | View custom properties                    |   ✓   |      ✓      |     ✓     |   —   |
 | Edit property values                      |   ✓   |      ✓      |     —     |   —   |
@@ -615,7 +615,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 #### Epic Updates
 
-| Action               | Admin | Contributor | Commenter | Guest |
+| Permission           | Admin | Contributor | Commenter | Guest |
 | -------------------- | :---: | :---------: | :-------: | :---: |
 | View updates         |   ✓   |      ✓      |     ✓     |   —   |
 | Create an update     |   ✓   |      ✓      |     —     |   —   |
@@ -629,7 +629,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Project Updates
 
-| Action               | Admin | Contributor | Commenter | Guest |
+| Permission           | Admin | Contributor | Commenter | Guest |
 | -------------------- | :---: | :---------: | :-------: | :---: |
 | View updates         |   ✓   |      ✓      |     ✓     |   ✓   |
 | Create an update     |   ✓   |      ✓      |     —     |   —   |
@@ -643,7 +643,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Cycles
 
-| Action                            | Admin | Contributor | Commenter | Guest |
+| Permission                        | Admin | Contributor | Commenter | Guest |
 | --------------------------------- | :---: | :---------: | :-------: | :---: |
 | View cycles                       |   ✓   |      ✓      |     ✓     |   —   |
 | Create a cycle                    |   ✓   |      ✓      |     —     |   —   |
@@ -661,7 +661,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Modules
 
-| Action                           | Admin | Contributor | Commenter | Guest |
+| Permission                       | Admin | Contributor | Commenter | Guest |
 | -------------------------------- | :---: | :---------: | :-------: | :---: |
 | View modules                     |   ✓   |      ✓      |     ✓     |   —   |
 | Create a module                  |   ✓   |      ✓      |     —     |   —   |
@@ -678,7 +678,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Milestones
 
-| Action                           | Admin | Contributor | Commenter | Guest |
+| Permission                       | Admin | Contributor | Commenter | Guest |
 | -------------------------------- | :---: | :---------: | :-------: | :---: |
 | View milestones                  |   ✓   |      ✓      |     ✓     |   —   |
 | Create a milestone               |   ✓   |      ✓      |     —     |   —   |
@@ -689,7 +689,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Intake
 
-| Action                           | Admin | Contributor | Commenter | Guest | Notes                           |
+| Permission                       | Admin | Contributor | Commenter | Guest | Notes                           |
 | -------------------------------- | :---: | :---------: | :-------: | :---: | ------------------------------- |
 | Submit a new intake item         |   ✓   |      ✓      |     ✓     |   ✓   | All roles can submit            |
 | View all submissions             |   ✓   |      ✓      |     ✓     |  Own  | Guest: own only                 |
@@ -709,7 +709,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Pages
 
-| Action                     | Admin | Contributor | Commenter | Guest | Notes                                    |
+| Permission                 | Admin | Contributor | Commenter | Guest | Notes                                    |
 | -------------------------- | :---: | :---------: | :-------: | :---: | ---------------------------------------- |
 | View a page                |   ✓   |      ✓      |     ✓     |   ✓   | Public pages viewable without role check |
 | Create a page              |   ✓   |      ✓      |     —     |   —   |                                          |
@@ -730,7 +730,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Views
 
-| Action                  | Admin | Contributor | Commenter | Guest | Notes              |
+| Permission              | Admin | Contributor | Commenter | Guest | Notes              |
 | ----------------------- | :---: | :---------: | :-------: | :---: | ------------------ |
 | View all views          |   ✓   |      ✓      |     ✓     |   ✓   |                    |
 | Create a view           |   ✓   |      ✓      |     —     |   —   |                    |
@@ -746,7 +746,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### States
 
-| Action          | Admin | Contributor | Commenter | Guest |
+| Permission      | Admin | Contributor | Commenter | Guest |
 | --------------- | :---: | :---------: | :-------: | :---: |
 | View            |   ✓   |      ✓      |     ✓     |   ✓   |
 | Create          |   ✓   |      —      |     —     |   —   |
@@ -757,26 +757,26 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Labels
 
-| Action  | Admin | Contributor | Commenter | Guest |
-| ------- | :---: | :---------: | :-------: | :---: |
-| View    |   ✓   |      ✓      |     ✓     |   ✓   |
-| Create  |   ✓   |      —      |     —     |   —   |
-| Edit    |   ✓   |      —      |     —     |   —   |
-| Delete  |   ✓   |      —      |     —     |   —   |
-| Reorder |   ✓   |      —      |     —     |   —   |
+| Permission | Admin | Contributor | Commenter | Guest |
+| ---------- | :---: | :---------: | :-------: | :---: |
+| View       |   ✓   |      ✓      |     ✓     |   ✓   |
+| Create     |   ✓   |      —      |     —     |   —   |
+| Edit       |   ✓   |      —      |     —     |   —   |
+| Delete     |   ✓   |      —      |     —     |   —   |
+| Reorder    |   ✓   |      —      |     —     |   —   |
 
 ### Estimates
 
-| Action | Admin | Contributor | Commenter | Guest |
-| ------ | :---: | :---------: | :-------: | :---: |
-| View   |   ✓   |      ✓      |     ✓     |   ✓   |
-| Create |   ✓   |      —      |     —     |   —   |
-| Edit   |   ✓   |      —      |     —     |   —   |
-| Delete |   ✓   |      —      |     —     |   —   |
+| Permission | Admin | Contributor | Commenter | Guest |
+| ---------- | :---: | :---------: | :-------: | :---: |
+| View       |   ✓   |      ✓      |     ✓     |   ✓   |
+| Create     |   ✓   |      —      |     —     |   —   |
+| Edit       |   ✓   |      —      |     —     |   —   |
+| Delete     |   ✓   |      —      |     —     |   —   |
 
 ### Workflows
 
-| Action                 | Admin | Contributor | Commenter | Guest |
+| Permission             | Admin | Contributor | Commenter | Guest |
 | ---------------------- | :---: | :---------: | :-------: | :---: |
 | View                   |   ✓   |      ✓      |     —     |   —   |
 | Create / edit / delete |   ✓   |      —      |     —     |   —   |
@@ -784,7 +784,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Automations
 
-| Action           | Admin | Contributor | Commenter | Guest |
+| Permission       | Admin | Contributor | Commenter | Guest |
 | ---------------- | :---: | :---------: | :-------: | :---: |
 | View automations |   ✓   |      ✓      |     —     |   —   |
 | Create           |   ✓   |      —      |     —     |   —   |
@@ -795,50 +795,50 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 ### Recurring Work Items
 
-| Action | Admin | Contributor | Commenter | Guest |
-| ------ | :---: | :---------: | :-------: | :---: |
-| View   |   ✓   |      ✓      |     —     |   —   |
-| Create |   ✓   |      ✓      |     —     |   —   |
-| Edit   |   ✓   |      ✓      |     —     |   —   |
-| Delete |   ✓   |      ✓      |     —     |   —   |
+| Permission | Admin | Contributor | Commenter | Guest |
+| ---------- | :---: | :---------: | :-------: | :---: |
+| View       |   ✓   |      ✓      |     —     |   —   |
+| Create     |   ✓   |      ✓      |     —     |   —   |
+| Edit       |   ✓   |      ✓      |     —     |   —   |
+| Delete     |   ✓   |      ✓      |     —     |   —   |
 
 ### Work Item Types and Custom Properties
 
-| Action | Admin | Contributor | Commenter | Guest |
-| ------ | :---: | :---------: | :-------: | :---: |
-| View   |   ✓   |      ✓      |     ✓     |   —   |
-| Create |   ✓   |      ✓      |     —     |   —   |
-| Edit   |   ✓   |      ✓      |     —     |   —   |
-| Delete |   ✓   |      ✓      |     —     |   —   |
+| Permission | Admin | Contributor | Commenter | Guest |
+| ---------- | :---: | :---------: | :-------: | :---: |
+| View       |   ✓   |      ✓      |     ✓     |   —   |
+| Create     |   ✓   |      ✓      |     —     |   —   |
+| Edit       |   ✓   |      ✓      |     —     |   —   |
+| Delete     |   ✓   |      ✓      |     —     |   —   |
 
 ### Work Item Templates
 
-| Action | Admin | Contributor | Commenter | Guest |
-| ------ | :---: | :---------: | :-------: | :---: |
-| View   |   ✓   |      ✓      |     —     |   —   |
-| Create |   ✓   |      —      |     —     |   —   |
-| Edit   |   ✓   |      —      |     —     |   —   |
-| Delete |   ✓   |      —      |     —     |   —   |
+| Permission | Admin | Contributor | Commenter | Guest |
+| ---------- | :---: | :---------: | :-------: | :---: |
+| View       |   ✓   |      ✓      |     —     |   —   |
+| Create     |   ✓   |      —      |     —     |   —   |
+| Edit       |   ✓   |      —      |     —     |   —   |
+| Delete     |   ✓   |      —      |     —     |   —   |
 
 ### Page Templates
 
-| Action | Admin | Contributor | Commenter | Guest |
-| ------ | :---: | :---------: | :-------: | :---: |
-| View   |   ✓   |      ✓      |     —     |   —   |
-| Create |   ✓   |      —      |     —     |   —   |
-| Edit   |   ✓   |      —      |     —     |   —   |
-| Delete |   ✓   |      —      |     —     |   —   |
+| Permission | Admin | Contributor | Commenter | Guest |
+| ---------- | :---: | :---------: | :-------: | :---: |
+| View       |   ✓   |      ✓      |     —     |   —   |
+| Create     |   ✓   |      —      |     —     |   —   |
+| Edit       |   ✓   |      —      |     —     |   —   |
+| Delete     |   ✓   |      —      |     —     |   —   |
 
 ### Project Analytics
 
-| Action | Admin | Contributor | Commenter | Guest |
-| ------ | :---: | :---------: | :-------: | :---: |
-| View   |   ✓   |      ✓      |     ✓     |   —   |
-| Export |   ✓   |      ✓      |     —     |   —   |
+| Permission | Admin | Contributor | Commenter | Guest |
+| ---------- | :---: | :---------: | :-------: | :---: |
+| View       |   ✓   |      ✓      |     ✓     |   —   |
+| Export     |   ✓   |      ✓      |     —     |   —   |
 
 ### Project Links
 
-| Action        | Admin | Contributor | Commenter | Guest |
+| Permission    | Admin | Contributor | Commenter | Guest |
 | ------------- | :---: | :---------: | :-------: | :---: |
 | View          |   ✓   |      ✓      |     ✓     |   —   |
 | Add a link    |   ✓   |      ✓      |     —     |   —   |
@@ -849,7 +849,7 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 
 Files and images uploaded within project scope — includes images embedded in pages or comments, and project-scoped uploads. Commenters can upload because they need to embed images in comments.
 
-| Action            | Admin | Contributor | Commenter | Guest |
+| Permission        | Admin | Contributor | Commenter | Guest |
 | ----------------- | :---: | :---------: | :-------: | :---: |
 | View / download   |   ✓   |      ✓      |     ✓     |   ✓   |
 | Upload            |   ✓   |      ✓      |     ✓     |   —   |
@@ -861,7 +861,7 @@ Files and images uploaded within project scope — includes images embedded in p
 
 Audit trail for all changes within the project.
 
-| Action                | Admin | Contributor | Commenter | Guest |
+| Permission            | Admin | Contributor | Commenter | Guest |
 | --------------------- | :---: | :---------: | :-------: | :---: |
 | View project activity |   ✓   |      ✓      |     ✓     |   ✓   |
 
@@ -869,7 +869,7 @@ Audit trail for all changes within the project.
 
 Per-member activity scoped to this project — who changed what.
 
-| Action               | Admin | Contributor | Commenter | Guest |
+| Permission           | Admin | Contributor | Commenter | Guest |
 | -------------------- | :---: | :---------: | :-------: | :---: |
 | View member activity |   ✓   |      —      |     —     |   —   |
 
@@ -882,7 +882,7 @@ The tables below apply to users who are explicit **teamspace members**. Lead is 
 
 ### Teamspace management (within a Teamspace)
 
-| Action                                            | Member | Lead |
+| Permission                                        | Member | Lead |
 | ------------------------------------------------- | :----: | :--: |
 | View teamspace                                    |   ✓    |  ✓   |
 | Edit teamspace settings (name, logo, description) |   —    |  ✓   |
@@ -899,7 +899,7 @@ The tables below apply to users who are explicit **teamspace members**. Lead is 
 
 Comments posted directly on the teamspace entity (not on a page or view within it).
 
-| Action             | Member | Lead | Notes                         |
+| Permission         | Member | Lead | Notes                         |
 | ------------------ | :----: | :--: | ----------------------------- |
 | View comments      |   ✓    |  ✓   | Also: Workspace Owner / Admin |
 | Create a comment   |   ✓    |  ✓   |                               |
@@ -910,7 +910,7 @@ Comments posted directly on the teamspace entity (not on a page or view within i
 
 ### Teamspace Views
 
-| Action                   | Member | Lead |
+| Permission               | Member | Lead |
 | ------------------------ | :----: | :--: |
 | View all teamspace views |   ✓    |  ✓   |
 | Create a view            |   ✓    |  ✓   |
@@ -922,7 +922,7 @@ Comments posted directly on the teamspace entity (not on a page or view within i
 
 ### Teamspace Pages
 
-| Action                     | Member | Lead | Notes                                           |
+| Permission                 | Member | Lead | Notes                                           |
 | -------------------------- | :----: | :--: | ----------------------------------------------- |
 | View a page                |   ✓    |  ✓   | Private pages: owner + shared-access users only |
 | Create a page              |   ✓    |  ✓   |                                                 |
@@ -943,7 +943,7 @@ Comments posted directly on the teamspace entity (not on a page or view within i
 
 ### Teamspace Page Comments
 
-| Action             | Member | Lead |
+| Permission         | Member | Lead |
 | ------------------ | :----: | :--: |
 | Create a comment   |   ✓    |  ✓   |
 | Edit own comment   |   ✓    |  ✓   |
