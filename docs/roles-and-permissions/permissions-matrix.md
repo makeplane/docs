@@ -13,12 +13,13 @@ Plane has two sets of roles: workspace roles that control what someone can do ac
 
 ## Symbols used on this page
 
-- ✓ - the role has unconditional access to this permission.
-- **+Creator** - the role can perform the action only on resources they created.
-- **+Lead** - the role can perform the action only if they're the teamspace lead.
-- x - the role does not have this permission.
+- ✓ - Permitted for any item
+- Own - Permitted only on items the user created (creator condition)
+- Lead - Permitted only when the user holds the Lead designation in that teamspace
+- - - Not permitted
+- \* - All actions permitted (wildcard grant in permission scheme)
 
-## Workspace Permissions
+## Workspace permissions
 
 > **Owner and Admin bypass:** Workspace Owners have unconditional full access. Workspace Admins have full access to all workspace resources and all project resources — without needing project membership.
 
@@ -31,7 +32,6 @@ Plane has two sets of roles: workspace roles that control what someone can do ac
 | Delete workspace | ✓ | — | — | — |
 | Transfer ownership | ✓ | — | — | — |
 
----
 
 ### Workspace members
 
