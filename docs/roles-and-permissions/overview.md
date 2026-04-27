@@ -17,6 +17,11 @@ Plane combines two access control models.
 
 **Granular Access Control (GAC)** sits on top. It lets you grant or deny specific permissions to specific users on specific resources, independent of their role. A Contributor could be denied "delete work items" on one particular project while keeping that permission everywhere else, or a specific user could be granted temporary edit access to a single page for the duration of an external review — all without changing anyone's role. GAC is for the exceptions — situations where role-level access is too coarse.
 
+:::tip
+Owner, Member, and Guest are available on all plans. Other system-defined roles are exclusive to the Business plan and higher. See [Plan availability](/roles-and-permissions/overview#plan-availability).
+:::
+
+
 ## What changed from earlier versions
 
 Three things were renamed or restructured:
