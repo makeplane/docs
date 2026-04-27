@@ -14,7 +14,7 @@ If you're looking for what a specific role can or can't do, see the [Permissions
 RBAC is the default inside Plane. GAC lets you define roles with fine-grained permissions.
 
 **Role-Based Access Control (RBAC)**  
-Every user holds a role—either a system-defined one like Owner, Admin, Member, Guest, Contributor, or Commenter or a [custom one](/roles-and-permissions/custom-roles)—and that role carries a defined set of permissions. All of our plans come with pre-set system-defined roles. 
+Every user holds a role—either a system-defined one like Owner, Admin, Member, Guest, Contributor, or Commenter or a [custom one](/roles-and-permissions/custom-roles)—and that role carries a defined set of permissions. All of our plans come with pre-set system-defined roles.
 
 **Granular Access Control (GAC)**  
 GAC unlocks custom roles, each composed of one or more permission schemes. This lets you go beyond system-defined roles to create and control exactly what a role can and cannot do.
