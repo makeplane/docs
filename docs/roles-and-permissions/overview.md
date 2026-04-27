@@ -21,7 +21,6 @@ Plane combines two access control models.
 Owner, Member, and Guest are available on all plans. Other system-defined roles are exclusive to the Business plan and higher. See [Plan availability](/roles-and-permissions/overview#plan-availability).
 :::
 
-
 ## What changed from earlier versions
 
 Three things were renamed or restructured:
