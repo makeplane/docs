@@ -16,7 +16,7 @@ Every workspace in Plane has two main components:
 - **Projects**  
   Projects serve as the cornerstone for all activities within the product. You can create work items, assign tasks to members, and track progress for whatever you’re working on. If you envision your organization as NASA, each mission can be likened to a project. [Learn more here](/core-concepts/projects/overview).
 - **Members**  
-  Invite your teammates, collaborators, or managers to join your workspace. Each user gets a role, like Admin, Member, or Guest, to control what they can do. [Explore roles here](/workspaces-and-users/roles).
+  Invite your teammates, collaborators, or managers to join your workspace. Each user gets a role, like Admin, Member, or Guest, to control what they can do. [Explore roles here](/roles-and-permissions/member-roles).
 
 ## Create workspace
 
