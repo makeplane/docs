@@ -18,546 +18,947 @@ Plane has two sets of roles: workspace roles that control what someone can do ac
 - **+Lead** - the role can perform the action only if they're the teamspace lead.
 - x - the role does not have this permission.
 
-**Owner has full access.** Workspace Owner holds a full-access wildcard and matches every permission in this document. The Owner column is omitted from individual tables and assumed ✓ throughout.
+## Workspace Permissions
 
-**Workspace Admin and Owner bypass projects.** Both have wildcard access to every project resource type, so they appear as ✓ on all project-level permissions even without explicit project membership.
+> **Owner and Admin bypass:** Workspace Owners have unconditional full access. Workspace Admins have full access to all workspace resources and all project resources — without needing project membership.
 
-## Workspace permissions
+### Workspace settings
 
-### Workspace management
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View workspace settings | ✓ | ✓ | ✓ | ✓ |
+| Edit workspace settings | ✓ | ✓ | — | — |
+| Delete workspace | ✓ | — | — | — |
+| Transfer ownership | ✓ | — | — | — |
 
-Core workspace configuration: name, logo, currency, domain, archival, deletion, and ownership transfer.
+---
 
-| Permission              | Owner | Admin | Member | Guest |
-| ----------------------- | ----- | ----- | ------ | ----- |
-| View Workspace          | ✓     | ✓     | ✓      | ✓     |
-| Edit Workspace Settings | ✓     | ✓     | x      | x     |
-| Manage Workspace        | ✓     | ✓     | x      | x     |
-| Invite Members          | ✓     | ✓     | x      | x     |
-| Archive Workspace       | ✓     | ✓     | x      | x     |
-| Delete Workspace        | ✓     | x     | x      | x     |
-| Transfer Ownership      | ✓     | x     | x      | x     |
+### Workspace members
 
-Only Owner can delete the workspace or transfer ownership.
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View member list | ✓ | ✓ | ✓ | ✓ |
+| Invite by email | ✓ | ✓ | — | — |
+| Import members (CSV / SSO) | ✓ | ✓ | — | — |
+| Change a member's role | ✓ | ✓ | — | — |
+| Assign Owner role | ✓ | — | — | — |
+| Assign Admin role | ✓ | ✓ | — | — |
+| Remove a member | ✓ | ✓ | — | — |
 
-### Member management
+### Custom Roles
 
-Inviting, editing, importing, and removing workspace members.
+Custom roles are workspace-defined role definitions extending the base system roles.
 
-| Permission                 | Owner | Admin | Member | Guest |
-| -------------------------- | ----- | ----- | ------ | ----- |
-| View Members               | ✓     | ✓     | ✓      | ✓     |
-| Invite Members             | ✓     | ✓     | x      | x     |
-| Edit Member Details        | ✓     | ✓     | x      | x     |
-| Import Members (CSV / SSO) | ✓     | ✓     | x      | x     |
-| Change Member Role         | ✓     | ✓     | x      | x     |
-| Remove Members             | ✓     | ✓     | x      | x     |
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View custom roles | ✓ | ✓ | — | — |
+| Create a custom role | ✓ | ✓ | — | — |
+| Edit a custom role | ✓ | ✓ | — | — |
+| Delete a custom role | ✓ | ✓ | — | — |
 
-Role hierarchy is enforced. Admins cannot modify members at the same or higher level than their own.
+### Projects (Workspace-level management)
 
-### Project management
+This covers project creation, discovery, and admin operations from the workspace level. For content access inside a project, see [Project permissions](#project-permissions).
 
-Creating and managing projects from the workspace context.
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| Browse / list all projects | ✓ | ✓ | ✓ | — |
+| Create a project | ✓ | ✓ | — | — |
+| Self-join a public project | ✓ | ✓ | ✓ | — |
+| Self-join a private project | ✓ | ✓ | — | — |
+| Edit project settings | ✓ | ✓ | — | — |
+| Archive a project | ✓ | ✓ | — | — |
+| Delete a project | ✓ | ✓ | — | — |
+| Publish project (make public) | ✓ | ✓ | — | — |
 
-| Permission                     | Owner | Admin | Member | Guest |
-| ------------------------------ | ----- | ----- | ------ | ----- |
-| Browse Projects                | ✓     | ✓     | ✓      | x     |
-| View Project Details           | ✓     | ✓     | ✓      | x     |
-| Create Projects                | ✓     | ✓     | x      | x     |
-| Edit Project Settings          | ✓     | ✓     | x      | x     |
-| Publish Projects (make public) | ✓     | ✓     | x      | x     |
-| Archive Projects               | ✓     | ✓     | x      | x     |
-| Delete Projects                | ✓     | ✓     | x      | x     |
-| Manage Project Access          | ✓     | ✓     | x      | x     |
+> Workspace Owners and Admins have full access to all project content without needing explicit project membership.
 
-Guests can only see projects they've been explicitly added to.
+**Auto-join project role mapping** (when a workspace member self-joins a project):
 
-### Role administration
-
-Creating and managing custom roles and project roles.
-
-| Permission              | Owner | Admin | Member | Guest |
-| ----------------------- | ----- | ----- | ------ | ----- |
-| View Custom Roles       | ✓     | ✓     | x      | x     |
-| Create Custom Roles     | ✓     | ✓     | x      | x     |
-| Edit Custom Roles       | ✓     | ✓     | x      | x     |
-| Delete Custom Roles     | ✓     | ✓     | x      | x     |
-| View Project Roles      | ✓     | ✓     | x      | x     |
-| Create Project Roles    | ✓     | ✓     | x      | x     |
-| Edit Project Roles      | ✓     | ✓     | x      | x     |
-| Delete Project Roles    | ✓     | ✓     | x      | x     |
-| Define Role Permissions | ✓     | ✓     | x      | x     |
-
-Custom roles and permission schemes are an Enterprise feature.
-
-### Wiki
-
-Workspace-level wikis.
-
-| Permission            | Owner | Admin | Member | Guest |
-| --------------------- | ----- | ----- | ------ | ----- |
-| View Wiki             | ✓     | ✓     | ✓      | x     |
-| Create Wiki Pages     | ✓     | ✓     | ✓      | x     |
-| Edit Wiki Pages       | ✓     | ✓     | ✓      | x     |
-| Share Wiki Pages      | ✓     | ✓     | ✓      | x     |
-| Delete Wiki Pages     | ✓     | ✓     | ✓      | x     |
-| Comment on Wiki Pages | ✓     | ✓     | ✓      | x     |
-
-### Workspace Views
-
-Workspace-level saved filters and view management.
-
-| Permission              | Owner | Admin | Member   | Guest |
-| ----------------------- | ----- | ----- | -------- | ----- |
-| View Workspace Views    | ✓     | ✓     | ✓        | ✓     |
-| Create Workspace Views  | ✓     | ✓     | ✓        | x     |
-| Edit Workspace Views    | ✓     | ✓     | +Creator | x     |
-| Share Workspace Views   | ✓     | ✓     | ✓        | x     |
-| Publish Workspace Views | ✓     | ✓     | ✓        | x     |
-| Export Workspace Views  | ✓     | ✓     | ✓        | x     |
-| Delete Workspace Views  | ✓     | ✓     | +Creator | x     |
-
-Members can only edit and delete views they created themselves.
+| Workspace role | Project role assigned |
+|---|---|
+| Owner | Admin |
+| Admin | Admin |
+| Member | Contributor |
+| Guest | — (cannot self-join) |
+| Custom role | Contributor |
 
 ### Initiatives
 
-Cross-project initiative tracking, including comments, attachments, links, and updates.
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View initiatives | ✓ | ✓ | ✓ | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+| React | ✓ | ✓ | ✓ | — |
+| Add / remove epics | ✓ | ✓ | — | — |
+| Add / remove projects in scope | ✓ | ✓ | — | — |
+| Drag and drop (reorder) | ✓ | ✓ | — | — |
 
-| Permission                    | Owner | Admin | Member   | Guest |
-| ----------------------------- | ----- | ----- | -------- | ----- |
-| View Initiatives              | ✓     | ✓     | ✓        | x     |
-| Create Initiatives            | ✓     | ✓     | x        | x     |
-| Edit Initiatives              | ✓     | ✓     | x        | x     |
-| Manage Initiatives            | ✓     | ✓     | x        | x     |
-| Delete Initiatives            | ✓     | ✓     | x        | x     |
-| Edit Initiative Comments      | ✓     | ✓     | +Creator | x     |
-| Delete Initiative Comments    | ✓     | ✓     | +Creator | x     |
-| Delete Initiative Attachments | ✓     | ✓     | +Creator | x     |
-| Post Initiative Updates       | ✓     | ✓     | ✓        | x     |
-| Edit Initiative Updates       | ✓     | ✓     | ✓        | x     |
-| Delete Initiative Updates     | ✓     | ✓     | ✓        | x     |
+#### Initiative links
 
-### Teamspaces
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View links | ✓ | ✓ | ✓ | — |
+| Add a link | ✓ | ✓ | — | — |
+| Edit a link | ✓ | ✓ | — | — |
+| Delete a link | ✓ | ✓ | — | — |
 
-Browsing, creating, and managing teamspaces.
+#### Initiative attachments
 
-| Permission               | Owner | Admin | Member | Guest |
-| ------------------------ | ----- | ----- | ------ | ----- |
-| Browse Teamspaces        | ✓     | ✓     | ✓      | x     |
-| View Teamspace Details   | ✓     | ✓     | ✓      | x     |
-| Create Teamspaces        | ✓     | ✓     | x      | x     |
-| Edit Teamspaces          | ✓     | ✓     | +Lead  | x     |
-| Manage Teamspace Members | ✓     | ✓     | +Lead  | x     |
-| Delete Teamspaces        | ✓     | ✓     | +Lead  | x     |
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Add attachment | ✓ | ✓ | — | — |
+| Edit attachment | ✓ | ✓ | — | — |
+| Delete any attachment | ✓ | ✓ | — | — |
 
-Editing, deleting, or managing members on a teamspace requires being the teamspace lead. Workspace Admin role alone is not sufficient.
+#### Initiative comments
 
-### Integrations
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View comments | ✓ | ✓ | ✓ | — |
+| Create a comment | ✓ | ✓ | ✓ | — |
+| Edit own comment | ✓ | ✓ | Own | — |
+| Delete own comment | ✓ | ✓ | Own | — |
+| Delete any comment | ✓ | ✓ | — | — |
+| React to a comment | ✓ | ✓ | ✓ | — |
 
-Third-party integrations, webhooks, and API tokens.
+#### Initiative updates
 
-| Permission             | Owner | Admin | Member | Guest |
-| ---------------------- | ----- | ----- | ------ | ----- |
-| View Integrations      | ✓     | ✓     | ✓      | x     |
-| Create Integrations    | ✓     | ✓     | ✓      | x     |
-| Configure Integrations | ✓     | ✓     | ✓      | x     |
-| Delete Integrations    | ✓     | ✓     | x      | x     |
-| View Webhooks          | ✓     | ✓     | x      | x     |
-| Create Webhooks        | ✓     | ✓     | x      | x     |
-| Edit Webhooks          | ✓     | ✓     | x      | x     |
-| Delete Webhooks        | ✓     | ✓     | x      | x     |
-| View API Tokens        | ✓     | ✓     | ✓      | x     |
-| Create API Tokens      | ✓     | ✓     | ✓      | x     |
-| Delete API Tokens      | ✓     | ✓     | ✓      | x     |
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View updates | ✓ | ✓ | ✓ | — |
+| Create an update | ✓ | ✓ | — | — |
+| Edit an update | ✓ | ✓ | — | — |
+| Delete an update | ✓ | ✓ | — | — |
+| React to an update | ✓ | ✓ | ✓ | — |
+| Comment on an update | ✓ | ✓ | ✓ | — |
+| Edit own update comment | ✓ | ✓ | — | — |
+| Delete own update comment | ✓ | ✓ | — | — |
+| React to an update comment | ✓ | ✓ | ✓ | — |
 
-### Analytics and reporting
+> Members can react and comment on initiative updates but cannot edit or delete those comments.
 
-Dashboards, analytics, and work logs.
+### Teamspaces (Workspace-level management)
 
-| Permission        | Owner | Admin | Member | Guest |
-| ----------------- | ----- | ----- | ------ | ----- |
-| View Analytics    | ✓     | ✓     | ✓      | x     |
-| Export Analytics  | ✓     | ✓     | ✓      | x     |
-| View Dashboards   | ✓     | ✓     | ✓      | x     |
-| Create Dashboards | ✓     | ✓     | x      | x     |
-| Edit Dashboards   | ✓     | ✓     | x      | x     |
-| Delete Dashboards | ✓     | ✓     | x      | x     |
-| View Work Logs    | ✓     | ✓     | ✓      | x     |
-| Export Work Logs  | ✓     | ✓     | ✓      | x     |
-| Use AI Features   | ✓     | ✓     | ✓      | x     |
+This covers workspace-admin operations over teamspaces. For actions taken by teamspace members inside a teamspace, see [Teamspace permissions](#teamspace-permissions).
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| Browse / list teamspaces | ✓ | ✓ | — | — |
+| Create a teamspace | ✓ | ✓ | — | — |
+| View a teamspace | ✓ | ✓ | Members only¹ | — |
+| Edit teamspace settings | ✓ | ✓ | — | — |
+| Delete a teamspace | ✓ | ✓ | — | — |
+| Add members to teamspace | ✓ | ✓ | — | — |
+| Remove members from teamspace | ✓ | ✓ | — | — |
+| Assign Lead designation | ✓ | ✓ | — | — |
+| Link a project to teamspace | ✓ | ✓ | — | — |
+| Unlink a project from teamspace | ✓ | ✓ | — | — |
+
+> ¹ Workspace Members must be explicit teamspace members to view a teamspace's content. Owners and Admins bypass this.
+
+### Wiki
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View a page | ✓ | ✓ | ✓ | — |
+| Create a page | ✓ | ✓ | ✓ | — |
+| Edit page content / title | ✓ | ✓ | ✓ | — |
+| Lock / unlock a page | ✓ | ✓ | ✓ | — |
+| Make page public / private | ✓ | ✓ | ✓ | — |
+| Share a page | ✓ | ✓ | ✓ | — |
+| Archive a page | ✓ | ✓ | ✓ | — |
+| Restore a page | ✓ | ✓ | ✓ | — |
+| Duplicate a page | ✓ | ✓ | ✓ | — |
+| Delete a page | ✓ | ✓ | ✓ | — |
+| Move a page | ✓ | ✓ | ✓ | — |
+| Update page icon / logo | ✓ | ✓ | ✓ | — |
+| Export / download | ✓ | ✓ | ✓ | — |
+| Favourite a page | ✓ | ✓ | ✓ | — |
+| Comment on a page | ✓ | ✓ | — | — |
+
+> Commenting on workspace pages requires Owner or Admin.
+
+#### Wiki Collections
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View collections | ✓ | ✓ | ✓ | — |
+| Create a collection | ✓ | ✓ | ✓ | — |
+| Edit own collection | ✓ | ✓ | Own | — |
+| Edit any collection | ✓ | ✓ | — | — |
+| Delete own collection | ✓ | ✓ | Own | — |
+| Delete any collection | ✓ | ✓ | — | — |
+
+### Workspace Views
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View all workspace views | ✓ | ✓ | ✓ | ✓¹ |
+| Create a view | ✓ | ✓ | ✓ | — |
+| Edit own view | ✓ | ✓ | Own | — |
+| Edit any view | ✓ | ✓ | — | — |
+| Delete own view | ✓ | ✓ | Own | — |
+| Delete any view | ✓ | ✓ | — | — |
+| Share / make public | ✓ | ✓ | — | — |
+| Publish externally | ✓ | ✓ | — | — |
+| Export | ✓ | ✓ | ✓ | — |
+| Favourite / pin | ✓ | ✓ | ✓ | — |
+
+> ¹ Guests can view workspace views but only see work items from projects they have explicit access to.
+
+### Workspace Drafts
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View drafts | ✓ | ✓ | ✓ | — |
+| Create a draft | ✓ | ✓ | ✓ | — |
+| Edit a draft | ✓ | ✓ | ✓ | — |
+| Delete own draft | ✓ | ✓ | Own | — |
+| Delete any draft | ✓ | ✓ | — | — |
+| Duplicate a draft | ✓ | ✓ | ✓ | — |
+| Move draft to a project | ✓ | ✓ | ✓ | — |
+| Manage drafts (bulk operations) | ✓ | ✓ | ✓ | — |
+
+### Releases
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View releases | ✓ | ✓ | ✓ | — |
+| Create a release | ✓ | ✓ | — | — |
+| Edit a release | ✓ | ✓ | — | — |
+| Delete a release | ✓ | ✓ | — | — |
+| Add work items to a release | ✓ | ✓ | — | — |
+| Remove work items from a release | ✓ | ✓ | — | — |
+| Add / edit / delete links | ✓ | ✓ | — | — |
+| Add attachment | ✓ | ✓ | — | — |
+| Delete attachment | ✓ | ✓ | — | — |
+| Edit changelog | ✓ | ✓ | — | — |
+| Manage tags | ✓ | ✓ | — | — |
+| Add a comment | ✓ | ✓ | — | — |
+| Edit own comment | ✓ | ✓ | — | — |
+| Delete own comment | ✓ | ✓ | — | — |
+| React to a comment | ✓ | ✓ | — | — |
+| View activity | ✓ | ✓ | ✓ | — |
 
 ### Customers
 
-Customer and customer request management.
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View customers | ✓ | ✓ | — | — |
+| Create a customer | ✓ | ✓ | — | — |
+| Edit a customer | ✓ | ✓ | — | — |
+| Delete a customer | ✓ | ✓ | — | — |
+| Add attachment | ✓ | ✓ | — | — |
+| Delete attachment | ✓ | ✓ | — | — |
 
-| Permission                  | Owner | Admin | Member | Guest |
-| --------------------------- | ----- | ----- | ------ | ----- |
-| View Customers              | ✓     | ✓     | x      | x     |
-| Create Customers            | ✓     | ✓     | x      | x     |
-| Edit Customers              | ✓     | ✓     | x      | x     |
-| Delete Customers            | ✓     | ✓     | x      | x     |
-| Add Customer Attachments    | ✓     | ✓     | x      | x     |
-| Delete Customer Attachments | ✓     | ✓     | x      | x     |
+### Workspace Analytics
 
-### Work Item Relations
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Export | ✓ | ✓ | ✓ | — |
+| Apply filters | ✓ | ✓ | ✓ | — |
 
-Managing custom relation type definitions for work items.
+### Dashboards
 
-| Permission                  | Owner | Admin | Member | Guest |
-| --------------------------- | ----- | ----- | ------ | ----- |
-| View Relation Definitions   | ✓     | ✓     | ✓      | ✓     |
-| Create Relation Definitions | ✓     | ✓     | x      | x     |
-| Edit Relation Definitions   | ✓     | ✓     | x      | x     |
-| Delete Relation Definitions | ✓     | ✓     | x      | x     |
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View dashboards | ✓ | ✓ | ✓ | — |
+| Create a dashboard | ✓ | ✓ | — | — |
+| Edit a dashboard (rename, settings) | ✓ | ✓ | — | — |
+| Delete a dashboard | ✓ | ✓ | — | — |
+| Add a widget | ✓ | ✓ | — | — |
+| Edit a widget | ✓ | ✓ | — | — |
+| Delete a widget | ✓ | ✓ | — | — |
+| Rearrange widgets | ✓ | ✓ | — | — |
+| Apply quick filters (view only) | ✓ | ✓ | ✓ | — |
+| Favourite a dashboard | ✓ | ✓ | — | — |
 
-### Templates
+### Worklogs
 
-Creating and managing workspace-level work item, page, and project templates.
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Export | ✓ | ✓ | ✓ | — |
 
-| Permission       | Owner | Admin | Member | Guest |
-| ---------------- | ----- | ----- | ------ | ----- |
-| View Templates   | ✓     | ✓     | ✓      | x     |
-| Create Templates | ✓     | ✓     | x      | x     |
-| Edit Templates   | ✓     | ✓     | x      | x     |
-| Delete Templates | ✓     | ✓     | x      | x     |
+### Workspace Activity Logs
 
-### Plane Runner
+Audit trail of all changes made across the workspace.
 
-Workspace-level automation rules and configurations.
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View workspace activity | ✓ | ✓ | ✓ | — |
+| Export workspace activity | ✓ | ✓ | ✓ | — |
 
-| Permission                   | Owner | Admin | Member | Guest |
-| ---------------------------- | ----- | ----- | ------ | ----- |
-| View Workspace Automations   | ✓     | ✓     | ✓      | x     |
-| Create Workspace Automations | ✓     | ✓     | x      | x     |
-| Edit Workspace Automations   | ✓     | ✓     | x      | x     |
-| Delete Workspace Automations | ✓     | ✓     | x      | x     |
+### User Activity Logs
+
+Per-member activity history showing what a specific workspace member has done.
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View user activity | ✓ | ✓ | ✓ | — |
+| Export user activity | ✓ | ✓ | ✓ | — |
+
+### Workspace Automations
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Enable / disable | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+### Workspace Assets
+
+Files and images uploaded at workspace scope (logos, avatars, rich-text embeds not tied to a specific project).
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View / download | ✓ | ✓ | ✓ | ✓ |
+| Upload | ✓ | ✓ | ✓ | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+| Manage (bulk) | ✓ | ✓ | — | — |
+
+### Workspace Project States
+
+Workspace-level project status definitions used for project grouping (Enterprise).
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | ✓ |
+| Create | ✓ | ✓ | ✓ | — |
+| Edit | ✓ | ✓ | ✓ | — |
+| Delete | ✓ | ✓ | ✓ | — |
+
+### Workspace Features
+
+Controls for toggling workspace-level features on or off.
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View feature settings | ✓ | ✓ | — | — |
+| Enable / disable features | ✓ | ✓ | — | — |
+
+### Workspace Work Item Types
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+### Workspace Custom Properties
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+### 1.21 Custom Relations
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | ✓ |
+| Create | ✓ | ✓ | ✓ | — |
+| Edit | ✓ | ✓ | ✓ | — |
+| Delete | ✓ | ✓ | ✓ | — |
+
+### Favorites
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View own favorites | ✓ | ✓ | ✓ | — |
+| Add a favorite | ✓ | ✓ | ✓ | — |
+| Edit (rename) a favorite | ✓ | ✓ | ✓ | — |
+| Remove a favorite | ✓ | ✓ | ✓ | — |
+
+### Integrations
+
+Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View integrations | ✓ | ✓ | ✓ | — |
+| Connect an integration | ✓ | ✓ |  — | — |
+| Configure an integration | ✓ | ✓ |  — | — |
+| Disconnect an integration | ✓ | ✓ |  — | — |
+| Admin-only operations (manage) | ✓ | ✓ | — | — |
+| Create integration | ✓ | ✓ |  — | — |
+| Delete integration | ✓ | ✓ |  — | — |
+
+### Webhooks
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+### Workspace API Tokens
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+
+### Billing
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View billing | ✓ | ✓ | — | — |
+| Manage billing | ✓ | ✓ | — | — |
+
+
+### Plane AI
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| Use AI features | ✓ | ✓ | ✓ | — |
+
+### Work Item Templates
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+### Page Templates
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+### Project Templates
+
+| Action | Owner | Admin | Member | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Use to create a project | ✓ | ✓ | ✓ | — |
+| Publish | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
 
 ## Project permissions
 
-Workspace Owner and workspace Admin have wildcard access to all project resource types and appear as ✓ throughout the project tables. The columns below cover project-level role assignments only.
+> **Workspace Owner / Admin bypass:** Workspace Owners and Admins have full access to all content in every project in their workspace without holding explicit project membership.
+
+### Project Settings
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View project settings | ✓ | ✓ | ✓ | ✓ |
+| Edit project settings | ✓ | — | — | — |
+| Archive project | ✓ | — | — | — |
+| Restore project | ✓ | — | — | — |
+| Delete project | ✓ | — | — | — |
+| Publish project (make public) | ✓ | — | — | — |
 
 ### Project Members
 
-Inviting, editing, and removing project members.
-
-| Permission           | P-Admin | Contributor | Commenter | Guest |
-| -------------------- | ------- | ----------- | --------- | ----- |
-| View Project Members | ✓       | ✓           | ✓         | ✓     |
-| Invite Members       | ✓       | x           | x         | x     |
-| Edit Member Details  | ✓       | x           | x         | x     |
-| Change Member Role   | ✓       | x           | x         | x     |
-| Remove Members       | ✓       | x           | x         | x     |
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View member list | ✓ | ✓ | ✓ | ✓ |
+| Invite by email | ✓ | — | — | — |
+| Invite existing workspace member | ✓ | — | — | — |
+| Change a member's role | ✓ | — | — | — |
+| Remove a member | ✓ | — | — | — |
+| Leave project | ✓ | ✓ | ✓ | ✓ |
 
 ### Work Items
 
-The primary issue surface, including comments, attachments, links, relations, and custom properties.
+#### Core actions
 
-| Permission             | P-Admin | Contributor | Commenter | Guest    |
-| ---------------------- | ------- | ----------- | --------- | -------- |
-| View Issues            | ✓       | ✓           | ✓         | +Creator |
-| Create Issues          | ✓       | ✓           | x         | x        |
-| Edit Issues            | ✓       | ✓           | x         | x        |
-| Bulk Edit Issues       | ✓       | ✓           | x         | x        |
-| Export Issues          | ✓       | ✓           | x         | x        |
-| React to Issues        | ✓       | ✓           | ✓         | x        |
-| Delete Issues          | ✓       | +Creator    | x         | x        |
-| Add Comments           | ✓       | ✓           | ✓         | x        |
-| Edit Comments          | ✓       | +Creator    | +Creator  | x        |
-| React to Comments      | ✓       | ✓           | ✓         | ✓        |
-| Delete Comments        | ✓       | +Creator    | +Creator  | x        |
-| View Attachments       | ✓       | ✓           | ✓         | ✓        |
-| Add Attachments        | ✓       | ✓           | ✓         | x        |
-| Delete Attachments     | ✓       | +Creator    | +Creator  | x        |
-| View Work Item Links   | ✓       | ✓           | ✓         | x        |
-| Add Work Item Links    | ✓       | ✓           | x         | x        |
-| Edit Work Item Links   | ✓       | ✓           | x         | x        |
-| Delete Work Item Links | ✓       | ✓           | x         | x        |
-| View Custom Properties | ✓       | ✓           | ✓         | x        |
-| Edit Custom Properties | ✓       | ✓           | x         | x        |
+| Action | Admin | Contributor | Commenter | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| View work items | ✓ | ✓ | ✓ | Own | Guest: own intake submissions only |
+| Create a work item | ✓ | ✓ | — | — | |
+| Edit a work item | ✓ | ✓ | Own | Own | Blocked on archived items |
+| Delete a work item | ✓ | Own | Own | Own | |
+| Bulk edit | ✓ | ✓ | — | — | |
+| Assign to a user | ✓ | ✓ | — | — | |
+| Duplicate a work item | ✓ | ✓ | — | — | |
+| Archive a work item | ✓ | ✓ | — | — | |
+| Restore from archive | ✓ | ✓ | — | — | |
+| Export work items | ✓ | ✓ | — | — | |
+| Import work items | ✓ | — | — | — | |
+| Move to another project | ✓ | ✓¹ | — | — | ¹ Requires Contributor on both projects |
+| Mark as draft | ✓ | ✓ | — | — | |
+| React | ✓ | ✓ | ✓ | — | |
+| Subscribe / unsubscribe | ✓ | ✓ | Own | — | Tied to edit permission |
+| Vote | ✓ | ✓ | ✓ | — | |
 
-Project Guest sees only their own work items (issues created via intake). All other Guest views of issues are filtered to creator.
+#### Property changes (all require edit permission)
+
+| Property | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| State | ✓ | ✓ | — | — |
+| Priority | ✓ | ✓ | — | — |
+| Assignees | ✓ | ✓ | — | — |
+| Labels | ✓ | ✓ | — | — |
+| Work item type | ✓ | ✓ | — | — |
+| Parent (sub-task of) | ✓ | ✓ | — | — |
+| Start date | ✓ | ✓ | — | — |
+| Due date | ✓ | ✓ | — | — |
+| Estimate | ✓ | ✓ | — | — |
+| Cycle | ✓ | ✓ | — | — |
+| Module | ✓ | ✓ | — | — |
+| Milestone | ✓ | ✓ | — | — |
+| Drag and drop / reorder | ✓ | ✓ | — | — |
+| Restore description version | ✓ | ✓ | — | — |
+
+#### Conversion and structure
+
+| Action | Admin | Contributor | Commenter | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| Add sub-work item | ✓ | ✓ | — | — | Blocked on archived items |
+| Convert to epic | ✓ | ✓ | — | — | Blocked on archived items |
+| Convert to sub-task | ✓ | ✓ | — | — | |
+| Switch work item type | ✓ | ✓ | — | — | Blocked on archived items |
+
+#### Work Item Relations
+
+| Action | Admin | Contributor | Commenter | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| Add relation | ✓ | ✓ | — | — | |
+| Edit a relation | ✓ | ✓ | — | — | |
+| Remove a relation | ✓ | ✓ | — | — | |
+| View relations | ✓ | ✓ | ✓ | ✓ | |
+
+#### Work Item Links
+
+| Action | Admin | Contributor | Commenter | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| Add a link | ✓ | ✓ | — | — | |
+| Edit a link | ✓ | ✓ | — | — | |
+| Delete a link | ✓ | ✓ | — | — | |
+| View links | ✓ | ✓ | ✓ | — | |
+
+#### Work Item Attachments
+
+| Action | Admin | Contributor | Commenter | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| View attachments | ✓ | ✓ | ✓ | — | |
+| Add attachment | ✓ | ✓ | ✓ | — | Commenter: upload only |
+| Edit own attachment | ✓ | Own | — | — | |
+| Delete own attachment | ✓ | Own | — | — | |
+| Delete any attachment | ✓ | — | — | — | Admin only |
+
+#### Worklogs
+
+| Action | Admin | Contributor | Commenter | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| Log work (add work log) | ✓ | ✓ | — | — | Blocked on intake work items |
+| Edit own work log | ✓ | Own | — | — | |
+| Delete own work log | ✓ | Own | — | — | |
+
+### Comments
+
+| Action | Admin | Contributor | Commenter | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| Create comment | ✓ | ✓ | ✓ | — | Blocked on archived work items |
+| Edit own comment | ✓ | Own | Own | — | Blocked on archived work items |
+| Delete own comment | ✓ | Own | Own | — | Not blocked by archived status |
+| Delete any comment | ✓ | — | — | — | Admin only |
+| React to comment | ✓ | ✓ | ✓ | ✓ | |
+| Resolve a comment | ✓ | ✓ | ✓ | — | |
 
 ### Epics
 
-Epic lifecycle, including links, properties, and update threads.
+#### Core actions
 
-| Permission                  | P-Admin | Contributor | Commenter | Guest |
-| --------------------------- | ------- | ----------- | --------- | ----- |
-| View Epics                  | ✓       | ✓           | ✓         | x     |
-| Create Epics                | ✓       | ✓           | x         | x     |
-| Edit Epics                  | ✓       | ✓           | x         | x     |
-| Delete Epics                | ✓       | +Creator    | x         | x     |
-| View Epic Properties        | ✓       | ✓           | ✓         | x     |
-| Edit Epic Properties        | ✓       | ✓           | x         | x     |
-| View Epic Updates           | ✓       | ✓           | ✓         | x     |
-| Post Epic Updates           | ✓       | ✓           | x         | x     |
-| Edit Epic Updates           | ✓       | +Creator    | x         | x     |
-| Delete Epic Updates         | ✓       | +Creator    | x         | x     |
-| Edit Epic Update Comments   | ✓       | +Creator    | x         | x     |
-| Delete Epic Update Comments | ✓       | +Creator    | x         | x     |
+| Action | Admin | Contributor | Commenter | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| View epics | ✓ | ✓ | ✓ | — | |
+| Create an epic | ✓ | ✓ | — | — | |
+| Edit an epic | ✓ | ✓ | — | — | Blocked on archived items |
+| Delete an epic | ✓ | Own | — | — | |
+| Archive / restore | ✓ | ✓ | — | — | |
+| Duplicate | ✓ | ✓ | — | — | |
+| Export | ✓ | ✓ | — | — | |
+| React | ✓ | ✓ | ✓ | — | |
+| Subscribe / unsubscribe | ✓ | ✓ | — | — | |
+| Convert to work item | ✓ | ✓ | — | — | |
+| Add sub-work items | ✓ | ✓ | — | — | |
+| Add / remove relations | ✓ | ✓ | — | — | |
 
-### Modules and Cycles
+#### Epic Links
 
-Feature grouping and sprint/cycle management.
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View links | ✓ | ✓ | ✓ | — |
+| Add a link | ✓ | ✓ | — | — |
+| Edit a link | ✓ | ✓ | — | — |
+| Delete a link | ✓ | ✓ | — | — |
 
-| Permission            | P-Admin | Contributor | Commenter | Guest |
-| --------------------- | ------- | ----------- | --------- | ----- |
-| View Modules          | ✓       | ✓           | ✓         | x     |
-| Create Modules        | ✓       | ✓           | x         | x     |
-| Edit Modules          | ✓       | ✓           | x         | x     |
-| Manage Module Members | ✓       | ✓           | x         | x     |
-| Archive Modules       | ✓       | ✓           | x         | x     |
-| Export Modules        | ✓       | ✓           | x         | x     |
-| Delete Modules        | ✓       | +Creator    | x         | x     |
-| View Cycles           | ✓       | ✓           | ✓         | x     |
-| Create Cycles         | ✓       | ✓           | x         | x     |
-| Edit Cycles           | ✓       | ✓           | x         | x     |
-| Delete Cycles         | ✓       | +Creator    | x         | x     |
+#### Epic Custom Properties
 
-### Pages and Views
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View custom properties | ✓ | ✓ | ✓ | — |
+| Edit property values | ✓ | ✓ | — | — |
+| Create / delete epic property definitions | ✓ | ✓ | — | — |
 
-Project-level pages and saved views.
+#### Epic Updates
 
-| Permission            | P-Admin | Contributor | Commenter | Guest |
-| --------------------- | ------- | ----------- | --------- | ----- |
-| View Pages            | ✓       | ✓           | ✓         | ✓     |
-| Create Pages          | ✓       | ✓           | x         | x     |
-| Edit Pages            | ✓       | ✓           | x         | x     |
-| Share Pages           | ✓       | ✓           | x         | x     |
-| Delete Pages          | ✓       | x           | x         | x     |
-| View Project Views    | ✓       | ✓           | ✓         | ✓     |
-| Create Project Views  | ✓       | ✓           | x         | x     |
-| Edit Project Views    | ✓       | +Creator    | x         | x     |
-| Share Project Views   | ✓       | +Creator    | x         | x     |
-| Publish Project Views | ✓       | +Creator    | x         | x     |
-| Export Project Views  | ✓       | ✓           | x         | x     |
-| Delete Project Views  | ✓       | +Creator    | x         | x     |
-
-Page deletion is restricted to project Admins only. Contributors can edit pages but cannot delete them.
-
-### Intake
-
-Issue intake and triage workflow.
-
-| Permission                                 | P-Admin | Contributor | Commenter | Guest    |
-| ------------------------------------------ | ------- | ----------- | --------- | -------- |
-| View Intake                                | ✓       | ✓           | ✓         | x        |
-| Create Intake Items                        | ✓       | ✓           | ✓         | ✓        |
-| Submit Intake Requests                     | ✓       | ✓           | ✓         | ✓        |
-| Edit Intake Items                          | ✓       | +Creator    | +Creator  | +Creator |
-| React to Intake Items                      | ✓       | ✓           | ✓         | x        |
-| Manage Intake Items (accept/reject/snooze) | ✓       | x           | x         | x        |
-| Configure Intake                           | ✓       | x           | x         | x        |
-| Export Intake                              | ✓       | ✓           | x         | x        |
-| Delete Intake Items                        | ✓       | +Creator    | +Creator  | +Creator |
-
-Status changes (accept, reject, snooze, mark duplicate) are admin-only. Editing is restricted to creators for non-admin roles, with editable fields limited to name, description, priority, target/start dates, labels, and assignees.
-
-### Project Configuration
-
-Labels, states, estimates, and milestones.
-
-| Permission        | P-Admin | Contributor | Commenter | Guest |
-| ----------------- | ------- | ----------- | --------- | ----- |
-| View Labels       | ✓       | ✓           | ✓         | ✓     |
-| Create Labels     | ✓       | x           | x         | x     |
-| Edit Labels       | ✓       | x           | x         | x     |
-| Delete Labels     | ✓       | x           | x         | x     |
-| View States       | ✓       | ✓           | ✓         | ✓     |
-| Create States     | ✓       | x           | x         | x     |
-| Edit States       | ✓       | x           | x         | x     |
-| Delete States     | ✓       | x           | x         | x     |
-| View Estimates    | ✓       | ✓           | ✓         | ✓     |
-| Create Estimates  | ✓       | x           | x         | x     |
-| Edit Estimates    | ✓       | x           | x         | x     |
-| Delete Estimates  | ✓       | x           | x         | x     |
-| View Milestones   | ✓       | ✓           | ✓         | x     |
-| Create Milestones | ✓       | ✓           | x         | x     |
-| Edit Milestones   | ✓       | ✓           | x         | x     |
-| Delete Milestones | ✓       | ✓           | x         | x     |
-
-### Automation and Workflows
-
-Automations, workflow rules, and recurring work items.
-
-| Permission             | P-Admin | Contributor | Commenter | Guest |
-| ---------------------- | ------- | ----------- | --------- | ----- |
-| View Automations       | ✓       | ✓           | x         | x     |
-| Create Automations     | ✓       | x           | x         | x     |
-| Edit Automations       | ✓       | x           | x         | x     |
-| Delete Automations     | ✓       | x           | x         | x     |
-| View Workflows         | ✓       | ✓           | ✓         | ✓     |
-| Create Workflows       | ✓       | x           | x         | x     |
-| Edit Workflows         | ✓       | x           | x         | x     |
-| Delete Workflows       | ✓       | x           | x         | x     |
-| View Recurring Items   | ✓       | ✓           | x         | x     |
-| Create Recurring Items | ✓       | ✓           | x         | x     |
-| Edit Recurring Items   | ✓       | ✓           | x         | x     |
-| Delete Recurring Items | ✓       | ✓           | x         | x     |
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View updates | ✓ | ✓ | ✓ | — |
+| Create an update | ✓ | ✓ | — | — |
+| Edit own update | ✓ | Own | — | — |
+| Delete own update | ✓ | Own | — | — |
+| React to an update | ✓ | ✓ | — | — |
+| Comment on an update | ✓ | ✓ | — | — |
+| Edit own comment | ✓ | Own | — | — |
+| Delete own comment | ✓ | Own | — | — |
+| React to a comment | ✓ | ✓ | — | — |
 
 ### Project Updates
 
-Progress updates and comments on updates.
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View updates | ✓ | ✓ | ✓ | ✓ |
+| Create an update | ✓ | ✓ | — | — |
+| Edit own update | ✓ | Own | — | — |
+| Delete own update | ✓ | Own | — | — |
+| React to an update | ✓ | ✓ | ✓ | — |
+| Comment on an update | ✓ | ✓ | — | — |
+| Edit own comment | ✓ | Own | — | — |
+| Delete own comment | ✓ | Own | — | — |
+| React to a comment | ✓ | ✓ | ✓ | — |
 
-| Permission                     | P-Admin | Contributor | Commenter | Guest |
-| ------------------------------ | ------- | ----------- | --------- | ----- |
-| View Project Updates           | ✓       | ✓           | ✓         | ✓     |
-| Post Project Updates           | ✓       | ✓           | x         | x     |
-| Edit Project Updates           | ✓       | +Creator    | x         | x     |
-| Delete Project Updates         | ✓       | +Creator    | x         | x     |
-| Edit Project Update Comments   | ✓       | +Creator    | x         | x     |
-| Delete Project Update Comments | ✓       | +Creator    | x         | x     |
+### Cycles
 
-### Analytics and Activity
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View cycles | ✓ | ✓ | ✓ | — |
+| Create a cycle | ✓ | ✓ | — | — |
+| Edit a cycle | ✓ | ✓ | — | — |
+| Archive a cycle | ✓ | ✓ | — | — |
+| Restore (unarchive) | ✓ | ✓ | — | — |
+| Delete a cycle | ✓ | Own | — | — |
+| Manage cycle (admin operations) | ✓ | — | — | — |
+| Add work items to cycle | ✓ | ✓ | — | — |
+| Remove work items from cycle | ✓ | ✓ | — | — |
+| Transfer work items to next cycle | ✓ | ✓ | — | — |
+| Edit cycle filters | ✓ | ✓ | — | — |
+| Export cycle | ✓ | ✓ | — | — |
+| Favourite a cycle | ✓ | ✓ | ✓ | — |
 
-Project analytics and activity logs.
+### Modules
 
-| Permission        | P-Admin | Contributor | Commenter | Guest |
-| ----------------- | ------- | ----------- | --------- | ----- |
-| View Activity Log | ✓       | ✓           | ✓         | x     |
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View modules | ✓ | ✓ | ✓ | — |
+| Create a module | ✓ | ✓ | — | — |
+| Edit a module | ✓ | ✓ | — | — |
+| Archive a module | ✓ | ✓ | — | — |
+| Restore (unarchive) | ✓ | ✓ | — | — |
+| Delete a module | ✓ | Own | — | — |
+| Manage module (admin operations) | ✓ | — | — | — |
+| Add work items to module | ✓ | ✓ | — | — |
+| Remove work items from module | ✓ | ✓ | — | — |
+| Add members to module | ✓ | ✓ | — | — |
+| Remove members from module | ✓ | ✓ | — | — |
+| Export module | ✓ | ✓ | — | — |
+
+### Milestones
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View milestones | ✓ | ✓ | ✓ | — |
+| Create a milestone | ✓ | ✓ | — | — |
+| Edit a milestone | ✓ | ✓ | — | — |
+| Delete a milestone | ✓ | ✓ | — | — |
+| Add work items to milestone | ✓ | ✓ | — | — |
+| Remove work items from milestone | ✓ | ✓ | — | — |
+
+### Intake
+
+| Action | Admin | Contributor | Commenter | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| Submit a new intake item | ✓ | ✓ | ✓ | ✓ | All roles can submit |
+| View all submissions | ✓ | ✓ | ✓ | Own | Guest: own only |
+| Edit own submission | ✓ | Own | Own | Own | |
+| Delete own submission | ✓ | Own | Own | Own | |
+| Add attachment to own submission | ✓ | Own | Own | Own | |
+| Accept a submission | ✓ | — | — | — | Only while in actionable status |
+| Decline a submission | ✓ | — | — | — | Only while in actionable status |
+| Snooze a submission | ✓ | — | — | — | |
+| Mark as duplicate | ✓ | — | — | — | |
+| Mark as spam | ✓ | — | — | — | |
+| React to a submission | ✓ | ✓ | ✓ | ✓ | |
+| Comment on a submission | ✓ | ✓ | ✓ | — | |
+| Export intake | ✓ | ✓ | — | — | |
+| Configure intake settings | ✓ | — | — | — | |
+| Manage intake | ✓ | — | — | — | |
+
+### Pages
+
+| Action | Admin | Contributor | Commenter | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| View a page | ✓ | ✓ | ✓ | ✓ | Public pages viewable without role check |
+| Create a page | ✓ | ✓ | — | — | |
+| Edit page content / title | ✓ | ✓ | — | — | Blocked if archived or locked |
+| Lock a page | ✓ | ✓ | — | — | |
+| Unlock a page | ✓ | ✓ | — | — | |
+| Archive a page | ✓ | ✓ | — | — | |
+| Restore (unarchive) | ✓ | ✓ | — | — | |
+| Delete a page | ✓ | — | — | — | Admin only |
+| Duplicate a page | ✓ | ✓ | — | — | |
+| Make page public / private | ✓ | ✓ | — | — | |
+| Share page (publish link) | ✓ | Own | — | — | Contributor: own pages only |
+| Update page icon / logo | ✓ | ✓ | — | — | |
+| Move a page (reparent) | ✓ | ✓ | — | — | |
+| Favourite a page | ✓ | ✓ | — | — | |
+| Add comment on page | ✓ | ✓ | — | — | Uses page edit permission |
+| Export / download | ✓ | ✓ | ✓ | ✓ | Anyone who can view |
+
+### Views
+
+| Action | Admin | Contributor | Commenter | Guest | Notes |
+|---|:---:|:---:|:---:|:---:|---|
+| View all views | ✓ | ✓ | ✓ | ✓ | |
+| Create a view | ✓ | ✓ | — | — | |
+| Edit own view | ✓ | Own | — | — | |
+| Edit any view | ✓ | — | — | — | Admin only |
+| Delete own view | ✓ | Own | — | — | |
+| Delete any view | ✓ | — | — | — | Admin only |
+| Share / make public | ✓ | Own | — | — | |
+| Publish externally | ✓ | Own | — | — | |
+| Export | ✓ | ✓ | — | — | |
+| Favourite / pin | ✓ | ✓ | ✓ | — | Personal favourite |
+| Configure views (admin) | ✓ | — | — | — | |
+
+### States
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | ✓ |
+| Create | ✓ | — | — | — |
+| Edit | ✓ | — | — | — |
+| Delete | ✓ | — | — | — |
+| Reorder | ✓ | — | — | — |
+| Mark as default | ✓ | — | — | — |
+
+### Labels
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | ✓ |
+| Create | ✓ | — | — | — |
+| Edit | ✓ | — | — | — |
+| Delete | ✓ | — | — | — |
+| Reorder | ✓ | — | — | — |
+
+### Estimates
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | ✓ |
+| Create | ✓ | — | — | — |
+| Edit | ✓ | — | — | — |
+| Delete | ✓ | — | — | — |
+
+### Workflows
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create / edit / delete | ✓ | — | — | — |
+| Manage | ✓ | — | — | — |
+
+### Automations
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View automations | ✓ | ✓ | — | — |
+| Create | ✓ | — | — | — |
+| Edit | ✓ | — | — | — |
+| Enable / disable | ✓ | — | — | — |
+| Delete | ✓ | — | — | — |
+| View run history | ✓ | ✓ | — | — |
+
+### Recurring Work Items
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+### Work Item Types and Custom Properties
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Create | ✓ | ✓ | — | — |
+| Edit | ✓ | ✓ | — | — |
+| Delete | ✓ | ✓ | — | — |
+
+### Work Item Templates
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | — | — | — |
+| Edit | ✓ | — | — | — |
+| Delete | ✓ | — | — | — |
+
+### Page Templates
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | — | — |
+| Create | ✓ | — | — | — |
+| Edit | ✓ | — | — | — |
+| Delete | ✓ | — | — | — |
+
+### Project Analytics
+
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Export | ✓ | ✓ | — | — |
 
 ### Project Links
 
-Project-level links.
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View | ✓ | ✓ | ✓ | — |
+| Add a link | ✓ | ✓ | — | — |
+| Edit a link | ✓ | ✓ | — | — |
+| Delete a link | ✓ | — | — | — |
 
-| Permission           | P-Admin | Contributor | Commenter | Guest |
-| -------------------- | ------- | ----------- | --------- | ----- |
-| View Project Links   | ✓       | ✓           | ✓         | x     |
-| Add Project Links    | ✓       | ✓           | x         | x     |
-| Edit Project Links   | ✓       | ✓           | x         | x     |
-| Delete Project Links | ✓       | ✓           | x         | x     |
+### Project Assets
 
-### Templates
+Files and images uploaded within project scope — includes images embedded in pages or comments, and project-scoped uploads. Commenters can upload because they need to embed images in comments.
 
-Project-scoped work item and page templates.
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View / download | ✓ | ✓ | ✓ | ✓ |
+| Upload | ✓ | ✓ | ✓ | — |
+| Edit own upload | ✓ | Own | Own | — |
+| Delete own upload | ✓ | Own | Own | — |
+| Delete any upload | ✓ | — | — | — |
 
-| Permission       | P-Admin | Contributor | Commenter | Guest |
-| ---------------- | ------- | ----------- | --------- | ----- |
-| View Templates   | ✓       | ✓           | x         | x     |
-| Create Templates | ✓       | x           | x         | x     |
-| Edit Templates   | ✓       | x           | x         | x     |
-| Delete Templates | ✓       | x           | x         | x     |
+### Project Activity Logs
 
-## Teamspace permissions
+Audit trail for all changes within the project.
 
-Teamspace content access requires teamspace membership. Workspace Owner has full bypass via wildcard. Workspace Admin has resource-level wildcards for teamspace content (view, create, edit, delete teamspace content) but does **not** automatically have teamspace edit, delete, or member management. Those require the teamspace lead condition.
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View project activity | ✓ | ✓ | ✓ | ✓ |
 
-### Teamspace
+#### Project Member Activity
 
-| Permission     | TS-Member | TS-Member +Lead |
-| -------------- | --------- | --------------- |
-| View           | ✓         | ✓               |
-| Edit settings  | x         | ✓ +Lead         |
-| Delete         | x         | ✓ +Lead         |
-| Manage members | x         | ✓ +Lead         |
+Per-member activity scoped to this project — who changed what.
 
-### Teamspace Comments
+| Action | Admin | Contributor | Commenter | Guest |
+|---|:---:|:---:|:---:|:---:|
+| View member activity | ✓ | — | — | — |
 
-| Permission       | TS-Member     | TS-Member +Lead |
-| ---------------- | ------------- | --------------- |
-| View             | ✓             | ✓               |
-| Create           | ✓             | ✓               |
-| Edit (own)       | +Creator      | ✓ (any)         |
-| Delete (own/any) | +Creator only | ✓ (any)         |
-| React            | ✓             | ✓               |
+## Teamspace Permissions
+
+> Workspace Owners and Admins have full access to all teamspace content without being teamspace members — they effectively hold wildcard grants on all teamspace resources.  
+> Workspace Guests cannot be added to teamspaces.
+
+The tables below apply to users who are explicit **teamspace members**. Lead is a designation (condition), not a separate role level.
+
+> Workspace Owners and Admins have full access to all teamspace content without being teamspace members — they effectively hold wildcard grants on all teamspace resources.  
+> Workspace Guests cannot be added to teamspaces.
+
+The tables below apply to users who are explicit **teamspace members**. Lead is a designation (condition), not a separate role level.
+
+### Teamspace management (within a Teamspace)
+
+| Action | Member | Lead |
+|---|:---:|:---:|
+| View teamspace | ✓ | ✓ |
+| Edit teamspace settings (name, logo, description) | — | ✓ |
+| Delete teamspace | — | ✓ |
+| Manage teamspace | — | ✓ |
+| Add members | — | ✓ |
+| Remove members | — | ✓ |
+| Assign Lead designation | — | ✓ |
+| Link a project to teamspace | — | ✓ |
+| Unlink a project from teamspace | — | ✓ |
+| Create a work item in teamspace context | — | ✓ |
+
+### Teamspace entity comments
+
+Comments posted directly on the teamspace entity (not on a page or view within it).
+
+| Action | Member | Lead | Notes |
+|---|:---:|:---:|---|
+| View comments | ✓ | ✓ | Also: Workspace Owner / Admin |
+| Create a comment | ✓ | ✓ | |
+| Edit own comment | Own | Own | |
+| Delete own comment | Own | Own | |
+| Delete any comment | — | — | Workspace Owner / Admin only |
+| React to a comment | ✓ | ✓ | |
 
 ### Teamspace Views
 
-| Permission | TS-Member     | TS-Member +Lead |
-| ---------- | ------------- | --------------- |
-| View       | ✓             | ✓               |
-| Create     | ✓             | ✓               |
-| Edit       | +Creator only | ✓ (any)         |
-| Delete     | +Creator only | ✓ (any)         |
+| Action | Member | Lead |
+|---|:---:|:---:|
+| View all teamspace views | ✓ | ✓ |
+| Create a view | ✓ | ✓ |
+| Edit own view | Own | Own |
+| Edit any view | — | ✓ |
+| Delete own view | Own | Own |
+| Delete any view | — | ✓ |
+| Favourite / pin a view | ✓ | ✓ |
 
 ### Teamspace Pages
 
-| Permission        | TS-Member         | TS-Member +Lead |
-| ----------------- | ----------------- | --------------- |
-| View              | ✓                 | ✓               |
-| Create            | ✓                 | ✓               |
-| Edit              | ✓ (collaborative) | ✓               |
-| Delete            | Owner only        | ✓ (any)         |
-| Archive/Unarchive | Owner only        | ✓ (any)         |
-| Lock/Unlock       | Owner only        | ✓ (any)         |
+| Action | Member | Lead | Notes |
+|---|:---:|:---:|---|
+| View a page | ✓ | ✓ | Private pages: owner + shared-access users only |
+| Create a page | ✓ | ✓ | |
+| Edit page content / title | ✓ | ✓ | Blocked if archived or locked |
+| Lock a page | ✓ | ✓ | |
+| Unlock a page | ✓ | ✓ | |
+| Duplicate a page | ✓ | ✓ | |
+| Move a page (reparent) | ✓ | ✓ | |
+| Update page icon / logo | ✓ | ✓ | |
+| Archive a page | Own | ✓ | Member: own pages only |
+| Restore (unarchive) | Own | ✓ | |
+| Delete a page | Own | ✓ | Member: own pages only |
+| Export / download | ✓ | ✓ | |
+| Favourite a page | ✓ | ✓ | |
+| Make page public / private | — | — | Not supported for teamspace pages |
+
+> Making a teamspace page public or private is hardcoded off — it is not a role restriction, the feature simply does not exist for teamspace pages.
 
 ### Teamspace Page Comments
 
-| Permission        | TS-Member     | TS-Member +Lead |
-| ----------------- | ------------- | --------------- |
-| Create            | ✓             | ✓               |
-| Edit              | +Creator only | ✓ (any)         |
-| Delete            | +Creator only | ✓ (any)         |
-| React             | ✓             | ✓               |
-| Resolve/Unresolve | ✓             | ✓               |
-
-## Edge cases and behavioral nuances
-
-### Workspace Owners and Admins can't be locked out of projects
-
-Removing a workspace Owner or Admin from a project removes the project-level membership record but has no functional effect. Their workspace-level wildcards still grant access through inheritance.
-
-### Hidden permissions reserved for specific roles
-
-| Permission                      | Holder        | Notes                                   |
-| ------------------------------- | ------------- | --------------------------------------- |
-| Delete Workspace                | Owner only    | Cannot be granted via custom roles      |
-| Transfer Ownership              | Owner only    | Cannot be granted via custom roles      |
-| Manage Billing                  | Owner + Admin | Billing access                          |
-| Manage Integrations (uninstall) | Admin only    | Some destructive integration operations |
-
-### Creator-only business rules
-
-Some restrictions apply regardless of role level. Even an Admin cannot bypass them:
-
-- A workspace view can only be edited by its creator.
-- A project view can only be edited by its creator.
-
-### Permissions that cannot be added to custom roles
-
-| Permission         | Why                |
-| ------------------ | ------------------ |
-| Full access (`*`)  | Reserved for Owner |
-| Delete Workspace   | Reserved for Owner |
-| Transfer Ownership | Reserved for Owner |
-
-### Permission dependencies
-
-Some permissions require others to function. The role builder enforces these automatically. Enabling a permission auto-enables its prerequisites, and disabling a prerequisite auto-disables permissions that depend on it.
-
-Common dependencies:
-
-- Edit requires View on the same resource type.
-- Delete requires View on the same resource type.
-- Member management actions require View Members on the relevant scope.
-
-## Permission gates
-
-Some permissions only become available when the corresponding feature is enabled at the workspace or project level. If a feature is disabled, the related permissions exist in the role definition but have no effect.
-
-## Conditional grants summary
-
-For convenience, here are all the conditional grants in the system:
-
-| Role                | Permission                                       | Condition |
-| ------------------- | ------------------------------------------------ | --------- |
-| Project Contributor | Delete work items, epics, modules, cycles        | Creator   |
-| Project Contributor | Edit and delete comments and attachments         | Creator   |
-| Project Contributor | Edit, delete, share, and publish views           | Creator   |
-| Project Contributor | Edit and delete intake items                     | Creator   |
-| Project Contributor | Edit and delete project, epic, and cycle updates | Creator   |
-| Project Contributor | Edit and delete project assets                   | Creator   |
-| Project Commenter   | Edit and delete intake work items                | Creator   |
-| Project Commenter   | Edit and delete comments                         | Creator   |
-| Project Guest       | View, edit, and delete intake items              | Creator   |
-| Workspace Member    | Edit and delete workspace views                  | Creator   |
-| Workspace Member    | Edit and delete wiki collections                 | Creator   |
-| Workspace Member    | Edit and delete initiative comments              | Creator   |
-| Workspace Member    | Delete initiative attachments                    | Creator   |
-| Workspace Member    | Delete workspace drafts                          | Creator   |
-| Teamspace Member    | Edit, delete, and manage teamspace               | Lead      |
-| Teamspace Member    | Edit and delete teamspace comments               | Creator   |
-| Teamspace Member    | Edit and delete teamspace views                  | Creator   |
+| Action | Member | Lead |
+|---|:---:|:---:|
+| Create a comment | ✓ | ✓ |
+| Edit own comment | ✓ | ✓ |
+| Delete own comment | ✓ | ✓ |
+| Delete any comment | — | ✓ |
+| React to a comment | ✓ | ✓ |
+| Resolve a comment | ✓ | ✓ |
 
 ## See also
 
