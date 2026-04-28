@@ -1,6 +1,7 @@
 import { copyFileSync, mkdirSync, readFileSync, readdirSync, statSync } from "fs";
 import { dirname, join, relative, resolve } from "path";
 import { defineConfig, type HeadConfig } from "vitepress";
+import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 
 function loadEnvVar(key: string): string | undefined {
@@ -45,7 +46,7 @@ const searchConfig =
       }
     : { provider: "local" as const };
 
-export default defineConfig({
+const config = defineConfig({
   title: "Plane",
   description: "Modern project management software",
   cleanUrls: true,
@@ -192,14 +193,42 @@ export default defineConfig({
           "project management, issue tracking, sprint management, agile, scrum, create projects, track sprints",
       },
     ],
+    /**
+     * SSG inlines OSSHeader with data-theme from server isDark. Tailwind `dark:…`
+     * keys off [data-theme*="dark"] on that wrapper, so the bar can stay dark
+     * until Vue hydrates. The built-in "check-dark-mode" also only add()s
+     * html.dark. Run in setTimeout(0) so it executes after that script, then
+     * clear stale data-theme as soon as the bar exists.
+     */
+    [
+      "script",
+      {},
+      `!function(){setTimeout(function(){
+var k="vitepress-theme-appearance";
+var p=localStorage.getItem(k)||"dark";
+var m=matchMedia("(prefers-color-scheme: dark)").matches;
+var d=!p||p==="auto"?m:p==="dark";
+document.documentElement.classList.toggle("dark",d);
+function bar(n){
+var h=document.querySelector(".docs-layout header");
+if(h&&h.parentElement){
+var w=h.parentElement;
+if(d)w.setAttribute("data-theme","dark");else w.removeAttribute("data-theme");
+return;
+}
+if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n+1)});
+}bar(0);
+},0);}();`,
+    ],
   ],
 
   themeConfig: {
+    variant: "voidzero",
     logo: {
       light: "https://media.docs.plane.so/logo/new-logo-white.png",
       dark: "https://media.docs.plane.so/logo/new-logo-dark.png",
     },
-    siteTitle: "",
+    siteTitle: "Plane",
 
     outline: {
       level: [2, 3],
@@ -224,6 +253,7 @@ export default defineConfig({
       {
         text: "Sign in",
         link: "https://app.plane.so/sign-in",
+        noIcon: true,
       },
     ],
 
@@ -697,3 +727,5 @@ export default defineConfig({
     },
   },
 });
+
+export default extendConfig(config);
