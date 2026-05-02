@@ -15,7 +15,11 @@
     "build": "vitepress build docs",
     "preview": "vitepress preview docs",
     "fix:format": "oxfmt --write .",
-    "check:format": "oxfmt --check ."
+    "check:format": "oxfmt --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
@@ -27,7 +31,12 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "oxfmt": "^0.36.0"
+    "@vitest/ui": "^4.1.5",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
+    "happy-dom": "^20.9.0",
+    "oxfmt": "^0.36.0",
+    "vitest": "^4.1.5"
   },
   "engines": {
     "node": ">=24.0.0"
