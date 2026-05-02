@@ -26,7 +26,7 @@ pnpm check:format   # Check formatting only
 
 ## Development workflow
 
-1. **Branch strategy**: 
+1. **Branch strategy**:
    - Main branch: `master`
    - Active development: `preview` branch
    - Always target PRs to `preview`, not `master`
