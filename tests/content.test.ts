@@ -62,7 +62,7 @@ describe("Content Validation", () => {
       // but are warnings for now on existing docs
       if (filesWithBadHierarchy.length > 0) {
         console.warn(
-          `\nFiles with heading hierarchy issues (may affect accessibility):\n${filesWithBadHierarchy.map((item) => `  ${item.file}: ${item.issue}`).join("\n")}`
+          `\nFiles with heading hierarchy issues (may affect accessibility):\n${filesWithBadHierarchy.map((item) => `  ${item.file}: ${item.issue}`).join("\n")}`,
         );
       }
     });
@@ -84,7 +84,7 @@ describe("Content Validation", () => {
 
       expect(
         filesWithMultipleH1,
-        `Files with multiple h1 headings:\n  ${filesWithMultipleH1.join("\n  ")}`
+        `Files with multiple h1 headings:\n  ${filesWithMultipleH1.join("\n  ")}`,
       ).toHaveLength(0);
     });
   });
@@ -106,10 +106,7 @@ describe("Content Validation", () => {
         }
       }
 
-      expect(
-        emptyFiles,
-        `Files with no content:\n  ${emptyFiles.join("\n  ")}`
-      ).toHaveLength(0);
+      expect(emptyFiles, `Files with no content:\n  ${emptyFiles.join("\n  ")}`).toHaveLength(0);
     });
 
     it("should not have TODO or FIXME comments", () => {
@@ -122,9 +119,9 @@ describe("Content Validation", () => {
 
         // Only match actual TODO/FIXME comments, not words like "Todo" in UI text
         // Match patterns like "TODO:", "FIXME:", or at start of lines
-        const todoMatches = Array.from(
-          markdownContent.matchAll(/\b(TODO|FIXME|XXX|HACK):/gi)
-        ).map((match) => match[0]);
+        const todoMatches = Array.from(markdownContent.matchAll(/\b(TODO|FIXME|XXX|HACK):/gi)).map(
+          (match) => match[0],
+        );
 
         if (todoMatches.length > 0) {
           filesWithTodos.push({ file, matches: todoMatches });
@@ -134,7 +131,7 @@ describe("Content Validation", () => {
       // This is informational - many docs reference "Todo" as a feature name
       if (filesWithTodos.length > 0) {
         console.warn(
-          `\nFiles with TODO/FIXME markers:\n${filesWithTodos.map((item) => `  ${item.file}: ${item.matches.join(", ")}`).join("\n")}`
+          `\nFiles with TODO/FIXME markers:\n${filesWithTodos.map((item) => `  ${item.file}: ${item.matches.join(", ")}`).join("\n")}`,
         );
       }
     });
@@ -158,7 +155,7 @@ describe("Content Validation", () => {
       // This is informational - trailing whitespace should be fixed by formatter
       if (filesWithTrailingSpaces.length > 0) {
         console.warn(
-          `\nFiles with trailing whitespace (run pnpm fix:format):\n${filesWithTrailingSpaces.map((item) => `  ${item.file}: ${item.count} lines`).join("\n")}`
+          `\nFiles with trailing whitespace (run pnpm fix:format):\n${filesWithTrailingSpaces.map((item) => `  ${item.file}: ${item.count} lines`).join("\n")}`,
         );
       }
     });
@@ -186,7 +183,7 @@ describe("Content Validation", () => {
 
       expect(
         filesWithLocalImages,
-        `Files with local/non-CDN images:\n${filesWithLocalImages.map((item) => `  ${item.file}: ${item.images.join(", ")}`).join("\n")}`
+        `Files with local/non-CDN images:\n${filesWithLocalImages.map((item) => `  ${item.file}: ${item.images.join(", ")}`).join("\n")}`,
       ).toHaveLength(0);
     });
 
@@ -200,7 +197,7 @@ describe("Content Validation", () => {
         const { content: markdownContent } = matter(content);
 
         const imagesWithoutAlt = Array.from(markdownContent.matchAll(imagePattern)).filter(
-          (match) => match[1].trim() === ""
+          (match) => match[1].trim() === "",
         );
 
         if (imagesWithoutAlt.length > 0) {
@@ -211,7 +208,7 @@ describe("Content Validation", () => {
       // Alt text is important for accessibility but this is a warning for now
       if (filesWithoutAlt.length > 0) {
         console.warn(
-          `\nFiles with images missing alt text (recommended for accessibility):\n${filesWithoutAlt.map((item) => `  ${item.file}: ${item.count} images`).join("\n")}`
+          `\nFiles with images missing alt text (recommended for accessibility):\n${filesWithoutAlt.map((item) => `  ${item.file}: ${item.count} images`).join("\n")}`,
         );
       }
     });
@@ -238,7 +235,7 @@ describe("Content Validation", () => {
       // This is a warning-level check, not a strict requirement
       if (filesWithUnlabeledCode.length > 0) {
         console.warn(
-          `\nFiles with unlabeled code blocks (recommended to add language):\n${filesWithUnlabeledCode.map((item) => `  ${item.file}: ${item.count} blocks`).join("\n")}`
+          `\nFiles with unlabeled code blocks (recommended to add language):\n${filesWithUnlabeledCode.map((item) => `  ${item.file}: ${item.count} blocks`).join("\n")}`,
         );
       }
     });

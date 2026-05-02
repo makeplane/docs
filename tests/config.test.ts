@@ -22,9 +22,7 @@ describe("VitePress Configuration", () => {
         .filter((link) => {
           // Filter out external links
           return (
-            !link.startsWith("http://") &&
-            !link.startsWith("https://") &&
-            !link.startsWith("#")
+            !link.startsWith("http://") && !link.startsWith("https://") && !link.startsWith("#")
           );
         });
 
@@ -41,7 +39,7 @@ describe("VitePress Configuration", () => {
 
       expect(
         brokenLinks,
-        `Sidebar links pointing to non-existent files:\n  ${brokenLinks.join("\n  ")}`
+        `Sidebar links pointing to non-existent files:\n  ${brokenLinks.join("\n  ")}`,
       ).toHaveLength(0);
     });
 
@@ -84,8 +82,8 @@ describe("VitePress Configuration", () => {
     it("should have title and description", () => {
       const configContent = readFileSync(CONFIG_PATH, "utf-8");
 
-      expect(configContent).toContain('title:');
-      expect(configContent).toContain('description:');
+      expect(configContent).toContain("title:");
+      expect(configContent).toContain("description:");
     });
 
     it("should have sitemap configuration", () => {
@@ -147,7 +145,7 @@ describe("VitePress Configuration", () => {
       // This is more of a warning than a strict requirement
       if (unreferencedFiles.length > 0) {
         console.warn(
-          `\nMarkdown files not referenced in sidebar config:\n  ${unreferencedFiles.join("\n  ")}`
+          `\nMarkdown files not referenced in sidebar config:\n  ${unreferencedFiles.join("\n  ")}`,
         );
       }
 

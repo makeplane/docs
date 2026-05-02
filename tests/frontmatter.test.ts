@@ -45,14 +45,14 @@ describe("Front Matter Validation", () => {
     it("should have a title in front matter", () => {
       expect(
         filesWithoutTitle,
-        `Files missing title in front matter:\n  ${filesWithoutTitle.join("\n  ")}`
+        `Files missing title in front matter:\n  ${filesWithoutTitle.join("\n  ")}`,
       ).toHaveLength(0);
     });
 
     it("should not have empty titles", () => {
       expect(
         filesWithEmptyTitle,
-        `Files with empty titles:\n  ${filesWithEmptyTitle.join("\n  ")}`
+        `Files with empty titles:\n  ${filesWithEmptyTitle.join("\n  ")}`,
       ).toHaveLength(0);
     });
 
@@ -62,7 +62,7 @@ describe("Front Matter Validation", () => {
       // Skip this test by default, but keep it for documentation purposes
       if (filesWithoutDescription.length > 0) {
         console.warn(
-          `\nFiles without description (recommended for SEO):\n  ${filesWithoutDescription.join("\n  ")}`
+          `\nFiles without description (recommended for SEO):\n  ${filesWithoutDescription.join("\n  ")}`,
         );
       }
     });
@@ -70,7 +70,7 @@ describe("Front Matter Validation", () => {
     it("should not have empty descriptions when present", () => {
       expect(
         filesWithEmptyDescription,
-        `Files with empty descriptions:\n  ${filesWithEmptyDescription.join("\n  ")}`
+        `Files with empty descriptions:\n  ${filesWithEmptyDescription.join("\n  ")}`,
       ).toHaveLength(0);
     });
   });
@@ -92,7 +92,7 @@ describe("Front Matter Validation", () => {
 
       expect(
         filesWithLongTitles,
-        `Files with titles longer than ${maxLength} characters:\n${filesWithLongTitles.map((item) => `  ${item.file} (${item.length} chars)`).join("\n")}`
+        `Files with titles longer than ${maxLength} characters:\n${filesWithLongTitles.map((item) => `  ${item.file} (${item.length} chars)`).join("\n")}`,
       ).toHaveLength(0);
     });
 
@@ -117,7 +117,7 @@ describe("Front Matter Validation", () => {
       // This is informational - some descriptions may be legitimately longer
       if (filesWithLongDesc.length > 0) {
         console.warn(
-          `\nFiles with longer descriptions (>${maxLength} chars, consider shortening for SEO):\n${filesWithLongDesc.map((item) => `  ${item.file} (${item.length} chars)`).join("\n")}`
+          `\nFiles with longer descriptions (>${maxLength} chars, consider shortening for SEO):\n${filesWithLongDesc.map((item) => `  ${item.file} (${item.length} chars)`).join("\n")}`,
         );
       }
     });
@@ -143,7 +143,7 @@ describe("Front Matter Validation", () => {
 
       expect(
         filesWithInvalidFrontMatter,
-        `Files with invalid YAML front matter:\n  ${filesWithInvalidFrontMatter.join("\n  ")}`
+        `Files with invalid YAML front matter:\n  ${filesWithInvalidFrontMatter.join("\n  ")}`,
       ).toHaveLength(0);
     });
 
@@ -163,7 +163,7 @@ describe("Front Matter Validation", () => {
 
       expect(
         filesWithSpecialChars,
-        `Files with special characters in titles:\n${filesWithSpecialChars.map((item) => `  ${item.file}: "${item.title}"`).join("\n")}`
+        `Files with special characters in titles:\n${filesWithSpecialChars.map((item) => `  ${item.file}: "${item.title}"`).join("\n")}`,
       ).toHaveLength(0);
     });
   });

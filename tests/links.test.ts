@@ -50,7 +50,7 @@ describe("Link Validation", () => {
     it("should have internal links to validate", () => {
       const totalLinks = Array.from(internalLinks.values()).reduce(
         (sum, links) => sum + links.length,
-        0
+        0,
       );
       expect(totalLinks).toBeGreaterThan(0);
     });
@@ -82,7 +82,7 @@ describe("Link Validation", () => {
                 const indexPath = join(targetPath, "index.md");
                 expect(
                   existsSync(indexPath),
-                  `Directory link ${link} should have index.md at ${indexPath}`
+                  `Directory link ${link} should have index.md at ${indexPath}`,
                 ).toBe(true);
               }
               // If it's a file, it exists - test passes
@@ -91,7 +91,7 @@ describe("Link Validation", () => {
               const mdPath = targetPath.endsWith(".md") ? targetPath : `${targetPath}.md`;
               expect(
                 existsSync(mdPath),
-                `Link ${link} should resolve to existing file. Tried: ${targetPath} and ${mdPath}`
+                `Link ${link} should resolve to existing file. Tried: ${targetPath} and ${mdPath}`,
               ).toBe(true);
             }
           });
@@ -120,7 +120,7 @@ describe("Link Validation", () => {
 
       expect(
         filesWithMdLinks,
-        `Files with .md extensions in links: ${filesWithMdLinks.join(", ")}`
+        `Files with .md extensions in links: ${filesWithMdLinks.join(", ")}`,
       ).toHaveLength(0);
     });
   });
@@ -135,15 +135,13 @@ describe("Link Validation", () => {
         const { content: markdownContent } = matter(content);
 
         // Find http links (excluding localhost and specific allowed domains)
-        const httpLinks = Array.from(
-          markdownContent.matchAll(/\[([^\]]+)\]\((http:\/\/[^)]+)\)/g)
-        )
+        const httpLinks = Array.from(markdownContent.matchAll(/\[([^\]]+)\]\((http:\/\/[^)]+)\)/g))
           .map((match) => match[2])
           .filter(
             (link) =>
               !link.includes("localhost") &&
               !link.includes("127.0.0.1") &&
-              !link.includes("example.com") // Allow example domains in docs
+              !link.includes("example.com"), // Allow example domains in docs
           );
 
         if (httpLinks.length > 0) {

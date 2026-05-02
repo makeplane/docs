@@ -45,12 +45,14 @@ Tests run automatically on all pull requests as part of the CI workflow:
 Ensures all internal links are valid and follow documentation conventions.
 
 **What it checks:**
+
 - ✅ All internal links resolve to existing files
 - ✅ Links don't use `.md` extensions (VitePress removes them)
 - ✅ External links use HTTPS instead of HTTP
 - ✅ No broken relative or absolute paths
 
 **Example failures:**
+
 ```
 ❌ Link to /core-concepts/nonexistent points to missing file
 ❌ Link [Guide](./guide.md) should be [Guide](./guide)
@@ -62,6 +64,7 @@ Ensures all internal links are valid and follow documentation conventions.
 Validates YAML front matter metadata for all markdown files.
 
 **What it checks:**
+
 - ✅ All pages have a `title` field
 - ✅ Titles are not empty or too long (max 100 chars)
 - ✅ Descriptions are reasonable length (max 250 chars recommended)
@@ -69,6 +72,7 @@ Validates YAML front matter metadata for all markdown files.
 - ✅ No unexpected special characters in titles
 
 **Example failures:**
+
 ```
 ❌ File missing title in front matter
 ❌ Title is empty or only whitespace
@@ -81,6 +85,7 @@ Validates YAML front matter metadata for all markdown files.
 Validates markdown content structure and quality.
 
 **What it checks:**
+
 - ✅ Proper heading hierarchy (warns about skipped levels)
 - ✅ No empty content files (except home page)
 - ✅ Images use external CDN (`https://media.docs.plane.so/`)
@@ -89,6 +94,7 @@ Validates markdown content structure and quality.
 - ✅ Code blocks have language labels (recommended)
 
 **Example failures:**
+
 ```
 ❌ Heading jumps from h2 to h4 (skipped h3)
 ❌ File has no content after front matter
@@ -102,6 +108,7 @@ Validates markdown content structure and quality.
 Validates VitePress configuration integrity.
 
 **What it checks:**
+
 - ✅ Config file exists and is readable
 - ✅ Sidebar links point to existing files
 - ✅ Required theme configuration present
@@ -111,6 +118,7 @@ Validates VitePress configuration integrity.
 - ✅ Proper head tags for SEO
 
 **Example failures:**
+
 ```
 ❌ Sidebar link /core-concepts/missing points to non-existent file
 ❌ Missing required theme configuration
@@ -145,10 +153,10 @@ These tests provide helpful warnings but don't fail the build:
 As of the initial implementation:
 
 - ✅ **230 tests passing**
-- ⚠️  9 files with heading hierarchy issues
-- ⚠️  45 files with trailing whitespace (fixable with `pnpm fix:format`)
-- ⚠️  2 files with images missing alt text
-- ⚠️  2 files with descriptions over recommended length
+- ⚠️ 9 files with heading hierarchy issues
+- ⚠️ 45 files with trailing whitespace (fixable with `pnpm fix:format`)
+- ⚠️ 2 files with images missing alt text
+- ⚠️ 2 files with descriptions over recommended length
 
 ## Adding New Tests
 
