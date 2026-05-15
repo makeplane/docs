@@ -96,6 +96,9 @@ Break down larger tasks into smaller, manageable components by creating sub-work
 
 ![Sub-work items](https://media.docs.plane.so/work-items/sub-work-items.webp#hero)
 
+**Cross-project sub-work items**  
+A work item in Project A can be a sub-work item of a work item in Project B. The parent picker searches across the entire workspace.
+
 ## Duplicate work items <Badge type="info" text="Pro" />
 
 When you need to create similar work items or replicate a work item's structure and properties, Plane lets you duplicate existing work items either within the same project or across different projects.
@@ -151,7 +154,7 @@ Plane allows you to upload different file types directly to the work item. Use t
   JPEG, PNG, GIF, SVG, WebP, TIFF, BMP
 
 - **Documents**  
-  PDF, Microsoft Word, Microsoft Excel, Microsoft PowerPoint, Plain Text, Rich Text Format (RTF), OpenDocument Spreadsheet, OpenDocument Text, OpenDocument Presentation, OpenDocument Graphics
+  PDF, Microsoft Word, Microsoft Excel, Microsoft PowerPoint, Plain Text, Rich Text Format (RTF), Markdown, OpenDocument Spreadsheet, OpenDocument Text, OpenDocument Presentation, OpenDocument Graphics
 
 - **Audio**  
   MP3, WAV, OGG, MIDI, AAC, FLAC, M4A

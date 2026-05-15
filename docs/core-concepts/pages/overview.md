@@ -177,7 +177,7 @@ The restored content becomes the current version, and a new entry is added to th
 
 ![Export Page](https://media.docs.plane.so/pages/export-page.webp#hero)
 
-Pages lets you export your content in various formats, including PDF and Markdown. This feature is a game-changer for project managers and team members who need to share information with stakeholders, clients, or team members who might not be using Plane.
+Pages lets you export your content in various formats, including PDF, Word, and Markdown. This feature is a game-changer for project managers and team members who need to share information with stakeholders, clients, or team members who might not be using Plane.
 
 When you export to PDF, your documents keep their formatting, making them easy to share and print without any hassle. If you choose to export to Markdown, you can seamlessly integrate your content into other tools or platforms, streamlining your workflow.
 

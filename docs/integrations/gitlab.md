@@ -101,6 +101,37 @@ After linking a GitLab project, the next step is to associate it with a Plane pr
 
 3. Once configured, you will see the project connection appear in the **Plane Project Connections** section.
 
+### Connect personal GitLab account
+
+This step allows you to make comments on issues and merge requests in GitLab through your Plane account, using your personal GitLab identity.
+
+When this connection is enabled, comments made in Plane will appear in GitLab under your GitLab user account, else comments will be posted as `Plane GitLab App` or your custom GitLab app name.
+
+Workspace admins can connect their personal GitLab accounts from the GitLab configuration page.
+
+![Connect personal account](https://media.docs.plane.so/integrations/github/connect-personal-account.webp#hero)
+
+1. In the **Connect personal account** section under **Integrations**, click **Connect**.
+2. Review the required permissions GitLab requests and authorize.
+3. After granting permissions, you’ll see the status updated to show that your personal account is connected.
+
+::: info
+Only one Workspace Admin can connect their GitLab account via Workspace Settings. Others can connect their accounts through [Profile Settings](/integrations/github#from-profile-settings).
+:::
+
+All other workspace members can connect their personal GitLab accounts from the **Connections** page in
+Workspace settings.
+
+![Connect member personal account](https://media.docs.plane.so/integrations/github/connect-personal-account-member.webp#hero)
+
+1. Go to [Workspace Settings](/core-concepts/workspaces/overview#access-workspace-settings).
+2. Select the **Connections** tab in the sidebar.
+4. Click **Connect** in the GitLab section, which will redirect you to GitLab for authentication.
+   ::: info
+   If your workspace doesn’t have GitLab integration enabled, you won’t be able to connect your personal account. In this case, contact your Workspace Admin.
+   :::
+5. Once connected, your GitLab account will be listed in Plane.
+
 ## Sync issues
 
 With the GitLab integration set up, you can sync issues between Plane and GitLab at the project level. This ensures GitLab issues and Plane work items stay synchronized within your configured GitLab Projects and Plane projects.
