@@ -33,9 +33,8 @@ A widget is a single chart or metric panel on a dashboard. You configure each wi
 independently with its own chart type, data axes, grouping, and filters. Widgets sit on a
 shared grid and can be resized and repositioned freely.
 
-Every widget answers a question of the form: *"For these work items, grouped by X, what is the
-count/metric of Y?"*
-
+Every widget answers a question of the form: _"For these work items, grouped by X, what is the
+count/metric of Y?"_
 
 ## Create a dashboard
 
@@ -204,7 +203,7 @@ the distribution, or when you need to display many groups that would be hard to 
 
 One row per group, with a count column. The y-axis metric is fixed to **work item count**
 and cannot be changed — table charts always show a raw count. The appearance settings
-(column color, legend, tooltip) match the bar chart config options. 
+(column color, legend, tooltip) match the bar chart config options.
 
 ## Configure a widget
 
@@ -212,13 +211,14 @@ Open the configuration sidebar by clicking the widget or by clicking the pencil 
 
 ![Customize Widget](https://media.docs.plane.so/dashboards/customize-widget.webp#hero)
 
-**Basic config**  
+**Basic config**
+
 - **Name** - the widget's title as displayed on the dashboard.
 
 **X-axis property**  
-What to group work items by along the horizontal axis (or segments for pie/donut).  
+What to group work items by along the horizontal axis (or segments for pie/donut).
 
-*Options:*
+_Options:_
 
 - State, State group
 - Priority
@@ -235,16 +235,16 @@ When a date property is selected for the x-axis, you also choose a **date groupi
 **Y-axis metric**  
 What value to compute per group.
 
-| Metric | What it counts |
-|---|---|
-| Work item count | Total issues in each group |
-| Estimate points | Sum of story points in each group |
-| Pending work items | Issues in backlog, unstarted, or started state |
-| Completed work items | Issues in completed state |
-| In-progress work items | Issues in unstarted or started state |
-| Due today | Issues with a due date of today |
-| Due this week | Issues with a due date in the current week |
-| Blocked work items | Issues that have a blocked-by relationship |
+| Metric                 | What it counts                                 |
+| ---------------------- | ---------------------------------------------- |
+| Work item count        | Total issues in each group                     |
+| Estimate points        | Sum of story points in each group              |
+| Pending work items     | Issues in backlog, unstarted, or started state |
+| Completed work items   | Issues in completed state                      |
+| In-progress work items | Issues in unstarted or started state           |
+| Due today              | Issues with a due date of today                |
+| Due this week          | Issues with a due date in the current week     |
+| Blocked work items     | Issues that have a blocked-by relationship     |
 
 Estimate points require the project to have estimates configured in points mode. If a project does not have estimate points set up, that metric returns zero for work items in that project.
 
@@ -276,6 +276,7 @@ They restrict the base work item pool from which all widgets compute their data.
 for that individual widget only.
 
 When a widget fetches data, Plane applies filters in this order:
+
 1. Dashboard-level filters
 2. Dashboard-level PQL filters
 3. Widget-level filters
@@ -310,7 +311,6 @@ Plane renders each widget into the PDF. Chart widgets become images; table and n
 are rendered as structured content. The PDF renderer respects the desktop grid layout and places widgets in their configured
 positions and sizes across pages.
 
-
 ## Resize a widget
 
 1. Hover over the widget until the resize handle appears at the bottom-right corner.
@@ -335,8 +335,8 @@ positions and sizes across pages.
 2. Click the **star** icon.
 
 Or from inside the dashboard:
-- Click the **star** icon in the dashboard header.
 
+- Click the **star** icon in the dashboard header.
 
 ## Delete a dashboard
 
