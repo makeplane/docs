@@ -165,32 +165,32 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 | -------------------------- | :---: | :---: | :----: | :---: |
 | View a page                |   ✓   |   ✓   |   ✓    |   —   |
 | Create a page              |   ✓   |   ✓   |   ✓    |   —   |
-| Edit page content / title  |   ✓   |   ✓   |   ✓    |   —   |
-| Lock / unlock a page       |   ✓   |   ✓   |   ✓    |   —   |
-| Make page public / private |   ✓   |   ✓   |   ✓    |   —   |
+| Edit a page                |   ✓   |   ✓   |   ✓    |   —   |
+| Lock / unlock a page       |   ✓   |   ✓   |  Own   |   —   |
+| Make page public / private |   ✓   |   ✓   |  Own   |   —   |
 | Share a page               |   ✓   |   ✓   |   ✓    |   —   |
-| Archive a page             |   ✓   |   ✓   |   ✓    |   —   |
-| Restore a page             |   ✓   |   ✓   |   ✓    |   —   |
+| Archive a page             |   ✓   |   ✓   |  Own   |   —   |
+| Restore a page             |   ✓   |   ✓   |  Own   |   —   |
 | Duplicate a page           |   ✓   |   ✓   |   ✓    |   —   |
-| Delete a page              |   ✓   |   ✓   |   ✓    |   —   |
-| Move a page                |   ✓   |   ✓   |   ✓    |   —   |
+| Delete a page              |   ✓   |   ✓   |  Own   |   —   |
+| Move a page                |   ✓   |   ✓   |  Own   |   —   |
+| Publish a page             |   ✓   |   ✓   |  Own   |   —   |
 | Update page icon / logo    |   ✓   |   ✓   |   ✓    |   —   |
-| Export / download          |   ✓   |   ✓   |   ✓    |   —   |
+| Export page                |   ✓   |   ✓   |   ✓    |   —   |
 | Favourite a page           |   ✓   |   ✓   |   ✓    |   —   |
 | Comment on a page          |   ✓   |   ✓   |   —    |   —   |
+| Restore from version       |   ✓   |   ✓   |   ✓    |   —   |
 
 > Commenting on workspace pages requires Owner or Admin.
 
 #### Wiki Collections
 
-| Permission            | Owner | Admin | Member | Guest |
-| --------------------- | :---: | :---: | :----: | :---: |
-| View collections      |   ✓   |   ✓   |   ✓    |   —   |
-| Create a collection   |   ✓   |   ✓   |   ✓    |   —   |
-| Edit own collection   |   ✓   |   ✓   |  Own   |   —   |
-| Edit any collection   |   ✓   |   ✓   |   —    |   —   |
-| Delete own collection |   ✓   |   ✓   |  Own   |   —   |
-| Delete any collection |   ✓   |   ✓   |   —    |   —   |
+| Permission          | Owner | Admin | Member | Guest |
+| ------------------- | :---: | :---: | :----: | :---: |
+| View collections    |   ✓   |   ✓   |   ✓    |   —   |
+| Create a collection |   ✓   |   ✓   |   ✓    |   —   |
+| Edit collection     |   ✓   |   ✓   |  Own   |   —   |
+| Delete collection   |   ✓   |   ✓   |  Own   |   —   |
 
 ### Workspace Views
 
@@ -276,6 +276,19 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 | Rearrange widgets                   |   ✓   |   ✓   |   —    |   —   |
 | Apply quick filters (view only)     |   ✓   |   ✓   |   ✓    |   —   |
 | Favourite a dashboard               |   ✓   |   ✓   |   —    |   —   |
+
+| Permission                          | Owner | Admin | Member | Guest |
+| ----------------------------------- | :---: | :---: | :----: | :---: |
+| View dashboards                     |   ✓   |   ✓   |   ✓    |   —   |
+| Create a dashboard                  |   ✓   |   ✓   |   ✓    |   —   |
+| Edit a dashboard (rename, settings) |   ✓   |   ✓   |  Own   |   —   |
+| Delete a dashboard                  |   ✓   |   ✓   |  Own   |   —   |
+| Add a widget                        |   ✓   |   ✓   |  Own   |   —   |
+| Edit a widget                       |   ✓   |   ✓   |  Own   |   —   |
+| Delete a widget                     |   ✓   |   ✓   |  Own   |   —   |
+| Rearrange widgets                   |   ✓   |   ✓   |  Own   |   —   |
+| Apply quick filters (view only)     |   ✓   |   ✓   |   ✓    |   —   |
+| Favourite a dashboard               |   ✓   |   ✓   |   ✓    |   —   |
 
 ### Worklogs
 
