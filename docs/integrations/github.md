@@ -96,11 +96,11 @@ Workspace settings.
 
 1. Go to [Workspace Settings](/core-concepts/workspaces/overview#access-workspace-settings).
 2. Select the **Connections** tab in the sidebar.
-4. Click **Connect** in the GitHub section, which will redirect you to GitHub for authentication.
+3. Click **Connect** in the GitHub section, which will redirect you to GitHub for authentication.
    ::: info
    If your workspace doesn’t have GitHub integration enabled, you won’t be able to connect your personal account. In this case, contact your Workspace Admin.
    :::
-5. Once connected, your GitHub account will be listed in Plane.
+4. Once connected, your GitHub account will be listed in Plane.
 
 ## Sync issues
 

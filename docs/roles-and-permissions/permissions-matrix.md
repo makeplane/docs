@@ -185,12 +185,12 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 
 #### Wiki Collections
 
-| Permission            | Owner | Admin | Member | Guest |
-| --------------------- | :---: | :---: | :----: | :---: |
-| View collections      |   ✓   |   ✓   |   ✓    |   —   |
-| Create a collection   |   ✓   |   ✓   |   ✓    |   —   |
-| Edit collection       |   ✓   |   ✓   |  Own   |   —   |
-| Delete collection     |   ✓   |   ✓   |  Own   |   —   |
+| Permission          | Owner | Admin | Member | Guest |
+| ------------------- | :---: | :---: | :----: | :---: |
+| View collections    |   ✓   |   ✓   |   ✓    |   —   |
+| Create a collection |   ✓   |   ✓   |   ✓    |   —   |
+| Edit collection     |   ✓   |   ✓   |  Own   |   —   |
+| Delete collection   |   ✓   |   ✓   |  Own   |   —   |
 
 ### Workspace Views
 
@@ -277,18 +277,18 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 | Apply quick filters (view only)     |   ✓   |   ✓   |   ✓    |   —   |
 | Favourite a dashboard               |   ✓   |   ✓   |   —    |   —   |
 
-| Permission                          | Owner | Admin |   Member    | Guest |
-| ----------------------------------- | :---: | :---: | :---------: | :---: |
-| View dashboards                     |   ✓   |   ✓   |      ✓      |   —   |
-| Create a dashboard                  |   ✓   |   ✓   |      ✓      |   —   |
-| Edit a dashboard (rename, settings) |   ✓   |   ✓   |     Own     |   —   |
-| Delete a dashboard                  |   ✓   |   ✓   |     Own     |   —   |
-| Add a widget                        |   ✓   |   ✓   |     Own     |   —   |
-| Edit a widget                       |   ✓   |   ✓   |     Own     |   —   |
-| Delete a widget                     |   ✓   |   ✓   |     Own     |   —   |
-| Rearrange widgets                   |   ✓   |   ✓   |     Own     |   —   |
-| Apply quick filters (view only)     |   ✓   |   ✓   |      ✓      |   —   |
-| Favourite a dashboard               |   ✓   |   ✓   |      ✓      |   —   |
+| Permission                          | Owner | Admin | Member | Guest |
+| ----------------------------------- | :---: | :---: | :----: | :---: |
+| View dashboards                     |   ✓   |   ✓   |   ✓    |   —   |
+| Create a dashboard                  |   ✓   |   ✓   |   ✓    |   —   |
+| Edit a dashboard (rename, settings) |   ✓   |   ✓   |  Own   |   —   |
+| Delete a dashboard                  |   ✓   |   ✓   |  Own   |   —   |
+| Add a widget                        |   ✓   |   ✓   |  Own   |   —   |
+| Edit a widget                       |   ✓   |   ✓   |  Own   |   —   |
+| Delete a widget                     |   ✓   |   ✓   |  Own   |   —   |
+| Rearrange widgets                   |   ✓   |   ✓   |  Own   |   —   |
+| Apply quick filters (view only)     |   ✓   |   ✓   |   ✓    |   —   |
+| Favourite a dashboard               |   ✓   |   ✓   |   ✓    |   —   |
 
 ### Worklogs
 

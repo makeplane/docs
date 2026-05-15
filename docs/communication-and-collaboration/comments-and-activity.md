@@ -174,11 +174,3 @@ By default, pressing **Enter** submits a comment. Pressing **Shift+Enter** alway
 If you prefer to use Enter freely for line breaks and only submit intentionally, you can switch the shortcut to **Mod+Enter** (Ctrl+Enter on Windows/Linux, ⌘+Enter on macOS) in your profile preferences. This setting is stored on your user profile and applies globally — it affects the comment create form, the comment edit form, and the reply editor, across all projects and workspaces.
 
 The setting is per-user, not per-workspace. Other members are not affected by your preference.
-
-
-
-
-
-
-
-

@@ -12,6 +12,7 @@ Think of a view as a smart bookmark: you define what you care about (priority = 
 ![Views](https://media.docs.plane.so/views/views.webp#hero)
 
 Views are especially useful when you need to:
+
 - Focus a recurring standup on a specific slice of work (e.g., all blockers this sprint).
 - Give stakeholders a curated window into progress without exposing the full backlog.
 - Share a stable URL that always shows the latest issues matching defined criteria.
@@ -32,11 +33,12 @@ Plane offers two scopes of views, with fundamentally different coverage.
   Workspace views include four built-in, non-deletable default views: **All Issues**, **Assigned to Me**, **Created by Me**, and **Subscribed**. These are always available and always reflect live data.
 
 - **Teamspace Views**  
-Teamspace views provide a third scope: views tied to a teamspace rather than a single project or the full workspace. See more about [Teamspace Views](/core-concepts/workspaces/teamspaces#teamspace-views).
+  Teamspace views provide a third scope: views tied to a teamspace rather than a single project or the full workspace. See more about [Teamspace Views](/core-concepts/workspaces/teamspaces#teamspace-views).
 
 ## Create view
 
 ### Create a project view
+
 ![Create view](https://media.docs.plane.so/views/create-view.webp#hero)
 
 1. Open a project and go to **Views** in the left sidebar.
@@ -70,6 +72,7 @@ Learn more about how to apply filters [here](/core-concepts/issues/visualise_fil
 Every view has an access level.
 
 ### Public view
+
 By default, views are public. They are visible and usable by all members with access to the project.
 
 ### Private view <Badge type="info" text="Pro" />
@@ -83,7 +86,7 @@ They are visible only to the creator; other members cannot see or open it. Only 
 1. Open the view.
 2. Select your preferred layout: **List**, **Board**, **Calendar**, **Table**, or **Gantt**.
 3. Add, remove, or modify filter conditions and display options.
-5. Click **Update View** that appears in the filter bar.
+4. Click **Update View** that appears in the filter bar.
 
 If you close the view without saving, your unsaved filter changes are discarded and the view reverts to its saved state on next open.
 
@@ -109,7 +112,7 @@ Locking is useful when a view represents an agreed-upon team standard and you wa
 
 ## Publish View <Badge type="info" text="Pro" />
 
-Project views can be **published** to generate a public shareable link. 
+Project views can be **published** to generate a public shareable link.
 
 ![Publish view](https://media.docs.plane.so/views/publish-view.webp#hero)
 
@@ -122,6 +125,7 @@ Project views can be **published** to generate a public shareable link.
 4. Copy the generated link and share it.
 
 A published view:
+
 - Is accessible to anyone with the link — no Plane account required.
 - Shows issues filtered by the view's saved configuration.
 - Can optionally allow reactions, comments, or votes from public visitors.
@@ -138,7 +142,7 @@ When you export a view, Plane captures the view's filters, processes it and noti
 3. Select a format: **CSV**, **XLSX**, or **JSON**.
 4. Click **Continue**.
 5. A toast notification confirms the export has started. Click **View Exports** in the toast, or go to **Workspace Settings → Exports**, to monitor the job and download the file when it is ready.
-6.  Once the status shows as complete, click **Download** to save the file.
+6. Once the status shows as complete, click **Download** to save the file.
 
 The exported data reflects the work items that match the view's filters at the moment you trigger the export. Specifically, Plane uses the **currently active filters in your session** — so if you have modified the filters since last saving the view, the export will include those unsaved changes. This means the file you download matches exactly what you see on screen when you click Export.
 
@@ -148,10 +152,10 @@ Export is available on projects views and workspace views.
 
 ### Export formats
 
-| Format | Description |
-|--------|-------------|
-| CSV    | Comma-separated values. Opens in any spreadsheet tool. Best for importing into other systems. |
-| XLSX   | Excel workbook format. Opens directly in Excel or Google Sheets with formatting preserved. |
+| Format | Description                                                                                      |
+| ------ | ------------------------------------------------------------------------------------------------ |
+| CSV    | Comma-separated values. Opens in any spreadsheet tool. Best for importing into other systems.    |
+| XLSX   | Excel workbook format. Opens directly in Excel or Google Sheets with formatting preserved.       |
 | JSON   | Structured data format. Intended for programmatic use or importing into other tools via scripts. |
 
 Learn more about [custom exports](/core-concepts/export#custom-exports).
@@ -159,13 +163,14 @@ Learn more about [custom exports](/core-concepts/export#custom-exports).
 ## Add view to favorites
 
 From the views list:
+
 - Hover over the view and click the **star** icon.
 
 From inside the view:
+
 - Click the **star** icon in the view header.
 
 Favorited views appear in the **Favorites** section of the sidebar for quick access.
-
 
 ## Duplicate view
 
@@ -175,8 +180,8 @@ Favorited views appear in the **Favorites** section of the sidebar for quick acc
 
 The duplicate is created with the same filters, display filters, and display properties, with "Copy of" prepended to the name. You can rename and modify it independently.
 
-
 ## Delete a view
+
 You can remove views by deleting them from the list of views in your workspace or project. Deleting a view has no impact on the associated work items.
 
 1. Go to the views list.
@@ -184,4 +189,3 @@ You can remove views by deleting them from the list of views in your workspace o
 3. Confirm deletion.
 
 Deletion is permanent. Issues are not affected — only the saved view configuration is removed. The built-in workspace views (All Issues, Assigned to Me, Created by Me, Subscribed) cannot be deleted.
-
