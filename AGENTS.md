@@ -22,6 +22,9 @@ pnpm build          # Build static output into docs/.vitepress/dist
 pnpm preview        # Preview the production build locally
 pnpm fix:format     # Auto-format all files with oxfmt
 pnpm check:format   # Check formatting without writing
+pnpm test           # Run test suite
+pnpm test:watch     # Run tests in watch mode
+pnpm test:ui        # Run tests with UI interface
 ```
 
 ## Repo structure
@@ -77,9 +80,20 @@ The sidebar and top nav are configured entirely in `docs/.vitepress/config.ts`. 
 2. Add an entry to the relevant sidebar section in `config.ts`.
 3. If it needs a top-nav link, add it to `themeConfig.nav`.
 
-## Formatting
+## Formatting and Testing
 
 Run `pnpm fix:format` before committing. CI checks formatting via `pnpm check:format`. Never skip this step.
+
+### Testing
+
+The project includes automated tests for documentation quality:
+
+- **Link validation**: Ensures all internal links work
+- **Front matter validation**: Checks all pages have proper metadata
+- **Content validation**: Validates heading structure, image references, and content quality
+- **Config validation**: Ensures VitePress configuration is correct
+
+Run `pnpm test` to execute the test suite. CI will automatically run tests on all pull requests.
 
 ## Branches and PRs
 
