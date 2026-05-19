@@ -2,6 +2,8 @@
 layout: doc
 title: Plane Docs
 description: Everything you need to learn Plane, manage projects, and build powerful workflows.
+prev: false
+next: false
 ---
 
 <!-- @format -->
@@ -13,8 +15,10 @@ Plan, track, and ship your work with Plane.
 This documentation helps you learn Plane, manage projects, collaborate with
 teams, and automate workflows.
 
-[Get Started](/introduction/home) ·
-[Tutorials](/introduction/tutorials/overview)
+<div class="home-doc-actions">
+  <a class="home-doc-actions__btn home-doc-actions__btn--primary" href="/introduction/home">Get Started</a>
+  <a class="home-doc-actions__btn home-doc-actions__btn--secondary" href="/introduction/tutorials/overview">Tutorials</a>
+</div>
 
 <CardGroup class="home-feature-cards" columns="3">
   <Card
