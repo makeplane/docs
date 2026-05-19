@@ -77,9 +77,7 @@ This step allows you to make comments on issues and pull requests in GitHub thro
 
 When this connection is enabled, comments made in Plane will appear in GitHub under your GitHub user account, else comments will be posted as `Plane GitHub App` or your custom GitHub app name.
 
-#### From Workspace settings
-
-Workspace admins can connect their personal GitHub accounts from Workspace settings.
+Workspace admins can connect their personal GitHub accounts from the GitHub configuration page.
 
 ![Connect personal account](https://media.docs.plane.so/integrations/github/connect-personal-account.webp#hero)
 
@@ -91,20 +89,18 @@ Workspace admins can connect their personal GitHub accounts from Workspace setti
 Only one Workspace Admin can connect their GitHub account via Workspace Settings. Others can connect their accounts through [Profile Settings](/integrations/github#from-profile-settings).
 :::
 
-#### From Profile settings
-
-If you don’t have admin access, you can still connect your personal GitHub account through your profile settings.
+All other workspace members can connect their personal GitHub accounts from the **Connections** page in
+Workspace settings.
 
 ![Connect member personal account](https://media.docs.plane.so/integrations/github/connect-personal-account-member.webp#hero)
 
-1. Go to [Profile settings](/core-concepts/account/settings).
+1. Go to [Workspace Settings](/core-concepts/workspaces/overview#access-workspace-settings).
 2. Select the **Connections** tab in the sidebar.
-3. Choose the workspace where you want to connect your GitHub personal account.
-4. Click **Connect** in the GitHub section, which will redirect you to GitHub for authentication.
+3. Click **Connect** in the GitHub section, which will redirect you to GitHub for authentication.
    ::: info
    If your workspace doesn’t have GitHub integration enabled, you won’t be able to connect your personal account. In this case, contact your Workspace Admin.
    :::
-5. Once connected, your GitHub account will be listed in Plane.
+4. Once connected, your GitHub account will be listed in Plane.
 
 ## Sync issues
 

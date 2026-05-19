@@ -274,6 +274,14 @@
       "destination": "/"
     },
     {
+      "source": "/workspaces-and-users/permissions",
+      "destination": "/roles-and-permissions/permissions-matrix"
+    },
+    {
+      "source": "/workspaces-and-users/roles",
+      "destination": "/roles-and-permissions/member-roles"
+    },
+    {
       "source": "/core-concepts/issues/issue-types",
       "destination": "/work-items/project-work-item-types"
     },

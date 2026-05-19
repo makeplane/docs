@@ -1,16 +1,18 @@
 ---
 title: Manage project members
-description: Add members to projects, assign roles, and configure access
+description: Add members to projects, assign roles, configure default assignee and project lead, manage subscribers, and understand how teamspace memberships interact with direct project access.
 ---
 
-# Manage members
+# Manage project members
 
 Manage who has access to your project and what they can do by adding members and assigning roles.
 
+For background on the available roles, see [Member roles](/roles-and-permissions/member-roles).
+
 **Prerequisites:**
 
-- You must be a Project Admin or Workspace Admin to manage project members
-- Users must be workspace members before they can be added to projects
+- You must be a Project Admin or Workspace Admin to manage project members.
+- Users must be workspace members before they can be added to projects.
 
 ## Add members to a project
 
@@ -29,27 +31,37 @@ Users must be workspace members before you can add them to a project.
 2. Scroll to the **Members** section.
 3. Click **Add member**.
 4. Search for and select the workspace member.
-5. Assign their role: **Admin**, **Member**, or **Guest**.
+5. Assign their role: **Admin**, **Contributor**, **Commenter**, or **Guest**.
 6. Click **Add**.
 
 The member now has access to the project with the permissions defined by their role.
 
-**Project roles:**
+### Project roles
 
-- **Admin** - Full project access including settings, member management, and all features.
-- **Member** - Can create and manage work items, cycles, and modules (cannot change project settings).
-- **Guest** - Limited view access (cannot create or edit).
+- **Admin** — Full project access including settings, member management, and all features.
+- **Contributor** — Can create and manage work items, epics, cycles, modules, pages, and views. Can delete content they created themselves.
+- **Commenter** — Can view all work items in the project and add comments and reactions. Can also create intake submissions.
+- **Guest** — Limited access. Can submit intake forms and view, edit, and delete intake issues they created.
 
-See [Member roles](/workspaces-and-users/roles) for complete role permissions.
+::: info Renamed roles
+The role previously called **Member** is now called **Contributor**. Permissions are unchanged.
+The previous **Guest view access** toggle has been replaced by the **Commenter** role. To grant view access plus commenting, assign the Commenter role.
+:::
+
+See [Permissions matrix](/roles-and-permissions/permissions-matrix) for the complete breakdown.
+
+### Workspace Guest restriction
+
+If you're adding a workspace Guest to your project, you can only assign them the **Guest** or **Commenter** role. Attempting to assign Admin or Contributor returns an error. This guardrail prevents external collaborators from being accidentally over-privileged.
 
 ## Change a project member's role
 
 Update project member roles as responsibilities change.
 
-1. Navigate to **Project Settings > Members & Teamspaces**
-2. Find the member in the **Members** list
-3. Click the **Role** dropdown next to their name
-4. Select the new role (Admin, Member, or Guest)
+1. Navigate to **Project Settings > Members & Teamspaces**.
+2. Find the member in the **Members** list.
+3. Click the **Role** dropdown next to their name.
+4. Select the new role.
 
 The role change takes effect immediately.
 
@@ -66,19 +78,23 @@ The member loses access to the project immediately but remains in the workspace.
 
 **What happens when you remove a member:**
 
-- They can no longer access the project or its work items
-- Work items they created remain in the project
-- Their comments and activity history are preserved
-- They remain a workspace member (unless removed separately)
+- They can no longer access the project or its work items.
+- Work items they created remain in the project.
+- Their comments and activity history are preserved.
+- They remain a workspace member (unless removed separately).
+
+::: info Removing workspace Owners and Admins
+Removing a workspace Owner or Admin from a project removes the project membership record but does not restrict their access — they retain access to all project content via their workspace role.
+:::
 
 ## Default assignee
 
 Configure a default assignee to ensure all work items get assigned when created without an explicit assignee.
 
-1. Navigate to **Project Settings > Members & Teamspaces**
-2. Find the **Default Assignee** setting
-3. Click the dropdown and select a project member
-4. The setting saves automatically
+1. Navigate to **Project Settings > Members & Teamspaces**.
+2. Find the **Default Assignee** setting.
+3. Click the dropdown and select a project member.
+4. The setting saves automatically.
 
 **How default assignee works:**
 
@@ -107,7 +123,7 @@ The project lead is the go-to person for questions about the project's execution
 - Project Admin is a role with specific permissions.
 - They can be the same person but don't have to be.
 
-## Project subscribers
+## Project subscribers <Badge type="tip" text="Business" />
 
 Project subscribers receive notifications for all work items in the project — status changes, comments, and updates. This is useful for project leads, managers, or stakeholders who need visibility across the entire project without being subscribed to individual work items.
 
@@ -122,18 +138,6 @@ To configure project subscribers:
 3. Select the members who should receive notifications for all work items.
 
 Only project admins can manage project subscribers.
-
-## Grant view access to Guests
-
-By default, Guests can only see work items they've created through the Intake section. You can expand their visibility to all project work items.
-
-1. Navigate to **Project Settings > Members & Teamspaces**.
-2. Find the **Guest access** setting.
-3. Toggle on **Grant guest users view access to all the project work items**.
-
-![Grant guest users view access](https://media.docs.plane.so/workspaces/grant-guests-view-access.webp#hero-tr)
-
-This setting is project-specific. Enabling it in one project doesn't affect Guest permissions in other projects. Even with view access, Guests remain isolated to invited projects only.
 
 ## View project member activity <Badge type="warning" text="Enterprise Grid" />
 
@@ -150,34 +154,39 @@ Track member actions like additions, role changes, and removals to maintain visi
 
 The activity panel shows recent project member events:
 
-- **Member additions** - Who added which members to the project and when.
-- **Role changes** - Role updates with who made the change and when.
-- **Member removals** - Who removed members from the project.
+- **Member additions** — who added which members to the project and when.
+- **Role changes** — role updates with who made the change and when.
+- **Member removals** — who removed members from the project.
 
-Each activity entry shows:
-
-- The action taken
-- Who performed the action
-- When it happened (relative time like "6 days ago" or "3 days ago")
+Each activity entry shows the action taken, who performed the action, and when it happened (relative time like "6 days ago" or "3 days ago").
 
 This audit trail helps project admins monitor membership changes and verify that access permissions are correct. Activity is retained for project history.
 
 ## Leave a project
 
-If you no longer need access to a project, you can leave it yourself. Click the … menu next to your own name in Project Settings > Members & Teamspaces and select Leave.
+If you no longer need access to a project, you can leave it yourself. Click the … menu next to your own name in **Project Settings > Members & Teamspaces** and select **Leave**.
 
 You'll lose access to the project immediately but remain in the workspace. If you need to rejoin later, a Project Admin or Workspace Admin will need to add you again.
+
+::: warning Last admin protection
+If you're the only Project Admin, you cannot leave the project. Promote another member to Admin first.
+:::
 
 ## How users join projects
 
 Users can become project members in two different ways, and understanding both helps you manage your project team effectively.
 
-**Direct project membership** is where you specifically invite users to your project and assign them roles. These members have access only to the projects you've added them to, and you have full control over their permissions.
+**Direct project membership** is when you specifically invite users to your project and assign them roles. These members have access only to the projects you've added them to, and you have full control over their permissions.
 
-**Teamspace-based membership** happens automatically when your project is linked to a [Teamspace](/core-concepts/workspaces/teamspaces). All members of that teamspace automatically receive `Member` access to your project, making it perfect for teams that collaborate across multiple projects.
+**Teamspace-based membership** happens automatically when your project is linked to a [Teamspace](/core-concepts/workspaces/teamspaces). All members of that teamspace automatically receive the role assigned on the teamspace-to-project link, making it ideal for teams that collaborate across multiple projects.
 
-Users can have both types of access simultaneously. When this happens, Plane automatically applies whichever role gives them higher permissions. For example, if someone is a `Guest` on your project but joins a linked teamspace, they're automatically upgraded to `Member` access. If they're already an `Admin`, they keep their `Admin` role.
+Users can have both types of access simultaneously. When this happens, Plane evaluates both grants — direct membership is checked first, and either source can grant the access.
+
+For example, if someone is a `Guest` on your project but joins a linked teamspace whose link grants `Contributor` access, they get Contributor access to the project through the teamspace. If they're already an `Admin`, they keep their `Admin` role through their direct membership.
 
 ## See also
 
 - [Manage workspace members](/core-concepts/workspaces/members)
+- [Member roles](/roles-and-permissions/member-roles)
+- [Permissions matrix](/roles-and-permissions/permissions-matrix)
+- [Teamspaces](/core-concepts/workspaces/teamspaces)

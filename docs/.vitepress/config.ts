@@ -325,6 +325,10 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
                 link: "/core-concepts/workspaces/overview",
               },
               {
+                text: "Manage members",
+                link: "/core-concepts/workspaces/members",
+              },
+              {
                 text: "Search workspace",
                 link: "/workspaces-and-users/search-workspace",
               },
@@ -337,17 +341,25 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
             ],
           },
           {
-            text: "Members",
+            text: "Roles and permissions",
             collapsed: true,
+            link: "/roles-and-permissions/overview",
             items: [
               {
-                text: "Manage members",
-                link: "/core-concepts/workspaces/members",
+                text: "Member roles",
+                link: "/roles-and-permissions/member-roles",
               },
-              { text: "Member roles", link: "/workspaces-and-users/roles" },
+              {
+                text: "Permission schemes",
+                link: "/roles-and-permissions/permission-schemes",
+              },
+              {
+                text: "Custom roles",
+                link: "/roles-and-permissions/custom-roles",
+              },
               {
                 text: "Permissions matrix",
-                link: "/workspaces-and-users/permissions",
+                link: "/roles-and-permissions/permissions-matrix",
               },
             ],
           },
@@ -521,6 +533,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
                 text: "Editor blocks",
                 link: "/core-concepts/pages/editor-blocks",
               },
+              { text: "Report page", link: "/pages/report-page" },
             ],
           },
           { text: "Wiki", link: "/core-concepts/pages/wiki" },
