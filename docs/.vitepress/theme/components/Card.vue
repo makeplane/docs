@@ -80,3 +80,26 @@ const IconComponent = computed(() => {
     <span v-if="cta" class="card-cta">{{ cta }} →</span>
   </component>
 </template>
+
+<style scoped>
+.card-cta {
+  color: #006399 !important;
+  font-weight: 600;
+}
+
+.card-link:hover .card-cta {
+  color: #0078b8 !important;
+}
+</style>
+
+<style>
+html.dark .card-link .card-cta,
+[data-theme="dark"] .card-link .card-cta {
+  color: #2893cc !important;
+}
+
+html.dark .card-link:hover .card-cta,
+[data-theme="dark"] .card-link:hover .card-cta {
+  color: #3aa5d4 !important;
+}
+</style>

@@ -217,12 +217,18 @@ body {
   line-height: 1.4;
 }
 
-/* Inline doc links (lists, paragraphs, etc.) */
+/* Inline doc links (lists, paragraphs, etc.) — match primary button brand per theme */
 .vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor) {
-  color: #2893cc;
+  color: var(--vp-c-brand-1);
 }
 
 .vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover {
+  color: #0078b8;
+}
+
+.dark .vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover,
+[data-theme="dark"] .vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover,
+html.dark .vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover {
   color: #3aa5d4;
 }
 
@@ -773,32 +779,7 @@ div[class*="language-"] > span.lang {
   flex: 1 1 auto;
 }
 
-/* Card CTA — override .vp-doc a { color: var(--vp-c-brand-*) } on the parent link */
-.vp-doc a.card-link .card-cta,
-.vp-doc .card-link .card-cta {
-  color: #2893cc !important;
-  font-weight: 600;
-}
-
-.vp-doc a.card-link:hover .card-cta,
-.vp-doc .card-link:hover .card-cta {
-  color: #3aa5d4 !important;
-}
-
-.dark .vp-doc a.card-link .card-cta,
-.dark .vp-doc .card-link .card-cta,
-[data-theme="dark"] .vp-doc a.card-link .card-cta,
-[data-theme="dark"] .vp-doc .card-link .card-cta {
-  color: #2893cc !important;
-}
-
-.dark .vp-doc a.card-link:hover .card-cta,
-.dark .vp-doc .card-link:hover .card-cta,
-[data-theme="dark"] .vp-doc a.card-link:hover .card-cta,
-[data-theme="dark"] .vp-doc .card-link:hover .card-cta {
-  color: #3aa5d4 !important;
-}
-
+/* Card CTA layout (colors live in Card.vue to beat voidzero .vp-doc a { color: inherit }) */
 .vp-doc .home-feature-cards .card-cta {
   display: block;
   margin-top: 20px;
@@ -835,7 +816,6 @@ div[class*="language-"] > span.lang {
 .dark .vp-doc .home-feature-cards .card-description {
   color: #a1a1aa;
 }
-
 
 /* ================================================
   NAVBAR — PLANE (logo + title, search, sign-in, theme, socials)
