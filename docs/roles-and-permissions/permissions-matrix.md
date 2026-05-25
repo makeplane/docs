@@ -178,7 +178,7 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 | Update page icon / logo    |   ✓   |   ✓   |   ✓    |   —   |
 | Export page                |   ✓   |   ✓   |   ✓    |   —   |
 | Favourite a page           |   ✓   |   ✓   |   ✓    |   —   |
-| Comment on a page          |   ✓   |   ✓   |   —    |   —   |
+| Comment on a page          |   ✓   |   ✓   |   ✓    |   —   |
 | Restore from version       |   ✓   |   ✓   |   ✓    |   —   |
 
 > Commenting on workspace pages requires Owner or Admin.

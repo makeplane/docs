@@ -129,13 +129,7 @@ These controls apply only to the current collection view, they don't affect othe
 
 ## Move pages between collections
 
-You move pages between collections from the page itself, not from the collection view.
-
-1. Open the page you want to move.
-2. Click the **Move page** button in the page header.
-3. In the modal that opens, look for the **Wiki Collections** section.
-4. Select the destination collection.
-5. Confirm.
+Drag the page to its destination collection in the wiki sidebar. Depending on the visibility change involved, Plane shows a confirmation dialog before completing the move.
 
 The page moves immediately. Nested pages follow their parent. If you move a parent page, all its children move with it.
 
