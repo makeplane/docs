@@ -31,46 +31,9 @@ The Wiki sidebar organizes content into sections:
 
 ## Collections <Badge type="info" text="Pro" />
 
-Collections are folders for your Wiki pages. They give you a way to group related pages together.
+Collections are how your wiki stays organized. Every page in your wiki belongs to a collection, and collections appear as a flat list in your sidebar, expand one to see the pages inside it.
 
-:::tip
-With Collections, all existing Wiki pages are automatically grouped into a default collection called **General**. From there, you can create new collections and reorganize pages however you like.
-:::
-
-### Create a collection
-
-1. Click the **+** icon next to the **Collections** heading in the Wiki sidebar.
-2. In the **Create a collection** modal, give the collection a title.
-3. Optionally choose an icon to help visually distinguish it.
-4. Click **Create collection**.
-
-The new collection appears in the sidebar and is ready for pages.
-
-### Move pages between collections
-
-Drag and drop any page from one collection to another in the sidebar. The page moves immediately.
-
-You can also move pages into or out of nested positions within a collection by dragging them to the desired level.
-
-### Browse a collection
-
-Click a collection name in the sidebar to see its contents in the main area. The collection view shows each page's name, owner, nested page count, and last activity date.
-
-From here you can:
-
-- **Add a page** directly into the collection using the **Add page** button in the top right.
-- **Copy a link** to any page via the **…** menu on that row.
-- **Filter pages** by Favorites, Created date (1 week, 2 weeks, 1 month, or a custom range), or Created by (any workspace member).
-- **Search** within the collection using the search icon.
-
-### Delete a collection
-
-1. Open the collection you want to delete.
-2. Click the ellipsis icon next to the collection on the sidebar to select **Delete**.
-3. In the **Delete collection** dialog, choose what happens to the pages inside:
-   - **Transfer pages and delete collection** — moves all pages to another collection you select. Pages and their permissions are preserved. Note that moved pages will inherit the permissions of the destination collection.
-   - **Delete collection with pages** — permanently deletes the collection and all its pages. This action can't be undone.
-4. Click **Delete collection**.
+[Learn how to create and manage collections](/pages/collections)
 
 ## Create and manage Wiki pages
 

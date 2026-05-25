@@ -178,19 +178,46 @@ This covers workspace-admin operations over teamspaces. For actions taken by tea
 | Update page icon / logo    |   ✓   |   ✓   |   ✓    |   —   |
 | Export page                |   ✓   |   ✓   |   ✓    |   —   |
 | Favourite a page           |   ✓   |   ✓   |   ✓    |   —   |
-| Comment on a page          |   ✓   |   ✓   |   —    |   —   |
+| Comment on a page          |   ✓   |   ✓   |   ✓    |   —   |
 | Restore from version       |   ✓   |   ✓   |   ✓    |   —   |
 
 > Commenting on workspace pages requires Owner or Admin.
 
-#### Wiki Collections
+### Wiki Collections
 
-| Permission          | Owner | Admin | Member | Guest |
-| ------------------- | :---: | :---: | :----: | :---: |
-| View collections    |   ✓   |   ✓   |   ✓    |   —   |
-| Create a collection |   ✓   |   ✓   |   ✓    |   —   |
-| Edit collection     |   ✓   |   ✓   |  Own   |   —   |
-| Delete collection   |   ✓   |   ✓   |  Own   |   —   |
+| Permission                                 | Owner | Admin |       Member       | Guest |
+| ------------------------------------------ | :---: | :---: | :----------------: | :---: |
+| **Collections**                            |       |       |                    |       |
+| View public collections                    |   ✓   |   ✓   |         ✓          |   —   |
+| View private collections                   |   ✓   |   ✓   |    If invited¹     |   —   |
+| Create a public collection                 |   ✓   |   ✓   |         ✓          |   —   |
+| Create a private collection                |   ✓   |   ✓   |         —          |   —   |
+| Edit a collection (rename, icon)           |   ✓   |   ✓   |        Own         |   —   |
+| Delete a collection                        |   ✓   |   ✓   |        Own         |   —   |
+| **Pages in a public collection**           |       |       |                    |       |
+| View pages                                 |   ✓   |   ✓   |         ✓          |   —   |
+| Create a new page                          |   ✓   |   ✓   |         ✓          |   —   |
+| Add existing pages                         |   ✓   |   ✓   |         ✓          |   —   |
+| Remove pages                               |   ✓   |   ✓   |         ✓          |   —   |
+| Reorder pages                              |   ✓   |   ✓   |         ✓          |   —   |
+| Move a page to another collection          |   ✓   |   ✓   |         ✓          |   —   |
+| **Pages in a private collection**          |       |       |                    |       |
+| View pages                                 |   ✓   |   ✓   |    If invited¹     |   —   |
+| Create a new page                          |   ✓   |   ✓   |    Own or Edit²    |   —   |
+| Add existing pages                         |   ✓   |   ✓   |    Own or Edit³    |   —   |
+| Remove pages                               |   ✓   |   ✓   | Edit + page owner⁴ |   —   |
+| Reorder pages                              |   ✓   |   ✓   |       Edit²        |   —   |
+| Move a page out                            |   ✓   |   ✓   | Edit + page owner⁴ |   —   |
+| **Private collection - member management** |       |       |                    |       |
+| View member list                           |   ✓   |   ✓   |    If invited¹     |   —   |
+| Invite members                             |   ✓   |   ✓   |        Own         |   —   |
+| Change a member's access level             |   ✓   |   ✓   |        Own         |   —   |
+| Remove a member                            |   ✓   |   ✓   |        Own         |   —   |
+
+¹ Any membership level (View, Comment, or Edit) grants access.  
+² Must be collection owner, or have Edit-level membership.  
+³ Must be collection owner, or have Edit-level membership **and** own the root page being added.  
+⁴ Must have Edit-level membership **and** own the root page.
 
 ### Workspace Views
 
