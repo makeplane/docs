@@ -5,15 +5,100 @@ description: Plane AI is your intelligent assistant for finding project data, an
 
 # Plane AI <Badge type="info" text="Pro" />
 
-Plane AI is an AI assistant that helps you interact with your Plane workspace using natural language. Instead of navigating through menus and filters, you can simply ask Plane AI questions about your projects, work items, and documentation in plain English.
-
-> [!CAUTION] Plane self-hosted instances
+> [!CAUTION] Self-hosted Commercial Edition
 > If you're running a self-hosted instance of Plane, you'll need to first configure Plane AI services to get it working. Follow this [setup guide](https://developers.plane.so/self-hosting/govern/plane-ai) first to use Plane AI.
 
-Think of Plane AI as a knowledgeable team member who has instant access to all your project data. You can ask it to find specific issues, analyze project progress, search through documentation, or help you understand complex relationships between work items.
+Plane AI is a purpose-built AI layer embedded throughout the product. It is not a generic chatbot bolted on to the side. It understands your workspace: your projects, work items, cycles, modules, pages, and members. It can answer questions about your work, take actions inside Plane on your behalf, help you write and edit content, generate structured queries from plain language, launch autonomous agents in external tools like Cursor IDE, and run as an autonomous agent in response to comments.
 
 ![Plane AI chat sidebar](https://media.docs.plane.so/pi-chat/pi-chat-sidebar.webp#hero)
 
+Plane AI spans four interaction surfaces:
+
+- **AI Chat** - a persistent, conversational assistant that lives in a sidebar and knows your workspace context.
+- **Writing Assistant** - AI actions embedded in the work item and page editor: rephrase, simplify, elaborate, summarize, adjust tone.
+- **AI blocks** - generative content blocks you insert into pages, each powered by a separate AI generation that can be revised independently.
+
+These surfaces are connected but independent. You do not need to use the chat to use the writing assistant, and vice versa.
+
+## LLM providers and model selection
+
+Plane AI supports three LLM providers: **OpenAI** (GPT-4o, GPT-4o-mini, and newer
+models), **Anthropic** (Claude Opus, Sonnet, and Haiku), and **custom LLM endpoints**
+for self-hosted or proprietary models.
+
+The provider used depends on how your instance is configured. Self-hosted deployments can
+configure any combination via environment variables. Plane Cloud selects the provider and
+model automatically based on the request type and workspace configuration.
+
+Within the chat interface, you can select from available models using the model dropdown
+in the chat header. The selected model applies to your next message. You can switch models
+between messages within the same conversation — prior context is preserved regardless of
+which model generated each response.
+
+Some models support **extended thinking**: they emit their internal reasoning process as
+a separate stream before the final response. This appears in the chat UI as a collapsible
+reasoning block with a live to-do list of the AI's working steps (see Reasoning blocks
+below).
+
+### How AI Chat works
+
+The chat system is the primary interface for Plane AI. Each conversation is a **chat
+thread** — a persistent record of your exchange with the AI, stored and searchable. You
+can have any number of chat threads, organized in a sidebar, with favorites and full-text
+search across all your conversations.
+
+When you send a message, the PI service does not simply call an LLM with your text. It:
+
+1. Retrieves recent conversation history for the thread
+2. Retrieves relevant context from your workspace using both semantic (vector) search
+   and direct SQL queries against your issue and activity data
+3. Applies your focus and filter settings to scope the context
+4. Constructs a system prompt with workspace, project, and user context
+5. Calls the LLM and streams the response back via Server-Sent Events
+
+The response streams in real time — you see text appear token by token. If a response
+takes a long time, a heartbeat message keeps the connection alive every 10 seconds.
+
+---
+
+### The three chat modes
+
+Chat operates in three distinct modes. Understanding the difference is essential to using
+it effectively.
+
+**Ask mode** is purely conversational. You ask questions, Plane AI answers them. No
+actions are taken, no issues are created or modified. The AI draws on your workspace
+context — through both vector search and direct database queries — to give specific,
+relevant answers. Use Ask when you want to understand the state of work, get summaries,
+find things, visualize data as charts, or think through a problem with the AI as a
+sounding board.
+
+**Build mode** is action-oriented. You describe what you want done and the AI plans and
+executes concrete actions inside Plane — creating issues, updating fields, assigning work,
+managing cycles, and more. In Build mode, the AI shows you a full plan before executing
+it, giving you the opportunity to approve or adjust. Use Build when you want to make
+changes to your workspace data through conversation rather than the UI.
+
+**Autopilot mode** is autonomous. The AI executes actions without waiting for your
+approval at each step. It is the most powerful and the most hands-off mode. If it
+encounters genuine ambiguity it cannot resolve from context, it pauses and surfaces an
+elicitation — a specific question in the chat — before continuing. Use Autopilot for
+well-defined tasks where you trust the AI's judgment and want it to work through a
+multi-step process independently.
+
+The mode is selected per-message in the chat input, and your preference is remembered per
+thread.
+
+
+
+
+
+
+
+
+
+
+-------------------
 ## What Plane AI can do today
 
 Plane AI excels at finding and analyzing information from your Plane workspace:
