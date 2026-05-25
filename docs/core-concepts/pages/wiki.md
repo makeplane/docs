@@ -30,6 +30,7 @@ The Wiki sidebar organizes content into sections:
 - **Archived** - pages that have been archived for reference.
 
 ## Collections <Badge type="info" text="Pro" />
+
 Collections are how your wiki stays organized. Every page in your wiki belongs to a collection, and collections appear as a flat list in your sidebar, expand one to see the pages inside it.
 
 [Learn how to create and manage collections](/pages/collections)

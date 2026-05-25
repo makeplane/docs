@@ -17,11 +17,12 @@ Every workspace starts with one collection called **General**. Plane creates it 
 
 Plane gives you two kinds of collections, and the difference comes down to who can see what's inside.
 
-### Public collections 
+### Public collections
 
 Public collections are visible to everyone in your workspace with a Member or Admin role. Anyone with those roles can read pages in a public collection, and create one.
 
-### Private collections <Badge type="tip" text="Business" /> 
+### Private collections <Badge type="tip" text="Business" />
+
 Private collections are visible only to the people you explicitly invite. If you haven't invited someone, the collection doesn't show up in their sidebar at all. This makes Private collections the right choice for anything sensitive like internal proposals, confidential decisions, HR documents, or anything that shouldn't be visible workspace-wide.
 
 For a full breakdown of what each role can do across all collection actions, see the [permissions matrix](/roles-and-permissions/permissions-matrix#wiki-collections).
@@ -47,7 +48,6 @@ The collection appears in your sidebar immediately. Since no one else can see it
 :::warning
 You can't change a collection's visibility after you create it. If you need to switch, say, from private to public, create the new collection first, move your pages to it, then delete the old one. If you delete private collection before moving its pages, they'll be archived automatically.
 :::
-
 
 ## Create a new page inside a collection
 
@@ -114,9 +114,9 @@ The member can now see and access the collection according to the level you set.
 
 They immediately lose access to the collection and all pages inside it.
 
-:::info 
+:::info
 **Workspace owners and admins always have full access** to every private collection in the workspace, regardless of whether they're in the members list.
-::: 
+:::
 
 ## Search and filter pages within a collection
 
@@ -162,6 +162,7 @@ Inside a collection, drag pages up or down to change the order they appear in. T
 **What happens to the pages**
 
 For **public collections**, Plane gives you a choice when you delete.
+
 - **Delete collection only** - the collection is removed and the pages return to the General collection.
 - **Delete collection and archive pages** - the collection is removed and all its pages are archived. Archived pages aren't permanently deleted; you can find and restore them from your workspace archive.
 
@@ -175,4 +176,3 @@ You can't delete the **General** collection.
 
 - [Wiki](/core-concepts/pages/wiki)
 - [Collections permissions matrix](/roles-and-permissions/permissions-matrix#wiki-collections)
-
