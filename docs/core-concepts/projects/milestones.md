@@ -5,7 +5,7 @@ description: Align work items toward shared completion dates with milestones. Tr
 
 # Milestones <Badge type="info" text="Pro" />
 
-Milestones provide a layer to align work items and epics toward shared completion dates, helping teams focus on strategic objectives and critical deliverables. Whether tracking quarterly goals, product launches, or major feature releases, milestones give you visibility into progress and ensure teams stay on track.
+Milestones provide a layer to align work items toward shared completion dates, helping teams focus on strategic objectives and critical deliverables. Whether tracking quarterly goals, product launches, or major feature releases, milestones give you visibility into progress and ensure teams stay on track.
 
 ## Set up milestones
 
@@ -31,7 +31,7 @@ From your project's Overview page:
    - Title: Name your milestone (e.g., "Q4 Launch", "MVP Release").
    - Description: Add context about the milestone's purpose and goals.
    - Target date: Set the completion deadline.
-   - Link work items: Associate relevant work and epics with the milestone.
+   - Link work items: Associate relevant work with the milestone.
 4. Click **Create** to save your milestone.
 
 ## Manage milestones
@@ -42,7 +42,7 @@ From your project's Overview page:
 
 Each milestone displays:
 
-- Completion percentage: Based on linked work items and epics.
+- Completion percentage: Based on linked work items.
 - Target date: Deadline with visual indicators for approaching or overdue milestones
 
 Click on a milestone to expand and see all linked work items. The progress bar updates automatically as work items are completed or cancelled.
@@ -55,15 +55,15 @@ Milestones appear in the Timeline layout as vertical dashed lines at their due d
 
 This helps you quickly identify whether work is on track to meet milestone deadlines and spot potential scheduling conflicts.
 
-### Link work items and epics
+### Link work items
 
-You can link work items and epics to milestones in two ways:
+You can link work items to milestones in two ways:
 
 **From the milestone**  
-Click **Link work items** and select work items and epics from your project.
+Click **Link work items** and select work items from your project.
 
-**From the work item or epic**  
-Open any work item or epic and assign it to a milestone from the properties panel.
+**From the work item**  
+Open any work item and assign it to a milestone from the properties panel.
 
 ![Link work items](https://media.docs.plane.so/milestones/link-work-items.webp#hero)
 
