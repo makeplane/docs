@@ -13,7 +13,7 @@ In your wiki sidebar, collections appear as a flat list. When you expand a colle
 
 Every workspace starts with one collection called **General**. Plane creates it automatically, and it works as the default landing spot for any new wiki page you create without explicitly placing it somewhere else. You can add pages to it and move pages out of it, but you can't rename it or delete it.
 
-## Public collections vs. Private collections
+## Collections visibility
 
 Plane gives you two kinds of collections, and the difference comes down to who can see what's inside.
 
