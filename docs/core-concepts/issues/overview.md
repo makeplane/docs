@@ -195,11 +195,11 @@ Linked pages appear directly in the work item, making it easy for team members t
 
 ## Work item updates
 
-Updates let you post a status snapshot on any work item, including epics. Each update carries a status indicator — On Track, At Risk, or Off Track — alongside a message.
+Updates let you post a status snapshot on any work item. Each update carries a status indicator — On Track, At Risk, or Off Track — alongside a message.
 
 **Post an update:**
 
-1. Open the work item (or epic).
+1. Open the work item.
 2. Click the **Updates** tab in the side panel.
 3. Click **Add Update**.
 4. Select a status:
@@ -213,7 +213,7 @@ Updates roll up to any initiative the work item is linked to.
 
 ## Change a work item's type
 
-To promote a work item to an Epic — or change it to any other type — use **Switch work item type**. Open the work item, hover next to the work item ID, and click **Switch work item type**. Select the new type from the dropdown and click **Update**.
+To change a work item to an Epic or any other type - use **Switch work item type**. Open the work item, hover next to the work item ID, and click **Switch work item type**. Select the new type from the dropdown and click **Update**.
 
 See [Work Item Types](/work-items/project-work-item-types#switch-work-item-types) for full details.
 

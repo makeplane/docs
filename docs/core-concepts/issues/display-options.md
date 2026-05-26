@@ -42,7 +42,6 @@ Grouping helps you organize work items based on shared attributes, making it eas
 - Assignees
 - Created By
 - Milestones
-- Epics
 - Releases
 - Work Item Types
 - None
@@ -59,7 +58,6 @@ You can further refine your view by adding a sub-grouping. For example, you coul
 - Assignees
 - Created By
 - Milestones
-- Epics
 - Releases
 - Work Item Types
 - None

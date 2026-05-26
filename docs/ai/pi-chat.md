@@ -179,7 +179,7 @@ Manage your projects:
 - Create new projects with descriptions.
 - Update project details (name, description, identifier, cover image).
 - Delete projects.
-- Enable or disable project features (Epics, Cycles, Modules, Pages, Views).
+- Enable or disable project features (Cycles, Modules, Pages, Views).
 
 _Example commands:_
 

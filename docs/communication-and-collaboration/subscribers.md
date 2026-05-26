@@ -5,7 +5,7 @@ description: Learn how to subscribe to work items in Plane, manage subscriber li
 
 # Subscribers
 
-A subscription is how you tell Plane to keep you in the loop on a work item or epic. When you're subscribed, you get notified whenever something changes — a state update, a new comment, a priority shift, an assignee change.
+A subscription is how you tell Plane to keep you in the loop on a work item. When you're subscribed, you get notified whenever something changes — a state update, a new comment, a priority shift, an assignee change.
 
 You don't always have to subscribe manually. Plane adds you automatically in a few situations: when you're assigned to something, when someone @-mentions you, or when an admin has set you up as a project-level subscriber. Everything else is opt-in.
 
