@@ -91,7 +91,7 @@ This covers project creation, discovery, and admin operations from the workspace
 | Edit                           |   ✓   |   ✓   |   —    |   —   |
 | Delete                         |   ✓   |   ✓   |   —    |   —   |
 | React                          |   ✓   |   ✓   |   ✓    |   —   |
-| Add / remove epics             |   ✓   |   ✓   |   —    |   —   |
+| Add / remove work items in scope |   ✓   |   ✓   |   —    |   —   |
 | Add / remove projects in scope |   ✓   |   ✓   |   —    |   —   |
 | Drag and drop (reorder)        |   ✓   |   ✓   |   —    |   —   |
 
@@ -566,7 +566,6 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 | Permission            | Admin | Contributor | Commenter | Guest | Notes                     |
 | --------------------- | :---: | :---------: | :-------: | :---: | ------------------------- |
 | Add sub-work item     |   ✓   |      ✓      |     —     |   —   | Blocked on archived items |
-| Convert to epic       |   ✓   |      ✓      |     —     |   —   | Blocked on archived items |
 | Convert to sub-task   |   ✓   |      ✓      |     —     |   —   |                           |
 | Switch work item type |   ✓   |      ✓      |     —     |   —   | Blocked on archived items |
 
@@ -616,56 +615,6 @@ Third-party integration connections (GitHub, Slack, Jira, Linear, etc.).
 | Delete any comment |   ✓   |      —      |     —     |   —   | Admin only                     |
 | React to comment   |   ✓   |      ✓      |     ✓     |   ✓   |                                |
 | Resolve a comment  |   ✓   |      ✓      |     ✓     |   —   |                                |
-
-### Epics
-
-#### Core actions
-
-| Permission              | Admin | Contributor | Commenter | Guest | Notes                     |
-| ----------------------- | :---: | :---------: | :-------: | :---: | ------------------------- |
-| View epics              |   ✓   |      ✓      |     ✓     |   —   |                           |
-| Create an epic          |   ✓   |      ✓      |     —     |   —   |                           |
-| Edit an epic            |   ✓   |      ✓      |     —     |   —   | Blocked on archived items |
-| Delete an epic          |   ✓   |     Own     |     —     |   —   |                           |
-| Archive / restore       |   ✓   |      ✓      |     —     |   —   |                           |
-| Duplicate               |   ✓   |      ✓      |     —     |   —   |                           |
-| Export                  |   ✓   |      ✓      |     —     |   —   |                           |
-| React                   |   ✓   |      ✓      |     ✓     |   —   |                           |
-| Subscribe / unsubscribe |   ✓   |      ✓      |     —     |   —   |                           |
-| Convert to work item    |   ✓   |      ✓      |     —     |   —   |                           |
-| Add sub-work items      |   ✓   |      ✓      |     —     |   —   |                           |
-| Add / remove relations  |   ✓   |      ✓      |     —     |   —   |                           |
-
-#### Epic Links
-
-| Permission    | Admin | Contributor | Commenter | Guest |
-| ------------- | :---: | :---------: | :-------: | :---: |
-| View links    |   ✓   |      ✓      |     ✓     |   —   |
-| Add a link    |   ✓   |      ✓      |     —     |   —   |
-| Edit a link   |   ✓   |      ✓      |     —     |   —   |
-| Delete a link |   ✓   |      ✓      |     —     |   —   |
-
-#### Epic Custom Properties
-
-| Permission                                | Admin | Contributor | Commenter | Guest |
-| ----------------------------------------- | :---: | :---------: | :-------: | :---: |
-| View custom properties                    |   ✓   |      ✓      |     ✓     |   —   |
-| Edit property values                      |   ✓   |      ✓      |     —     |   —   |
-| Create / delete epic property definitions |   ✓   |      ✓      |     —     |   —   |
-
-#### Epic Updates
-
-| Permission           | Admin | Contributor | Commenter | Guest |
-| -------------------- | :---: | :---------: | :-------: | :---: |
-| View updates         |   ✓   |      ✓      |     ✓     |   —   |
-| Create an update     |   ✓   |      ✓      |     —     |   —   |
-| Edit own update      |   ✓   |     Own     |     —     |   —   |
-| Delete own update    |   ✓   |     Own     |     —     |   —   |
-| React to an update   |   ✓   |      ✓      |     —     |   —   |
-| Comment on an update |   ✓   |      ✓      |     —     |   —   |
-| Edit own comment     |   ✓   |     Own     |     —     |   —   |
-| Delete own comment   |   ✓   |     Own     |     —     |   —   |
-| React to a comment   |   ✓   |      ✓      |     —     |   —   |
 
 ### Project Updates
 

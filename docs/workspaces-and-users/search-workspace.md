@@ -19,12 +19,11 @@ Type your query and results appear instantly, organized by type. Use the tabs at
 
 - **All** - Shows everything across all categories
 - **Projects** - Your workspace projects
-- **Work items** - Tasks across projects
+- **Work items** - Work items across projects
 - **Cycles** - Project cycles
 - **Modules** - Project modules
 - **Views** - Saved views
 - **Pages** - Project pages
-- **Epics** - Epics in projects
 - **Teamspaces** - Teamspaces
 - **Comments** - Work item comments
 

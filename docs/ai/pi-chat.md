@@ -299,7 +299,7 @@ Align work with strategic goals:
 - Create, update, or delete initiative-specific labels.
 - Attach or remove labels from initiatives.
 - Link or unlink projects to initiatives.
-- Link or unlink epics to initiatives.
+- Link or unlink work items to initiatives.
 
 _Example commands:_
 

@@ -193,15 +193,29 @@ Connect relevant project pages and wiki documentation to your work items to prov
 
 Linked pages appear directly in the work item, making it easy for team members to access relevant documentation without leaving the context of their current task.
 
-## Convert work items to epics <Badge type="tip" text="Business" />
+## Work item updates
 
-Sometimes a work item grows in scope and complexity, and you realize it's actually big enough to be its own epic with multiple sub-tasks. This feature promotes a regular work item into an epic, giving you the structure and flexibility to break it down into smaller, manageable pieces.
+Updates let you post a status snapshot on any work item, including epics. Each update carries a status indicator — On Track, At Risk, or Off Track — alongside a message.
 
-![convert work item to epic](https://media.docs.plane.so/issues/convert-work-item-to-epic.webp#hero)
+**Post an update:**
 
-From any work item, find the **Convert to Epic** option. The system will ask you to confirm since this action detaches any associated cycles, modules, and parent items. Once converted, you'll have a new epic that you can start breaking down into sub-work items and organizing however makes sense for your project.
+1. Open the work item (or epic).
+2. Click the **Updates** tab in the side panel.
+3. Click **Add Update**.
+4. Select a status:
+   - **On Track** — progressing as planned
+   - **At Risk** — potential blockers that need attention
+   - **Off Track** — significant blockers or delays
+5. Add your message.
+6. Click **Add update**.
 
-You can also [convert Epics to Work Items](/core-concepts/issues/epics#convert-epics-to-work-items).
+Updates roll up to any initiative the work item is linked to.
+
+## Change a work item's type
+
+To promote a work item to an Epic — or change it to any other type — use **Switch work item type**. Open the work item, hover next to the work item ID, and click **Switch work item type**. Select the new type from the dropdown and click **Update**.
+
+See [Work Item Types](/work-items/project-work-item-types#switch-work-item-types) for full details.
 
 ## Activity and collaboration
 

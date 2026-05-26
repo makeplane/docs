@@ -39,8 +39,7 @@ Inbox notifications always come through regardless of these settings. These togg
 | Work item relation added or removed (blocked by, duplicate, etc.) | Yes                                                                  |
 | Work item deleted                                                 | Yes                                                                  |
 | @mention in description or comment                                | Yes (mention notification)                                           |
-| Epic field updated                                                | Yes                                                                  |
-| Epic update published (progress or status post)                   | Yes — all epic subscribers get an email                              |
+| Work item update published (progress or status post)              | Yes — all work item subscribers get an email                         |
 | Due date approaching (reminder)                                   | Yes — subscribers and assignees get an in-app and email notification |
 
 ## Notification channels

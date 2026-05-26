@@ -100,9 +100,9 @@ Customer requests serve as the bridge between what your clients need and the act
 
   ![Link work items](https://media.docs.plane.so/customers/link-work-items.webp#hero)
   1. From a request, click **Link work items**.
-  2. Search and select relevant Work Items or Epics.
+  2. Search and select relevant work items.
   3. Click **Add selected work items** to confirm.
-  4. In the Work item and Epic properties panel, a new **Customers** field displays all associated customers. This connection helps your teams instantly see which customers are impacted by or have requested specific work items, maintaining customer context throughout your workflow.
+  4. In the work item properties panel, a new **Customers** field displays all associated customers. This connection helps your teams instantly see which customers are impacted by or have requested specific work items, maintaining customer context throughout your workflow.
   5. Admins can hover over the **Customer** name to view details.
 
   ![Customer property](https://media.docs.plane.so/customers/customer-property.webp#hero)

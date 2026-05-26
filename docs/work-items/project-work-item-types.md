@@ -5,14 +5,15 @@ description: Create specialized work item types in Plane with custom properties,
 
 # Project Work Item Types <Badge type="info" text="Pro" />
 
-Work item Types unlock a whole new way of adding, editing, and moving work forward in Plane. The default work item type called `Issue` is great for starting with Plane, but as you advance in your project management journey, you find the need for names and properties unique to the type of work you are doing.
+Every work item in Plane has a type. When you enable Work Item Types, Plane creates two types for your project automatically: **Task** (the default) and **Epic**. Work Item Types let you go further by creating named types like Bug, Story, or Feature Request with the exact custom properties each type needs.
 
-For example, your Marketing team may need a work item type called `Content` with the properties, `Channel`, `SEO done?`, and `Reviewer` — properties that aren't available on the default Work items. Your Engineering team, on the other hand, may want a work item type called `Bugs` with the properties `Version` and `Environment` to have more upfront info per bug reported.
+A Bug might need Version, Environment, and Steps to reproduce. A Content Request might need Channel, Reviewer, and Go-live date. A Feature Request might need Business value and Customer impact. Once you define a type, those properties appear automatically on every work item of that type.
 
-Work item Types make these and infinite other use cases possible.
+:::info
+On the Enterprise Grid, types are managed at the workspace level rather than at the project level. See [Workspace Work Item Types](/work-items/workspace-work-item-types) for that configuration.
+:::
 
-On the Enterprise Grid, work item types are managed at the workspace level for consistency across projects. See [Workspace Work Item Types](/work-items/workspace-work-item-types).
-
+<!--
 <div style="position: relative; padding-bottom: calc(56.67989417989418% + 41px); height: 0; width: 100%">
   <iframe
     src="https://demo.arcade.software/V1jNWxXip4waqo9CgkO3?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
@@ -25,32 +26,25 @@ On the Enterprise Grid, work item types are managed at the workspace level for c
     title="Set up your workspace"
   ></iframe>
 </div>
+-->
 
 ## Create work item types
 
 ::: warning
-The Work item Types feature cannot be disabled once turned on for a Plane project.
+**Work Item Types cannot be disabled once turned on for a project.** The feature itself is irreversible, though individual types can be disabled at any time.
 :::
 
 > **Role**: Project Admins
 
+![Work item types](https://media.docs.plane.so/work-item-types/work-item-types.webp#hero)
+
 1. Click the … icon next to your project name on the sidebar and click **Settings**.
-2. Select **Work item Types** on the right pane.
-3. Click the **Enable** button to start creating work item types for your project.
-
-   ![Enable work item type](https://media.docs.plane.so/issues/enable-issue-types.webp#hero)
-
-4. The default type is called `Issue`. Click the **Add Work item Type** button to create a new work item type.
-
-   ![Add work item type](https://media.docs.plane.so/issues/add-issue-type.webp#hero-tr)
-
-5. In the **Create work item type** modal, type name, and description, and choose a background color and an icon to represent the work item type. Click the **Create work item type** button.
-
-   ![Create work item type](https://media.docs.plane.so/issues/create-issue-type.webp#hero)
-
-6. Switch on the toggle button to allow users to select the work item type when creating work items and sub-work items.
-
-   ![Activate work item type](https://media.docs.plane.so/issues/activate-issue-type.webp#hero-tr)
+2. Select **Work item Types** in the settings panel. If Work Item Types haven't been enabled yet, you'll see the option to turn them on.
+3. Click **Enable**. A confirmation prompt reminds you that this cannot be reversed. Confirm to proceed.
+4. Two types appear in the list - the default **Task** type and an **Epic** type. You can now create additional types.
+5. Click the **Add Work item Type** button to create a new work item type.
+6. In the **Create work item type** modal, type name, and description, and choose a background color and an icon to represent the work item type. Click the **Create work item type** button.
+7. Switch on the toggle button to allow users to select the work item type when creating work items and sub-work items.
 
 ### Examples of work item types
 
@@ -69,23 +63,17 @@ The Work item Types feature cannot be disabled once turned on for a Plane projec
 - _Design agencies_  
   `Revision requests` `Design drafting` `Client presentation` `Quality assurance`
 
-- _NGOs_  
-  `Grant writing` `Volunteer coordination` `Beneficiary management`
-
 ## Add custom properties
 
 > **Role**: Project Admins
 
-Adding custom properties to the default work item type Issue and other newly created work item types is possible.
+You can add custom properties to all your work item types.
 
 1. Under the work item type, click **Add New Property** to create custom fields.
 
-   ![Add new property](https://media.docs.plane.so/issues/add-new-property.webp#hero)
+   ![Add new property](https://media.docs.plane.so/work-item-types/add-new-property.webp#hero)
 
 2. Specify values for **Title**, **Description** and **Property type** of the new property.
-
-   ![Property details](https://media.docs.plane.so/issues/property-details.webp#hero)
-
 3. Select the **Mandatory property** checkbox if it's a required field. Select the **Active** checkbox to make the property visible in work items.
 4. Click **Create** to add the property to the work item type.
 
@@ -105,8 +93,8 @@ Here's a list of all the property types and attributes that Plane provides for c
 | **Boolean**            | True/False                               | Default value is false. This attribute cannot be marked as mandatory.                                                                                                                                                   |
 | **Date**               | Date Format                              | Consistent date format across all properties.                                                                                                                                                                           |
 | **Member&nbsp;picker** | Single Select, Multi select              | Displays a list of all project members. Members selected via a member picker property are automatically added as subscribers to the work item, so they receive notifications for updates, comments, and status changes. |
-
-| **URL** | A URL field for linking to external resources. |
+| **Release picker** | One or more releases | Multi select |
+| **URL** | | A URL field for linking to external resources. |
 
 ### Examples of custom properties
 
@@ -123,45 +111,40 @@ Here's a list of all the property types and attributes that Plane provides for c
 
 Once the project Admin sets up the work item types any project member can use them when creating work items or sub-work items.
 
-- In the **Create new work item** modal, the user can choose the desired work item type from the list at the top left corner. By default, the work item type `Issue` is selected displaying both system-defined and custom properties.
+- In the **Create new work item** modal, the user can choose the desired work item type from the list at the top left corner. By default, the work item type `Task` is selected displaying both system-defined and custom properties.
 - Changing the work item type will update the modal to display the relevant properties for that type.
 - When a member picker property is filled in, the selected members are automatically subscribed to the work item. This means reviewers, stakeholders, or anyone added through a member picker stay informed without needing to be manually subscribed.
 - The system ensures that all properties marked as mandatory are filled before creating the work item.
 
-  ![Use work item types](https://media.docs.plane.so/issues/use-issue-type.webp#hero-tl)
+  ![Use work item types](https://media.docs.plane.so/work-item-types/use-issue-types.webp#hero)
 
 When viewing work items, the work item type is displayed with an icon near the title for easy identification. Any custom properties added will also appear in the list of properties, and changes to these values are tracked in the work item's activity trail.
 
-## Switch work item types
+### Switch work item types
 
 You can easily switch the work item's type at any time. Just follow these steps:
 
 1. Open the work item you’d like to update.
 2. Hover over to the right of the work item ID and click **Switch work item type**. Alternatively, you can click **Edit** from the work item's ellipsis (•••) menu to open the **Update work item** modal directly.
 
-   ![Switch work item type](https://media.docs.plane.so/issues/switch-issue-type.webp#hero-tl)
+   ![Switch work item type](https://media.docs.plane.so/work-item-types/switch-issue-type.webp#hero-tl)
 
 3. Choose the new work item type from the dropdown next to your project name.
 
-   ![Update work item type](https://media.docs.plane.so/issues/update-issue-type.webp#hero-tl)
-
 4. Click **Update** to save your changes.
 
-## Bulk update work item types
+### Bulk update work item types
 
 You can change the work item types for several work items at once. Here’s how:
 
-1. Switch to the **Spreadsheet** layout in the Work items page.
-2. Select the work items you want to update.
-3. At the bottom of your screen, open the **Work item type** dropdown and pick the new work item type.
-
-   ![Bulk update work item types](https://media.docs.plane.so/issues/bulk-update-issue-types.webp#hero-br)
-
-4. Click **Update** to apply the changes.
+1. Switch to the **Table** layout in the Work Items page.
+2. Select the work items you want to update. A bulk operations bar appears at the bottom of the screen.
+3. Select the new type. An **Update** button appears.
+4. Click **Update**.
 
 ## Set the default work item type
 
-The default work item type is pre-selected whenever someone creates a new work item. Initially this is set to the built-in `Issue` type, but you can change it to any active work item type.
+The default work item type is pre-selected whenever someone creates a new work item. Initially this is set to the built-in `Task` type, but you can change it to any active work item type.
 
 1. Navigate to **Project Settings → Work item Types**.
 2. Click the **…** menu next to the work item type you want to make the default.
@@ -177,9 +160,14 @@ To remove a work item type, click the **…** menu and select **Delete**. Existi
 
 ## Disable work item types
 
-You can temporarily pause the creation of new work items for a specific work item type without affecting existing ones.
+Disabling a type hides it from the type selector when creating new work items. Existing work items of that type are not affected.
 
-1. Head to the **Work item types** screen in your project's settings.
-2. Toggle off the switch next to the work item type you want to disable.
+1. Go to **Project Settings → Work item Types**.
+2. Find the type you want to pause.
+3. Toggle off the **Active** switch next to it.
 
-   ![Disable work item types](https://media.docs.plane.so/issues/disable-issue-types.webp#hero-br)
+To re-enable, toggle it back on.
+
+:::info
+The default type cannot be disabled.
+:::
