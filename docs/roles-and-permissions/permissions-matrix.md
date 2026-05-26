@@ -84,16 +84,16 @@ This covers project creation, discovery, and admin operations from the workspace
 
 ### Initiatives
 
-| Permission                     | Owner | Admin | Member | Guest |
-| ------------------------------ | :---: | :---: | :----: | :---: |
-| View initiatives               |   ✓   |   ✓   |   ✓    |   —   |
-| Create                         |   ✓   |   ✓   |   —    |   —   |
-| Edit                           |   ✓   |   ✓   |   —    |   —   |
-| Delete                         |   ✓   |   ✓   |   —    |   —   |
-| React                          |   ✓   |   ✓   |   ✓    |   —   |
+| Permission                       | Owner | Admin | Member | Guest |
+| -------------------------------- | :---: | :---: | :----: | :---: |
+| View initiatives                 |   ✓   |   ✓   |   ✓    |   —   |
+| Create                           |   ✓   |   ✓   |   —    |   —   |
+| Edit                             |   ✓   |   ✓   |   —    |   —   |
+| Delete                           |   ✓   |   ✓   |   —    |   —   |
+| React                            |   ✓   |   ✓   |   ✓    |   —   |
 | Add / remove work items in scope |   ✓   |   ✓   |   —    |   —   |
-| Add / remove projects in scope |   ✓   |   ✓   |   —    |   —   |
-| Drag and drop (reorder)        |   ✓   |   ✓   |   —    |   —   |
+| Add / remove projects in scope   |   ✓   |   ✓   |   —    |   —   |
+| Drag and drop (reorder)          |   ✓   |   ✓   |   —    |   —   |
 
 #### Initiative links
 

@@ -35,4 +35,3 @@ The way Epics work conceptually hasn't changed either. An epic is still the pare
 Open **Work Items** in your project. Click **Filters**, add a **Type** filter, and select **Epic**. Your epics are there, exactly as you left them.
 
 You can also group your Work Items view by **Type** to see epics and other types side by side.
-

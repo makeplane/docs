@@ -93,8 +93,8 @@ Here's a list of all the property types and attributes that Plane provides for c
 | **Boolean**            | True/False                               | Default value is false. This attribute cannot be marked as mandatory.                                                                                                                                                   |
 | **Date**               | Date Format                              | Consistent date format across all properties.                                                                                                                                                                           |
 | **Member&nbsp;picker** | Single Select, Multi select              | Displays a list of all project members. Members selected via a member picker property are automatically added as subscribers to the work item, so they receive notifications for updates, comments, and status changes. |
-| **Release picker** | One or more releases | Multi select |
-| **URL** | | A URL field for linking to external resources. |
+| **Release picker**     | One or more releases                     | Multi select                                                                                                                                                                                                            |
+| **URL**                |                                          | A URL field for linking to external resources.                                                                                                                                                                          |
 
 ### Examples of custom properties
 
