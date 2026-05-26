@@ -31,10 +31,12 @@ Dashboards are workspace-scoped. They are not tied to a single project - each da
 
 Every dashboard has a visibility setting.
 
-### Public dashboards 
+### Public dashboards
+
 Public dashboards are visible to everyone in your workspace. Any workspace member can open a public dashboard and see the data it displays. Only the creator, workspace admins, and owners can edit or delete a public dashboard.
 
 ### Private dashboards <Badge type="tip" text="Business" />
+
 Private dashboards are visible only to you. Other workspace members can't see private dashboards in their list. A private dashboard is the right choice for metrics you're building out, drafts, or data you don't want to share workspace-wide.
 
 When you create a dashboard, the default visibility is **Public**. You can change a dashboard's visibility after creation from within the dashboard.
