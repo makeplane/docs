@@ -1,11 +1,11 @@
 ---
 title: Subscribers
-description: Learn how to subscribe to work items and epics in Plane, manage subscriber lists, set up project-level auto-subscriptions, and understand how Plane subscribes you automatically.
+description: Learn how to subscribe to work items in Plane, manage subscriber lists, set up project-level auto-subscriptions, and understand how Plane subscribes you automatically.
 ---
 
 # Subscribers
 
-A subscription is how you tell Plane to keep you in the loop on a work item or epic. When you're subscribed, you get notified whenever something changes — a state update, a new comment, a priority shift, an assignee change.
+A subscription is how you tell Plane to keep you in the loop on a work item. When you're subscribed, you get notified whenever something changes — a state update, a new comment, a priority shift, an assignee change.
 
 You don't always have to subscribe manually. Plane adds you automatically in a few situations: when you're assigned to something, when someone @-mentions you, or when an admin has set you up as a project-level subscriber. Everything else is opt-in.
 
@@ -20,18 +20,6 @@ From that point on, you'll get in-app and email notifications whenever someone m
 Open the work item and click **Unsubscribe**. That's it — you'll stop receiving notifications for it immediately.
 
 If you were auto-subscribed (because you were assigned, for example), unsubscribing works the same way. Being removed as an assignee doesn't automatically unsubscribe you — you have to do that yourself if you want to stop getting notifications.
-
-## Subscribe to an epic <Badge type="info" text="Pro" />
-
-Epics have their own subscribe flow, separate from work items.
-
-Open an epic and click the **Subscribe** button in the detail panel. You'll get notified when the epic itself changes — field updates, state changes, comments, and when an epic update (a progress or status post) is published.
-
-Epics work the same way as work items for most notifications. The one thing that's different is **epic updates**. When someone publishes a progress or status update on an epic, Plane sends an email specifically to all epic subscribers. This is separate from the usual change notifications — it's more like a broadcast, letting stakeholders know about deliberate progress posts rather than individual field edits.
-
-If you're subscribed to an epic, you get both: notifications for changes to the epic itself, and emails when an epic update is published.
-
-To unsubscribe, click **Unsubscribe** from the same panel.
 
 ## Subscribe to multiple work items at once <Badge type="info" text="Pro" />
 

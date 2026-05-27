@@ -249,7 +249,6 @@ _Options:_
 - Assignees, Created by
 - Labels
 - Cycles, Modules
-- Epics
 - Work item types
 - Projects
 - Start date, Due date, Created date, Completed date

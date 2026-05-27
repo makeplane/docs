@@ -179,7 +179,7 @@ Manage your projects:
 - Create new projects with descriptions.
 - Update project details (name, description, identifier, cover image).
 - Delete projects.
-- Enable or disable project features (Epics, Cycles, Modules, Pages, Views).
+- Enable or disable project features (Cycles, Modules, Pages, Views).
 
 _Example commands:_
 
@@ -299,7 +299,7 @@ Align work with strategic goals:
 - Create, update, or delete initiative-specific labels.
 - Attach or remove labels from initiatives.
 - Link or unlink projects to initiatives.
-- Link or unlink epics to initiatives.
+- Link or unlink work items to initiatives.
 
 _Example commands:_
 

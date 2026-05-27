@@ -34,7 +34,6 @@ Templates are perfect for teams who:
 
      ![Configure project template](https://media.docs.plane.so/templates/configure-project-template.webp#hero)
 
-   - Enable or disable **Epics** based on project needs.
    - You can optionally define initial work items that will automatically create when teams start new projects, helping them get up and running faster with pre-structured tasks.
 
 6. Click **Create project template** to save.

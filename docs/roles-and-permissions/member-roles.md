@@ -53,13 +53,13 @@ Project roles control what a user can do inside a specific project.
 
 ### Project Admin
 
-Project Admin has full control over the project — settings, members, work items, epics, cycles, modules, pages, views, intake, automations, workflows, labels, states, and estimates. Project Admins can also delete or archive the project itself.
+Project Admin has full control over the project — settings, members, work items, cycles, modules, pages, views, intake, automations, workflows, labels, states, and estimates. Project Admins can also delete or archive the project itself.
 
 Use Project Admin for project leads, managers, or anyone responsible for the project's setup and execution.
 
 ### Contributor
 
-Contributor is the standard project role for people doing the work. Contributors can create and edit work items, epics, modules, cycles, pages, and views. They can delete content they created themselves, but not content created by others. They can add comments, attach files, log work, and add reactions.
+Contributor is the standard project role for people doing the work. Contributors can create and edit work items, modules, cycles, pages, and views. They can delete content they created themselves, but not content created by others. They can add comments, attach files, log work, and add reactions.
 
 Contributors cannot manage project settings, change member roles, manage labels or states, or delete content created by others.
 

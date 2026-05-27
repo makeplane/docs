@@ -91,7 +91,6 @@ Speed up your workflow in Plane with keyboard shortcuts. Access this list anytim
 | Go to home                | `G` then `H` |
 | Go to inbox               | `G` then `X` |
 | Go to your work           | `G` then `Y` |
-| Go to epics               | `G` then `E` |
 | Go to work items          | `G` then `I` |
 | Go to pages               | `G` then `D` |
 | Go to cycles              | `G` then `C` |
