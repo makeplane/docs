@@ -146,7 +146,7 @@ If your workspace exceeds the Free plan's 12-seat limit when your subscription e
 
 ## Manage your subscription
 
-All subscription management happens through the Stripe billing portal. Access it from 
+All subscription management happens through the Stripe billing portal. Access it from
 **Workspace Settings > Billing and plans > Manage Subscription**.
 
 ![Manage subscription](https://media.docs.plane.so/billing/manage-subscription.webp#hero)
