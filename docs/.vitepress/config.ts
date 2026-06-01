@@ -646,7 +646,36 @@ export default defineConfig({
       },
       {
         text: "Devices",
-        items: [{ text: "Mobile", link: "/devices/mobile" }],
+        items: [
+          {
+            text: "Mobile",
+            link: "/devices/mobile",
+            collapsed: true,
+            items: [
+              { text: "Home & navigation", link: "/devices/mobile/home" },
+              { text: "Work items", link: "/devices/mobile/work-items" },
+              {
+                text: "Cycles & Modules",
+                link: "/devices/mobile/cycles-and-modules",
+              },
+              {
+                text: "Pages, Wiki & Collections",
+                link: "/devices/mobile/pages-wiki-collections",
+              },
+              {
+                text: "Initiatives & Epics",
+                link: "/devices/mobile/initiatives-and-epics",
+              },
+              { text: "Intake", link: "/devices/mobile/intake" },
+              { text: "Plane AI", link: "/devices/mobile/plane-ai" },
+              { text: "Notifications", link: "/devices/mobile/notifications" },
+              {
+                text: "Account & settings",
+                link: "/devices/mobile/account-and-settings",
+              },
+            ],
+          },
+        ],
       },
       {
         text: "Support and resources",
