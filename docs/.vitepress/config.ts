@@ -646,7 +646,10 @@ export default defineConfig({
       },
       {
         text: "Devices",
-        items: [{ text: "Mobile", link: "/devices/mobile" }],
+        items: [
+          { text: "Mobile", link: "/devices/mobile" },
+          { text: "Desktop", link: "/devices/desktop" },
+        ],
       },
       {
         text: "Support and resources",
