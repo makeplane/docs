@@ -162,7 +162,7 @@ Both modes feature a consistent toolbar with **Save** and **Exit** buttons, maki
 
 Creates visually distinct sections with customizable icons and colors for highlighting warnings, tips , and calls-to-action.
 
-## AI block <Badge type="info" text="Pro" />
+## AI block <Badge type="tip" text="Business" />
 
 Generate or transform content directly within your pages using AI. The AI Block lets you draft new content, summarize existing text, or run custom prompts without leaving the editor.
 
