@@ -293,7 +293,6 @@
       "source": "/ai/pi-chat",
       "destination": "/ai/plane-ai"
     }
-    
   ],
   "rewrites": [
     {

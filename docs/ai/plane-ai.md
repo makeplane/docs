@@ -172,6 +172,7 @@ When asking about a cycle, Plane AI can retrieve detailed faceted metrics rather
 - **Work item list**: The actual issues in the cycle with their current states
 
 Example prompts: "Show me the burndown for Sprint 14", "How has the scope of the current cycle changed?", "Break down the active cycle's issues by assignee."
+
 ## Create and update things (Build and Autopilot)
 
 In Build and Autopilot mode, Plane AI can take a wide range of actions across your workspace. Describe what you want in natural language - it handles the translation to specific operations.
@@ -179,6 +180,7 @@ In Build and Autopilot mode, Plane AI can take a wide range of actions across yo
 ### What Plane AI can create and update
 
 **Work items**
+
 - Create new work items with any combination of: title, description, state, priority, assignees, labels, type, start date, due date, estimate, parent (creates a sub-issue), cycle, module
 - Update any property on existing work items
 - Assign or unassign members
@@ -193,35 +195,45 @@ In Build and Autopilot mode, Plane AI can take a wide range of actions across yo
 - Create sub-work items under any existing work item
 
 **Cycles**
+
 - Create cycles with name, dates, and description
 - Add work items to a cycle or remove them
 
 **Modules**
+
 - Create modules
 - Add work items to a module or remove them
 
 **Pages**
+
 - Create new pages or nested pages in any project
 
 **Labels**
+
 - Create new labels and apply them to work items
 
 **States**
+
 - Define new workflow states
 
 **Estimates**
+
 - Create story point scales and sizing systems
 
 **Intake**
+
 - Manage items in the intake queue
 
 **Stickies**
+
 - Create quick notes
 
 **Initiatives**
+
 - Organize work by initiative
 
 **Teamspaces**
+
 - Create team groupings
 
 ### How Build mode works
@@ -290,6 +302,7 @@ Plane AI streams its response directly into the editor as it generates. You see 
 As Plane AI writes content into the page, each generated segment appears as a **proposal** - highlighted text that has not yet been committed. A floating control panel appears at the bottom of the editor showing how many proposals are pending (for example, "2 / 5").
 
 You can:
+
 - **Accept** the current proposal - commits it to the page
 - **Reject** the current proposal - removes it without changing the page
 - **Navigate** between proposals with arrow controls
@@ -306,15 +319,16 @@ The per-block proposal model is intentional. When you give Plane AI a broad inst
 
 Select any text in the page editor to open the AI editing menu. The following actions are available:
 
-| Action | What it does |
-|---|---|
+| Action         | What it does                                        |
+| -------------- | --------------------------------------------------- |
 | **Paraphrase** | Rewords the selected text while keeping the meaning |
-| **Simplify** | Makes the text easier to read |
-| **Elaborate** | Expands the selected text with more detail |
-| **Summarize** | Condenses the selected text to key points |
-| **Get title** | Generates a title based on the selected content |
+| **Simplify**   | Makes the text easier to read                       |
+| **Elaborate**  | Expands the selected text with more detail          |
+| **Summarize**  | Condenses the selected text to key points           |
+| **Get title**  | Generates a title based on the selected content     |
 
 After Plane AI generates a result, you can:
+
 - **Replace selection** - swaps the original text with the AI output
 - **Add to next line** - inserts the output below the selection (keyboard shortcut: Cmd+Enter)
 - **Regenerate** - runs the action again for a different result
@@ -334,6 +348,7 @@ AI blocks are useful for generating first drafts, structured templates, or any s
 Open any page and look for the **AI summary** block at the top of the content area. If no summary exists, generate one. The summary appears in a highlighted block.
 
 Controls on the summary block:
+
 - **Regenerate** - refreshes the summary from the current page content
 - **Delete** - removes the summary block from the page
 
@@ -347,7 +362,7 @@ Plane AI surfaces two features directly inside the work item creation and edit f
 
 When you've entered a title for a work item and an LLM is configured, an **I'm feeling lucky** button (sparkle icon) appears below the description editor. Clicking it sends the work item title to Plane AI with the instruction to generate a proper description. The description appears directly in the editor field. While generating, the button shows **"Generating response"** and is disabled.
 
-If the title is too vague for Plane AI to work with, you'll see: *"Work item title isn't informative enough to generate the description. Please try with a different title."*
+If the title is too vague for Plane AI to work with, you'll see: _"Work item title isn't informative enough to generate the description. Please try with a different title."_
 
 ### Custom AI prompt on the description
 
@@ -357,17 +372,19 @@ The **AI** button (sparkle icon) next to the description field opens a prompt pa
 - If the description is blank: the panel prompts you to ask AI anything.
 
 Type your instruction and press **Enter** (or click **Generate response**). The AI-generated result appears below your instruction. You can then:
+
 - Click **Use this response** to apply it to the description editor.
 - Click **Generate again** to try again with the same instruction.
 - Click **Close** to discard and return to the form.
 
-A consent note is shown before any response is generated: *"By using this feature, you consent to sharing the message with a 3rd party service."*
+A consent note is shown before any response is generated: _"By using this feature, you consent to sharing the message with a 3rd party service."_
 
 ## Duplicate detection
 
 When you create a work item, Plane AI automatically checks whether similar issues already exist in your workspace. If it finds likely matches, a panel appears before the issue is saved.
 
 The panel shows up to five potential duplicates, each with the issue ID, title, and a brief excerpt. You can:
+
 - **Select the issues that are duplicates** and click **Mark as duplicate** - this links them as duplicates.
 - **Discard** - dismisses the panel if none are actual duplicates (this also sends feedback to improve future predictions).
 
@@ -436,12 +453,12 @@ You can switch models at any point mid-conversation.
 
 ### Available models
 
-| Model | Provider | Context window | Web search |
-|---|---|---|---|
-| **GPT-5.4** | OpenAI | 272k tokens | Yes |
-| **GPT-5.2** | OpenAI | 400k tokens | Yes |
-| **Claude Sonnet 4.6** | Anthropic | 200k tokens | Yes |
-| **Claude Sonnet 4.5** | Anthropic | 200k tokens | Yes |
+| Model                 | Provider  | Context window | Web search |
+| --------------------- | --------- | -------------- | ---------- |
+| **GPT-5.4**           | OpenAI    | 272k tokens    | Yes        |
+| **GPT-5.2**           | OpenAI    | 400k tokens    | Yes        |
+| **Claude Sonnet 4.6** | Anthropic | 200k tokens    | Yes        |
+| **Claude Sonnet 4.5** | Anthropic | 200k tokens    | Yes        |
 
 All four models are available on Plane Cloud. GPT-5.4 is the default.
 
@@ -470,6 +487,7 @@ The embedding model converts text into vectors - mathematical representations of
 ## What Plane AI can and cannot access
 
 **Can access:**
+
 - All work items, projects, cycles, modules, labels, states, views, teamspaces, and initiatives your account has access to
 - Page content in projects you're a member of
 - Member profiles and assignments
@@ -478,6 +496,7 @@ The embedding model converts text into vectors - mathematical representations of
 - External tools connected via MCP connectors
 
 **Cannot access:**
+
 - Private pages you don't own
 - Workspaces you are not a member of
 - External systems not connected via MCP
