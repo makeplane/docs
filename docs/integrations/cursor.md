@@ -87,6 +87,7 @@ When per-user mode is on, members who haven't connected their account will see a
 3. Read the confirmation dialog - it explains what changes for your workspace - and confirm.
 
 What happens when you switch:
+
 - Members must connect their own Cursor API key from the **Connections** page before they can use `@cursor`.
 - PRs will be opened on each user's behalf instead of by the Cursor bot.
 - Cursor usage is tracked against each member's individual plan.
@@ -100,6 +101,7 @@ What happens when you switch:
 3. Confirm in the dialog.
 
 What happens when you switch back:
+
 - All `@cursor` tasks will be created by the shared Cursor bot, regardless of who triggered them.
 - Usage is billed to the workspace account.
 - Members' personal connections are retained but ignored until per-user mode is re-enabled.
@@ -174,6 +176,7 @@ If you don't specify a repository and the project has multiple mappings, Cursor 
 Whether you're using the assignee or a comment, Cursor uses the work item's title and description as context. The clearer and more specific your work item (and comment), the better the result.
 
 Include:
+
 - What needs to change and where
 - Any constraints or requirements (don't break this test, match this pattern, etc.)
 - The acceptance criteria if it's not already in the work item description
