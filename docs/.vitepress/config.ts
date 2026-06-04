@@ -635,7 +635,7 @@ export default defineConfig({
       {
         text: "AI",
         items: [
-          { text: "Plane AI", link: "/ai/pi-chat" },
+          { text: "Plane AI", link: "/ai/plane-ai" },
           { text: "AI credits", link: "/ai/plane-ai-credits" },
           {
             text: "MCP Server",
