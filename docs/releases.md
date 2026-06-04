@@ -66,20 +66,19 @@ Labels let you categorize releases across the workspace - for example by team, p
 2. Click **Add Release**.
 3. Fill in the release details:
 
-   | Field           | Description                                                                       |
-   | --------------- | --------------------------------------------------------------------------------- |
-   | **Name**        | Identifies the release in the list and throughout the workspace. Release names must be unique within the workspace. |
-   | **Description** | A rich text field for context - background, goals, or any notes the team needs before the work starts.                                          |
-   | **Status**      | Tracks where the release is in its lifecycle. Values: Unreleased (default), Released, or Cancelled.                                     |
-   | **Tag**         | A version identifier - for example, `v2.3.0` or `2024-Q4`. Tags are shared across all releases in the workspace. A release can have one tag.                                         |
-   | **Labels**      | Let you categorize and organize releases. A release can have multiple labels.                                    |
-   | **Target date** | The planned release date - when you intend to ship. This is separate from the actual release date, which you can record once the work is done.                                                                |
-   | **Lead**        | The person responsible for the release. One user, visible in the release list.|
+   | Field           | Description                                                                                                                                    |
+   | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+   | **Name**        | Identifies the release in the list and throughout the workspace. Release names must be unique within the workspace.                            |
+   | **Description** | A rich text field for context - background, goals, or any notes the team needs before the work starts.                                         |
+   | **Status**      | Tracks where the release is in its lifecycle. Values: Unreleased (default), Released, or Cancelled.                                            |
+   | **Tag**         | A version identifier - for example, `v2.3.0` or `2024-Q4`. Tags are shared across all releases in the workspace. A release can have one tag.   |
+   | **Labels**      | Let you categorize and organize releases. A release can have multiple labels.                                                                  |
+   | **Target date** | The planned release date - when you intend to ship. This is separate from the actual release date, which you can record once the work is done. |
+   | **Lead**        | The person responsible for the release. One user, visible in the release list.                                                                 |
 
 4. Click **Create Release**.
 
 You'll land on the release detail page, where you can start adding scope and writing the changelog.
-
 
 ## Work with a release
 
@@ -94,7 +93,6 @@ The progress bar fills proportionally as work items in the release are completed
 Click any property chip - Tag, Label, Lead, or Target date - to edit it inline. Click **Click to add description** to write or update the release description.
 
 ![Release overview](https://media.docs.plane.so/releases/release-overview.webp#hero)
-
 
 #### Track progress
 
@@ -129,7 +127,6 @@ The scope of a release is the set of work items it contains - everything your te
 ![Release scope](https://media.docs.plane.so/releases/release-scope.webp#hero)
 
 Click **Add work items** to search and attach items by title or ID. Work items from any project in the workspace can be scoped to a release. To remove an item, hover over it and click the remove icon.
-
 
 #### Add work items to a release
 
@@ -229,5 +226,3 @@ For how to create a Release picker property on a work item type, see [Work item 
 3. Confirm.
 
 Deleting a release removes it permanently. Work items that were linked to the release are not deleted - they remain in their projects.
-
-
