@@ -77,7 +77,7 @@ Connectors are enabled per conversation. You choose which ones are active each t
 
 The AI can now call tools from your connected services as it responds. If a connector you want to enable shows as not connected, go to Settings → Integrations → Connectors to connect it first.
 
-*Example: Granola in Plane AI*
+_Example: Granola in Plane AI_
 
 Once Granola is connected, Plane AI can pull meeting notes into conversations. This is useful when turning discussions into action items without manually searching notes.
 
@@ -131,14 +131,14 @@ Deleting a connector removes it from the workspace and disconnects all users who
 
 These connectors are published in the Plane marketplace and available to all workspaces.
 
-| Connector | Authentication | What Plane AI can do with it |
-|---|---|---|
-| **GitHub** | Headers (personal access token) | Read and manage repositories, issues, and pull requests; analyze code |
-| **Sentry** | OAuth | Access error events, logs, and performance data |
-| **Granola** | OAuth | Search meeting notes and transcripts |
-| **Postman** | OAuth | Create and manage API collections |
-| **PostHog** | OAuth | Query product analytics data |
-| **Evermuse** | OAuth | Process customer calls and extract insights |
-| **Intercom** | Headers (API token) | Access customer conversations and support data |
+| Connector    | Authentication                  | What Plane AI can do with it                                          |
+| ------------ | ------------------------------- | --------------------------------------------------------------------- |
+| **GitHub**   | Headers (personal access token) | Read and manage repositories, issues, and pull requests; analyze code |
+| **Sentry**   | OAuth                           | Access error events, logs, and performance data                       |
+| **Granola**  | OAuth                           | Search meeting notes and transcripts                                  |
+| **Postman**  | OAuth                           | Create and manage API collections                                     |
+| **PostHog**  | OAuth                           | Query product analytics data                                          |
+| **Evermuse** | OAuth                           | Process customer calls and extract insights                           |
+| **Intercom** | Headers (API token)             | Access customer conversations and support data                        |
 
 You can also add custom connectors for any service that publishes an MCP endpoint.
