@@ -185,11 +185,11 @@ This is different from workspace webhooks, which fire on any matching event acro
 
 **Configuration**
 
-| Field | Required | Notes |
-|---|---|---|
-| URL | Yes | Must be a publicly reachable `http://` or `https://` address. Local and private network addresses are not accepted. |
-| Secret key | Auto-generated | Generated when you save the action. Shown once in plain text - copy it before leaving. After that it appears masked as `plane_wh_••••XXXX`. |
-| Custom headers | No | Up to 20 headers. Mark a header as secret to store its value encrypted - the value won't be returned in subsequent reads. |
+| Field          | Required       | Notes                                                                                                                                       |
+| -------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| URL            | Yes            | Must be a publicly reachable `http://` or `https://` address. Local and private network addresses are not accepted.                         |
+| Secret key     | Auto-generated | Generated when you save the action. Shown once in plain text - copy it before leaving. After that it appears masked as `plane_wh_••••XXXX`. |
+| Custom headers | No             | Up to 20 headers. Mark a header as secret to store its value encrypted - the value won't be returned in subsequent reads.                   |
 
 **The secret key**
 
@@ -201,13 +201,13 @@ If your key is compromised or you lose it, open the action in the automation edi
 
 Every request includes these headers:
 
-| Header | Value |
-|---|---|
-| `Content-Type` | `application/json` |
-| `User-Agent` | `Autopilot` |
-| `X-Plane-Delivery` | Unique ID for this delivery attempt |
-| `X-Plane-Event` | The automation event that triggered the action |
-| `X-Plane-Signature` | HMAC-SHA256 signature of the request body |
+| Header              | Value                                          |
+| ------------------- | ---------------------------------------------- |
+| `Content-Type`      | `application/json`                             |
+| `User-Agent`        | `Autopilot`                                    |
+| `X-Plane-Delivery`  | Unique ID for this delivery attempt            |
+| `X-Plane-Event`     | The automation event that triggered the action |
+| `X-Plane-Signature` | HMAC-SHA256 signature of the request body      |
 
 Custom headers you add are merged in. You cannot override the reserved headers listed above.
 
@@ -230,7 +230,7 @@ def verify_webhook(request_body_bytes: bytes, secret: str, signature_header: str
 
 Use raw request body bytes - not a parsed or re-serialized version - or the signature will not match.
 
-**Delivery behavior**  
+**Delivery behavior**
 
 Plane makes a single attempt with a 30-second timeout. If the request fails or times out, it is not retried. Check your automation's Activity log to see whether the delivery succeeded and what response your server returned.
 
