@@ -3,7 +3,7 @@ title: Cursor integration
 description: Connect Plane to Cursor AI to assign coding tasks directly from work items. Cursor reads your spec, writes the code, and opens a pull request in your linked GitHub repository.
 ---
 
-# Cursor integration
+# Cursor integration <Badge type="tip" text="Pro" />
 
 The Cursor integration connects Plane to [Cursor](https://cursor.com), an AI-powered code editor. Once set up, anyone on your workspace can hand a coding task to Cursor's AI agent directly from a work item - either by assigning Cursor as a work item assignee or by mentioning `@cursor` in a comment.
 
