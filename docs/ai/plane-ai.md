@@ -286,7 +286,7 @@ See [MCP connectors](/plane-ai/mcp-connectors) for the full list of available co
 
 Plane AI has a separate, deep integration inside the page editor. These features are distinct from the AI chat - they work directly within the editing surface.
 
-### The AI prompt input (page sidecar agent)
+### The AI prompt input (page sidecar agent) <Badge type="tip" text="Business" />
 
 The page editor includes an AI prompt input at the bottom of the editor. It shows a text field labeled **"Ask AI to edit this page…"** with the active model name. Type a free-form instruction describing what you want done to the page - for example:
 
@@ -335,7 +335,7 @@ After Plane AI generates a result, you can:
 
 Before regenerating, you can set a **tone**: **Default**, **Professional**, or **Casual**. The tone affects the style of the next generation.
 
-### AI blocks
+### AI blocks <Badge type="tip" text="Business" />
 
 AI blocks are purpose-built content blocks you insert into a page and ask Plane AI to fill. Insert one via a slash command or the page block menu, then type your prompt inside the block - for example, "Draft a sprint retrospective template" or "Write a three-column comparison of these approaches." Plane AI generates the content directly in the block.
 
