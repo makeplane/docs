@@ -585,6 +585,7 @@ export default defineConfig({
             link: "/integrations/about",
             collapsed: false,
             items: [
+              { text: "Cursor", link: "/integrations/cursor" },
               { text: "Draw.io", link: "/integrations/draw-io" },
               { text: "GitHub", link: "/integrations/github" },
               { text: "GitLab", link: "/integrations/gitlab" },
