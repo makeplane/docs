@@ -117,6 +117,8 @@ Your subscription price doesn't change mid-cycle unless you add or remove seats.
 **The exception**  
 Limited-period discounts that some workspaces get during promotional periods expire according to their specific terms.
 
+If your workspace has a negotiated or promotional rate, note that the Stripe portal may show the standard list price rather than your discounted rate. The correct rate is applied at charge time and reflected on your invoice.
+
 ## Downgrade your plan
 
 You can downgrade from a higher plan to a lower one or cancel your subscription entirely to return to the Free plan.
@@ -141,6 +143,23 @@ The downgrade takes effect at the end of your current billing cycle. You keep ac
 Your workspace retains all paid features until the end of the current billing cycle.
 
 If your workspace exceeds the Free plan's 12-seat limit when your subscription ends, the workspace enters a locked state. Only the **Members** page is accessible. Workspace Admins can either remove users to get below 12 seats or reactivate a paid subscription to regain full access.
+
+## Manage your subscription
+
+All subscription management happens through the Stripe billing portal. Access it from
+**Workspace Settings > Billing and plans > Manage Subscription**.
+
+![Manage subscription](https://media.docs.plane.so/billing/manage-subscription.webp#hero)
+
+The portal shows your current plan, seat count, and monthly or annual charge. From here you can:
+
+- Add or update your payment method
+- Update billing information (name, email, address, tax ID)
+- View and download past invoices
+
+:::info
+If your workspace has a negotiated or promotional rate, the portal may display the standard list price. Your actual charge will reflect the discounted rate. Confirm this on your invoice after billing.
+:::
 
 ## Free plan and trial access
 

@@ -39,7 +39,7 @@ The member now has access to the project with the permissions defined by their r
 ### Project roles
 
 - **Admin** — Full project access including settings, member management, and all features.
-- **Contributor** — Can create and manage work items, epics, cycles, modules, pages, and views. Can delete content they created themselves.
+- **Contributor** — Can create and manage work items, cycles, modules, pages, and views. Can delete content they created themselves.
 - **Commenter** — Can view all work items in the project and add comments and reactions. Can also create intake submissions.
 - **Guest** — Limited access. Can submit intake forms and view, edit, and delete intake issues they created.
 

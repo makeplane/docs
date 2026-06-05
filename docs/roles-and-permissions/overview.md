@@ -40,7 +40,7 @@ Plane's permission system operates at three scopes:
 ```
 Workspace
   ├── Project
-  │     ├── Work items, Epics, Modules, Cycles
+  │     ├── Work items, Modules, Cycles
   │     ├── Pages, Views, Intake
   │     └── Labels, States, Estimates, ...
   ├── Teamspace ──(grants access to)──► Project

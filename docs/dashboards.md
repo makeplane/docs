@@ -5,13 +5,13 @@ description: Build custom dashboards in Plane to visualize project metrics.
 
 # Dashboards <Badge type="info" text="Pro" />
 
-Dashboards are customizable data visualization spaces where you build charts, metrics, and tables from your work item data. Each dashboard is a canvas of **widgets** — individual visualizations you configure independently — arranged on a responsive grid.
+Dashboards are customizable data visualization spaces where you build charts, metrics, and tables from your work item data. Each dashboard is a canvas of **widgets**, individual visualizations you configure independently, arranged on a responsive grid.
 
 ![Dashboards](https://media.docs.plane.so/dashboards/dashboards.webp#hero)
 
 Dashboards do not change any data. They are read-only lenses that aggregate issue data from one or more projects in your workspace and render it as charts or numbers. Every time you open a dashboard, Plane recomputes the data live from the current state of your work items.
 
-Dashboards are workspace-scoped. They are not tied to a single project — each dashboard draws data from a set of projects you choose, which means one dashboard can show work across an entire organization.
+Dashboards are workspace-scoped. They are not tied to a single project - each dashboard draws data from a set of projects you choose, which means one dashboard can show work across an entire organization.
 
 <!-- <div style="position: relative; padding-bottom: calc(56.67989417989418% + 41px); height: 0; width: 100%">
   <iframe
@@ -27,14 +27,25 @@ Dashboards are workspace-scoped. They are not tied to a single project — each 
 </div>
 -->
 
+## Dashboards visibility
+
+Every dashboard has a visibility setting.
+
+### Public dashboards
+
+Public dashboards are visible to everyone in your workspace. Any workspace member can open a public dashboard and see the data it displays. Only the creator, workspace admins, and owners can edit or delete a public dashboard.
+
+### Private dashboards <Badge type="tip" text="Business" />
+
+Private dashboards are visible only to you. Other workspace members can't see private dashboards in their list. A private dashboard is the right choice for metrics you're building out, drafts, or data you don't want to share workspace-wide.
+
+When you create a dashboard, the default visibility is **Public**. You can change a dashboard's visibility after creation from within the dashboard.
+
 ## Widgets
 
-A widget is a single chart or metric panel on a dashboard. You configure each widget
-independently with its own chart type, data axes, grouping, and filters. Widgets sit on a
-shared grid and can be resized and repositioned freely.
+A widget is a single chart or metric panel on a dashboard. You configure each widget independently with its own chart type, data axes, grouping, and filters. Widgets sit on a shared grid and can be resized and repositioned freely.
 
-Every widget answers a question of the form: _"For these work items, grouped by X, what is the
-count/metric of Y?"_
+Every widget answers a question of the form: _"For these work items, grouped by X, what is the count/metric of Y?"_
 
 ## Create a dashboard
 
@@ -46,7 +57,20 @@ count/metric of Y?"_
 4. Under **Projects**, select one or more projects whose issues this dashboard should draw
    data from. All widgets on this dashboard can only see issues from these projects.
 5. Optionally set **filters** to restrict the base work item pool for all widgets.
-6. Click **Create dashboard** to finish.
+6. If Private Dashboards is enabled on your plan, set the **Visibility** to Public or Private.
+7. Click **Create dashboard** to finish.
+
+## Switch between edit mode and view mode
+
+When you open a dashboard, you're in view mode by default. In view mode, you can see widget data but can't add, configure, move, or resize widgets.
+
+To make changes to a dashboard, switch to edit mode:
+
+1. Click **Edit** in the header.
+2. Make your changes.
+3. Click **View** to return to view mode.
+
+The **Edit** button is only visible if you have edit permission on the dashboard.
 
 ## Add widgets to a dashboard
 
@@ -58,20 +82,20 @@ Once you've created a dashboard, it's time to add widgets. Widgets are visualiza
 2. Click **Add widget** in the toolbar.
 3. In the widget type selector, choose a chart type and model.
 4. The widget appears on the grid at the next available position.
-5. The configuration sidebar opens automatically — configure the widget's axes, metrics,
+5. The configuration sidebar opens automatically - configure the widget's axes, metrics,
    and filters (see below).
 6. Click **Save** or close the sidebar.
 
 ## Widget types and models
 
-Each widget type supports one or more **models** — variations that change how the data series
+Each widget type supports one or more **models** - variations that change how the data series
 is structured and displayed.
 
 ### Bar chart
 
 A bar chart plots one value per group as a rectangular bar. Bars can run vertically
 (categories on the x-axis) or horizontally (categories on the y-axis). It is the most
-versatile chart type for comparing values across discrete categories — states, assignees,
+versatile chart type for comparing values across discrete categories - states, assignees,
 priorities, labels, and so on.
 
 **Basic**
@@ -137,8 +161,8 @@ dimension. Example: open work items over time, stacked by state group.
 
 **Comparison** <Badge type="tip" text="Business" />
 
-Two overlapping areas — one representing the primary metric and one a reference or comparison
-value — displayed with distinct colors and line styles (typically one solid and one dashed).
+Two overlapping areas - one representing the primary metric and one a reference or comparison
+value - displayed with distinct colors and line styles (typically one solid and one dashed).
 Best for comparing actual versus expected, or current period versus prior period. Requires a
 group-by dimension. The comparison baseline is rendered with a dashed border by default.
 
@@ -159,7 +183,7 @@ across a small number of categories. Example: work item distribution by priority
 
 A two-segment ring showing completed versus total. One segment represents completed issues,
 the other represents remaining. You set the color for the completed segment; the remainder
-is neutral. The x-axis property is fixed to **state groups** for this model — it always
+is neutral. The x-axis property is fixed to **state groups** for this model - it always
 measures completion by grouping issues into completed versus not-completed state groups.
 Best for a simple at-a-glance progress indicator. Example: percentage of work items completed
 in a given set of projects.
@@ -179,7 +203,7 @@ the chart unreadable.
 
 ### Number
 
-A number widget displays a single large metric value with no chart — just the computed
+A number widget displays a single large metric value with no chart - just the computed
 count or metric rendered as text. It is the fastest way to communicate one key figure and
 works well as a dashboard header or summary widget alongside more detailed charts.
 
@@ -187,7 +211,7 @@ works well as a dashboard header or summary widget alongside more detailed chart
 
 You configure the text alignment (left, center, or right) and text color. The widget
 displays the y-axis metric for the full issue set matching the dashboard and widget filters.
-There is no x-axis property or grouping for number widgets — they compute a single aggregate.
+There is no x-axis property or grouping for number widgets - they compute a single aggregate.
 
 Note: the number widget supports all y-axis metrics except estimate points. If you need an
 estimate point total as a single number, use a table chart instead.
@@ -202,7 +226,7 @@ the distribution, or when you need to display many groups that would be hard to 
 **Basic**
 
 One row per group, with a count column. The y-axis metric is fixed to **work item count**
-and cannot be changed — table charts always show a raw count. The appearance settings
+and cannot be changed - table charts always show a raw count. The appearance settings
 (column color, legend, tooltip) match the bar chart config options.
 
 ## Configure a widget
@@ -225,7 +249,6 @@ _Options:_
 - Assignees, Created by
 - Labels
 - Cycles, Modules
-- Epics
 - Work item types
 - Projects
 - Start date, Due date, Created date, Completed date
@@ -281,9 +304,18 @@ When a widget fetches data, Plane applies filters in this order:
 2. Dashboard-level PQL filters
 3. Widget-level filters
 
-The result is always the intersection — widget-level filters can only narrow, never expand, the work item set defined by dashboard filters.
+The result is always the intersection - widget-level filters can only narrow, never expand, the work item set defined by dashboard filters.
 
 Triage states and archived and draft work items are always excluded from widget data regardless of filters.
+
+## Change a dashboard's visibility <Badge type="tip" text="Business" />
+
+1. Open the dashboard.
+2. In the header, click the button that shows the current access level - it displays either **Public** or **Private**.
+3. In the modal that opens, select the new access level.
+4. Click **Confirm**.
+
+Only the dashboard creator, workspace admins, and owners can change visibility.
 
 ## Interact with your dashboard
 
@@ -311,17 +343,14 @@ Plane renders each widget into the PDF. Chart widgets become images; table and n
 are rendered as structured content. The PDF renderer respects the desktop grid layout and places widgets in their configured
 positions and sizes across pages.
 
-## Resize a widget
+## Resize and reposition widgets
 
-1. Hover over the widget until the resize handle appears at the bottom-right corner.
-2. Drag the handle to change the widget's size.
-3. Release to save the new size. Layout is auto-saved.
+While a dashboard is in **edit mode**:
 
-## Reposition a widget
+- **Resize** — drag the resize handle at the bottom-right corner of a widget to change its height or width.
+- **Reposition** — drag the widget by its header to move it to a different position on the grid.
 
-1. Click and hold the widget's header area.
-2. Drag it to the new position on the grid.
-3. Release to drop. Other widgets shift to fill the space. Layout is auto-saved.
+Positions and sizes are saved when you make a change.
 
 ## Delete a widget
 
@@ -331,12 +360,13 @@ positions and sizes across pages.
 
 ## Add a dashboard to favorites
 
-1. In the dashboards list, hover over the dashboard.
-2. Click the **star** icon.
+On the dashboard list, click the star icon on a dashboard to mark it as a favorite. Click again to remove it.
 
-Or from inside the dashboard:
+You can also favorite from inside the dashboard.
 
-- Click the **star** icon in the dashboard header.
+:::info
+Only the dashboard creator, workspace admins, and owners can favorite a dashboard.
+:::
 
 ## Delete a dashboard
 

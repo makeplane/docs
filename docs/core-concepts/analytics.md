@@ -40,7 +40,7 @@ The Projects analytics tab gives you a clear snapshot of how all your projects a
 
 The _Projects by status_ chart breaks things down by where each project sits in its lifecycle. You can see how many projects are still in draft phase versus those that are actively in execution. It's a handy way to understand your project pipeline and see if you've got a good balance between planning and doing.
 
-Below that, you'll find a detailed table that shows you the nitty-gritty details - how many team members are involved, the number of epics and work items, which cycles and modules are part of the project, and even how many pages and views have been created. There's also an intake column that tracks incoming requests or ideas for each project.
+Below that, you'll find a detailed table that shows you the nitty-gritty details - how many team members are involved, the number of work items, which cycles and modules are part of the project, and even how many pages and views have been created. There's also an intake column that tracks incoming requests or ideas for each project.
 
 What's really useful here is that you can search through all your projects if you're looking for something specific, and of course, export everything to CSV if you want to do some deeper analysis or create reports for stakeholders.
 

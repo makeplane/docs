@@ -507,6 +507,7 @@ export default defineConfig({
             ],
           },
           { text: "Wiki", link: "/core-concepts/pages/wiki" },
+          { text: "Collections", link: "/pages/collections" },
           { text: "Nested Pages", link: "/core-concepts/pages/nested-pages" },
           { text: "Page Templates", link: "/templates/page-templates" },
         ],
