@@ -19,16 +19,14 @@ You can also filter by how a notification reached you:
 
 - **Assigned to me**
 - **Created by me**
-- **Subscribed to me**
+- **Subscribed by me**
 
 ## Act on notifications
 
-- Tap a notification to open the item it refers to.
-- **Mark as read**, individually or with **Mark all as read**.
-- **Archive** a notification to take it out of the list.
-- **Snooze** a notification to bring it back later.
+- Tap a notification to open the item it refers to and automatically mark the notification as read.
+- Tap **Mark all read** to mark all unread notifications as read.
 
-You are notified about activity on work items, epics, and intake requests, such as when they are created, updated, or deleted.
+You are notified about activity on work items such as when they are created, updated, or deleted.
 
 <!-- TODO screenshot: the Inbox with the All, Unread, and Mentions filters. Upload as media.docs.plane.so/mobile/app-inbox.webp -->
 

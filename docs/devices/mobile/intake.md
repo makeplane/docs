@@ -17,7 +17,7 @@ Open a project's **Intake** to see its requests. Each request has a status:
 - **Declined** was rejected.
 - **Duplicate** was marked as a duplicate of another work item.
 
-Use **Sort by** and the filters to organize the list by status, assignee, created by, and labels. You can also search across intake requests.
+Use **Sort by** and the **Filters** to organize the list by status, priority, assignee, created by, and labels. You can also search across intake requests.
 
 ## Act on a request
 

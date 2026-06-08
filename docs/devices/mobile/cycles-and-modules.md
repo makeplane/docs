@@ -16,9 +16,9 @@ Create cycles and modules on the web. Once created, they appear in the mobile ap
 Open a project and tap **Cycles** to see its cycles, split into **Active** and **Upcoming**.
 
 - Tap a cycle to open it and view the work items inside.
-- Tap **Cycle info** to see its details and progress.
-- Tap the **star** to add a cycle to your favorites, or tap it again to remove it.
-- Use **Share** to send a link to the cycle.
+- Long press a cycle and select **Cycle info** to view its details and progress.
+- Long press a cycle and tap the **Favorite** to add a cycle to your favorites, or tap it again to remove it.
+- Long press a cycle and select **Share** to send a link to the cycle.
 
 You can add a work item to a cycle, or move it between cycles, from the work item's [properties](/devices/mobile/work-items#update-properties).
 
@@ -45,9 +45,9 @@ Open a project and tap **Modules** to see all of its modules and their progress.
 From the modules screen you can:
 
 - Tap a module to open it and view the work items inside.
-- Tap **Module info** to see its details.
-- Tap the **star** to favorite a module, or tap it again to remove it.
-- Use **Share** to send a link to the module.
+- Long press a module and select **Module info** to see its details.
+- Long press a module and tap the **Favorite** to add a module to your favorites, or tap it again to remove it.
+- Long press a module and select **Share** to send a link to the module.
 
 You can add a work item to one or more modules from the work item's [properties](/devices/mobile/work-items#update-properties).
 

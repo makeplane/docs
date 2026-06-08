@@ -13,7 +13,7 @@ This page covers installation, sign-in, and how to find your way around. Each ma
 - [Work items](/devices/mobile/work-items)
 - [Cycles & Modules](/devices/mobile/cycles-and-modules)
 - [Pages, Wiki & Collections](/devices/mobile/pages-wiki-collections)
-- [Initiatives & Epics](/devices/mobile/initiatives-and-epics)
+- [Initiatives](/devices/mobile/initiatives)
 - [Intake](/devices/mobile/intake)
 - [Plane AI](/devices/mobile/plane-ai)
 - [Notifications](/devices/mobile/notifications)
@@ -78,9 +78,9 @@ The navigation bar at the bottom of the screen has three destinations, with a **
   Your notifications about work items you created, are assigned to, are subscribed to, or were mentioned in. A badge shows your unread count. See [Notifications](/devices/mobile/notifications).
 
 - **Search**  
-  Find projects, work items, epics, cycles, modules, and pages from anywhere, with your recent searches close at hand.
+  Find projects, work items, cycles, modules, and pages from anywhere, with your recent searches close at hand.
 
-- **Create (center button)**  
+- **Create (Floating action button)**  
   Add a sticky, project, page, or work item. What you see depends on your role and your plan.
 
 Tap your **profile picture** at the top of Home to open **Settings**, switch workspaces, or sign out. See [Account & settings](/devices/mobile/account-and-settings).
@@ -99,7 +99,6 @@ Some features depend on your plan and, for self-hosted instances, on your server
 | Update cycles and modules from mobile | Free                             | `v1.7.0`         |
 | Wiki (workspace pages)                | <Badge type="info" text="Pro" /> | `v1.8.1`         |
 | Stickies                              | Free                             | `v1.9.0`         |
-| Epics                                 | <Badge type="info" text="Pro" /> | `v1.9.0`         |
 | Comment reactions                     | Free                             | `v1.11.0`        |
 | Manage and delete account             | Free                             | `v1.11.1`        |
 | Onboarding and workspace creation     | Free                             | `v1.13.0`        |

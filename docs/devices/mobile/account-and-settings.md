@@ -23,7 +23,6 @@ Open **Settings** by tapping your profile picture at the top of Home. From here 
 ## Appearance
 
 - **Theme.** Choose **Light**, **Dark**, or **System** to match your device.
-- **Change App Icon.** Switch the app's icon, including seasonal options. App icon changes are available on iOS.
 
 ## Privacy and storage
 

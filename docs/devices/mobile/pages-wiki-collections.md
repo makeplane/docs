@@ -44,7 +44,7 @@ Your access to a page depends on how it was shared. You may have **view-only acc
 
 ### Comments
 
-Open a page's comments to discuss it inline. You can reply in threads and resolve or reopen a comment once it is handled.
+Read a page’s comments to follow inline discussions. You can view replies in threads and see whether a comment has been resolved or reopened.
 
 ::: info
 Page comments, shared access, and nested pages depend on your plan and server version. Some advanced editor blocks, such as AI blocks, require a Business plan.

@@ -14,7 +14,7 @@ The bar at the bottom of the screen has three destinations, with a **Create** bu
 - **Home** opens your dashboard.
 - **Inbox** shows your [notifications](/devices/mobile/notifications) with an unread badge.
 - **Search** lets you find anything in your workspace.
-- **Create** (the center button) adds a sticky, project, page, or work item.
+- **Create** (the floating action button) adds a sticky, project, page, or work item.
 
 <!-- TODO screenshot: bottom navigation with Home, Inbox, Search and the center Create button. Upload as media.docs.plane.so/mobile/app-bottom-nav.webp -->
 
@@ -24,10 +24,10 @@ The dashboard is organized into sections you can scroll through:
 
 - **Header.** Your workspace name and your profile picture sit at the top. Tap the workspace name to switch workspaces, and tap your profile picture to open [Settings](/devices/mobile/account-and-settings).
 - **Catch-up.** A quick digest of unread updates you can clear in seconds.
-- **Your stickies.** Quick notes you can jump into or add to.
-- **Favorites.** Items you have starred for fast access.
-- **Jump back in.** The projects, work items, cycles, modules, and pages you opened recently.
 - **Projects, Wiki, and Plane AI.** Shortcuts into your project work, your knowledge base, and the AI assistant.
+- **Recent activity.** The projects, work items, cycles, modules, and pages you opened recently.
+- **Favorites.** Items you have starred for fast access.
+- **Stickies.** Quick notes you can jump into or add to.
 
 Pull down on the dashboard to refresh it.
 
@@ -35,7 +35,7 @@ Pull down on the dashboard to refresh it.
 
 ## Catch-up
 
-Catch-up is a card-based digest of unread activity, such as comments and mentions, across your work items, epics, and intake.
+Catch-up is a card-based digest of unread activity, such as comments and mentions, across your work items and intake.
 
 - Swipe a card one way to **mark it as read**, and the other way to **keep it unread**.
 - Tap a card to open the item it refers to.
@@ -64,21 +64,22 @@ Stickies are available from self-hosted `v1.9.0`.
 
 ## Favorites
 
-Star the things you use most so they are one tap away. You can favorite projects, work items, cycles, modules, pages, and epics.
+Star the things you use most so they are one tap away. You can favorite projects, cycles, modules and pages.
 
-- Tap the **star** icon on an item to add it to your favorites.
+- Long press an item to see the Favorite or Unfavorite option.
+- Tap the **Favorite** icon button on the list to add it to your favorites.
 - Tap it again to remove the item.
 - Your favorites appear on Home and in a dedicated favorites list.
 
 ## Recents
 
-The **Jump back in** section keeps a running list of what you opened recently, including projects, work items, cycles, modules, and pages. Tap any item to return to it, or open the full recents list to see more.
+The **Recent activity** section keeps a running list of what you opened recently, including projects, work items, cycles, modules, and pages. Tap any item to return to it, or open the full recents list to see more.
 
 ## Search
 
 Tap **Search** in the navigation bar to find content across your workspace.
 
-- Search across **Projects**, **Work items**, **Epics**, **Cycles**, **Modules**, and **Pages**, or narrow to a single type.
+- Search across **Projects**, **Work items**, **Cycles**, **Modules**, and **Pages**, or narrow to a single type.
 - Results appear as you type.
 - Your **recent searches** are saved so you can return to them quickly.
 
@@ -90,11 +91,11 @@ Enhanced search is available from self-hosted `v1.14.0`. On earlier versions, se
 
 ## Switch workspaces
 
-To move between workspaces, tap your workspace name or your profile picture at the top of Home, then choose another workspace. The app reloads with that workspace's projects, notifications, and settings.
+To move between workspaces, tap your workspace name at the top of Home, then choose another workspace. The app reloads with that workspace's projects, notifications, and settings.
 
 ## Create
 
-The **Create** button in the center of the navigation bar opens a menu where you can add a:
+The **Create** button in the bottom right of the navigation bar opens a menu where you can add a:
 
 - **Sticky** for a quick note.
 - **Project** with an icon, name, description, lead, and public or private access.

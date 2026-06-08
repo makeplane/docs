@@ -27,15 +27,15 @@ Tap **Create** in the navigation bar and choose **Work item**, or use the **Crea
 
 ## Browse and organize the list
 
-Open a project and tap **Work items** to see its list. You can switch between **All**, **Active**, and **Backlog** work items.
+Open a project and tap **Work items** to see its list.
 
-Use the icons at the top right to shape the list:
+Use the Filters and Display buttons at the top of the tab to shape the list:
 
-- **Search** to find a work item by title.
-- **Filter** by priority, state, assignees, created by, labels, and start date.
+- **Filter** by priority, state, assignees, created by, and labels.
+- **Display** to choose which properties show on each card, such as priority, state, assignee, and work item ID.
 - **Group by** state, priority, assignee, labels, or none.
-- **Order by** manual, last created, last updated, or start date, in ascending or descending order.
-- **Display** to choose which properties show on each card, such as priority, state, assignee, work item ID, and epic ID.
+- **Order by** manual, last created, last updated, or start date.
+- **Search** to find a work item by title.
 
 <div class="mobile-img-container">
   <div class="box">
@@ -48,7 +48,7 @@ Use the icons at the top right to shape the list:
 
 ## Update properties
 
-Open a work item to view and edit its details. In the **Properties** section, tap the pencil icon to change the priority, state, start date, target date, cycle, and module. You can also use the icons at the top right for quick access to priority, cycle, and module.
+Open a work item to view and edit its details. In the **Properties** section, tap a property card to update values such as priority, state, start date, target date, cycle, and module. You can also tap a property chip for quick access and editing.
 
 From the same screen you can:
 
@@ -64,7 +64,7 @@ Most property changes are available from `v1.7.0` on self-hosted instances. On o
 
 ## Sub-work items and relations
 
-Tap **+ Add** at the bottom left of a work item to break work down and connect it to other items. Swipe left or right across the detail screen to move between sub-work items, relations, links, pages, and attachments.
+Tap **+ Add** at the bottom right of a work item to break work down and connect it to other items. Scroll through the detail screen to access the sub-work items, relations, links, pages, and attachments sections.
 
 - **Sub-work items** are child items that roll up under this one. Add new ones or link existing work items.
 - **Relations** connect this item to others by type, including relates to, blocking, blocked by, duplicate of, starts before, starts after, finishes before, finishes after, implements, and implemented by.
@@ -82,7 +82,7 @@ Open the **Comments** section to discuss a work item with your team.
 - Add a comment using the rich text editor.
 - Reply in a thread to keep conversations organized.
 - React to a comment with an emoji.
-- Copy a comment's text, copy or share its link, or delete a comment you have permission to remove.
+- Copy a comment’s text, copy or share its link.
 
 ::: info
 Comment reactions are available from self-hosted `v1.11.0`.
@@ -100,4 +100,3 @@ From a work item you can:
 - **Share link** through your device's share sheet with a personalized message.
 - **Delete** the work item if you have permission. Deleting removes all of its data and cannot be undone.
 
-Work items that came through [Intake](/devices/mobile/intake) have extra actions, such as accepting, declining, snoozing, marking as duplicate, and opening the linked work item.
