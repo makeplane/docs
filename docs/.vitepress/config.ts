@@ -1,12 +1,6 @@
 /** @format */
 
-import {
-  copyFileSync,
-  mkdirSync,
-  readFileSync,
-  readdirSync,
-  statSync,
-} from "fs";
+import { copyFileSync, mkdirSync, readFileSync, readdirSync, statSync } from "fs";
 import { dirname, join, relative, resolve } from "path";
 import { defineConfig, type HeadConfig } from "vitepress";
 import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
@@ -30,9 +24,8 @@ const algoliaAppId = loadEnvVar("VITE_ALGOLIA_APP_ID");
 const algoliaApiKey = loadEnvVar("VITE_ALGOLIA_API_KEY");
 const algoliaIndexName = loadEnvVar("VITE_ALGOLIA_INDEX_NAME");
 
-const posthogHead: HeadConfig[] =
-  posthogKey ?
-    [
+const posthogHead: HeadConfig[] = posthogKey
+  ? [
       [
         "script",
         {},
@@ -43,17 +36,17 @@ const posthogHead: HeadConfig[] =
   : [];
 
 const searchConfig =
-  algoliaAppId && algoliaApiKey && algoliaIndexName ?
-    {
-      provider: "algolia" as const,
-      options: {
-        appId: algoliaAppId,
-        apiKey: algoliaApiKey,
-        indexName: algoliaIndexName,
-        insights: true,
-      },
-    }
-  : { provider: "local" as const };
+  algoliaAppId && algoliaApiKey && algoliaIndexName
+    ? {
+        provider: "algolia" as const,
+        options: {
+          appId: algoliaAppId,
+          apiKey: algoliaApiKey,
+          indexName: algoliaIndexName,
+          insights: true,
+        },
+      }
+    : { provider: "local" as const };
 
 const config = defineConfig({
   title: "Plane",
@@ -67,12 +60,7 @@ const config = defineConfig({
 
     function walk(dir: string): void {
       for (const entry of readdirSync(dir)) {
-        if (
-          entry === ".vitepress" ||
-          entry === "public" ||
-          entry === "node_modules"
-        )
-          continue;
+        if (entry === ".vitepress" || entry === "public" || entry === "node_modules") continue;
         const abs = join(dir, entry);
         const stat = statSync(abs);
         if (stat.isDirectory()) {

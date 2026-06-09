@@ -153,18 +153,17 @@ html.dark {
   --plane-500: #006399;
 
   /* Fonts — Inter for body and headings (override VoidZero APK Protocol) */
-  --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
-    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono:
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   --vp-font-family-base:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, sans-serif;
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    sans-serif;
   --vp-font-family-mono:
-    "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco,
-    Consolas, "Liberation Mono", "Courier New", monospace;
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 /* Font rendering optimizations */
@@ -1132,11 +1131,7 @@ html.dark .docs-layout,
     margin-top: 6px;
   }
 
-  .docs-layout
-    .VPDocAsideOutline
-    .VPDocOutlineItem
-    li
-    > .VPDocOutlineItem.nested {
+  .docs-layout .VPDocAsideOutline .VPDocOutlineItem li > .VPDocOutlineItem.nested {
     margin-top: 4px;
   }
 
@@ -1150,9 +1145,7 @@ html.dark .docs-layout,
    width, and keep the same 32px inset on both sides as the default left padding. */
 @media (min-width: 1280px) {
   .docs-layout
-    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(
-      :has(.VPDocAsideCarbonAds)
-    )
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
     .aside {
     display: none !important;
     flex: 0 0 0 !important;
@@ -1165,9 +1158,7 @@ html.dark .docs-layout,
   }
 
   .docs-layout
-    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(
-      :has(.VPDocAsideCarbonAds)
-    )
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
     .content {
     flex: 1 1 auto;
     max-width: none !important;
@@ -1176,9 +1167,7 @@ html.dark .docs-layout,
   }
 
   .docs-layout
-    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(
-      :has(.VPDocAsideCarbonAds)
-    )
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
     .content-container {
     max-width: none !important;
     width: 100%;
