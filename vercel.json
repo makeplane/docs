@@ -8,13 +8,7 @@
         {
           "key": "Link",
           "value": "</api-reference/introduction>; rel=\"service-doc\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
-        }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "docs.plane.so" }],
-      "headers": [
+        },
         {
           "key": "X-Robots-Tag",
           "value": "index, follow"
