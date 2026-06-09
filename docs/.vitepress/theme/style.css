@@ -837,15 +837,31 @@ html.dark .docs-layout,
   border-bottom-color: var(--docs-divider) !important;
 }
 
-.docs-layout header .VPNavBarAppearance {
-  border-left: 1px solid var(--docs-divider);
-  padding-left: 10px;
-  margin-left: 2px;
-}
+/* Navbar utility dividers — fixed height, centered (border-left on wrappers varied with switch vs social icon size) */
+@media (min-width: 1280px) {
+  .docs-layout header div:has(> .VPNavBarAppearance):has(> .VPNavBarSocialLinks) {
+    gap: 8px !important;
+    align-items: center;
+  }
 
-.docs-layout header .VPNavBarSocialLinks {
-  border-left: 1px solid var(--docs-divider);
-  padding-left: 10px;
+  .docs-layout header .VPNavBarAppearance,
+  .docs-layout header .VPNavBarSocialLinks {
+    display: flex;
+    align-items: center;
+    border-left: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .docs-layout header .VPNavBarAppearance::before,
+  .docs-layout header .VPNavBarSocialLinks::before {
+    content: "";
+    flex-shrink: 0;
+    width: 1px;
+    height: 20px;
+    margin-right: 8px;
+    background-color: var(--docs-divider);
+  }
 }
 
 /* Navbar side borders + corner triangles (tick row is a sibling of header, not inside it) */
