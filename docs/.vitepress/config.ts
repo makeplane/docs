@@ -188,6 +188,13 @@ const config = defineConfig({
           "project management, issue tracking, sprint management, agile, scrum, create projects, track sprints",
       },
     ],
+    [
+      "meta",
+      {
+        name: "robots",
+        content: "index, follow",
+      },
+    ],
     /**
      * SSG inlines OSSHeader with data-theme from server isDark. Tailwind `dark:…`
      * keys off [data-theme*="dark"] on that wrapper, so the bar can stay dark
