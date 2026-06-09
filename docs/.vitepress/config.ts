@@ -559,6 +559,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
             ],
           },
           { text: "Wiki", link: "/core-concepts/pages/wiki" },
+          { text: "Collections", link: "/pages/collections" },
           { text: "Nested Pages", link: "/core-concepts/pages/nested-pages" },
           { text: "Page Templates", link: "/templates/page-templates" },
         ],
@@ -645,6 +646,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
             link: "/integrations/about",
             collapsed: false,
             items: [
+              { text: "Cursor", link: "/integrations/cursor" },
               { text: "Draw.io", link: "/integrations/draw-io" },
               { text: "GitHub", link: "/integrations/github" },
               { text: "GitLab", link: "/integrations/gitlab" },

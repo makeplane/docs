@@ -1,11 +1,11 @@
 ---
 title: Align multiple projects with Initiatives
-description: Create and manage Initiatives to align multiple projects with strategic goals, track cross-project epics, and monitor aggregated progress.
+description: Create and manage Initiatives to align multiple projects with strategic goals, track cross-project work items, and monitor aggregated progress.
 ---
 
 # Initiatives <Badge type="info" text="Pro" />
 
-Initiatives is designed to help you manage and track progress across multiple related projects under a unified objective. This feature is particularly useful if you need a high-level view of how various projects align with strategic goals.
+Initiatives helps you manage and track progress across multiple related projects under a unified objective. Use it when you need a high-level view of how various projects and work items align with strategic goals.
 
 Use Initiatives when you need to:
 
@@ -13,7 +13,7 @@ Use Initiatives when you need to:
 - Manage and monitor groups of related projects efficiently.
 - Provide stakeholders with an aggregated view of progress and status.
 
-## Enable Initiatives
+## Activate Initiatives
 
 To start using Initiatives, you'll need to enable the feature:
 
@@ -25,7 +25,7 @@ To start using Initiatives, you'll need to enable the feature:
 
 Once enabled, you'll see an **Initiatives** option in the sidebar under **Workspace** section.
 
-## Create initiatives
+## Create an initiative
 
 ![Create Initiatives](https://media.docs.plane.so/initiatives/create-initiatives.webp#hero)
 
@@ -62,7 +62,7 @@ Initiatives offers three distinct layouts to help you visualize and manage your 
 
 #### List layout
 
-The default view that displays Initiatives in a structured list format, showing key details like progress status, dates, connected projects and epics, leads, and states at a glance. This layout is ideal for quickly scanning through multiple Initiatives and comparing their high-level status.
+The default view that displays Initiatives in a structured list format, showing key details like progress status, dates, connected projects and work items, leads, and states at a glance. This layout is ideal for quickly scanning through multiple Initiatives and comparing their high-level status.
 
 #### Board layout
 
@@ -76,7 +76,7 @@ All three layouts support filtering and grouping in the top navigation.
 
 ### Initiative overview
 
-The **Overview** gives you a bird's-eye view of your Initiative's progress. You'll see a comprehensive scope breakdown that tracks both projects and epics within your initiative, showing completion percentages and recent updates at a glance.
+The **Overview** gives you a bird's-eye view of your Initiative's progress. You'll see a comprehensive scope breakdown that tracks both projects and work items within your initiative, showing completion percentages and recent updates at a glance.
 
 The progress visualization at the bottom provides an instant snapshot of work distribution across different states - from backlog items to completed work. The percentages and counts for each category are automatically calculated based on the associated projects. This makes it easy to understand where your initiative stands and identify any bottlenecks in your workflow.
 
@@ -90,25 +90,21 @@ Use Initiatives for a top-down view of progress. For detailed updates, navigate 
 
 Use the dropdown in the top navigation to switch to the **Scope** view to see all the building blocks of your initiative. Here you'll find detailed lists of:
 
-**Epics**  
-With Initiatives, you can bring together Epics from different projects into a single, high-level view. This helps you track progress across multiple workstreams in one place, giving you a clear picture of how everything is moving forward.
+**Work items**  
+You can bring together work items from different projects into a single, high-level view under one initiative. This gives you a centralized picture of how everything is moving forward across workstreams.
 
-Here’s how it helps:
+Any work item type can be added to an initiative — Tasks, Bugs, Features, Epics, or any custom type your workspace uses. You are not limited to a single type.
 
-- Group related Epics from different projects under one Initiative to keep everything connected.
-- Get a centralized view of progress, dependencies, and blockers across multiple projects.
-- No more jumping between projects—track and manage Epics in one place.
+Adding work items to an initiative lets you:
 
-After you create an Initiative and add Epics from any project. From there, you can monitor overall progress, update statuses, and ensure everything stays on track.
-
-This is perfect for cross-functional teams working on company-wide objectives, product launches, or any effort that spans multiple projects.
+- Group related work from different projects under one goal.
+- Track progress, dependencies, and blockers across multiple projects in one place.
+- Monitor overall progress and update statuses without switching between projects.
 
 **Projects**  
-Connected projects showing completion rates and key details like execution status, leads, and timelines.
+Connected projects showing completion rates and key details like execution status, leads, and timelines. Each item shows its current progress, making it simple to drill down into specific areas that need attention or are ready for the next phase.
 
-Each item shows its current progress, making it simple to drill down into specific areas that need attention or are ready for the next phase.
-
-Use the **Add scope** button in the top-right corner to expand your initiative by connecting additional epics and projects. This makes it easy to grow your initiative as new work streams emerge or when you need to link existing work to your strategic goals.
+Use the **Add scope** button in the top-right corner to expand your initiative by connecting additional work items and projects. This makes it easy to grow your initiative as new work streams emerge or when you need to link existing work to your strategic goals.
 
 ### Initiative states
 
@@ -143,10 +139,10 @@ Once labels are created, you can assign them to any Initiative through the **Lab
 
 ![Initiative updates](https://media.docs.plane.so/initiatives/initiative-updates.webp#hero-tl)
 
-The Initiative updates stream displays all project and epic updates in a chronological feed at the top of the Initiative view. Each update card shows:
+The Initiative updates stream displays all project and work item updates in a chronological feed at the top of the Initiative view. Each update card shows:
 
 - Status indicators (On Track, At Risk, Off Track)
-- Source project or epic name
+- Source project or work item name
 - Post date and author
 - Complete update content
 
@@ -157,7 +153,7 @@ This consolidated view enables Initiative owners to monitor progress across all 
 - The Info tab on the side panel of an Initiative provides a quick snapshot of key properties and metadata associated with the Initiative.
   - **State**: Track the Initiative's lifecycle phase (Drafts, Planned, Active, Completed, Closed)
   - **Projects**: Number of connected projects
-  - **Epics**: Number of associated epics
+  - **Work items**: Number of associated work items
   - **Lead**: Person responsible for the Initiative
   - **Start date**: When the Initiative begins
   - **Due date**: Target completion date
