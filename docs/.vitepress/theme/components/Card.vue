@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <script setup>
 import { computed } from "vue";
 import * as LucideIcons from "lucide-vue-next";
@@ -5,7 +7,21 @@ import * as LucideIcons from "lucide-vue-next";
 const props = defineProps({
   title: String,
   icon: String,
+  /** Doc path or full URL */
   href: String,
+  /** Alias for `href` (common in markdown) */
+  link: String,
+  /** When set, used instead of the default slot for body text */
+  description: String,
+  /** Bottom link label (shown with →). Home feature cards only. */
+  cta: String,
+});
+
+const hasDestination = computed(() => Boolean((props.link || props.href || "").toString().trim()));
+
+const resolvedHref = computed(() => {
+  const h = (props.link || props.href || "").toString().trim();
+  return h;
 });
 
 // Custom SVG icons for brands
@@ -44,18 +60,46 @@ const IconComponent = computed(() => {
 </script>
 
 <template>
-  <a :href="href" class="card-link">
-    <div v-if="icon" class="card-icon">
-      <!-- Render custom SVG if available -->
+  <component
+    :is="hasDestination ? 'a' : 'div'"
+    :href="hasDestination ? resolvedHref : undefined"
+    class="card-link"
+    :class="{ 'card-link--with-cta': cta }"
+  >
+    <div v-if="icon" class="card-icon" aria-hidden="true">
       <div v-if="customSvgIcons[icon]" v-html="customSvgIcons[icon]"></div>
-      <!-- Otherwise render Lucide icon -->
-      <component v-else :is="IconComponent" :size="24" />
+      <component v-else :is="IconComponent" :size="24" stroke-width="1.5" />
     </div>
-    <h3 class="card-title">
-      {{ title }}
-    </h3>
-    <p class="card-description">
+    <h3 class="card-title">{{ title }}</h3>
+    <p v-if="description" class="card-description">
+      {{ description }}
+    </p>
+    <p v-else class="card-description">
       <slot />
     </p>
-  </a>
+    <span v-if="cta" class="card-cta">{{ cta }} →</span>
+  </component>
 </template>
+
+<style scoped>
+.card-cta {
+  color: #006399 !important;
+  font-weight: 600;
+}
+
+.card-link:hover .card-cta {
+  color: #0078b8 !important;
+}
+</style>
+
+<style>
+html.dark .card-link .card-cta,
+[data-theme="dark"] .card-link .card-cta {
+  color: #2893cc !important;
+}
+
+html.dark .card-link:hover .card-cta,
+[data-theme="dark"] .card-link:hover .card-cta {
+  color: #3aa5d4 !important;
+}
+</style>
