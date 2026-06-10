@@ -695,6 +695,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
         items: [
           { text: "Plane AI", link: "/ai/pi-chat" },
           { text: "AI credits", link: "/ai/plane-ai-credits" },
+          { text: "MCP Connectors", link: "/ai/mcp-connectors" },
           {
             text: "MCP Server",
             link: "https://developers.plane.so/dev-tools/mcp-server",
