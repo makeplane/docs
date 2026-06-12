@@ -237,7 +237,7 @@ After configuring project work item sync, you can link existing GitHub issues in
 
 #### GitHub → Plane
 
-1. In your GitHub repository, add the `Plane` label to any issue you want to sync.
+1. In your GitHub repository, add the `plane` label to any issue you want to sync.
 2. The issue will automatically be created as a work item in the linked Plane project.
 3. Plane posts a comment on the GitHub issue with a link to the newly created work item, confirming the connection.
 4. The work item in Plane will include a link back to the original GitHub issue.
@@ -248,7 +248,7 @@ If you have existing work items in Plane that you want to sync to GitHub, you ca
 
 #### Plane → GitHub
 
-1. In your Plane project, add the `GitHub` label to any work item you want to sync.
+1. In your Plane project, add the `gitHub` label to any work item you want to sync.
 2. A new issue will automatically be created in the linked GitHub repository.
 3. The GitHub issue will be linked back to the Plane work item.
 4. Future updates will sync according to your configured sync direction (unidirectional or bidirectional).
