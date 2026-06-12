@@ -9,7 +9,7 @@ GitHub integration with Plane allows seamless synchronization between your GitHu
 
 Plane supports integration with:
 
-- **GitHub Cloud** (github.com)   
+- **GitHub Cloud** (github.com)  
   The standard GitHub service, available at github.com. Covers all account types
 
 - **GitHub Enterprise Cloud** (ghe.com)  
@@ -76,21 +76,21 @@ The integration page shows the connected organization name and avatar. Plane has
 
 > [!CAUTION] Plane Cloud and self-hosted instances
 > This integration is currently only available on Plane Cloud. Support for the Commercial Edition is coming soon.
-> 
+>
 > Before you can integrate with GitHub Enterprise Cloud (GHE.com) , you must first create and configure a GitHub App in your GitHub Enterprise Server instance. This is required for both Plane Cloud and self-hosted users. Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github?edition=github-enterprise-cloud#create-github-app) first before diving into the steps on this page.
 
- ![Connect GitHub Enerprise Cloud](https://media.docs.plane.so/integrations/github/connect-github-enterprise.webp#hero)
+![Connect GitHub Enerprise Cloud](https://media.docs.plane.so/integrations/github/connect-github-enterprise.webp#hero)
 
 1. Go to **Settings → Integrations → GitHub Enterprise** in your Plane workspace.
 2. Click **Connect**.
 3. At the top of the configuration form, enable the **GitHub Enterprise Cloud (ghe.com)** toggle.
 4. Fill in the form.
-   
+
    **App ID**  
-   The numeric identifier for your GitHub App. Find it on your GHE.com GitHub App settings page under **App ID**.  
+   The numeric identifier for your GitHub App. Find it on your GHE.com GitHub App settings page under **App ID**.
 
    **App slug**  
-   The URL-safe name assigned to your app, visible in the app's GitHub URL. Find it in the URL when viewing your app settings — the segment after `/apps/`    
+   The URL-safe name assigned to your app, visible in the app's GitHub URL. Find it in the URL when viewing your app settings — the segment after `/apps/`  
    Example: `my-plane-app`
 
    **Enterprise slug**  
@@ -98,13 +98,13 @@ The integration page shows the connected organization name and avatar. Plane has
    Example: `acme` from `acme.ghe.com`
 
    **Organisation ID**  
-   The numeric ID of your GHE.com organization. Retrieve it from the [GitHub REST API](https://docs.github.com/en/rest/orgs/orgs?apiVersion=2026-03-10#get-an-organization): send `GET https://api.github.com/orgs/<org-name>` and use the `id` field from the response.  
+   The numeric ID of your GHE.com organization. Retrieve it from the [GitHub REST API](https://docs.github.com/en/rest/orgs/orgs?apiVersion=2026-03-10#get-an-organization): send `GET https://api.github.com/orgs/<org-name>` and use the `id` field from the response.
 
    **Client ID**  
-   The OAuth client identifier for your GitHub App. Find it on your GHE.com GitHub App settings page under **Client ID**.  
+   The OAuth client identifier for your GitHub App. Find it on your GHE.com GitHub App settings page under **Client ID**.
 
    **Client secret**  
-   The OAuth client secret generated from your GHE.com GitHub App settings. It is shown only once when generated — use the value you copied at that time.  
+   The OAuth client secret generated from your GHE.com GitHub App settings. It is shown only once when generated — use the value you copied at that time.
 
    **Webhook secret**  
    The secret string you set when creating the GitHub App on GHE.com. Must match exactly what is configured on the app — Plane uses it to verify incoming webhook signatures.
@@ -154,7 +154,7 @@ Plane stores these credentials tied to your workspace and uses them to authentic
    The contents of the `.pem` private key file you downloaded from your GHES GitHub App settings. Paste the full PEM content including the `-----BEGIN RSA PRIVATE KEY-----` and `-----END RSA PRIVATE KEY-----` lines.
 
 4. Click **Connect app**. You are redirected to your GHES instance.
-5. Select the organization to install on and authorize. 
+5. Select the organization to install on and authorize.
 6. Select whether you want to sync all repositories or pick specific ones.
 7. Click **Install** to finalize the connection.
 8. After authorization, you'll be redirected back to Plane, where your GitHub organization will appear as connected.
