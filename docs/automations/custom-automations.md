@@ -27,8 +27,8 @@ Project automations apply to work items within a single project.
 2. In the **Custom automations** section, click **Create automation**.
 3. Give your automation a descriptive name and an optional description, then save.
 4. Click **Add trigger** and choose the event that should start the automation.
-5. Optionally click **Add condition** to narrow when the automation runs. You can add multiple conditions — the automation only fires when all conditions are met.
-6. Click **Add action** to define what happens. Choose from **Add comment**, **Change property**, or **Run Script**. You can add multiple actions — they execute in sequence.
+5. Optionally click **Add condition** to narrow when the automation runs. You can add multiple conditions - the automation only fires when all conditions are met.
+6. Click **Add action** to define what happens. Choose from **Add comment**, **Change property**, or **Run Script**. You can add multiple actions - they execute in sequence.
 7. Click **Confirm**.
 8. Click **Enable** when you're ready for it to go live.
 
@@ -44,7 +44,7 @@ Workspace automations can span your entire workspace or a specific set of projec
 
 1. Go to **Workspace Settings → Automations**.
 2. Click **Create automation**.
-3. Choose which projects the automation should apply to — all projects in the workspace, or a specific subset.
+3. Choose which projects the automation should apply to - all projects in the workspace, or a specific subset.
 4. Follow the same steps as a project automation: name → trigger → conditions → actions.
 5. Enable when ready.
 
@@ -72,15 +72,16 @@ Conditions filter which work items an automation acts on. Without them, the auto
 4. Choose an operator (is, in, contains, etc.) and set the value.
 5. Add more conditions as needed.
 
-Multiple conditions use **AND** logic by default — all of them must match. You can also create **OR** groups where only one condition in the group needs to match.
+Multiple conditions use **AND** logic by default - all of them must match. You can also create **OR** groups where only one condition in the group needs to match.
 
 ## Add actions
 
 1. Open the automation and go to the **Action** tab.
 2. Click **Add action** and choose a type:
-   - **Change property** — update a field on the work item
-   - **Add comment** — post a comment on the work item
-   - **Run script** — execute a saved script via the Runner
+   - **Change property** - update a field on the work item
+   - **Add comment** - post a comment on the work item
+   - **Run script** - execute a saved script via the Runner
+   - **Send webhook** - POST a payload to an external URL when the automation fires
 3. Configure the action details (see [Actions](#actions) for parameters).
 4. Add more actions if needed. They run in the order listed.
 
@@ -91,7 +92,7 @@ Multiple conditions use **AND** logic by default — all of them must match. You
 - **Enable**: open the automation and click **Enable**. The automation must have at least one trigger and one action.
 - **Disable**: open the automation and click **Disable** or toggle the status off.
 
-You can't delete an enabled automation — disable it first.
+You can't delete an enabled automation - disable it first.
 
 ### Check automation run history
 
@@ -168,13 +169,70 @@ Updates a field on the work item.
 
 Posts a comment on the work item. You write the comment text in a rich text editor. The comment is always internal and appears as coming from Automation Bot in the activity log.
 
-You can include dynamic values in the comment using template variables — for example, inserting the current priority or state name into the comment text.
+You can include dynamic values in the comment using template variables - for example, inserting the current priority or state name into the comment text.
 
 **Example:** Say you have an automation that triggers when a work item's state changes. You want to leave a note with context each time that happens. Your comment template might look like:
 
 ```
 This item has been moved to a new state. Current priority: {{priority}}. Please check if the due date needs updating.
 ```
+
+#### Send webhook <Badge type="warning" text="Enterprise Grid" />
+
+Posts an HTTP payload to a URL you specify whenever the automation fires. Use this to push automation events into external systems - trigger a deployment, open a ticket in another tool, post to a custom service, or sync data outside of Plane.
+
+This is different from workspace webhooks, which fire on any matching event across your workspace. A Send webhook action fires only when this specific automation runs - you control the trigger, conditions, and timing.
+
+**Configuration**
+
+| Field          | Required       | Notes                                                                                                                                       |
+| -------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| URL            | Yes            | Must be a publicly reachable `http://` or `https://` address. Local and private network addresses are not accepted.                         |
+| Secret key     | Auto-generated | Generated when you save the action. Shown once in plain text - copy it before leaving. After that it appears masked as `plane_wh_••••XXXX`. |
+| Custom headers | No             | Up to 20 headers. Mark a header as secret to store its value encrypted - the value won't be returned in subsequent reads.                   |
+
+**The secret key**
+
+Plane generates a secret key when you first save the Send webhook action. It is shown in plain text once - copy and store it before navigating away. After that, it is masked and cannot be retrieved.
+
+If your key is compromised or you lose it, open the action in the automation editor and click **Regenerate secret**. The old key stops working immediately. Update your server before regenerating or your signature verification will fail.
+
+**What Plane sends**
+
+Every request includes these headers:
+
+| Header              | Value                                          |
+| ------------------- | ---------------------------------------------- |
+| `Content-Type`      | `application/json`                             |
+| `User-Agent`        | `Autopilot`                                    |
+| `X-Plane-Delivery`  | Unique ID for this delivery attempt            |
+| `X-Plane-Event`     | The automation event that triggered the action |
+| `X-Plane-Signature` | HMAC-SHA256 signature of the request body      |
+
+Custom headers you add are merged in. You cannot override the reserved headers listed above.
+
+**Verifying the payload**
+
+Use the `X-Plane-Signature` header to confirm the request came from Plane and wasn't tampered with. Compute an HMAC-SHA256 digest of the raw request body bytes using your secret key and compare it to the header value.
+
+```python
+import hashlib
+import hmac
+
+def verify_webhook(request_body_bytes: bytes, secret: str, signature_header: str) -> bool:
+    expected = hmac.new(
+        secret.encode("utf-8"),
+        request_body_bytes,
+        hashlib.sha256,
+    ).hexdigest()
+    return hmac.compare_digest(expected, signature_header)
+```
+
+Use raw request body bytes - not a parsed or re-serialized version - or the signature will not match.
+
+**Delivery behavior**
+
+Plane makes a single attempt with a 30-second timeout. If the request fails or times out, it is not retried. Check your automation's Activity log to see whether the delivery succeeded and what response your server returned.
 
 #### Run script <Badge type="warning" text="Enterprise Grid" />
 
@@ -184,9 +242,9 @@ Runs a saved script from your [Plane Runner](/automations/plane-runner) library.
 
 ### How automations run
 
-Every time something changes in Plane — a work item is created, a state changes, a comment is posted — Plane checks whether any of your enabled automations should respond. If a trigger matches, Plane evaluates any conditions you've set. If those pass, it runs the actions in order.
+Every time something changes in Plane - a work item is created, a state changes, a comment is posted - Plane checks whether any of your enabled automations should respond. If a trigger matches, Plane evaluates any conditions you've set. If those pass, it runs the actions in order.
 
-That's the whole flow: something happens → conditions are checked → actions run. If a condition doesn't match, nothing happens and the automation sits quietly. If an action runs into a problem, Plane stops there and marks that run as failed — you can see exactly what happened in the Activity tab.
+That's the whole flow: something happens → conditions are checked → actions run. If a condition doesn't match, nothing happens and the automation sits quietly. If an action runs into a problem, Plane stops there and marks that run as failed - you can see exactly what happened in the Activity tab.
 
 Each event is only processed once per automation, so you won't end up with the same action firing twice on the same work item.
 
@@ -194,15 +252,15 @@ Each event is only processed once per automation, so you won't end up with the s
 
 The distinction comes down to scope and reuse.
 
-**Project automations** are the right choice when the rule is specific to one project. They're simpler to configure — the states, labels, and members you pick from are all scoped to that project.
+**Project automations** are the right choice when the rule is specific to one project. They're simpler to configure - the states, labels, and members you pick from are all scoped to that project.
 
-**Workspace automations** are the right choice when you want the same behavior across multiple projects. Instead of recreating the same automation in five different places, you define it once and choose which projects it applies to — all of them, or just a specific subset.
+**Workspace automations** are the right choice when you want the same behavior across multiple projects. Instead of recreating the same automation in five different places, you define it once and choose which projects it applies to - all of them, or just a specific subset.
 
-Either way, automations always act on individual work items. Workspace automations aren't doing anything different — they're just defined once and applied more broadly.
+Either way, automations always act on individual work items. Workspace automations aren't doing anything different - they're just defined once and applied more broadly.
 
 ### Automation bot
 
-Every custom automation acts through its own dedicated bot account. When an automation changes a field or posts a comment, the activity log shows it came from "Automation Bot" — not from any person on your team.
+Every custom automation acts through its own dedicated bot account. When an automation changes a field or posts a comment, the activity log shows it came from "Automation Bot" - not from any person on your team.
 
 There are two reasons this matters:
 
@@ -212,32 +270,32 @@ There are two reasons this matters:
 
 ### Why scheduled automations only run scripts
 
-Most automations respond to something happening — a trigger gives them a specific work item to act on. Scheduled automations are different. They fire at a time you set, not because of any particular event.
+Most automations respond to something happening - a trigger gives them a specific work item to act on. Scheduled automations are different. They fire at a time you set, not because of any particular event.
 
-Since there's no work item that kicked off the run, Plane has nothing to apply a property change or comment to. That's why the only available action for scheduled automations is Run script. The script defines the logic — what to look for, which items to act on, and what to do with them.
+Since there's no work item that kicked off the run, Plane has nothing to apply a property change or comment to. That's why the only available action for scheduled automations is Run script. The script defines the logic - what to look for, which items to act on, and what to do with them.
 
 Scheduled automations check whether they're due roughly every 5 minutes. The time you configure follows your project's timezone, falling back to the workspace timezone, then UTC.
 
 ### Why your trigger isn't enough on its own
 
-Triggers tell Plane _what type of event_ to watch for — not which work items to care about. A "state changed" trigger fires for every single state change in the project, across every work item, regardless of type, priority, or who it's assigned to.
+Triggers tell Plane _what type of event_ to watch for - not which work items to care about. A "state changed" trigger fires for every single state change in the project, across every work item, regardless of type, priority, or who it's assigned to.
 
 Without conditions, an action like "set priority to Urgent" would run on every state change in the project. That's almost never what you want.
 
-Conditions are what make an automation surgical. They let you say "only run this when the work item is a Bug, assigned to this person, with no due date set" — whatever combination of criteria actually defines the case you're building for.
+Conditions are what make an automation surgical. They let you say "only run this when the work item is a Bug, assigned to this person, with no due date set" - whatever combination of criteria actually defines the case you're building for.
 
-One thing worth knowing: when a work item is first created, some fields like assignees and labels can take a moment to register, even if someone filled them in during creation. Plane handles this — it checks the latest state of those fields before evaluating your conditions, so a filter like "assignee is X" on a creation trigger will work as expected.
+One thing worth knowing: when a work item is first created, some fields like assignees and labels can take a moment to register, even if someone filled them in during creation. Plane handles this - it checks the latest state of those fields before evaluating your conditions, so a filter like "assignee is X" on a creation trigger will work as expected.
 
 ## Common use cases
 
 Some common things people use automations for.
 
-- **State management.** Automatically move work items through your workflow when something changes — for example, transition a work item to "In Review" when an assignee is added, or back to "Backlog" when an assignee is removed.
+- **State management.** Automatically move work items through your workflow when something changes - for example, transition a work item to "In Review" when an assignee is added, or back to "Backlog" when an assignee is removed.
 
-- **Triage and routing.** Make sure new work lands in the right place without manual intervention — for example, assign a default owner whenever a specific work item type is created, or apply a label to every incoming bug so nothing slips through untagged.
+- **Triage and routing.** Make sure new work lands in the right place without manual intervention - for example, assign a default owner whenever a specific work item type is created, or apply a label to every incoming bug so nothing slips through untagged.
 
-- **Priority escalation.** React to signals that indicate urgency — for example, automatically mark a work item as Urgent when a specific label is applied, or raise priority when it gets reassigned to a senior team member.
+- **Priority escalation.** React to signals that indicate urgency - for example, automatically mark a work item as Urgent when a specific label is applied, or raise priority when it gets reassigned to a senior team member.
 
-- **Contextual reminders.** Surface the right information at the right moment — for example, post an internal comment with a checklist when a work item enters "Ready for QA," or flag missing information when a work item is created without an assignee.
+- **Contextual reminders.** Surface the right information at the right moment - for example, post an internal comment with a checklist when a work item enters "Ready for QA," or flag missing information when a work item is created without an assignee.
 
-- **Scheduled operations.** Run scripts on a timer to handle things that don't map to a single event — for example, sweep stale items weekly, sync data to an external tool nightly, or generate a status comment on open items every Monday morning.
+- **Scheduled operations.** Run scripts on a timer to handle things that don't map to a single event - for example, sweep stale items weekly, sync data to an external tool nightly, or generate a status comment on open items every Monday morning.

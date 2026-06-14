@@ -1,13 +1,6 @@
-/* ================================================
-   TAILWIND CSS
-   ================================================ */
-/* Import Tailwind theme + utilities WITHOUT Preflight (CSS reset).
-   VitePress has its own base/reset styles for markdown rendering,
-   so Tailwind's Preflight conflicts with headings, links, lists, etc.
-   The layer() wrappers ensure Tailwind utilities don't override
-   VitePress's unlayered default theme styles. */
-@import "tailwindcss/theme" layer(theme);
-@import "tailwindcss/utilities" layer(utilities);
+/** @format */
+
+@import "@voidzero-dev/vitepress-theme/src/styles/index.css";
 
 @source "../../**/*.{vue,md}";
 @source "../**/*.{vue,md}";
@@ -16,6 +9,9 @@
   --color-plane-400: #0088cc;
   --color-plane-500: #006399;
   --color-plane-600: #005280;
+  --font-heading: "Inter", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
 }
 
 /* ================================================
@@ -145,7 +141,10 @@
    ================================================ */
 
 /* Brand colors and fonts */
-:root {
+:root,
+[data-theme="light"],
+[data-theme="dark"],
+html.dark {
   /* Brand colors */
   --vp-c-brand-1: #006399;
   --vp-c-brand-2: #006399;
@@ -153,7 +152,12 @@
   --vp-c-brand-soft: rgba(0, 99, 153, 0.14);
   --plane-500: #006399;
 
-  /* Fonts */
+  /* Fonts — Inter for body and headings (override VoidZero APK Protocol) */
+  --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono:
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   --vp-font-family-base:
     "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     sans-serif;
@@ -163,6 +167,27 @@
 }
 
 /* Font rendering optimizations */
+body,
+.docs-layout {
+  font-family: var(--vp-font-family-base);
+}
+
+.docs-layout h1,
+.docs-layout h2,
+.docs-layout h3,
+.docs-layout h4,
+.docs-layout h5,
+.docs-layout h6,
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4,
+.vp-doc h5,
+.vp-doc h6,
+.font-heading {
+  font-family: var(--vp-font-family-base) !important;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -191,18 +216,46 @@ body {
   line-height: 1.4;
 }
 
-/* Dark mode */
-.dark {
-  --vp-c-bg: #0a0a0a;
-  --vp-c-bg-soft: #141414;
-  --vp-c-bg-mute: #1f1f1f;
+/* Inline doc links (lists, paragraphs, etc.) — match primary button brand per theme */
+.vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor) {
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover {
+  color: #0078b8;
+}
+
+.dark .vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover,
+[data-theme="dark"] .vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover,
+html.dark .vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover {
+  color: #3aa5d4;
+}
+
+/* Dark mode — override @voidzero-dev/vitepress-theme (docs set data-theme="dark" on the layout wrapper) */
+.dark:not([data-theme]),
+[data-theme="dark"],
+html.dark {
+  /* VoidZero maps page bg to --color-primary, not only --vp-c-bg */
+  --color-primary: #141415;
+  --vp-c-bg: #141415;
+  --vp-c-bg-soft: #1f2122;
+  --vp-c-bg-alt: #141618;
+  --vp-c-bg-mute: #252829;
 
   /* Brand colors */
-  --vp-c-brand-1: #2f9bd5;
-  --vp-c-brand-2: #2f9bd5;
-  --vp-c-brand-3: #2f9bd5;
-  --vp-c-brand-soft: rgba(0, 99, 153, 0.14);
-  --plane-500: #2f9bd5;
+  --vp-c-brand-1: #2893cc;
+  --vp-c-brand-2: #2893cc;
+  --vp-c-brand-3: #2893cc;
+  --vp-c-brand-soft: rgba(40, 147, 204, 0.14);
+  --plane-500: #2893cc;
+}
+
+/* Ensure page shell picks up Plane dark background (theme sets bg on [data-theme="dark"] and .docs-layout) */
+html.dark body,
+html.dark:not([data-theme]) .docs-layout,
+[data-theme="dark"],
+[data-theme="dark"] .docs-layout {
+  background-color: #141415;
 }
 
 /* ================================================
@@ -442,7 +495,8 @@ div[class*="language-"] > span.lang {
    UTILITY CLASSES
    ================================================ */
 
-.hidden {
+/* Keep markdown helper class, but don't override Tailwind's global `.hidden` utility. */
+.vp-doc .hidden {
   display: none !important;
 }
 
@@ -512,6 +566,11 @@ div[class*="language-"] > span.lang {
    CARD COMPONENT STYLES
    ================================================ */
 
+.vp-doc a.card-link {
+  color: inherit;
+  text-decoration: none !important;
+}
+
 .card-link {
   display: block;
   padding: 24px;
@@ -535,7 +594,7 @@ div[class*="language-"] > span.lang {
 }
 
 .dark .card-link:hover {
-  border-color: #0088cc;
+  border-color: #2893cc;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
 }
 
@@ -564,7 +623,7 @@ div[class*="language-"] > span.lang {
 }
 
 .dark .card-link:hover .card-title {
-  color: #0088cc !important;
+  color: #f9fafb !important;
 }
 
 .card-description {
@@ -578,109 +637,542 @@ div[class*="language-"] > span.lang {
   color: #9ca3af;
 }
 
-/* ================================================
-   SEARCH BOX WIDTH IN HEADER
-   ================================================ */
-
-/* Make the header search box wider */
-.DocSearch.DocSearch-Button {
-  justify-content: space-between !important;
+/* Home (index) hero actions */
+.vp-doc .home-doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 36px;
+  padding: 0;
 }
 
+.vp-doc .home-doc-actions__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none !important;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.vp-doc .home-doc-actions__btn--primary {
+  background: #006399;
+  color: #ffffff !important;
+  border: 1px solid #006399;
+}
+
+.vp-doc .home-doc-actions__btn--primary:hover {
+  background: #0078b8;
+  border-color: #0078b8;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 99, 153, 0.25);
+}
+
+.vp-doc .home-doc-actions__btn--secondary {
+  background: transparent;
+  color: #0a0a0a !important;
+  border: 1px solid #e5e7eb;
+}
+
+.vp-doc .home-doc-actions__btn--secondary:hover {
+  background: #f7f8f9;
+  border-color: #d1d5db;
+  color: #0a0a0a !important;
+}
+
+.dark .vp-doc .home-doc-actions__btn--primary {
+  background: #2893cc;
+  border-color: #2893cc;
+  color: #ffffff !important;
+}
+
+.dark .vp-doc .home-doc-actions__btn--primary:hover {
+  background: #3aa5d4;
+  border-color: #3aa5d4;
+}
+
+.dark .vp-doc .home-doc-actions__btn--secondary {
+  background: #252829;
+  color: #ffffff !important;
+  border-color: #3f4244;
+}
+
+.dark .vp-doc .home-doc-actions__btn--secondary:hover {
+  background: #2f3236;
+  border-color: #4a4e52;
+  color: #ffffff !important;
+}
+
+/* Index page: hide prev/next doc footer and its top margin */
+.docs-layout .content-container:has(.home-feature-cards) .VPDocFooter {
+  display: none !important;
+  margin: 0 !important;
+}
+
+/* Home (index) feature cards — light panels, CTA line, 3×2 grid (see design ref) */
+.vp-doc .home-feature-cards {
+  gap: 22px;
+  margin: 0 0 40px;
+}
+
+.vp-doc .home-feature-cards .card-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  padding: 28px;
+  border-radius: 14px;
+  border: none;
+  background: #f7f8f9;
+  box-shadow: none;
+  transition: background 0.2s ease;
+}
+
+.vp-doc .home-feature-cards .card-link:hover {
+  border: none;
+  box-shadow: none;
+  background: #eef0f2;
+}
+
+.vp-doc .home-feature-cards .card-link:hover .card-title {
+  color: #111827 !important;
+}
+
+.vp-doc .home-feature-cards .card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 10px 0;
+  color: #0a0a0a;
+}
+
+.vp-doc .home-feature-cards .card-icon svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.vp-doc .home-feature-cards .card-title {
+  font-size: 1.125rem !important;
+  line-height: 1.3 !important;
+  font-weight: 600 !important;
+  color: #0a0a0a !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.vp-doc .home-feature-cards .card-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 0 0 0 0;
+  flex: 1 1 auto;
+}
+
+/* Card CTA layout (colors live in Card.vue to beat voidzero .vp-doc a { color: inherit }) */
+.vp-doc .home-feature-cards .card-cta {
+  display: block;
+  margin-top: 20px;
+  padding-top: 0;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.vp-doc .home-feature-cards .card-link--with-cta .card-cta {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.dark .vp-doc .home-feature-cards .card-link {
+  background: #181a1b;
+}
+
+.dark .vp-doc .home-feature-cards .card-link:hover {
+  background: #1d1f20;
+}
+
+.dark .vp-doc .home-feature-cards .card-icon {
+  color: #f4f4f4;
+}
+
+.dark .vp-doc .home-feature-cards .card-title {
+  color: #f4f4f4 !important;
+}
+
+.dark .vp-doc .home-feature-cards .card-link:hover .card-title {
+  color: #f4f4f4 !important;
+}
+
+.dark .vp-doc .home-feature-cards .card-description {
+  color: #a1a1aa;
+}
+
+/* ================================================
+  NAVBAR — PLANE (logo + title, search, sign-in, theme, socials)
+  Doc pages use OSSHeader (not VitePress default .VPNavBar), but reuse VPNav* pieces.
+================================================ */
+
+/* Remove any inherited top layout offset beneath fixed header */
+.docs-layout {
+  --vp-layout-top-height: 0px !important;
+  --docs-divider: #ececec;
+}
+
+html.dark .docs-layout,
+[data-theme="dark"] .docs-layout {
+  --docs-divider: #2a2a2a;
+}
+
+.docs-layout header.wrapper {
+  border-bottom-color: var(--docs-divider) !important;
+}
+
+/* Navbar utility dividers — fixed height, centered (border-left on wrappers varied with switch vs social icon size) */
+@media (min-width: 1280px) {
+  .docs-layout header div:has(> .VPNavBarAppearance):has(> .VPNavBarSocialLinks) {
+    gap: 8px !important;
+    align-items: center;
+  }
+
+  .docs-layout header .VPNavBarAppearance,
+  .docs-layout header .VPNavBarSocialLinks {
+    display: flex;
+    align-items: center;
+    border-left: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .docs-layout header .VPNavBarAppearance::before,
+  .docs-layout header .VPNavBarSocialLinks::before {
+    content: "";
+    flex-shrink: 0;
+    width: 1px;
+    height: 20px;
+    margin-right: 8px;
+    background-color: var(--docs-divider);
+  }
+}
+
+/* Navbar side borders + corner triangles (tick row is a sibling of header, not inside it) */
 @media (min-width: 768px) {
-  .DocSearch.DocSearch-Button {
-    width: 280px !important;
+  .docs-layout header.wrapper {
+    border-left-color: var(--docs-divider) !important;
+    border-right-color: var(--docs-divider) !important;
+  }
+
+  .docs-layout header.wrapper + .wrapper {
+    border-left-color: var(--docs-divider) !important;
+    border-right-color: var(--docs-divider) !important;
+  }
+
+  .docs-layout .tick-left::before {
+    border-left-color: var(--docs-divider) !important;
+  }
+
+  .docs-layout .tick-right::after {
+    border-right-color: var(--docs-divider) !important;
+  }
+
+  html.dark .docs-layout .tick-left::before,
+  [data-theme="dark"] .docs-layout .tick-left::before {
+    border-left-color: var(--docs-divider) !important;
+  }
+
+  html.dark .docs-layout .tick-right::after,
+  [data-theme="dark"] .docs-layout .tick-right::after {
+    border-right-color: var(--docs-divider) !important;
+  }
+}
+
+/* OSSHeader stacks the logo link as flex-col; we want mark + "Plane" in a row. */
+.docs-layout header a[href="/"].flex.flex-col {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.docs-layout header a[href="/"] img.h-4 {
+  height: 1.3rem;
+  width: auto;
+}
+
+/* Search control sizing/shape */
+@media (min-width: 768px) {
+  .docs-layout header .VPNavBarSearchButton {
+    min-width: min(300px, 28vw);
+    height: 36px;
+    padding: 0 12px;
+    justify-content: flex-start;
+    gap: 8px;
+    border-radius: 12px !important;
+    border: 1px solid #e7e7e7;
+    background: #fff;
+  }
+
+  .docs-layout header .VPNavBarSearchButton .text {
+    flex: 0 1 auto;
+    text-align: left;
+  }
+
+  .docs-layout header .VPNavBarSearchButton .keys {
+    margin-left: auto;
+  }
+
+  .dark .docs-layout header .VPNavBarSearchButton {
+    border-color: #323232;
+    background: #111;
+  }
+}
+
+/* Sign in — primary CTA (works before/after relocation) */
+.docs-layout header a.VPLink[href*="sign-in"] {
+  background: #006399 !important;
+  color: #ffffff !important;
+  padding: 5px 14px !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 1.25 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease !important;
+}
+
+.docs-layout header a.VPLink[href*="sign-in"].sign-in-relocating {
+  visibility: hidden !important;
+}
+
+.docs-layout header a.VPLink[href*="sign-in"] .vp-external-link-icon {
+  display: none !important;
+}
+
+.docs-layout header a.VPLink[href*="sign-in"]:hover {
+  background: #0078b8 !important;
+  box-shadow: 0 2px 8px rgba(0, 99, 153, 0.25) !important;
+  transform: translateY(-1px);
+  opacity: 1 !important;
+}
+
+.dark .docs-layout header a.VPLink[href*="sign-in"] {
+  background: #2893cc !important;
+}
+
+.dark .docs-layout header a.VPLink[href*="sign-in"]:hover {
+  background: #3aa5d4 !important;
+  box-shadow: 0 2px 8px rgba(40, 147, 204, 0.25) !important;
+}
+
+/* Remove extra desktop strip between navbar and docs content/sidebar. */
+@media (min-width: 768px) {
+  .docs-layout .content-wrapper {
+    border-left-color: var(--docs-divider) !important;
+    border-right-color: var(--docs-divider) !important;
+  }
+
+  .docs-layout .VPSidebar {
+    border-right-color: var(--docs-divider) !important;
+  }
+
+  .docs-layout .VPDoc .aside-container {
+    border-left-color: var(--docs-divider) !important;
   }
 }
 
 @media (min-width: 1024px) {
-  .DocSearch.DocSearch-Button {
-    width: 400px !important;
+  /* Extend side borders upward so they visually touch the navbar edge. */
+  .docs-layout .content-wrapper::before,
+  .docs-layout .content-wrapper::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    width: 1px;
+    height: 5px;
+    background: var(--docs-divider);
+    pointer-events: none;
   }
+
+  .docs-layout .content-wrapper::before {
+    left: 0;
+  }
+
+  .docs-layout .content-wrapper::after {
+    right: 0;
+  }
+
+  .docs-layout .VPLocalNav.has-sidebar {
+    display: none !important;
+  }
+
+  /* Do not zero VPContent padding-top: the OSS header is `lg:fixed`, and the theme
+     uses padding-top: var(--vp-nav-height) here so the main column starts below the bar.
+     Removing it makes the center doc sit under the navbar while sidebars are sticky. */
 }
 
+/* 3-column doc: left nav + right outline share one baseline; body copy sits slightly lower */
 @media (min-width: 1280px) {
-  .DocSearch.DocSearch-Button {
-    width: 500px !important;
+  .docs-layout .VPSidebar .nav {
+    /* .VPSidebar already has top padding; extra padding here was stacking—omit so nav links sit 20px higher. */
+    padding-top: 0 !important;
+  }
+
+  /* Theme VPDoc uses `padding: 0 32px` which adds 32px to the *right* of the whole
+     three-column row — empty gap past the "On this page" rail. */
+  .docs-layout .VPDoc.has-aside {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .docs-layout .VPDoc.has-aside .aside .aside-container {
+    padding-top: 20px !important;
+  }
+
+  .docs-layout .VPDoc.has-aside .content {
+    /* Theme default adds large top padding here; remove it so only `.main` controls vertical offset */
+    padding: 0 32px 128px !important;
+  }
+
+  .docs-layout .VPDoc.has-aside .content .main {
+    /* Slightly lower than both side columns */
+    padding-top: 32px !important;
+  }
+
+  /* Right "On this page" rail: the theme’s `.aside-container` is 224px, so the flex
+     item `.aside` often shrink-wraps to ~224px. That makes inner `width: 100%` only
+     fill 224 of the 256px max. Lock the rail to the design width so outline uses it. */
+  .docs-layout .VPDoc.has-aside .aside {
+    flex: 0 0 256px;
+    width: 256px;
+    max-width: 256px;
+    min-width: 0;
+    padding-left: 0;
+    box-sizing: border-box;
+  }
+
+  .docs-layout .VPDoc.has-aside .aside .aside-container {
+    display: block;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding-left: 4px;
+    padding-right: 4px;
+    box-sizing: border-box;
+  }
+
+  .docs-layout .VPDoc.has-aside .aside .aside-content {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .docs-layout .VPDoc.has-aside .aside .VPDocAside {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .docs-layout .VPDoc.has-aside .VPDocAsideOutline,
+  .docs-layout .VPDoc.has-aside .VPDocAsideOutline .content {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .docs-layout .VPDoc.has-aside .VPDocAsideOutline .outline-title {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .docs-layout .VPDocAsideOutline .VPDocOutlineItem {
+    width: 100%;
+    list-style: none;
+    box-sizing: border-box;
+  }
+
+  .docs-layout .VPDocAsideOutline .VPDocOutlineItem.root {
+    margin: 0;
+    padding: 0;
+  }
+
+  .docs-layout .VPDocAsideOutline .VPDocOutlineItem li {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* VPDocOutlineItem uses nowrap + ellipsis; allow long headings to wrap. */
+  .docs-layout .VPDocAsideOutline a.outline-link {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.45;
+    padding: 2px 0 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Air between sibling items in the right-rail outline. */
+  .docs-layout .VPDocAsideOutline .VPDocOutlineItem li + li {
+    margin-top: 6px;
+  }
+
+  .docs-layout .VPDocAsideOutline .VPDocOutlineItem li > .VPDocOutlineItem.nested {
+    margin-top: 4px;
+  }
+
+  .docs-layout .VPDocOutlineItem.nested {
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-/* ================================================
-   SIGN IN BUTTON STYLING
-   ================================================ */
+/* No right rail (outline empty): collapse the aside, let the main column use that
+   width, and keep the same 32px inset on both sides as the default left padding. */
+@media (min-width: 1280px) {
+  .docs-layout
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
+    .aside {
+    display: none !important;
+    flex: 0 0 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
 
-/* Target the Sign in link using multiple class combinations */
-.VPNavBarMenuLink.VPLink[href*="sign-in"],
-a.VPLink.VPNavBarMenuLink[href*="sign-in"],
-.VPNavBarMenu .VPLink[href="https://app.plane.so/sign-in"] {
-  background: #006399 !important;
-  color: #ffffff !important;
-  padding: 6px 14px !important;
-  margin-top: 15px !important;
-  margin-bottom: 15px !important;
-  border-radius: 6px !important;
-  font-weight: 500 !important;
-  font-size: 14px !important;
-  transition: all 0.2s ease !important;
-  line-height: normal !important;
-  text-decoration: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  vertical-align: middle !important;
-}
+  .docs-layout
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
+    .content {
+    flex: 1 1 auto;
+    max-width: none !important;
+    padding-right: 104px !important;
+    padding-left: 110px !important;
+  }
 
-/* Hide the external link arrow icon */
-.VPNavBarMenuLink.VPLink[href*="sign-in"] .vp-external-link-icon,
-a.VPLink.VPNavBarMenuLink[href*="sign-in"] .vp-external-link-icon,
-.VPNavBarMenu .VPLink[href="https://app.plane.so/sign-in"] .vp-external-link-icon,
-.VPNavBarMenuLink.VPLink[href*="sign-in"] svg,
-a.VPLink.VPNavBarMenuLink[href*="sign-in"] svg,
-.VPNavBarMenuLink.VPLink[href*="sign-in"] .VPImage,
-a.VPLink.VPNavBarMenuLink[href*="sign-in"] .VPImage {
-  display: none !important;
-}
-
-/* Also hide the icon using ::after if it's a pseudo-element */
-.VPNavBarMenuLink.VPLink[href*="sign-in"]::after,
-a.VPLink.VPNavBarMenuLink[href*="sign-in"]::after {
-  display: none !important;
-  content: none !important;
-}
-
-.VPNavBarMenuLink.VPLink[href*="sign-in"]:hover,
-a.VPLink.VPNavBarMenuLink[href*="sign-in"]:hover {
-  background: #0078b8 !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 2px 8px rgba(0, 99, 153, 0.25) !important;
-  text-decoration: none !important;
-}
-
-/* Dark mode variant */
-.dark .VPNavBarMenuLink.VPLink[href*="sign-in"],
-.dark a.VPLink.VPNavBarMenuLink[href*="sign-in"] {
-  background: #006399 !important;
-  color: #ffffff !important;
-}
-
-.dark .VPNavBarMenuLink.VPLink[href*="sign-in"]:hover,
-.dark a.VPLink.VPNavBarMenuLink[href*="sign-in"]:hover {
-  background: #0078b8 !important;
-  box-shadow: 0 2px 8px rgba(0, 99, 153, 0.35) !important;
-}
-
-/* ================================================
-   CENTER SEARCH BAR IN NAVBAR
-   ================================================ */
-
-@media (min-width: 768px) {
-  .VPNavBarSearch {
-    position: fixed !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    top: 0 !important;
-    height: var(--vp-nav-height) !important;
-    display: flex !important;
-    align-items: center !important;
+  .docs-layout
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
+    .content-container {
+    max-width: none !important;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
   }
 }
 
