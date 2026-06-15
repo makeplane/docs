@@ -280,7 +280,7 @@ Connectors are only available in Build and Autopilot modes.
 
 This restriction matches the purpose of each mode. Ask mode is read-only by design - adding action-capable connectors to it would break that guarantee. MCP connectors are fundamentally about doing things: posting to Slack, creating a GitHub issue, querying a customer record. Those are actions, not lookups, and they belong in the modes that are designed for action with the appropriate level of oversight.
 
-See [MCP connectors](/plane-ai/mcp-connectors) for the full list of available connectors, how to connect them, and how authentication works.
+See [MCP connectors](/ai/mcp-connectors) for the full list of available connectors, how to connect them, and how authentication works.
 
 ## Plane AI in pages
 
@@ -507,7 +507,7 @@ The embedding model converts text into vectors - mathematical representations of
 - Autopilot mode must be explicitly enabled by your workspace plan and configuration.
 - Voice input requires browser microphone permission and a server-side Groq API key.
 - File uploads require cloud storage (AWS S3 or compatible) to be configured.
-- MCP connectors require per-user authentication setup before use. See [MCP connectors](/plane-ai/mcp-connectors).
+- MCP connectors require per-user authentication setup before use. See [MCP connectors](/ai/mcp-connectors).
 - Label predictions only appear when the flag is enabled and the user has label create permission in the project.
 - Natural language filter conversion may fail for ambiguous or unsupported queries - the error message will indicate what went wrong.
 - Chart generation is triggered by the AI based on the nature of your question - you cannot force a specific chart type, but you can ask for one explicitly.
