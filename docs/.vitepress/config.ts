@@ -1,6 +1,9 @@
+/** @format */
+
 import { copyFileSync, mkdirSync, readFileSync, readdirSync, statSync } from "fs";
 import { dirname, join, relative, resolve } from "path";
 import { defineConfig, type HeadConfig } from "vitepress";
+import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 
 function loadEnvVar(key: string): string | undefined {
@@ -45,7 +48,7 @@ const searchConfig =
       }
     : { provider: "local" as const };
 
-export default defineConfig({
+const config = defineConfig({
   title: "Plane",
   description: "Modern project management software",
   cleanUrls: true,
@@ -100,13 +103,6 @@ export default defineConfig({
         as: "font",
         type: "font/ttf",
         crossorigin: "anonymous",
-      },
-    ],
-    [
-      "link",
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=National+Park:wght@200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap",
       },
     ],
     [
@@ -192,14 +188,49 @@ export default defineConfig({
           "project management, issue tracking, sprint management, agile, scrum, create projects, track sprints",
       },
     ],
+    [
+      "meta",
+      {
+        name: "robots",
+        content: "index, follow",
+      },
+    ],
+    /**
+     * SSG inlines OSSHeader with data-theme from server isDark. Tailwind `dark:…`
+     * keys off [data-theme*="dark"] on that wrapper, so the bar can stay dark
+     * until Vue hydrates. The built-in "check-dark-mode" also only add()s
+     * html.dark. Run in setTimeout(0) so it executes after that script, then
+     * clear stale data-theme as soon as the bar exists.
+     */
+    [
+      "script",
+      {},
+      `!function(){setTimeout(function(){
+var k="vitepress-theme-appearance";
+var p=localStorage.getItem(k)||"dark";
+var m=matchMedia("(prefers-color-scheme: dark)").matches;
+var d=!p||p==="auto"?m:p==="dark";
+document.documentElement.classList.toggle("dark",d);
+function bar(n){
+var h=document.querySelector(".docs-layout header");
+if(h&&h.parentElement){
+var w=h.parentElement;
+if(d)w.setAttribute("data-theme","dark");else w.removeAttribute("data-theme");
+return;
+}
+if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n+1)});
+}bar(0);
+},0);}();`,
+    ],
   ],
 
   themeConfig: {
+    variant: "voidzero",
     logo: {
       light: "https://media.docs.plane.so/logo/new-logo-white.png",
       dark: "https://media.docs.plane.so/logo/new-logo-dark.png",
     },
-    siteTitle: "",
+    siteTitle: "Plane",
 
     outline: {
       level: [2, 3],
@@ -209,21 +240,25 @@ export default defineConfig({
     search: searchConfig,
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/makeplane/plane" },
       {
         icon: {
-          svg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>',
+          svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 15L6.92474 18.1137C6.49579 18.548 6.28131 18.7652 6.09695 18.7805C5.93701 18.7938 5.78042 18.7295 5.67596 18.6076C5.55556 18.4672 5.55556 18.162 5.55556 17.5515V15.9916C5.55556 15.444 5.10707 15.0477 4.5652 14.9683V14.9683C3.25374 14.7762 2.22378 13.7463 2.03168 12.4348C2 12.2186 2 11.9605 2 11.4444V6.8C2 5.11984 2 4.27976 2.32698 3.63803C2.6146 3.07354 3.07354 2.6146 3.63803 2.32698C4.27976 2 5.11984 2 6.8 2H14.2C15.8802 2 16.7202 2 17.362 2.32698C17.9265 2.6146 18.3854 3.07354 18.673 3.63803C19 4.27976 19 5.11984 19 6.8V11M19 22L16.8236 20.4869C16.5177 20.2742 16.3647 20.1678 16.1982 20.0924C16.0504 20.0255 15.8951 19.9768 15.7356 19.9474C15.5558 19.9143 15.3695 19.9143 14.9969 19.9143H13.2C12.0799 19.9143 11.5198 19.9143 11.092 19.6963C10.7157 19.5046 10.4097 19.1986 10.218 18.8223C10 18.3944 10 17.8344 10 16.7143V14.2C10 13.0799 10 12.5198 10.218 12.092C10.4097 11.7157 10.7157 11.4097 11.092 11.218C11.5198 11 12.0799 11 13.2 11H18.8C19.9201 11 20.4802 11 20.908 11.218C21.2843 11.4097 21.5903 11.7157 21.782 12.092C22 12.5198 22 13.0799 22 14.2V16.9143C22 17.8462 22 18.3121 21.8478 18.6797C21.6448 19.1697 21.2554 19.5591 20.7654 19.762C20.3978 19.9143 19.9319 19.9143 19 19.9143V22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         link: "https://forum.plane.so",
       },
+      { icon: "github", link: "https://github.com/makeplane/plane" },
       { icon: "twitter", link: "https://twitter.com/planepowers" },
-      { icon: "linkedin", link: "https://www.linkedin.com/company/planepowers/" },
+      {
+        icon: "linkedin",
+        link: "https://www.linkedin.com/company/planepowers/",
+      },
     ],
 
     nav: [
       {
         text: "Sign in",
         link: "https://app.plane.so/sign-in",
+        noIcon: true,
       },
     ],
 
@@ -302,7 +337,10 @@ export default defineConfig({
                 text: "Search workspace",
                 link: "/workspaces-and-users/search-workspace",
               },
-              { text: "Personalize homepage", link: "/core-concepts/account/overview" },
+              {
+                text: "Personalize homepage",
+                link: "/core-concepts/account/overview",
+              },
               { text: "Power K", link: "/core-concepts/power-k" },
               {
                 text: "Customize navigation",
@@ -377,7 +415,10 @@ export default defineConfig({
             text: "Projects",
             collapsed: true,
             items: [
-              { text: "Manage projects", link: "/core-concepts/projects/overview" },
+              {
+                text: "Manage projects",
+                link: "/core-concepts/projects/overview",
+              },
               {
                 text: "Manage members",
                 link: "/core-concepts/projects/manage-project-members",
@@ -410,7 +451,10 @@ export default defineConfig({
             text: "Work Items",
             collapsed: true,
             items: [
-              { text: "Manage work items", link: "/core-concepts/issues/overview" },
+              {
+                text: "Manage work items",
+                link: "/core-concepts/issues/overview",
+              },
               {
                 text: "Work item properties",
                 link: "/core-concepts/issues/properties",
@@ -498,7 +542,10 @@ export default defineConfig({
             text: "Pages",
             collapsed: true,
             items: [
-              { text: "Manage project pages", link: "/core-concepts/pages/overview" },
+              {
+                text: "Manage project pages",
+                link: "/core-concepts/pages/overview",
+              },
               {
                 text: "Editor blocks",
                 link: "/core-concepts/pages/editor-blocks",
@@ -521,7 +568,10 @@ export default defineConfig({
             text: "Time Tracking",
             link: "/core-concepts/issues/time-tracking",
           },
-          { text: "Workflows and Approvals", link: "/workflows-and-approvals/workflows" },
+          {
+            text: "Workflows and Approvals",
+            link: "/workflows-and-approvals/workflows",
+          },
           { text: "Custom Relations", link: "/work-items/custom-relations" },
           {
             text: "Automations",
@@ -555,8 +605,14 @@ export default defineConfig({
             text: "Page Inline Comments",
             link: "/core-concepts/pages/inline-comments",
           },
-          { text: "Subscribers", link: "/communication-and-collaboration/subscribers" },
-          { text: "Notifications", link: "/communication-and-collaboration/notifications" },
+          {
+            text: "Subscribers",
+            link: "/communication-and-collaboration/subscribers",
+          },
+          {
+            text: "Notifications",
+            link: "/communication-and-collaboration/notifications",
+          },
           { text: "Inbox", link: "/communication-and-collaboration/inbox" },
         ],
       },
@@ -585,6 +641,7 @@ export default defineConfig({
             link: "/integrations/about",
             collapsed: false,
             items: [
+              { text: "Cursor", link: "/integrations/cursor" },
               { text: "Draw.io", link: "/integrations/draw-io" },
               { text: "GitHub", link: "/integrations/github" },
               { text: "GitLab", link: "/integrations/gitlab" },
@@ -638,6 +695,7 @@ export default defineConfig({
         items: [
           { text: "Plane AI", link: "/ai/plane-ai" },
           { text: "AI credits", link: "/ai/plane-ai-credits" },
+          { text: "MCP Connectors", link: "/ai/mcp-connectors" },
           {
             text: "MCP Server",
             link: "https://developers.plane.so/dev-tools/mcp-server",
@@ -698,3 +756,5 @@ export default defineConfig({
     },
   },
 });
+
+export default extendConfig(config);

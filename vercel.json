@@ -8,6 +8,10 @@
         {
           "key": "Link",
           "value": "</api-reference/introduction>; rel=\"service-doc\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
         }
       ]
     }
