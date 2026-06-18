@@ -5,6 +5,7 @@ import { dirname, join, relative, resolve } from "path";
 import { defineConfig, type HeadConfig } from "vitepress";
 import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
+import llmstxt from "vitepress-plugin-llms";
 
 function loadEnvVar(key: string): string | undefined {
   // process.env takes precedence (CI/hosting platforms set vars here)
@@ -52,6 +53,33 @@ const config = defineConfig({
   title: "Plane",
   description: "Modern project management software",
   cleanUrls: true,
+
+  vite: {
+    plugins: [
+      // Generates llms.txt and llms-full.txt from the docs and sidebar.
+      // https://github.com/okineadev/vitepress-plugin-llms
+      llmstxt({
+        domain: "https://docs.plane.so",
+        description:
+          "Plane is open-source, modern project management software for planning, tracking, and shipping work.",
+        details:
+          "This documentation covers workspaces, projects, work items, cycles, modules, pages and wikis, integrations, importers, automations, and Plane AI.",
+        // Per-page .md versions are already emitted by buildEnd() for the
+        // `Accept: text/markdown` rewrite in vercel.json, so the plugin only
+        // owns llms.txt / llms-full.txt.
+        generateLLMFriendlyDocsForEachPage: false,
+        // Don't inject invisible LLM-hint markup into rendered pages.
+        injectLLMHint: false,
+        // Pages hidden from search (search: false / noindex) are excluded
+        // from the LLM files too.
+        ignoreFiles: [
+          "core-concepts/issues.md",
+          "core-concepts/projects/run-project.md",
+          "importers/github-imp.md",
+        ],
+      }),
+    ],
+  },
 
   buildEnd(siteConfig) {
     // Copy source .md files into dist/ for Accept: text/markdown negotiation.
