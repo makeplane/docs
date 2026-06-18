@@ -9,7 +9,7 @@ This is the [Plane](https://plane.so) product documentation site, built with [Vi
 | Tool            | Version/Notes   |
 | --------------- | --------------- |
 | Framework       | VitePress 1.6.3 |
-| Package manager | pnpm 10         |
+| Package manager | pnpm 11.8.0      |
 | Node            | >=24.0.0        |
 | Formatting      | oxfmt           |
 | Styling         | Tailwind CSS v4 |
@@ -84,7 +84,7 @@ Run `pnpm fix:format` before committing. CI checks formatting via `pnpm check:fo
 ## Branches and PRs
 
 - Default/main branch: `master`
-- Active development and review happens on the `preview` branch — open PRs targeting `preview`, not `master`.
+- Open PRs targeting `master`.
 - Branch naming: use short descriptive slugs (e.g., `fix/csv-importer-typo`, `docs/add-milestones-page`).
 - Commit messages: `<type>: short description` — link to an issue where applicable (e.g., `docs: add recurring work items page (#412)`).
 
