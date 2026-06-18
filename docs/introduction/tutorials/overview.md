@@ -3,6 +3,8 @@ title: Tutorials
 description: Step-by-step guides to master Plane's essential features and build effective team workflows.
 ---
 
+> 💡 **New to Plane?** If you're setting up Plane for the first time, start with the **[Quickstart guide](/introduction/quickstart)** for a step-by-step setup walkthrough. Come back here once you're set up to master advanced features.
+
 # Tutorials
 
 Master Plane's core features with hands-on, step-by-step tutorials designed to get you and your team productive quickly. These tutorials follow a logical progression from workspace setup to advanced collaboration, ensuring you build skills systematically.
