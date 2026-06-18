@@ -9,7 +9,7 @@ This is the [Plane](https://plane.so) product documentation site, built with [Vi
 | Tool            | Version/Notes   |
 | --------------- | --------------- |
 | Framework       | VitePress 1.6.3 |
-| Package manager | pnpm 11.8.0      |
+| Package manager | pnpm 11.8.0     |
 | Node            | >=24.0.0        |
 | Formatting      | oxfmt           |
 | Styling         | Tailwind CSS v4 |
