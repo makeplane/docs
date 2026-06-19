@@ -23,9 +23,31 @@ export const config = {
   matcher: ["/", "/((?!assets/|fonts/|.*\\.).*)"],
 };
 
+// True only when the client *explicitly* accepts `text/markdown` with a
+// non-zero quality value. Per RFC 7231 the type/subtype and the `q` parameter
+// are case-insensitive, and `q=0` means "not acceptable". Wildcards (`*/*`,
+// `text/*`) are intentionally ignored so browsers — which never list
+// `text/markdown` — keep getting HTML.
+function acceptsMarkdown(accept: string): boolean {
+  for (const range of accept.split(",")) {
+    const params = range.trim().split(";");
+    if (params[0].trim().toLowerCase() !== "text/markdown") continue;
+    let q = 1;
+    for (const param of params.slice(1)) {
+      const [key, value] = param.split("=");
+      if (key.trim().toLowerCase() === "q") {
+        const parsed = Number.parseFloat(value ?? "");
+        if (!Number.isNaN(parsed)) q = parsed;
+      }
+    }
+    if (q > 0) return true;
+  }
+  return false;
+}
+
 export default function middleware(request: Request): Response {
   const accept = request.headers.get("accept") || "";
-  if (!accept.includes("text/markdown")) {
+  if (!acceptsMarkdown(accept)) {
     return next();
   }
 
