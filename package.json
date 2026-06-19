@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
+    "@vercel/functions": "^3.7.1",
     "@voidzero-dev/vitepress-theme": "^4.8.4",
     "lucide-vue-next": "^0.577.0",
     "medium-zoom": "^1.1.0",
