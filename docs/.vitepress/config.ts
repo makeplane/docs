@@ -669,6 +669,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
             link: "/integrations/about",
             collapsed: false,
             items: [
+              { text: "Bitbucket", link: "/integrations/bitbucket" },
               { text: "Cursor", link: "/integrations/cursor" },
               { text: "Draw.io", link: "/integrations/draw-io" },
               { text: "GitHub", link: "/integrations/github" },
