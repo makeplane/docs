@@ -61,17 +61,11 @@ Link your Bitbucket account to your Plane workspace to start syncing pull reques
 2. On the right pane, select **Integrations**.
 3. Find the **Bitbucket Data Center** integration and click **Configure**.
 4. In the **Connect Account** section, click **Connect**.
-
-   ![Connect Bitbucket Data Center account](https://media.docs.plane.so/integrations/bitbucket/connect-bitbucket-dc.webp#hero)
-
 5. Fill in the form with your Bitbucket Data Center instance details:
    - **Base URL** — The URL of your Bitbucket DC instance (e.g. `https://bitbucket.yourcompany.com`)
    - **Client ID** — From the OAuth consumer you created in Bitbucket DC
    - **Client Secret** — From the OAuth consumer you created in Bitbucket DC
    - **Webhook Secret** — Optional but recommended for webhook signature verification
-
-   ![Configure Bitbucket Data Center](https://media.docs.plane.so/integrations/bitbucket/configure-bitbucket-dc.webp#hero)
-
 6. Click **Connect** to start the OAuth flow.
 7. Authorize the Plane app on your Bitbucket DC instance.
 8. After authorization, you'll be redirected back to Plane with your account shown as connected.
@@ -83,8 +77,6 @@ At this stage, your Bitbucket account is linked to Plane, but you still need to 
 ### Connect Bitbucket repository
 
 Connecting a Bitbucket repository allows Plane to receive pull request events from that repository via webhooks. Plane automatically creates the required webhook on the repository when you connect it.
-
-![Connect Bitbucket repository](https://media.docs.plane.so/integrations/bitbucket/connect-bitbucket-repository.webp#hero)
 
 To connect a repository:
 
@@ -98,8 +90,6 @@ Once connected, the repository will appear in the list and Plane will begin list
 
 After linking a Bitbucket repository, associate it with a Plane project to enable PR state automation. This connection determines which Plane project's work items are updated when pull requests change state.
 
-![Connect Plane project](https://media.docs.plane.so/integrations/bitbucket/connect-plane-project.webp#hero)
-
 1. Select the **Plane project** you want to connect.
 
 2. In the **Pull Request Automation** section, configure how Plane should update work item states based on pull request lifecycle events.
@@ -112,8 +102,6 @@ This step allows comments made in Plane to appear in Bitbucket under your person
 
 Workspace admins can connect their personal Bitbucket account from the Bitbucket integration page.
 
-![Connect personal account](https://media.docs.plane.so/integrations/bitbucket/connect-personal-account.webp#hero)
-
 1. In the **Connect personal account** section under **Integrations**, click **Connect**.
 2. Review the required permissions and authorize Plane to access your Bitbucket account.
 3. After granting permissions, the status will update to show your personal account is connected.
@@ -123,8 +111,6 @@ Only one Workspace Admin can connect their Bitbucket account via Workspace Setti
 :::
 
 All other workspace members can connect their personal Bitbucket accounts from the **Connections** page in Workspace Settings.
-
-![Connect member personal account](https://media.docs.plane.so/integrations/bitbucket/connect-personal-account-member.webp#hero)
 
 1. Go to [Workspace Settings](/core-concepts/workspaces/overview#access-workspace-settings).
 2. Select the **Connections** tab in the sidebar.
