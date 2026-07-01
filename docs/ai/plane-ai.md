@@ -68,9 +68,8 @@ In Ask mode - and as the retrieval step in Build and Autopilot - Plane AI has ac
 
 You can ask broad or narrow questions:
 
-- "What's blocking the API migration project?"
 - "Which issues are In Progress but have no assignee?"
-- "What's blocking the API migration?"
+- "What's blocking the API migration project?"
 - "Who is working on the most issues right now?"
 - "Summarize the onboarding module"
 - "Are there any overdue cycles?"
