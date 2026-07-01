@@ -292,6 +292,10 @@
     {
       "source": "/core-concepts/inbox",
       "destination": "/communication-and-collaboration/inbox"
+    },
+    {
+      "source": "/ai/pi-chat",
+      "destination": "/ai/plane-ai"
     }
   ],
   "rewrites": [
