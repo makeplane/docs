@@ -12,7 +12,7 @@ Plane AI is a built-in AI layer embedded throughout the product. It is not a gen
 
 ![Plane AI chat sidebar](https://media.docs.plane.so/plane-ai/plane-ai.webp#hero)
 
-Plane AI understands your workspace - work items, projects, cycles, modules, members, pages, comments, and more. When you ask something or give it a task, it draws from your actual data, not generic knowledge. It can also search the web and connect to external tools like GitHub and Slack through MCP connectors.
+Plane AI understands your workspace - work items, projects, cycles, modules, members, pages, comments, and more. When you ask something or give it a task, it draws from your actual data, not generic knowledge. It can also search the web and connect to external tools like GitHub, Posthog and Granola through MCP connectors.
 
 ## Enable Plane AI for a workspace
 
@@ -68,7 +68,7 @@ In Ask mode - and as the retrieval step in Build and Autopilot - Plane AI has ac
 
 You can ask broad or narrow questions:
 
-- "What did the team ship last week?"
+- "What's blocking the API migration project?"
 - "Which issues are In Progress but have no assignee?"
 - "What's blocking the API migration?"
 - "Who is working on the most issues right now?"
@@ -77,7 +77,7 @@ You can ask broad or narrow questions:
 
 ### Suggestion tiles
 
-When you open a new chat, a **Suggestions** section appears in the conversation area with a list of prompt ideas. These are fetched dynamically from Plane AI based on the current context - the active mode, the workspace, and which project or entity you're focused on. Click any suggestion to send it as your first message. All suggestions are disabled while Plane AI is generating a response.
+When you open a new chat, a **Suggestions** section appears in the conversation area with a list of prompt ideas. These are fetched from Plane AI based on the current context - the active mode, the workspace, and which project or entity you're focused on. Click any suggestion to send it as your first message. All suggestions are disabled while Plane AI is generating a response.
 
 ### Thinking panel
 
@@ -108,8 +108,6 @@ You can pull specific items into the AI's context by mentioning them in your mes
 - Cycles
 - Modules
 - Pages
-- Users
-- Labels
 - States
 - Issue views
 - Teamspaces
@@ -189,9 +187,7 @@ In Build and Autopilot mode, Plane AI can take a wide range of actions across yo
 - Add comments
 - Log time worked (worklogs)
 - Create relationships between work items: duplicate, related, blocking, blocked by, and more
-- Add or remove subscribers
 - Apply custom properties
-- Upload and attach files
 - Create sub-work items under any existing work item
 
 **Cycles**
@@ -206,7 +202,7 @@ In Build and Autopilot mode, Plane AI can take a wide range of actions across yo
 
 **Pages**
 
-- Create new pages or nested pages in any project
+- Create new pages in any project
 
 **Labels**
 
@@ -240,7 +236,7 @@ In Build and Autopilot mode, Plane AI can take a wide range of actions across yo
 
 1. Describe what you want: "Create three sub-work items under PROJ-45 for the auth redesign - one for the login screen, one for token refresh logic, and one for session expiry handling."
 2. Plane AI plans the actions and shows them as action cards. Each card shows the action type, key details, and what will be created or changed.
-3. Review the plan. Edit individual cards if something looks wrong. Cancel any action you don't want.
+3. Review the plan. Edit individual cards if something looks wrong.
 4. Click **Confirm** to execute.
 
 Nothing changes in your workspace until you confirm. You can let some actions execute and cancel others.
@@ -278,7 +274,7 @@ MCP (Model Context Protocol) connectors extend Plane AI with access to external 
 
 Connectors are only available in Build and Autopilot modes.
 
-This restriction matches the purpose of each mode. Ask mode is read-only by design - adding action-capable connectors to it would break that guarantee. MCP connectors are fundamentally about doing things: posting to Slack, creating a GitHub issue, querying a customer record. Those are actions, not lookups, and they belong in the modes that are designed for action with the appropriate level of oversight.
+This restriction matches the purpose of each mode. Ask mode is read-only by design - adding action-capable connectors to it would break that guarantee. MCP connectors are fundamentally about doing things: creating a GitHub issue, querying a customer record. Those are actions, not lookups, and they belong in the modes that are designed for action with the appropriate level of oversight.
 
 See [MCP connectors](/ai/mcp-connectors) for the full list of available connectors, how to connect them, and how authentication works.
 
@@ -286,9 +282,9 @@ See [MCP connectors](/ai/mcp-connectors) for the full list of available connecto
 
 Plane AI has a separate, deep integration inside the page editor. These features are distinct from the AI chat - they work directly within the editing surface.
 
-### The AI prompt input (page sidecar agent) <Badge type="tip" text="Business" />
+### The AI prompt input <Badge type="tip" text="Business" />
 
-The page editor includes an AI prompt input at the bottom of the editor. It shows a text field labeled **"Ask AI to edit this page…"** with the active model name. Type a free-form instruction describing what you want done to the page - for example:
+The page editor includes an AI Assistant at the top of the page. Type a free-form instruction describing what you want done to the page - for example:
 
 - "Write an executive summary at the top"
 - "Add a risks section after the Timeline section"
