@@ -2,13 +2,14 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
+    "types": ["node", "vitepress/client"],
     "jsx": "preserve",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": [".vitepress/**/*.ts", ".vitepress/**/*.vue"],
+  "include": ["docs/.vitepress/**/*.ts", "docs/.vitepress/**/*.vue", "docs/.vitepress/**/*.d.ts"],
   "exclude": ["node_modules"]
 }

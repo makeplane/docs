@@ -3,17 +3,44 @@ title: Integrate GitHub to sync repositories with projects
 description: Integrate Plane with GitHub Cloud and GitHub Enterprise Server to synchronize issues and pull requests. Connect repositories to projects for bidirectional updates and seamless workflows.
 ---
 
-# GitHub Integration <Badge type="info" text="Pro" />
+# GitHub integration <Badge type="info" text="Pro" />
 
-GitHub integration with Plane allows seamless synchronization between your GitHub repositories and Plane projects. By linking the two, your issues and pull requests stay updated across both platforms, enhancing collaboration and streamlining your workflow. Whether you're managing code, tasks, or both, this integration ensures your team stays in sync without the hassle of switching between platforms.
+GitHub integration with Plane allows seamless synchronization between your GitHub repositories and Plane projects. By linking the two, your issues and pull requests stay updated across both platforms. Issues, comments, labels, and assignees reflect changes from either system. Pull request events automatically move work items through your Plane workflow.
 
 Plane supports integration with:
 
-- **GitHub Cloud**  
-  The standard cloud-hosted GitHub service
+- **GitHub Cloud** (github.com)  
+  The standard GitHub service, available at github.com. Covers all plans
 
-- **GitHub Enterprise Server**  
-  Self-hosted GitHub instances for organizations with specific compliance or security requirements
+- **GitHub Enterprise Cloud** (ghe.com)  
+  GitHub's managed enterprise service where your organization gets a dedicated subdomain
+
+- **GitHub Enterprise Server** (self-hosted)  
+  A self-hosted GitHub instance deployed on your own infrastructure
+
+:::tip
+GitHub Cloud has its own integration page in Plane's settings. GitHub Enterprise Cloud (GHE.com) and GitHub Enterprise Server share the same page - a toggle at the top of the configuration form switches between the two.
+:::
+
+## What the integration does
+
+**Issue syncing**  
+A GitHub issue with the `plane` label syncs to a linked Plane project as a work item. A Plane work item with the `github` label syncs to the linked GitHub repository as an issue. Changes to title, description, state, assignees, and labels in one system update the other. A comment with a cross-link is automatically added to each issue.
+
+**Comment syncing**  
+Comments on a GitHub issue sync to the corresponding Plane work item, and vice versa when bidirectional sync is enabled.
+
+**PR state automation**  
+When a pull request is opened, sent for review, merged, or closed, Plane moves the linked work item to the state you've mapped to that event.
+
+**User attribution**  
+When a team member connects their personal GitHub account and is added to the user map, updates they make in one system appear attributed to them in the other - not posted by the integration bot.
+
+## Prerequisites
+
+- Your Plane account must have **Admin** or **Owner** role in the workspace.
+- One GitHub organization can be connected to **one** Plane workspace. If an organization is already connected to another workspace anywhere in Plane, the connection attempt fails with an error.
+- The `plane` label on a GitHub issue and the `github` label on a Plane work item are what trigger syncing. Create these labels on both platforms.
 
 ## Set up GitHub integration
 
@@ -34,17 +61,63 @@ Link your GitHub organization to your Plane workspace to start syncing repositor
 > [!CAUTION] Plane self-hosted instances
 > If you're running a self-hosted instance of Plane, you'll need to first create and configure a GitHub App to get GitHub integration working. Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github?edition=github-cloud#create-github-app) first before diving into the steps on this page.
 
-1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
-2. On the right pane, select **Integrations**.
-3. Find the **GitHub** integration and click **Configure**.
-4. In the **Connect Organization** section, click **Connect**.
+![Connect GitHub Cloud](https://media.docs.plane.so/integrations/github/github-cloud.webp#hero)
 
-   ![Connect GitHub](https://media.docs.plane.so/integrations/github/connect-github.webp#hero)
+1. Go to **Settings → Integrations → GitHub** in your Plane workspace.
+2. Click **Connect**.
+3. You are redirected to github.com. Select the organization or personal account where you want to install the Plane app.
+4. Select whether you want to sync all repositories or pick specific ones.
+5. Click **Install** to finalize the connection.
+6. After authorization, you'll be redirected back to Plane, where your GitHub organization will appear as connected.
 
-5. On the GitHub app installation page, choose the organization you want to connect.
-6. Select whether you want to sync all repositories or pick specific ones.
-7. Click **Install** to finalize the connection.
-8. After authorization, you'll be redirected back to Plane, where your GitHub organization will appear as connected.
+The integration page shows the connected organization name and avatar. Plane has stored the GitHub App installation ID and fetched your organization's details.
+
+== GitHub Enterprise Cloud {#ghe-cloud}
+
+GitHub Enterprise Cloud (GHE.com) organizations have a dedicated subdomain (`<your-org>.ghe.com`). This is a distinct setup from GitHub Cloud - you create your own GitHub App on your GHE.com organization and provide Plane with its credentials.
+
+> [!CAUTION] Plane Cloud and self-hosted instances
+> Before you can integrate with GitHub Enterprise Cloud, you must first create and configure a GitHub App. This is required for both Plane Cloud and self-hosted users.
+>
+> Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github?edition=github-enterprise#create-github-app) first before diving into the steps on this section.
+
+![Connect GitHub Enerprise Cloud](https://media.docs.plane.so/integrations/github/github-enterprise-server.webp#hero)
+
+1. Go to **Settings → Integrations → GitHub Enterprise** in your Plane workspace.
+2. Click **Connect**.
+3. At the top of the configuration form, enable the **GitHub Enterprise Cloud (ghe.com)** toggle.
+4. Fill in the form.
+
+   **App ID**  
+   The numeric identifier for your GitHub App. Find it on your GHE.com GitHub App settings page under **App ID**.
+
+   **App slug**  
+   The URL-safe name assigned to your app, visible in the app's GitHub URL. Find it in the URL when viewing your app settings - the segment after `/apps/`  
+   Example: `my-plane-app`
+
+   **Enterprise slug**  
+   The subdomain prefix of your GHE.com organization. This is the part before `.ghe.com` in your organization's URL.  
+   Example: `acme` from `acme.ghe.com`
+
+   **Organisation ID**  
+   The numeric ID of your GHE.com organization. Retrieve it from the [GitHub REST API](https://docs.github.com/en/rest/orgs/orgs?apiVersion=2026-03-10#get-an-organization): send `GET https://api.github.com/orgs/<org-name>` and use the `id` field from the response.
+
+   **Client ID**  
+   The OAuth client identifier for your GitHub App. Find it on your GHE.com GitHub App settings page under **Client ID**.
+
+   **Client secret**  
+   The OAuth client secret generated from your GHE.com GitHub App settings. It is shown only once when generated - use the value you copied at that time.
+
+   **Webhook secret**  
+   The secret string you set when creating the GitHub App on GHE.com. Must match exactly what is configured on the app - Plane uses it to verify incoming webhook signatures.
+
+   **Private key**  
+   The base64-encoded contents of the `.pem` private key file you downloaded from your GHE.com GitHub App settings. To encode it, run `base64 -i your-key.pem` and paste the full output.
+
+5. Click **Connect app**. You are redirected to your GHE.com instance.
+6. Select the organization to install on and authorize. You are redirected back to Plane.
+
+Plane stores these credentials tied to your workspace and uses them to authenticate API calls and verify webhook signatures from your GHE.com organization.
 
 == GitHub Enterprise Server {#github-enterprise-server}
 
@@ -53,33 +126,53 @@ Link your GitHub organization to your Plane workspace to start syncing repositor
 >
 > Follow this [setup guide](https://developers.plane.so/self-hosting/govern/integrations/github?edition=github-enterprise#create-github-app) first before diving into the steps on this section.
 
-1. Navigate to [Workspace settings](/core-concepts/workspaces/overview#access-workspace-settings) in Plane.
-2. On the right pane, select **Integrations**.
-3. Find the **GitHub Enterprise** integration and click **Configure**.
-4. In the **Connect Organization** section, click **Connect**.
+![Connect GitHub Enerprise Server](https://media.docs.plane.so/integrations/github/github-enterprise-server.webp#hero)
 
-   ![Connect GitHub Enterprise organization](https://media.docs.plane.so/integrations/github/connect-github-enterprise.webp#hero)
+1. Go to **Settings → Integrations → GitHub Enterprise Server** in your Plane workspace.
+2. Click **Connect**.
+3. Fill the form with the details of your GitHub Enterprise instance.
 
-5. Fill the form with the details of your GitHub Enterprise instance and click **Connect**.
+   **App ID**  
+   The numeric identifier for your GitHub App. Find it on your GHES GitHub App settings page under **App ID**.
 
-   ![Configure GitHub Enterprise organization](https://media.docs.plane.so/integrations/github/configure-github-enterprise.webp#hero)
+   **App Name**  
+   The display name you gave the app when creating it. Must match exactly as entered in GHES.
+   Example: `My Plane App`
 
-6. On the GitHub app installation page, choose the organization you want to connect.
-7. Select whether you want to sync all repositories or pick specific ones.
-8. Click **Install** to finalize the connection.
-9. After authorization, you'll be redirected back to Plane, where your GitHub organization will appear as connected.
+   **Base URL**  
+   The root URL of your GHES instance. No trailing slash. Use exactly what appears in your browser when accessing your instance.
+   Example: `https://github.example.com`
 
+   **Client ID**  
+   The OAuth client identifier for your GitHub App. Find it on your GHES GitHub App settings page under **Client ID**.
+
+   **Client Secret**  
+   The OAuth client secret generated from your GHES GitHub App settings. It is shown only once when generated - use the value you copied at that time.
+
+   **Webhook Secret**  
+   The secret string you set when creating the GitHub App on GHES. Must match exactly what is configured on the app - Plane uses it to verify incoming webhook signatures.
+
+   **Private Key**  
+   The contents of the `.pem` private key file you downloaded from your GHES GitHub App settings. Paste the full PEM content including the `-----BEGIN RSA PRIVATE KEY-----` and `-----END RSA PRIVATE KEY-----` lines.
+
+4. Click **Connect app**. You are redirected to your GHES instance.
+5. Select the organization to install on and authorize.
+6. Select whether you want to sync all repositories or pick specific ones.
+7. Click **Install** to finalize the connection.
+8. After authorization, you'll be redirected back to Plane, where your GitHub organization will appear as connected.
+
+Plane stores these credentials tied to your workspace. They are used to authenticate API calls and verify webhook signatures from your GHES instance.
 :::
 
 ### Connect personal GitHub account
 
-This step allows you to make comments on issues and pull requests in GitHub through your Plane account, using your personal GitHub identity.
+Connecting a personal account lets Plane attribute your actions in GitHub to your Plane identity, and vice versa. This is optional. If you do not connect, your actions in one system appear as the integration bot in the other.
 
 When this connection is enabled, comments made in Plane will appear in GitHub under your GitHub user account, else comments will be posted as `Plane GitHub App` or your custom GitHub app name.
 
 Workspace admins can connect their personal GitHub accounts from the GitHub configuration page.
 
-![Connect personal account](https://media.docs.plane.so/integrations/github/connect-personal-account.webp#hero)
+![Connect personal account](https://media.docs.plane.so/integrations/github/connect-personal-account-admin.webp#hero)
 
 1. In the **Connect personal account** section under **Integrations**, click **Connect**.
 2. Review the required permissions GitHub requests and authorize.
@@ -92,7 +185,7 @@ Only one Workspace Admin can connect their GitHub account via Workspace Settings
 All other workspace members can connect their personal GitHub accounts from the **Connections** page in
 Workspace settings.
 
-![Connect member personal account](https://media.docs.plane.so/integrations/github/connect-personal-account-member.webp#hero)
+![Connect member personal account](https://media.docs.plane.so/integrations/github/connect-personal-account-members.webp#hero)
 
 1. Go to [Workspace Settings](/core-concepts/workspaces/overview#access-workspace-settings).
 2. Select the **Connections** tab in the sidebar.
@@ -144,18 +237,10 @@ After configuring project work item sync, you can link existing GitHub issues in
 
 #### GitHub → Plane
 
-1. In your GitHub repository, add the `Plane` label to any issue you want to sync.
-
-   ![Add Plane label](https://media.docs.plane.so/integrations/github/add-plane-label.webp#hero)
-
+1. In your GitHub repository, add the `plane` label to any issue you want to sync.
 2. The issue will automatically be created as a work item in the linked Plane project.
 3. Plane posts a comment on the GitHub issue with a link to the newly created work item, confirming the connection.
-
-   ![Synced issue from GitHub](https://media.docs.plane.so/integrations/github/synced-issue-from-github.webp#hero)
-
 4. The work item in Plane will include a link back to the original GitHub issue.
-
-   ![Creates issue in Plane](https://media.docs.plane.so/integrations/github/creates-plane-issue.webp#hero)
 
 ### Sync work items to GitHub
 
@@ -163,14 +248,8 @@ If you have existing work items in Plane that you want to sync to GitHub, you ca
 
 #### Plane → GitHub
 
-1. In your Plane project, add the `GitHub` label to any work item you want to sync.
-
-   ![Add GitHub label](https://media.docs.plane.so/integrations/github/add-github-label.webp#hero)
-
+1. In your Plane project, add the `gitHub` label to any work item you want to sync.
 2. A new issue will automatically be created in the linked GitHub repository.
-
-   ![Creates issue in GitHub](https://media.docs.plane.so/integrations/github/create-github-issue.webp#hero)
-
 3. The GitHub issue will be linked back to the Plane work item.
 4. Future updates will sync according to your configured sync direction (unidirectional or bidirectional).
 
