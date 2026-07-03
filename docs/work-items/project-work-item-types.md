@@ -81,31 +81,54 @@ You can add custom properties to all your work item types.
 Before you delete properties, switch off the **Active** toggle button to avoid data loss.
 :::
 
-### Property types
+## Property types
 
-Here's a list of all the property types and attributes that Plane provides for creating custom fields:
+### Text
 
-| Property&nbsp;type     | Attributes                               | Notes                                                                                                                                                                                                                   |
-| ---------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Text**               | Single line, Paragraph, Read-only        | The **Read-only** attribute cannot be marked as mandatory. Enter text in the Read only data box for this option.                                                                                                        |
-| **Number**             | Default value                            | An optional default value can be given to this property type.                                                                                                                                                           |
-| **Dropdown**           | Single select, Multi select, Add options | Specify the values for the dropdown under **Add options**.                                                                                                                                                              |
-| **Boolean**            | True/False                               | Default value is false. This attribute cannot be marked as mandatory.                                                                                                                                                   |
-| **Date**               | Date Format                              | Consistent date format across all properties.                                                                                                                                                                           |
-| **Member&nbsp;picker** | Single Select, Multi select              | Displays a list of all project members. Members selected via a member picker property are automatically added as subscribers to the work item, so they receive notifications for updates, comments, and status changes. |
-| **Release picker**     | One or more releases                     | Multi select                                                                                                                                                                                                            |
-| **URL**                |                                          | A URL field for linking to external resources.                                                                                                                                                                          |
+A freeform text field. When you add a text property, you choose one of three formats:
 
-### Examples of custom properties
+- **Single line:** A compact input for short values like names, codes, or labels.
+- **Paragraph:** A multi-line input for longer freeform content.
+- **Read-only:** A fixed text display. You enter the text when setting up the property, and members see it on every work item but cannot edit it. Read-only text properties cannot be marked as mandatory.
 
-- _Product launch_  
-  `Launch date` `Geography` `Budget` `Approval status` `Stakeholder`
+### Number
 
-- _Bug_  
-  `Affected version` `Resolved version` `Environment` `Steps to reproduce` `Approval status` `Customer impact`
+A numeric field that accepts decimal values. You can optionally set a default value that pre-fills when a work item is created.
 
-- _Final design approval_  
-  `Final design files` `Approval checklist` `Client approval date` `Responsible person`
+### Dropdown
+
+A selection field backed by a list of options you define. When setting up the property, add your options under **Add options**. Each option can have a name and an icon.
+
+Choose **Single select** to let members pick one option at a time, or **Multi select** to allow multiple selections.
+
+### Boolean
+
+A true/false toggle. The default state is false. Because it already represents a complete two-state answer, boolean properties cannot be marked as mandatory.
+
+### Date
+
+A date picker field. You choose a display format for dates across this property:
+
+- `Jan 15, 2025`
+- `15/01/2025`
+- `01/15/2025`
+- `2025/01/15`
+
+The format you pick applies consistently to all work items using this property.
+
+### Member picker
+
+A people-selection field that lists all members of the project. Choose **Single select** to allow one member, or **Multi select** to allow several.
+
+Members selected through a member picker property are automatically added as subscribers to that work item, so they receive notifications for updates, comments, and status changes.
+
+### Release picker <Badge type="tip" text="Business" />
+
+A field for linking a work item to one or more [releases](https://docs.plane.so/releases) in the project. Supports multi-select.
+
+### URL
+
+A field for a single URL. Members enter a link to an external resource, like a design file, a document, or a ticket in another tool, and it renders as a clickable link on the work item.
 
 ## Use work item types
 

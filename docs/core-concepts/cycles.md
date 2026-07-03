@@ -52,7 +52,7 @@ If the Project Admin sets the **Timezone** in [Project settings](/core-concepts/
 You can modify the name, description, start and due dates of active and upcoming cycles at any time.
 :::
 
-## Start and stop cycles <Badge type="info" text="Pro" />
+## Manually start and stop cycles <Badge type="info" text="Pro" />
 
 While Cycles typically run for their set duration, sometimes you need more flexibility in managing your work periods. You can manually control when a Cycle begins or ends using the interface controls.
 
@@ -81,6 +81,21 @@ To end a Cycle before its scheduled completion date, you can:
 Any unfinished work items in the ended Cycle will remain in their current state. The burn-down chart and progress metrics will be finalized based on the completion status at the time you end the Cycle.
 
 This manual control gives you the flexibility to adapt your Cycles to your team's actual work rhythm, rather than being strictly bound to predetermined dates.
+
+## Override scheduled cycles <Badge type="warning" text="Enterprise Grid" />
+
+Cycles start and end automatically when their scheduled dates arrive. With this feature, a cycle's dates no longer trigger state changes on their own. The admin decides when each cycle actually starts and ends.
+
+So if a cycle is scheduled to start on July 5, it stays upcoming past that date until the admin clicks **Start cycle**. If it's set to end on July 5, it keeps running until the admin clicks **End cycle**.
+
+To enable this feature:
+
+1. Go to **Settings → Features → Cycles** inside the project.
+2. Find **Manually start and end cycles** and toggle it on.
+
+When ending a cycle, if there are incomplete work items, you'll be asked whether to leave them in place or transfer them to another cycle before confirming.
+
+> Turning this off does not affect any cycle already in progress, it only restores automatic scheduling going forward.
 
 ## Parallel cycles <Badge type="warning" text="Enterprise Grid" />
 
