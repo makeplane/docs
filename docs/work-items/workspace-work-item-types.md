@@ -83,18 +83,72 @@ The property is now available to attach to any work item type.
 
 If the modal shows "No properties available," either all existing properties are already linked to that type, or no custom properties have been created at the workspace level yet. Create new properties from the **Properties** tab first.
 
-### Property types
+## Property types
 
-| Property&nbsp;type      | Description                                                                                                                      |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| **Text**                | Single line or paragraph text. Can be set to read-only with a default value. Read-only properties cannot be marked as mandatory. |
-| **Number**              | Numeric value with an optional default.                                                                                          |
-| **Dropdown**            | Single-select or multi-select from a defined list of options.                                                                    |
-| **Boolean**             | True/false toggle. Defaults to false. Cannot be marked as mandatory.                                                             |
-| **Date**                | Date picker with a consistent format across all properties.                                                                      |
-| **Member&nbsp;picker**  | Single-select or multi-select from the list of project members.                                                                  |
-| **Release&nbsp;picker** | Select from available Releases in the project.                                                                                   |
-| **URL**                 | A URL field for linking to external resources.                                                                                   |
+### Text
+
+A freeform text field. When you add a text property, you choose one of three formats:
+
+- **Single line:** A compact input for short values like names, codes, or labels.
+- **Paragraph:** A multi-line input for longer freeform content.
+- **Read-only:** A fixed text display. You enter the text when setting up the property, and members see it on every work item but cannot edit it. Read-only text properties cannot be marked as mandatory.
+
+### Number
+
+A numeric field that accepts decimal values. You can optionally set a default value that pre-fills when a work item is created.
+
+### Dropdown
+
+A selection field backed by a list of options you define. When setting up the property, add your options under **Add options**. Each option can have a name and an icon.
+
+Choose **Single select** to let members pick one option at a time, or **Multi select** to allow multiple selections.
+
+### Boolean
+
+A true/false toggle. The default state is false. Because it already represents a complete two-state answer, boolean properties cannot be marked as mandatory.
+
+### Date
+
+A date picker field. You choose a display format for dates across this property:
+
+- `Jan 15, 2025`
+- `15/01/2025`
+- `01/15/2025`
+- `2025/01/15`
+
+The format you pick applies consistently to all work items using this property.
+
+### Member picker
+
+A people-selection field that lists all members of the project. Choose **Single select** to allow one member, or **Multi select** to allow several.
+
+Members selected through a member picker property are automatically added as subscribers to that work item, so they receive notifications for updates, comments, and status changes.
+
+### Release picker <Badge type="tip" text="Business" />
+
+A field for linking a work item to one or more [releases](https://docs.plane.so/releases) in the project. Supports multi-select.
+
+### Rich text <Badge type="warning" text="Enterprise Grid" />
+
+A full document editor field. Unlike a plain text property, rich text supports formatting: headings, lists, code blocks, inline code, bold, italic, and embedded images. Each work item stores its own content for the field, and that content is versioned and searchable.
+
+### URL
+
+A field for a single URL. Members enter a link to an external resource, like a design file, a document, or a ticket in another tool, and it renders as a clickable link on the work item.
+
+### Formula <Badge type="warning" text="Enterprise Grid" />
+
+A computed, read-only field. You write an expression when setting up the property, and Plane evaluates it automatically for each work item. Members cannot edit the value directly; it always reflects the formula result.
+
+Formulas can reference other properties on the work item and use conditional logic to produce a result. A few examples:
+
+Categorize by estimate size:
+`{estimate_point} > 5 ? "Large" : "Small"`
+
+Flag high-priority items:
+`{priority} == "HIGH" ? "Urgent: " + {name} : {name}`
+
+Because the value is always derived, formula properties cannot be marked as mandatory.
 
 ## Import types into a project
 

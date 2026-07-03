@@ -229,6 +229,46 @@ One row per group, with a count column. The y-axis metric is fixed to **work ite
 and cannot be changed - table charts always show a raw count. The appearance settings
 (column color, legend, tooltip) match the bar chart config options.
 
+### Work Items Table <Badge type="warning" text="Enterprise Grid" />
+
+A work items table lists individual work items as rows with configurable columns. Unlike the table chart, which aggregates issues into groups and shows a count, the work items table renders one row per work item — giving you a live filtered spreadsheet view of your issues directly on a dashboard.
+
+It is most useful when you need a quick-reference list of specific issues on a dashboard — for example, all open blockers, issues due this week, or unassigned high-priority work — without navigating to a project view.
+
+**Basic**
+
+Rows display each matching work item with its identifier and name always visible. You choose which additional columns appear, how many rows to show per page, and navigate across pages directly on the widget.
+
+The widget does not have an x-axis property, y-axis metric, or group-by dimension — it is a flat list, not a chart. Dashboard-level and widget-level filters control which work items appear.
+
+**Columns**
+
+The identifier, name, and project are always present. All other columns are optional and can be enabled or disabled in the widget configuration.
+
+| Column            | What it shows                               |
+| ----------------- | ------------------------------------------- |
+| State             | State name, color, and group                |
+| Priority          | Work item priority                          |
+| Assignees         | Assigned members with avatars               |
+| Due date          | Target date                                 |
+| Start date        | Start date                                  |
+| Labels            | All labels on the work item                 |
+| Cycle             | Current cycle                               |
+| Modules           | All modules the work item belongs to        |
+| Work item type    | The type, if work item types are configured |
+| Estimate points   | Estimate value                              |
+| Created by        | Member who created the work item            |
+| Sub-work items    | Count of child work items                   |
+| Attachments       | Attachment count                            |
+| Links             | Link count                                  |
+| Customer requests | Number of customer requests linked          |
+| Customers         | Number of customers linked                  |
+| Releases          | Releases the work item is part of           |
+
+**Rows per page**
+
+Set between 1 and 100 rows per page (default 10). Use a lower number for a compact at-a-glance list and a higher number when you need to scan many items at once.
+
 ## Configure a widget
 
 Open the configuration sidebar by clicking the widget or by clicking the pencil icon.
@@ -342,6 +382,96 @@ A dashboard can be exported to a PDF file. Each widget is rendered into its expo
 Plane renders each widget into the PDF. Chart widgets become images; table and number widgets
 are rendered as structured content. The PDF renderer respects the desktop grid layout and places widgets in their configured
 positions and sizes across pages.
+
+## Share a dashboard <Badge type="warning" text="Enterprise Grid" />
+
+Sharing a dashboard grants specific workspace members access to a private dashboard without making it public to the whole workspace. You choose which members to invite and what level of access they get.
+
+A shared dashboard appears in the recipient's **Shared** tab in the dashboard list.
+
+### Share with members
+
+1. Open the dashboard.
+2. Click **Share** in the header.
+3. In the modal, open the **Share** tab.
+4. Search for a workspace member and select them. They are added with **View** access by default.
+5. To change their access level, click the permission dropdown next to their name and select **View** or **Edit**.
+6. Click **Save**.
+
+You can add multiple members before saving. All changes are applied in one batch when you click Save.
+
+Only the dashboard owner can share a dashboard. Shared members cannot re-share it with others.
+
+### Access levels
+
+**View** - The member can open and read the dashboard. They cannot add, edit, move, or delete widgets, and cannot change dashboard settings or filters.
+
+**Edit** - The member can do everything the owner can, except delete the dashboard, change its visibility, or manage sharing.
+
+### Remove a member
+
+1. Open **Share** in the header, then the **Share** tab.
+2. Find the member in the list and click the permission dropdown, then **Remove**.
+3. Click **Save**.
+
+Removed members immediately lose access. The dashboard disappears from their Shared tab.
+
+### The Shared tab
+
+Dashboards appear under the **Shared** tab in the left sidebar when
+
+- You own a private dashboard that you have shared with at least one member.
+- Someone has shared their private dashboard with you.
+
+Both cases show in the same tab. You can tell which dashboards you own by the presence of the Share and edit controls in the header. Shared members who do not own the dashboard will not see those controls.
+
+### Limits
+
+There is no limit on the number of members you can share a dashboard with. You can share with any active, non-guest workspace member. The dashboard owner and guest-role members cannot be added.
+
+---
+
+## Publish a dashboard <Badge type="warning" text="Enterprise Grid" />
+
+Publishing a dashboard generates a unique public URL that anyone can open with no Plane account required. It is the right choice when you want to share dashboard data with stakeholders, clients, or teammates who are not part of your workspace.
+
+A published dashboard is always read-only for viewers. They can see widget data but cannot edit the dashboard, change filters, or modify anything.
+
+### Publish
+
+1. Open the dashboard.
+2. Click **Share** in the header.
+3. In the modal, open the **Publish** tab.
+4. Click **Publish**. Plane generates a unique link.
+5. Copy the link and share it.
+
+Anyone with the link can view the dashboard without signing in.
+
+Only the dashboard owner can publish or unpublish a dashboard.
+
+### Unpublish
+
+1. Open the dashboard.
+2. Click **Share**, then the **Publish** tab.
+3. Click **Unpublish**.
+
+The public URL immediately becomes inaccessible. The link is deactivated but not permanently deleted, so the same anchor can be reactivated if you publish again.
+
+### Regenerate the link
+
+If you need to invalidate the current public URL without unpublishing the dashboard, click **Regenerate link** in the Publish tab. This creates a new URL. The old URL stops working immediately.
+
+Use this if the link was shared with the wrong people and you want to cut off their access without taking the dashboard fully offline.
+
+### What viewers see
+
+Viewers see the dashboard name, all widgets in their configured layout, and all data subject to the dashboard-level and widget-level filters. The grid is responsive; widgets stack vertically on smaller screens.
+
+Viewers cannot see who owns the dashboard, edit any settings, or interact beyond reading the data.
+
+### Access controls
+
+Published dashboards are link-only. There is no password protection, no expiration date, and no view limit. Anyone with the URL can view the dashboard. To restrict access, unpublish the dashboard or regenerate the link.
 
 ## Resize and reposition widgets
 

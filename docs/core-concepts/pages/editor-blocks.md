@@ -54,6 +54,20 @@ Use the `/embed` slash command to quickly insert an embed block.
 
 This opens an embed dialog where you can paste any supported link. The system automatically detects the content type and creates an appropriate embed with a rich preview. This eliminates the need for users to navigate away from your content to view referenced materials.
 
+## Embed Dashboard widget <Badge type="warning" text="Enterprise Grid" />
+
+Embed a live dashboard widget directly in a page. Instead of linking out to a dashboard, you bring a single chart, table, or metric from an existing dashboard into your page. It renders inline and stays in sync with your data.
+
+Type `/` in the editor and search for **Link dashboard widgets** to insert a dashboard widget block.
+
+When you insert the block, a selector opens where you choose a dashboard and then pick the specific widget you want to embed. The widget appears inline in your page.
+
+You can change the widget at any time by hovering over the block and clicking **Change widget**. To remove it, click **Delete** from the block menu.
+
+:::tip
+You need at least one dashboard with widgets already set up before you can embed one in a page. See [Dashboards](/dashboards) to get started.
+:::
+
 ## Image
 
 Inserts and displays images within your content.
@@ -170,7 +184,7 @@ Generate or transform content directly within your pages using AI. The AI Block 
 
 Type `/ai` to insert an AI Block. The block appears with a prompt input area and a dropdown to select the action type.
 
-### Action types
+#### Action types
 
 **Summarize page**  
 Generates a concise summary of your page content. Useful for creating executive summaries, TL;DRs, or quick overviews of longer documents.
@@ -189,3 +203,47 @@ Adds a horizontal line to separate content sections visually.
 ## Emoji
 
 Add emojis to your content across all Plane editors. Type `/emoji` to open the picker or use `:` and start typing for suggestions like `:smile:`. Choose from standard Unicode emojis and GitHub's extended collection.
+
+## Date block <Badge type="warning" text="Enterprise Grid" />
+
+The date block inserts an inline date picker anywhere in a page. It renders as a small pill showing a formatted date and can be clicked to open a calendar and change the selection.
+
+#### Insert a date block
+
+Type `/date` in the editor to open the slash command menu and select **Date**. You can also search for it by typing `/calendar`, `/deadline`, or `/due`.
+
+The block is inserted at the cursor position with no date selected.
+
+#### Pick a date
+
+Click the date pill to open a calendar popover. Select any date. The popover closes and the pill updates to show the selected date formatted as `Jan 15, 2025`.
+
+Click the pill again at any time to change the date.
+
+#### In read-only pages
+
+The date renders as plain formatted text. It cannot be clicked or changed.
+
+## Status block <Badge type="warning" text="Enterprise Grid" />
+
+The status block inserts an inline colored label anywhere in a page. You define the text and choose from six colors. Use it to mark sections of a page with a state, flag, or category without creating a separate work item.
+
+#### Insert a status block
+
+Type `/status` in the editor and select **Status**. You can also search for it by typing `/label`, `/badge`, or `/tag`.
+
+The block is inserted with the default text "STATUS" and a gray background.
+
+#### Edit the label
+
+Click the status badge to open a popover with a text field and a color picker.
+
+Type your label text in the field. Changes appear on the badge as you type.
+
+Select a color from the six options: Gray, Emerald, Crimson, Yellow, Indigo, Purple.
+
+Press **Enter** or click outside the popover to close it and save.
+
+#### In read-only pages
+
+The status badge renders with its color and text preserved. It cannot be clicked or edited.
