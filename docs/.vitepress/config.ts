@@ -723,6 +723,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
         text: "AI",
         items: [
           { text: "Plane AI", link: "/ai/plane-ai" },
+          { text: "Skills", link: "/ai/plane-ai-skills" },
           { text: "AI credits", link: "/ai/plane-ai-credits" },
           { text: "MCP Connectors", link: "/ai/mcp-connectors" },
           {
