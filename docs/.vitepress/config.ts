@@ -769,6 +769,10 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
     ],
   },
 
+  // Enables per-page git timestamps used for sitemap <lastmod> (and the
+  // "Last updated" footer). Without this, sitemap entries omit lastmod.
+  lastUpdated: true,
+
   sitemap: {
     hostname: "https://docs.plane.so",
   },
