@@ -5,28 +5,44 @@ description: Learn how to use Plane's mobile app for iOS and Android.
 
 # Plane Mobile App
 
-The Plane mobile app is available on Android and iOS devices.
+The Plane mobile app puts your work in your pocket.
 
-With the mobile app, you can easily manage your projects on the go. Whether you're creating, assigning, or tracking work items, stay connected with your team and keep work moving forward no matter where you are. Download the app to experience project management at your fingertips!
+  <div class="mobile-img-container">
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/home-page.webp" alt="Home" width="320" />
+    </div>
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/projects.webp" alt="Projects" width="320" />
+    </div>
+  </div>
+
+Create and update work items, comment and mention teammates, track cycles, and stay on top of notifications from your phone. It is available for iOS and Android, and works alongside the web app: anything you change on mobile syncs to the web and everywhere else you use Plane.
+
+This page covers what is specific to mobile: getting the app, signing in, finding your way around, and managing notifications.
 
 ## System requirements
 
-| OS      | Version                         |
-| ------- | ------------------------------- |
-| Android | Android 10+ (SDK 29+) or higher |
-| iOS     | iOS 13 or higher                |
+| Platform | Minimum version               |
+| -------- | ----------------------------- |
+| iOS      | iOS 14.0 or later             |
+| Android  | Android 10 or later (SDK 29+) |
 
-## Download
+**Editions and plans**
+
+- Available on **Plane Cloud** and **self-hosted Commercial Edition** (from version `v1.12.0`).
+- Supported on **all plans, including Free**.
+
+## Download and install
 
 Head over to [Download](https://plane.so/download) to install the app for Android or iOS.
 
-::: warning Limitation
-Sign-up isn't available through the mobile app. To use the app, you'll need to be a member of at least one workspace.
-:::
+Once installed, open the app and sign in to your workspace.
 
 ## Sign in
 
-The app is available on Cloud and for self-hosted instances on all plans of the Commercial Edition starting from version `v1.12.0`. Here’s how you can get started:
+You can sign in to the mobile app with the same credentials you use on the web.
+
+Here’s how you can get started:
 
 - **For cloud users**  
   Tap **Cloud sign in** and enter your credentials to log in.
@@ -36,150 +52,166 @@ The app is available on Cloud and for self-hosted instances on all plans of the 
 
   <div class="mobile-img-container">
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/mobile-self-hosted.webp" alt="Home" width="320" />
+      <img src="https://media.docs.plane.so/mobile/onboarding.webp" alt="Onboarding" width="320" />
     </div>
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/plane-app-url.webp" alt="Projects" width="320" />
+      <img src="https://media.docs.plane.so/mobile/sign-in-selfhosted.webp" alt="Selfhosted sign in" width="320" />
     </div>
   </div>
 
-## Navigate the app
+## Switching workspaces
 
-The navigation bar at the bottom of your screen helps you quickly access key areas of the app.
+To switch between different workspaces, simply tap your workspace icon in the top left corner on the Home page and switch between them from the workspace switcher. Your data, projects, and notifications update to reflect the selected workspace.
 
-- **Home** <br/>
-  Your dashboard includes a search box and familiar sections like **Your Work** and **Favorites**. There’s also a **Jump back in** section to easily access your recent projects, cycles, modules, pages, and work items.
+The app is built around a bottom bar with three tabs and a floating **+** create button.
 
-- **Projects** <br/>
-  This screen shows all the projects you have access to, along with your role and the active work items count. Tap the star icon to add a project to your **Favorites** for quick access.
+## Get around the app
 
-    <div class="mobile-img-container">
-      <div class="box">
-        <img src="https://media.docs.plane.so/mobile/app-home.webp" alt="Home" width="320"/>
-      </div>
-      <div class="box">
-      <img src="https://media.docs.plane.so/mobile/app-projects.webp" alt="Projects" width="320"/>
-      </div>
-    </div>
+### The three tabs
 
-- **Create** <br/>
-  Need to create a new project, work item, or page? Tap the + Create button.
-  - **New project**  
-    Add the project details such as icon, name, description, and the lead. Mark it public or private. Hit the **Create** button.
+- **Home** - your starting point for the workspace.
+- **Inbox** - your notification center, with an unread badge.
+- **Search** - search across the workspace for projects, work items, cycles, modules, pages, and more.
 
-  - **New page**
-    - Select the project by clicking the project name at the top.
-    - Add an icon and the page title.
-    - You can use the toolbar at the bottom to add different content blocks and format them as needed.
-    - Hit the **Create** button to add it to your project.
-
-    <div class="mobile-img-container">
-        <div class="box">
-            <img src="https://media.docs.plane.so/mobile/app-create-project.webp" alt="Create project" width="320"/>
-        </div>
-        <div class="box">
-            <img src="https://media.docs.plane.so/mobile/app-create-page.webp" alt="Create page" width="320"/>
-        </div>
-    </div>
-
-  - **New work item**
-    - Select the project by clicking the project name at the top.
-    - Add work item details like title and description. For the description, you can use the toolbar at the bottom to add different blocks and format the text as needed.
-    - Tap the **+** icon at the bottom left to assign members, priority, state, and other properties.
-    - Hit the **Create** button to add it to your project.
-
-    <div class="mobile-img-container">
-        <div class="box">
-            <img src="https://media.docs.plane.so/mobile/app-create-issue.webp" alt="Create work item" width="320"/>
-        </div>
-        <div class="box">
-            <img src="https://media.docs.plane.so/mobile/app-issue-properties.webp" alt="Work item properties" width="320"/>
-        </div>
-    </div>
-
-- **Inbox** <br/>
-  Stay updated with notifications about work items you’ve created, are assigned to, or where you’ve been mentioned. You’ll never miss an important update again.
-
-- **Profile** <br/>
-  View your profile and manage your account here. You can also switch between workspaces or log out of the app from this screen.
-
-    <div class="mobile-img-container">
-      <div class="box">
-      <img src="https://media.docs.plane.so/mobile/app-inbox.webp" alt="Inbox" width="320"/>
-      </div>
-      <div class="box">
-      <img src="https://media.docs.plane.so/mobile/app-profile.webp" alt="Profile" width="320"/>
-      </div>
-    </div>
-
-### Global search
-
-At the top of the Home screen, you’ll find the global search bar, which helps you quickly find projects, work items, cycles, modules, or pages. It's a powerful tool to jump right to what you need.
-
-### Switch workspaces
-
-To switch between different workspaces, simply tap your workspace icon in the top-right corner or navigate to your profile settings at the bottom right of the screen.
-
-## Track projects
-
-Stay on top of your work by tracking all your project's elements with ease:
-
-1. Tap the **Projects** icon in the bottom navigation bar.
-2. Select the project you want to track.
-
-You will notice that the bottom navigation bar now shows different buttons:
-
-- **Work items** <br/>
-  View a list of all, active and backlog work items.
-  - You can search, sort, and filter work items using the icon buttons on the top right.
-
-  - Tap any work item to view or modify work item details and view the activity. You can also add comments, copy the link, and share the work item with a personalized message via other apps.
-
-  - Click the **+ Add** button on the bottom left to add sub-work items and relations. You can also swipe left or right to view sub-work items, relations, links, and attachments.
-
-    <div class="mobile-img-container">
-        <div class="box">
-            <img src="https://media.docs.plane.so/mobile/app-issues.webp" alt="Work items" width="320"/>
-        </div>
-        <div class="box">
-            <img src="https://media.docs.plane.so/mobile/app-issue-details.webp" alt="Work item details" width="320"/>
-        </div>
-    </div>
-    <br/>
-
-    ::: tip
-    You can add or edit the priority, state, start date, target date, cycle, and module by tapping the pencil icon in the **Properties** section. Alternatively, use the icons on the top right for choosing Priority, Cycle, and Module.
-    :::
-
-- **Cycles** <br/>
-  Track active and upcoming cycles, and dive into the work items within each cycle.
-
-- **Create** <br/>
-  Similar to the Create button on the main navigation bar, except that you can only create new work items and pages here.
-
-- **Modules** <br/>
-  See all modules in your project and their progress. Tap the module to view the work items that are a part of it.
-
-- **Pages** <br/>
-  View all project pages, whether public, private, or archived. You can mark important pages as favorites or search for specific content.
-
-  <div class="mobile-img-container">
+<div class="mobile-img-container">
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/app-cycles.webp" alt="Cycles" width="320" />
+      <img src="https://media.docs.plane.so/mobile/inbox.webp" alt="Inbox" width="320" />
     </div>
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/app-modules.webp" alt="Modules" width="320" />
+      <img src="https://media.docs.plane.so/mobile/quick-actions.webp" alt="Quick actions" width="320" />
     </div>
   </div>
-  <br />
 
-## Push notifications
+### Create
+
+Tap the floating **+ Create** button to add new content from anywhere. Depending on your role and enabled features, you can create a project, work item, a page, or a sticky.
+
+### Home
+
+Home mirrors the web and is organized into sections you can rearrange or hide (tap Manage widgets icon next to your profile to customize).
+
+At the top of Home is a row of quick-access tiles for Plane's products, mirroring the web. Tap a tile to open that product.
+
+- **Projects** - always available. Your projects and everything inside them: work items, cycles, modules, and pages. This is where most of your day-to-day work happens.
+- **Wiki** - your workspace's knowledge base of pages, kept separate from any single project. Appears when Wiki is enabled and you have permission to edit.
+- **Plane AI** - the Pi assistant, for chatting, asking questions about your work, and picking up your AI threads. Appears when AI is enabled for your workspace.
+
+<div class="mobile-img-container">
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/wiki.webp" alt="Wiki" width="320" />
+    </div>
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/ai.webp" alt="AI" width="320" />
+    </div>
+  </div>
+
+Below the tiles are sections you can rearrange or hide.
+
+- Your work - assigned work items and pages you have created
+- Recent activity - projects, cycles, modules, pages, and work items you've opened recently
+- Favorites - the projects and items you've starred
+- Stickies - your quick notes (when enabled)
+
+The Home header also holds the workspace switcher and a catch-up card.
+
+### Gestures
+
+- Pull down to refresh a list or screen.
+- Tap a work item to open its detail view.
+- Swipe on some list items for quick actions. <Badge type="info" text="Coming soon" />
+- Long-press and drag to reorder items where supported.
+
+### Appearance
+
+The app supports Light, Dark, and System themes. System follows your device's appearance setting automatically.
+
+<div class="mobile-img-container">
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/profile.webp" alt="Profile" width="320" />
+    </div>
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/manage-widgets.webp" alt="Manage widgets" width="320" />
+    </div>
+  </div>
+
+## Work on the go
+
+The mobile app supports the core of your day-to-day work. Each area links to its full documentation.
+
+### Work items
+
+Create work items and edit their properties. Open a work item to manage its sub-work items, links, attachments, and more.
+See [Work items](/core-concepts/issues/overview).
+
+### Comments and mentions
+
+Comment on any work item and @mention teammates to notify them. React to comments. Comments and mentions sync across web and mobile.
+See [Comments and mentions](/communication-and-collaboration/comments-and-activity).
+
+### Cycles and modules
+
+View cycles and modules, open them to see their work items, and add or move work items between them.
+See [Cycles](/core-concepts/cycles) and [Modules](/core-concepts/modules).
+
+### Pages
+
+Read and edit pages in the mobile editor, with rich-text formatting, images, and more.
+See [Pages](/core-concepts/pages/overview).
+
+### Intake
+
+Review and manage incoming work items from intake.
+See [Intake](/intake/overview).
+
+## Notifications
+
+Notifications are where the mobile app is especially useful, letting you respond to what needs your attention without opening your laptop.
+
+### Push notifications
 
 ::: info
 Push notifications are currently available only for Plane Cloud users.
 :::
 
-The Plane mobile app supports push notifications to keep you updated on important activities. To start receiving notifications, make sure to turn them on in the app settings. Once turned on, you'll be notified about relevant updates, ensuring you never miss an important change or task.
+The app sends push notifications for events that involve you, such as new assignments, comments, and mentions on work items, epics, and intake items. Notifications appear on your device's lock screen and update your app badge count.
+
+Push notifications are delivered through your device's native system (Apple Push Notification service on iOS, Firebase Cloud Messaging on Android). To receive them, allow notifications for Plane when the app first asks, or enable them later in your device settings.
+
+### Managing notification preferences <Badge type="info" text="Coming soon" />
+
+Control which notifications you receive from your notification settings in the app. Adjust these to reduce noise or focus only on what matters most to you.
+
+### The Inbox
+
+Open the Inbox tab to read notifications and tap to jump to the item; mark as read and filter your inbox (e.g. unread, snoozed, or archived only). Your inbox stays in sync across mobile and web.
+
+Your notification inbox stays in sync across mobile and web.
+
+See [Notifications](/communication-and-collaboration/notifications).
+
+## Home-screen widgets and shortcuts
+
+On iOS/iPadOS, add Plane widgets for one-tap capture: Create Work Item and Create Page. You can also long-press the app icon for Quick Actions.
+
+:::info
+Home-screen widgets are not available on Android yet, but coming soon. We'll also be adding more widgets.
+:::
+
+## What's different on mobile
+
+The mobile app focuses on the work you are most likely to do away from your desk. Some capabilities available on the web are not present on mobile, or work differently.
+
+Feature availability also depends on your plan. Features such as Wiki and AI capabilities appear in the app only when they are enabled for your workspace.
+
+## Privacy and security
+
+- Privacy Screen - blurs the app's contents in the app switcher and background so sensitive work isn't visible in previews. Enable it in your Profile settings.
+- Device integrity - Plane doesn't run on jailbroken or rooted devices.
+- Secure storage - all sensitive data is securely stored using the Android Keystore and iOS Keychain.
+
+## Offline and syncing
+
+The app caches recently viewed data so those screens load quickly and stay viewable when your connection drops. Editing requires a connection - there is no offline edit queue. When back online, pull to refresh to sync.
 
 ## Troubleshooting
 
@@ -204,7 +236,7 @@ Make sure you have a browser (like Chrome, Firefox, or Edge) installed on your p
 
 **App still not opening, even with a browser installed?**
 
-1. Check which profile the Plane app is installed under — Personal or Work.
+1. Check which profile the Plane app is installed under - Personal or Work.
 2. Make sure the browser is also installed in the same profile.
 
 **Browser opens, but sign-in keeps looping?**  
