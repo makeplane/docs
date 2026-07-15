@@ -5,7 +5,7 @@ description: Install and use the Plane desktop app for macOS, Windows, and Linux
 
 # Plane desktop app
 
-The Plane desktop app is a dedicated application for macOS, Windows, and Linux.
+The Plane desktop app is a dedicated application for macOS and Linux.
 
 ![Desktop app](https://media.docs.plane.so/desktop/desktop-app.webp#hero)
 
@@ -15,10 +15,10 @@ The desktop app loads the full Plane web app, so everything you can do on the we
 
 ## System requirements
 
-The desktop app is available for
+The desktop app runs on anything Electron 41 supports
 
-- **macOS**
-- **Linux**
+- **macOS** 12 or later
+- **Linux** — modern 64-bit distributions (Ubuntu 18.04+ or equivalent)
 
 To connect to a self-managed deployment, the instance must be on **Plane Commercial v3.0.0 or later**. Earlier versions do not support the desktop app.
 
