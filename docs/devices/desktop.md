@@ -3,7 +3,7 @@ title: Plane desktop app
 description: Install and use the Plane desktop app for macOS, Windows, and Linux, including connecting to your instance, working in tabs and windows, notifications, and updates.
 ---
 
-# Plane desktop app
+# Plane Desktop App
 
 The Plane desktop app is a dedicated application for macOS and Linux.
 
