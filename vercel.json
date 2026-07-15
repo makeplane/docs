@@ -297,12 +297,5 @@
       "source": "/ai/pi-chat",
       "destination": "/ai/plane-ai"
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
-      "destination": "/:path*.md"
-    }
   ]
 }
