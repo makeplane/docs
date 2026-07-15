@@ -7,6 +7,15 @@ description: Learn how to use Plane's mobile app for iOS and Android.
 
 The Plane mobile app puts your work in your pocket.
 
+  <div class="mobile-img-container">
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/home-page.webp" alt="Home" width="320" />
+    </div>
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/projects.webp" alt="Projects" width="320" />
+    </div>
+  </div>
+
 Create and update work items, comment and mention teammates, track cycles, and stay on top of notifications from your phone. It is available for iOS and Android, and works alongside the web app: anything you change on mobile syncs to the web and everywhere else you use Plane.
 
 This page covers what is specific to mobile: getting the app, signing in, finding your way around, and managing notifications.
@@ -43,10 +52,10 @@ Here’s how you can get started:
 
   <div class="mobile-img-container">
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/mobile-self-hosted.webp" alt="Home" width="320" />
+      <img src="https://media.docs.plane.so/mobile/onboarding.webp" alt="Home" width="320" />
     </div>
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/plane-app-url.webp" alt="Projects" width="320" />
+      <img src="https://media.docs.plane.so/mobile/sign-in-selfhosted.webp" alt="Projects" width="320" />
     </div>
   </div>
 
@@ -60,9 +69,18 @@ The app is built around a bottom bar with three tabs and a floating **+** create
 
 ### The three tabs
 
-- Home - your starting point for the workspace.
-- Inbox - your notification center, with an unread badge.
-- Search - search across the workspace for projects, work items, cycles, modules, pages, and more.
+- **Home** - your starting point for the workspace.
+- **Inbox** - your notification center, with an unread badge.
+- **Search** - search across the workspace for projects, work items, cycles, modules, pages, and more.
+
+<div class="mobile-img-container">
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/inbox.webp" alt="Home" width="320" />
+    </div>
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/quick-actions.webp" alt="Projects" width="320" />
+    </div>
+  </div>
 
 ### Create
 
@@ -72,11 +90,20 @@ Tap the floating **+ Create** button to add new content from anywhere. Depending
 
 Home mirrors the web and is organized into sections you can rearrange or hide (tap Manage widgets icon next to your profile to customize).
 
-At the top of Home is a row of quick-access tiles for Plane's products, mirroring the web. Tap a tile to open that product:
+At the top of Home is a row of quick-access tiles for Plane's products, mirroring the web. Tap a tile to open that product.
 
-- **Projects** — always available. Your projects and everything inside them: work items, cycles, modules, and pages. This is where most of your day-to-day work happens.
-- **Wiki** — your workspace's knowledge base of pages, kept separate from any single project. Appears when Wiki is enabled and you have permission to edit.
-- **Plane AI** — the Pi assistant, for chatting, asking questions about your work, and picking up your AI threads. Appears when AI is enabled for your workspace.
+- **Projects** - always available. Your projects and everything inside them: work items, cycles, modules, and pages. This is where most of your day-to-day work happens.
+- **Wiki** - your workspace's knowledge base of pages, kept separate from any single project. Appears when Wiki is enabled and you have permission to edit.
+- **Plane AI** - the Pi assistant, for chatting, asking questions about your work, and picking up your AI threads. Appears when AI is enabled for your workspace.
+
+<div class="mobile-img-container">
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/wiki.webp" alt="Home" width="320" />
+    </div>
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/ai.webp" alt="Projects" width="320" />
+    </div>
+  </div>
 
 Below the tiles are sections you can rearrange or hide.
 
@@ -98,6 +125,16 @@ The Home header also holds the workspace switcher and a catch-up card.
 
 The app supports Light, Dark, and System themes. System follows your device's appearance setting automatically.
 
+
+<div class="mobile-img-container">
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/profile.webp" alt="Home" width="320" />
+    </div>
+    <div class="box">
+      <img src="https://media.docs.plane.so/mobile/manage-widgets.webp" alt="Projects" width="320" />
+    </div>
+  </div>
+
 ## Work on the go
 
 The mobile app supports the core of your day-to-day work. Each area links to its full documentation.
@@ -105,27 +142,27 @@ The mobile app supports the core of your day-to-day work. Each area links to its
 ### Work items
 
 Create work items and edit their properties. Open a work item to manage its sub-work items, links, attachments, and more.
-See [Work items][/core-concepts/issues/overview].
+See [Work items](/core-concepts/issues/overview).
 
 ### Comments and mentions
 
 Comment on any work item and @mention teammates to notify them. React to comments. Comments and mentions sync across web and mobile.
-See [Comments and mentions][/communication-and-collaboration/comments-and-activity].
+See [Comments and mentions](/communication-and-collaboration/comments-and-activity).
 
 ### Cycles and modules
 
 View cycles and modules, open them to see their work items, and add or move work items between them.
-See [Cycles][/core-concepts/cycles] and [Modules][/core-concepts/modules].
+See [Cycles](/core-concepts/cycles) and [Modules](/core-concepts/modules).
 
 ### Pages
 
 Read and edit pages in the mobile editor, with rich-text formatting, images, and more.
-See [Pages][/core-concepts/pages/overview].
+See [Pages](/core-concepts/pages/overview).
 
 ### Intake
 
 Review and manage incoming work items from intake.
-See [Intake][/intake/overview].
+See [Intake](/intake/overview).
 
 ## Notifications
 
@@ -153,7 +190,7 @@ Your notification inbox stays in sync across mobile and web.
 
 See [Notifications](/communication-and-collaboration/notifications).
 
-## Home-screen widgets and shortcuts (iOS)
+## Home-screen widgets and shortcuts
 
 On iOS/iPadOS, add Plane widgets for one-tap capture: Create Work Item and Create Page. You can also long-press the app icon for Quick Actions.
 
@@ -200,7 +237,7 @@ Make sure you have a browser (like Chrome, Firefox, or Edge) installed on your p
 
 **App still not opening, even with a browser installed?**
 
-1. Check which profile the Plane app is installed under — Personal or Work.
+1. Check which profile the Plane app is installed under - Personal or Work.
 2. Make sure the browser is also installed in the same profile.
 
 **Browser opens, but sign-in keeps looping?**  
