@@ -7,6 +7,8 @@ description: Install and use the Plane desktop app for macOS, Windows, and Linux
 
 The Plane desktop app is a dedicated application for macOS, Windows, and Linux.
 
+![Desktop app](https://media.docs.plane.so/desktop/desktop-app.webp#hero)
+
 It runs Plane in its own window, separate from your browser, with desktop conveniences like browser-style tabs, multiple windows, an unread notification badge on your dock or taskbar, deep links, and automatic updates.
 
 The desktop app loads the full Plane web app, so everything you can do on the web you can do in the desktop app. This page covers what is specific to desktop: installing it, connecting to your instance, working with tabs and windows, and keeping the app updated. For how individual features work, follow the links to their full documentation.
@@ -22,7 +24,7 @@ To connect to a self-managed deployment, the instance must be on **Plane Commerc
 
 ## Download and install
 
-1. Go to the Plane download page at [plane.so/download](https://plane.so/download).
+1. Go to the [Plane download page](https://plane.so/download).
 2. Download the build for your operating system.
 3. Open the downloaded file and follow your operating system's install steps.
 4. Launch Plane.
@@ -32,6 +34,8 @@ The desktop app updates itself automatically. See [Automatic updates and What's 
 ## Connect to your instance
 
 The first time you open the app, you see a **Welcome to Plane** screen asking how you want to connect. This lets the same app work with Plane Cloud or a self-managed deployment.
+
+![Connect to your instance](https://media.docs.plane.so/desktop/connect-to-your-instance.webp#hero)
 
 ### Cloud
 
@@ -61,6 +65,17 @@ A few things are specific to self-managed deployments.
 - **If you see "No authentication methods available,"** your administrator has not enabled any sign-in method yet. Contact them.
 - **If the instance has not been set up yet,** you see a "Welcome to Plane" setup screen instead of a sign-in page. The first administrator must complete instance setup before anyone can sign in.
 
+#### Configure OAuth for desktop
+
+If your instance uses Google, GitHub, GitLab, or Gitea for sign-in, an administrator must register the desktop callback URIs in each OAuth app before those buttons will work in the desktop app. Configure them in **God Mode → Authentication →** the relevant provider **→ Desktop** section.
+
+Add the following callback URIs, using your instance URL as the origin:
+
+- `/auth/desktop/google/callback/`
+- `/auth/desktop/github/callback/`
+- `/auth/desktop/gitlab/callback/`
+- `/auth/desktop/gitea/callback/`
+
 ## Tabs and windows
 
 The desktop app works like a browser, so you can keep several parts of Plane open at once.
@@ -70,7 +85,7 @@ The desktop app works like a browser, so you can keep several parts of Plane ope
 - **Open a new tab** with the **+** button at the end of the tab bar, or **New tab** (Cmd/Ctrl+T).
 - **Close a tab** with the **X** on the tab, or **Close tab** (Cmd/Ctrl+W). You cannot close the last remaining tab in a window.
 - **Reorder tabs** by dragging them along the tab bar.
-- **Go back and forward** using the arrows to the left of the tabs.
+- **Go back and forward** Ctrl+Tab / Ctrl+Shift+Tab for next/previous tab.
 - **Right-click a tab** for quick actions: Copy link, Reload tab, Close tab, Close other tabs, and Close all tabs.
 - **Jump to a tab** with Cmd/Ctrl+1 through Cmd/Ctrl+8, or Cmd/Ctrl+9 for the last tab.
 - **Reopen a closed tab** with Cmd/Ctrl+Shift+T.
@@ -133,6 +148,7 @@ The desktop app registers the `plane://` link scheme. Plane links that use it op
 Because the desktop app loads the full Plane web app, feature parity with the web is effectively complete. What the desktop app adds on top is the desktop experience itself:
 
 - A dedicated app window, separate from your browser
+- Tab bar icons reflect the current page/context so open tabs are easier to tell apart.
 - Browser-style tabs and multiple windows, remembered between sessions
 - An unread notification badge on your dock or taskbar
 - `plane://` deep links that open in the app
