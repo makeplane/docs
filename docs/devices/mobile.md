@@ -52,10 +52,10 @@ Here’s how you can get started:
 
   <div class="mobile-img-container">
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/onboarding.webp" alt="Home" width="320" />
+      <img src="https://media.docs.plane.so/mobile/onboarding.webp" alt="Onboarding" width="320" />
     </div>
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/sign-in-selfhosted.webp" alt="Projects" width="320" />
+      <img src="https://media.docs.plane.so/mobile/sign-in-selfhosted.webp" alt="Selfhosted sign in" width="320" />
     </div>
   </div>
 
@@ -75,10 +75,10 @@ The app is built around a bottom bar with three tabs and a floating **+** create
 
 <div class="mobile-img-container">
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/inbox.webp" alt="Home" width="320" />
+      <img src="https://media.docs.plane.so/mobile/inbox.webp" alt="Inbox" width="320" />
     </div>
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/quick-actions.webp" alt="Projects" width="320" />
+      <img src="https://media.docs.plane.so/mobile/quick-actions.webp" alt="Quick actions" width="320" />
     </div>
   </div>
 
@@ -98,10 +98,10 @@ At the top of Home is a row of quick-access tiles for Plane's products, mirrorin
 
 <div class="mobile-img-container">
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/wiki.webp" alt="Home" width="320" />
+      <img src="https://media.docs.plane.so/mobile/wiki.webp" alt="Wiki" width="320" />
     </div>
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/ai.webp" alt="Projects" width="320" />
+      <img src="https://media.docs.plane.so/mobile/ai.webp" alt="AI" width="320" />
     </div>
   </div>
 
@@ -125,13 +125,12 @@ The Home header also holds the workspace switcher and a catch-up card.
 
 The app supports Light, Dark, and System themes. System follows your device's appearance setting automatically.
 
-
 <div class="mobile-img-container">
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/profile.webp" alt="Home" width="320" />
+      <img src="https://media.docs.plane.so/mobile/profile.webp" alt="Profile" width="320" />
     </div>
     <div class="box">
-      <img src="https://media.docs.plane.so/mobile/manage-widgets.webp" alt="Projects" width="320" />
+      <img src="https://media.docs.plane.so/mobile/manage-widgets.webp" alt="Manage widgets" width="320" />
     </div>
   </div>
 
