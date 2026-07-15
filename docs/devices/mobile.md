@@ -5,7 +5,7 @@ description: Learn how to use Plane's mobile app for iOS and Android.
 
 # Plane Mobile App
 
-The Plane mobile app puts your work in your pocket. 
+The Plane mobile app puts your work in your pocket.
 
 Create and update work items, comment and mention teammates, track cycles, and stay on top of notifications from your phone. It is available for iOS and Android, and works alongside the web app: anything you change on mobile syncs to the web and everywhere else you use Plane.
 
@@ -13,10 +13,10 @@ This page covers what is specific to mobile: getting the app, signing in, findin
 
 ## System requirements
 
-| Platform | Minimum version |
-|---|---|
-| iOS  | iOS 14.0 or later |
-| Android | Android 10 or later (SDK 29+) |
+| Platform | Minimum version               |
+| -------- | ----------------------------- |
+| iOS      | iOS 14.0 or later             |
+| Android  | Android 10 or later (SDK 29+) |
 
 **Editions and plans**
 
@@ -25,7 +25,7 @@ This page covers what is specific to mobile: getting the app, signing in, findin
 
 ## Download and install
 
-Head over to [Download](https://plane.so/download) to install the app for Android or iOS. 
+Head over to [Download](https://plane.so/download) to install the app for Android or iOS.
 
 Once installed, open the app and sign in to your workspace.
 
@@ -59,14 +59,17 @@ The app is built around a bottom bar with three tabs and a floating **+** create
 ## Get around the app
 
 ### The three tabs
+
 - Home - your starting point for the workspace.
 - Inbox - your notification center, with an unread badge.
 - Search - search across the workspace for projects, work items, cycles, modules, pages, and more.
 
 ### Create
+
 Tap the floating **+ Create** button to add new content from anywhere. Depending on your role and enabled features, you can create a project, work item, a page, or a sticky.
 
 ### Home
+
 Home mirrors the web and is organized into sections you can rearrange or hide (tap Manage widgets icon next to your profile to customize).
 
 At the top of Home is a row of quick-access tiles for Plane's products, mirroring the web. Tap a tile to open that product:
@@ -76,6 +79,7 @@ At the top of Home is a row of quick-access tiles for Plane's products, mirrorin
 - **Plane AI** — the Pi assistant, for chatting, asking questions about your work, and picking up your AI threads. Appears when AI is enabled for your workspace.
 
 Below the tiles are sections you can rearrange or hide.
+
 - Your work - assigned work items and pages you have created
 - Recent activity - projects, cycles, modules, pages, and work items you've opened recently
 - Favorites - the projects and items you've starred
@@ -84,15 +88,18 @@ Below the tiles are sections you can rearrange or hide.
 The Home header also holds the workspace switcher and a catch-up card.
 
 ### Gestures
+
 - Pull down to refresh a list or screen.
 - Tap a work item to open its detail view.
 - Swipe on some list items for quick actions. <Badge type="info" text="Coming soon" />
 - Long-press and drag to reorder items where supported.
 
 ### Appearance
+
 The app supports Light, Dark, and System themes. System follows your device's appearance setting automatically.
 
 ## Work on the go
+
 The mobile app supports the core of your day-to-day work. Each area links to its full documentation.
 
 ### Work items
@@ -134,11 +141,12 @@ The app sends push notifications for events that involve you, such as new assign
 
 Push notifications are delivered through your device's native system (Apple Push Notification service on iOS, Firebase Cloud Messaging on Android). To receive them, allow notifications for Plane when the app first asks, or enable them later in your device settings.
 
-### Managing notification preferences  <Badge type="info" text="Coming soon" />
+### Managing notification preferences <Badge type="info" text="Coming soon" />
 
 Control which notifications you receive from your notification settings in the app. Adjust these to reduce noise or focus only on what matters most to you.
 
 ### The Inbox
+
 Open the Inbox tab to read notifications and tap to jump to the item; mark as read and filter your inbox (e.g. unread, snoozed, or archived only). Your inbox stays in sync across mobile and web.
 
 Your notification inbox stays in sync across mobile and web.
@@ -146,6 +154,7 @@ Your notification inbox stays in sync across mobile and web.
 See [Notifications](/communication-and-collaboration/notifications).
 
 ## Home-screen widgets and shortcuts (iOS)
+
 On iOS/iPadOS, add Plane widgets for one-tap capture: Create Work Item and Create Page. You can also long-press the app icon for Quick Actions.
 
 :::info
@@ -159,11 +168,13 @@ The mobile app focuses on the work you are most likely to do away from your desk
 Feature availability also depends on your plan. Features such as Wiki and AI capabilities appear in the app only when they are enabled for your workspace.
 
 ## Privacy and security
+
 - Privacy Screen - blurs the app's contents in the app switcher and background so sensitive work isn't visible in previews. Enable it in your Profile settings.
 - Device integrity - Plane doesn't run on jailbroken or rooted devices.
 - Secure storage - all sensitive data is securely stored using the Android Keystore and iOS Keychain.
 
 ## Offline and syncing
+
 The app caches recently viewed data so those screens load quickly and stay viewable when your connection drops. Editing requires a connection - there is no offline edit queue. When back online, pull to refresh to sync.
 
 ## Troubleshooting
