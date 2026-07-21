@@ -27,7 +27,7 @@ Events are grouped into six categories. The current set of tracked events is:
 | ----------------------- | ---------------------------------------------------------------------- |
 | **Authentication**      | Login success, login failure, logout                                   |
 | **Member**              | Member invited, member removed                                         |
-| **Role amd Permission** | Member role changed                                                    |
+| **Role and Permission** | Member role changed                                                    |
 | **Workspace Settings**  | Workspace feature enabled, workspace feature disabled                  |
 | **API and Integration** | API token created, API token revoked, webhook created, webhook deleted |
 | **Data and Security**   | Plan changed, audit log searched, audit log exported                   |
