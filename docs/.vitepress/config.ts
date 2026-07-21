@@ -411,6 +411,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
               },
             ],
           },
+          { text: "Workspace Audit logs", link: "/workspaces-and-users/audit-logs" },
           {
             text: "Billing and plans",
             collapsed: true,
