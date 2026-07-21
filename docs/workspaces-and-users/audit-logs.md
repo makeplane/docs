@@ -1,9 +1,9 @@
 ---
-title: Audit logs
+title: Workspace Audit logs
 description: Track key actions across your workspace with a dedicated, tamper-evident audit log. View, filter, and export a record of authentication, membership, role, settings, integration, and security events.
 ---
 
-# Audit logs <Badge type="warning" text="Enterprise Grid" />
+# Workspace Audit logs <Badge type="warning" text="Enterprise Grid" />
 
 The workspace audit log is a dedicated record of key actions taken across your workspace. It gives administrators an accountable, time-stamped history of who did what and when, covering sign-ins, membership changes, role changes, settings changes, integration activity, and security-sensitive events.
 
