@@ -216,7 +216,26 @@ There is no x-axis property or grouping for number widgets - they compute a sing
 Note: the number widget supports all y-axis metrics except estimate points. If you need an
 estimate point total as a single number, use a table chart instead.
 
-### Table chart
+### Work items statistics <Badge type="tip" text="Business" />
+
+The work items statistics widget groups work items by a dimension you choose and shows the total for each group. Grouping by assignee gives a "work items by assignee" view, showing how work is distributed across your team.
+
+It is most useful for workload and distribution questions: how many work items each person has, how work splits across states or priorities, or how it spreads across projects.
+
+**Basic**
+
+Configure the widget with:
+
+- **Group by** - the dimension to group work items by: State, State group, Project, **Assignee**, Label, Work item type, Cycle, Module, Created by, or Priority.
+- **Metric** - **Work item count**, **Estimate points**, or both. The first selected metric is the primary one.
+- **Max rows** - between 1 and 100 (default 10).
+
+Style options:
+
+- **Show percentage** - display each group's share of the total.
+- **Progress bar color** - the color of the group bars.
+
+### Two dimensional table
 
 A table chart renders issues grouped by the x-axis property as rows, with a count column.
 It presents the same data as a bar chart but in a structured grid format rather than a
@@ -231,15 +250,15 @@ and cannot be changed - table charts always show a raw count. The appearance set
 
 ### Work Items Table <Badge type="warning" text="Enterprise Grid" />
 
-A work items table lists individual work items as rows with configurable columns. Unlike the table chart, which aggregates issues into groups and shows a count, the work items table renders one row per work item — giving you a live filtered spreadsheet view of your issues directly on a dashboard.
+A work items table lists individual work items as rows with configurable columns. Unlike the table chart, which aggregates issues into groups and shows a count, the work items table renders one row per work item - giving you a live filtered spreadsheet view of your issues directly on a dashboard.
 
-It is most useful when you need a quick-reference list of specific issues on a dashboard — for example, all open blockers, issues due this week, or unassigned high-priority work — without navigating to a project view.
+It is most useful when you need a quick-reference list of specific issues on a dashboard - for example, all open blockers, issues due this week, or unassigned high-priority work - without navigating to a project view.
 
 **Basic**
 
 Rows display each matching work item with its identifier and name always visible. You choose which additional columns appear, how many rows to show per page, and navigate across pages directly on the widget.
 
-The widget does not have an x-axis property, y-axis metric, or group-by dimension — it is a flat list, not a chart. Dashboard-level and widget-level filters control which work items appear.
+The widget does not have an x-axis property, y-axis metric, or group-by dimension - it is a flat list, not a chart. Dashboard-level and widget-level filters control which work items appear.
 
 **Columns**
 
@@ -268,6 +287,64 @@ The identifier, name, and project are always present. All other columns are opti
 **Rows per page**
 
 Set between 1 and 100 rows per page (default 10). Use a lower number for a compact at-a-glance list and a higher number when you need to scan many items at once.
+
+### Assigned to you <Badge type="tip" text="Business" />
+
+The "Assigned to you" widget lists the work items assigned to whoever is viewing the dashboard. It is the same table as the work items table, but scoped automatically to the current viewer, so it always shows "my work."
+
+This makes it ideal for shared team dashboards: a single widget gives every team member their own personal task list, without each person needing their own dashboard or filter.
+
+**Basic**
+
+Rows display each work item assigned to you, with the identifier and title always visible. It is configured exactly like the work items table:
+
+- **Columns to display** - choose which additional columns appear. The available columns are State, Priority, Assignees, Due date, Start date, Labels, Cycle, Modules, Type, Estimate, Created by, Releases, Sub work items, Attachments, Links, Customer requests, and Customer. New widgets start with State, Priority, and Due date.
+- **Max rows** - the number of rows per page, between 1 and 100 (default 10). Use the pagination control to move through pages.
+
+Dashboard-level and widget-level filters still apply, narrowing your assigned items further.
+
+Because the widget resolves to the current viewer, it shows results only for a signed-in user. On a published (public) dashboard, where there is no signed-in viewer, it has nothing to resolve to and shows no items.
+
+### Work items progress <Badge type="tip" text="Business" />
+
+The work items progress widget shows progress broken down by work item type. Each row is a work item of the type or types you choose (for example, an Epic or any custom type), and its progress bar reflects the completion of that item's direct sub-items.
+
+It is most useful for tracking a set of large deliverables, such as all Epics in a project, and seeing how close each is to done in one view.
+
+**Basic**
+
+Each row shows the work item's name, its completion count, a distribution across state groups, and a percentage complete. Configure the widget with:
+
+- **Work item type** - one or more work item types whose items become the rows. At least one is required.
+- **Metric** - what the progress measures: **Work item count** or **Estimate points**.
+- **Rows per page** - between 1 and 100 (default 6).
+
+Style options:
+
+- **Progress bar type** - **Linear** (a single bar) or **State group breakdown** (a bar segmented by state group).
+- **Progress color** - the bar color, used with the linear style.
+- **Show completed** - count cancelled sub-items as completed.
+- **Show empty items** - include rows that have no sub-items.
+- **Show percentage** - display the percentage alongside the bar.
+
+### Cycle progress bar <Badge type="tip" text="Business" />
+
+The cycle progress bar shows the progress of a single cycle at a glance. Unlike the chart widgets, it summarizes one cycle rather than plotting a data series, making it a compact status indicator for a dashboard.
+
+It is most useful for keeping a specific active cycle visible on a shared dashboard, so the team can see how far along it is without opening the cycle itself.
+
+**Basic**
+
+Pick the project, then the cycle within that project to summarize. The widget then shows
+
+- **Distribution** across state groups (backlog, unstarted, started, completed, cancelled), with a count and percentage for each
+- **Work completed**, as a share of the cycle's total scope
+- **Scope change**, reflecting work added or removed after the cycle started
+- **Blocked items**, the count of work items with a blocking relationship
+- **Time elapsed** and **days left** in the cycle
+- The cycle's overall **status** and **total work item count**
+
+The widget reports on one cycle. To track several cycles, add one widget per cycle.
 
 ## Configure a widget
 
@@ -477,8 +554,8 @@ Published dashboards are link-only. There is no password protection, no expirati
 
 While a dashboard is in **edit mode**:
 
-- **Resize** — drag the resize handle at the bottom-right corner of a widget to change its height or width.
-- **Reposition** — drag the widget by its header to move it to a different position on the grid.
+- **Resize** - drag the resize handle at the bottom-right corner of a widget to change its height or width.
+- **Reposition** - drag the widget by its header to move it to a different position on the grid.
 
 Positions and sizes are saved when you make a change.
 

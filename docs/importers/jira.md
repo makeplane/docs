@@ -3,126 +3,129 @@ title: Import data from Jira
 description: Import your projects and issues from Jira Cloud, Jira Server, or Jira Data Center into Plane.
 ---
 
-# Jira importer (Cloud, Server, and Data Center)
+# Jira importer
 
-Plane supports importing from Jira Cloud, Jira Server, and Jira Data Center. Choose the import option that matches your Jira deployment.
+Plane imports your projects, issues, and related data from Jira. There are two connectors, depending on your Jira deployment:
+
+- **Jira Cloud** for sites hosted at `*.atlassian.net`.
+- **Jira Server / Data Center** for self-hosted Jira. Server and Data Center use the same connector and the same steps.
+
+Both connectors import into a Plane project you choose and run on the same import engine, so the data you get is the same. The differences are in how you connect and a few deployment-specific options, called out below.
 
 ::: info
 The Jira importer is available on Plane Cloud and on all plans of the Commercial Edition for self-hosted instances.
 :::
 
-## Import from Jira
+## Before you begin
 
-> **Role**: Workspace admins
+- **Issue types**: To bring Jira issue types in as Plane work item types, enable the [Work Item Types](/work-items/project-work-item-types) feature on the target Plane project before importing. Without it, issues still import, but issue types are not created as work item types.
+- **Jira access**: The account you connect with must be able to read the Jira project you are importing, along with its issues, statuses, priorities, issue types, and labels.
 
-::: tip
-To import issue types from Jira, make sure the [Issue types](/work-items/project-work-item-types) feature is enabled in your Plane project.
+## Choose your connector
+
+Go to **Workspace Settings → Imports**, then click **Import** in either the **Jira** section (for Jira Cloud) or the **Jira Server/Data Center** section (for self-hosted Jira).
+
+## Connect to Jira
+
+Jira connects with a Personal Access Token. Provide three values:
+
+| Field                     | What to enter                                                                                                                                           |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Personal Access Token** | An API token created at [id.atlassian.com](https://id.atlassian.com/manage-profile/security/api-tokens) or from your Jira Server / Data Center instance |
+| **User email**            | The email address linked to that token                                                                                                                  |
+| **Jira domain**           | Your Jira site URL, for example `https://your-site.atlassian.net`                                                                                       |
+
+Click **Connect Jira** to link the accounts. Plane verifies the credentials before continuing.
+
+## Run the import
+
+After connecting, work through the import steps. The steps are the same for all deployments, except that the **Import users** step appears only for Jira Cloud (Server and Data Center bring in users automatically).
+
+1. **Select Plane project.** Choose the Plane project to import into.
+
+2. **Configure Jira.** Choose the Jira site (Cloud) and the Jira project to import from. Optionally, add a **JQL** filter to import only the issues that match a query. Plane scopes your query to the selected project automatically.
+
+3. **Import users** _(Jira Cloud only)_. Choose how to bring in users:
+   - **Upload CSV** _(recommended)_. Upload a user export from Jira. See [Export users from a site](https://support.atlassian.com/organization-administration/docs/export-users-from-a-site/) for how to generate it.
+
+     Admin or Member users invited to your workspace count toward your billed seats immediately, but the importer treats them as active members only once they accept the invitation. So you have two options: let the importer create users (don't invite them manually first), or invite everyone first and wait for them to accept before importing.
+
+   - **Skip user import.** Select **Skip Importing User data** and add users later.
+     ::: warning
+     If you skip user import, work items and comments show the name of the person who ran the migration, and the Assignees field is left empty.
+     :::
+
+   For **Jira Server / Data Center**, there is no user step. Plane automatically syncs the users referenced by the imported issues.
+
+4. **Map states.** Map each Jira status to a Plane state. Select **Auto create and map the remaining Jira states** to create and map anything you don't map by hand.
+
+5. **Map priorities.** Map each Jira priority to a Plane priority. If there is no match, choose **None**.
+
+6. **Summary.** Review your mappings. Click **Back** to adjust, or **Confirm** to start the import.
+
+The import runs in the background and takes a few minutes to hours depending on the size of your Jira project. When it finishes, open **Work items** in your Plane project to confirm the data imported.
+
+::: info Issue types and work item types
+When the Work Item Types feature is enabled, Jira issue types are imported as Plane work item types. You do not map them; they are created automatically. On the Free plan (or with the feature off), issues still import but issue types are not created as work item types.
 :::
 
-To import Jira issues to a Plane project, follow these steps:
+## What gets imported
 
-1.  Click the **∨** icon next to your workspace name on the sidebar and select **Workspace Settings**.
+| Jira                             | Plane                      | Notes                                                                                                                                                                                                |
+| -------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Issues                           | Work items                 | Summary becomes the work item title.                                                                                                                                                                 |
+| Issue description                | Work item description      | Formatting is preserved. Inline images are re-uploaded to Plane.                                                                                                                                     |
+| Status                           | States                     | Mapped in the Map states step.                                                                                                                                                                       |
+| Priority                         | Priority                   | Mapped in the Map priorities step.                                                                                                                                                                   |
+| Issue types                      | Work item types            | Requires the paid Issue types feature. Imported automatically, not mapped. Can be created at the project or workspace level.                                                                         |
+| Epics                            | Work item type             | Imported as a regular work item type, not as Plane's dedicated Epics feature.                                                                                                                        |
+| Labels                           | Labels                     | Every imported work item also gets a `JIRA IMPORTED` label so you can find migrated items easily.                                                                                                    |
+| Custom fields                    | Custom properties          | Supported Jira custom and system fields become work item custom properties, with their options. Unsupported field types are skipped. Rich text custom fields require the rich text property feature. |
+| Users                            | Members                    | Cloud: from your CSV, or skipped. Server / Data Center: synced automatically from the issues.                                                                                                        |
+| Reporter                         | Created by                 | Also stored as a "reporter" property on the work item.                                                                                                                                               |
+| Assignee                         | Assignees                  | Blank if you skip user import.                                                                                                                                                                       |
+| Comments                         | Comments                   | Includes author and timestamp. If you skip user import, comments show the person who ran the migration.                                                                                              |
+| Attachments                      | Attachments                | On both issues and comments. See [Attachments](#attachments) for a Server / Data Center note.                                                                                                        |
+| Sub-tasks and parent links       | Parent-child relationships | Sub-tasks import as work items linked to their parent.                                                                                                                                               |
+| Linked issues                    | Relations                  | Blocks, blocked by, relates to, and duplicate. Jira link types with no Plane equivalent are created as custom relation types. Links across projects resolve once the other project is also imported. |
+| Sprints                          | Cycles                     | Including the cycle's work items and start and end dates.                                                                                                                                            |
+| Components                       | Modules                    | Including the module's work items.                                                                                                                                                                   |
+| Fix versions / affected versions | Custom properties          | Stored as work item properties.                                                                                                                                                                      |
+| Story points                     | Story points               | From your configured story-points field.                                                                                                                                                             |
+| Worklogs                         | Worklogs                   | Time tracking is enabled on the project when worklogs are imported.                                                                                                                                  |
+| Watchers                         | Subscribers                |                                                                                                                                                                                                      |
+| Change history                   | Work item activity         |                                                                                                                                                                                                      |
+| Start date / Due date            | Start date / Due date      |                                                                                                                                                                                                      |
+| Created date                     | Created at                 |                                                                                                                                                                                                      |
 
-2.  Select **Imports** on the right pane and click the **Import** button in the Jira section.
+Every imported work item also gets a **Linked Jira Issue** link back to the original issue in Jira, and its original Jira key number is preserved.
 
-    ![Import from Jira](https://media.docs.plane.so/importers/jira/import-jira-cloud-server.webp#hero)
+## Attachments
 
-3.  In the **Jira to Plane Migration Assistant** screen, enter your **Personal Access Token**, **User email** and the **Jira domain** to allow Plane access to your Atlassian account.
+Attachments on issues and comments are imported by default.
 
-    ![Connect Jira](https://media.docs.plane.so/importers/jira/jira-plane-migration-assitant.webp#hero)
+**Jira Server / Data Center behind SSO.** Jira Server and Data Center stream attachment files from a secure servlet (`/secure/attachment/...`). On instances where that servlet sits behind web SSO (SAML), it does not accept the personal access token the way the REST API does, so the download is redirected to your identity provider and Plane receives the login page instead of the file. When this happens, attachments fail to import.
 
-4.  Click the **Connect Jira** button to link the accounts.
+To work around it, expose a custom attachment download endpoint on your Jira instance (typically a ScriptRunner REST endpoint) that is not behind the SSO filter, and have Plane use it for attachment downloads. Follow the [attachment endpoint setup instructions](https://sites.plane.so/pages/4cfee57ef84d4b50bacfb110e37316e5).
 
-5.  Click the **Import** button.
+- On **self-hosted Plane**, set the download path (with an `{id}` placeholder for the attachment ID, for example `/rest/scriptrunner/latest/custom/downloadAttachment?id={id}`) in your integration service configuration.
+- On **Plane Cloud**, contact Plane support to have the download path configured for your instance.
 
-    ![Import Jira](https://media.docs.plane.so/importers/jira/import-jira-data.webp#hero)
+This applies to **Jira Server and Data Center only**. Jira Cloud is not affected and needs no workaround.
 
-6.  **Configure Plane**  
-    Select the Plane project where you want to import your Jira data and and click **Next**.
+## Re-run and resume an import
 
-    ![Configure Plane](https://media.docs.plane.so/importers/jira/configure-plane.webp#hero)
+Open the import from **Workspace Settings → Imports** to manage it.
 
-7.  **Configure Jira**  
-    Choose the workspace and project in Jira from where you want to import data.
+**Re-run** (all deployments). Re-running restarts the import for that project from the beginning, using the same configuration and filter. It is a full re-sync, not a changed-only sync, but it does **not** create duplicates: Plane matches items by their original Jira identity and updates existing work items in place while adding any new issues. Use re-run to bring across new and updated Jira issues after your initial import.
 
-    ![Configure Jira](https://media.docs.plane.so/importers/jira/configure-jira.webp#hero)
+![Re-run import](https://media.docs.plane.so/importers/jira/rerun-import.webp#hero)
 
-    ::: info Work item types
-    If you're on a paid plan (Pro or higher), issue types in Jira will be imported as work item types in Plane. On the free plan, issue types from Jira won't be imported.
-    :::
+**Resume** (Jira Server / Data Center only). If a Server or Data Center import fails or times out, you can resume it. Resume continues from where the import stopped rather than starting over. It is available for a limited window (about 7 days) after the job stops; after that, use re-run instead.
 
-8.  **Import users**
+## Notes and limits
 
-    Choose one of the following:
-    - **Upload CSV**  
-      Click the **Upload CSV** button to import users to your Plane project. Refer to [Export users from a site](https://support.atlassian.com/organization-administration/docs/export-users-from-a-site/) to download the CSV file from Jira. _(recommended)_
-
-      Admin or Member role users invited to your workspace count toward your billed seats right away, but the importer only treats them as active members once they accept the invitation. So, when importing users, you have two options:
-      - Don't invite users to the workspace manually and let the importer handle user creation.
-      - Invite users first and wait for all of them to accept before running the import.
-
-    - **Skip user import**  
-      You can select the **Skip Importing User data** checkbox and manually add users later.
-      ::: warning
-      If you skip user import, work items and comments will show the name of the person who performed the migration, and the Assignees field will be empty.
-      :::
-
-      ![Import users](https://media.docs.plane.so/importers/jira/import-users.webp#hero)
-
-9.  **Map states**
-    1. Map **Jira status** to their equivalent **Plane states**.
-    2. Select the **Auto create and map the remaining Jira states** checkbox to automatically create and map any missing states.
-
-       ![Map states](https://media.docs.plane.so/importers/jira/map-states.webp#hero)
-
-10. **Map priorities**  
-    Map the **Jira priorities** to the corresponding **Plane priorities**. If there's no match, select **None** in the **Plane priorities** list.
-
-    ![Map priorities](https://media.docs.plane.so/importers/jira/map-priorities.webp#hero)
-
-11. **Summary**  
-    Review the mappings and make any changes if needed. Click **Back** to adjust, or click **Confirm** to start the migration.
-
-    ![Review mappings](https://media.docs.plane.so/importers/jira/import-summary.webp#hero)
-
-12. The data migration begins and takes a few minutes to complete depending on the number of issues in your Jira workspace.
-
-    ![Migration complete](https://media.docs.plane.so/importers/jira/jira-import-complete.webp#hero)
-
-13. Once it's done, go to **Work items** in your Plane project to confirm that the data import is successful.
-
-## Imported entities
-
-Here’s a quick look at what gets imported during the migration from Jira to Plane:
-
-| Jira                            | Plane                               | Notes                                                                                                                                           |
-| ------------------------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Labels                          | Labels                              |                                                                                                                                                 |
-| Status                          | States                              |                                                                                                                                                 |
-| Issue priorities                | Priorities                          |                                                                                                                                                 |
-| Users                           | Users                               |                                                                                                                                                 |
-| Issues                          | Work items                          |                                                                                                                                                 |
-| Relations                       | Parent                              | Includes only parent-child relationships                                                                                                        |
-| Issue&nbsp;comments             | Work item&nbsp;comments             | Includes username and timestamp. If you skip user import during migration, comments will show the name of the user who performed the migration. |
-| Issue attachments               | Work item attachments               |                                                                                                                                                 |
-| Reporter                        | Created by                          |                                                                                                                                                 |
-| Created                         | Created at                          |                                                                                                                                                 |
-| Assignee                        | Assignees                           | If you skip user import during migration, this will be blank.                                                                                   |
-| Issue types                     | Labels \| Prefix in Issue title     |                                                                                                                                                 |
-| Images in the Issue description | Images in the Work item description |                                                                                                                                                 |
-| Summary                         | Work item title                     |                                                                                                                                                 |
-| Start date                      | Start date                          |                                                                                                                                                 |
-| Due date                        | Due date                            |                                                                                                                                                 |
-| Linked Issues                   | Links                               | Includes backlinks to the original Jira issue.                                                                                                  |
-| Sprint                          | Cycles                              | Includes the work items, start and end date.                                                                                                    |
-| Components                      | Modules                             | Includes the work items.                                                                                                                        |
-
-## Sync Jira to Plane
-
-After the import, if there are any new or updated issues in Jira, you can easily sync these changes to Plane:
-
-1. Go to **Workspace settings**.
-2. Select **Imports** on the right pane.
-3. Click the **Re run** button next to the project you want to sync.
-
-   ![Sync Jira](https://media.docs.plane.so/importers/jira/rerun-import.webp#hero)
+- **Reliability.** Server and Data Center imports track each batch of issues and automatically re-dispatch any batch that goes missing, and they detect and recover from stalls. This significantly reduces timeout and error failures on large imports.
+- **Large instances.** Very large Jira projects import in batches and may take a while. If your Data Center instance rate-limits aggressively, imports still complete but run more slowly.
+- **Cross-project links.** Links between issues in different Jira projects resolve only after both projects have been imported into Plane.
+- **Unsupported custom field types** are skipped rather than failing the import.
