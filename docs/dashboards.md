@@ -237,16 +237,11 @@ Style options:
 
 ### Two dimensional table
 
-A table chart renders issues grouped by the x-axis property as rows, with a count column.
-It presents the same data as a bar chart but in a structured grid format rather than a
-visual chart. It is useful when the precise numbers matter more than the visual shape of
-the distribution, or when you need to display many groups that would be hard to read as bars.
+A two dimensional table renders issues grouped by the x-axis property as rows, with a count column. It presents the same data as a bar chart but in a structured grid format rather than a visual chart. It is useful when the precise numbers matter more than the visual shape of the distribution, or when you need to display many groups that would be hard to read as bars.
 
 **Basic**
 
-One row per group, with a count column. The y-axis metric is fixed to **work item count**
-and cannot be changed - table charts always show a raw count. The appearance settings
-(column color, legend, tooltip) match the bar chart config options.
+One row per group, with a count column. The y-axis metric is fixed to **work item count** and cannot be changed - table charts always show a raw count. The appearance settings (column color, legend, tooltip) match the bar chart config options.
 
 ### Work Items Table <Badge type="warning" text="Enterprise Grid" />
 

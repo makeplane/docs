@@ -43,7 +43,7 @@ After connecting, work through the import steps. The steps are the same for all 
 
 1. **Select Plane project.** Choose the Plane project to import into.
 
-2. **Configure Jira.** Choose the Jira site (Cloud) and the Jira project to import from. Optionally, add a **JQL** filter to import only the issues that match a query. Plane scopes your query to the selected project automatically.
+2. **Configure Jira.** Choose the Jira site and the Jira project to import from. Optionally, add a **JQL** filter to import only the issues that match a query. Plane scopes your query to the selected project automatically.
 
 3. **Import users** _(Jira Cloud only)_. Choose how to bring in users:
    - **Upload CSV** _(recommended)_. Upload a user export from Jira. See [Export users from a site](https://support.atlassian.com/organization-administration/docs/export-users-from-a-site/) for how to generate it.
@@ -77,7 +77,7 @@ When the Work Item Types feature is enabled, Jira issue types are imported as Pl
 | Issue description                | Work item description      | Formatting is preserved. Inline images are re-uploaded to Plane.                                                                                                                                     |
 | Status                           | States                     | Mapped in the Map states step.                                                                                                                                                                       |
 | Priority                         | Priority                   | Mapped in the Map priorities step.                                                                                                                                                                   |
-| Issue types                      | Work item types            | Requires the paid Issue types feature. Imported automatically, not mapped. Can be created at the project or workspace level.                                                                         |
+| Issue types                      | Work item types            | Requires the Work Item Types feature. Imported automatically, not mapped. Can be created at the project or workspace level.                                                                         |
 | Epics                            | Work item type             | Imported as a regular work item type, not as Plane's dedicated Epics feature.                                                                                                                        |
 | Labels                           | Labels                     | Every imported work item also gets a `JIRA IMPORTED` label so you can find migrated items easily.                                                                                                    |
 | Custom fields                    | Custom properties          | Supported Jira custom and system fields become work item custom properties, with their options. Unsupported field types are skipped. Rich text custom fields require the rich text property feature. |
