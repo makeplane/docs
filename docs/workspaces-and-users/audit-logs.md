@@ -23,14 +23,14 @@ Go to **Settings → Audit logs** in your workspace settings. The page shows the
 
 Events are grouped into six categories. The current set of tracked events is:
 
-| Category | Events tracked |
-|---|---|
-| **Authentication** | Login success, login failure, logout |
-| **Member** | Member invited, member removed |
-| **Role amd Permission** | Member role changed |
-| **Workspace Settings** | Workspace feature enabled, workspace feature disabled |
+| Category                | Events tracked                                                         |
+| ----------------------- | ---------------------------------------------------------------------- |
+| **Authentication**      | Login success, login failure, logout                                   |
+| **Member**              | Member invited, member removed                                         |
+| **Role amd Permission** | Member role changed                                                    |
+| **Workspace Settings**  | Workspace feature enabled, workspace feature disabled                  |
 | **API and Integration** | API token created, API token revoked, webhook created, webhook deleted |
-| **Data and Security** | Plan changed, audit log searched, audit log exported |
+| **Data and Security**   | Plan changed, audit log searched, audit log exported                   |
 
 Reading and exporting the audit log are themselves recorded as events. This means every access to the log is accountable, which is a common compliance requirement.
 
@@ -38,13 +38,13 @@ Reading and exporting the audit log are themselves recorded as events. This mean
 
 Each row in the table represents one event, with these columns:
 
-| Column | What it shows |
-|---|---|
-| **Timestamp** | The date and time the event occurred, in your local time |
-| **Actor** | Who performed the action. Shows the person's name or email. System-generated actions show as **System** |
-| **Event** | The action that took place, for example "Login success" or "Member role changed" |
-| **Event object** | The target the action was performed on, for example the affected member or token |
-| **Category** | The category the event belongs to, with an icon |
+| Column           | What it shows                                                                                           |
+| ---------------- | ------------------------------------------------------------------------------------------------------- |
+| **Timestamp**    | The date and time the event occurred, in your local time                                                |
+| **Actor**        | Who performed the action. Shows the person's name or email. System-generated actions show as **System** |
+| **Event**        | The action that took place, for example "Login success" or "Member role changed"                        |
+| **Event object** | The target the action was performed on, for example the affected member or token                        |
+| **Category**     | The category the event belongs to, with an icon                                                         |
 
 Behind each entry, the log also captures additional context that appears in exports, including the actor type (user, API token, system, or anonymous), the outcome (success or failure), the IP address, the user agent, and, where relevant, the old and new values that changed.
 
