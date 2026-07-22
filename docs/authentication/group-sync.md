@@ -11,7 +11,6 @@ description: Automatically provision workspace roles, project memberships, and p
 Group syncing is currently available on the self-hosted Commercial and Airgapped Editions.
 :::
 
-
 IdP Group Sync lets workspace admins map identity provider groups to access in Plane. When a user signs in through SSO, Plane reads the groups on their identity and automatically grants the matching access, then keeps it in sync as their group membership changes in your IdP.
 
 You can map groups to three things:
@@ -27,10 +26,10 @@ This removes manual onboarding and offboarding: access follows group membership 
 Group sync works with all three SSO methods. One provider is active per workspace at a time.
 
 | Provider | Sync on login | Scheduled offline sync |
-| --- | --- | --- |
-| **OIDC** | Yes | Yes |
-| **SAML** | Yes | No |
-| **LDAP** | Yes | Yes |
+| -------- | ------------- | ---------------------- |
+| **OIDC** | Yes           | Yes                    |
+| **SAML** | Yes           | No                     |
+| **LDAP** | Yes           | Yes                    |
 
 SAML groups are only present in the login assertion, so SAML syncs at login only. It does not support the scheduled offline sync. OIDC and LDAP can fetch groups from the provider on a schedule as well as at login.
 
@@ -50,13 +49,13 @@ SAML groups are only present in the login assertion, so SAML syncs at login only
 
 Under **Configure group sync**, set how syncing behaves.
 
-| Setting | Description | Default |
-| --- | --- | --- |
-| **Sync on login** | Update the user's group membership and access when they sign in | Enabled |
-| **Offline sync** | Run a sync every six hours automatically, without waiting for users to log in (OIDC and LDAP only) | Disabled |
-| **Auto remove** | Remove users from the workspace and projects when no group matches | Disabled |
-| **Group attribute key** | The identity provider attribute that carries the user's groups | `groups` |
-| **Default workspace role** | The role assigned to users who are auto-added to the workspace but don't match any workspace role mapping | - |
+| Setting                    | Description                                                                                               | Default  |
+| -------------------------- | --------------------------------------------------------------------------------------------------------- | -------- |
+| **Sync on login**          | Update the user's group membership and access when they sign in                                           | Enabled  |
+| **Offline sync**           | Run a sync every six hours automatically, without waiting for users to log in (OIDC and LDAP only)        | Disabled |
+| **Auto remove**            | Remove users from the workspace and projects when no group matches                                        | Disabled |
+| **Group attribute key**    | The identity provider attribute that carries the user's groups                                            | `groups` |
+| **Default workspace role** | The role assigned to users who are auto-added to the workspace but don't match any workspace role mapping | -        |
 
 Set **Group attribute key** to match exactly what your IdP sends. Common values are `groups` (default), `roles`, `memberOf`, or `custom:groups`.
 
@@ -101,12 +100,12 @@ Maps a group to a private wiki collection with an access level. Collections grou
 
 When a user signs in (or during an offline sync), Plane resolves their groups and applies access in order: workspace role first, then project access, then private collection access.
 
-| Situation | Result |
-| --- | --- |
-| User is not in the workspace but matches a mapped group | Added to the workspace with the matching workspace role, or the default workspace role, then granted the mapped project and collection access |
-| User is in the workspace and matches a project or collection mapping | Granted or updated to the mapped access |
-| User matches several groups mapping to the same target | Receives the highest role or access across the matches |
-| User is in the workspace but matches no mapping | No access is added. With Auto remove on, synced access is revoked (see below) |
+| Situation                                                            | Result                                                                                                                                        |
+| -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| User is not in the workspace but matches a mapped group              | Added to the workspace with the matching workspace role, or the default workspace role, then granted the mapped project and collection access |
+| User is in the workspace and matches a project or collection mapping | Granted or updated to the mapped access                                                                                                       |
+| User matches several groups mapping to the same target               | Receives the highest role or access across the matches                                                                                        |
+| User is in the workspace but matches no mapping                      | No access is added. With Auto remove on, synced access is revoked (see below)                                                                 |
 
 ## When users leave groups
 
@@ -128,7 +127,6 @@ Manual roles are also never downgraded by syncing. If someone was manually made 
 - Adding a paid workspace role through sync respects your seat limits.
 - **Sync errors never block sign-in.** If syncing fails, the user still logs in and the error is logged.
 
-
 ## Common use cases
 
 **New hire provisioning.** Map your `engineering` group to a Member role on all engineering projects (or use Apply to all projects). New engineers get access on their first sign-in with no admin action.
@@ -139,4 +137,4 @@ Manual roles are also never downgraded by syncing. If someone was manually made 
 
 **Wiki access control.** Map `security-team` to a private "Security runbooks" collection with Edit access, and `all-staff` to the same collection with View, so the right people can read and the right people can maintain it.
 
-**Contractor offboarding.** Map `contractors` to projects with the Guest role and enable Auto remove. Access is revoked the moment they are removed from the IdP group.
+**Contractor offboarding.** Map `contractors` to projects with the Guest role and enable Auto remove. Access is revoked when they are removed from the IdP group, applied at their next login or at the next scheduled sync.
