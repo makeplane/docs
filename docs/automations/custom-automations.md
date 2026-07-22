@@ -156,14 +156,19 @@ Conditions let you filter which work items an automation acts on. You can combin
 
 Updates a field on the work item.
 
-| Property   | What you can do                                                        |
-| ---------- | ---------------------------------------------------------------------- |
-| Priority   | Set, add, or remove a priority level (Urgent, High, Medium, Low, None) |
-| State      | Move the work item to a specific state                                 |
-| Assignees  | Add or remove assignees                                                |
-| Labels     | Add, remove, or replace all labels                                     |
-| Start date | Set, update, or remove the start date                                  |
-| Due date   | Set, update, or remove the due date                                    |
+| Property   | What you can do                                                                                    |
+| ---------- | -------------------------------------------------------------------------------------------------- |
+| Priority   | Set, add, or remove a priority level (Urgent, High, Medium, Low, None)                             |
+| State      | Move the work item to a specific state                                                             |
+| Assignees  | Add or remove assignees                                                                            |
+| Labels     | Add, remove, or replace all labels                                                                 |
+| Start date | Set, update, or remove the start date                                                              |
+| Due date   | Set, update, or remove the due date                                                                |
+| Cycle      | Assign the work item to a cycle, move it to a different cycle, or remove it from its current cycle |
+
+:::tip
+When assigning a cycle, the cycle must belong to the work item's own project, and you cannot assign a work item to a cycle that has already ended. A work item can be in only one cycle at a time, so assigning a cycle moves the work item off any cycle it is currently in.
+:::
 
 #### Add comment
 
@@ -299,3 +304,5 @@ Some common things people use automations for.
 - **Contextual reminders.** Surface the right information at the right moment - for example, post an internal comment with a checklist when a work item enters "Ready for QA," or flag missing information when a work item is created without an assignee.
 
 - **Scheduled operations.** Run scripts on a timer to handle things that don't map to a single event - for example, sweep stale items weekly, sync data to an external tool nightly, or generate a status comment on open items every Monday morning.
+
+- **Sprint assignment.** Put work items into the right cycle automatically - for example, add a work item to the current cycle when its state changes to "In Progress," or remove it from its cycle when it moves to "Backlog."

@@ -5,7 +5,7 @@ description: Filter work items using text-based queries with Plane Query Languag
 
 # Plane Query Language (PQL) <Badge type="info" text="Pro" />
 
-Plane Query Language (PQL) lets you filter work items using text-based queries. Write structured expressions to quickly find exactly what you need.
+Plane Query Language (PQL) lets you filter work items using text-based queries. Write structured expressions to quickly find exactly what you need, combine conditions with logic, call built-in functions, and sort and limit the results.
 
 ![PQL editor](https://media.docs.plane.so/issues/pql-editor.webp#hero)
 
@@ -17,7 +17,7 @@ To switch to PQL mode, click **PQL** in the filter bar.
 
 When you start typing in the PQL field:
 
-1. A dropdown shows available **fields**
+1. A dropdown shows available **fields** and **functions**
 2. After selecting a field, you see **operators**
 3. Then you choose or type **values**
 4. Continue building your query using **AND** or **OR**
@@ -40,7 +40,7 @@ priority = High
 
 This returns all work items where priority is High.
 
-You can also combine multiple conditions using logical operators like `AND` and `OR`.
+You can also combine multiple conditions using the logical operators `AND`, `OR`, and `NOT`.
 
 **Using AND**
 
@@ -58,11 +58,32 @@ state = Todo OR state = In Progress
 
 This returns work items that match either condition.
 
+**Using NOT**
+
+```
+NOT hasNoAssignee()
+```
+
+This returns work items that do have an assignee.
+
 **Combined:**
 
 ```
 (priority = High AND state in (Backlog, In Progress, Todo)) OR (type in (Bug, Task, Improvements) AND assignee in (Ethan, Parker, Amanda))
 ```
+
+## Sort and limit results
+
+You can sort results and cap how many are returned by adding `ORDER BY` and `LIMIT` clauses to the end of a query.
+
+```
+priority = High ORDER BY dueDate ASC LIMIT 20
+```
+
+- **ORDER BY** sorts the results by a field. Add `ASC` (ascending, the default) or `DESC` (descending).
+- **LIMIT** caps the number of results returned. The maximum is 1000.
+
+Fields you can sort by: `priority`, `state`, `title`, `assignee`, `label`, `module`, `startDate`, `dueDate`, `createdAt`, `updatedAt`, `sortOrder`, `rank`.
 
 ## Save as view
 
@@ -78,6 +99,40 @@ PQL is available wherever work items are listed:
 - Views
 - Teamspace work items
 - Workspace views
+
+The exact fields available in the editor depend on what is enabled for the project or workspace you are filtering. For example, `cycle` and `module` appear where those features are on, and custom properties appear when your work item types define them.
+
+## Fields reference
+
+### Text search
+
+| Field   | What it searches                                                        |
+| ------- | ----------------------------------------------------------------------- |
+| `title` | The work item title (name) only                                         |
+| `text`  | The work item title **and** description together, in a single condition |
+
+Use `text` when you want to match a term whether it appears in the title or the body of a work item. For example, `text ~ "login"` returns work items with "login" in the title or the description.
+
+### Common fields
+
+| Field        | Filters on                                                      |
+| ------------ | --------------------------------------------------------------- |
+| `type`       | Work item type                                                  |
+| `state`      | Workflow state                                                  |
+| `stateGroup` | State group (Backlog, Unstarted, Started, Completed, Cancelled) |
+| `priority`   | Priority (Urgent, High, Medium, Low, None)                      |
+| `assignee`   | Assigned members                                                |
+| `label`      | Labels applied                                                  |
+| `cycle`      | Cycle membership                                                |
+| `module`     | Module membership                                               |
+| `milestone`  | Milestone                                                       |
+| `mention`    | Members mentioned in the work item                              |
+| `createdBy`  | Who created the work item                                       |
+| `project`    | Project the work item belongs to                                |
+| `startDate`  | Start date                                                      |
+| `dueDate`    | Due date                                                        |
+| `createdAt`  | Creation date                                                   |
+| `updatedAt`  | Last updated date                                               |
 
 ## Operators reference
 
@@ -98,6 +153,14 @@ Each field supports different operators. The available operators depend on the f
 | `=`      | Title matches exactly |
 | `!=`     | Title does not match  |
 | `~`      | Title contains text   |
+
+### text
+
+| Operator | Description                                  |
+| -------- | -------------------------------------------- |
+| `=`      | Title or description matches the text        |
+| `!=`     | Title or description does not match the text |
+| `~`      | Title or description contains the text       |
 
 ### type
 
@@ -331,14 +394,37 @@ The available operators depend on the property type.
 
 ## Built-in functions
 
-PQL includes functions to filter work items based on common scenarios. These functions return a boolean value (`true` or `false`).
+PQL includes functions that cover common scenarios. Type `(` after a field, or start typing a function name, and the editor suggests the ones that fit.
 
-| Function              | Description                         |
-| --------------------- | ----------------------------------- |
-| `isOverdue`           | Due date is past and state is open  |
-| `hasNoAssignee`       | Work item has no assignee           |
-| `hasNoLabel`          | Work item has no labels             |
-| `isTopLevel`          | Not a sub-work item (has no parent) |
-| `isSubWorkItem`       | Is a sub-work item (has a parent)   |
-| `hasChildren`         | Has at least one sub-work item      |
-| `hasStartAndDueDates` | Has both start and due dates        |
+### Predicate functions
+
+These are standalone conditions that return true or false. Use them on their own (and combine with `NOT` to invert).
+
+| Function                | Matches work items that                |
+| ----------------------- | -------------------------------------- |
+| `isOverdue()`           | Are past their due date and still open |
+| `hasNoAssignee()`       | Have no assignee                       |
+| `hasNoLabel()`          | Have no labels                         |
+| `isTopLevel()`          | Are not a sub-work item (no parent)    |
+| `isSubWorkItem()`       | Are a sub-work item (have a parent)    |
+| `hasChildren()`         | Have at least one sub-work item        |
+| `hasStartAndDueDates()` | Have both a start date and a due date  |
+
+### Relation functions
+
+These match work items by their relationship to other work items. Each takes one or more work item identifiers (for example `PROJ-123`).
+
+| Function                   | Matches work items that                 |
+| -------------------------- | --------------------------------------- |
+| `blockedBy("PROJ-1", …)`   | Are blocked by the given items          |
+| `blocks("PROJ-1", …)`      | Block the given items                   |
+| `linkedTo("PROJ-1", …)`    | Are related to the given items          |
+| `duplicateOf("PROJ-1", …)` | Are marked duplicate of the given items |
+| `childOf("PROJ-1", …)`     | Are a child of the given items          |
+| `parentOf("PROJ-1", …)`    | Are a parent of the given items         |
+
+Example:
+
+```
+blockedBy("PROJ-42")
+```

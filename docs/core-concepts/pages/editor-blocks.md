@@ -96,6 +96,32 @@ Use the slash command to insert the layout you need:
 
 Each column appears with an "Add content" placeholder where you can add any block type - text, lists, code, images, and more.
 
+## Tabs <Badge type="tip" text="Business" />
+
+Tabs let you organize content into a tabbed block within a page, so related sections can share one space and readers switch between them instead of scrolling. You can lay tabs out horizontally (along the top) or vertically (down the side).
+
+### Insert tabs
+
+Type `/tabs` in the editor and choose one of:
+
+- **Horizontal tabs** - the tab labels run along the top of the block.
+- **Vertical tabs** - the tab labels run down the side of the block.
+
+A new block is inserted with two tabs, named "Tab 1" and "Tab 2". Each tab holds its own content, and you can put any editor content inside a tab, including text, lists, images, and other blocks.
+
+### Rename a tab
+
+Double-click a tab label, type the new name, and press Enter (or click away) to save.
+
+### Change the layout
+
+While editing, use the layout controls on the block to switch between horizontal and vertical orientation at any time. Your tabs and their content are preserved.
+
+### Notes
+
+- Tabs cannot be nested. You cannot insert a tabs block inside another tabs block.
+- In read-only or published pages, readers can switch between tabs but cannot add, rename, delete, or edit them.
+
 ## Video <Badge type="info" text="Pro" />
 
 Embeds video content directly into your pages for rich multimedia documentation.
