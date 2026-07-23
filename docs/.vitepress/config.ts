@@ -786,7 +786,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
   markdown: {
     theme: {
       light: "github-light",
-      dark: "dracula",
+      dark: "github-dark",
     },
     config(md) {
       md.use(tabsMarkdownPlugin);
