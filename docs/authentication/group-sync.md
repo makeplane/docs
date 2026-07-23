@@ -52,7 +52,7 @@ Under **Configure group sync**, set how syncing behaves.
 | Setting                    | Description                                                                                               | Default  |
 | -------------------------- | --------------------------------------------------------------------------------------------------------- | -------- |
 | **Sync on login**          | Update the user's group membership and access when they sign in                                           | Enabled  |
-| **Offline sync**           | Run a sync every six hours automatically, without waiting for users to log in (OIDC and LDAP only)        | Disabled |
+| **Offline sync**           | Run a sync every two hours automatically, without waiting for users to log in (OIDC and LDAP only)        | Disabled |
 | **Auto remove**            | Remove users from the workspace and projects when no group matches                                        | Disabled |
 | **Group attribute key**    | The identity provider attribute that carries the user's groups                                            | `groups` |
 | **Default workspace role** | The role assigned to users who are auto-added to the workspace but don't match any workspace role mapping | -        |
@@ -109,7 +109,7 @@ When a user signs in (or during an offline sync), Plane resolves their groups an
 
 ## When users leave groups
 
-Removal only happens when **Auto remove** is enabled. When a user no longer matches a mapping, Plane revokes the access that group sync granted, in this order: private collections, projects, and finally the workspace.
+Removal only happens when **Auto remove** is enabled. When a user no longer matches a mapping, Plane revokes the access that group sync granted, in this order: projects, private collections, and finally the workspace.
 
 Group sync only ever touches access it granted itself. The following are never changed or removed by syncing:
 
