@@ -243,7 +243,7 @@ A two dimensional table renders issues grouped by the x-axis property as rows, w
 
 One row per group, with a count column. The y-axis metric is fixed to **work item count** and cannot be changed - table charts always show a raw count. The appearance settings (column color, legend, tooltip) match the bar chart config options.
 
-### Work Items Table <Badge type="warning" text="Enterprise Grid" />
+### Work Items Table <Badge type="tip" text="Business" />
 
 A work items table lists individual work items as rows with configurable columns. Unlike the table chart, which aggregates issues into groups and shows a count, the work items table renders one row per work item - giving you a live filtered spreadsheet view of your issues directly on a dashboard.
 
@@ -300,7 +300,7 @@ Dashboard-level and widget-level filters still apply, narrowing your assigned it
 
 Because the widget resolves to the current viewer, it shows results only for a signed-in user. On a published (public) dashboard, where there is no signed-in viewer, it has nothing to resolve to and shows no items.
 
-### Work items progress <Badge type="tip" text="Business" />
+### Work item type progress <Badge type="tip" text="Business" />
 
 The work items progress widget shows progress broken down by work item type. Each row is a work item of the type or types you choose (for example, an Epic or any custom type), and its progress bar reflects the completion of that item's direct sub-items.
 

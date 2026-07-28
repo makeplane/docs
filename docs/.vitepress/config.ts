@@ -583,8 +583,16 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
             ],
           },
           { text: "Wiki", link: "/core-concepts/pages/wiki" },
-          { text: "Collections", link: "/pages/collections" },
-          { text: "Nested Pages", link: "/core-concepts/pages/nested-pages" },
+          {
+            text: "Organize pages",
+            collapsed: false,
+            link: "/pages/organize-pages",
+            items: [
+              { text: "Collections", link: "/pages/collections" },
+              { text: "Nested Pages", link: "/pages/nested-pages" },
+              { text: "Page Labels", link: "/pages/page-labels" },
+            ],
+          },
           { text: "Page Templates", link: "/templates/page-templates" },
         ],
       },
@@ -724,6 +732,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
         text: "AI",
         items: [
           { text: "Plane AI", link: "/ai/plane-ai" },
+          { text: "AI Skills", link: "/ai/ai-skills" },
           { text: "AI credits", link: "/ai/plane-ai-credits" },
           { text: "MCP Connectors", link: "/ai/mcp-connectors" },
           {

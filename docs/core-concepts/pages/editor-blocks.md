@@ -198,6 +198,32 @@ Use the `/board` or `/drawio-board` slash command to insert a whiteboard block. 
 
 Both modes feature a consistent toolbar with **Save** and **Exit** buttons, making it easy to preserve your work and return to your Page. All diagrams are fully interactive—simply click any saved diagram to edit it again.
 
+## HTML artifact <Badge type="tip" text="Business" />
+
+An HTML artifact embeds a self-contained HTML file as a live, interactive block inside a page. Instead of pasting a link or a screenshot, you upload an `.html` file and it renders inline, right where you put it. This is useful for embedding things like a prototype, a self-contained report, a chart exported as HTML, or any standalone web snippet.
+
+The rendered artifact is fully interactive: scripts in the file run, so buttons, tabs, and other in-page interactions work.
+
+Hover over the block to reveal its toolbar:
+
+- **Open in new tab** opens the artifact in its own browser tab.
+- **View full screen** opens the artifact in a large modal for a closer look.
+- **Replace file** (edit mode) swaps in a different HTML file, keeping the block in place.
+- **Download** (edit mode) downloads the original HTML file.
+- **Delete artifact** (edit mode) removes the block.
+
+**Resize:** in edit mode, drag the bottom edge of the block to change its height. The height is saved with the page.
+
+In read-only or published pages, the artifact still renders and stays interactive. Readers get the **Open in new tab** and **View full screen** actions, but not the edit-only controls (replace, download, delete, resize).
+
+HTML artifacts run in a sandboxed frame that is isolated from Plane. The embedded file can run its own scripts and open links, but it cannot access your Plane session, your workspace data, or the surrounding page. Treat an artifact like any embedded third-party web page: only embed files you trust.
+
+### Notes
+
+- Accepted file types are `.html` and `.htm` only.
+- Deleting an artifact block also removes its uploaded file, unless the same file is embedded elsewhere in the page.
+- HTML artifacts are available in pages and other rich text fields (such as work item descriptions), wherever the editor is used.
+
 ## Callout
 
 Creates visually distinct sections with customizable icons and colors for highlighting warnings, tips , and calls-to-action.
@@ -230,7 +256,7 @@ Adds a horizontal line to separate content sections visually.
 
 Add emojis to your content across all Plane editors. Type `/emoji` to open the picker or use `:` and start typing for suggestions like `:smile:`. Choose from standard Unicode emojis and GitHub's extended collection.
 
-## Date block <Badge type="warning" text="Enterprise Grid" />
+## Date block <Badge type="info" text="Pro" />
 
 The date block inserts an inline date picker anywhere in a page. It renders as a small pill showing a formatted date and can be clicked to open a calendar and change the selection.
 
@@ -250,7 +276,7 @@ Click the pill again at any time to change the date.
 
 The date renders as plain formatted text. It cannot be clicked or changed.
 
-## Status block <Badge type="warning" text="Enterprise Grid" />
+## Status block <Badge type="info" text="Pro" />
 
 The status block inserts an inline colored label anywhere in a page. You define the text and choose from six colors. Use it to mark sections of a page with a state, flag, or category without creating a separate work item.
 

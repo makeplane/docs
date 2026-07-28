@@ -296,6 +296,10 @@
     {
       "source": "/ai/pi-chat",
       "destination": "/ai/plane-ai"
+    },
+    {
+      "source": "/core-concepts/pages/nested-pages",
+      "destination": "/pages/nested-pages"
     }
   ],
   "rewrites": [
