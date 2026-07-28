@@ -24,6 +24,32 @@ When you start typing in the PQL field:
 
 This guided experience lets you construct queries without memorizing syntax.
 
+## Generate a filter with AI
+
+Instead of writing PQL by hand, you can describe the filter you want in plain language and let Plane AI translate it into a PQL query for you.
+
+In the advanced (PQL) filter view, look for the AI filter input with the prompt **"Describe your filter in plain language..."**
+
+1. Type what you want in natural language, for example "high priority bugs assigned to me that are overdue."
+2. Press **Enter**, or click the submit button.
+3. Plane AI generates the matching PQL query, fills it into the PQL editor, and applies it.
+
+The generated query appears in the PQL editor as normal PQL, so you can review it, tweak it by hand, and save it as a view like any other query.
+
+### Examples
+
+| You type                                        | Plane AI produces a query like                                               |
+| ----------------------------------------------- | ---------------------------------------------------------------------------- |
+| "urgent items with no assignee"                 | `priority = Urgent AND hasNoAssignee()`                                      |
+| "everything due this week in the current cycle" | `dueDate BETWEEN startOfWeek() AND endOfWeek() AND cycle IN (activeCycle())` |
+| "bugs Priya is working on that aren't done"     | `type = Bug AND assignee = Priya AND stateGroup IN (openStates())`           |
+
+When your description names people, cycles, labels, or other entities, Plane AI resolves them to the actual items in your workspace so the query filters correctly and reads with their real names. If you are filtering inside a project, the AI scopes the query to that project. Otherwise it generates a workspace-level query.
+
+If your description is too ambiguous or can't be turned into a valid filter, you'll see "Could not generate a PQL query from the given input." Try rephrasing with more specific terms, or build the filter manually.
+
+Generating filters with AI requires [Plane AI to be enabled](/ai/plane-ai#enable-plane-ai-for-a-workspace) for your workspace.
+
 ## Query structure
 
 PQL queries follow a simple pattern:
@@ -138,13 +164,46 @@ Use `text` when you want to match a term whether it appears in the title or the 
 
 Each field supports different operators. The available operators depend on the field type.
 
+All operators available in PQL:
+
+| Operator      | Meaning                                |
+| ------------- | -------------------------------------- |
+| `=`           | Matches exactly                        |
+| `!=`          | Does not match                         |
+| `~`           | Contains the text                      |
+| `IN`          | Matches any value in a set             |
+| `NOT IN`      | Matches none of the values in a set    |
+| `<`           | Less than / before                     |
+| `<=`          | Less than or equal to / on or before   |
+| `>`           | Greater than / after                   |
+| `>=`          | Greater than or equal to / on or after |
+| `BETWEEN`     | Within a range                         |
+| `IS NULL`     | The field has no value                 |
+| `IS NOT NULL` | The field has a value                  |
+
+The tables below show which operators apply to each field.
+
 ### id
 
-| Operator | Description        |
-| -------- | ------------------ |
-| `=`      | ID matches exactly |
-| `!=`     | ID does not match  |
-| `~`      | ID contains text   |
+The `id` field matches a work item by its identifier (like `WEB-11`) or by its sequence number, and it supports comparisons as well as exact matches.
+
+| Operator          | Description                                       |
+| ----------------- | ------------------------------------------------- |
+| `=`               | ID matches exactly                                |
+| `!=`              | ID does not match                                 |
+| `~`               | Identifier contains text (partial match)          |
+| `<` `<=` `>` `>=` | Sequence comparison                               |
+| `BETWEEN`         | Sequence within a range                           |
+| `IN`              | Any of the listed identifiers or sequence numbers |
+
+The value can take several forms:
+
+| Form                  | Meaning                                       | Example                                                           |
+| --------------------- | --------------------------------------------- | ----------------------------------------------------------------- |
+| Identifier equality   | Exact work item key                           | `id = "WEB-11"`                                                   |
+| Identifier comparison | Project-scoped sequence comparison            | `id >= "WEB-11"` matches project `WEB` with sequence 11 or higher |
+| Bare integer          | Sequence number only, in any project in scope | `id >= 10`, `id IN (1, 2, 3)`                                     |
+| Contains              | Partial identifier match                      | `id ~ "WEB"`                                                      |
 
 ### title
 
@@ -191,13 +250,14 @@ Each field supports different operators. The available operators depend on the f
 
 ### assignee
 
-| Operator  | Description                                  |
-| --------- | -------------------------------------------- |
-| `IN`      | Assigned to any of the specified members     |
-| `NOT IN`  | Not assigned to any of the specified members |
-| `=`       | Assigned to this member                      |
-| `!=`      | Not assigned to this member                  |
-| `IS NULL` | No assignee                                  |
+| Operator      | Description                                  |
+| ------------- | -------------------------------------------- |
+| `IN`          | Assigned to any of the specified members     |
+| `NOT IN`      | Not assigned to any of the specified members |
+| `=`           | Assigned to this member                      |
+| `!=`          | Not assigned to this member                  |
+| `IS NULL`     | No assignee                                  |
+| `IS NOT NULL` | Has an assignee                              |
 
 ### priority
 
@@ -210,105 +270,76 @@ Each field supports different operators. The available operators depend on the f
 
 ### mention
 
-| Operator  | Description                                   |
-| --------- | --------------------------------------------- |
-| `IN`      | Mentions any of the specified members         |
-| `NOT IN`  | Does not mention any of the specified members |
-| `=`       | Mentions this member                          |
-| `!=`      | Does not mention this member                  |
-| `IS NULL` | No mentions                                   |
+| Operator      | Description                                   |
+| ------------- | --------------------------------------------- |
+| `IN`          | Mentions any of the specified members         |
+| `NOT IN`      | Does not mention any of the specified members |
+| `=`           | Mentions this member                          |
+| `!=`          | Does not mention this member                  |
+| `IS NULL`     | No mentions                                   |
+| `IS NOT NULL` | Has mentions                                  |
 
 ### label
 
-| Operator  | Description                               |
-| --------- | ----------------------------------------- |
-| `IN`      | Has any of the specified labels           |
-| `NOT IN`  | Does not have any of the specified labels |
-| `=`       | Has this label                            |
-| `!=`      | Does not have this label                  |
-| `IS NULL` | No labels                                 |
+| Operator      | Description                               |
+| ------------- | ----------------------------------------- |
+| `IN`          | Has any of the specified labels           |
+| `NOT IN`      | Does not have any of the specified labels |
+| `=`           | Has this label                            |
+| `!=`          | Does not have this label                  |
+| `IS NULL`     | No labels                                 |
+| `IS NOT NULL` | Has at least one label                    |
 
 ### cycle
 
-| Operator  | Description                        |
-| --------- | ---------------------------------- |
-| `IN`      | In any of the specified cycles     |
-| `NOT IN`  | Not in any of the specified cycles |
-| `=`       | In this cycle                      |
-| `!=`      | Not in this cycle                  |
-| `IS NULL` | Not in any cycle                   |
+| Operator      | Description                        |
+| ------------- | ---------------------------------- |
+| `IN`          | In any of the specified cycles     |
+| `NOT IN`      | Not in any of the specified cycles |
+| `=`           | In this cycle                      |
+| `!=`          | Not in this cycle                  |
+| `IS NULL`     | Not in any cycle                   |
+| `IS NOT NULL` | In a cycle                         |
 
 ### module
 
-| Operator  | Description                         |
-| --------- | ----------------------------------- |
-| `IN`      | In any of the specified modules     |
-| `NOT IN`  | Not in any of the specified modules |
-| `=`       | In this module                      |
-| `!=`      | Not in this module                  |
-| `IS NULL` | Not in any module                   |
+| Operator      | Description                         |
+| ------------- | ----------------------------------- |
+| `IN`          | In any of the specified modules     |
+| `NOT IN`      | Not in any of the specified modules |
+| `=`           | In this module                      |
+| `!=`          | Not in this module                  |
+| `IS NULL`     | Not in any module                   |
+| `IS NOT NULL` | In a module                         |
 
 ### milestone
 
-| Operator  | Description                            |
-| --------- | -------------------------------------- |
-| `IN`      | In any of the specified milestones     |
-| `NOT IN`  | Not in any of the specified milestones |
-| `=`       | In this milestone                      |
-| `!=`      | Not in this milestone                  |
-| `IS NULL` | No milestone                           |
+| Operator      | Description                            |
+| ------------- | -------------------------------------- |
+| `IN`          | In any of the specified milestones     |
+| `NOT IN`      | Not in any of the specified milestones |
+| `=`           | In this milestone                      |
+| `!=`          | Not in this milestone                  |
+| `IS NULL`     | No milestone                           |
+| `IS NOT NULL` | Has a milestone                        |
 
-### startDate
+### startDate, dueDate, createdAt, updatedAt
 
-| Operator  | Description                              |
-| --------- | ---------------------------------------- |
-| `=`       | Start date is this date                  |
-| `!=`      | Start date is not this date              |
-| `<`       | Start date is before this date           |
-| `<=`      | Start date is on or before this date     |
-| `>`       | Start date is after this date            |
-| `>=`      | Start date is on or after this date      |
-| `BETWEEN` | Start date is within the specified range |
-| `IS NULL` | No start date set                        |
+Date fields all support the same operators.
 
-### dueDate
+| Operator      | Description                |
+| ------------- | -------------------------- |
+| `=`           | Is this date               |
+| `!=`          | Is not this date           |
+| `<`           | Before this date           |
+| `<=`          | On or before this date     |
+| `>`           | After this date            |
+| `>=`          | On or after this date      |
+| `BETWEEN`     | Within the specified range |
+| `IS NULL`     | No date set                |
+| `IS NOT NULL` | A date is set              |
 
-| Operator  | Description                            |
-| --------- | -------------------------------------- |
-| `=`       | Due date is this date                  |
-| `!=`      | Due date is not this date              |
-| `<`       | Due date is before this date           |
-| `<=`      | Due date is on or before this date     |
-| `>`       | Due date is after this date            |
-| `>=`      | Due date is on or after this date      |
-| `BETWEEN` | Due date is within the specified range |
-| `IS NULL` | No due date set                        |
-
-### createdAt
-
-| Operator  | Description                        |
-| --------- | ---------------------------------- |
-| `=`       | Created on this date               |
-| `!=`      | Not created on this date           |
-| `<`       | Created before this date           |
-| `<=`      | Created on or before this date     |
-| `>`       | Created after this date            |
-| `>=`      | Created on or after this date      |
-| `BETWEEN` | Created within the specified range |
-| `IS NULL` | No creation date                   |
-
-### updatedAt
-
-| Operator  | Description                        |
-| --------- | ---------------------------------- |
-| `=`       | Updated on this date               |
-| `!=`      | Not updated on this date           |
-| `<`       | Updated before this date           |
-| `<=`      | Updated on or before this date     |
-| `>`       | Updated after this date            |
-| `>=`      | Updated on or after this date      |
-| `BETWEEN` | Updated within the specified range |
-| `IS NULL` | No update date                     |
+Date values can be literal dates or [date functions](#date-functions), for example `dueDate < today()` or `createdAt >= daysAgo(7)`.
 
 ### createdBy
 
@@ -396,35 +427,137 @@ The available operators depend on the property type.
 
 PQL includes functions that cover common scenarios. Type `(` after a field, or start typing a function name, and the editor suggests the ones that fit.
 
-### Predicate functions
+Functions come in two kinds:
 
-These are standalone conditions that return true or false. Use them on their own (and combine with `NOT` to invert).
+- **Value functions** return a value or a list. You use them inside a condition, on the right side of a comparison or with `IN`.
+- **Condition functions** are standalone true/false checks. You use them on their own and combine them with `AND`, `OR`, and `NOT`.
 
-| Function                | Matches work items that                |
-| ----------------------- | -------------------------------------- |
-| `isOverdue()`           | Are past their due date and still open |
-| `hasNoAssignee()`       | Have no assignee                       |
-| `hasNoLabel()`          | Have no labels                         |
-| `isTopLevel()`          | Are not a sub-work item (no parent)    |
-| `isSubWorkItem()`       | Are a sub-work item (have a parent)    |
-| `hasChildren()`         | Have at least one sub-work item        |
-| `hasStartAndDueDates()` | Have both a start date and a due date  |
+## Value functions
 
-### Relation functions
+### Date functions
 
-These match work items by their relationship to other work items. Each takes one or more work item identifiers (for example `PROJ-123`).
+Return a date. Use them on the right side of a date-field condition.
 
-| Function                   | Matches work items that                 |
-| -------------------------- | --------------------------------------- |
-| `blockedBy("PROJ-1", …)`   | Are blocked by the given items          |
-| `blocks("PROJ-1", …)`      | Block the given items                   |
-| `linkedTo("PROJ-1", …)`    | Are related to the given items          |
-| `duplicateOf("PROJ-1", …)` | Are marked duplicate of the given items |
-| `childOf("PROJ-1", …)`     | Are a child of the given items          |
-| `parentOf("PROJ-1", …)`    | Are a parent of the given items         |
+| Function                            | Returns                       |
+| ----------------------------------- | ----------------------------- |
+| `now()` / `today()`                 | Today's date                  |
+| `startOfDay()` / `endOfDay()`       | Start / end of today          |
+| `startOfWeek()` / `endOfWeek()`     | Start / end of this week      |
+| `startOfMonth()` / `endOfMonth()`   | Start / end of this month     |
+| `startOfYear()` / `endOfYear()`     | Start / end of this year      |
+| `daysAgo(n)` / `daysFromNow(n)`     | n days before / after today   |
+| `weeksAgo(n)` / `weeksFromNow(n)`   | n weeks before / after today  |
+| `monthsAgo(n)` / `monthsFromNow(n)` | n months before / after today |
+
+Examples:
+
+```
+dueDate BETWEEN startOfWeek() AND endOfWeek()
+createdAt >= daysAgo(7)
+```
+
+### User functions
+
+| Function          | Returns                       |
+| ----------------- | ----------------------------- |
+| `currentUser()`   | The person running the query  |
+| `inactiveUsers()` | Deactivated workspace members |
+
+Examples:
+
+```
+assignee = currentUser()
+assignee IN (inactiveUsers())
+```
+
+### Cycle functions
+
+Return a list of cycles. Use them with `IN`.
+
+| Function            | Returns                                  |
+| ------------------- | ---------------------------------------- |
+| `activeCycle()`     | The cycle active today                   |
+| `completedCycles()` | Cycles whose end date has passed         |
+| `upcomingCycles()`  | Cycles whose start date is in the future |
 
 Example:
 
 ```
-blockedBy("PROJ-42")
+cycle IN (activeCycle())
 ```
+
+### State group functions
+
+Return a list of state groups. Use them with `IN` on `stateGroup`.
+
+| Function         | Returns                                |
+| ---------------- | -------------------------------------- |
+| `openStates()`   | Backlog, unstarted, and started groups |
+| `closedStates()` | Completed and cancelled groups         |
+| `activeStates()` | Unstarted and started groups           |
+
+Example:
+
+```
+stateGroup IN (openStates())
+```
+
+## Condition functions
+
+Standalone checks that return true or false. Combine them with `AND`, `OR`, and `NOT`. Arguments shown as `"user"`, `"date"`, `"text"`, or `n` are values you supply; you pick users and dates from the editor's suggestions.
+
+### Structure and relationships
+
+Relation functions each take one or more work item identifiers, for example `blockedBy("WEB-11", "WEB-20")`.
+
+| Function               | Matches work items that                         | Example                 |
+| ---------------------- | ----------------------------------------------- | ----------------------- |
+| `isTopLevel()`         | Are not a sub-work item (no parent)             | `isTopLevel()`          |
+| `isSubWorkItem()`      | Are a sub-work item (have a parent)             | `isSubWorkItem()`       |
+| `hasChildren()`        | Have at least one sub-work item                 | `hasChildren()`         |
+| `hasRelations()`       | Have at least one relation to another work item | `hasRelations()`        |
+| `blockedBy("id", …)`   | Are blocked by the given items                  | `blockedBy("WEB-11")`   |
+| `blocks("id", …)`      | Block the given items                           | `blocks("WEB-11")`      |
+| `linkedTo("id", …)`    | Are related to the given items                  | `linkedTo("WEB-11")`    |
+| `duplicateOf("id", …)` | Are marked duplicate of the given items         | `duplicateOf("WEB-11")` |
+| `childOf("id", …)`     | Are a child of the given items                  | `childOf("WEB-11")`     |
+| `parentOf("id", …)`    | Are a parent of the given items                 | `parentOf("WEB-11")`    |
+
+### Assignees and labels
+
+| Function          | Matches work items that | Example           |
+| ----------------- | ----------------------- | ----------------- |
+| `hasNoAssignee()` | Have no assignee        | `hasNoAssignee()` |
+| `hasNoLabel()`    | Have no labels          | `hasNoLabel()`    |
+
+### Dates and status
+
+| Function                | Matches work items that                | Example                 |
+| ----------------------- | -------------------------------------- | ----------------------- |
+| `isOverdue()`           | Are past their due date and still open | `isOverdue()`           |
+| `hasStartAndDueDates()` | Have both a start date and a due date  | `hasStartAndDueDates()` |
+
+### Comments, links, and attachments
+
+Count arguments accept a number or a comparison such as `">= 2"`.
+
+| Function                  | Matches work items that                          | Example                         |
+| ------------------------- | ------------------------------------------------ | ------------------------------- |
+| `hasComments([n])`        | Have comments, optionally a count                | `hasComments(">= 3")`           |
+| `commentedAfter("date")`  | Have a comment on or after the date              | `commentedAfter("2026-01-01")`  |
+| `commentedBefore("date")` | Have a comment on or before the date             | `commentedBefore("2026-06-30")` |
+| `commentContains("text")` | Have a comment containing the text               | `commentContains("blocker")`    |
+| `lastCommentBy("user")`   | Whose most recent comment is by the user         | `lastCommentBy("Priya")`        |
+| `hasLinks([n])`           | Have URL links, optionally a count               | `hasLinks(">= 1")`              |
+| `linkContains("text")`    | Have a link whose URL or title contains the text | `linkContains("figma")`         |
+| `hasAttachments([n])`     | Have attachments, optionally a count             | `hasAttachments(">= 2")`        |
+| `attachedBy("user")`      | Have an attachment uploaded by the user          | `attachedBy("Priya")`           |
+
+### Worklogs and activity
+
+| Function                          | Matches work items that                 | Example                                         |
+| --------------------------------- | --------------------------------------- | ----------------------------------------------- |
+| `hasWorklogs()`                   | Have at least one worklog (logged time) | `hasWorklogs()`                                 |
+| `workLoggedBy("user")`            | Have time logged by the user            | `workLoggedBy("Priya")`                         |
+| `workLoggedBetween("from", "to")` | Have time logged between two dates      | `workLoggedBetween("2026-01-01", "2026-01-31")` |
+| `recentlyViewed()`                | You viewed in the last 30 days          | `recentlyViewed()`                              |

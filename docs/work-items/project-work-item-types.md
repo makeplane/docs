@@ -116,6 +116,10 @@ A date picker field. You choose a display format for dates across this property:
 
 The format you pick applies consistently to all work items using this property.
 
+### Rich text <Badge type="tip" text="Business" />
+
+A full document editor field. Unlike a plain text property, rich text supports formatting: headings, lists, code blocks, inline code, bold, italic, and embedded images. Each work item stores its own content for the field, and that content is versioned and searchable.
+
 ### Member picker
 
 A people-selection field that lists all members of the project. Choose **Single select** to allow one member, or **Multi select** to allow several.

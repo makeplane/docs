@@ -128,7 +128,7 @@ Members selected through a member picker property are automatically added as sub
 
 A field for linking a work item to one or more [releases](https://docs.plane.so/releases) in the project. Supports multi-select.
 
-### Rich text <Badge type="warning" text="Enterprise Grid" />
+### Rich text <Badge type="tip" text="Business" />
 
 A full document editor field. Unlike a plain text property, rich text supports formatting: headings, lists, code blocks, inline code, bold, italic, and embedded images. Each work item stores its own content for the field, and that content is versioned and searchable.
 
