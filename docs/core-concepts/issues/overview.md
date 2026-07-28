@@ -138,7 +138,7 @@ Custom property values are project-specific, so they can't be carried into anoth
 
 - **Epics** copied into a different project need an Epic type in the destination — that is, the destination project must have [Work item types](/core-concepts/issues/epics) enabled. If it doesn't, Plane refuses the copy with an error instead of demoting the epic to a regular work item. Copying an epic within its own project always works.
 - **Archived work items** are copied as active work items, not as archived ones.
-- Copying multiple work items at once via [bulk operations](/core-concepts/issues/bulk-ops) follows the same field rules as copying a single one. The one difference is the epic case above: in a bulk copy, epics that can't land in the destination are skipped and the rest of the selection still copies.
+- You can copy work items in bulk, too. The field rules above apply there as well — see [Copy work items](/core-concepts/issues/bulk-ops#copy-work-items) for the selection limit, permissions, and how epics in a mixed selection are handled.
 
 ## Add dependencies
 
