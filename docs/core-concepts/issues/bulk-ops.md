@@ -31,6 +31,19 @@ You can modify several properties across multiple work items simultaneously:
 - Set or modify modules
 - Add or update start and due dates
 
+## Copy work items
+
+Select the work items you want, then choose **Make a copy** from the bulk actions. Pick a destination project — it defaults to the current one — and confirm.
+
+Which properties survive the copy depends on whether the destination is the same project or a different one. See [What gets copied](/core-concepts/issues/overview#what-gets-copied) for the full field-by-field breakdown; bulk copies follow the same rules as copying a single work item.
+
+A few things specific to copying in bulk:
+
+- You can copy up to **1000 work items** at a time.
+- You need permission to create work items in the destination project.
+- The copy runs in the background, so the new work items appear in the destination project shortly after you confirm rather than all at once.
+- If the selection contains epics and the destination project has no Epic type, those epics are skipped and the rest of the selection still copies.
+
 ## Subscribe to multiple work items
 
 If you need to keep track of several work items at once, you can subscribe to multiple work items in a single operation. This ensures you'll receive notifications about any updates to those work items.
