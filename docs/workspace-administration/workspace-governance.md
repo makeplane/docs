@@ -65,11 +65,11 @@ The migration freeze makes the affected configuration temporarily read-only, and
 
 You control how much choice a project has over which workflow applies to each work item type. This is set **per work item type**, using a **governance mode**:
 
-| Mode | What a project admin can do |
-|---|---|
-| **Any** | Choose any active workspace workflow for that work item type. |
-| **Constrained** | Choose only from an **allowlist** of workflows you define for that type. |
-| **Required** | No choice. The workspace mandates one workflow, and every project uses it. |
+| Mode            | What a project admin can do                                                |
+| --------------- | -------------------------------------------------------------------------- |
+| **Any**         | Choose any active workspace workflow for that work item type.              |
+| **Constrained** | Choose only from an **allowlist** of workflows you define for that type.   |
+| **Required**    | No choice. The workspace mandates one workflow, and every project uses it. |
 
 ### Pins
 

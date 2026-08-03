@@ -21,11 +21,11 @@ Every custom automation has three components. When [trigger] happens, if [condit
 
 Every plan builds automations the same way, with the same triggers, conditions, and actions. What differs is **where** they are configured, **which projects** they can act on, and **which actions** are available. Find your setup below.
 
-| Plan / setup | Where you configure automations | What you get |
-|---|---|---|
-| **Business** | Inside each project, under **Project Settings → Automations** | Custom automations scoped to one project, with the **Change property** and **Add comment** actions. |
-| **Enterprise Grid** (project-managed) | Project settings, plus **Workspace Settings → Automations** | Everything above, plus **workspace automations** that span all projects or a chosen subset, the **Send webhook** and **Run script** actions, and **scheduled** triggers. |
-| **Enterprise Grid with [Workspace Governance](/workspace-administration/workspace-governance)** | Once for the whole workspace, under **Settings → Automations** | Automations are managed centrally by a workspace admin and applied to projects. Project admins no longer create or edit automations inside a project. |
+| Plan / setup                                                                                    | Where you configure automations                                | What you get                                                                                                                                                             |
+| ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Business**                                                                                    | Inside each project, under **Project Settings → Automations**  | Custom automations scoped to one project, with the **Change property** and **Add comment** actions.                                                                      |
+| **Enterprise Grid** (project-managed)                                                           | Project settings, plus **Workspace Settings → Automations**    | Everything above, plus **workspace automations** that span all projects or a chosen subset, the **Send webhook** and **Run script** actions, and **scheduled** triggers. |
+| **Enterprise Grid with [Workspace Governance](/workspace-administration/workspace-governance)** | Once for the whole workspace, under **Settings → Automations** | Automations are managed centrally by a workspace admin and applied to projects. Project admins no longer create or edit automations inside a project.                    |
 
 **In short**
 
@@ -322,7 +322,6 @@ You build these automations exactly as described above. This section covers only
 - **All automations are managed centrally.** A workspace admin creates and edits every automation under **Settings → Automations**, choosing whether each one applies to all projects or a specific subset.
 
 See [Workspace governance](workspace-governance.md) for the full picture of what centralizes and what changes for projects.
-
 
 ## Common use cases
 

@@ -8,9 +8,10 @@ description: Manage work item progress with customizable states in Plane. Organi
 Managing work items effectively is at the heart of every project, and Plane provides a robust system for organizing them into states that represent the stages of a work item's lifecycle. As work items transition through these states—from backlog to completion—they reflect the progression of work in your project, forming a clear and efficient workflow for your team.
 
 ## Where to configure states
+
 Each project defines its own states, managed by a **project admin** under **Settings → (project) → States**. This is the default.
 
-**Enterprise Grid - workspace level**   
+**Enterprise Grid - workspace level**  
 With [workspace governance](/workspace-administration/workspace-governance) enabled, states become a single shared set for the whole workspace, managed by a **workspace admin** under **Workspace Settings → States**, then applied to every project. Project admins use the shared set but can't edit it. See [Under Enterprise Grid governance](#under-enterprise-grid-governance).
 
 The concept and most mechanics are identical either way; only where you configure them, who can, and a few behaviors differ.
@@ -72,7 +73,7 @@ States are shown grouped. Use the **+** on a group to add a state to it.
 
 **Create** - set a **name**, a **color**, and an optional **description**. The group is determined by which group you add the state under. A duplicate name is rejected.
 
-::: info **Enterprise Grid:** 
+::: info **Enterprise Grid:**
 State names must be unique across the **whole workspace**, and the check is **case-insensitive** - "Todo" and "todo" are treated as the same. (When governance is first enabled, same-named states from different projects are merged into one.)
 :::
 
@@ -89,7 +90,7 @@ State names must be unique across the **whole workspace**, and the check is **ca
 
 Deleting a state is permanent.
 
-:::info **Enterprise Grid** 
+:::info **Enterprise Grid**
 A state also **cannot be deleted while a workflow uses it** - the error names the workflows. Remove the state from those workflows first. Project admins cannot create, edit, or delete states at all; state management happens at the workspace level.
 :::
 

@@ -59,17 +59,16 @@ The type name must be **unique across the workspace**. A newly created type star
 
 Creating a type at the workspace level makes it available in the workspace library, but it does not put the type into every project by itself. How a type reaches a project depends on its rollout setting:
 
-| Rollout | Behavior |
-| --- | --- |
+| Rollout              | Behavior                                                                                                                                                         |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Import** (default) | The type is added to a project only when a Project Admin imports it from the workspace library. See [Import types into a project](#import-types-into-a-project). |
-| **Mandatory** | The type is present in **every** project and cannot be removed by a Project Admin. Marking a type Mandatory adds it to all existing projects immediately. |
+| **Mandatory**        | The type is present in **every** project and cannot be removed by a Project Admin. Marking a type Mandatory adds it to all existing projects immediately.        |
 
 :::warning
 Marking a type **Mandatory** adds it to every project right away, and a mandatory type cannot be deactivated or removed at the project level. Changing it back to Import later does **not** remove it from projects that already have it.
 :::
 
 The default **Task** type behaves like a workspace-wide type: it is present in every project and cannot be deleted or made inactive.
-
 
 ## Create workspace custom properties
 

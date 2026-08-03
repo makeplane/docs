@@ -34,10 +34,10 @@ If you already had a workflow configured before, it's now your project's default
 
 Every plan builds workflows the same way, with the same states, flows, and conditions. What differs is **where** they are configured and **who** manages them. Find your setup below.
 
-| Plan / setup | Where you configure workflows | What you get |
-|---|---|---|
-| **Business** | Inside each project, under **Project Settings → Workflows** | One **default workflow** per project that governs all work items in it. |
-| **Enterprise Grid** (project-managed) | Inside each project, under **Project Settings → Workflows** | Everything above, plus **approval flows**, **transition conditions**, and **multiple custom workflows** scoped to specific work item types. |
+| Plan / setup                                                                                    | Where you configure workflows                                          | What you get                                                                                                                                                                                      |
+| ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Business**                                                                                    | Inside each project, under **Project Settings → Workflows**            | One **default workflow** per project that governs all work items in it.                                                                                                                           |
+| **Enterprise Grid** (project-managed)                                                           | Inside each project, under **Project Settings → Workflows**            | Everything above, plus **approval flows**, **transition conditions**, and **multiple custom workflows** scoped to specific work item types.                                                       |
 | **Enterprise Grid with [Workspace Governance](/workspace-administration/workspace-governance)** | Once for the whole workspace, under **Workspace Settings → Workflows** | Workflows are defined centrally by a workspace admin and applied to every project. Project admins no longer edit workflows inside a project; they choose from the workflows the workspace allows. |
 
 **In short**
@@ -63,7 +63,7 @@ Once enabled, you'll see your project's default workflow listed with **Default**
 
 The workflows list includes a search bar to find workflows by name. You can also filter the list by status (Active or Inactive) and by work item type, and sort it by name, date created, or date modified in ascending or descending order.
 
-::: warning **Enterprise Grid with governance** 
+::: warning **Enterprise Grid with governance**
 There is no per-project **Enable workflows** toggle. Workflows are managed centrally under **Settings → Workflows** at the workspace level, and the workspace always has one default workflow. The list additionally shows how many **projects** and **work item types** use each workflow.
 :::
 
@@ -77,7 +77,7 @@ The default workflow includes all states configured in your project. When you cr
 
 ![Select states](https://media.docs.plane.so/workflows/select-states.webp#hero)
 
-::: warning **Enterprise Grid with governance** 
+::: warning **Enterprise Grid with governance**
 The states you add come from the workspace's shared [states](/core-concepts/issues/states#where-to-configure-states) catalog, not a project-specific list.
 :::
 
@@ -116,7 +116,7 @@ An approval flow adds a gate: the work item won't move forward until designated 
 - **by** - who can approve or reject. Defaults to **All**, but you can restrict it to specific members.
 - **with** - optional conditions that run before or after the approval decision. See [Transition conditions](#transition-conditions) below.
 
-::: warning **Enterprise Grid with governance** 
+::: warning **Enterprise Grid with governance**
 The members you pick under **by** are **workspace** members. At the project level they are the project's members.
 :::
 
@@ -211,7 +211,7 @@ To create one:
 
 You'll land on the workflow detail page, where you can [define its states and flows](#define-a-workflow).
 
-::: warning **Enterprise Grid with governance** 
+::: warning **Enterprise Grid with governance**
 The workflow name must be unique across the workspace, and you attach workflows to work item types through **governance modes** rather than a simple type assignment. See [Workspace level workflows](#workspace-level-workflows).
 :::
 
@@ -251,11 +251,11 @@ You build these workspace workflows exactly as described in [Set up workflows](#
 
 You control how much freedom each project has to pick its own workflow, set **per work item type** using a **governance mode**:
 
-| Mode | What a project admin can do |
-|---|---|
-| **Any** | Choose any active workspace workflow for that work item type. |
+| Mode            | What a project admin can do                                               |
+| --------------- | ------------------------------------------------------------------------- |
+| **Any**         | Choose any active workspace workflow for that work item type.             |
 | **Constrained** | Choose only from an **allowlist** of workflows you approve for that type. |
-| **Required** | No choice. One workflow is mandated, and every project uses it. |
+| **Required**    | No choice. One workflow is mandated, and every project uses it.           |
 
 **Pins** - in **Any** or **Constrained** mode, you can **pin** a specific project to a specific workflow. This forces that one project's choice while leaving other projects free. Pins are unavailable in Required mode, and are removed automatically if a type is later switched to Required.
 
