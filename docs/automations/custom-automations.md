@@ -321,7 +321,7 @@ You build these automations exactly as described above. This section covers only
 - **Existing project automations are preserved.** When governance is enabled, each project's automations are migrated up to the workspace level and scoped back to their original project, so they keep running exactly as before.
 - **All automations are managed centrally.** A workspace admin creates and edits every automation under **Settings → Automations**, choosing whether each one applies to all projects or a specific subset.
 
-See [Workspace governance](workspace-governance.md) for the full picture of what centralizes and what changes for projects.
+See [Workspace governance](/workspace-administration/workspace-governance) for the full picture of what centralizes and what changes for projects.
 
 ## Common use cases
 
