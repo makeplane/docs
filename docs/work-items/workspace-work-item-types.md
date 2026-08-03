@@ -53,6 +53,23 @@ Once enabled, you'll see the **Work item Types** and **Properties** tabs. The de
 
 The new type appears in the list. Use the toggle next to it to control whether project members can select it when creating work items.
 
+The type name must be **unique across the workspace**. A newly created type starts **inactive** until you turn it on with the toggle.
+
+## How a type reaches projects
+
+Creating a type at the workspace level makes it available in the workspace library, but it does not put the type into every project by itself. How a type reaches a project depends on its rollout setting:
+
+| Rollout              | Behavior                                                                                                                                                         |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Import** (default) | The type is added to a project only when a Project Admin imports it from the workspace library. See [Import types into a project](#import-types-into-a-project). |
+| **Mandatory**        | The type is present in **every** project and cannot be removed by a Project Admin. Marking a type Mandatory adds it to all existing projects immediately.        |
+
+:::warning
+Marking a type **Mandatory** adds it to every project right away, and a mandatory type cannot be deactivated or removed at the project level. Changing it back to Import later does **not** remove it from projects that already have it.
+:::
+
+The default **Task** type behaves like a workspace-wide type: it is present in every project and cannot be deleted or made inactive.
+
 ## Create workspace custom properties
 
 > **Role**: Workspace Admin
@@ -83,6 +100,36 @@ The property is now available to attach to any work item type.
 
 If the modal shows "No properties available," either all existing properties are already linked to that type, or no custom properties have been created at the workspace level yet. Create new properties from the **Properties** tab first.
 
+## Property settings
+
+Every property, regardless of its type, shares a common set of settings.
+
+**Title** (required)
+The label members see on the work item. It must be unique within the type, and cannot reuse one of the reserved field names **state**, **due date**, **cycle**, or **modules**. Plane derives an internal name from the title automatically, which is what [formulas](#formula) and the API use to reference the field.
+
+**Description**
+Optional helper text explaining what the property is for.
+
+**Icon**
+An icon shown next to the property. Each property type has a sensible default.
+
+**Mandatory**
+When on, the value cannot be left empty and the work item cannot be created or saved without it. Marking a property mandatory **clears any default value**. Boolean, Formula, and read-only Text properties cannot be made mandatory.
+
+**Active**
+Properties are active by default. Turn a property off to hide it without deleting it, and without losing values already entered on existing work items.
+
+**Default value**
+A value pre-filled on new work items. Most property types support a default; Formula properties do not, and a mandatory property cannot carry a default.
+
+**Single or multi select**
+For Dropdown, Member picker, and Release picker properties, whether members can select one value or several.
+
+**Display order**
+New properties are added to the end of the type and can be reordered. The order set here is the order members see on the work item.
+
+Several of these settings can be **overridden per context**, so the same property can be mandatory in one project or type and optional in another. See [Scope properties with contexts](#scope-properties-with-contexts).
+
 ## Property types
 
 ### Text
@@ -93,15 +140,17 @@ A freeform text field. When you add a text property, you choose one of three for
 - **Paragraph:** A multi-line input for longer freeform content.
 - **Read-only:** A fixed text display. You enter the text when setting up the property, and members see it on every work item but cannot edit it. Read-only text properties cannot be marked as mandatory.
 
+The format is chosen when the property is created and cannot be changed afterward.
+
 ### Number
 
 A numeric field that accepts decimal values. You can optionally set a default value that pre-fills when a work item is created.
 
 ### Dropdown
 
-A selection field backed by a list of options you define. When setting up the property, add your options under **Add options**. Each option can have a name and an icon.
+A selection field backed by a list of options you define. When setting up the property, add your options under **Add options**. Each option can have a name and an icon, and options can be nested under a parent option. At least one option is required.
 
-Choose **Single select** to let members pick one option at a time, or **Multi select** to allow multiple selections.
+Choose **Single select** to let members pick one option at a time, or **Multi select** to allow multiple selections. You can mark one or more options as the default (a single-select property can have only one default, and a mandatory property cannot carry a default).
 
 ### Boolean
 
@@ -116,21 +165,21 @@ A date picker field. You choose a display format for dates across this property:
 - `01/15/2025`
 - `2025/01/15`
 
-The format you pick applies consistently to all work items using this property.
+The format you pick applies consistently to all work items using this property, and can be changed at any time.
 
 ### Member picker
 
-A people-selection field that lists all members of the project. Choose **Single select** to allow one member, or **Multi select** to allow several.
+A people-selection field that lists the **members of the workspace**. Choose **Single select** to allow one member, or **Multi select** to allow several.
 
 Members selected through a member picker property are automatically added as subscribers to that work item, so they receive notifications for updates, comments, and status changes.
 
 ### Release picker <Badge type="tip" text="Business" />
 
-A field for linking a work item to one or more [releases](https://docs.plane.so/releases) in the project. Supports multi-select.
+A field for linking a work item to one or more [releases](/releases) in the project. Supports multi-select.
 
 ### Rich text <Badge type="tip" text="Business" />
 
-A full document editor field. Unlike a plain text property, rich text supports formatting: headings, lists, code blocks, inline code, bold, italic, and embedded images. Each work item stores its own content for the field, and that content is versioned and searchable.
+A full document editor field. Unlike a plain text property, rich text supports formatting: headings, lists, code blocks, inline code, bold, italic, and embedded images. Each work item stores its own content for the field, and that content is versioned and searchable. Content is sanitized on save, so scripts and unsafe HTML are removed. Rich text properties cannot be used to filter or group work items.
 
 ### URL
 
@@ -140,15 +189,75 @@ A field for a single URL. Members enter a link to an external resource, like a d
 
 A computed, read-only field. You write an expression when setting up the property, and Plane evaluates it automatically for each work item. Members cannot edit the value directly; it always reflects the formula result.
 
-Formulas can reference other properties on the work item and use conditional logic to produce a result. A few examples:
+**Referencing fields.** Reference another property with double curly braces: `\{\{field_name\}\}`. Field names are matched case-insensitively and ignore spaces versus underscores, so `\{\{start_date\}\}`, `\{\{Start Date\}\}`, and `\{\{START_DATE\}\}` all resolve to the same field. A formula can reference Text, Number, Date, and Boolean properties on the same work item type, and cannot reference itself.
+
+**Result types.** A formula evaluates to a Number, Text, Date, or Boolean.
+
+**Operators.**
+
+- Arithmetic on numbers: `+ - * /`
+- Dates: `\{\{end\}\} - \{\{start\}\}` gives the number of days; `\{\{date\}\} + 30` and `\{\{date\}\} - 7` shift a date.
+- Text concatenation: `&` (numbers, dates, and booleans are converted to text automatically).
+- Comparisons: `= != < <= > >=` (these return a Boolean).
+
+**Functions.** `IF(condition, true_value, false_value)`, `ROUND`, `ABS`, `UPPER`, `LOWER`, `LEN`, `CONCAT`, `TODAY()`, `NOW()`.
+
+**Examples.**
 
 Categorize by estimate size:
-`{estimate_point} > 5 ? "Large" : "Small"`
+
+```
+IF(\{\{estimate_point\}\} > 5, "Large", "Small")
+```
 
 Flag high-priority items:
-`{priority} == "HIGH" ? "Urgent: " + {name} : {name}`
 
-Because the value is always derived, formula properties cannot be marked as mandatory.
+```
+IF(\{\{priority\}\} = "HIGH", "Urgent: " & \{\{name\}\}, \{\{name\}\})
+```
+
+Days remaining until a deadline:
+
+```
+IF((\{\{due_date\}\} - TODAY()) < 0, "OVERDUE", (\{\{due_date\}\} - TODAY()) & " days remaining")
+```
+
+**Behavior.** If any referenced value is empty, the result is empty (an `IF()` branch that is not taken can still reference an empty field safely). A runtime error, such as dividing by zero, shows an error state rather than a value. Because the value is always derived, formula properties cannot be marked as mandatory.
+
+## Scope properties with contexts
+
+By default, a property applies everywhere it is attached. **Contexts** let you narrow a property to specific projects and work item types, each with its own configuration, so the same property can behave differently depending on where it is used.
+
+When you first create a property, Plane creates a **default context** covering all projects and all types, so the property is visible everywhere it's attached. You then add more specific contexts as needed.
+
+With contexts you can, for example, make a "Severity" dropdown **mandatory** on the Bug type in one project but **optional** on the same type in another. For any work item, Plane resolves the effective setting from the **most specific matching context**, falling back to the property's own base setting when no context matches.
+
+Manage these from the property's **Manage contexts** option on the **Properties** tab.
+
+## Edit and delete a property
+
+### Edit a property
+
+> **Role**: Workspace Admin
+
+You can change a property's title, description, icon, mandatory state, active state, and default value at any time.
+
+:::warning Some changes lock once values exist
+Once any work item has a value for the property, you **cannot change its property type, its single/multi-select setting, or its type-specific settings** (such as a dropdown's options). Those are only editable while no work item has used the property yet. Attempting to change them afterward is rejected.
+:::
+
+Making a property mandatory later is allowed (except for the types that can't be mandatory). Existing work items that are missing the value will need it filled in the next time they are edited.
+
+### Delete a property
+
+> **Role**: Workspace Admin
+
+Deleting a property that already has values gives you a choice:
+
+- **Save values to work item descriptions** (recommended) — each affected work item keeps its value by appending it to the work item's description, with an activity entry recording the change, before the property is removed.
+- **Delete the property and all its values** — removes the values along with the definition. This cannot be undone.
+
+The delete dialog shows how many work items, work item types, and projects across the workspace are affected. If you only want to stop using a property temporarily, turn it **inactive** instead of deleting it.
 
 ## Import types into a project
 

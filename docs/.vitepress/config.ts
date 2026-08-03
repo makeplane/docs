@@ -399,6 +399,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
               },
             ],
           },
+          { text: "Workspace Governance", link: "/workspace-administration/workspace-governance" },
           {
             text: "Authentication",
             collapsed: true,
