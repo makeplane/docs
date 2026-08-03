@@ -17,6 +17,26 @@ Every custom automation has three components. When [trigger] happens, if [condit
 - **Conditions** are optional filters that must be satisfied for the automation to proceed. If you add multiple conditions, all of them must be met (AND logic).
 - **Actions** are what the automation does when fired. Multiple actions execute in sequence.
 
+## Where automations live depends on your plan
+
+Every plan builds automations the same way, with the same triggers, conditions, and actions. What differs is **where** they are configured, **which projects** they can act on, and **which actions** are available. Find your setup below.
+
+| Plan / setup | Where you configure automations | What you get |
+|---|---|---|
+| **Business** | Inside each project, under **Project Settings → Automations** | Custom automations scoped to one project, with the **Change property** and **Add comment** actions. |
+| **Enterprise Grid** (project-managed) | Project settings, plus **Workspace Settings → Automations** | Everything above, plus **workspace automations** that span all projects or a chosen subset, the **Send webhook** and **Run script** actions, and **scheduled** triggers. |
+| **Enterprise Grid with [Workspace Governance](/workspace-administration/workspace-governance)** | Once for the whole workspace, under **Settings → Automations** | Automations are managed centrally by a workspace admin and applied to projects. Project admins no longer create or edit automations inside a project. |
+
+**In short**
+
+- On **Business**, automations live in **project settings** and act on that one project.
+- On **Enterprise Grid without governance**, you keep project automations and can also create **workspace automations** and use the webhook and script actions.
+- On **Enterprise Grid with [Workspace Governance](/workspace-administration/workspace-governance)**, automation management moves to the **workspace level**. Project admins can no longer edit automations inside a project. See [Automations under workspace g`overnance](#automations-under-workspace-governance).
+
+:::warning Turning on governance moves automations to the workspace
+Enabling Workspace Governance is a one-way change that relocates automation management from individual projects to the workspace. Existing project automations are migrated up and keep running. Read [Workspace Governance](/workspace-administration/workspace-governance) before enabling it.
+:::
+
 ## Create a custom project automation
 
 Project automations apply to work items within a single project.
@@ -290,6 +310,19 @@ Without conditions, an action like "set priority to Urgent" would run on every s
 Conditions are what make an automation surgical. They let you say "only run this when the work item is a Bug, assigned to this person, with no due date set" - whatever combination of criteria actually defines the case you're building for.
 
 One thing worth knowing: when a work item is first created, some fields like assignees and labels can take a moment to register, even if someone filled them in during creation. Plane handles this - it checks the latest state of those fields before evaluating your conditions, so a filter like "assignee is X" on a creation trigger will work as expected.
+
+## Automations under workspace governance <Badge type="warning" text="Enterprise Grid" />
+
+On **Enterprise Grid with [Workspace Governance](/workspace-administration/workspace-governance)** enabled, automations are managed once for the entire workspace instead of project by project. A workspace admin owns all automation configuration, and project admins can no longer create or edit automations inside a project.
+
+You build these automations exactly as described above. This section covers only what's different when governance is on:
+
+- **Project-level automation editing is locked.** Project admins can no longer create or edit automations inside a project. Opening an automation in a project shows it as read-only, with a message that automations are managed at the workspace level.
+- **Existing project automations are preserved.** When governance is enabled, each project's automations are migrated up to the workspace level and scoped back to their original project, so they keep running exactly as before.
+- **All automations are managed centrally.** A workspace admin creates and edits every automation under **Settings → Automations**, choosing whether each one applies to all projects or a specific subset.
+
+See [Workspace governance](workspace-governance.md) for the full picture of what centralizes and what changes for projects.
+
 
 ## Common use cases
 
