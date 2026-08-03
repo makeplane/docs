@@ -101,19 +101,44 @@ A work item in Project A can be a sub-work item of a work item in Project B. The
 
 ## Duplicate work items <Badge type="info" text="Pro" />
 
-When you need to create similar work items or replicate a work item's structure and properties, Plane lets you duplicate existing work items either within the same project or across different projects.
+Use **Make a copy** to replicate a work item — either in its own project or in another project in the workspace. It's a quick way to spin up recurring tasks, reuse a well-structured work item as a template, or hand work off to another team.
 
-To duplicate a work item, click the **•••** menu in the work item header and select **Make a copy**. You'll see two options:
+Click the **•••** menu in the work item header and select **Make a copy**. In the modal, pick the destination project — it defaults to the current one — and confirm. The copy always gets a fresh ID from the destination project's sequence.
 
-### Copy in same project
+### What gets copied
 
-Creates an identical work item within the current project with all the same properties, description, and settings. The new work item gets a fresh identifier and maintains the same title, description, state, and priority attributes.
+How much of the original carries over depends on whether you copy in place or into a different project. Labels, modules, cycles, and estimates belong to a single project, so they can't follow a work item across the boundary.
 
-### Copy in different project
+| Property              | Same project     | Different project                   |
+| --------------------- | ---------------- | ----------------------------------- |
+| Title                 | `<title> (Copy)` | Unchanged                           |
+| Work item type        | Retained         | Destination project's default type  |
+| State                 | Retained         | Destination project's default state |
+| Priority              | Retained         | Retained                            |
+| Start and due dates   | Retained         | Retained                            |
+| Description           | Copied           | Copied                              |
+| Links and attachments | Copied           | Copied                              |
+| Assignees             | Retained         | Cleared                             |
+| Labels                | Retained         | Cleared                             |
+| Modules               | Retained         | Cleared                             |
+| Cycle                 | Retained         | Cleared                             |
+| Estimate              | Retained         | Cleared                             |
+| Custom properties     | Retained         | Appended to the description as text |
+| Releases              | Retained         | Retained                            |
+| Sub-work items        | Not copied       | Not copied                          |
+| Customer requests     | Not copied       | Not copied                          |
 
-Duplicates the work item to another project in your workspace. This is particularly useful when you have similar tasks across multiple projects or want to move work items between teams. The copied work item adapts to the destination project's identifier format and default state.
+The copy is also linked back to the original with a **Duplicate of** relation, so you can always trace where it came from.
 
-Duplicating work items is perfect for replicating recurring tasks, or moving work between project phases while maintaining all the essential context and settings.
+::: tip
+Custom property values are project-specific, so they can't be carried into another project's properties. Instead of dropping them, Plane writes them into the bottom of the copied work item's description — nothing is lost, but you'll need to re-enter them against the destination project's own properties if you want them as structured values.
+:::
+
+### Notes and limits
+
+- **Epics** copied into a different project need an Epic type in the destination — that is, the destination project must have [Work item types](/core-concepts/issues/epics) enabled. If it doesn't, Plane refuses the copy with an error instead of demoting the epic to a regular work item. Copying an epic within its own project always works.
+- **Archived work items** are copied as active work items, not as archived ones.
+- You can copy work items in bulk, too. The field rules above apply there as well — see [Copy work items](/core-concepts/issues/bulk-ops#copy-work-items) for the selection limit, permissions, and how epics in a mixed selection are handled.
 
 ## Add dependencies
 
