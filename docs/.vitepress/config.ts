@@ -344,6 +344,10 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
             text: "Self-host Plane",
             link: "https://developers.plane.so/self-hosting/overview",
           },
+          {
+            text: "FIPS deployment",
+            link: "/self-hosting/fips-deployment",
+          },
         ],
       },
       {
