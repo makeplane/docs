@@ -56,7 +56,9 @@ The host kernel must be booted in FIPS mode. The container inherits this through
 cat /proc/sys/crypto/fips_enabled     # must print 1
 ```
 
-To enable FIPS mode on a RHEL-family host (RHEL, Rocky, Alma, Amazon Linux 2023):
+How you put the host into FIPS mode depends on the distribution and version:
+
+**Amazon Linux 2023, RHEL 8/9 (and Rocky, Alma)** — enable in place, then reboot:
 
 ```bash
 sudo dnf install -y crypto-policies-scripts
@@ -64,9 +66,13 @@ sudo fips-mode-setup --enable
 sudo reboot
 ```
 
-`/boot` must be its own filesystem for this to work — it is on the stock cloud images.
-Alternatively, boot a vendor FIPS image (a RHEL FIPS AMI, Ubuntu Pro FIPS) or use OpenShift with
-FIPS enabled at install time.
+On AL2023 `/boot` lives on the root filesystem, so no separate partition is required. On RHEL/Rocky/Alma with a **separate** `/boot` (or `/boot/efi`) partition, that partition must be mounted so `fips-mode-setup` can update the bootloader.
+
+**RHEL 10** — `fips-mode-setup` has been **removed**, and switching an already-installed system to FIPS mode is **not supported**. FIPS mode must be enabled **at install time** by adding `fips=1` to the kernel command line (or `fips = true` in a RHEL image-builder blueprint). A post-install `update-crypto-policies --set FIPS` is **not** sufficient for FIPS 140 compliance — the only supported path on a non-FIPS install is reinstalling.
+
+**Other** — boot a vendor FIPS image (a RHEL FIPS AMI, Ubuntu Pro FIPS), or install OpenShift with FIPS enabled.
+
+In all cases, the definitive check is the kernel flag above (`/proc/sys/crypto/fips_enabled` = `1`).
 
 As a safeguard, the shipped Compose file sets `PLANE_REQUIRE_FIPS=1`, so the containers **refuse to
 start** if the host is not in FIPS mode. Set it to `0` to downgrade that to a startup warning.
@@ -93,7 +99,7 @@ docker compose -f docker-compose-fips.yml up -d
 
 Each container logs its posture on startup:
 
-```
+```text
 plane: FIPS mode ACTIVE (host kernel reports fips_enabled=1)
 ```
 
@@ -102,10 +108,11 @@ The Go services (monitor, email, proxy) log a corresponding line, for example
 
 ## Verify
 
-`verify-fips.sh` asserts the posture across the running stack — the kernel flag inside each
-container, that the validated OpenSSL provider is loaded and active, that a non-approved digest is
-refused, that Node's `crypto.getFips()` returns 1, and that the Go services report the module. It
-exits non-zero if any assertion fails, so it can gate a deployment pipeline:
+`verify-fips.sh` (shipped in plane-ee under `deployments/cli/commercial/`, alongside the Compose
+file) checks the posture across the running stack — the kernel flag inside each container, that the
+validated OpenSSL provider is loaded and active, that a non-approved digest is refused, that Node's
+`crypto.getFips()` returns 1, and that the Go services report the module. It is designed to exit
+non-zero when a check does not hold, so it can gate a deployment pipeline:
 
 ```bash
 ./verify-fips.sh
@@ -118,12 +125,12 @@ overridable with an environment variable, in either direction. These matter main
 moving an existing standard deployment onto the FIPS images; a fresh FIPS install needs none of
 them changed.
 
-| Setting                            | FIPS default | Standard default | Notes                                                                                                 |
-| ---------------------------------- | ------------ | ---------------- | ----------------------------------------------------------------------------------------------------- |
-| `LDAP_TLS_REQUIRE_CERT`            | `demand`     | `never`          | Validates the directory server's TLS certificate. See [LDAP](#ldap-certificate-validation).           |
-| `SAML_REJECT_DEPRECATED_ALGORITHM` | on           | off              | Rejects assertions signed with RSA-SHA1. The IdP must sign with SHA-256.                              |
-| `SECRET_ENCRYPTION_V2`             | on           | off              | Writes at-rest secrets as AES-256-GCM instead of the legacy format. Both formats are always readable. |
-| `USAGE_ID_DIGEST`                  | `sha256`     | `md5`            | Digest for Plane AI usage-ledger keys. A FIPS-mode Postgres refuses `md5()`.                          |
+| Setting                            | FIPS default        | Standard default | Notes                                                                                                                                                                                      |
+| ---------------------------------- | ------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `LDAP_TLS_REQUIRE_CERT`            | `demand`            | `never`          | Validates the directory server's TLS certificate. See [LDAP](#ldap-certificate-validation).                                                                                                |
+| `SAML_REJECT_DEPRECATED_ALGORITHM` | on                  | off              | Rejects assertions signed with RSA-SHA1. The IdP must sign with SHA-256.                                                                                                                   |
+| `SECRET_ENCRYPTION_V2`             | on                  | off              | Writes at-rest secrets as AES-256-GCM instead of the legacy format. Both formats are always readable.                                                                                      |
+| `USAGE_ID_DIGEST`                  | `sha256` (required) | `md5`            | Digest for Plane AI usage-ledger keys. Under FIPS this is **not** an "either direction" override: a FIPS-mode Postgres refuses `md5()`, so `sha256` is required and `md5` is incompatible. |
 
 ### LDAP certificate validation
 
@@ -141,14 +148,22 @@ connection.
 
 ## Running under a non-root or arbitrary UID (OpenShift)
 
-The FIPS application images run non-root. On plain Kubernetes, set a `securityContext` that pins the
-image's built-in user (uid `1000`); FIPS mode itself requires no privilege. On OpenShift, the
-`restricted-v2` SCC runs each container as an arbitrary high UID that is always a member of group
-`0` — the images' writable directories are group-`0` writable to support exactly this, so no image
-change is needed. Run the pods with `runAsGroup: 0` / `fsGroup: 0` so that arbitrary UID keeps write
-access. The bundled proxy is the one exception: Caddy binds `:80`/`:443`, which `restricted-v2`
-forbids for non-root — front it with an OpenShift Route on high ports, or use a custom SCC that
-grants `NET_BIND_SERVICE`. Ingress-based deployments do not use the bundled proxy.
+The FIPS application images run non-root, and FIPS mode itself requires no privilege. How you set
+the pod security context depends on the platform:
+
+**Plain Kubernetes.** Pin the image's built-in user with `runAsUser: 1000`. If you run under a
+different UID, also set `runAsGroup: 0` and `fsGroup: 0` so that UID keeps write access through the
+images' group-`0`-writable directories.
+
+**OpenShift (`restricted-v2`).** Do **not** set `runAsUser`, `runAsGroup`, or `fsGroup` yourself. The
+SCC assigns an arbitrary high UID that is a member of group `0`, and it allocates `fsGroup` from the
+namespace's `openshift.io/sa.scc.supplemental-groups` range — an explicit `fsGroup: 0` is rejected
+unless that range includes `0`. No image change or group override is needed: the images' writable
+directories are already group-`0` writable, which is exactly what the assigned UID needs.
+
+The bundled proxy is the one exception: Caddy binds `:80`/`:443`, which `restricted-v2` forbids for a
+non-root process. Front it with an OpenShift Route (running Caddy on high ports), or grant it an SCC
+that permits `NET_BIND_SERVICE`. Ingress-based deployments do not use the bundled proxy.
 
 ## Scope of coverage
 
