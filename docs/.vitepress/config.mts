@@ -89,6 +89,7 @@ export default extendConfig(
             ignoreFiles: [
               "self-hosting/methods/install-methods-commercial/docker-compose.md",
               "self-hosting/methods/install-methods-commercial/kubernetes.md",
+              "self-hosting/methods/install-methods-commercial/fips-deployment.md",
             ],
           }),
         ],
