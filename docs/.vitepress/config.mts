@@ -300,6 +300,7 @@ export default extendConfig(
                 { text: "Self-hosting 101", link: "/self-hosting/self-hosting-101" },
                 { text: "Docker Compose", link: "/self-hosting/methods/docker-compose" },
                 { text: "Kubernetes", link: "/self-hosting/methods/kubernetes" },
+                { text: "FIPS deployment", link: "/self-hosting/methods/install-methods-commercial/fips-deployment" },
               ],
             },
             {
@@ -328,6 +329,7 @@ export default extendConfig(
                 { text: "Self-hosting 101", link: "/self-hosting/self-hosting-101" },
                 { text: "Plane Editions", link: "/self-hosting/editions-and-versions" },
                 { text: "Plane Architecture", link: "/self-hosting/plane-architecture" },
+                { text: "FIPS deployment", link: "/self-hosting/methods/install-methods-commercial/fips-deployment" },
               ],
             },
             {

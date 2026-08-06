@@ -2,8 +2,6 @@
 title: FIPS-enabled deployment
 description: Deploy the FIPS variant of Plane Enterprise on a FIPS-enforcing host, including prerequisites, image list, verification, and scope of coverage.
 keywords: plane fips, fips 140-3 deployment, plane commercial fips, govcloud plane, federal self-hosting, fips enabled containers
-search: false
-sidebar: false
 head:
   - - meta
     - name: robots
