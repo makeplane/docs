@@ -127,6 +127,40 @@ Manual roles are also never downgraded by syncing. If someone was manually made 
 - Adding a paid workspace role through sync respects your seat limits.
 - **Sync errors never block sign-in.** If syncing fails, the user still logs in and the error is logged.
 
+## Manage project mappings with the API
+
+You can read and update project role mappings programmatically with the Plane API. Authenticate with an API token that has group-sync write access. Group syncing must be enabled for the workspace.
+
+### Filter mappings by project
+
+`GET /api/v1/workspaces/:slug/group-sync/project-mappings/` lists every project role mapping in the workspace. Pass the `project_identifier` query parameter to return only the mappings for one project:
+
+```bash
+curl "https://api.plane.so/api/v1/workspaces/my-workspace/group-sync/project-mappings/?project_identifier=ENG" \
+  -H "x-api-key: $PLANE_API_KEY"
+```
+
+The identifier is matched case-insensitively, so `eng` and `ENG` resolve to the same project. An identifier that matches no project returns an empty list.
+
+### Update a mapping by project and group
+
+You can update a mapping without knowing its internal ID by addressing it with the project identifier and the IdP group name:
+
+```bash
+curl -X PATCH "https://api.plane.so/api/v1/workspaces/my-workspace/group-sync/project-mappings/ENG/eng-team/" \
+  -H "x-api-key: $PLANE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"role": "admin"}'
+```
+
+A project can have one mapping per IdP group, so both the project identifier and the group name are needed to identify a single mapping. The fields you can update are `idp_group_name`, `project`, `all_projects`, and `role`.
+
+Keep in mind:
+
+- The project identifier is case-insensitive, but the IdP group name must match exactly, including case.
+- If the project or the mapping doesn't exist, the request returns `404`.
+- Updating any group mapping with an empty request body returns `400` with `{"error": "Request body cannot be empty."}` instead of silently returning the unchanged mapping.
+
 ## Common use cases
 
 **New hire provisioning.** Map your `engineering` group to a Member role on all engineering projects (or use Apply to all projects). New engineers get access on their first sign-in with no admin action.
