@@ -43,7 +43,7 @@ Pin a specific release tag for any accredited deployment rather than tracking `l
 fixed image version is part of the audit trail.
 
 :::info
-There is no FIPS All-in-One (AIO) image. The AIO image is built on an Alpine base, which has no FIPS-validated cryptography, so a FIPS deployment uses the multi-container Compose stack below, not the AIO image.
+There is no FIPS All-in-One (AIO) image. The AIO image is built on an Alpine base, which has no FIPS-validated cryptography, so a FIPS deployment uses the multi-container stack, not the AIO image.
 :::
 
 ## Host prerequisite
@@ -69,26 +69,11 @@ sudo reboot
 
 **Other** - boot a vendor FIPS image (a RHEL FIPS AMI, Ubuntu Pro FIPS), or install OpenShift with FIPS enabled.
 
-As a safeguard, the shipped Compose file sets `PLANE_REQUIRE_FIPS=1`, so the containers **refuse to
-start** if the host is not in FIPS mode. Set it to `0` to downgrade that to a startup warning.
+As a safeguard, run the FIPS images with `PLANE_REQUIRE_FIPS=1`: the containers then **refuse to
+start** if the host is not in FIPS mode. Without it, a FIPS image on a non-FIPS host logs a startup
+warning but runs.
 
-## Deploy
-
-The FIPS deployment bundle ships with every Plane Enterprise FIPS release:
-
-- `docker-compose-fips.yml` - the FIPS stack
-- `variables.env` - environment template
-- `verify-fips.sh` - the verification script (see [Verify](#verify))
-
-```bash
-# 1. Confirm the host is in FIPS mode (above).
-# 2. Prepare the environment file.
-cp variables.env .env
-#    Edit at least: DOMAIN_NAME, WEB_URL, SECRET_KEY, MACHINE_SIGNATURE.
-
-# 3. Bring the stack up.
-docker compose -f docker-compose-fips.yml up -d
-```
+## Verify
 
 Each container logs its posture on startup:
 
@@ -99,15 +84,20 @@ plane: FIPS mode ACTIVE (host kernel reports fips_enabled=1)
 The Go services (monitor, email, proxy) log a corresponding line, for example
 `Go FIPS 140-3 module ACTIVE`.
 
-## Verify
-
-`verify-fips.sh` checks the posture across the running stack - the kernel flag inside each container, that the
-validated OpenSSL provider is loaded and active, that a non-approved digest is refused, that Node's
-`crypto.getFips()` returns 1, and that the Go services report the module. It is designed to exit
-non-zero when a check does not hold, so it can gate a deployment pipeline:
+To check a running container directly:
 
 ```bash
-./verify-fips.sh
+# Kernel flag inherited from the host - must print 1
+docker exec plane-api cat /proc/sys/crypto/fips_enabled
+
+# The FIPS-validated OpenSSL provider must be loaded and "active"
+docker exec plane-api openssl list -providers
+
+# A non-approved digest must be refused - this must FAIL
+docker exec plane-api sh -c 'echo x | openssl md5'
+
+# Node services must report FIPS - must print 1
+docker exec plane-live node -p "require('crypto').getFips()"
 ```
 
 ## Configuration defaults specific to FIPS images
@@ -142,7 +132,7 @@ use the bundled proxy.
 FIPS-enforcing host. Non-approved algorithms are refused.
 
 **The bundled data plane is not FIPS.** The `postgres`, `valkey`, `rabbitmq`, `minio`, and
-`iframely` services in the Compose file are upstream Alpine/musl images with no FIPS-validated
+`iframely` services in the stack are upstream Alpine/musl images with no FIPS-validated
 cryptography - there are no FIPS variants of them. They are suitable for evaluation only. For an
 accreditable deployment, replace them with externally managed datastores on FIPS endpoints and
 repoint the connection variables:
