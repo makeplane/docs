@@ -73,6 +73,87 @@ As a safeguard, run the FIPS images with `PLANE_REQUIRE_FIPS=1`: the containers 
 start** if the host is not in FIPS mode. Without it, a FIPS image on a non-FIPS host logs a startup
 warning but runs.
 
+## Deploy on Kubernetes
+
+Use the same `plane-enterprise` Helm chart as a [standard Kubernetes install](/self-hosting/methods/kubernetes) -
+FIPS is a values overlay, not a different chart. Three things change:
+
+1. **Nodes** - provision a node pool whose machine image boots in FIPS mode (see
+   [Host prerequisite](#host-prerequisite)). Label it (e.g. `fips: enabled`) and taint it (e.g.
+   `fips=true:NoSchedule`) so only FIPS workloads land there.
+2. **Images** - override every service image to its `-fips` variant.
+3. **Scheduling** - every service must carry the matching `nodeSelector` and `toleration`. A pod
+   that misses them schedules onto a stock node and **silently loses FIPS**.
+
+```yaml
+# values-fips.yaml
+planeVersion: <release-tag>
+
+# Non-root with group 0, matching the FIPS images' group-0-writable directories
+# (see the non-root section below).
+securityContext:
+  enabled: true
+  podSecurityContext:
+    runAsGroup: 0
+    fsGroup: 0
+
+_fips_sched: &fips
+  nodeSelector:
+    fips: enabled
+  tolerations:
+    - key: fips
+      operator: Equal
+      value: "true"
+      effect: NoSchedule
+
+services:
+  api:
+    image: makeplane/backend-commercial-fips
+    <<: *fips
+  web:
+    image: makeplane/web-commercial-fips
+    <<: *fips
+  space:
+    image: makeplane/space-commercial-fips
+    <<: *fips
+  admin:
+    image: makeplane/admin-commercial-fips
+    <<: *fips
+  live:
+    image: makeplane/live-commercial-fips
+    <<: *fips
+  silo:
+    image: makeplane/silo-commercial-fips
+    <<: *fips
+  monitor:
+    image: makeplane/monitor-commercial-fips
+    <<: *fips
+  worker:
+    <<: *fips
+  beatworker:
+    <<: *fips
+  # Every additional service you enable (pi, opensearch, the bundled
+  # datastores, ...) needs the same <<: *fips block.
+  postgres:
+    <<: *fips
+  redis:
+    <<: *fips
+  rabbitmq:
+    <<: *fips
+  minio:
+    <<: *fips
+```
+
+```bash
+helm repo add plane https://helm.plane.so/
+helm upgrade --install plane-app plane/plane-enterprise \
+  --namespace plane --create-namespace \
+  -f values-fips.yaml
+```
+
+On OpenShift, drop the `securityContext` override and see
+[Running under a non-root or arbitrary UID](#running-under-a-non-root-or-arbitrary-uid-openshift).
+
 ## Verify
 
 Each container logs its posture on startup:
@@ -99,6 +180,9 @@ docker exec plane-api sh -c 'echo x | openssl md5'
 # Node services must report FIPS - must print 1
 docker exec plane-live node -p "require('crypto').getFips()"
 ```
+
+On Kubernetes, run the same checks with `kubectl exec` against any application pod, e.g.
+`kubectl -n plane exec deploy/plane-app-api-wl -- cat /proc/sys/crypto/fips_enabled`.
 
 ## Configuration defaults specific to FIPS images
 
