@@ -132,8 +132,9 @@ services:
     <<: *fips
   beatworker:
     <<: *fips
-  # Every additional service you enable (pi, opensearch, the bundled
-  # datastores, ...) needs the same <<: *fips block.
+  # Every additional service you enable needs the same <<: *fips block -
+  # e.g. Plane AI also takes image: makeplane/plane-pi-commercial-fips, and
+  # its pi_worker / pi_beat_worker need the block too.
   postgres:
     <<: *fips
   redis:
@@ -215,18 +216,19 @@ use the bundled proxy.
 **Covered.** The Plane application images run their cryptography against FIPS-validated modules on a
 FIPS-enforcing host. Non-approved algorithms are refused.
 
-**The bundled data plane is not FIPS.** The `postgres`, `valkey`, `rabbitmq`, `minio`, and
-`iframely` services in the stack are upstream Alpine/musl images with no FIPS-validated
-cryptography - there are no FIPS variants of them. They are suitable for evaluation only. For an
-accreditable deployment, replace them with externally managed datastores on FIPS endpoints and
-repoint the connection variables:
+**The bundled data plane is not FIPS.** The `postgres`, `valkey`, `rabbitmq`, `minio`,
+`opensearch`, and `iframely` services in the stack are upstream third-party images with no
+FIPS-validated cryptography - there are no FIPS variants of them. They are suitable for evaluation
+only. For an accreditable deployment, replace them with externally managed datastores on FIPS
+endpoints and repoint the connection variables:
 
-| Service       | Replace with                      | Variables                                     |
-| ------------- | --------------------------------- | --------------------------------------------- |
-| `plane-db`    | RDS / Aurora PostgreSQL           | `DATABASE_URL`, `PGHOST`, `POSTGRES_*`        |
-| `plane-redis` | ElastiCache (Valkey/Redis)        | `REDIS_URL`, `REDIS_HOST`, `REDIS_PORT`       |
-| `plane-mq`    | Amazon MQ (RabbitMQ)              | `AMQP_URL`, `RABBITMQ_*`                      |
-| `plane-minio` | S3 on a FIPS endpoint, or similar | `AWS_S3_ENDPOINT_URL`, `AWS_*`, `USE_MINIO=0` |
+| Service       | Replace with                          | Variables                                     |
+| ------------- | ------------------------------------- | --------------------------------------------- |
+| `plane-db`    | RDS / Aurora PostgreSQL               | `DATABASE_URL`, `PGHOST`, `POSTGRES_*`        |
+| `plane-redis` | ElastiCache (Valkey/Redis)            | `REDIS_URL`, `REDIS_HOST`, `REDIS_PORT`       |
+| `plane-mq`    | Amazon MQ (RabbitMQ)                  | `AMQP_URL`, `RABBITMQ_*`                      |
+| `plane-minio` | S3 on a FIPS endpoint, or similar     | `AWS_S3_ENDPOINT_URL`, `AWS_*`, `USE_MINIO=0` |
+| `opensearch`  | Amazon OpenSearch Service, or similar | `OPENSEARCH_URL`, `OPENSEARCH_*`              |
 
 Then set the corresponding `*_REPLICAS` to `0`, or remove those services, so the bundled ones do
 not start.
