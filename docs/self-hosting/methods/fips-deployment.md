@@ -1,5 +1,5 @@
 ---
-title: FIPS-enabled deployment
+title: FIPS deployment
 description: Deploy the FIPS variant of Plane Enterprise on a FIPS-enforcing host, including prerequisites, image list, verification, and scope of coverage.
 keywords: plane fips, fips 140-3 deployment, plane commercial fips, govcloud plane, federal self-hosting, fips enabled containers
 head:
@@ -8,7 +8,7 @@ head:
       content: noindex, nofollow
 ---
 
-# FIPS-enabled deployment
+# FIPS deployment <Badge type="warning" text="Enterprise Grid" />
 
 Plane Enterprise publishes a FIPS variant of every application image alongside the standard set.
 These images are built on Red Hat UBI 10, apply the system-wide FIPS cryptographic policy, and run
@@ -16,14 +16,13 @@ their cryptography against FIPS-validated modules (Red Hat's OpenSSL FIPS provid
 and static services; the Go FIPS 140-3 module for the Go services). They are intended for
 deployments that must meet FIPS 140-3 expectations, such as US Federal or GovCloud environments.
 
-> **The single most important prerequisite:** FIPS mode is a property of the **host**, not of the
-> image. A FIPS image on a non-FIPS host starts cleanly and looks identical from the inside while
-> providing none of the guarantees. Read [Host prerequisite](#host-prerequisite) first.
+::: warning **The single most important prerequisite** 
+FIPS mode is a property of the **host**, not of the image. A FIPS image on a non-FIPS host starts cleanly and looks identical from the inside while providing none of the guarantees. Read [Host prerequisite](#host-prerequisite) first.
+:::
 
 ## Images
 
-The FIPS images use the same names as the standard `-commercial` images with a `-fips` suffix, in
-the `makeplane` Docker Hub organization:
+The FIPS images use the same names as the standard `-commercial` images with a `-fips` suffix, in the `makeplane` Docker Hub organization:
 
 | Service       | Image                                   |
 | ------------- | --------------------------------------- |
@@ -35,17 +34,17 @@ the `makeplane` Docker Hub organization:
 | Silo          | `makeplane/silo-commercial-fips`        |
 | Monitor       | `makeplane/monitor-commercial-fips`     |
 | Email         | `makeplane/email-commercial-fips`       |
-| Plane AI (Pi) | `makeplane/plane-pi-commercial-fips`    |
+| Plane AI      | `makeplane/plane-pi-commercial-fips`    |
 | Proxy         | `makeplane/proxy-commercial-fips`       |
 | Flux          | `makeplane/flux-commercial-fips`        |
 | Node runner   | `makeplane/node-runner-commercial-fips` |
 
-Pin a specific release tag for any accredited deployment rather than tracking `latest` — a known,
+Pin a specific release tag for any accredited deployment rather than tracking `latest` - a known,
 fixed image version is part of the audit trail.
 
-> **Note:** there is no FIPS All-in-One (AIO) image. The AIO image is built on an Alpine base, which
-> has no FIPS-validated cryptography, so a FIPS deployment uses the multi-container Compose stack
-> below, not the AIO image.
+:::info 
+There is no FIPS All-in-One (AIO) image. The AIO image is built on an Alpine base, which has no FIPS-validated cryptography, so a FIPS deployment uses the multi-container Compose stack below, not the AIO image.
+::: 
 
 ## Host prerequisite
 
@@ -58,7 +57,7 @@ cat /proc/sys/crypto/fips_enabled     # must print 1
 
 How you put the host into FIPS mode depends on the distribution and version:
 
-**Amazon Linux 2023, RHEL 8/9 (and Rocky, Alma)** — enable in place, then reboot:
+**Amazon Linux 2023, RHEL 8/9 (and Rocky, Alma)** - enable in place, then reboot:
 
 ```bash
 sudo dnf install -y crypto-policies-scripts
@@ -68,9 +67,9 @@ sudo reboot
 
 On AL2023 `/boot` lives on the root filesystem, so no separate partition is required. On RHEL/Rocky/Alma with a **separate** `/boot` (or `/boot/efi`) partition, that partition must be mounted so `fips-mode-setup` can update the bootloader.
 
-**RHEL 10** — `fips-mode-setup` has been **removed**, and switching an already-installed system to FIPS mode is **not supported**. FIPS mode must be enabled **at install time** by adding `fips=1` to the kernel command line (or `fips = true` in a RHEL image-builder blueprint). A post-install `update-crypto-policies --set FIPS` is **not** sufficient for FIPS 140 compliance — the only supported path on a non-FIPS install is reinstalling.
+**RHEL 10** - `fips-mode-setup` has been **removed**, and switching an already-installed system to FIPS mode is **not supported**. FIPS mode must be enabled **at install time** by adding `fips=1` to the kernel command line (or `fips = true` in a RHEL image-builder blueprint). A post-install `update-crypto-policies --set FIPS` is **not** sufficient for FIPS 140 compliance - the only supported path on a non-FIPS install is reinstalling.
 
-**Other** — boot a vendor FIPS image (a RHEL FIPS AMI, Ubuntu Pro FIPS), or install OpenShift with FIPS enabled.
+**Other** - boot a vendor FIPS image (a RHEL FIPS AMI, Ubuntu Pro FIPS), or install OpenShift with FIPS enabled.
 
 In all cases, the definitive check is the kernel flag above (`/proc/sys/crypto/fips_enabled` = `1`).
 
@@ -82,10 +81,10 @@ start** if the host is not in FIPS mode. Set it to `0` to downgrade that to a st
 The Compose file and its supporting files live in the plane-ee repository under
 `deployments/cli/commercial/`:
 
-- `docker-compose-fips.yml` — the FIPS stack
-- `variables.env` — environment template
-- `README-FIPS.md` — the authoritative operations reference
-- `verify-fips.sh` — the verification script (see [Verify](#verify))
+- `docker-compose-fips.yml` - the FIPS stack
+- `variables.env` - environment template
+- `README-FIPS.md` - the authoritative operations reference
+- `verify-fips.sh` - the verification script (see [Verify](#verify))
 
 ```bash
 # 1. Confirm the host is in FIPS mode (above).
@@ -108,8 +107,7 @@ The Go services (monitor, email, proxy) log a corresponding line, for example
 
 ## Verify
 
-`verify-fips.sh` (shipped in plane-ee under `deployments/cli/commercial/`, alongside the Compose
-file) checks the posture across the running stack — the kernel flag inside each container, that the
+`verify-fips.sh` checks the posture across the running stack - the kernel flag inside each container, that the
 validated OpenSSL provider is loaded and active, that a non-approved digest is refused, that Node's
 `crypto.getFips()` returns 1, and that the Go services report the module. It is designed to exit
 non-zero when a check does not hold, so it can gate a deployment pipeline:
@@ -141,7 +139,7 @@ the following must hold:
    `LDAP_TLS_CA_CERTFILE` at your CA bundle (PEM).
 2. The certificate's CN/SAN matches the host in `LDAP_SERVER_URI`. An IP address or short hostname
    that is not in the certificate's SAN fails hostname verification **even with the correct CA
-   bundle** — use the fully qualified name the certificate was issued for.
+   bundle** - use the fully qualified name the certificate was issued for.
 
 Setting `LDAP_TLS_REQUIRE_CERT=never` restores the previous behaviour and logs a warning on every
 connection.
@@ -157,7 +155,7 @@ images' group-`0`-writable directories.
 
 **OpenShift (`restricted-v2`).** Do **not** set `runAsUser`, `runAsGroup`, or `fsGroup` yourself. The
 SCC assigns an arbitrary high UID that is a member of group `0`, and it allocates `fsGroup` from the
-namespace's `openshift.io/sa.scc.supplemental-groups` range — an explicit `fsGroup: 0` is rejected
+namespace's `openshift.io/sa.scc.supplemental-groups` range - an explicit `fsGroup: 0` is rejected
 unless that range includes `0`. No image change or group override is needed: the images' writable
 directories are already group-`0` writable, which is exactly what the assigned UID needs.
 
@@ -172,7 +170,7 @@ FIPS-enforcing host. Non-approved algorithms are refused.
 
 **The bundled data plane is not FIPS.** The `postgres`, `valkey`, `rabbitmq`, `minio`, and
 `iframely` services in the Compose file are upstream Alpine/musl images with no FIPS-validated
-cryptography — there are no FIPS variants of them. They are suitable for evaluation only. For an
+cryptography - there are no FIPS variants of them. They are suitable for evaluation only. For an
 accreditable deployment, replace them with externally managed datastores on FIPS endpoints and
 repoint the connection variables:
 
@@ -188,15 +186,9 @@ not start.
 
 **TLS termination.** The bundled proxy (Caddy) is built against a FIPS-validated module, but for an
 accredited topology the recommended pattern is to terminate TLS at a validated endpoint in front of
-the deployment — such as a FIPS-enabled load balancer — and have the proxy serve HTTP internally.
+the deployment - such as a FIPS-enabled load balancer - and have the proxy serve HTTP internally.
 
 **FIPS validation applies to the cryptographic modules, not to Plane as a product.** FIPS 140-3
 certificates are held by the module vendors (Red Hat and the Go project). This deployment ensures
 Plane's cryptography _uses_ those validated modules on a compliant host; it does not make Plane
 itself a FIPS-certified product.
-
-## Reference
-
-The authoritative operations reference — including every environment variable and the migration
-notes for moving a standard deployment onto FIPS images — is `README-FIPS.md`, shipped alongside
-the Compose file in `deployments/cli/commercial/`.

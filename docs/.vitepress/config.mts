@@ -299,8 +299,7 @@ export default extendConfig(
                 { text: "Overview", link: "/self-hosting/overview" },
                 { text: "Self-hosting 101", link: "/self-hosting/self-hosting-101" },
                 { text: "Docker Compose", link: "/self-hosting/methods/docker-compose" },
-                { text: "Kubernetes", link: "/self-hosting/methods/kubernetes" },
-                { text: "FIPS deployment", link: "/self-hosting/methods/install-methods-commercial/fips-deployment" },
+                { text: "Kubernetes", link: "/self-hosting/methods/kubernetes" }
               ],
             },
             {
@@ -329,7 +328,6 @@ export default extendConfig(
                 { text: "Self-hosting 101", link: "/self-hosting/self-hosting-101" },
                 { text: "Plane Editions", link: "/self-hosting/editions-and-versions" },
                 { text: "Plane Architecture", link: "/self-hosting/plane-architecture" },
-                { text: "FIPS deployment", link: "/self-hosting/methods/install-methods-commercial/fips-deployment" },
               ],
             },
             {
@@ -352,6 +350,7 @@ export default extendConfig(
                   collapsed: true,
                   items: [{ text: "High availability", link: "/self-hosting/govern/high-availability" }],
                 },
+                { text: "FIPS deployment", link: "/self-hosting/methods/fips-deployment" },
                 { text: "Podman Quadlets", link: "/self-hosting/methods/podman-quadlets" },
                 {
                   text: "Airgapped Edition",
