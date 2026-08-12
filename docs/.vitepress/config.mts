@@ -89,6 +89,7 @@ export default extendConfig(
             ignoreFiles: [
               "self-hosting/methods/install-methods-commercial/docker-compose.md",
               "self-hosting/methods/install-methods-commercial/kubernetes.md",
+              "self-hosting/methods/install-methods-commercial/fips-deployment.md",
             ],
           }),
         ],
@@ -349,6 +350,7 @@ export default extendConfig(
                   collapsed: true,
                   items: [{ text: "High availability", link: "/self-hosting/govern/high-availability" }],
                 },
+                { text: "FIPS deployment", link: "/self-hosting/methods/fips-deployment" },
                 { text: "Podman Quadlets", link: "/self-hosting/methods/podman-quadlets" },
                 {
                   text: "Airgapped Edition",
