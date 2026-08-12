@@ -299,7 +299,7 @@ export default extendConfig(
                 { text: "Overview", link: "/self-hosting/overview" },
                 { text: "Self-hosting 101", link: "/self-hosting/self-hosting-101" },
                 { text: "Docker Compose", link: "/self-hosting/methods/docker-compose" },
-                { text: "Kubernetes", link: "/self-hosting/methods/kubernetes" }
+                { text: "Kubernetes", link: "/self-hosting/methods/kubernetes" },
               ],
             },
             {
