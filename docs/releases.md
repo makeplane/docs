@@ -1,15 +1,17 @@
 ---
-title: Releases
+title: Workspace Releases
 description: Group work items under named versions, track delivery progress, and publish changelogs to keep your team aligned on what ships and when.
 ---
 
-# Releases <Badge type="tip" text="Business" />
+# Workspace Releases <Badge type="tip" text="Business" />
 
-A release is how you communicate what your team is shipping and when. It groups work items from across your workspace into a named, versioned deliverable - with a target date, a lead, a changelog, and a clear status that tells everyone whether this version is in progress, out the door, or cancelled.
+A release is how you communicate what your team is shipping and when. It groups work items from across your workspace into a named, versioned deliverable — with a target date, a lead, a changelog, and a clear status that tells everyone whether this version is in progress, out the door, or cancelled.
 
 ![Enable releases](https://media.docs.plane.so/releases/enable-releases.webp#hero)
 
-Releases live at the workspace level, not the project level. That means a single release can pull in work items from multiple projects. A release for "v2.3.0" might include a backend fix from your API project, a UI change from your web project, and a docs update from your content project - all tracked together in one place.
+These workspace releases live at the workspace level, so a single release can pull in work items from multiple projects. A release for "v2.3.0" might include a backend fix from your API project, a UI change from your web project, and a docs update from your content project, all tracked together in one place.
+
+Plane also offers **project releases**, a version of the same feature scoped to a single project and enabled per project. If you want to group and ship one project's work on its own, see [Project releases](/projects/project-releases). Everything on this page about creating, scoping, and shipping a release applies to both; the difference is only their scope.
 
 This is the key distinction between releases and cycles. Cycles are sprint containers - time-boxed, project-scoped, for managing ongoing development. Releases are version containers - for grouping and communicating deliverables across projects, regardless of which cycle the work was done in.
 
