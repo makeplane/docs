@@ -17,12 +17,12 @@ Go to **Project settings → Audit logs**. The page shows the most recent events
 
 The project audit log records actions taken on this project:
 
-| Category | Events tracked |
-|---|---|
-| **Project** | Project settings updated; create, update, or delete of the project's states, labels, modules, cycles, views, workflows, and automations (including enabling or disabling an automation) |
-| **Member** | Member added to the project, member removed from the project |
-| **Role and permission** | Project member role changed |
-| **Security** | Audit log searched, exported, and export downloaded |
+| Category                | Events tracked                                                                                                                                                                          |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Project**             | Project settings updated; create, update, or delete of the project's states, labels, modules, cycles, views, workflows, and automations (including enabling or disabling an automation) |
+| **Member**              | Member added to the project, member removed from the project                                                                                                                            |
+| **Role and permission** | Project member role changed                                                                                                                                                             |
+| **Security**            | Audit log searched, exported, and export downloaded                                                                                                                                     |
 
 Reading and exporting the project audit log are themselves recorded as events, so every access to the log is accountable.
 
@@ -32,13 +32,13 @@ The project audit log deliberately covers only project-scoped activity. Workspac
 
 Each row represents one event, with these columns:
 
-| Column | What it shows |
-|---|---|
-| **Timestamp** | The date and time the event occurred, in your local time |
-| **Actor** | Who performed the action, shown by name or email. System-generated actions show as **System** |
-| **Event** | The action that took place, for example "Project member role changed" |
+| Column           | What it shows                                                                                     |
+| ---------------- | ------------------------------------------------------------------------------------------------- |
+| **Timestamp**    | The date and time the event occurred, in your local time                                          |
+| **Actor**        | Who performed the action, shown by name or email. System-generated actions show as **System**     |
+| **Event**        | The action that took place, for example "Project member role changed"                             |
 | **Event object** | The target the action was performed on, for example the affected member or the label that changed |
-| **Category** | The category the event belongs to, with an icon |
+| **Category**     | The category the event belongs to, with an icon                                                   |
 
 Behind each entry, the log also captures additional context that appears in exports, including the actor type (user, API token, system, or anonymous), the outcome (success or failure), the IP address, the user agent, and, where relevant, the old and new values that changed.
 

@@ -13,12 +13,12 @@ Use project releases when a project ships on its own cadence and you want its ve
 
 Both work the same way. The only difference is scope and where they live.
 
-| | Project releases | Workspace releases |
-| --- | --- | --- |
-| Scope | One project | The whole workspace |
-| Work items a release can contain | Only work items from that project | Work items from any project |
-| Where you manage them | The project's **Releases** tab | **Releases** in the workspace sidebar |
-| Enabled | Per project, in project settings | Per workspace, in workspace settings |
+|                                  | Project releases                  | Workspace releases                    |
+| -------------------------------- | --------------------------------- | ------------------------------------- |
+| Scope                            | One project                       | The whole workspace                   |
+| Work items a release can contain | Only work items from that project | Work items from any project           |
+| Where you manage them            | The project's **Releases** tab    | **Releases** in the workspace sidebar |
+| Enabled                          | Per project, in project settings  | Per workspace, in workspace settings  |
 
 If you need a single release to pull work from several projects at once, use [workspace releases](/releases) instead.
 

@@ -1,6 +1,6 @@
 ---
 title: How Plane AI credits work
-description: Understand how Plane AI credits work on Plane Cloud: per-seat monthly allowances, what happens when they run out, workspace overage, and how to monitor usage.
+description: Understand how Plane AI credits work on Plane Cloud per-seat monthly allowances, what happens when they run out, workspace overage, and how to monitor usage.
 ---
 
 # Plane AI credits

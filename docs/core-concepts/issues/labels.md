@@ -7,7 +7,7 @@ description: Use labels to categorize work items, simplify filtering, and organi
 
 Labels are colored tags you assign to work items to categorize and differentiate them within a project. They are ideal for tracking components, features, or other classifications that don't fit the standard work item properties like state, priority, or assignee.
 
-Once labels exist, you can apply several to a single work item, then filter, group, and sort your work items by them across every layout. 
+Once labels exist, you can apply several to a single work item, then filter, group, and sort your work items by them across every layout.
 
 A label belongs to one project, so each project keeps its own set.
 
@@ -23,7 +23,6 @@ Labels are managed in a project's settings, and the two actions have different p
 You can manage your labels in the **Labels** tab in your project settings. From here, you can create, edit, and delete labels.
 
 Open **Project settings → Labels** to create, edit, group, reorder, and delete your project's labels. If the project has none yet, you'll see a prompt to create your first one.
-
 
 ### Create a label
 
@@ -41,7 +40,7 @@ You can also create a label on the fly while working, without opening settings. 
 
 ![Create labels in a work item](https://media.docs.plane.so/issues/create-label-in-work-item.webp#hero-br)
 
-When you create a work item, Plane can also [**suggest labels**](http://localhost:5174/ai/plane-ai#label-prediction) based on its title and description, so you can apply relevant labels (or create suggested ones) in a click.
+When you create a work item, Plane can also [**suggest labels**](/ai/plane-ai#label-prediction) based on its title and description, so you can apply relevant labels (or create suggested ones) in a click.
 
 ### Edit a label
 
@@ -108,11 +107,11 @@ Instead of adding labels one at a time, you can bulk-create them from a CSV file
 
 The file has three columns:
 
-| Column | Required | Notes |
-| --- | --- | --- |
-| `name` | Yes | The label name. Blank names are reported as errors. |
-| `description` | No | Stored on the label. |
-| `color` | No | A hex color such as `#0693E3`. Invalid or blank colors get a random color assigned. |
+| Column        | Required | Notes                                                                               |
+| ------------- | -------- | ----------------------------------------------------------------------------------- |
+| `name`        | Yes      | The label name. Blank names are reported as errors.                                 |
+| `description` | No       | Stored on the label.                                                                |
+| `color`       | No       | A hex color such as `#0693E3`. Invalid or blank colors get a random color assigned. |
 
 ### What the import does
 

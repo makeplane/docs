@@ -56,7 +56,7 @@ Each workspace has a monthly AI allowance that depends on your plan. Consumption
 
 Because the limit is applied after a request rather than partway through, your meter can briefly show slightly over 100%.
 
-For how allowances are assigned per plan, what overage does, and how billing works, see [Plane AI credits](/ai/ai-credits).
+For how allowances are assigned per plan, what overage does, and how billing works, see [Plane AI credits](/ai/plane-ai-credits).
 
 ## Plane Cloud and self-hosted
 
