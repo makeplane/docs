@@ -1,6 +1,6 @@
 ---
 title: FIPS deployment
-description: Deploy the FIPS variant of Plane Enterprise on a FIPS-enforcing host, including prerequisites, image list, verification, and scope of coverage.
+description: Deploy the FIPS variant of Plane Enterprise on a FIPS-enforcing host, including prerequisites, image list, and verification.
 keywords: plane fips, fips 140-3 deployment, plane commercial fips, govcloud plane, federal self-hosting, fips enabled containers
 head:
   - - meta
@@ -210,34 +210,3 @@ yourself; the SCC assigns an arbitrary UID in group `0`, and the images' writabl
 group-`0` writable by design. One exception: the bundled proxy binds ports 80/443, which
 `restricted-v2` forbids - front it with an OpenShift Route instead. Ingress-based deployments don't
 use the bundled proxy.
-
-## Scope of coverage
-
-**Covered.** The Plane application images run their cryptography against FIPS-validated modules on a
-FIPS-enforcing host. Non-approved algorithms are refused.
-
-**The bundled data plane is not FIPS.** The `postgres`, `valkey`, `rabbitmq`, `minio`,
-`opensearch`, and `iframely` services in the stack are upstream third-party images with no
-FIPS-validated cryptography - there are no FIPS variants of them. They are suitable for evaluation
-only. For an accreditable deployment, replace them with externally managed datastores on FIPS
-endpoints and repoint the connection variables:
-
-| Service       | Replace with                          | Variables                                     |
-| ------------- | ------------------------------------- | --------------------------------------------- |
-| `plane-db`    | RDS / Aurora PostgreSQL               | `DATABASE_URL`, `PGHOST`, `POSTGRES_*`        |
-| `plane-redis` | ElastiCache (Valkey/Redis)            | `REDIS_URL`, `REDIS_HOST`, `REDIS_PORT`       |
-| `plane-mq`    | Amazon MQ (RabbitMQ)                  | `AMQP_URL`, `RABBITMQ_*`                      |
-| `plane-minio` | S3 on a FIPS endpoint, or similar     | `AWS_S3_ENDPOINT_URL`, `AWS_*`, `USE_MINIO=0` |
-| `opensearch`  | Amazon OpenSearch Service, or similar | `OPENSEARCH_URL`, `OPENSEARCH_*`              |
-
-Then set the corresponding `*_REPLICAS` to `0`, or remove those services, so the bundled ones do
-not start.
-
-**TLS termination.** The bundled proxy (Caddy) is built against a FIPS-validated module, but for an
-accredited topology the recommended pattern is to terminate TLS at a validated endpoint in front of
-the deployment - such as a FIPS-enabled load balancer - and have the proxy serve HTTP internally.
-
-**FIPS validation applies to the cryptographic modules, not to Plane as a product.** FIPS 140-3
-certificates are held by the module vendors (Red Hat and the Go project). This deployment ensures
-Plane's cryptography _uses_ those validated modules on a compliant host; it does not make Plane
-itself a FIPS-certified product.
