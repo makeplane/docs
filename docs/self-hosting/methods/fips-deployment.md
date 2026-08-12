@@ -16,7 +16,7 @@ their cryptography against FIPS-validated modules (Red Hat's OpenSSL FIPS provid
 and static services; the Go FIPS 140-3 module for the Go services). They are intended for
 deployments that must meet FIPS 140-3 expectations, such as US Federal or GovCloud environments.
 
-::: warning **The single most important prerequisite** 
+::: warning **The single most important prerequisite**
 FIPS mode is a property of the **host**, not of the image. A FIPS image on a non-FIPS host starts cleanly and looks identical from the inside while providing none of the guarantees. Read [Host prerequisite](#host-prerequisite) first.
 :::
 
@@ -42,9 +42,9 @@ The FIPS images use the same names as the standard `-commercial` images with a `
 Pin a specific release tag for any accredited deployment rather than tracking `latest` - a known,
 fixed image version is part of the audit trail.
 
-:::info 
+:::info
 There is no FIPS All-in-One (AIO) image. The AIO image is built on an Alpine base, which has no FIPS-validated cryptography, so a FIPS deployment uses the multi-container Compose stack below, not the AIO image.
-::: 
+:::
 
 ## Host prerequisite
 
@@ -78,8 +78,10 @@ start** if the host is not in FIPS mode. Set it to `0` to downgrade that to a st
 
 ## Deploy
 
-The Compose file and its supporting files live in the plane-ee repository under
-`deployments/cli/commercial/`:
+Each Plane Enterprise FIPS release ships a deployment bundle containing the files below. The
+Plane Enterprise source repository is private, so these files are not publicly browsable - they
+are distributed with the release. If you don't have the bundle for your release, request it from
+your Plane account team or [contact support](https://plane.so/contact).
 
 - `docker-compose-fips.yml` - the FIPS stack
 - `variables.env` - environment template
