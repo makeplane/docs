@@ -1,6 +1,7 @@
 ---
 title: Editor blocks for pages
 description: Explore all available content blocks in Plane's Page editor.
+outline: 2
 ---
 
 # Editor blocks
@@ -227,6 +228,65 @@ HTML artifacts run in a sandboxed frame that is isolated from Plane. The embedde
 ## Callout
 
 Creates visually distinct sections with customizable icons and colors for highlighting warnings, tips , and calls-to-action.
+
+## Toggle <Badge type="tip" text="Business" />
+
+A toggle is a collapsible block that hides its content behind a title. Readers see the title, and click to expand it when they want the detail. Toggles keep long documents tidy: use them for optional context, FAQs, step-by-step details, or anything you want available without cluttering the page.
+
+Toggles are available anywhere you use the editor, including **pages**, **wiki pages**, and **work item descriptions**.
+
+### Insert a toggle
+
+1. Place your cursor where you want the toggle.
+2. Type `/` to open the command menu.
+3. Search for **Toggle**. You can also type `/accordion`, `/expand`, `/collapse`, `/details`, or `/summary` to find it.
+4. Select it. Plane inserts an open toggle with the cursor in its title, ready for you to type.
+
+### Add a title and content
+
+A toggle has two parts:
+
+- **The title** is the line that always stays visible. Type the title first. An empty title shows the hint "Give this a title..."
+- **The body** is the content that expands and collapses. Press **Enter** from the title to move into the body, then add your content. An empty body shows "Empty toggle. Click or drop a block inside."
+
+The body can hold almost anything the editor supports: paragraphs, lists, headings, images, callouts, and more. You can also **nest toggles inside toggles** to build layered, collapsible sections.
+
+### Expand and collapse
+
+Click the arrow next to the title to expand or collapse a toggle. A newly inserted toggle starts **expanded** so you can add content right away.
+
+Toggles keep working in read-only and published views: anyone viewing the page can click to expand and collapse them, even when they cannot edit.
+
+### Things to know
+
+- **The open or closed state is not saved.** Collapsing or expanding a toggle changes what you see, but it is not written into the document. If you reload the page, toggles return to their default state rather than staying exactly as you left them. This also means every reader sees toggles in their default state, not whatever a previous viewer left behind.
+- **Removing a toggle.** Pressing **Backspace** at the start of an empty title removes the toggle and keeps you in the document.
+
+## Table of contents <Badge type="tip" text="Business" />
+
+On a long page, a table of contents gives readers a quick map of the content and a way to jump straight to any section. Plane builds it from the **headings** in your page, so there is nothing to maintain by hand: as you add, rename, reorder, or remove headings, the table of contents updates on its own.
+
+The table of contents is available on **pages** and **wiki pages**. It is not available in work item descriptions or comments, which don't track headings.
+
+A table of contents only shows what it can find, so start by giving your page headings. Type `/` and choose a heading (Heading 1, Heading 2, or Heading 3), or use Markdown shortcuts by starting a line with `#`, `##`, or `###`. Until a page has at least one heading, the table of contents shows an empty message.
+
+### Insert a table of contents
+
+1. Place your cursor where you want the table of contents, usually near the top of the page.
+2. Type `/` to open the command menu.
+3. Search for **Table of contents**. You can also type `/toc`, `/contents`, `/outline`, or `/headings` to find it.
+4. Select it. Plane inserts the block, described as "a live outline of this page's headings," and adds an empty line after it so you can keep writing.
+
+The block lists every heading on the page, indented by level so the structure is easy to scan.
+
+### How it behaves
+
+- **Shows every heading level.** Headings from level 1 through level 6 all appear, each indented according to its level.
+- **Stays up to date.** The list rebuilds automatically whenever you add, edit, reorder, or delete a heading. You never edit the table of contents directly.
+- **Jumps to a section.** Click any entry to smoothly scroll the page to that heading.
+- **Handles empty headings.** A heading with no text yet appears as "Untitled heading" until you name it.
+
+Because it is a normal block, you can drag it to move it elsewhere on the page, or delete it like any other block.
 
 ## AI block <Badge type="tip" text="Business" />
 

@@ -151,6 +151,7 @@ Use `text` when you want to match a term whether it appears in the title or the 
 | `label`      | Labels applied                                                  |
 | `cycle`      | Cycle membership                                                |
 | `module`     | Module membership                                               |
+| `release`    | Release the work item is linked to                              |
 | `milestone`  | Milestone                                                       |
 | `mention`    | Members mentioned in the work item                              |
 | `createdBy`  | Who created the work item                                       |
@@ -312,6 +313,19 @@ The value can take several forms:
 | `IS NULL`     | Not in any module                   |
 | `IS NOT NULL` | In a module                         |
 
+### release
+
+| Operator      | Description                                 |
+| ------------- | ------------------------------------------- |
+| `IN`          | Linked to any of the specified releases     |
+| `NOT IN`      | Not linked to any of the specified releases |
+| `=`           | Linked to this release                      |
+| `!=`          | Not linked to this release                  |
+| `IS NULL`     | Not linked to any release                   |
+| `IS NOT NULL` | Linked to a release                         |
+
+The `release` field is available where the releases feature is enabled. Use it with the [`earliestUnreleasedRelease()`](#release-functions) value function, for example `release = earliestUnreleasedRelease()`.
+
 ### milestone
 
 | Operator      | Description                            |
@@ -458,16 +472,27 @@ createdAt >= daysAgo(7)
 
 ### User functions
 
-| Function          | Returns                       |
-| ----------------- | ----------------------------- |
-| `currentUser()`   | The person running the query  |
-| `inactiveUsers()` | Deactivated workspace members |
+Return a user or a list of users. Use `currentUser()` on the right of `=`; use the list-returning ones with `IN`, or pass them into a user function such as `votedBy(...)`.
+
+| Function                                  | Returns                                              |
+| ----------------------------------------- | ---------------------------------------------------- |
+| `currentUser()`                           | The person running the query                         |
+| `inactiveUsers()`                         | Deactivated workspace members                        |
+| `workspaceMembers()`                      | All active members of the workspace                  |
+| `membersOf("project:<id>")`               | Active members of the given project                  |
+| `membersOf("teamspace:<id>")`             | Active members of the given teamspace                |
+| `userPropertyEquals("property", "value")` | Members whose profile matches a property (see below) |
+
+`userPropertyEquals` accepts one of these properties: `role`, `email`, `emailDomain`, `displayName`, `timezone`, `isActive`, `isBot`. If a people function resolves to nobody, the surrounding condition matches zero work items rather than being ignored.
 
 Examples:
 
 ```
 assignee = currentUser()
 assignee IN (inactiveUsers())
+assignee IN membersOf("project:1a2b3c4d-...")
+assignee IN userPropertyEquals("role", "admin")
+votedBy(workspaceMembers())
 ```
 
 ### Cycle functions
@@ -502,26 +527,67 @@ Example:
 stateGroup IN (openStates())
 ```
 
+### Release functions
+
+Return a release. Use them on the right side of a `release` condition. Available where the releases feature is enabled.
+
+| Function                      | Returns                                                                      |
+| ----------------------------- | ---------------------------------------------------------------------------- |
+| `earliestUnreleasedRelease()` | The next unreleased release by target date (the earliest one still upcoming) |
+
+Example:
+
+```
+release = earliestUnreleasedRelease()
+```
+
 ## Condition functions
 
 Standalone checks that return true or false. Combine them with `AND`, `OR`, and `NOT`. Arguments shown as `"user"`, `"date"`, `"text"`, or `n` are values you supply; you pick users and dates from the editor's suggestions.
+
+Functions that take a user (such as `votedBy`, `commentedBy`, `attachedBy`, or `lastCommentBy`) accept a single member, or a list-returning [people function](#people-functions) to match a whole group at once. Use `currentUser()` for the person running the query, `workspaceMembers()` for everyone, or `membersOf("project:<id>")` for a project, for example `votedBy(currentUser())` or `votedBy(workspaceMembers())`.
 
 ### Structure and relationships
 
 Relation functions each take one or more work item identifiers, for example `blockedBy("WEB-11", "WEB-20")`.
 
-| Function               | Matches work items that                         | Example                 |
-| ---------------------- | ----------------------------------------------- | ----------------------- |
-| `isTopLevel()`         | Are not a sub-work item (no parent)             | `isTopLevel()`          |
-| `isSubWorkItem()`      | Are a sub-work item (have a parent)             | `isSubWorkItem()`       |
-| `hasChildren()`        | Have at least one sub-work item                 | `hasChildren()`         |
-| `hasRelations()`       | Have at least one relation to another work item | `hasRelations()`        |
-| `blockedBy("id", …)`   | Are blocked by the given items                  | `blockedBy("WEB-11")`   |
-| `blocks("id", …)`      | Block the given items                           | `blocks("WEB-11")`      |
-| `linkedTo("id", …)`    | Are related to the given items                  | `linkedTo("WEB-11")`    |
-| `duplicateOf("id", …)` | Are marked duplicate of the given items         | `duplicateOf("WEB-11")` |
-| `childOf("id", …)`     | Are a child of the given items                  | `childOf("WEB-11")`     |
-| `parentOf("id", …)`    | Are a parent of the given items                 | `parentOf("WEB-11")`    |
+| Function                                 | Matches work items that                                                                                                               | Example                               |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `isTopLevel()`                           | Are not a sub-work item (no parent)                                                                                                   | `isTopLevel()`                        |
+| `isSubWorkItem()`                        | Are a sub-work item (have a parent)                                                                                                   | `isSubWorkItem()`                     |
+| `hasChildren()`                          | Have at least one sub-work item                                                                                                       | `hasChildren()`                       |
+| `hasRelations()`                         | Have at least one relation to another work item                                                                                       | `hasRelations()`                      |
+| `blockedBy("id", …)`                     | Are blocked by the given items                                                                                                        | `blockedBy("WEB-11")`                 |
+| `blocks("id", …)`                        | Block the given items                                                                                                                 | `blocks("WEB-11")`                    |
+| `linkedTo("id", …)`                      | Are related to the given items                                                                                                        | `linkedTo("WEB-11")`                  |
+| `duplicateOf("id", …)`                   | Are marked duplicate of the given items                                                                                               | `duplicateOf("WEB-11")`               |
+| `childOf("id", …)`                       | Are a child of the given items                                                                                                        | `childOf("WEB-11")`                   |
+| `parentOf("id", …)`                      | Are a parent of the given items                                                                                                       | `parentOf("WEB-11")`                  |
+| `linkedToAny("id", …)`                   | Are connected to any of the given items through one relation hop (any relation type, both directions; hierarchy not walked)           | `linkedToAny("WEB-11")`               |
+| `linkedToAll("id", …)`                   | Same as `linkedToAny`, and also walks parent/child (sub-work-item and epic) links                                                     | `linkedToAll("WEB-11", "WEB-20")`     |
+| `linkedToAnyRecursive("id", …[, depth])` | Multi-hop `linkedToAny`; optional trailing depth (default 5, maximum 10)                                                              | `linkedToAnyRecursive("WEB-11", 3)`   |
+| `linkedToAllRecursive("id", …[, depth])` | Multi-hop `linkedToAll`, with the same depth rules                                                                                    | `linkedToAllRecursive("WEB-11")`      |
+| `workItemPicker("name"[, "id", …])`      | Whose issue-picker [custom property](#custom-properties) (matched by display name) has any value, or points at one of the given items | `workItemPicker("Related", "WEB-11")` |
+
+Recursive traversals stop at the depth you set (5 by default, 10 at most) and are capped at a maximum number of work items. `workItemPicker("Related")` with no ids matches any work item whose "Related" picker has a value.
+
+### Rollups
+
+`aggregate("scope", "field", "agg", "threshold")` matches a work item when a numeric rollup meets a comparison. It takes exactly four arguments:
+
+| Argument    | Allowed values                                                                       |
+| ----------- | ------------------------------------------------------------------------------------ |
+| `scope`     | `children` (roll up the work item's sub-work items) or `self` (the work item itself) |
+| `field`     | `estimate` (points-type estimates only) or `worklog` (logged time, in **minutes**)   |
+| `agg`       | `sum`, `avg`, `min`, `max`, or `count`                                               |
+| `threshold` | A comparison such as `"> 10"` or `">= 2.5"`. A bare number is treated as `>= n`.     |
+
+```
+aggregate("children", "estimate", "sum", "> 10")
+aggregate("self", "worklog", "sum", ">= 480")
+```
+
+Only points-type estimates are counted; time and category estimates are ignored. For `sum` and `count`, a work item with no matching rows counts as 0.
 
 ### Assignees and labels
 
@@ -541,17 +607,22 @@ Relation functions each take one or more work item identifiers, for example `blo
 
 Count arguments accept a number or a comparison such as `">= 2"`.
 
-| Function                  | Matches work items that                          | Example                         |
-| ------------------------- | ------------------------------------------------ | ------------------------------- |
-| `hasComments([n])`        | Have comments, optionally a count                | `hasComments(">= 3")`           |
-| `commentedAfter("date")`  | Have a comment on or after the date              | `commentedAfter("2026-01-01")`  |
-| `commentedBefore("date")` | Have a comment on or before the date             | `commentedBefore("2026-06-30")` |
-| `commentContains("text")` | Have a comment containing the text               | `commentContains("blocker")`    |
-| `lastCommentBy("user")`   | Whose most recent comment is by the user         | `lastCommentBy("Priya")`        |
-| `hasLinks([n])`           | Have URL links, optionally a count               | `hasLinks(">= 1")`              |
-| `linkContains("text")`    | Have a link whose URL or title contains the text | `linkContains("figma")`         |
-| `hasAttachments([n])`     | Have attachments, optionally a count             | `hasAttachments(">= 2")`        |
-| `attachedBy("user")`      | Have an attachment uploaded by the user          | `attachedBy("Priya")`           |
+| Function                  | Matches work items that                          | Example                                    |
+| ------------------------- | ------------------------------------------------ | ------------------------------------------ |
+| `hasComments([n])`        | Have comments, optionally a count                | `hasComments(">= 3")`                      |
+| `commentedAfter("date")`  | Have a comment on or after the date              | `commentedAfter("2026-01-01")`             |
+| `commentedBefore("date")` | Have a comment on or before the date             | `commentedBefore("2026-06-30")`            |
+| `commentContains("text")` | Have a comment containing the text               | `commentContains("blocker")`               |
+| `lastCommentBy("user")`   | Whose most recent comment is by the user         | `lastCommentBy("Priya")`                   |
+| `commentedBy("user")`     | Have a comment written by the user               | `commentedBy("Priya")`                     |
+| `hasLinks([n])`           | Have URL links, optionally a count               | `hasLinks(">= 1")`                         |
+| `hasRemoteLinks()`        | Have at least one link to an external URL        | `hasRemoteLinks()`                         |
+| `linkContains("text")`    | Have a link whose URL or title contains the text | `linkContains("figma")`                    |
+| `hasLinkUrl("url")`       | Have a link at exactly this URL (exact match)    | `hasLinkUrl("https://figma.com/file/abc")` |
+| `hasAttachments([n])`     | Have attachments, optionally a count             | `hasAttachments(">= 2")`                   |
+| `attachedBy("user")`      | Have an attachment uploaded by the user          | `attachedBy("Priya")`                      |
+
+Use `linkContains` for a partial match on a link's URL or title, and `hasLinkUrl` when you want to match one exact URL.
 
 ### Worklogs and activity
 
@@ -561,3 +632,30 @@ Count arguments accept a number or a comparison such as `">= 2"`.
 | `workLoggedBy("user")`            | Have time logged by the user            | `workLoggedBy("Priya")`                         |
 | `workLoggedBetween("from", "to")` | Have time logged between two dates      | `workLoggedBetween("2026-01-01", "2026-01-31")` |
 | `recentlyViewed()`                | You viewed in the last 30 days          | `recentlyViewed()`                              |
+
+### Votes and history
+
+These match work items based on who took an action on them. Each takes exactly one user (pick a member, or use `currentUser()`).
+
+| Function                 | Matches work items that                       | Example                   |
+| ------------------------ | --------------------------------------------- | ------------------------- |
+| `votedBy("user")`        | Were upvoted by the user                      | `votedBy("Priya")`        |
+| `stateChangedBy("user")` | Had their state changed by the user           | `stateChangedBy("Priya")` |
+| `resolvedBy("user")`     | Were moved into a completed state by the user | `resolvedBy("Priya")`     |
+
+### Modules and releases
+
+| Function                | Matches work items that                                            | Example                   |
+| ----------------------- | ------------------------------------------------------------------ | ------------------------- |
+| `inNextRelease()`       | Are linked to the next upcoming unreleased release                 | `inNextRelease()`         |
+| `releaseMatch("regex")` | Are linked to an unreleased release whose name matches the pattern | `releaseMatch("v2\\..*")` |
+| `moduleMatch("regex")`  | Are in a module whose name matches the pattern                     | `moduleMatch("^Front")`   |
+
+`releaseMatch` and `moduleMatch` match names with a regular expression. The pattern is **case-sensitive** and **unanchored** (it matches anywhere in the name unless you anchor it with `^` or `$`). Start the pattern with `(?i)` to match case-insensitively, for example `moduleMatch("(?i)frontend")`. Patterns are limited to 200 characters.
+
+Besides standing on their own, `moduleMatch` and `releaseMatch` can also be used as value functions on the right side of `IN`, so you can match by name inside a list:
+
+```
+module IN moduleMatch("Front")
+release IN releaseMatch("v2")
+```

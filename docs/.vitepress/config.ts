@@ -412,7 +412,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
               },
             ],
           },
-          { text: "Workspace Audit logs", link: "/workspaces-and-users/audit-logs" },
+          { text: "Workspace Audit Logs", link: "/workspaces-and-users/audit-logs" },
           {
             text: "Billing and plans",
             collapsed: true,
@@ -456,6 +456,8 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
               { text: "Publish projects", link: "/core-concepts/deploy" },
             ],
           },
+          { text: "Project Audit Logs", link: "/projects/project-audit-logs" },
+
           {
             text: "Project States",
             link: "/core-concepts/projects/project-states",
@@ -539,8 +541,12 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
             link: "/core-concepts/projects/milestones",
           },
           {
-            text: "Releases",
+            text: "Workspace Releases",
             link: "/releases",
+          },
+          {
+            text: "Project Releases",
+            link: "/projects/releases",
           },
           { text: "Stickies", link: "/core-concepts/stickies" },
         ],
@@ -595,6 +601,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
             ],
           },
           { text: "Page Templates", link: "/templates/page-templates" },
+          { text: "Edit MS Office Files", link: "/pages/edit-ms-office-files" },
         ],
       },
       {
@@ -734,6 +741,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
         items: [
           { text: "Plane AI", link: "/ai/plane-ai" },
           { text: "AI Skills", link: "/ai/ai-skills" },
+          { text: "AI Usage", link: "/ai/ai-usage" },
           { text: "AI credits", link: "/ai/plane-ai-credits" },
           { text: "MCP Connectors", link: "/ai/mcp-connectors" },
           {

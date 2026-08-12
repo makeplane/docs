@@ -1,70 +1,81 @@
 ---
 title: How Plane AI credits work
-description: Understand seat-based AI credits, what happens when included credits run out, and how workspace overage keeps your team moving.
+description: Understand how Plane AI credits work on Plane Cloud per-seat monthly allowances, what happens when they run out, workspace overage, and how to monitor usage.
 ---
 
 # Plane AI credits
 
-Plane AI credits measure AI usage in Plane Cloud.
+Plane AI credits measure how much Plane AI (Pi) your workspace uses on Plane Cloud. Your plan includes a monthly allowance, and AI features draw from it as your team uses them.
 
-::: warning IMPORTANT
-AI credits apply only to Plane Cloud.
+To see how much of your allowance you have used, open the [AI usage](/ai/ai-usage) dashboard. It shows your consumption for the current month as a percentage of your allowance.
 
-On self-hosted instances, you use your own AI provider [API key](https://developers.plane.so/self-hosting/govern/instance-admin#artificial-intelligence), and all AI usage and costs are managed directly through your provider.
+::: warning Credits apply only to Plane Cloud
+On self-hosted instances you connect your own AI provider [API key](https://developers.plane.so/self-hosting/govern/instance-admin#artificial-intelligence), so there are no Plane credits. All AI usage and costs are handled directly through your provider, and members are not metered by Plane.
 :::
 
 ## How credits are assigned
 
-Credits are included **per paid seat**.
+Credits are included with your plan and refresh every month.
 
-- Each active seat gets a monthly included credit amount based on your plan.
-- Included credits are account-level entitlements tied to seats.
-- This model is designed to be simple and predictable, similar to how modern AI products commonly package usage.
+- Each active paid seat gets a monthly included allowance based on your plan.
+- The allowance is an entitlement tied to seats, so your total capacity scales with your team.
+- Allowances reset at the start of each monthly billing period.
 
-For current included amounts by plan, check the latest pricing details on [Plane pricing](https://plane.so/pricing#ai-&-credits).
+AI **agents** draw from a separate, workspace-level allowance rather than from any one member's. Automated agent activity does not consume a person's individual credits.
 
-## No default pooling
+For current included amounts by plan, see [Plane pricing](https://plane.so/pricing#ai-&-credits).
 
-Plane AI credits are **not pooled by default**.
+## Credits are not pooled by default
 
-That means one member's unused included credits are not automatically shared across the rest of the workspace.
+Each member has their own monthly allowance. One member's unused credits are not automatically shared with the rest of the workspace. This keeps each person's available capacity predictable.
 
-## What happens when included credits run out
+## What happens when credits run out
 
-If a member (or your workspace's included capacity) runs out of available credits for the billing period, AI usage can stop unless overage is enabled.
+As a member approaches their allowance, at around 80% used, Plane shows a warning so they can plan ahead.
 
-Workspace admins can enable a workspace-level overage setting so teams can continue using AI after included credits are exhausted.
+When the allowance is fully used for the month, what happens depends on whether workspace overage is enabled:
+
+- **Overage off (the default).** Plane AI features pause for that member until the allowance resets at the start of the next month. The request that reaches the limit still finishes, and the next one is paused. The member sees a message that AI is temporarily unavailable until the reset date.
+- **Overage on.** AI keeps working past the included allowance, and the additional usage is billed at the workspace level.
+
+The same applies to the workspace's agent allowance: agents pause when it is used up, unless overage is enabled.
 
 ## Workspace overage
 
-When workspace overage is enabled:
+Overage is a workspace-level setting that keeps your team moving after included credits are used up.
 
-- AI usage continues after included credits are consumed.
-- Additional usage is billed at the workspace level.
-- Admins stay in control of whether overage is allowed.
+- When enabled, AI usage continues past the included allowance.
+- The additional usage is billed to the workspace.
+- Workspace admins decide whether to allow it, so cost stays in your control.
 
-If overage is disabled, new AI actions are paused after included credits are exhausted until credits reset or additional capacity is purchased/enabled.
+If overage is off, AI pauses at the limit until credits reset or more capacity is added to the workspace.
 
-## Tracking and controls
+## Monitor usage
 
-Plane provides usage visibility so admins can manage cost and adoption:
+Track consumption from the [AI usage](/ai/ai-usage) dashboard:
 
-- Current credit balance and consumption trends
-- Workspace-level usage monitoring
-- Billing visibility for additional usage when overage is enabled
+- A **monthly meter** shows how much of the allowance has been used, as a percentage.
+- A **usage trend** chart shows how consumption changes over time.
+- An **analytics breakdown** shows where AI is being used, by member, feature, project, model, and agent.
+
+Every member can see their own usage. Workspace admins and owners can also see workspace-wide usage.
 
 ## FAQs
 
 ::: details Are credits shared automatically across all users in my workspace?
-No. Plane does not use automatic credit pooling by default.
+No. Credits are not pooled by default. Each member has their own monthly allowance.
 :::
 
 ::: details Do I get credits for each seat?
-Yes. Included credits are assigned per paid seat based on your plan.
+Yes. An included allowance is assigned per paid seat based on your plan. AI agents draw from a separate, workspace-level allowance.
 :::
 
 ::: details Can we keep using AI after included credits are used up?
-Yes, if a workspace admin enables overage at the workspace level.
+Yes, if a workspace admin enables overage. Otherwise, AI pauses for that member until the allowance resets at the start of the next month.
+:::
+
+::: details How do I see how much AI we have used?
+Open the [AI usage](/ai/ai-usage) dashboard. It shows your usage as a percentage of your allowance, along with trends and a breakdown by member, feature, project, model, and agent.
 :::
 
 ::: details Where can I see the latest included credit amounts?

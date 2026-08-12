@@ -341,6 +341,72 @@ Pick the project, then the cycle within that project to summarize. The widget th
 
 The widget reports on one cycle. To track several cycles, add one widget per cycle.
 
+### Intake accepted vs declined <Badge type="tip" text="Business" />
+
+The intake accepted vs declined widget plots two time series side by side: how many intake requests were accepted and how many were declined over a period you choose. It is most useful for seeing how your triage decisions trend and whether the balance between accepting and declining is shifting.
+
+**Basic**
+
+Configure the widget with:
+
+- **Date grouping** - bucket the timeline by Day, Week, Month (default), or Year. Each bucket counts the decisions made in that period, by the date the decision was made.
+- **Chart style** - show the two series as a **Multi-line** chart (default) or a **Stacked bar** chart.
+
+Style options:
+
+- **Legends** and **Tooltip** - toggle each on or off.
+
+Accepted counts intake items you accepted; declined counts items you rejected or marked as a duplicate. Pending and snoozed items are not counted. The axes and group-by are fixed, the Accepted series is always green and Declined always red, and there are no widget-level filters. Point the dashboard at projects that use Intake; projects with no intake items contribute nothing.
+
+### Average time to accept and decline <Badge type="tip" text="Business" />
+
+This widget tracks how long intake requests take to reach a decision - the average time between when an item arrived in intake and when it was accepted or declined - so you can see whether triage is getting faster or slower.
+
+**Basic**
+
+Configure the widget with:
+
+- **Date grouping** - Day, Week, Month (default), or Year. Each bucket shows the average decision time for the items decided in that period.
+- **Display** - **Line** (default), a trend of average time per period; or **Number**, a single figure showing the overall average across the whole range.
+
+Style options:
+
+- **Legends** and **Tooltip** apply to the line display.
+- **Text alignment** and **text color** apply to the number display.
+
+The average is measured in days from an item's creation in intake to its decision, across all decided items (accepted, rejected, and duplicate). Pending and snoozed items are excluded. In the line display, a period with no decisions leaves a gap rather than dropping to zero.
+
+### Intake breakdown <Badge type="tip" text="Business" />
+
+The intake breakdown widget is a compact snapshot of intake activity across the dashboard's projects. Instead of a chart, it shows a fixed set of headline numbers so you can read the state of your intake at a glance.
+
+**Basic**
+
+The widget always displays the same six metrics:
+
+- **In-app volume**, **Email volume**, **Form volume** - counts of intake items by source, across all statuses.
+- **Total accepted** and **Total rejected** - decided counts.
+- **Avg. time to decide** - average number of days from an item's arrival to its decision.
+
+The only setting is **View**: **Grid** (default), showing the metrics as tiles, or **Table**, showing them as a two-column list. This is a presentation choice only; it does not change the numbers, and the widget is not narrowed by widget-level filters.
+
+### Intake items ageing <Badge type="tip" text="Business" />
+
+The intake items ageing widget shows how long your undecided intake requests have been waiting, grouping items that still need a decision into age bands so you can spot a backlog before it goes stale.
+
+**Basic**
+
+Configure the widget with:
+
+- **Color scheme** - Modern, Horizon (default), or Earthen.
+- **Center value** - show the total count of undecided items in the middle of the ring (on by default).
+
+Style options:
+
+- **Legends** and **Tooltip** - toggle each on or off.
+
+The widget renders a donut split into three fixed age bands: **0-2 days**, **3-7 days**, and **7+ days**. It covers only undecided items (pending and snoozed); accepted, rejected, and duplicate items are not shown. Each item is aged from its arrival date in intake, and the age bands cannot be changed.
+
 ## Configure a widget
 
 Open the configuration sidebar by clicking the widget or by clicking the pencil icon.
