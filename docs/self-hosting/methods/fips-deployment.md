@@ -10,7 +10,7 @@ head:
 
 # FIPS deployment <Badge type="warning" text="Enterprise Grid" />
 
-Plane Enterprise publishes a FIPS variant of every application image alongside the standard set.
+Plane publishes a FIPS variant of every application image alongside the standard set.
 These images are built on Red Hat UBI 10, apply the system-wide FIPS cryptographic policy, and run
 their cryptography against FIPS-validated modules (Red Hat's OpenSSL FIPS provider for the Python
 and static services; the Go FIPS 140-3 module for the Go services). They are intended for
