@@ -65,27 +65,19 @@ sudo fips-mode-setup --enable
 sudo reboot
 ```
 
-On AL2023 `/boot` lives on the root filesystem, so no separate partition is required. On RHEL/Rocky/Alma with a **separate** `/boot` (or `/boot/efi`) partition, that partition must be mounted so `fips-mode-setup` can update the bootloader.
-
-**RHEL 10** - `fips-mode-setup` has been **removed**, and switching an already-installed system to FIPS mode is **not supported**. FIPS mode must be enabled **at install time** by adding `fips=1` to the kernel command line (or `fips = true` in a RHEL image-builder blueprint). A post-install `update-crypto-policies --set FIPS` is **not** sufficient for FIPS 140 compliance - the only supported path on a non-FIPS install is reinstalling.
+**RHEL 10** - `fips-mode-setup` has been removed and post-install switching is not supported: enable FIPS **at install time** with `fips=1` on the kernel command line.
 
 **Other** - boot a vendor FIPS image (a RHEL FIPS AMI, Ubuntu Pro FIPS), or install OpenShift with FIPS enabled.
-
-In all cases, the definitive check is the kernel flag above (`/proc/sys/crypto/fips_enabled` = `1`).
 
 As a safeguard, the shipped Compose file sets `PLANE_REQUIRE_FIPS=1`, so the containers **refuse to
 start** if the host is not in FIPS mode. Set it to `0` to downgrade that to a startup warning.
 
 ## Deploy
 
-Each Plane Enterprise FIPS release ships a deployment bundle containing the files below. The
-Plane Enterprise source repository is private, so these files are not publicly browsable - they
-are distributed with the release. If you don't have the bundle for your release, request it from
-your Plane account team or [contact support](https://plane.so/contact).
+The FIPS deployment bundle ships with every Plane Enterprise FIPS release:
 
 - `docker-compose-fips.yml` - the FIPS stack
 - `variables.env` - environment template
-- `README-FIPS.md` - the authoritative operations reference
 - `verify-fips.sh` - the verification script (see [Verify](#verify))
 
 ```bash
@@ -120,50 +112,29 @@ non-zero when a check does not hold, so it can gate a deployment pipeline:
 
 ## Configuration defaults specific to FIPS images
 
-The FIPS images default to a stricter security posture than the standard images. Each default is
-overridable with an environment variable, in either direction. These matter mainly if you are
-moving an existing standard deployment onto the FIPS images; a fresh FIPS install needs none of
-them changed.
+The FIPS images default to a stricter security posture than the standard images. A fresh FIPS
+install needs none of these changed; they matter mainly when moving an existing standard
+deployment onto the FIPS images.
 
-| Setting                            | FIPS default        | Standard default | Notes                                                                                                                                                                                      |
-| ---------------------------------- | ------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `LDAP_TLS_REQUIRE_CERT`            | `demand`            | `never`          | Validates the directory server's TLS certificate. See [LDAP](#ldap-certificate-validation).                                                                                                |
-| `SAML_REJECT_DEPRECATED_ALGORITHM` | on                  | off              | Rejects assertions signed with RSA-SHA1. The IdP must sign with SHA-256.                                                                                                                   |
-| `SECRET_ENCRYPTION_V2`             | on                  | off              | Writes at-rest secrets as AES-256-GCM instead of the legacy format. Both formats are always readable.                                                                                      |
-| `USAGE_ID_DIGEST`                  | `sha256` (required) | `md5`            | Digest for Plane AI usage-ledger keys. Under FIPS this is **not** an "either direction" override: a FIPS-mode Postgres refuses `md5()`, so `sha256` is required and `md5` is incompatible. |
-
-### LDAP certificate validation
-
-On the FIPS images, LDAP TLS certificate validation is on by default. For it to succeed, **both** of
-the following must hold:
-
-1. The directory certificate chains to a trusted CA. For a private or self-signed CA, point
-   `LDAP_TLS_CA_CERTFILE` at your CA bundle (PEM).
-2. The certificate's CN/SAN matches the host in `LDAP_SERVER_URI`. An IP address or short hostname
-   that is not in the certificate's SAN fails hostname verification **even with the correct CA
-   bundle** - use the fully qualified name the certificate was issued for.
-
-Setting `LDAP_TLS_REQUIRE_CERT=never` restores the previous behaviour and logs a warning on every
-connection.
+| Setting                            | FIPS default        | Standard default | Notes                                                                                                            |
+| ---------------------------------- | ------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `LDAP_TLS_REQUIRE_CERT`            | `demand`            | `never`          | Validates the LDAP server's TLS certificate. Set to `never` to restore the previous behavior.                    |
+| `SAML_REJECT_DEPRECATED_ALGORITHM` | on                  | off              | Rejects assertions signed with RSA-SHA1. The IdP must sign with SHA-256.                                         |
+| `SECRET_ENCRYPTION_V2`             | on                  | off              | Writes at-rest secrets as AES-256-GCM instead of the legacy format. Both formats are always readable.            |
+| `USAGE_ID_DIGEST`                  | `sha256` (required) | `md5`            | Digest for Plane AI usage-ledger keys. `md5` is incompatible with a FIPS-mode Postgres, so `sha256` is required. |
 
 ## Running under a non-root or arbitrary UID (OpenShift)
 
-The FIPS application images run non-root, and FIPS mode itself requires no privilege. How you set
-the pod security context depends on the platform:
+The FIPS application images run non-root, and FIPS mode itself requires no privilege.
 
-**Plain Kubernetes.** Pin the image's built-in user with `runAsUser: 1000`. If you run under a
-different UID, also set `runAsGroup: 0` and `fsGroup: 0` so that UID keeps write access through the
-images' group-`0`-writable directories.
+**Plain Kubernetes** - set `runAsUser: 1000` (the images' built-in user). For any other UID, add
+`runAsGroup: 0` and `fsGroup: 0`.
 
-**OpenShift (`restricted-v2`).** Do **not** set `runAsUser`, `runAsGroup`, or `fsGroup` yourself. The
-SCC assigns an arbitrary high UID that is a member of group `0`, and it allocates `fsGroup` from the
-namespace's `openshift.io/sa.scc.supplemental-groups` range - an explicit `fsGroup: 0` is rejected
-unless that range includes `0`. No image change or group override is needed: the images' writable
-directories are already group-`0` writable, which is exactly what the assigned UID needs.
-
-The bundled proxy is the one exception: Caddy binds `:80`/`:443`, which `restricted-v2` forbids for a
-non-root process. Front it with an OpenShift Route (running Caddy on high ports), or grant it an SCC
-that permits `NET_BIND_SERVICE`. Ingress-based deployments do not use the bundled proxy.
+**OpenShift (`restricted-v2`)** - works out of the box. Don't set `runAsUser`/`runAsGroup`/`fsGroup`
+yourself; the SCC assigns an arbitrary UID in group `0`, and the images' writable directories are
+group-`0` writable by design. One exception: the bundled proxy binds ports 80/443, which
+`restricted-v2` forbids - front it with an OpenShift Route instead. Ingress-based deployments don't
+use the bundled proxy.
 
 ## Scope of coverage
 
