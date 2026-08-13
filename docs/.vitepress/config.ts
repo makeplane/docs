@@ -546,7 +546,7 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
           },
           {
             text: "Project Releases",
-            link: "/projects/releases",
+            link: "/projects/project-releases",
           },
           { text: "Stickies", link: "/core-concepts/stickies" },
         ],
