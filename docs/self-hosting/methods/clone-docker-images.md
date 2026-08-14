@@ -55,9 +55,12 @@ makeplane/space-commercial:${APP_RELEASE_VERSION}
 makeplane/live-commercial:${APP_RELEASE_VERSION}
 makeplane/monitor-commercial:${APP_RELEASE_VERSION}
 makeplane/backend-commercial:${APP_RELEASE_VERSION}
-makeplane/iframely:v1.2.0
+makeplane/iframely:v2.5.3
 makeplane/silo-commercial:${APP_RELEASE_VERSION}
 makeplane/email-commercial:${APP_RELEASE_VERSION}
+makeplane/plane-pi-commercial:${APP_RELEASE_VERSION}
+makeplane/node-runner-commercial:${APP_RELEASE_VERSION}
+makeplane/proxy-commercial:${APP_RELEASE_VERSION}
 ```
 
 ::: warning
@@ -76,7 +79,7 @@ Set your version and destination registry before copying images.
 
 ```bash
 # Set your Plane version
-export APP_RELEASE_VERSION="v2.6.3"  # Replace with your desired version
+export APP_RELEASE_VERSION="v3.1.0"  # Replace with your desired version
 
 # Set your destination registry
 export DESTINATION_REGISTRY="your-registry.io/your-namespace"
@@ -188,7 +191,7 @@ Create a file named `copy-plane-images.sh`:
 set -e
 
 # Configuration
-APP_RELEASE_VERSION="${APP_RELEASE_VERSION:-v2.6.3}"
+APP_RELEASE_VERSION="${APP_RELEASE_VERSION:-v3.1.0}"
 DESTINATION_REGISTRY="${DESTINATION_REGISTRY}"
 
 if [ -z "$DESTINATION_REGISTRY" ]; then
@@ -208,9 +211,12 @@ declare -a IMAGES=(
     "live-commercial:${APP_RELEASE_VERSION}"
     "monitor-commercial:${APP_RELEASE_VERSION}"
     "backend-commercial:${APP_RELEASE_VERSION}"
-    "iframely:v1.2.0"
+    "iframely:v2.5.3"
     "silo-commercial:${APP_RELEASE_VERSION}"
     "email-commercial:${APP_RELEASE_VERSION}"
+    "plane-pi-commercial:${APP_RELEASE_VERSION}"
+    "node-runner-commercial:${APP_RELEASE_VERSION}"
+    "proxy-commercial:${APP_RELEASE_VERSION}"
 )
 
 echo "Starting image copy process..."

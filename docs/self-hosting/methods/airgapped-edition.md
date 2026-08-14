@@ -85,6 +85,27 @@ Consider these alternatives:
      api:
        image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
 
+     worker:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     beat-worker:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     migrator:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     importer-worker:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     automation-consumer:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     webhook-consumer:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     outbox-poller:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
      space:
        image: your-registry.io/plane/space-commercial:${APP_RELEASE_VERSION}
 
@@ -94,11 +115,38 @@ Consider these alternatives:
      live:
        image: your-registry.io/plane/live-commercial:${APP_RELEASE_VERSION}
 
+     live-exporter:
+       image: your-registry.io/plane/live-commercial:${APP_RELEASE_VERSION}
+
      monitor:
        image: your-registry.io/plane/monitor-commercial:${APP_RELEASE_VERSION}
 
      silo:
        image: your-registry.io/plane/silo-commercial:${APP_RELEASE_VERSION}
+
+     email:
+       image: your-registry.io/plane/email-commercial:${APP_RELEASE_VERSION}
+
+     pi-api:
+       image: your-registry.io/plane/plane-pi-commercial:${APP_RELEASE_VERSION}
+
+     pi-beat:
+       image: your-registry.io/plane/plane-pi-commercial:${APP_RELEASE_VERSION}
+
+     pi-worker:
+       image: your-registry.io/plane/plane-pi-commercial:${APP_RELEASE_VERSION}
+
+     pi-migrator:
+       image: your-registry.io/plane/plane-pi-commercial:${APP_RELEASE_VERSION}
+
+     runner:
+       image: your-registry.io/plane/node-runner-commercial:${APP_RELEASE_VERSION}
+
+     iframely:
+       image: your-registry.io/plane/iframely:v2.5.3
+
+     proxy:
+       image: your-registry.io/plane/proxy-commercial:${APP_RELEASE_VERSION}
    ```
 
    **Infrastructure services** (if using local setup):
