@@ -85,6 +85,27 @@ Consider these alternatives:
      api:
        image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
 
+     worker:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     beat-worker:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     migrator:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     importer-worker:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     automation-consumer:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     webhook-consumer:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
+     outbox-poller:
+       image: your-registry.io/plane/backend-commercial:${APP_RELEASE_VERSION}
+
      space:
        image: your-registry.io/plane/space-commercial:${APP_RELEASE_VERSION}
 
