@@ -314,7 +314,7 @@ export default extendConfig(
               items: [
                 { text: "Webhooks", link: "/dev-tools/intro-webhooks" },
                 { text: "Build Plane App", link: "/dev-tools/build-plane-app/overview" },
-                { text: "MCP Server", link: "/dev-tools/mcp-server" },
+                { text: "MCP server", link: "/dev-tools/mcp-server" },
                 { text: "Agents", link: "/dev-tools/agents/overview" },
               ],
             },
@@ -1118,12 +1118,12 @@ export default extendConfig(
                 },
 
                 {
-                  text: "MCP Server",
+                  text: "MCP server",
                   link: "/dev-tools/mcp-server",
                   collapsed: false,
                   items: [
-                    { text: "Self-host MCP Server", link: "/dev-tools/mcp-server-self-host" },
-                    { text: "Tool Reference", link: "/dev-tools/mcp-server-tools" },
+                    { text: "Self-host the MCP server", link: "/dev-tools/mcp-server-self-host" },
+                    { text: "Tool reference", link: "/dev-tools/mcp-server-tools" },
                   ],
                 },
                 { text: "Plane Compose", link: "/dev-tools/plane-compose" },

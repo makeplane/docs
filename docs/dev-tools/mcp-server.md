@@ -1,127 +1,181 @@
 ---
 title: MCP server
-description: Connect Cursor, VS Code, Claude, Windsurf, and Zed to your Plane workspace. Create work items, manage cycles, search across projects — all through natural language.
-keywords: plane, developer tools, integrations, extensions, mcp server, protocol, integration
+description: Connect Claude, ChatGPT, Codex, Cursor, VS Code, Windsurf, Zed, and Antigravity to Plane over MCP. Endpoints, OAuth and access-token auth, per-client setup, security, and troubleshooting.
+keywords: plane mcp server, model context protocol, plane ai tools, claude plane, cursor plane, chatgpt plane, codex plane, mcp oauth, mcp access token
 ---
 
 # MCP server
 
-The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard that defines how AI applications discover and call external tools. Any client that speaks MCP can talk to any server that speaks MCP.
+Use Plane from the AI tool you already work in to create work items, plan cycles, and query projects in natural
+language. The server is [open source](https://github.com/makeplane/plane-mcp-server) under the MIT license.
 
-The Plane MCP Server is a bridge that lets AI models interact with Plane. It exposes Plane's full API surface as MCP tools, so your AI tool can create work items, manage sprints, track time, and organise work without you leaving your editor or chat interface.
-
-## Transport modes
-
-The server supports four transport modes. The right one depends on your deployment and usecase.
-
-| Transport           | For                               | Auth method                | How to start             |
-| ------------------- | --------------------------------- | -------------------------- | ------------------------ |
-| HTTP with OAuth     | Plane Cloud users, simplest setup | Browser-based OAuth flow   | `plane-mcp-server http`  |
-| HTTP with PAT Token | Automated workflows, CI/CD        | API key in request headers | `plane-mcp-server http`  |
-| Local Stdio         | Local dev, self-hosted Plane      | Environment variables      | `plane-mcp-server stdio` |
-| SSE (Legacy)        | Existing integrations             | Browser-based OAuth flow   | `plane-mcp-server http`  |
-
-## Authentication model
-
-The server has three authentication mechanisms, one per transport variant.
-
-### OAuth auth (HTTP with OAuth, SSE)
-
-For cloud deployments, the server acts as an **OAuth proxy** to Plane's OAuth system:
-
-1. The MCP client redirects the user to the Plane OAuth authorization page
-2. The user logs into Plane and grants access
-3. Plane returns an OAuth token which the server validates by calling `/api/v1/users/me/`
-4. Subsequent MCP requests carry this token, from which the server extracts the workspace slug
-
-The server supports OAuth redirect URIs for all major MCP clients:
-`cursor://`, `vscode://`, `vscode-insiders://`, `windsurf://`, `claude://`
-
-### Header auth (HTTP with PAT Token)
-
-For automated workflows, the MCP client sends two headers with every request:
-
-- `x-api-key` - a Plane API token
-- `x-workspace-slug` - the workspace identifier
-
-The server validates the API key against Plane's `/api/v1/users/me/` endpoint on each request. No browser interaction required.
-
-### Environment variable auth (stdio)
-
-For stdio mode, credentials are read from environment variables at startup:
-
-- `PLANE_API_KEY` - your Plane API token
-- `PLANE_WORKSPACE_SLUG` - your workspace identifier
-- `PLANE_BASE_URL` - API URL for self-hosted instances (defaults to `https://api.plane.so`)
-
-## Identifier system
-
-Plane uses two kinds of identifiers for work items.
-
-- **Readable identifier** - human-friendly, e.g., `ENG-42`
-  - Composed of the project identifier (`ENG`) and a sequence number (`42`)
-  - Used in URLs, UI, and team communication
-
-- **UUID** - machine-friendly, e.g., `3fa85f64-5717-4562-b3fc-2c963f66afa6`
-  - Used by all other tools for `project_id`, `work_item_id`, `cycle_id`, etc.
-  - Returned by every API response
-
----
-
-## How-to guides
-
-Plane hosts the MCP server for you at **`https://mcp.plane.so`**. If you run your own instance of the MCP server, replace `https://mcp.plane.so` with your own server's public URL (e.g., `https://mcp.yourcompany.com`) in all client config examples below.
-
-### Prerequisites
-
-**For all modes:**
-
-- A Plane account with access to at least one workspace
-
-**For stdio mode (local and self-hosted deployments)**
-
-- Python 3.10+ installed (`python --version`)
-- `uv` package manager (recommended). See [Installing uv](https://docs.astral.sh/uv/getting-started/installation/)
-
-| Variable               | Required | Description                                                           |
-| ---------------------- | -------- | --------------------------------------------------------------------- |
-| `PLANE_API_KEY`        | Yes      | API key from your workspace settings                                  |
-| `PLANE_WORKSPACE_SLUG` | Yes      | Your workspace slug                                                   |
-| `PLANE_BASE_URL`       | No       | API URL for self-hosted instances. Defaults to `https://api.plane.so` |
-
-#### Get your API key (required for stdio and PAT token modes)
-
-1. Open Plane and go to your workspace.
-2. Generate a token. You can use either:
-   - **Personal Access Token** - go to **Profile Settings → API Tokens**.
-   - **Workspace Access Token** - go to **Workspace Settings → Access Tokens**.
-3. Click **Add access token**, name it (e.g., "MCP Server"), click **Generate token**.
-4. Copy the token as it will not be shown again.
-
-#### Get your workspace slug
-
-The slug is the short identifier in your Plane URL. For:
-
-```
-https://app.plane.so/acme-corp/
-```
-
-the slug is `acme-corp`.
-
-::: info Clients that don't support custom headers
-**Claude Desktop** — use Stdio instead.<br>
-**Claude.ai** — use OAuth instead (the UI doesn't expose arbitrary headers).
+::: tip Hosted server
+Connect to `https://mcp.plane.so/http/mcp` and sign in with your Plane account.
 :::
 
-### Claude Desktop
+::: tip
+Just want to connect your AI tool? Use the [short setup guide](https://docs.plane.so/ai/mcp-server).
+:::
 
-Config file: `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows).
+## How it works
 
-Quit Claude Desktop before editing, then relaunch and click the hammer icon (🔨) to confirm Plane tools are listed.
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard for how AI clients discover and call
+external tools. The Plane MCP server sits between your client and Plane's REST API, then acts as the signed-in user.
 
-#### Stdio
+Version 0.3.0 exposes **28 tools, one per resource, covering 183 actions**. Pass `action` to select an operation:
 
-Spawns the server as a local subprocess. Credentials come from environment variables.
+```python
+workitem(action="create", project_id=..., name="Fix login")
+workitem(action="list", project_id=..., pql='stateGroup = "started"')
+cycle(action="archive", project_id=..., cycle_id=...)
+```
+
+Every tool description lists its actions and marks parameters as required or optional. Tools also carry MCP
+`readOnlyHint` and `destructiveHint` annotations derived from their actions.
+
+### Hosted or self-hosted
+
+Plane Cloud users can connect to `mcp.plane.so`. For self-hosted Plane, run locally with `PLANE_BASE_URL` set to your
+instance, or [deploy your own server](/dev-tools/mcp-server-self-host).
+
+## What you can do
+
+- [Work items](/dev-tools/mcp-server-tools#work-items): create, update, search, comment, attach, link, relate, nest, and
+  log time.
+- [Types, properties, and estimates](/dev-tools/mcp-server-tools#types-properties-and-estimates): manage types,
+  custom properties, and estimates.
+- [Planning](/dev-tools/mcp-server-tools#planning): plan cycles, modules, milestones, and initiatives.
+- [Releases](/dev-tools/mcp-server-tools#releases): manage tags, labels, work items, and changelogs.
+- [Projects and workspace](/dev-tools/mcp-server-tools#projects-and-workspace): manage projects, states, labels, members,
+  pages, features, and intake.
+- [Customers](/dev-tools/mcp-server-tools#customers): manage customers, requests, properties, and linked work.
+- [Query](/dev-tools/mcp-server-tools#query): retrieve the PQL language reference before composing filters.
+
+### Query with PQL
+
+`workitem list`, `workitem list_archived`, `workitem count`, `cycle list_workitems`, and `module list_workitems` accept
+`pql`. UUID-backed fields require UUIDs, so resolve names first. Call `get_pql_reference` with `detail="brief"` or
+`detail="full"`; see [Plane Query Language](https://docs.plane.so/core-concepts/issues/plane-query-language).
+
+There are no separate epic tools. Follow the [epics recipe](/dev-tools/mcp-server-tools#epics).
+
+## Endpoints and authentication
+
+| Endpoint                                | Auth                  | Use it for                                           |
+| --------------------------------------- | --------------------- | ---------------------------------------------------- |
+| `https://mcp.plane.so/http/mcp`         | OAuth                 | Streamable HTTP; recommended for interactive use     |
+| `https://mcp.plane.so/http/api-key/mcp` | PAT headers           | Automations, CI, headless agents, shared team setups |
+| `uvx plane-mcp-server stdio`            | Environment variables | Self-hosted Plane and local or offline development   |
+| `https://mcp.plane.so/sse`              | OAuth                 | Deprecated clients that still require HTTP+SSE       |
+
+### OAuth
+
+Your client redirects you to Plane, where you sign in and choose a workspace. The server validates the resulting
+token with `/api/v1/users/me/`, and the connection stays bound to that workspace.
+
+The default redirect allowlist covers Cursor, VS Code, Antigravity, Claude.ai, ChatGPT, and localhost callbacks. A
+self-hosted server can add other clients through `PLANE_OAUTH_ALLOWED_REDIRECT_URIS`.
+
+Re-authenticate from your client's connector controls. In Claude Code, run `/mcp`; with `mcp-remote`, clear its cache:
+
+```bash
+rm -rf ~/.mcp-auth
+```
+
+This removes cached OAuth credentials for every `mcp-remote` server, not only Plane. To keep Plane's cache separate,
+set `MCP_REMOTE_CONFIG_DIR` in that server's `env` and remove that directory instead.
+
+### Personal access token
+
+Send both headers on every request to the PAT endpoint:
+
+| Header             | Value              |
+| ------------------ | ------------------ |
+| `Authorization`    | `Bearer <PAT>`     |
+| `x-workspace-slug` | `<workspace-slug>` |
+
+::: warning Changed
+Earlier versions of this page showed an `x-api-key` header. The server reads the standard `Authorization: Bearer`
+header; update existing configs.
+:::
+
+#### Get a token
+
+Create a personal access token under **Profile settings → Personal access tokens** and copy it when shown. For
+automations, you can instead create a workspace access token under **Workspace settings → Access tokens**.
+
+#### Find your workspace slug
+
+The slug is the segment after `app.plane.so/` in your Plane URL. In `https://app.plane.so/acme-corp/`, it is
+`acme-corp`.
+
+### Local (stdio)
+
+Local mode requires Python 3.10+ and [`uv`](https://docs.astral.sh/uv/). On macOS or Linux:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+On Windows:
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+| Variable               | Required | Description                                                                       |
+| ---------------------- | -------- | --------------------------------------------------------------------------------- |
+| `PLANE_API_KEY`        | Yes      | Your Plane personal or workspace access token                                     |
+| `PLANE_WORKSPACE_SLUG` | Yes      | The workspace slug                                                                |
+| `PLANE_BASE_URL`       | No       | Defaults to `https://api.plane.so`; set it to your self-hosted Plane instance URL |
+
+Prefer stdio when the client runs on the same machine, you need a self-hosted or private Plane instance, or you do
+not want to expose an MCP HTTP service.
+
+### SSE (deprecated)
+
+The MCP specification deprecated the older HTTP+SSE transport. Keep `https://mcp.plane.so/sse` only for an existing
+client that cannot use Streamable HTTP, and migrate when that client supports it.
+
+## Connect a client
+
+Replace `mcp.plane.so` with your own host if you self-host the server. Tabs stay in sync across this page.
+
+### General
+
+These are the common shapes. Some clients use `serverUrl`, `servers`, or `context_servers`; use the client-specific
+schema below.
+
+:::tabs key:mcp-auth
+== OAuth {#general-oauth}
+
+```json
+{
+  "mcpServers": {
+    "plane": {
+      "url": "https://mcp.plane.so/http/mcp"
+    }
+  }
+}
+```
+
+== Access token {#general-token}
+
+```json
+{
+  "mcpServers": {
+    "plane": {
+      "url": "https://mcp.plane.so/http/api-key/mcp",
+      "headers": {
+        "Authorization": "Bearer <PAT>",
+        "x-workspace-slug": "<workspace-slug>"
+      }
+    }
+  }
+}
+```
+
+== Local (stdio) {#general-stdio}
 
 ```json
 {
@@ -130,185 +184,204 @@ Spawns the server as a local subprocess. Credentials come from environment varia
       "command": "uvx",
       "args": ["plane-mcp-server", "stdio"],
       "env": {
-        "PLANE_API_KEY": "your_api_key_here",
-        "PLANE_WORKSPACE_SLUG": "your-workspace-slug",
-        "PLANE_BASE_URL": "https://plane.yourcompany.com"
+        "PLANE_API_KEY": "<your-api-key>",
+        "PLANE_WORKSPACE_SLUG": "<your-workspace-slug>"
       }
     }
   }
 }
 ```
 
-#### HTTP with OAuth (via mcp-remote)
+:::
 
-Claude Desktop doesn't support remote HTTP natively. Use `mcp-remote` — a local proxy that bridges Claude Desktop to Plane's cloud server. **Requires Node.js 18+.**
+### Claude
+
+:::tabs key:mcp-auth
+== OAuth {#claude-oauth}
+On Claude Desktop or claude.ai:
+
+1. Open **Settings → Connectors → Add custom connector**.
+2. Paste `https://mcp.plane.so/http/mcp`, select **Add**, then **Connect**.
+3. Sign in to Plane. In a chat, choose **+ → Connectors** to enable Plane.
+
+Free plans allow one custom connector. On Team or Enterprise, an Owner adds it under
+**Organization settings → Connectors**, then members select **Connect**.
+
+== Access token {#claude-token}
+Desktop users who need a token instead of OAuth can bridge with `mcp-remote` (Node.js 22+ recommended):
 
 ```json
 {
   "mcpServers": {
     "plane": {
       "command": "npx",
-      "args": ["mcp-remote@latest", "https://mcp.plane.so/http/mcp"]
-    }
-  }
-}
-```
-
-On first launch, `mcp-remote` opens a browser for the Plane OAuth flow.
-
-::: tip No Node.js?
-Use the SSE fallback instead: `"url": "https://mcp.plane.so/sse", "type": "sse"`.
-:::
-
-#### HTTP with PAT Token
-
-Connects to the PAT endpoint using API key headers. No browser interaction required - suitable for shared team setups where users authenticate via their own API key.
-
-```json
-{
-  "mcpServers": {
-    "plane": {
-      "url": "https://mcp.plane.so/http/api-key/mcp",
-      "type": "http",
-      "headers": {
-        "x-api-key": "your_api_key_here",
-        "x-workspace-slug": "your-workspace-slug"
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.plane.so/http/api-key/mcp",
+        "--header",
+        "Authorization:${PLANE_AUTH_HEADER}",
+        "--header",
+        "x-workspace-slug:${PLANE_WORKSPACE_SLUG}"
+      ],
+      "env": {
+        "PLANE_AUTH_HEADER": "Bearer <PAT>",
+        "PLANE_WORKSPACE_SLUG": "<workspace-slug>"
       }
     }
   }
 }
 ```
 
-#### SSE (Legacy)
-
-For existing integrations already using the SSE transport.
+== Local (stdio) {#claude-stdio}
+Use **Settings → Developer → Edit Config**, or edit `~/Library/Application Support/Claude/claude_desktop_config.json`
+on macOS or `%APPDATA%\Claude\claude_desktop_config.json` on Windows:
 
 ```json
 {
   "mcpServers": {
     "plane": {
-      "url": "https://mcp.plane.so/sse",
-      "type": "sse"
+      "command": "uvx",
+      "args": ["plane-mcp-server", "stdio"],
+      "env": {
+        "PLANE_API_KEY": "<your-api-key>",
+        "PLANE_WORKSPACE_SLUG": "<your-workspace-slug>"
+      }
     }
   }
 }
 ```
 
----
+Quit and relaunch Claude Desktop. This file supports stdio only: never put `url` or `type: http` in it.
 
-### Claude Code (CLI)
+:::
 
-Claude Code manages MCP servers via `claude mcp add` or `claude mcp add-json`. MCP configs are stored in `~/.claude.json` (user scope) or `.mcp.json` in your repo root (project scope) — **not** `.claude/settings.json`.
+### Claude Code
 
-#### Stdio
-
-```bash
-claude mcp add plane \
-  -e PLANE_API_KEY=your_api_key_here \
-  -e PLANE_WORKSPACE_SLUG=your-workspace-slug \
-  -e PLANE_BASE_URL=https://plane.yourcompany.com \
-  -- uvx plane-mcp-server stdio
-```
-
-Add `--scope project` to write to `.mcp.json` (shared via git with your team) instead of `~/.claude.json` (your local copy).
-
-#### HTTP with OAuth
+:::tabs key:mcp-auth
+== OAuth {#claude-code-oauth}
 
 ```bash
 claude mcp add --transport http plane https://mcp.plane.so/http/mcp
-```
-
-Claude Code will open a browser for the Plane OAuth flow. Run `/mcp` inside a session to re-authenticate if needed.
-
-#### HTTP with PAT Token
-
-```bash
-claude mcp add-json plane '{
-  "type": "http",
-  "url": "https://mcp.plane.so/http/api-key/mcp",
-  "headers": {
-    "x-api-key": "your_api_key_here",
-    "x-workspace-slug": "your-workspace-slug"
-  }
-}'
-```
-
-#### SSE (Legacy)
-
-```bash
-claude mcp add plane \
-  --transport sse \
-  --url https://mcp.plane.so/sse
-```
-
-Settings file equivalent:
-
-```json
-{
-  "mcpServers": {
-    "plane": {
-      "url": "https://mcp.plane.so/sse",
-      "type": "sse"
-    }
-  }
-}
-```
-
-Verify any configuration with:
-
-```bash
+# In a session, run /mcp and authenticate (or run: claude mcp login plane).
 claude mcp list
 ```
 
-#### Using Plane in Claude Code sessions
+== Access token {#claude-code-token}
+Put `--header` after the URL:
 
 ```bash
-claude
-
-> Look up work item ENG-42 and implement what it describes.
-
-> After fixing the bug, mark ENG-42 as done and log 90 minutes of work.
-
-> Create work items for each TODO in src/auth.ts and add them to the current sprint.
+claude mcp add --transport http plane https://mcp.plane.so/http/api-key/mcp \
+  --header "Authorization: Bearer <PAT>" \
+  --header "x-workspace-slug: <workspace-slug>"
 ```
 
----
+== Local (stdio) {#claude-code-stdio}
 
-### Claude.ai / Claude Chat (Web)
+```bash
+claude mcp add --transport stdio plane \
+  --env PLANE_API_KEY=<your-api-key> \
+  --env PLANE_WORKSPACE_SLUG=<your-workspace-slug> \
+  -- uvx plane-mcp-server stdio
+```
 
-Claude.ai supports remote MCP servers for eligible plans. Because it runs in a browser it cannot spawn local processes, stdio is not available here.
+:::
 
-#### HTTP with OAuth
+Use `--scope local|project|user`; project scope writes a shareable `.mcp.json` with `mcpServers`, `type: "http"`, and
+`url`. PAT entries add `headers`, and `${PLANE_PAT}` expands from the environment. Claude Code's SSE transport is deprecated.
 
-**Pro / Max:**
+### ChatGPT
 
-1. Go to **Customize → Connectors** in Claude.ai.
-2. Click **Add custom connector**.
-3. Enter the server URL: `https://mcp.plane.so/http/mcp`
-4. Claude.ai redirects you through the Plane OAuth flow.
+ChatGPT supports OAuth on Plus, Pro, Business, Enterprise, and Edu plans:
 
-**Team / Enterprise** (admins only): Go to **Organization settings → Connectors → Add custom connector** and use the same URL.
+1. Open **Settings → Security and login** and turn on **Developer mode**. Business, Enterprise, and Edu workspaces
+   require an admin to allow it.
+2. Open **chatgpt.com/plugins**, select **+**, name the connection "Plane", enter
+   `https://mcp.plane.so/http/mcp` under **Connection**, select **Create**, then sign in to Plane.
+3. In a chat, open **+ → Developer mode** and enable Plane.
 
-#### HTTP with PAT Token
+The exact menu names may differ by workspace. ChatGPT does not accept custom headers, so use OAuth.
 
-If your Claude.ai plan supports custom headers in integrations:
+### Codex
 
-- URL: `https://mcp.plane.so/http/api-key/mcp`
-- Headers: `x-api-key: your_api_key_here`, `x-workspace-slug: your-workspace-slug`
+The CLI, IDE extension, and ChatGPT desktop app share `~/.codex/config.toml`.
 
-#### SSE (Legacy)
+:::tabs key:mcp-auth
+== OAuth {#codex-oauth}
 
-- URL: `https://mcp.plane.so/sse`
+```bash
+codex mcp add plane --url https://mcp.plane.so/http/mcp
+codex mcp login plane
+codex mcp list
+```
 
----
+You can also run `/mcp` inside Codex. No experimental flag is required.
+
+== Access token {#codex-token}
+
+```toml
+[mcp_servers.plane]
+url = "https://mcp.plane.so/http/api-key/mcp"
+bearer_token_env_var = "PLANE_PAT"
+http_headers = { "x-workspace-slug" = "<workspace-slug>" }
+```
+
+`bearer_token_env_var` sends `Authorization: Bearer $PLANE_PAT`. The CLI supports
+`codex mcp add … --bearer-token-env-var PLANE_PAT`; arbitrary headers are config-file only.
+
+== Local (stdio) {#codex-stdio}
+
+```toml
+[mcp_servers.plane]
+command = "uvx"
+args = ["plane-mcp-server", "stdio"]
+
+[mcp_servers.plane.env]
+PLANE_API_KEY = "<your-api-key>"
+PLANE_WORKSPACE_SLUG = "<your-workspace-slug>"
+```
+
+:::
 
 ### Cursor
 
-Config file: `~/.cursor/mcp.json`
+Use `~/.cursor/mcp.json` globally or `.cursor/mcp.json` in a project.
 
-Open Cursor → **Settings** → search **MCP** → open the config file. Restart Cursor (`Cmd/Ctrl + Shift + P → Reload Window`) after saving.
+:::tabs key:mcp-auth
+== OAuth {#cursor-oauth}
+[![Install in Cursor](/images/mcp/install-in-cursor.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=plane&config=eyJ1cmwiOiJodHRwczovL21jcC5wbGFuZS5zby9odHRwL21jcCJ9)
 
-#### Stdio
+Or add the server manually:
+
+```json
+{
+  "mcpServers": {
+    "plane": {
+      "url": "https://mcp.plane.so/http/mcp"
+    }
+  }
+}
+```
+
+Cursor shows **Login** or **Needs authentication** and completes OAuth. Manage servers from **Customize**.
+
+== Access token {#cursor-token}
+
+```json
+{
+  "mcpServers": {
+    "plane": {
+      "url": "https://mcp.plane.so/http/api-key/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:PLANE_PAT}",
+        "x-workspace-slug": "<workspace-slug>"
+      }
+    }
+  }
+}
+```
+
+== Local (stdio) {#cursor-stdio}
 
 ```json
 {
@@ -317,160 +390,93 @@ Open Cursor → **Settings** → search **MCP** → open the config file. Restar
       "command": "uvx",
       "args": ["plane-mcp-server", "stdio"],
       "env": {
-        "PLANE_API_KEY": "your_api_key_here",
-        "PLANE_WORKSPACE_SLUG": "your-workspace-slug",
-        "PLANE_BASE_URL": "https://plane.yourcompany.com"
+        "PLANE_API_KEY": "${env:PLANE_API_KEY}",
+        "PLANE_WORKSPACE_SLUG": "<workspace-slug>"
       }
     }
   }
 }
 ```
 
-#### HTTP with OAuth
+:::
 
-The `cursor://` redirect URI is registered natively in the OAuth provider.
-
-```json
-{
-  "mcpServers": {
-    "plane": {
-      "url": "https://mcp.plane.so/http/mcp",
-      "type": "http"
-    }
-  }
-}
-```
-
-#### HTTP with PAT Token
-
-```json
-{
-  "mcpServers": {
-    "plane": {
-      "url": "https://mcp.plane.so/http/api-key/mcp",
-      "type": "http",
-      "headers": {
-        "x-api-key": "your_api_key_here",
-        "x-workspace-slug": "your-workspace-slug"
-      }
-    }
-  }
-}
-```
-
-#### SSE (Legacy)
-
-```json
-{
-  "mcpServers": {
-    "plane": {
-      "url": "https://mcp.plane.so/sse",
-      "type": "sse"
-    }
-  }
-}
-```
-
----
+Remote entries use `url` and must not include a `type` key.
 
 ### VS Code
 
-VS Code supports MCP through GitHub Copilot (requires a Copilot subscription). Open the Copilot chat panel (`Ctrl+Alt+I`), switch to **Agent** mode. The `vscode://` and `vscode-insiders://` redirect URIs are registered in the OAuth provider.
+Use `.vscode/mcp.json` for a workspace, or run **MCP: Open User Configuration** for the user file.
 
-Config can be set at workspace level (`.vscode/mcp.json`) or user level (VS Code `settings.json` under the `"mcp"` key). Examples below use `.vscode/mcp.json`.
+:::tabs key:mcp-auth
+== OAuth {#vs-code-oauth}
+[![Install in VS Code](/images/mcp/install-in-vscode.svg)](https://vscode.dev/redirect/mcp/install?name=plane&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.plane.so%2Fhttp%2Fmcp%22%7D)
 
-#### Stdio
+[Install in VS Code Insiders](https://insiders.vscode.dev/redirect/mcp/install?name=plane&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.plane.so%2Fhttp%2Fmcp%22%7D&quality=insiders), or add it from the CLI:
+
+```bash
+code --add-mcp '{"name":"plane","type":"http","url":"https://mcp.plane.so/http/mcp"}'
+```
+
+Trust the server on first start, verify it with **MCP: List Servers**, and use Copilot Chat in **Agent** mode.
+Copilot Business and Enterprise organizations must enable the "MCP servers in Copilot" policy.
+
+== Access token {#vs-code-token}
+
+```json
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "plane-pat",
+      "description": "Plane personal access token",
+      "password": true
+    },
+    {
+      "type": "promptString",
+      "id": "plane-slug",
+      "description": "Plane workspace slug"
+    }
+  ],
+  "servers": {
+    "plane": {
+      "type": "http",
+      "url": "https://mcp.plane.so/http/api-key/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:plane-pat}",
+        "x-workspace-slug": "${input:plane-slug}"
+      }
+    }
+  }
+}
+```
+
+== Local (stdio) {#vs-code-stdio}
 
 ```json
 {
   "servers": {
     "plane": {
+      "type": "stdio",
       "command": "uvx",
       "args": ["plane-mcp-server", "stdio"],
       "env": {
-        "PLANE_API_KEY": "your_api_key_here",
-        "PLANE_WORKSPACE_SLUG": "your-workspace-slug",
-        "PLANE_BASE_URL": "https://plane.yourcompany.com"
+        "PLANE_API_KEY": "<your-api-key>",
+        "PLANE_WORKSPACE_SLUG": "<your-workspace-slug>"
       }
     }
   }
 }
 ```
 
-#### HTTP with OAuth
-
-```json
-{
-  "servers": {
-    "plane": {
-      "url": "https://mcp.plane.so/http/mcp",
-      "type": "http"
-    }
-  }
-}
-```
-
-#### HTTP with PAT Token
-
-```json
-{
-  "servers": {
-    "plane": {
-      "url": "https://mcp.plane.so/http/api-key/mcp",
-      "type": "http",
-      "headers": {
-        "x-api-key": "your_api_key_here",
-        "x-workspace-slug": "your-workspace-slug"
-      }
-    }
-  }
-}
-```
-
-#### SSE (Legacy)
-
-```json
-{
-  "servers": {
-    "plane": {
-      "url": "https://mcp.plane.so/sse",
-      "type": "sse"
-    }
-  }
-}
-```
-
----
+:::
 
 ### Windsurf
 
-Config file: `~/.codeium/windsurf/mcp_config.json`
+Current vendor docs call Windsurf **Devin Desktop**. Its configuration remains at
+`~/.codeium/windsurf/mcp_config.json`; open Cascade's **MCPs → Manage MCPs** or
+**Settings → Cascade → MCP Servers**.
 
-Restart Windsurf after saving, then open the Cascade panel. The `windsurf://` redirect URI is registered in the OAuth provider.
-
-::: warning
-Windsurf uses `"serverUrl"` (not `"url"`) for remote HTTP servers.
-:::
-
-#### Stdio
-
-```json
-{
-  "mcpServers": {
-    "plane": {
-      "command": "uvx",
-      "args": ["plane-mcp-server", "stdio"],
-      "env": {
-        "PLANE_API_KEY": "your_api_key_here",
-        "PLANE_WORKSPACE_SLUG": "your-workspace-slug",
-        "PLANE_BASE_URL": "https://plane.yourcompany.com"
-      }
-    }
-  }
-}
-```
-
-#### HTTP with OAuth
+:::tabs key:mcp-auth
+== OAuth {#windsurf-oauth}
 
 ```json
 {
@@ -482,7 +488,9 @@ Windsurf uses `"serverUrl"` (not `"url"`) for remote HTTP servers.
 }
 ```
 
-#### HTTP with PAT Token
+If the OAuth sign-in does not complete, use the access-token configuration instead.
+
+== Access token {#windsurf-token}
 
 ```json
 {
@@ -490,253 +498,379 @@ Windsurf uses `"serverUrl"` (not `"url"`) for remote HTTP servers.
     "plane": {
       "serverUrl": "https://mcp.plane.so/http/api-key/mcp",
       "headers": {
-        "x-api-key": "your_api_key_here",
-        "x-workspace-slug": "your-workspace-slug"
+        "Authorization": "Bearer ${env:PLANE_PAT}",
+        "x-workspace-slug": "<workspace-slug>"
       }
     }
   }
 }
 ```
 
-#### SSE (Legacy)
+== Local (stdio) {#windsurf-stdio}
 
 ```json
 {
   "mcpServers": {
     "plane": {
-      "url": "https://mcp.plane.so/sse",
-      "type": "sse"
+      "command": "uvx",
+      "args": ["plane-mcp-server", "stdio"],
+      "env": {
+        "PLANE_API_KEY": "${env:PLANE_API_KEY}",
+        "PLANE_WORKSPACE_SLUG": "<workspace-slug>"
+      }
     }
   }
 }
 ```
 
----
+:::
+
+Remote entries use `serverUrl`. Refresh the server list after saving.
 
 ### Zed
 
-Config file: `~/.config/zed/settings.json` under `"context_servers"`. Zed uses a different schema from other clients - the stdio command goes inside a `"command"` object with `"path"` instead of `"command"`.
+Use **Settings → AI → MCP Servers → Add Server**, or edit `~/.config/zed/settings.json`.
 
-#### Stdio
+:::tabs key:mcp-auth
+== OAuth {#zed-oauth}
 
 ```json
 {
   "context_servers": {
-    "plane-mcp-server": {
-      "command": {
-        "path": "uvx",
-        "args": ["plane-mcp-server", "stdio"],
-        "env": {
-          "PLANE_API_KEY": "your_api_key_here",
-          "PLANE_WORKSPACE_SLUG": "your-workspace-slug",
-          "PLANE_BASE_URL": "https://plane.yourcompany.com"
-        }
-      },
-      "settings": {}
+    "plane": {
+      "url": "https://mcp.plane.so/http/mcp"
     }
   }
 }
 ```
 
-#### HTTP with OAuth
+Zed prompts for OAuth through an allowlisted loopback callback.
+
+== Access token {#zed-token}
 
 ```json
 {
   "context_servers": {
-    "plane-mcp-server": {
-      "url": "https://mcp.plane.so/http/mcp",
-      "settings": {}
-    }
-  }
-}
-```
-
-#### HTTP with PAT Token
-
-```json
-{
-  "context_servers": {
-    "plane-mcp-server": {
+    "plane": {
       "url": "https://mcp.plane.so/http/api-key/mcp",
       "headers": {
-        "x-api-key": "your_api_key_here",
-        "x-workspace-slug": "your-workspace-slug"
-      },
-      "settings": {}
+        "Authorization": "Bearer <PAT>",
+        "x-workspace-slug": "<workspace-slug>"
+      }
     }
   }
 }
 ```
 
-#### SSE (Legacy)
+== Local (stdio) {#zed-stdio}
 
 ```json
 {
   "context_servers": {
-    "plane-mcp-server": {
-      "url": "https://mcp.plane.so/sse",
-      "settings": {}
+    "plane": {
+      "command": "uvx",
+      "args": ["plane-mcp-server", "stdio"],
+      "env": {
+        "PLANE_API_KEY": "<your-api-key>",
+        "PLANE_WORKSPACE_SLUG": "<your-workspace-slug>"
+      }
     }
   }
 }
 ```
 
-Open the AI panel (`Cmd + Shift + A`) to use Plane tools in conversation.
+:::
 
----
+Zed uses this flat schema; the old nested `command.path` and `source: custom` shape is outdated.
 
-### Other clients (mcp-remote bridge)
+### Antigravity
 
-Any MCP client that supports stdio but not remote HTTP can use `mcp-remote` as a proxy. It runs locally as a subprocess and forwards requests to `https://mcp.plane.so/http/mcp`, handling the OAuth flow on first run. **Requires Node.js 18+.**
+The IDE and CLI share `~/.gemini/config/mcp_config.json` globally or `.agents/mcp_config.json` in a workspace.
+
+:::tabs key:mcp-auth
+== OAuth {#antigravity-oauth}
 
 ```json
 {
-  "command": "npx",
-  "args": ["mcp-remote@latest", "https://mcp.plane.so/http/mcp"]
+  "mcpServers": {
+    "plane": {
+      "serverUrl": "https://mcp.plane.so/http/mcp"
+    }
+  }
 }
 ```
 
-## Self-hosted Plane deployments
+OAuth is automatic. In the IDE, open **… → MCP Servers → Manage MCP Servers**. In Antigravity 2.0, use
+**Settings → Customizations → Installed MCP Servers → Add MCP**; in the CLI, run `/mcp`.
 
-Set `PLANE_BASE_URL` to the public URL of your Plane instance (e.g., https://plane.yourcompany.com). This is used for user-facing OAuth redirects and API calls in stdio mode.
+== Access token {#antigravity-token}
 
-In HTTP/SSE mode, the server also makes internal server-to-server calls to Plane for token validation. If your infrastructure routes internal traffic differently from public traffic (e.g., via a private network, service mesh, or internal load balancer), set `PLANE_INTERNAL_BASE_URL` to the internal address. When set, all server-to-server calls use this URL and only OAuth redirects use `PLANE_BASE_URL`.
-
-If `PLANE_INTERNAL_BASE_URL` is not set, it falls back to PLANE_BASE_URL for all calls.
-
-Before connecting a client, verify your credentials reach the instance:
-
-```bash
-curl -H "x-api-key: YOUR_API_KEY" \
-  "https://plane.yourcompany.com/api/v1/users/me/"
+```json
+{
+  "mcpServers": {
+    "plane": {
+      "serverUrl": "https://mcp.plane.so/http/api-key/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:PLANE_PAT}",
+        "x-workspace-slug": "<workspace-slug>"
+      }
+    }
+  }
+}
 ```
 
-A `200` response confirms the API key and URL are correct.
+== Local (stdio) {#antigravity-stdio}
 
-::: tip Running your own MCP server?
-You can skip `mcp.plane.so` entirely and deploy `plane-mcp-server` yourself — Docker Compose, Helm, OAuth app setup: [Self-host MCP Server](/dev-tools/mcp-server-self-host).
+```json
+{
+  "mcpServers": {
+    "plane": {
+      "command": "uvx",
+      "args": ["plane-mcp-server", "stdio"],
+      "env": {
+        "PLANE_API_KEY": "${env:PLANE_API_KEY}",
+        "PLANE_WORKSPACE_SLUG": "<workspace-slug>"
+      }
+    }
+  }
+}
+```
+
 :::
 
----
+Remote entries require `serverUrl`; `url` and `httpUrl` are unsupported.
+
+### Other clients
+
+For a stdio-only client, use `mcp-remote` with Node.js 22+ recommended. A client with native remote-MCP support only
+needs the OAuth URL.
+
+:::tabs key:mcp-auth
+== OAuth {#other-clients-oauth}
+
+```json
+{
+  "mcpServers": {
+    "plane": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.plane.so/http/mcp"]
+    }
+  }
+}
+```
+
+== Access token {#other-clients-token}
+
+```json
+{
+  "mcpServers": {
+    "plane": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.plane.so/http/api-key/mcp",
+        "--header",
+        "Authorization:${PLANE_AUTH_HEADER}",
+        "--header",
+        "x-workspace-slug:${PLANE_WORKSPACE_SLUG}"
+      ],
+      "env": {
+        "PLANE_AUTH_HEADER": "Bearer <PAT>",
+        "PLANE_WORKSPACE_SLUG": "<workspace-slug>"
+      }
+    }
+  }
+}
+```
+
+:::
+
+`mcp-remote` reads headers from its `--header` arguments; a `headers` key on this stdio entry is ignored. Keep the
+header values in `env` and write the arguments without spaces around the colon: on Windows, spaces inside `args` can be
+mangled by some clients. To reset cached OAuth state, remove `~/.mcp-auth` (or the directory `MCP_REMOTE_CONFIG_DIR`
+points to).
 
 ## Common workflows
 
-### Look up a work item by ID
+**What's on my plate**
 
-```
-What is work item ENG-42 about?
-```
-
-Model calls `retrieve_work_item_by_identifier` with `project_identifier="ENG"` and `work_item_identifier="42"`.
-
-### Create a work item
-
-```
-Create a high-priority bug in the ENG project called "Login times out on Safari".
-Description: The OAuth callback redirects to a blank page on Safari 17+.
-Assign it to me.
+```text
+List work items assigned to me that are in progress or overdue, grouped by project.
 ```
 
-Model calls `list_projects` → `retrieve_work_item_by_identifier` (or `get_me` to resolve "me") → `create_work_item`.
+_Trace: `member me` → `workitem list` without `project_id`, using
+`pql='assignee = currentUser() AND (stateGroup = "started" OR isOverdue())'`._
 
-### Update work item state
+**File a bug**
 
-```
-Mark ENG-88 as done and add a comment: "Fixed in commit abc1234, needs QA."
-```
-
-Model resolves the UUID, calls `list_states` to find the Done state UUID, calls `update_work_item` and `create_work_item_comment`.
-
-### Sprint planning
-
-```
-Create a cycle called "Sprint 15" in ENG starting 2025-06-02, ending 2025-06-15.
-Then move all incomplete issues from Sprint 14 into it.
+```text
+Create a high-priority bug in ENG called "Login times out on Safari 17". Description: the OAuth callback lands on a blank page. Assign it to me and add the "auth" label.
 ```
 
-Model calls `create_cycle` then `list_cycles` to find Sprint 14's UUID, then `transfer_cycle_work_items`.
+_Trace: `project list` → `member me` → `label list` → `workitem create`._
 
-### Log time
+**Roll over a sprint**
 
-```
-Log 90 minutes on ENG-42: "Implemented retry logic for the upload endpoint."
-```
-
-### Search across the workspace
-
-```
-Show me all high-priority bugs assigned to me that are still in progress.
+```text
+Create Sprint 15 in ENG from June 2 to June 15, move everything unfinished from Sprint 14 into it, and give me a count by priority.
 ```
 
-Model calls `list_work_items` with filters `priorities=["high"]`, `state_groups=["started"]`, and the current user's UUID as `assignee_ids`.
+_Trace: `cycle create` with `owned_by` → `cycle list` to find Sprint 14 → `cycle transfer_workitems` →
+`workitem count` with `pql` and `group_by="priority"`._
 
-### Manage a module
+**Close the loop**
 
+```text
+Log 90 minutes on ENG-42 with the note "Implemented retry logic", mark it Done, and comment "Fixed in abc1234, needs QA".
 ```
-Add ENG-55, ENG-56, and ENG-57 to the "Checkout Redesign" module.
+
+_Trace: `workitem retrieve_by_identifier` → `work_log create` → `state list` → `workitem update` →
+`workitem_comment create`._
+
+## Permissions and sessions
+
+- The server acts as the authenticated user. Plane enforces workspace and project roles, so a Guest cannot do more
+  through MCP.
+- OAuth requests `read` and `write` scopes. The workspace chosen at consent binds that connection; reconnect to
+  switch workspaces.
+- A PAT connection is scoped by `x-workspace-slug`.
+- Hosted OAuth tokens are stored server-side in Redis or Valkey. A self-hosted server without Redis falls back to
+  in-memory storage.
+- Revoke access by disconnecting the connector in your client, deleting a PAT in Plane, or clearing the
+  `mcp-remote` cache.
+
+## Security best practices
+
+- Use only `https://mcp.plane.so` or your own trusted host, and check the URL on Plane's consent screen.
+- Treat work item titles, descriptions, comments, and attachments as untrusted model input. Prefer clients that
+  confirm writes; destructive actions are flagged with `destructiveHint`.
+- Keep PATs out of shared or committed configs. Use environment variables or `${input:...}`, and never commit a
+  token in a project-scoped `.mcp.json`.
+- Use a workspace access token with the minimum role needed for automations.
+- Revoke tokens in Plane settings and audit API token events in the workspace audit log.
+- Server logs are structured JSON with tool name, duration, status, opaque user ID, and workspace slug. Display
+  names are logged only when `LOG_USER_INFO=true`, because they are PII.
+
+## Self-hosted Plane
+
+The hosted `mcp.plane.so` service cannot reach private Plane instances. In stdio mode, set `PLANE_BASE_URL` to your
+instance URL, then test the token against Plane's REST API. Read the key into a shell variable first so it stays out
+of your command history:
+
+```bash
+read -rs PLANE_API_KEY   # paste the key and press Enter; nothing is echoed
+curl -H "x-api-key: $PLANE_API_KEY" \
+  "https://plane.yourcompany.com/api/v1/users/me/"
 ```
 
-Model calls `list_modules` to find the UUID, then `add_work_items_to_module` with the resolved work item UUIDs.
+A `200` response confirms the key and URL. That header is the Plane REST API header, not the MCP PAT header.
 
----
+::: tip Running your own MCP server?
+Follow the [self-hosting guide](/dev-tools/mcp-server-self-host) for Docker, Helm, OAuth, storage, and operations.
+The OAuth transport needs Plane's OAuth application registration, which is available on Plane Cloud and Plane
+Commercial Edition; on Community Edition, use stdio mode.
+:::
+
+## Upgrading
+
+### From per-operation tools (0.2.x → 0.3.0)
+
+The 177 per-operation tools became 28 resource tools. Of the 177 names, 169 still resolve as hidden aliases and keep
+their original parameter names, so saved prompts and scripts continue to work; `get_pql_reference` is unchanged; and
+seven cannot be mapped and return a message naming their replacement. See
+[retired tool names](/dev-tools/mcp-server-tools#retired-tool-names).
+
+`project list` is now paginated by default. Follow `next_cursor` or pass `per_page`. Archive actions now return an
+explicit status object.
+
+### From the Node.js server
+
+The `@makeplane/plane-mcp-server` npm package is deprecated. Update environment variables, then use the stdio
+configuration shown above:
+
+| Node.js server         | Python server          |
+| ---------------------- | ---------------------- |
+| `PLANE_API_KEY`        | `PLANE_API_KEY`        |
+| `PLANE_API_HOST_URL`   | `PLANE_BASE_URL`       |
+| `PLANE_WORKSPACE_SLUG` | `PLANE_WORKSPACE_SLUG` |
+
+Replace the old Node.js `command` and `args` with `uvx plane-mcp-server stdio`.
 
 ## Troubleshooting
 
-The server propagates errors from the Plane SDK as MCP tool errors.
+| Symptom                             | Cause                                       | Fix                                                                  |
+| ----------------------------------- | ------------------------------------------- | -------------------------------------------------------------------- |
+| 401 with PAT                        | Token is wrong, revoked, or uses old header | Use `Authorization: Bearer <PAT>` instead of `x-api-key`             |
+| 401 with OAuth                      | Token expired                               | Re-authenticate from the client                                      |
+| "workspace slug missing"            | PAT config omits the workspace header       | Add `x-workspace-slug`                                               |
+| 404                                 | Workspace slug or resource ID is wrong      | Check the slug or ID                                                 |
+| 403                                 | Your Plane role is too low                  | Ask for the required workspace or project role                       |
+| 400                                 | An argument is missing or invalid           | Read the error; permitted enum values are in the tool description    |
+| "not available on your plan" or 402 | The Plane plan does not include the feature | Enable the feature or use an available action                        |
+| `mcp-remote` fails to start         | Node.js is too old                          | Use Node.js 22+ and run `npx -y mcp-remote@latest`                   |
+| Server is not listed                | JSON or client schema is invalid            | Remove trailing commas; apply the client-specific schema notes above |
+| Only the first page of projects     | `project list` is paginated                 | Follow `next_cursor` or pass `per_page`                              |
+| Tools look stale or out of order    | Pinned tool order or client cache is stale  | Restart the client after upgrades                                    |
 
-| Scenario                            | HTTP Status          | Cause                                           | Resolution                                          |
-| ----------------------------------- | -------------------- | ----------------------------------------------- | --------------------------------------------------- |
-| Invalid API key                     | 401                  | `PLANE_API_KEY` is wrong or revoked             | Regenerate the token in Plane settings              |
-| Invalid OAuth token                 | 401                  | Token expired or revoked                        | Re-authorise through OAuth flow                     |
-| Missing `x-workspace-slug` header   | -                    | Header auth missing workspace                   | Include `x-workspace-slug` header                   |
-| Wrong workspace slug                | 404                  | Slug doesn't exist                              | Check the exact slug in your Plane URL              |
-| Insufficient permissions            | 403                  | User role too low                               | Check your role in the workspace/project            |
-| Resource not found                  | 404                  | UUID or identifier doesn't exist                | Verify the ID; check if resource was deleted        |
-| Validation error                    | 400                  | Required field missing or invalid value         | Check required fields and value constraints         |
-| Redis unavailable                   | -                    | Token storage down                              | Set `REDIS_HOST`/`REDIS_PORT` or omit for in-memory |
-| Network error                       | -                    | Cannot reach Plane API                          | Verify `PLANE_BASE_URL` and connectivity            |
-| Server not listed in Claude Desktop | Wrong transport type | Claude Desktop doesn't support `"type": "http"` | Use `npx mcp-remote@latest` or SSE transport        |
-| Server config skipped               | JSON syntax error    | Config file ignored silently                    | Validate JSON — check for trailing commas           |
+For a server that is not listed, remember that Claude Desktop's JSON file cannot contain `url`,
+Windsurf and Antigravity require `serverUrl`, and a Cursor remote entry must not contain `type`.
 
-**Verify connectivity (stdio/PAT):**
-
-```bash
-curl -H "x-api-key: YOUR_KEY" \
-     "https://api.plane.so/api/v1/users/me/"
-```
-
-**Run stdio mode manually to debug startup:**
+Debug with:
 
 ```bash
-PLANE_API_KEY=your_key PLANE_WORKSPACE_SLUG=your-slug plane-mcp-server stdio
-```
+claude --debug
+claude mcp list
 
-**Test the HTTP server is running:**
+PLANE_API_KEY=<your-api-key> PLANE_WORKSPACE_SLUG=<workspace-slug> uvx plane-mcp-server stdio
 
-```bash
-curl http://localhost:8211/http/mcp
-# Should return MCP protocol response or 401
-```
+curl -X POST http://localhost:8211/http/mcp
 
-**Claude Code: enable debug logging:**
-
-```bash
-claude --mcp-debug
-```
-
-**Claude Code: re-authenticate OAuth:**
-
-```bash
 rm -rf ~/.mcp-auth
 ```
 
-Restart Claude Code and run `/mcp` to authenticate again.
+The local HTTP request should return either `401` or an MCP response.
+
+## FAQ
+
+::: details Which Plane plans work?
+The server follows your Plane plan and role. A plan-gated action returns a message naming the unavailable feature.
+:::
+
+::: details Is the server free?
+The MIT-licensed server is free to use. The Plane features it can access follow your Plane plan.
+:::
+
+::: details Does it work with self-hosted Plane?
+Yes. Use stdio with `PLANE_BASE_URL`, or [deploy your own MCP server](/dev-tools/mcp-server-self-host).
+:::
+
+::: details Is there a read-only mode?
+There is no separate read-only endpoint. Use your client's tool allow-list; read-only tools are annotated with
+`readOnlyHint`.
+:::
+
+::: details Can I limit which tools are available?
+Yes. Use the client's tool allow-list or deny-list.
+:::
+
+::: details How do epics work?
+An epic is a work item whose type is "Epic". Follow the [epics recipe](/dev-tools/mcp-server-tools#epics).
+:::
+
+::: details Does it use Plane AI credits?
+No. The MCP server calls Plane's API directly; the AI model belongs to your MCP client.
+:::
+
+::: details Where does my data go?
+The hosted server proxies requests to `api.plane.so`. Self-host the MCP server if you need full infrastructure
+control.
+:::
 
 ## See also
 
-- [Self-host MCP Server](/dev-tools/mcp-server-self-host)
-- [Tool Reference](/dev-tools/mcp-server-tools)
-
----
-
-_Plane MCP Server is open source and licensed under MIT. Source at [github.com/makeplane/plane-mcp-server](https://github.com/makeplane/plane-mcp-server)._
+- [Tool reference](/dev-tools/mcp-server-tools)
+- [Self-host the MCP server](/dev-tools/mcp-server-self-host)
+- [Short setup guide](https://docs.plane.so/ai/mcp-server)
+- [Plane MCP server on GitHub](https://github.com/makeplane/plane-mcp-server)
+- [Plane Query Language](https://docs.plane.so/core-concepts/issues/plane-query-language)
