@@ -15,7 +15,10 @@ If you're a Plane Cloud user connecting to `mcp.plane.so`, you don't need this. 
 
 ## Prerequisites
 
-- A running **Plane instance** (self-hosted or Cloud) with workspace admin access
+- A running **Plane instance** (self-hosted or Cloud) with workspace admin access. OAuth application registration is
+  available on Plane Cloud and Plane Commercial Edition; Plane Community Edition does not include it, so the OAuth
+  transport cannot be used against a Community Edition instance. Community Edition users should run the server in
+  [local (stdio) mode](/dev-tools/mcp-server#local-stdio) with a personal access token instead.
 - **Docker** and Docker Compose v2+, _or_ **Kubernetes** v1.21+ with Helm v3+
 - A **public URL** for the MCP server (e.g. `https://mcp.yourdomain.com`) — OAuth callbacks must reach it over HTTPS
 
@@ -283,6 +286,10 @@ The server emits structured JSON logs with the tool name, duration, status, opaq
 
 `LOG_USER_INFO` defaults to `false`. Setting it to `true` also logs the user's display name, which is personally
 identifiable information.
+
+Even with `LOG_USER_INFO=false`, log entries contain the opaque user ID and the workspace slug, which can identify a
+person or organisation when combined with other data. Treat log storage as sensitive: restrict who can read it, set a
+retention period, and redact those fields before sharing logs outside your team.
 
 ## Connect AI clients
 

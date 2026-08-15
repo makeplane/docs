@@ -82,6 +82,9 @@ Re-authenticate from your client's connector controls. In Claude Code, run `/mcp
 rm -rf ~/.mcp-auth
 ```
 
+This removes cached OAuth credentials for every `mcp-remote` server, not only Plane. To keep Plane's cache separate,
+set `MCP_REMOTE_CONFIG_DIR` in that server's `env` and remove that directory instead.
+
 ### Personal access token
 
 Send both headers on every request to the PAT endpoint:
@@ -217,12 +220,12 @@ Desktop users who need a token instead of OAuth can bridge with `mcp-remote` (No
         "mcp-remote",
         "https://mcp.plane.so/http/api-key/mcp",
         "--header",
-        "Authorization: Bearer ${PLANE_PAT}",
+        "Authorization:${PLANE_AUTH_HEADER}",
         "--header",
-        "x-workspace-slug: ${PLANE_WORKSPACE_SLUG}"
+        "x-workspace-slug:${PLANE_WORKSPACE_SLUG}"
       ],
       "env": {
-        "PLANE_PAT": "<PAT>",
+        "PLANE_AUTH_HEADER": "Bearer <PAT>",
         "PLANE_WORKSPACE_SLUG": "<workspace-slug>"
       }
     }
@@ -346,7 +349,7 @@ Use `~/.cursor/mcp.json` globally or `.cursor/mcp.json` in a project.
 
 :::tabs key:mcp-auth
 == OAuth {#cursor-oauth}
-[![Install in Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=plane&config=eyJ1cmwiOiJodHRwczovL21jcC5wbGFuZS5zby9odHRwL21jcCJ9)
+[![Install in Cursor](/images/mcp/install-in-cursor.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=plane&config=eyJ1cmwiOiJodHRwczovL21jcC5wbGFuZS5zby9odHRwL21jcCJ9)
 
 Or add the server manually:
 
@@ -405,7 +408,7 @@ Use `.vscode/mcp.json` for a workspace, or run **MCP: Open User Configuration** 
 
 :::tabs key:mcp-auth
 == OAuth {#vs-code-oauth}
-[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=plane&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.plane.so%2Fhttp%2Fmcp%22%7D)
+[![Install in VS Code](/images/mcp/install-in-vscode.svg)](https://vscode.dev/redirect/mcp/install?name=plane&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.plane.so%2Fhttp%2Fmcp%22%7D)
 
 [Install in VS Code Insiders](https://insiders.vscode.dev/redirect/mcp/install?name=plane&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.plane.so%2Fhttp%2Fmcp%22%7D&quality=insiders), or add it from the CLI:
 
@@ -668,12 +671,12 @@ needs the OAuth URL.
         "mcp-remote",
         "https://mcp.plane.so/http/api-key/mcp",
         "--header",
-        "Authorization: Bearer ${PLANE_PAT}",
+        "Authorization:${PLANE_AUTH_HEADER}",
         "--header",
-        "x-workspace-slug: ${PLANE_WORKSPACE_SLUG}"
+        "x-workspace-slug:${PLANE_WORKSPACE_SLUG}"
       ],
       "env": {
-        "PLANE_PAT": "<PAT>",
+        "PLANE_AUTH_HEADER": "Bearer <PAT>",
         "PLANE_WORKSPACE_SLUG": "<workspace-slug>"
       }
     }
@@ -683,8 +686,10 @@ needs the OAuth URL.
 
 :::
 
-`mcp-remote` reads headers from its `--header` arguments; a `headers` key on this stdio entry is ignored. To reset
-cached OAuth state, remove `~/.mcp-auth`.
+`mcp-remote` reads headers from its `--header` arguments; a `headers` key on this stdio entry is ignored. Keep the
+header values in `env` and write the arguments without spaces around the colon: on Windows, spaces inside `args` can be
+mangled by some clients. To reset cached OAuth state, remove `~/.mcp-auth` (or the directory `MCP_REMOTE_CONFIG_DIR`
+points to).
 
 ## Common workflows
 
@@ -750,10 +755,12 @@ _Trace: `workitem retrieve_by_identifier` → `work_log create` → `state list`
 ## Self-hosted Plane
 
 The hosted `mcp.plane.so` service cannot reach private Plane instances. In stdio mode, set `PLANE_BASE_URL` to your
-instance URL, then test the token against Plane's REST API:
+instance URL, then test the token against Plane's REST API. Read the key into a shell variable first so it stays out
+of your command history:
 
 ```bash
-curl -H "x-api-key: YOUR_API_KEY" \
+read -rs PLANE_API_KEY   # paste the key and press Enter; nothing is echoed
+curl -H "x-api-key: $PLANE_API_KEY" \
   "https://plane.yourcompany.com/api/v1/users/me/"
 ```
 
@@ -761,15 +768,18 @@ A `200` response confirms the key and URL. That header is the Plane REST API hea
 
 ::: tip Running your own MCP server?
 Follow the [self-hosting guide](/dev-tools/mcp-server-self-host) for Docker, Helm, OAuth, storage, and operations.
+The OAuth transport needs Plane's OAuth application registration, which is available on Plane Cloud and Plane
+Commercial Edition; on Community Edition, use stdio mode.
 :::
 
 ## Upgrading
 
 ### From per-operation tools (0.2.x → 0.3.0)
 
-The 177 per-operation tools became 28 resource tools. Of the retired names, 169 still resolve as hidden aliases and
-keep their original parameter names, so saved prompts and scripts continue to work. Seven names cannot be mapped and
-return a message naming their replacement; see [retired tool names](/dev-tools/mcp-server-tools#retired-tool-names).
+The 177 per-operation tools became 28 resource tools. Of the 177 names, 169 still resolve as hidden aliases and keep
+their original parameter names, so saved prompts and scripts continue to work; `get_pql_reference` is unchanged; and
+seven cannot be mapped and return a message naming their replacement. See
+[retired tool names](/dev-tools/mcp-server-tools#retired-tool-names).
 
 `project list` is now paginated by default. Follow `next_cursor` or pass `per_page`. Archive actions now return an
 explicit status object.

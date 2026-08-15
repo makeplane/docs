@@ -524,7 +524,7 @@ Takes `detail`: `full` (default) or `brief`. This tool has no `action` parameter
 
 ## Retired tool names
 
-Plane MCP server 0.3.0 consolidated 177 per-operation tools into 28 resource tools. The 169 aliases below still resolve, stay hidden from tool listings, and accept their original parameter names. The server logs each alias resolution. Seven retired names cannot be mapped to one action and instead return a message naming the replacement.
+Plane MCP server 0.3.0 consolidated 177 per-operation tools into 28 resource tools. Of those 177 names, the 169 aliases below still resolve, stay hidden from tool listings, and accept their original parameter names; `get_pql_reference` is unchanged; and seven cannot be mapped to one action and instead return a message naming the replacement. The server logs each alias resolution.
 
 ### Names without an alias
 
