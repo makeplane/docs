@@ -1,15 +1,19 @@
 ---
-title: MCP Connectors
-description: Connect GitHub, Sentry, Granola, and other tools to Plane AI using MCP connectors. Give the AI real-time context from your external services -no manual copy-paste required.
+title: MCP connectors
+description: Connect GitHub, Sentry, Granola, and other tools to Plane AI using MCP connectors. Give the AI real-time context from your external services — no manual copy-paste required.
 ---
 
-# MCP Connectors
+# MCP connectors
 
 Plane AI works better when it has context beyond what's already in Plane. MCP connectors are how you give it that context.
 
-MCP stands for Model Context Protocol -an open standard for connecting AI models to external tools and data sources. When you connect Plane AI to an external service through an MCP connector, the AI can read and act on data from that service during a conversation. Connect your GitHub account and the AI can reference your pull requests and issues. Connect Sentry and it can pull in error data. Connect Granola and it can search your meeting notes.
+::: info Looking for the other direction?
+MCP connectors bring external tools _into_ Plane AI. To use Plane _from_ Claude, ChatGPT, Cursor, or another AI tool, see [MCP server](/ai/mcp-server).
+:::
 
-Each user connects to a connector independently using their own credentials. The connector is available to everyone in your workspace, but each person authenticates it with their own account. Your GitHub connection is yours - another workspace member needs to connect their own.
+MCP stands for Model Context Protocol — an open standard for connecting AI models to external tools and data sources. When you connect Plane AI to an external service through an MCP connector, the AI can read and act on data from that service during a conversation. Connect your GitHub account and the AI can reference your pull requests and issues. Connect Sentry and it can pull in error data. Connect Granola and it can search your meeting notes.
+
+Each user connects to a connector independently using their own credentials. The connector is available to everyone in your workspace, but each person authenticates it with their own account. Your GitHub connection is yours — another workspace member needs to connect their own.
 
 Connectors are configured in **Workspace Settings → Integrations → Connectors** and used in Plane AI chat.
 
@@ -31,7 +35,7 @@ A **Connected** badge appears on the connector tile when authentication succeeds
 
 ### How connection works
 
-Connecting to a connector authenticates you with the external service so Plane AI can access data on your behalf. The connection is per-user - no one else in the workspace shares your credentials or your connection state.
+Connecting to a connector authenticates you with the external service so Plane AI can access data on your behalf. The connection is per-user — no one else in the workspace shares your credentials or your connection state.
 
 Once you're connected, you can enable a connector for any Plane AI conversation. The AI can then call tools from that service as it works through your request. You stay in control of which connectors are active for each conversation.
 
@@ -43,7 +47,7 @@ The MCP server accepts requests without any credentials. Plane connects directly
 
 #### Header authentication
 
-You provide one or more HTTP headers -usually an `Authorization: Bearer <token>` header -that Plane sends with every request to the MCP server. The connector form shows you the exact header fields required.
+You provide one or more HTTP headers — usually an `Authorization: Bearer <token>` header — that Plane sends with every request to the MCP server. The connector form shows you the exact header fields required.
 
 For GitHub, this is a GitHub personal access token or GitHub Copilot token with the appropriate repository permissions.
 
@@ -63,7 +67,7 @@ Your tokens are encrypted before storage. Plane never exposes them after the ini
 2. Find the connector you're connected to.
 3. Click **Configure** and then **Disconnect**.
 
-Disconnecting removes your credentials from Plane. The connector itself stays available in the workspace -you can reconnect at any time.
+Disconnecting removes your credentials from Plane. The connector itself stays available in the workspace — you can reconnect at any time.
 
 ### Use connectors in a Plane AI conversation
 
@@ -92,11 +96,11 @@ Built-in connectors cover the most common integrations, but you can also add you
 1. Go to **Workspace Settings → Integrations → Connectors**.
 2. Click **Add connector**.
 3. Fill in the fields:
-   - **Name** (required) -a display name for the connector.
-   - **MCP remote server URL** (required) -the full URL of the MCP server endpoint, e.g. `https://mcp.example.com/mcp`.
-   - **Authentication type** (required) -choose None, Headers, or OAuth based on how your server expects to be called.
-   - **Description** (optional) -a short description visible to other workspace members.
-   - **Logo** (optional) -an icon for the connector tile.
+   - **Name** (required) — a display name for the connector.
+   - **MCP remote server URL** (required) — the full URL of the MCP server endpoint, e.g. `https://mcp.example.com/mcp`.
+   - **Authentication type** (required) — choose None, Headers, or OAuth based on how your server expects to be called.
+   - **Description** (optional) — a short description visible to other workspace members.
+   - **Logo** (optional) — an icon for the connector tile.
 4. Click **Add connector**.
 
 Plane attempts to reach the server and verify the connection. If it cannot connect, check that the URL is correct and publicly reachable.
@@ -114,7 +118,7 @@ Only the person who created a custom connector can edit or delete it. Published 
 3. Update the name, URL, authentication type, description, or logo.
 4. Save your changes.
 
-Changing the URL or authentication type of a connector invalidates existing connections. Anyone who was connected -including you -will need to reconnect.
+Changing the URL or authentication type of a connector invalidates existing connections. Anyone who was connected — including you — will need to reconnect.
 
 ### Delete a custom connector
 
