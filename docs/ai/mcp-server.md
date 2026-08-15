@@ -95,7 +95,7 @@ Run `codex mcp list` or `/mcp` inside Codex to verify the connection.
 
 ### Cursor
 
-[![Install in Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=plane&config=eyJ1cmwiOiJodHRwczovL21jcC5wbGFuZS5zby9odHRwL21jcCJ9)
+**[Install Plane in Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=plane&config=eyJ1cmwiOiJodHRwczovL21jcC5wbGFuZS5zby9odHRwL21jcCJ9)** — a one-click install link that opens Cursor with the server pre-filled.
 
 Cursor opens an OAuth prompt after installation. You can manage the server from Cursor's **Customize** page.
 
@@ -219,14 +219,14 @@ Log 90 minutes on ENG-42 with the note "Implemented retry logic", mark it Done, 
 **Cut a release**
 
 ```text
-Create release v1.8.0 tagged from git tag v1.8.0, add ENG-40 through ENG-45 to it, and draft the changelog from those items.
+Create release v1.8.0 with a release tag v1.8.0, add ENG-40 through ENG-45 to it, and draft the changelog from those items.
 ```
 
 ## Permissions and security
 
 - The server acts as you. Your workspace and project roles apply to every read and write.
 - One connection is bound to one workspace. Reconnect to switch workspaces.
-- Disconnect from your AI tool's connector settings. If you used a token, revoke it under **Profile settings → Personal access tokens** or **Workspace settings → Access tokens**.
+- Disconnect from your AI tool's connector settings. If you used a token, revoke it under **Profile Settings → Personal Access Tokens** or **Workspace Settings → Access Tokens**.
 - Treat anything your AI reads from Plane — including titles, descriptions, comments, and attachments — as untrusted input to the model. Prefer clients that ask before writing.
 
 See the [security best practices](https://developers.plane.so/dev-tools/mcp-server#security-best-practices) for token storage, least privilege, and administrative controls.
@@ -254,7 +254,7 @@ One connection is bound to one workspace. Reconnect and choose another workspace
 :::
 
 ::: details How do I disconnect?
-Disconnect Plane from your AI tool's connector settings. If you connected with a token, revoke it under **Profile settings → Personal access tokens** or **Workspace settings → Access tokens**.
+Disconnect Plane from your AI tool's connector settings. If you connected with a token, revoke it under **Profile Settings → Personal Access Tokens** or **Workspace Settings → Access Tokens**.
 :::
 
 ## Go further
@@ -264,7 +264,7 @@ Disconnect Plane from your AI tool's connector settings. If you connected with a
     Access tokens, local mode, every client, troubleshooting.
   </Card>
   <Card title="Tool reference" icon="list-tree" href="https://developers.plane.so/dev-tools/mcp-server-tools">
-    All 28 tools and 183 actions.
+    Every tool and action, grouped by resource.
   </Card>
   <Card title="Self-host the MCP server" icon="server" href="https://developers.plane.so/dev-tools/mcp-server-self-host">
     Deploy with Docker or Helm for your Plane instance.
