@@ -277,6 +277,8 @@ This restriction matches the purpose of each mode. Ask mode is read-only by desi
 
 See [MCP connectors](/ai/mcp-connectors) for the full list of available connectors, how to connect them, and how authentication works.
 
+To drive Plane from an external AI tool instead, use the [MCP server](/ai/mcp-server).
+
 ## Plane AI in pages
 
 Plane AI has a separate, deep integration inside the page editor. These features are distinct from the AI chat - they work directly within the editing surface.

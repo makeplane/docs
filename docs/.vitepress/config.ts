@@ -743,11 +743,8 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
           { text: "AI Skills", link: "/ai/ai-skills" },
           { text: "AI Usage", link: "/ai/ai-usage" },
           { text: "AI credits", link: "/ai/plane-ai-credits" },
-          { text: "MCP Connectors", link: "/ai/mcp-connectors" },
-          {
-            text: "MCP Server",
-            link: "https://developers.plane.so/dev-tools/mcp-server",
-          },
+          { text: "MCP connectors", link: "/ai/mcp-connectors" },
+          { text: "MCP server", link: "/ai/mcp-server" },
         ],
       },
       {
