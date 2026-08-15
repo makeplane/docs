@@ -1,20 +1,23 @@
 ---
-title: Self-host MCP Server
-description: Deploy your own Plane MCP Server with Docker Compose or Helm. Register an OAuth app, configure credentials, and point AI clients at your own instance.
+title: Self-host the MCP server
+description: Deploy the Plane MCP server with Docker Compose or Helm, register OAuth callbacks, configure storage and security, and connect AI clients.
 keywords: plane mcp server, self-hosted mcp, plane mcp deployment, docker compose mcp, helm mcp, plane oauth mcp, mcp server setup
 ---
 
-# Self-host MCP Server
+# Self-host the MCP server
 
-This guide is for teams that want to run their own instance of the Plane MCP Server - either because they're on a self-hosted Plane installation that needs OAuth against their own domain, or because they want full control over the MCP infrastructure.
+This guide is for teams that want to run their own instance of the Plane MCP server — either because they use a
+self-hosted Plane installation that needs OAuth against their own domain, or because they want full control over the
+MCP infrastructure.
 
-If you're a Plane Cloud user connecting to `mcp.plane.so`, you don't need this. Use the [MCP Server setup guide](/dev-tools/mcp-server) instead.
+If you're a Plane Cloud user connecting to `mcp.plane.so`, you don't need this. Use the
+[MCP server setup guide](/dev-tools/mcp-server) instead.
 
 ## Prerequisites
 
 - A running **Plane instance** (self-hosted or Cloud) with workspace admin access
 - **Docker** and Docker Compose v2+, _or_ **Kubernetes** v1.21+ with Helm v3+
-- A **public URL** for the MCP server (e.g. `https://mcp.yourdomain.com`) - OAuth callbacks must be able to reach it over HTTPS
+- A **public URL** for the MCP server (e.g. `https://mcp.yourdomain.com`) — OAuth callbacks must reach it over HTTPS
 
 ---
 
@@ -22,9 +25,9 @@ If you're a Plane Cloud user connecting to `mcp.plane.so`, you don't need this. 
 
 The MCP server authenticates users through Plane's OAuth 2.0 system. You need to register an app to get a Client ID and Client Secret.
 
-1. Go to **Workspace Settings → Integrations**:
+1. Go to **Workspace settings → Integrations**:
 
-   ```
+   ```text
    https://<your-plane-domain>/<workspace>/settings/integrations/
    ```
 
@@ -36,27 +39,28 @@ The MCP server authenticates users through Plane's OAuth 2.0 system. You need to
    | ---------------- | ---------------------------------------------------------------- |
    | **App Name**     | Anything descriptive (e.g. `Plane MCP Server`)                   |
    | **Setup URL**    | Your MCP server's public URL (e.g. `https://mcp.yourdomain.com`) |
-   | **Redirect URI** | All three URIs listed below, space-separated                     |
+   | **Redirect URI** | Both URIs listed below, space-separated                          |
    | **Webhook URL**  | Leave empty unless you need webhook events                       |
 
-   ::: tip Add all three redirect URIs
-   The server exposes callbacks on three paths to support all transports and MCP clients:
+   ::: tip Add both redirect URIs
+   FastMCP exposes one callback under the HTTP mount and one under the SSE mount:
 
-   | Transport       | Redirect URI                          |
-   | --------------- | ------------------------------------- |
-   | OAuth callback  | `<MCP_SERVER_URL>/callback`           |
-   | HTTP with OAuth | `<MCP_SERVER_URL>/http/auth/callback` |
-   | SSE (legacy)    | `<MCP_SERVER_URL>/auth/callback`      |
+   | Transport        | Redirect URI                          |
+   | ---------------- | ------------------------------------- |
+   | Streamable HTTP  | `<MCP_SERVER_URL>/http/auth/callback` |
+   | SSE (deprecated) | `<MCP_SERVER_URL>/auth/callback`      |
 
    For `https://mcp.yourdomain.com`, paste this into the Redirect URI field:
 
+   ```text
+   https://mcp.yourdomain.com/http/auth/callback https://mcp.yourdomain.com/auth/callback
    ```
-   https://mcp.yourdomain.com/callback https://mcp.yourdomain.com/http/auth/callback https://mcp.yourdomain.com/auth/callback
-   ```
+
+   A previously registered `https://mcp.yourdomain.com/callback` URI is harmless but unnecessary.
 
    :::
 
-4. Under **Scopes & Permissions**, select both **read** and **write** scopes.
+4. Under **Scopes & permissions**, select both **read** and **write** scopes.
 
 5. Save. Copy the generated **Client ID** and **Client Secret** - you'll need them in the next step.
 
@@ -146,15 +150,45 @@ The container listens on plain HTTP at `:8211`. Put it behind a reverse proxy (n
 
 #### Environment variable reference
 
-| Variable                             | Required | Description                                                                    |
-| ------------------------------------ | -------- | ------------------------------------------------------------------------------ |
-| `APP_RELEASE_VERSION`                | No       | Image tag to deploy. Defaults to `latest`. Pin in production.                  |
-| `PLANE_BASE_URL`                     | No       | Plane API URL. Defaults to `https://api.plane.so`.                             |
-| `PLANE_INTERNAL_BASE_URL`            | No       | Internal Plane URL for server-to-server calls. Falls back to `PLANE_BASE_URL`. |
-| `PLANE_OAUTH_PROVIDER_CLIENT_ID`     | Yes      | OAuth Client ID from Step 1.                                                   |
-| `PLANE_OAUTH_PROVIDER_CLIENT_SECRET` | Yes      | OAuth Client Secret from Step 1.                                               |
-| `PLANE_OAUTH_PROVIDER_BASE_URL`      | Yes      | Public URL of **this MCP server** - not your Plane instance.                   |
-| `MCP_PATH_PREFIX`                    | No       | Path prefix for all routes. Use when reverse-proxying alongside other apps.    |
+| Variable                             | Required | Description                                                                                                          |
+| ------------------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| `APP_RELEASE_VERSION`                | No       | Image tag to deploy. Defaults to `latest`. Pin in production.                                                        |
+| `PLANE_BASE_URL`                     | No       | Public Plane API URL. Defaults to `https://api.plane.so`.                                                            |
+| `PLANE_INTERNAL_BASE_URL`            | No       | Internal Plane URL for server-to-server calls. Falls back to `PLANE_BASE_URL`.                                       |
+| `PLANE_OAUTH_PROVIDER_CLIENT_ID`     | Yes      | OAuth Client ID from Step 1.                                                                                         |
+| `PLANE_OAUTH_PROVIDER_CLIENT_SECRET` | Yes      | OAuth Client Secret from Step 1.                                                                                     |
+| `PLANE_OAUTH_PROVIDER_BASE_URL`      | Yes      | Public URL of **this MCP server**, not your Plane instance.                                                          |
+| `PLANE_OAUTH_PROVIDER_ENABLE_CIMD`   | No       | Enables client ID metadata documents. Defaults to `false`.                                                           |
+| `PLANE_OAUTH_ALLOWED_REDIRECT_URIS`  | No       | Comma-separated extra client redirect patterns. `*` can match a port, path segment, or subdomain; keep hosts pinned. |
+| `MCP_PATH_PREFIX`                    | No       | Prefix for every route. For example, `/plane` serves MCP at `/plane/http/mcp`.                                       |
+| `REDIS_HOST`                         | No       | Redis or Valkey host for persistent OAuth token storage. Without it, tokens use in-memory storage.                   |
+| `REDIS_PORT`                         | No       | Redis or Valkey port.                                                                                                |
+| `REDIS_PASSWORD`                     | No       | Static Redis or Valkey password.                                                                                     |
+| `REDIS_SSL`                          | No       | Enables TLS for Redis or Valkey when set to `true`.                                                                  |
+| `ELASTICACHE_SECRET_ARN`             | No       | AWS Secrets Manager ARN containing a rotating ElastiCache authentication token.                                      |
+| `AWS_REGION`                         | No       | AWS region for `ELASTICACHE_SECRET_ARN`.                                                                             |
+| `REDIS_AUTH_TOKEN_KEY`               | No       | JSON key that contains the rotating token in the AWS secret.                                                         |
+| `LOG_USER_INFO`                      | No       | Logs the user's display name when `true`. Defaults to `false`; the display name is PII.                              |
+
+#### Onboard a new MCP client
+
+The built-in redirect allowlist contains:
+
+- `http://localhost:*`, `http://localhost:*/*`, `http://127.0.0.1:*`, and
+  `http://127.0.0.1:*/*`
+- `cursor://anysphere.cursor-mcp/oauth/*` and `https://www.cursor.com/*`
+- `https://vscode.dev/redirect` and `https://insiders.vscode.dev/redirect`
+- `https://antigravity.google/oauth-callback`
+- `https://claude.ai/*`
+- `https://chatgpt.com/connector/oauth/*` and `https://chatgpt.com/connector_platform_oauth_redirect`
+
+Append new client callbacks without releasing a new server version:
+
+```env
+PLANE_OAUTH_ALLOWED_REDIRECT_URIS=https://newclient.com/cb,https://other.app/oauth/*
+```
+
+The `*` wildcard can match any port, path segment, or subdomain. Keep the host pinned to a domain you trust.
 
 #### Upgrading
 
@@ -224,6 +258,9 @@ helm install plane-mcp plane/plane-mcp-server \
 | `services.redis.local_setup`                 | `true`            | Deploy Valkey in-cluster                            |
 | `services.redis.external_redis_url`          | `""`              | External Valkey/Redis URL (if not using in-cluster) |
 
+Environment variables that have no Helm value — for example `PLANE_OAUTH_ALLOWED_REDIRECT_URIS` or `LOG_USER_INFO` —
+must be set as environment variables on the MCP server deployment.
+
 #### Upgrading
 
 ```bash
@@ -240,17 +277,25 @@ helm uninstall plane-mcp --namespace plane-mcp
 
 ---
 
+## Logging and observability
+
+The server emits structured JSON logs with the tool name, duration, status, opaque user ID, and workspace slug.
+
+`LOG_USER_INFO` defaults to `false`. Setting it to `true` also logs the user's display name, which is personally
+identifiable information.
+
 ## Connect AI clients
 
 Once the server is running, your available endpoints are:
 
-| Endpoint                                      | Auth       | Description                         |
-| --------------------------------------------- | ---------- | ----------------------------------- |
-| `https://mcp.yourdomain.com/http/mcp`         | OAuth      | Recommended for most clients        |
-| `https://mcp.yourdomain.com/http/api-key/mcp` | PAT header | For CI/CD, scripts, headless setups |
-| `https://mcp.yourdomain.com/sse`              | OAuth      | Legacy SSE transport (deprecated)   |
+| Endpoint                                      | Auth                                                      | Description                      |
+| --------------------------------------------- | --------------------------------------------------------- | -------------------------------- |
+| `https://mcp.yourdomain.com/http/mcp`         | OAuth                                                     | Recommended for most clients     |
+| `https://mcp.yourdomain.com/http/api-key/mcp` | `Authorization: Bearer <PAT>`, `x-workspace-slug: <slug>` | CI, scripts, and headless setups |
+| `https://mcp.yourdomain.com/sse`              | OAuth                                                     | Deprecated HTTP+SSE transport    |
 
-Client configuration is identical to the [MCP Server setup guide](/dev-tools/mcp-server) - replace `https://mcp.plane.so` with your server's URL in every config snippet.
+Client configuration is identical to the [MCP server setup guide](/dev-tools/mcp-server). Swap
+`https://mcp.plane.so` for your server's host in each configuration.
 
 ---
 
@@ -273,9 +318,12 @@ If Valkey is unhealthy, tokens are stored in-memory and lost on restart. Verify 
 
 **OAuth errors:**
 
-- Confirm all three redirect URIs are registered in your Plane OAuth app: `/callback`, `/http/auth/callback`, `/auth/callback`.
+- Confirm both redirect URIs are registered in your Plane OAuth app: `/http/auth/callback` and `/auth/callback`. An
+  existing `/callback` registration is harmless but unnecessary.
 - Check that `PLANE_OAUTH_PROVIDER_CLIENT_ID` and `PLANE_OAUTH_PROVIDER_CLIENT_SECRET` match what Plane generated.
 - Check that `PLANE_OAUTH_PROVIDER_BASE_URL` is the publicly reachable `https://` URL of this MCP server - not your Plane instance URL.
+- If the client reports `redirect_uri is not allowed`, add its exact callback or a host-pinned pattern to
+  `PLANE_OAUTH_ALLOWED_REDIRECT_URIS`, then restart the deployment.
 - Clear any cached auth tokens on the client side:
 
   ```bash
@@ -297,5 +345,5 @@ docker compose up -d
 
 ---
 
-→ For client configuration details, see the [MCP Server setup guide](/dev-tools/mcp-server).  
-→ For the full list of available tools, see the [MCP Server Tool Reference](/dev-tools/mcp-server-tools).
+→ For client configuration details, see the [MCP server setup guide](/dev-tools/mcp-server).
+→ For the full list of available tools, see the [tool reference](/dev-tools/mcp-server-tools).

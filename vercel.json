@@ -118,7 +118,7 @@
     },
     {
       "source": "/dev-tools/mcp-server-claude-code",
-      "destination": "/dev-tools/mcp-server#claude-code-cli"
+      "destination": "/dev-tools/mcp-server#claude-code"
     }
   ],
   "rewrites": [

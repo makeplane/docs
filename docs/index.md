@@ -51,7 +51,7 @@ Build custom integrations using OAuth 2.0. Complete guides for app registration,
 
 <Card title="MCP Server" icon="plug-zap" href="/dev-tools/mcp-server" link-text="Setup MCP">
 
-Integrate Plane with AI agents using Model Context Protocol for intelligent project management automation.
+Connect Claude, ChatGPT, Cursor, VS Code, and other AI tools to Plane. 28 tools covering work items, cycles, releases, customers, and more.
 
 </Card>
 
