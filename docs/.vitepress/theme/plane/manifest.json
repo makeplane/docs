@@ -27,6 +27,7 @@
     "layout/top-banner.ts",
     "options.ts",
     "scripts/check-theme-sync.mjs",
+    "scripts/check-vue-types.mjs",
     "types/shims.d.ts",
     "types/vitepress-augment.d.ts",
     "types/voidzero-theme.ts",

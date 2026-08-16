@@ -18,21 +18,26 @@ import { useLangs } from "@vp-composables/langs";
 const SIGN_IN_RE = /sign-in/i;
 const EXTERNAL_URL_RE = /^(?:[a-z]+:|\/\/)/i;
 
-const { theme, frontmatter, isDark } = useData();
-const nav = computed(() => theme.value.nav ?? []);
+const { theme, frontmatter, isDark } = useData<DefaultTheme.Config>();
+const nav = computed<DefaultTheme.NavItem[]>(() => theme.value.nav ?? []);
+
+/** VitePress allows `link` to be a function; the header only handles string links. */
+type LinkNavItem = DefaultTheme.NavItemWithLink & { link: string };
+/** Any level of the nav tree, including the groups nested inside a dropdown. */
+type AnyNavItem = DefaultTheme.NavItem | DefaultTheme.NavItemChildren;
+
+const isLinkItem = (item: AnyNavItem): item is LinkNavItem =>
+  "link" in item && typeof item.link === "string";
 
 /**
  * Nav items flagged with `planeButton: "primary" | "secondary"` render as header
  * buttons (Sign in / cross-site link) instead of nav links. A `/sign-in` link is
  * treated as the primary button even without the flag.
  */
-const isLinkItem = (item: DefaultTheme.NavItem): item is DefaultTheme.NavItemWithLink =>
-  "link" in item && typeof item.link === "string";
-
-const isPrimaryButtonItem = (item: DefaultTheme.NavItem) =>
+const isPrimaryButtonItem = (item: DefaultTheme.NavItem): item is LinkNavItem =>
   isLinkItem(item) && (item.planeButton === "primary" || SIGN_IN_RE.test(item.link));
 
-const isSecondaryButtonItem = (item: DefaultTheme.NavItem) =>
+const isSecondaryButtonItem = (item: DefaultTheme.NavItem): item is LinkNavItem =>
   isLinkItem(item) && item.planeButton === "secondary";
 
 const isNavButtonItem = (item: DefaultTheme.NavItem) =>
@@ -40,13 +45,9 @@ const isNavButtonItem = (item: DefaultTheme.NavItem) =>
 
 const mainNav = computed(() => nav.value.filter((item) => !isNavButtonItem(item)));
 
-const signInNavItem = computed(() =>
-  nav.value.find((item): item is DefaultTheme.NavItemWithLink => isPrimaryButtonItem(item)),
-);
+const signInNavItem = computed(() => nav.value.find(isPrimaryButtonItem));
 
-const secondaryNavItem = computed(() =>
-  nav.value.find((item): item is DefaultTheme.NavItemWithLink => isSecondaryButtonItem(item)),
-);
+const secondaryNavItem = computed(() => nav.value.find(isSecondaryButtonItem));
 
 const route = useRoute();
 const { localeLinks, currentLang } = useLangs({ correspondingLink: true });
@@ -68,7 +69,8 @@ const mobileMenuOpen = ref(false);
 const expandedAccordions = ref<Set<number>>(new Set());
 const languageMenuOpen = ref(false);
 
-const isDropdown = (item: DefaultTheme.NavItem) => "items" in item && Array.isArray(item.items);
+const isDropdown = (item: AnyNavItem): item is DefaultTheme.NavItemWithChildren =>
+  "items" in item && Array.isArray(item.items);
 const isExternalLink = (link: string) => EXTERNAL_URL_RE.test(link);
 
 const toggleAccordion = (index: number) => {
@@ -86,23 +88,36 @@ const handleKeydown = (e: KeyboardEvent) => {
   }
 };
 
+/**
+ * `position: fixed` on <body> drops the document scroll to 0, so remember the
+ * offset and restore it on unlock — otherwise opening the mobile menu part-way
+ * down a page sends the reader back to the top when they close it.
+ */
+let lockedScrollY = 0;
+
 const lockBodyScroll = () => {
   const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+  lockedScrollY = window.scrollY;
   document.body.style.overflow = "hidden";
   document.body.style.position = "fixed";
   document.body.style.width = "100%";
-  document.body.style.top = "0";
+  document.body.style.top = `-${lockedScrollY}px`;
   if (scrollbarWidth > 0) {
     document.body.style.paddingRight = `${scrollbarWidth}px`;
   }
 };
 
 const unlockBodyScroll = () => {
+  const wasLocked = document.body.style.position === "fixed";
   document.body.style.overflow = "";
   document.body.style.position = "";
   document.body.style.width = "";
   document.body.style.top = "";
   document.body.style.paddingRight = "";
+  if (wasLocked) {
+    window.scrollTo(0, lockedScrollY);
+    lockedScrollY = 0;
+  }
 };
 
 const toggleMobileMenu = () => {
@@ -385,7 +400,7 @@ onUnmounted(() => {
         >
           <nav class="flex-1 w-full pt-6 pb-8">
             <ul class="space-y-1">
-              <li v-for="(navItem, index) in mainNav" :key="navItem.text">
+              <li v-for="(navItem, index) in mainNav" :key="index">
                 <template v-if="isDropdown(navItem)">
                   <button
                     type="button"
@@ -407,11 +422,8 @@ onUnmounted(() => {
                     </svg>
                   </button>
                   <ul v-show="expandedAccordions.has(index)" class="pl-4 space-y-1">
-                    <template
-                      v-for="childItem in navItem.items"
-                      :key="childItem.link || childItem.text"
-                    >
-                      <li v-if="'link' in childItem">
+                    <template v-for="(childItem, childIndex) in navItem.items" :key="childIndex">
+                      <li v-if="isLinkItem(childItem)">
                         <a
                           :href="normalizeLink(childItem.link)"
                           :target="isExternalLink(childItem.link) ? '_blank' : undefined"
@@ -429,7 +441,7 @@ onUnmounted(() => {
                           {{ childItem.text }}
                         </a>
                       </li>
-                      <li v-else-if="'items' in childItem">
+                      <li v-else-if="isDropdown(childItem)">
                         <p
                           v-if="childItem.text"
                           class="pt-3 pb-1 px-4 text-xs font-semibold uppercase tracking-wider text-grey/70 dark:text-white/50"
@@ -438,11 +450,11 @@ onUnmounted(() => {
                         </p>
                         <ul class="pl-4 space-y-1">
                           <li
-                            v-for="nestedItem in childItem.items"
-                            :key="nestedItem.link || nestedItem.text"
+                            v-for="(nestedItem, nestedIndex) in childItem.items"
+                            :key="nestedIndex"
                           >
                             <a
-                              v-if="nestedItem.link"
+                              v-if="isLinkItem(nestedItem)"
                               :href="normalizeLink(nestedItem.link)"
                               :target="isExternalLink(nestedItem.link) ? '_blank' : undefined"
                               :rel="isExternalLink(nestedItem.link) ? 'noreferrer' : undefined"
@@ -465,7 +477,7 @@ onUnmounted(() => {
                   </ul>
                 </template>
                 <a
-                  v-else-if="navItem.link"
+                  v-else-if="isLinkItem(navItem)"
                   :href="normalizeLink(navItem.link)"
                   :target="isExternalLink(navItem.link) ? '_blank' : undefined"
                   :rel="isExternalLink(navItem.link) ? 'noreferrer' : undefined"
@@ -480,8 +492,9 @@ onUnmounted(() => {
                 >
                   {{ navItem.text }}
                 </a>
+                <!-- `{ component }` nav items have no mobile representation; skip them. -->
                 <span
-                  v-else
+                  v-else-if="'text' in navItem"
                   class="block py-3 px-4 text-base font-sans text-primary dark:text-white"
                 >
                   {{ navItem.text }}

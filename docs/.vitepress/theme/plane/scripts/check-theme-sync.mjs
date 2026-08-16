@@ -10,7 +10,12 @@
  *   2. https://raw.githubusercontent.com/<sibling>/<ref>/… — ref from THEME_SIBLING_REF,
  *      then GITHUB_HEAD_REF (same-named PR branch), then master.
  *
- * Exit codes: 0 identical · 1 drift (or manifest out of date) · 2 sibling unreachable / bad args
+ * While only one repo has adopted the shared theme the sibling has no `plane/` folder yet.
+ * That is reported and skipped (exit 0) rather than failing, so unrelated PRs in the repo
+ * that merged first are not blocked; the check becomes binding as soon as both sides have it.
+ *
+ * Exit codes: 0 identical (or sibling not adopted yet) · 1 drift (or manifest out of date)
+ *             · 2 sibling unreachable / bad args
  */
 import { createHash } from "node:crypto";
 import { readdir, readFile } from "node:fs/promises";
@@ -44,23 +49,42 @@ async function readLocal(file) {
   return readFile(join(THEME_DIR, file));
 }
 
+/** Present on every ref of both repos — tells "ref exists" apart from "ref has no plane/". */
+const ROOT_PROBE = "package.json";
+
 async function makeSiblingReader() {
   const localPath = process.env.THEME_SIBLING_PATH;
   if (localPath) {
-    const root = resolve(process.cwd(), localPath, THEME_REL);
-    return {
-      label: root,
-      read: (file) => readFile(join(root, file)).catch(() => null),
-    };
+    const checkout = resolve(process.cwd(), localPath);
+    const root = join(checkout, THEME_REL);
+    const exists = (file) =>
+      readFile(file).then(
+        () => true,
+        () => false,
+      );
+    if (await exists(join(root, "manifest.json"))) {
+      return {
+        status: "ok",
+        label: root,
+        read: (file) => readFile(join(root, file)).catch(() => null),
+      };
+    }
+    return (await exists(join(checkout, ROOT_PROBE)))
+      ? { status: "not-adopted", label: checkout }
+      : null;
   }
+
   const refs = [process.env.THEME_SIBLING_REF, process.env.GITHUB_HEAD_REF, "master"].filter(
     Boolean,
   );
+  let reachable = null;
   for (const ref of refs) {
-    const base = `https://raw.githubusercontent.com/${siblingArg}/${ref}/${THEME_REL}/`;
+    const root = `https://raw.githubusercontent.com/${siblingArg}/${ref}/`;
+    const base = `${root}${THEME_REL}/`;
     const probe = await fetch(base + "manifest.json").catch(() => null);
     if (probe?.ok) {
       return {
+        status: "ok",
         label: base,
         read: async (file) => {
           const res = await fetch(base + file).catch(() => null);
@@ -68,8 +92,12 @@ async function makeSiblingReader() {
         },
       };
     }
+    if (!reachable) {
+      const rootProbe = await fetch(root + ROOT_PROBE).catch(() => null);
+      if (rootProbe?.ok) reachable = `${siblingArg}@${ref}`;
+    }
   }
-  return null;
+  return reachable ? { status: "not-adopted", label: reachable } : null;
 }
 
 const manifest = JSON.parse(await readLocal("manifest.json"));
@@ -89,10 +117,19 @@ if (missingFromManifest.length || missingFromDisk.length) {
 const sibling = await makeSiblingReader();
 if (!sibling) {
   console.error(
-    `Could not reach the sibling theme (${siblingArg}). Set THEME_SIBLING_PATH=../<repo> for a local checkout.`,
+    `Could not reach the sibling repo (${siblingArg}). Set THEME_SIBLING_PATH=../<repo> for a local checkout.`,
   );
   process.exit(2);
 }
+
+if (sibling.status === "not-adopted") {
+  console.log(
+    `${sibling.label} has no ${THEME_REL} yet — skipping the cross-repo comparison.\n` +
+      `This is expected only until the companion PR lands; the check binds once both repos have the folder.`,
+  );
+  process.exit(failed ? 1 : 0);
+}
+
 console.log(`Comparing ${THEME_REL} against ${sibling.label}`);
 
 const siblingManifestRaw = await sibling.read("manifest.json");

@@ -7,6 +7,7 @@ declare global {
     posthog?: {
       opt_in_capturing?: () => void;
       opt_out_capturing?: () => void;
+      set_config?: (config: Record<string, unknown>) => void;
     };
   }
 }
@@ -32,21 +33,28 @@ function grantConsent() {
     });
   }
 
-  // PostHog (may not be loaded if VITE_POSTHOG_KEY is unset)
-  if (window.posthog?.opt_in_capturing) {
-    window.posthog.opt_in_capturing();
-  }
+  // PostHog (may not be loaded if VITE_POSTHOG_KEY is unset).
+  // Both sites boot PostHog with `persistence: "memory"` so nothing is stored
+  // pre-consent; without lifting that here a consenting visitor still gets a new
+  // distinct_id on every page load, so returning users never stitch together.
+  window.posthog?.set_config?.({ persistence: "localStorage+cookie" });
+  window.posthog?.opt_in_capturing?.();
 }
 
 function denyConsent() {
   if (typeof window === "undefined") return;
 
-  // Google Analytics — consent stays denied by default, no update needed
+  // Google Analytics — consent stays denied by default, but be explicit so a
+  // later "change cookie settings" entry point can revoke a previous grant.
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "update", {
+      analytics_storage: "denied",
+    });
+  }
 
   // PostHog (may not be loaded if VITE_POSTHOG_KEY is unset)
-  if (window.posthog?.opt_out_capturing) {
-    window.posthog.opt_out_capturing();
-  }
+  window.posthog?.set_config?.({ persistence: "memory" });
+  window.posthog?.opt_out_capturing?.();
 }
 
 function accept() {

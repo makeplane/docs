@@ -48,13 +48,14 @@ function handleTabHash() {
   document.querySelectorAll<HTMLElement>('[role="tab"]').forEach((button) => {
     const labelText = button.textContent?.trim().toLowerCase().replace(/\s+/g, "-");
     if (labelText === hash) {
-      button.dispatchEvent(
-        new MouseEvent("click", { view: window, bubbles: true, cancelable: true }),
-      );
       button.click();
       button.focus();
     }
   });
+}
+
+function handleHashChange() {
+  nextTick(handleTabHash);
 }
 
 function updateHashOnTabClick(event: Event) {
@@ -169,7 +170,7 @@ export function createPlaneTheme(options: PlaneThemeOptions): Theme {
           syncHeaderTheme();
         }, 100);
 
-        window.addEventListener("hashchange", () => nextTick(handleTabHash));
+        window.addEventListener("hashchange", handleHashChange);
 
         htmlClassObserver = new MutationObserver(syncHeaderTheme);
         htmlClassObserver.observe(document.documentElement, {
@@ -179,6 +180,7 @@ export function createPlaneTheme(options: PlaneThemeOptions): Theme {
       });
 
       onUnmounted(() => {
+        window.removeEventListener("hashchange", handleHashChange);
         htmlClassObserver?.disconnect();
         zoom?.detach();
       });

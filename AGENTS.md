@@ -2,7 +2,7 @@
 
 ## Project overview
 
-This is the [Plane](https://plane.so) product documentation site, built with [VitePress v1.6.3](https://vitepress.dev/) and hosted at [docs.plane.so](https://docs.plane.so). All content lives in the `docs/` directory as Markdown files.
+This is the [Plane](https://plane.so) product documentation site, built with [VitePress](https://vitepress.dev/) (version in the table below) and hosted at [docs.plane.so](https://docs.plane.so). All content lives in the `docs/` directory as Markdown files.
 
 ## Stack
 
