@@ -1,3 +1,0 @@
-{
-  "extends": "./docs/.vitepress/tsconfig.json"
-}
