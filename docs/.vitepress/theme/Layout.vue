@@ -4,9 +4,13 @@ import { useData, Content } from "vitepress";
 import VPDefaultLayout from "./voidzero/default-layout";
 import OSSHeader from "./voidzero/header";
 import TopBanner from "./voidzero/top-banner";
+import CopyPageMenu from "./components/CopyPageMenu.vue";
 
 const { frontmatter, site } = useData();
 const slots = useSlots();
+// `doc-before` is rendered explicitly below (it also hosts the "Copy page" control),
+// so keep it out of the dynamic forwarding loop.
+const forwardSlotNames = computed(() => (Object.keys(slots) as string[]).filter((name) => name !== "doc-before"));
 
 const variant = computed(() => (site.value.themeConfig as { variant?: string }).variant ?? "voidzero");
 
@@ -21,8 +25,12 @@ const useDocLayout = computed(() => {
 <template>
   <div v-if="useDocLayout" class="docs-layout" :data-theme="frontmatter.theme" :data-variant="variant">
     <VPDefaultLayout>
-      <template v-for="(_, name) in slots" #[name]="slotData">
+      <template v-for="name in forwardSlotNames" :key="name" #[name]="slotData">
         <slot :name="name" v-bind="slotData || {}" />
+      </template>
+      <template #doc-before>
+        <slot name="doc-before" />
+        <CopyPageMenu />
       </template>
     </VPDefaultLayout>
   </div>

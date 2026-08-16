@@ -170,6 +170,46 @@ html.dark .docs-layout .plane-header-shell,
   }
 }
 
+/* --- Copy page menu (components/CopyPageMenu.vue) — placement ---
+   The control is server-rendered in the `doc-before` slot (first child of
+   `.VPDoc .content-container`, above <main>) and, once mounted, teleported into a
+   `.copy-page-slot` host inserted right after the page H1 inside `.vp-doc`. Both
+   positions are styled here; visual styles are scoped in the component. */
+.docs-layout .VPDoc .content-container {
+  position: relative; /* anchor for the pre-teleport position */
+}
+
+/* < 768px: below the title, left-aligned, in flow */
+@media (max-width: 767px) {
+  /* Pre-teleport position would sit above the title — keep it hidden to avoid a jump. */
+  .docs-layout .VPDoc .content-container > .copy-page {
+    display: none;
+  }
+
+  .docs-layout .vp-doc > div > .copy-page-slot {
+    margin: 14px 0 16px;
+  }
+}
+
+/* ≥ 768px: on the title row, flush with the right edge of the text column */
+@media (min-width: 768px) {
+  .docs-layout .VPDoc .content-container > .copy-page,
+  .docs-layout .vp-doc > div > .copy-page-slot > .copy-page {
+    position: absolute; /* relative to .content-container / .vp-doc — same top edge */
+    top: 2px; /* (h1 line box ~38px − 34px button) / 2 */
+    right: 0;
+    margin: 0;
+    z-index: 10; /* below --vp-z-index-local-nav (20) and the image lightbox */
+  }
+
+  /* Reserve the control's footprint on the H1 only when it actually rendered
+     (so `copyPage: false` pages keep the full width). */
+  .docs-layout .vp-doc > div > h1:has(+ .copy-page-slot > .copy-page),
+  .docs-layout .VPDoc .content-container > .copy-page ~ .main .vp-doc > div > h1 {
+    padding-right: 156px; /* ≈ 132px control + 24px gap — re-measure if the label changes */
+  }
+}
+
 /* Unified layout borders & corner ticks */
 @media (min-width: 768px) {
   .docs-layout .content-wrapper,
