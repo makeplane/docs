@@ -2,14 +2,18 @@
 
 <script setup lang="ts">
 /**
- * "Copy page" split button + menu, rendered in the `doc-before` slot (see Layout.vue).
+ * "Copy page" split button + menu.
+ *
+ * Rendered from the `doc-before` slot (see Layout.vue) and, once mounted, teleported to
+ * right after the page's H1 so it reads as part of the title block: on the same row as
+ * the title on wide screens, directly below it on small screens.
  *
  * The raw Markdown for every page is served next to the HTML at `<path>.md`
  * (config.ts `buildEnd()` copies the source files into dist/), so this component
  * only needs the current page's source path to copy / view / hand off to an AI tool.
  */
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
-import { useData, useRoute, withBase } from "vitepress";
+import { onContentUpdated, useData, useRoute, withBase } from "vitepress";
 import { ArrowUpRight, Check, ChevronDown, Copy } from "lucide-vue-next";
 import { CLAUDE_ICON, MARKDOWN_ICON, OPENAI_ICON } from "./copy-page-icons";
 
@@ -164,6 +168,40 @@ async function copy(): Promise<void> {
 }
 
 /* ---------------------------------------------------------------------------
+ * Placement — teleport the control to right after the page H1.
+ * The H1 is part of the rendered Markdown, so there is no slot for it; instead we
+ * insert a small host element after the H1 (re-created whenever the page content
+ * mounts) and let <Teleport> move the control there. Until then, or if no H1 is
+ * found, the control renders in place in the `doc-before` slot.
+ * ------------------------------------------------------------------------- */
+
+const SLOT_CLASS = "copy-page-slot";
+const teleportTarget = ref<HTMLElement | null>(null);
+
+function placeAfterHeading(): void {
+  if (!enabled.value) {
+    teleportTarget.value = null;
+    return;
+  }
+  const heading = document.querySelector<HTMLElement>(".VPDoc .vp-doc > div > h1");
+  if (!heading?.isConnected) {
+    teleportTarget.value = null;
+    return;
+  }
+  let host = heading.nextElementSibling as HTMLElement | null;
+  if (!host?.classList.contains(SLOT_CLASS)) {
+    host = document.createElement("div");
+    host.className = SLOT_CLASS;
+    heading.after(host);
+  }
+  teleportTarget.value = host;
+}
+
+onMounted(placeAfterHeading);
+// Fires after each page's content mounts/updates (client-side navigation, HMR).
+onContentUpdated(placeAfterHeading);
+
+/* ---------------------------------------------------------------------------
  * Menu open/close + keyboard handling
  * ------------------------------------------------------------------------- */
 
@@ -224,66 +262,71 @@ watch(
   () => {
     open.value = false;
     setStatus("idle");
+    // The old page (and our host inside it) is about to unmount; fall back to the
+    // in-place position until the new page's content has mounted.
+    teleportTarget.value = null;
   },
 );
 </script>
 
 <template>
-  <div v-if="enabled" ref="root" class="copy-page" @pointerenter="prefetch" @focusin="prefetch">
-    <div class="copy-page__split">
-      <button type="button" class="copy-page__main" :disabled="status === 'busy'" @click="copy">
-        <component :is="status === 'copied' ? Check : Copy" :size="14" aria-hidden="true" />
-        <span aria-live="polite">{{ label }}</span>
-      </button>
-      <button
-        ref="toggleBtn"
-        type="button"
-        class="copy-page__toggle"
-        aria-label="More copy options"
-        aria-haspopup="menu"
-        :aria-expanded="open"
-        @click="toggle"
-      >
-        <ChevronDown :size="14" aria-hidden="true" />
-      </button>
-    </div>
+  <Teleport :to="teleportTarget" :disabled="!teleportTarget">
+    <div v-if="enabled" ref="root" class="copy-page" @pointerenter="prefetch" @focusin="prefetch">
+      <div class="copy-page__split">
+        <button type="button" class="copy-page__main" :disabled="status === 'busy'" @click="copy">
+          <component :is="status === 'copied' ? Check : Copy" :size="14" aria-hidden="true" />
+          <span aria-live="polite">{{ label }}</span>
+        </button>
+        <button
+          ref="toggleBtn"
+          type="button"
+          class="copy-page__toggle"
+          aria-label="More copy options"
+          aria-haspopup="menu"
+          :aria-expanded="open"
+          @click="toggle"
+        >
+          <ChevronDown :size="14" aria-hidden="true" />
+        </button>
+      </div>
 
-    <div
-      v-if="open"
-      ref="menu"
-      class="copy-page__menu"
-      role="menu"
-      aria-label="Copy page options"
-      @keydown="onMenuKeydown"
-    >
-      <button type="button" role="menuitem" class="copy-page__item" @click="copy">
-        <span class="copy-page__icon"><Copy :size="16" aria-hidden="true" /></span>
-        <span class="copy-page__text">
-          <span class="copy-page__title">Copy page</span>
-          <span class="copy-page__desc">Copy page as Markdown for LLMs</span>
-        </span>
-      </button>
-      <a
-        v-for="link in links"
-        :key="link.title"
-        role="menuitem"
-        class="copy-page__item"
-        :href="link.href"
-        target="_blank"
-        rel="noopener noreferrer"
-        @click="close()"
+      <div
+        v-if="open"
+        ref="menu"
+        class="copy-page__menu"
+        role="menu"
+        aria-label="Copy page options"
+        @keydown="onMenuKeydown"
       >
-        <span class="copy-page__icon" v-html="link.icon" />
-        <span class="copy-page__text">
-          <span class="copy-page__title">
-            {{ link.title }}
-            <ArrowUpRight :size="12" aria-hidden="true" />
+        <button type="button" role="menuitem" class="copy-page__item" @click="copy">
+          <span class="copy-page__icon"><Copy :size="16" aria-hidden="true" /></span>
+          <span class="copy-page__text">
+            <span class="copy-page__title">Copy page</span>
+            <span class="copy-page__desc">Copy page as Markdown for LLMs</span>
           </span>
-          <span class="copy-page__desc">{{ link.desc }}</span>
-        </span>
-      </a>
+        </button>
+        <a
+          v-for="link in links"
+          :key="link.title"
+          role="menuitem"
+          class="copy-page__item"
+          :href="link.href"
+          target="_blank"
+          rel="noopener noreferrer"
+          @click="close()"
+        >
+          <span class="copy-page__icon" v-html="link.icon" />
+          <span class="copy-page__text">
+            <span class="copy-page__title">
+              {{ link.title }}
+              <ArrowUpRight :size="12" aria-hidden="true" />
+            </span>
+            <span class="copy-page__desc">{{ link.desc }}</span>
+          </span>
+        </a>
+      </div>
     </div>
-  </div>
+  </Teleport>
 </template>
 
 <style scoped>
@@ -385,9 +428,11 @@ watch(
   transition: background-color 0.15s ease;
 }
 
+/* Explicit colour: the control lives inside .vp-doc, so beat the theme's `.vp-doc a:hover`. */
 .copy-page__item:hover,
 .copy-page__item:focus-visible {
   background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
 }
 
 .copy-page__icon {
@@ -438,6 +483,19 @@ html.dark .copy-page__item:focus-visible,
 [data-theme="dark"] .copy-page__item:hover,
 [data-theme="dark"] .copy-page__item:focus-visible {
   background: var(--vp-c-bg-mute);
+}
+
+/* Small screens: the control sits below the title, left-aligned, so anchor the menu
+   to its left edge instead of the column's right edge. */
+@media (max-width: 767px) {
+  .copy-page {
+    justify-content: flex-start;
+  }
+
+  .copy-page__menu {
+    left: 0;
+    right: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
