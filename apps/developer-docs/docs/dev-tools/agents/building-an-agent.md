@@ -484,7 +484,7 @@ interface AgentRunActivityWebhook {
 
 async function handleWebhook(
   webhook: AgentRunActivityWebhook,
-  credentials: { bot_token: string; workspace_slug: string }
+  credentials: { bot_token: string; workspace_slug: string },
 ) {
   // Only handle agent_run_activity webhooks
   if (webhook.type !== "agent_run_activity") {

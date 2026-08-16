@@ -209,7 +209,10 @@ export default extendConfig(
               "Self-host Plane, integrate with our API, configure webhooks, and extend your project management platform.",
           },
         ],
-        ["meta", { property: "og:image", content: "https://media.docs.plane.so/logo/og-docs.webp#hero" }],
+        [
+          "meta",
+          { property: "og:image", content: "https://media.docs.plane.so/logo/og-docs.webp#hero" },
+        ],
         ["meta", { property: "og:url", content: "https://developers.plane.so" }],
 
         // Twitter Card meta tags
@@ -223,7 +226,10 @@ export default extendConfig(
               "Self-host Plane, integrate with our API, configure webhooks, and extend your project management platform.",
           },
         ],
-        ["meta", { name: "twitter:image", content: "https://media.docs.plane.so/logo/og-docs.webp#hero" }],
+        [
+          "meta",
+          { name: "twitter:image", content: "https://media.docs.plane.so/logo/og-docs.webp#hero" },
+        ],
       ],
 
       transformPageData(pageData: PageData) {
@@ -231,7 +237,7 @@ export default extendConfig(
 
         // Inject canonical URL if not already defined in frontmatter
         const hasCanonical = (head as HeadConfig[]).some(
-          ([tag, attrs]) => tag === "link" && attrs?.rel === "canonical"
+          ([tag, attrs]) => tag === "link" && attrs?.rel === "canonical",
         );
         if (!hasCanonical) {
           const canonicalUrl = `https://developers.plane.so/${pageData.relativePath}`
@@ -264,8 +270,18 @@ export default extendConfig(
           { text: "Self-hosting", link: "/self-hosting/overview" },
           { text: "API Reference", link: "/api-reference/introduction" },
           { text: "Build and extend", link: "/dev-tools/build-plane-app/overview" },
-          { text: "Plane Docs", link: "https://docs.plane.so", noIcon: true, planeButton: "secondary" },
-          { text: "Sign in", link: "https://app.plane.so/sign-in", noIcon: true, planeButton: "primary" },
+          {
+            text: "Plane Docs",
+            link: "https://docs.plane.so",
+            noIcon: true,
+            planeButton: "secondary",
+          },
+          {
+            text: "Sign in",
+            link: "https://app.plane.so/sign-in",
+            noIcon: true,
+            planeButton: "primary",
+          },
         ],
 
         sidebar: {
@@ -327,14 +343,19 @@ export default extendConfig(
                     { text: "Docker Compose", link: "/self-hosting/methods/docker-compose" },
                     { text: "Docker AIO", link: "/self-hosting/methods/docker-aio" },
                     { text: "Docker Swarm", link: "/self-hosting/methods/docker-swarm" },
-                    { text: "Download config files", link: "/self-hosting/methods/download-config" },
+                    {
+                      text: "Download config files",
+                      link: "/self-hosting/methods/download-config",
+                    },
                   ],
                 },
                 {
                   text: "Kubernetes",
                   link: "/self-hosting/methods/kubernetes",
                   collapsed: true,
-                  items: [{ text: "High availability", link: "/self-hosting/govern/high-availability" }],
+                  items: [
+                    { text: "High availability", link: "/self-hosting/govern/high-availability" },
+                  ],
                 },
                 { text: "FIPS deployment", link: "/self-hosting/methods/fips-deployment" },
                 { text: "Podman Quadlets", link: "/self-hosting/methods/podman-quadlets" },
@@ -344,8 +365,14 @@ export default extendConfig(
                   items: [
                     { text: "Overview", link: "/self-hosting/methods/airgapped-requirements" },
                     { text: "On Docker", link: "/self-hosting/methods/airgapped-edition" },
-                    { text: "On Kubernetes", link: "/self-hosting/methods/airgapped-edition-kubernetes" },
-                    { text: "Clone Docker Images", link: "/self-hosting/methods/clone-docker-images" },
+                    {
+                      text: "On Kubernetes",
+                      link: "/self-hosting/methods/airgapped-edition-kubernetes",
+                    },
+                    {
+                      text: "Clone Docker Images",
+                      link: "/self-hosting/methods/clone-docker-images",
+                    },
                   ],
                 },
                 {
@@ -390,14 +417,20 @@ export default extendConfig(
                     { text: "Slack", link: "/self-hosting/govern/integrations/slack" },
                   ],
                 },
-                { text: "DNS for Intake Email", link: "/self-hosting/govern/configure-dns-email-service" },
+                {
+                  text: "DNS for Intake Email",
+                  link: "/self-hosting/govern/configure-dns-email-service",
+                },
                 { text: "OpenSearch for search", link: "/self-hosting/govern/advanced-search" },
                 {
                   text: "Plane AI",
                   link: "/self-hosting/govern/plane-ai/configure-plane-ai",
                   collapsed: true,
                   items: [
-                    { text: "Embedding model", link: "/self-hosting/govern/plane-ai/configure-embedding-model" },
+                    {
+                      text: "Embedding model",
+                      link: "/self-hosting/govern/plane-ai/configure-embedding-model",
+                    },
                     {
                       text: "AWS OpenSearch embedding",
                       link: "/self-hosting/govern/plane-ai/aws-opensearch-embedding",
@@ -408,7 +441,10 @@ export default extendConfig(
                 { text: "External secrets", link: "/self-hosting/govern/external-secrets" },
                 { text: "External reverse proxy", link: "/self-hosting/govern/reverse-proxy" },
                 { text: "Private storage buckets", link: "/self-hosting/govern/private-bucket" },
-                { text: "Environment variables", link: "/self-hosting/govern/environment-variables" },
+                {
+                  text: "Environment variables",
+                  link: "/self-hosting/govern/environment-variables",
+                },
                 { text: "Telemetry", link: "/self-hosting/telemetry" },
               ],
             },
@@ -419,8 +455,14 @@ export default extendConfig(
                   text: "Update Plane",
                   collapsed: true,
                   items: [
-                    { text: "Update to latest version", link: "/self-hosting/manage/upgrade-plane" },
-                    { text: "For versions before 0.14.0", link: "/self-hosting/manage/upgrade-from-0.13.2-0.14.0" },
+                    {
+                      text: "Update to latest version",
+                      link: "/self-hosting/manage/upgrade-plane",
+                    },
+                    {
+                      text: "For versions before 0.14.0",
+                      link: "/self-hosting/manage/upgrade-from-0.13.2-0.14.0",
+                    },
                     {
                       text: "Airgapped Edition",
                       collapsed: true,
@@ -449,7 +491,10 @@ export default extendConfig(
                           text: "Pro or Business",
                           link: "/self-hosting/manage/manage-licenses/activate-pro-and-business",
                         },
-                        { text: "Enterprise Grid", link: "/self-hosting/manage/manage-licenses/activate-enterprise" },
+                        {
+                          text: "Enterprise Grid",
+                          link: "/self-hosting/manage/manage-licenses/activate-enterprise",
+                        },
                       ],
                     },
 
@@ -457,7 +502,10 @@ export default extendConfig(
                       text: "Airgapped Edition",
                       collapsed: true,
                       items: [
-                        { text: "Pro or Business", link: "/self-hosting/manage/manage-licenses/activate-airgapped" },
+                        {
+                          text: "Pro or Business",
+                          link: "/self-hosting/manage/manage-licenses/activate-airgapped",
+                        },
                         {
                           text: "Enterprise Grid",
                           link: "/self-hosting/manage/manage-licenses/activate-airgapped-enterprise",
@@ -467,8 +515,14 @@ export default extendConfig(
                   ],
                 },
                 { text: "Backup and restore", link: "/self-hosting/manage/backup-restore" },
-                { text: "Upgrade Community to Commercial Edition", link: "/self-hosting/upgrade-from-community" },
-                { text: "Upgrade Community to Airgapped Edition", link: "/self-hosting/manage/community-to-airgapped" },
+                {
+                  text: "Upgrade Community to Commercial Edition",
+                  link: "/self-hosting/upgrade-from-community",
+                },
+                {
+                  text: "Upgrade Community to Airgapped Edition",
+                  link: "/self-hosting/manage/community-to-airgapped",
+                },
                 { text: "View Logs", link: "/self-hosting/manage/view-logs" },
                 { text: "Health checks", link: "/self-hosting/manage/health-checks" },
                 { text: "Migrate Plane", link: "/self-hosting/manage/migrate-plane" },
@@ -484,7 +538,10 @@ export default extendConfig(
               text: "Troubleshoot",
               items: [
                 { text: "Overview", link: "/self-hosting/troubleshoot/overview" },
-                { text: "Installation Errors", link: "/self-hosting/troubleshoot/installation-errors" },
+                {
+                  text: "Installation Errors",
+                  link: "/self-hosting/troubleshoot/installation-errors",
+                },
                 { text: "License Errors", link: "/self-hosting/troubleshoot/license-errors" },
                 { text: "CLI Errors", link: "/self-hosting/troubleshoot/cli-errors" },
                 { text: "Storage Errors", link: "/self-hosting/troubleshoot/storage-errors" },
@@ -509,7 +566,10 @@ export default extendConfig(
                     },
                     { text: "List Projects", link: "/api-reference/project/list-projects" },
                     { text: "Get Project", link: "/api-reference/project/get-project-detail" },
-                    { text: "Update Project", link: "/api-reference/project/update-project-detail" },
+                    {
+                      text: "Update Project",
+                      link: "/api-reference/project/update-project-detail",
+                    },
                     { text: "Archive Project", link: "/api-reference/project/archive-project" },
                     { text: "Unarchive Project", link: "/api-reference/project/unarchive-project" },
                     { text: "Delete Project", link: "/api-reference/project/delete-project" },
@@ -520,7 +580,10 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/project-features/overview" },
-                    { text: "Get Project Features", link: "/api-reference/project-features/get-project-features" },
+                    {
+                      text: "Get Project Features",
+                      link: "/api-reference/project-features/get-project-features",
+                    },
                     {
                       text: "Update Project Features",
                       link: "/api-reference/project-features/update-project-features",
@@ -532,8 +595,14 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/project-labels/overview" },
-                    { text: "Create Project Label", link: "/api-reference/project-labels/add-project-label" },
-                    { text: "List Project Labels", link: "/api-reference/project-labels/list-project-labels" },
+                    {
+                      text: "Create Project Label",
+                      link: "/api-reference/project-labels/add-project-label",
+                    },
+                    {
+                      text: "List Project Labels",
+                      link: "/api-reference/project-labels/list-project-labels",
+                    },
                     {
                       text: "Get Project Label",
                       link: "/api-reference/project-labels/get-project-label-detail",
@@ -542,7 +611,10 @@ export default extendConfig(
                       text: "Update Project Label",
                       link: "/api-reference/project-labels/update-project-label-detail",
                     },
-                    { text: "Delete Project Label", link: "/api-reference/project-labels/delete-project-label" },
+                    {
+                      text: "Delete Project Label",
+                      link: "/api-reference/project-labels/delete-project-label",
+                    },
                   ],
                 },
                 {
@@ -553,9 +625,15 @@ export default extendConfig(
                     { text: "Create Work Item", link: "/api-reference/issue/add-issue" },
                     { text: "List Work Items", link: "/api-reference/issue/list-issues" },
                     { text: "Get Work Item", link: "/api-reference/issue/get-issue-detail" },
-                    { text: "Get by identifier", link: "/api-reference/issue/get-issue-sequence-id" },
+                    {
+                      text: "Get by identifier",
+                      link: "/api-reference/issue/get-issue-sequence-id",
+                    },
                     { text: "Search Work Items", link: "/api-reference/issue/search-issues" },
-                    { text: "Advanced Search", link: "/api-reference/issue/advanced-search-work-items" },
+                    {
+                      text: "Advanced Search",
+                      link: "/api-reference/issue/advanced-search-work-items",
+                    },
                     { text: "Update Work Item", link: "/api-reference/issue/update-issue-detail" },
                     { text: "Delete Work Item", link: "/api-reference/issue/delete-issue" },
                   ],
@@ -590,11 +668,26 @@ export default extendConfig(
                   items: [
                     { text: "Overview", link: "/api-reference/issue-types/types/overview" },
                     { text: "Add Type", link: "/api-reference/issue-types/types/add-issue-type" },
-                    { text: "List Types", link: "/api-reference/issue-types/types/list-issue-types" },
-                    { text: "Get Type Details", link: "/api-reference/issue-types/types/get-issue-type-details" },
-                    { text: "Get Type Schema", link: "/api-reference/issue-types/types/get-work-item-type-schema" },
-                    { text: "Update Type", link: "/api-reference/issue-types/types/update-issue-types" },
-                    { text: "Delete Type", link: "/api-reference/issue-types/types/delete-issue-type" },
+                    {
+                      text: "List Types",
+                      link: "/api-reference/issue-types/types/list-issue-types",
+                    },
+                    {
+                      text: "Get Type Details",
+                      link: "/api-reference/issue-types/types/get-issue-type-details",
+                    },
+                    {
+                      text: "Get Type Schema",
+                      link: "/api-reference/issue-types/types/get-work-item-type-schema",
+                    },
+                    {
+                      text: "Update Type",
+                      link: "/api-reference/issue-types/types/update-issue-types",
+                    },
+                    {
+                      text: "Delete Type",
+                      link: "/api-reference/issue-types/types/delete-issue-type",
+                    },
                   ],
                 },
                 {
@@ -602,14 +695,26 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/issue-types/properties/overview" },
-                    { text: "Add Property", link: "/api-reference/issue-types/properties/add-property" },
-                    { text: "List Properties", link: "/api-reference/issue-types/properties/list-properties" },
+                    {
+                      text: "Add Property",
+                      link: "/api-reference/issue-types/properties/add-property",
+                    },
+                    {
+                      text: "List Properties",
+                      link: "/api-reference/issue-types/properties/list-properties",
+                    },
                     {
                       text: "Get Property Details",
                       link: "/api-reference/issue-types/properties/get-property-details",
                     },
-                    { text: "Update Property", link: "/api-reference/issue-types/properties/update-property" },
-                    { text: "Delete Property", link: "/api-reference/issue-types/properties/delete-property" },
+                    {
+                      text: "Update Property",
+                      link: "/api-reference/issue-types/properties/update-property",
+                    },
+                    {
+                      text: "Delete Property",
+                      link: "/api-reference/issue-types/properties/delete-property",
+                    },
                   ],
                 },
                 {
@@ -617,11 +722,26 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/issue-types/values/overview" },
-                    { text: "Add Property Values", link: "/api-reference/issue-types/values/add-property-values" },
-                    { text: "List Property Values", link: "/api-reference/issue-types/values/list-property-values" },
-                    { text: "Get Property Value", link: "/api-reference/issue-types/values/get-property-value-detail" },
-                    { text: "Update Property Value", link: "/api-reference/issue-types/values/update-property-value" },
-                    { text: "Delete Property Value", link: "/api-reference/issue-types/values/delete-property-value" },
+                    {
+                      text: "Add Property Values",
+                      link: "/api-reference/issue-types/values/add-property-values",
+                    },
+                    {
+                      text: "List Property Values",
+                      link: "/api-reference/issue-types/values/list-property-values",
+                    },
+                    {
+                      text: "Get Property Value",
+                      link: "/api-reference/issue-types/values/get-property-value-detail",
+                    },
+                    {
+                      text: "Update Property Value",
+                      link: "/api-reference/issue-types/values/update-property-value",
+                    },
+                    {
+                      text: "Delete Property Value",
+                      link: "/api-reference/issue-types/values/delete-property-value",
+                    },
                   ],
                 },
                 {
@@ -629,9 +749,18 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/issue-types/options/overview" },
-                    { text: "Add Dropdown Options", link: "/api-reference/issue-types/options/add-dropdown-options" },
-                    { text: "List Dropdown Options", link: "/api-reference/issue-types/options/list-dropdown-options" },
-                    { text: "Get Option Details", link: "/api-reference/issue-types/options/get-option-details" },
+                    {
+                      text: "Add Dropdown Options",
+                      link: "/api-reference/issue-types/options/add-dropdown-options",
+                    },
+                    {
+                      text: "List Dropdown Options",
+                      link: "/api-reference/issue-types/options/list-dropdown-options",
+                    },
+                    {
+                      text: "Get Option Details",
+                      link: "/api-reference/issue-types/options/get-option-details",
+                    },
                     {
                       text: "Update Dropdown Options",
                       link: "/api-reference/issue-types/options/update-dropdown-options",
@@ -659,8 +788,14 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/issue-activity/overview" },
-                    { text: "List Activities", link: "/api-reference/issue-activity/list-issue-activities" },
-                    { text: "Get Activity", link: "/api-reference/issue-activity/get-issue-activity-detail" },
+                    {
+                      text: "List Activities",
+                      link: "/api-reference/issue-activity/list-issue-activities",
+                    },
+                    {
+                      text: "Get Activity",
+                      link: "/api-reference/issue-activity/get-issue-activity-detail",
+                    },
                   ],
                 },
                 {
@@ -669,10 +804,22 @@ export default extendConfig(
                   items: [
                     { text: "Overview", link: "/api-reference/issue-comment/overview" },
                     { text: "Add Comment", link: "/api-reference/issue-comment/add-issue-comment" },
-                    { text: "List Comments", link: "/api-reference/issue-comment/list-issue-comments" },
-                    { text: "Get Comment", link: "/api-reference/issue-comment/get-issue-comment-detail" },
-                    { text: "Update Comment", link: "/api-reference/issue-comment/update-issue-comment-detail" },
-                    { text: "Delete Comment", link: "/api-reference/issue-comment/delete-issue-comment" },
+                    {
+                      text: "List Comments",
+                      link: "/api-reference/issue-comment/list-issue-comments",
+                    },
+                    {
+                      text: "Get Comment",
+                      link: "/api-reference/issue-comment/get-issue-comment-detail",
+                    },
+                    {
+                      text: "Update Comment",
+                      link: "/api-reference/issue-comment/update-issue-comment-detail",
+                    },
+                    {
+                      text: "Delete Comment",
+                      link: "/api-reference/issue-comment/delete-issue-comment",
+                    },
                   ],
                 },
                 {
@@ -680,13 +827,31 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/issue-attachments/overview" },
-                    { text: "Get Attachments", link: "/api-reference/issue-attachments/get-attachments" },
-                    { text: "Get Attachment Detail", link: "/api-reference/issue-attachments/get-attachment-detail" },
-                    { text: "Get Upload Credentials", link: "/api-reference/issue-attachments/get-upload-credentials" },
+                    {
+                      text: "Get Attachments",
+                      link: "/api-reference/issue-attachments/get-attachments",
+                    },
+                    {
+                      text: "Get Attachment Detail",
+                      link: "/api-reference/issue-attachments/get-attachment-detail",
+                    },
+                    {
+                      text: "Get Upload Credentials",
+                      link: "/api-reference/issue-attachments/get-upload-credentials",
+                    },
                     { text: "Upload File", link: "/api-reference/issue-attachments/upload-file" },
-                    { text: "Complete Upload", link: "/api-reference/issue-attachments/complete-upload" },
-                    { text: "Update Attachment", link: "/api-reference/issue-attachments/update-attachment" },
-                    { text: "Delete Attachment", link: "/api-reference/issue-attachments/delete-attachment" },
+                    {
+                      text: "Complete Upload",
+                      link: "/api-reference/issue-attachments/complete-upload",
+                    },
+                    {
+                      text: "Update Attachment",
+                      link: "/api-reference/issue-attachments/update-attachment",
+                    },
+                    {
+                      text: "Delete Attachment",
+                      link: "/api-reference/issue-attachments/delete-attachment",
+                    },
                   ],
                 },
                 {
@@ -694,8 +859,14 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/work-item-pages/overview" },
-                    { text: "Create Work Item Page Link", link: "/api-reference/work-item-pages/add-work-item-page" },
-                    { text: "List Work Item Pages", link: "/api-reference/work-item-pages/list-work-item-pages" },
+                    {
+                      text: "Create Work Item Page Link",
+                      link: "/api-reference/work-item-pages/add-work-item-page",
+                    },
+                    {
+                      text: "List Work Item Pages",
+                      link: "/api-reference/work-item-pages/list-work-item-pages",
+                    },
                     {
                       text: "Get Work Item Page Link",
                       link: "/api-reference/work-item-pages/get-work-item-page-detail",
@@ -714,15 +885,27 @@ export default extendConfig(
                     { text: "Overview", link: "/api-reference/cycle/overview" },
                     { text: "Create Cycle", link: "/api-reference/cycle/add-cycle" },
                     { text: "Add Work Items", link: "/api-reference/cycle/add-cycle-work-items" },
-                    { text: "Transfer Work Items", link: "/api-reference/cycle/transfer-cycle-work-items" },
+                    {
+                      text: "Transfer Work Items",
+                      link: "/api-reference/cycle/transfer-cycle-work-items",
+                    },
                     { text: "Archive Cycle", link: "/api-reference/cycle/archive-cycle" },
                     { text: "List Cycles", link: "/api-reference/cycle/list-cycles" },
                     { text: "Get Cycle", link: "/api-reference/cycle/get-cycle-detail" },
-                    { text: "List Cycle Work Items", link: "/api-reference/cycle/list-cycle-work-items" },
-                    { text: "List Archived Cycles", link: "/api-reference/cycle/list-archived-cycles" },
+                    {
+                      text: "List Cycle Work Items",
+                      link: "/api-reference/cycle/list-cycle-work-items",
+                    },
+                    {
+                      text: "List Archived Cycles",
+                      link: "/api-reference/cycle/list-archived-cycles",
+                    },
                     { text: "Update Cycle", link: "/api-reference/cycle/update-cycle-detail" },
                     { text: "Unarchive Cycle", link: "/api-reference/cycle/unarchive-cycle" },
-                    { text: "Remove Work Item", link: "/api-reference/cycle/remove-cycle-work-item" },
+                    {
+                      text: "Remove Work Item",
+                      link: "/api-reference/cycle/remove-cycle-work-item",
+                    },
                     { text: "Delete Cycle", link: "/api-reference/cycle/delete-cycle" },
                   ],
                 },
@@ -736,11 +919,20 @@ export default extendConfig(
                     { text: "Archive Module", link: "/api-reference/module/archive-module" },
                     { text: "List Modules", link: "/api-reference/module/list-modules" },
                     { text: "Get Module", link: "/api-reference/module/get-module-detail" },
-                    { text: "List Module Work Items", link: "/api-reference/module/list-module-work-items" },
-                    { text: "List Archived Modules", link: "/api-reference/module/list-archived-modules" },
+                    {
+                      text: "List Module Work Items",
+                      link: "/api-reference/module/list-module-work-items",
+                    },
+                    {
+                      text: "List Archived Modules",
+                      link: "/api-reference/module/list-archived-modules",
+                    },
                     { text: "Update Module", link: "/api-reference/module/update-module-detail" },
                     { text: "Unarchive Module", link: "/api-reference/module/unarchive-module" },
-                    { text: "Remove Work Item", link: "/api-reference/module/remove-module-work-item" },
+                    {
+                      text: "Remove Work Item",
+                      link: "/api-reference/module/remove-module-work-item",
+                    },
                     { text: "Delete Module", link: "/api-reference/module/delete-module" },
                   ],
                 },
@@ -749,7 +941,10 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/page/overview" },
-                    { text: "List Workspace Pages", link: "/api-reference/page/list-workspace-pages" },
+                    {
+                      text: "List Workspace Pages",
+                      link: "/api-reference/page/list-workspace-pages",
+                    },
                     { text: "Add Workspace Page", link: "/api-reference/page/add-workspace-page" },
                     { text: "List Project Pages", link: "/api-reference/page/list-project-pages" },
                     { text: "Add Project Page", link: "/api-reference/page/add-project-page" },
@@ -762,11 +957,26 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/intake-issue/overview" },
-                    { text: "Add Intake Issue", link: "/api-reference/intake-issue/add-intake-issue" },
-                    { text: "List Intake Issues", link: "/api-reference/intake-issue/list-intake-issues" },
-                    { text: "Get Intake Issue", link: "/api-reference/intake-issue/get-intake-issue-detail" },
-                    { text: "Update Intake Issue", link: "/api-reference/intake-issue/update-intake-issue-detail" },
-                    { text: "Delete Intake Issue", link: "/api-reference/intake-issue/delete-intake-issue" },
+                    {
+                      text: "Add Intake Issue",
+                      link: "/api-reference/intake-issue/add-intake-issue",
+                    },
+                    {
+                      text: "List Intake Issues",
+                      link: "/api-reference/intake-issue/list-intake-issues",
+                    },
+                    {
+                      text: "Get Intake Issue",
+                      link: "/api-reference/intake-issue/get-intake-issue-detail",
+                    },
+                    {
+                      text: "Update Intake Issue",
+                      link: "/api-reference/intake-issue/update-intake-issue-detail",
+                    },
+                    {
+                      text: "Delete Intake Issue",
+                      link: "/api-reference/intake-issue/delete-intake-issue",
+                    },
                   ],
                 },
                 {
@@ -774,15 +984,24 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/assets/overview" },
-                    { text: "Create User Asset Upload", link: "/api-reference/assets/create-user-asset-upload" },
+                    {
+                      text: "Create User Asset Upload",
+                      link: "/api-reference/assets/create-user-asset-upload",
+                    },
                     { text: "Update User Asset", link: "/api-reference/assets/update-user-asset" },
                     { text: "Delete User Asset", link: "/api-reference/assets/delete-user-asset" },
                     {
                       text: "Create Workspace Asset Upload",
                       link: "/api-reference/assets/create-workspace-asset-upload",
                     },
-                    { text: "Get Workspace Asset", link: "/api-reference/assets/get-workspace-asset" },
-                    { text: "Update Workspace Asset", link: "/api-reference/assets/update-workspace-asset" },
+                    {
+                      text: "Get Workspace Asset",
+                      link: "/api-reference/assets/get-workspace-asset",
+                    },
+                    {
+                      text: "Update Workspace Asset",
+                      link: "/api-reference/assets/update-workspace-asset",
+                    },
                   ],
                 },
                 {
@@ -792,10 +1011,22 @@ export default extendConfig(
                     { text: "Overview", link: "/api-reference/milestones/overview" },
                     { text: "Create Milestone", link: "/api-reference/milestones/add-milestone" },
                     { text: "List Milestones", link: "/api-reference/milestones/list-milestones" },
-                    { text: "Get Milestone", link: "/api-reference/milestones/get-milestone-detail" },
-                    { text: "List Milestone Work Items", link: "/api-reference/milestones/list-milestone-work-items" },
-                    { text: "Update Milestone", link: "/api-reference/milestones/update-milestone-detail" },
-                    { text: "Delete Milestone", link: "/api-reference/milestones/delete-milestone" },
+                    {
+                      text: "Get Milestone",
+                      link: "/api-reference/milestones/get-milestone-detail",
+                    },
+                    {
+                      text: "List Milestone Work Items",
+                      link: "/api-reference/milestones/list-milestone-work-items",
+                    },
+                    {
+                      text: "Update Milestone",
+                      link: "/api-reference/milestones/update-milestone-detail",
+                    },
+                    {
+                      text: "Delete Milestone",
+                      link: "/api-reference/milestones/delete-milestone",
+                    },
                   ],
                 },
                 {
@@ -807,10 +1038,22 @@ export default extendConfig(
                     { text: "Get Estimate", link: "/api-reference/estimate/get-estimate" },
                     { text: "Update Estimate", link: "/api-reference/estimate/update-estimate" },
                     { text: "Delete Estimate", link: "/api-reference/estimate/delete-estimate" },
-                    { text: "List Estimate Points", link: "/api-reference/estimate/list-estimate-points" },
-                    { text: "Create Estimate Points", link: "/api-reference/estimate/add-estimate-points" },
-                    { text: "Update Estimate Point", link: "/api-reference/estimate/update-estimate-point" },
-                    { text: "Delete Estimate Point", link: "/api-reference/estimate/delete-estimate-point" },
+                    {
+                      text: "List Estimate Points",
+                      link: "/api-reference/estimate/list-estimate-points",
+                    },
+                    {
+                      text: "Create Estimate Points",
+                      link: "/api-reference/estimate/add-estimate-points",
+                    },
+                    {
+                      text: "Update Estimate Point",
+                      link: "/api-reference/estimate/update-estimate-point",
+                    },
+                    {
+                      text: "Delete Estimate Point",
+                      link: "/api-reference/estimate/delete-estimate-point",
+                    },
                   ],
                 },
                 {
@@ -819,7 +1062,10 @@ export default extendConfig(
                   items: [
                     { text: "Overview", link: "/api-reference/worklogs/overview" },
                     { text: "Create Worklog", link: "/api-reference/worklogs/create-worklog" },
-                    { text: "Get Worklogs for Issue", link: "/api-reference/worklogs/get-worklogs-for-issue" },
+                    {
+                      text: "Get Worklogs for Issue",
+                      link: "/api-reference/worklogs/get-worklogs-for-issue",
+                    },
                     { text: "Get Total Time", link: "/api-reference/worklogs/get-total-time" },
                     { text: "Update Worklog", link: "/api-reference/worklogs/update-worklog" },
                     { text: "Delete Worklog", link: "/api-reference/worklogs/delete-worklog" },
@@ -835,8 +1081,14 @@ export default extendConfig(
                     { text: "Get Epic", link: "/api-reference/epics/get-epic-detail" },
                     { text: "Update Epic", link: "/api-reference/epics/update-epic" },
                     { text: "Delete Epic", link: "/api-reference/epics/delete-epic" },
-                    { text: "Add Epic Work Items", link: "/api-reference/epics/add-epic-work-items" },
-                    { text: "List Epic Work Items", link: "/api-reference/epics/list-epic-work-items" },
+                    {
+                      text: "Add Epic Work Items",
+                      link: "/api-reference/epics/add-epic-work-items",
+                    },
+                    {
+                      text: "List Epic Work Items",
+                      link: "/api-reference/epics/list-epic-work-items",
+                    },
                   ],
                 },
                 {
@@ -845,10 +1097,22 @@ export default extendConfig(
                   items: [
                     { text: "Overview", link: "/api-reference/initiative/overview" },
                     { text: "Create Initiative", link: "/api-reference/initiative/add-initiative" },
-                    { text: "List Initiatives", link: "/api-reference/initiative/list-initiatives" },
-                    { text: "Get Initiative", link: "/api-reference/initiative/get-initiative-detail" },
-                    { text: "Update Initiative", link: "/api-reference/initiative/update-initiative-detail" },
-                    { text: "Delete Initiative", link: "/api-reference/initiative/delete-initiative" },
+                    {
+                      text: "List Initiatives",
+                      link: "/api-reference/initiative/list-initiatives",
+                    },
+                    {
+                      text: "Get Initiative",
+                      link: "/api-reference/initiative/get-initiative-detail",
+                    },
+                    {
+                      text: "Update Initiative",
+                      link: "/api-reference/initiative/update-initiative-detail",
+                    },
+                    {
+                      text: "Delete Initiative",
+                      link: "/api-reference/initiative/delete-initiative",
+                    },
                   ],
                 },
                 {
@@ -856,34 +1120,67 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Add Label", link: "/api-reference/initiative/add-initiative-label" },
-                    { text: "Add Labels to Initiative", link: "/api-reference/initiative/add-labels-to-initiative" },
-                    { text: "List Initiative Labels", link: "/api-reference/initiative/list-initiative-labels" },
-                    { text: "Get Label Detail", link: "/api-reference/initiative/get-initiative-label-detail" },
+                    {
+                      text: "Add Labels to Initiative",
+                      link: "/api-reference/initiative/add-labels-to-initiative",
+                    },
+                    {
+                      text: "List Initiative Labels",
+                      link: "/api-reference/initiative/list-initiative-labels",
+                    },
+                    {
+                      text: "Get Label Detail",
+                      link: "/api-reference/initiative/get-initiative-label-detail",
+                    },
                     {
                       text: "List Labels for Initiative",
                       link: "/api-reference/initiative/list-initiative-labels-for-initiative",
                     },
-                    { text: "Update Label", link: "/api-reference/initiative/update-initiative-label-detail" },
-                    { text: "Remove Labels", link: "/api-reference/initiative/remove-labels-from-initiative" },
-                    { text: "Delete Label", link: "/api-reference/initiative/delete-initiative-label" },
+                    {
+                      text: "Update Label",
+                      link: "/api-reference/initiative/update-initiative-label-detail",
+                    },
+                    {
+                      text: "Remove Labels",
+                      link: "/api-reference/initiative/remove-labels-from-initiative",
+                    },
+                    {
+                      text: "Delete Label",
+                      link: "/api-reference/initiative/delete-initiative-label",
+                    },
                   ],
                 },
                 {
                   text: "Initiative Projects",
                   collapsed: true,
                   items: [
-                    { text: "Add Projects", link: "/api-reference/initiative/add-projects-to-initiative" },
-                    { text: "List Projects", link: "/api-reference/initiative/list-initiative-projects" },
-                    { text: "Remove Projects", link: "/api-reference/initiative/remove-projects-from-initiative" },
+                    {
+                      text: "Add Projects",
+                      link: "/api-reference/initiative/add-projects-to-initiative",
+                    },
+                    {
+                      text: "List Projects",
+                      link: "/api-reference/initiative/list-initiative-projects",
+                    },
+                    {
+                      text: "Remove Projects",
+                      link: "/api-reference/initiative/remove-projects-from-initiative",
+                    },
                   ],
                 },
                 {
                   text: "Initiative Epics",
                   collapsed: true,
                   items: [
-                    { text: "Add Epics", link: "/api-reference/initiative/add-epics-to-initiative" },
+                    {
+                      text: "Add Epics",
+                      link: "/api-reference/initiative/add-epics-to-initiative",
+                    },
                     { text: "List Epics", link: "/api-reference/initiative/list-initiative-epics" },
-                    { text: "Remove Epics", link: "/api-reference/initiative/remove-epics-from-initiative" },
+                    {
+                      text: "Remove Epics",
+                      link: "/api-reference/initiative/remove-epics-from-initiative",
+                    },
                   ],
                 },
                 {
@@ -892,12 +1189,24 @@ export default extendConfig(
                   items: [
                     { text: "Overview", link: "/api-reference/customer/overview" },
                     { text: "Add Customer", link: "/api-reference/customer/add-customer" },
-                    { text: "Link Work Items", link: "/api-reference/customer/link-work-items-to-customer" },
+                    {
+                      text: "Link Work Items",
+                      link: "/api-reference/customer/link-work-items-to-customer",
+                    },
                     { text: "List Customers", link: "/api-reference/customer/list-customers" },
                     { text: "Get Customer", link: "/api-reference/customer/get-customer-detail" },
-                    { text: "List Customer Work Items", link: "/api-reference/customer/list-customer-work-items" },
-                    { text: "Update Customer", link: "/api-reference/customer/update-customer-detail" },
-                    { text: "Unlink Work Item", link: "/api-reference/customer/unlink-work-item-from-customer" },
+                    {
+                      text: "List Customer Work Items",
+                      link: "/api-reference/customer/list-customer-work-items",
+                    },
+                    {
+                      text: "Update Customer",
+                      link: "/api-reference/customer/update-customer-detail",
+                    },
+                    {
+                      text: "Unlink Work Item",
+                      link: "/api-reference/customer/unlink-work-item-from-customer",
+                    },
                     { text: "Delete Customer", link: "/api-reference/customer/delete-customer" },
                   ],
                 },
@@ -906,13 +1215,34 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Add Property", link: "/api-reference/customer/add-customer-property" },
-                    { text: "List Properties", link: "/api-reference/customer/list-customer-properties" },
-                    { text: "Get Property Detail", link: "/api-reference/customer/get-customer-property-detail" },
-                    { text: "List Property Values", link: "/api-reference/customer/list-customer-property-values" },
-                    { text: "Get Property Value", link: "/api-reference/customer/get-customer-property-value" },
-                    { text: "Update Property", link: "/api-reference/customer/update-customer-property-detail" },
-                    { text: "Update Property Value", link: "/api-reference/customer/update-customer-property-value" },
-                    { text: "Delete Property", link: "/api-reference/customer/delete-customer-property" },
+                    {
+                      text: "List Properties",
+                      link: "/api-reference/customer/list-customer-properties",
+                    },
+                    {
+                      text: "Get Property Detail",
+                      link: "/api-reference/customer/get-customer-property-detail",
+                    },
+                    {
+                      text: "List Property Values",
+                      link: "/api-reference/customer/list-customer-property-values",
+                    },
+                    {
+                      text: "Get Property Value",
+                      link: "/api-reference/customer/get-customer-property-value",
+                    },
+                    {
+                      text: "Update Property",
+                      link: "/api-reference/customer/update-customer-property-detail",
+                    },
+                    {
+                      text: "Update Property Value",
+                      link: "/api-reference/customer/update-customer-property-value",
+                    },
+                    {
+                      text: "Delete Property",
+                      link: "/api-reference/customer/delete-customer-property",
+                    },
                   ],
                 },
                 {
@@ -920,10 +1250,22 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Add Request", link: "/api-reference/customer/add-customer-request" },
-                    { text: "List Requests", link: "/api-reference/customer/list-customer-requests" },
-                    { text: "Get Request Detail", link: "/api-reference/customer/get-customer-request-detail" },
-                    { text: "Update Request", link: "/api-reference/customer/update-customer-request-detail" },
-                    { text: "Delete Request", link: "/api-reference/customer/delete-customer-request" },
+                    {
+                      text: "List Requests",
+                      link: "/api-reference/customer/list-customer-requests",
+                    },
+                    {
+                      text: "Get Request Detail",
+                      link: "/api-reference/customer/get-customer-request-detail",
+                    },
+                    {
+                      text: "Update Request",
+                      link: "/api-reference/customer/update-customer-request-detail",
+                    },
+                    {
+                      text: "Delete Request",
+                      link: "/api-reference/customer/delete-customer-request",
+                    },
                   ],
                 },
                 {
@@ -933,8 +1275,14 @@ export default extendConfig(
                     { text: "Overview", link: "/api-reference/teamspace/overview" },
                     { text: "Create Teamspace", link: "/api-reference/teamspace/add-teamspace" },
                     { text: "List Teamspaces", link: "/api-reference/teamspace/list-teamspaces" },
-                    { text: "Get Teamspace", link: "/api-reference/teamspace/get-teamspace-detail" },
-                    { text: "Update Teamspace", link: "/api-reference/teamspace/update-teamspace-detail" },
+                    {
+                      text: "Get Teamspace",
+                      link: "/api-reference/teamspace/get-teamspace-detail",
+                    },
+                    {
+                      text: "Update Teamspace",
+                      link: "/api-reference/teamspace/update-teamspace-detail",
+                    },
                     { text: "Delete Teamspace", link: "/api-reference/teamspace/delete-teamspace" },
                   ],
                 },
@@ -942,18 +1290,33 @@ export default extendConfig(
                   text: "Teamspace Members",
                   collapsed: true,
                   items: [
-                    { text: "List Members", link: "/api-reference/teamspace/list-teamspace-members" },
+                    {
+                      text: "List Members",
+                      link: "/api-reference/teamspace/list-teamspace-members",
+                    },
                     { text: "Add Members", link: "/api-reference/teamspace/add-teamspace-members" },
-                    { text: "Remove Members", link: "/api-reference/teamspace/remove-teamspace-members" },
+                    {
+                      text: "Remove Members",
+                      link: "/api-reference/teamspace/remove-teamspace-members",
+                    },
                   ],
                 },
                 {
                   text: "Teamspace Projects",
                   collapsed: true,
                   items: [
-                    { text: "List Projects", link: "/api-reference/teamspace/list-teamspace-projects" },
-                    { text: "Add Projects", link: "/api-reference/teamspace/add-projects-to-teamspace" },
-                    { text: "Remove Projects", link: "/api-reference/teamspace/remove-projects-from-teamspace" },
+                    {
+                      text: "List Projects",
+                      link: "/api-reference/teamspace/list-teamspace-projects",
+                    },
+                    {
+                      text: "Add Projects",
+                      link: "/api-reference/teamspace/add-projects-to-teamspace",
+                    },
+                    {
+                      text: "Remove Projects",
+                      link: "/api-reference/teamspace/remove-projects-from-teamspace",
+                    },
                   ],
                 },
                 {
@@ -1015,13 +1378,34 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/members/overview" },
-                    { text: "Get Workspace Members", link: "/api-reference/members/get-workspace-members" },
-                    { text: "Get Project Members", link: "/api-reference/members/get-project-members" },
-                    { text: "Create Project Member", link: "/api-reference/members/add-project-member" },
-                    { text: "Get Project Member", link: "/api-reference/members/get-project-member-detail" },
-                    { text: "Update Project Member", link: "/api-reference/members/update-project-member" },
-                    { text: "Delete Project Member", link: "/api-reference/members/delete-project-member" },
-                    { text: "Remove Workspace Members", link: "/api-reference/members/remove-workspace-member" },
+                    {
+                      text: "Get Workspace Members",
+                      link: "/api-reference/members/get-workspace-members",
+                    },
+                    {
+                      text: "Get Project Members",
+                      link: "/api-reference/members/get-project-members",
+                    },
+                    {
+                      text: "Create Project Member",
+                      link: "/api-reference/members/add-project-member",
+                    },
+                    {
+                      text: "Get Project Member",
+                      link: "/api-reference/members/get-project-member-detail",
+                    },
+                    {
+                      text: "Update Project Member",
+                      link: "/api-reference/members/update-project-member",
+                    },
+                    {
+                      text: "Delete Project Member",
+                      link: "/api-reference/members/delete-project-member",
+                    },
+                    {
+                      text: "Remove Workspace Members",
+                      link: "/api-reference/members/remove-workspace-member",
+                    },
                   ],
                 },
                 {
@@ -1037,16 +1421,34 @@ export default extendConfig(
                   collapsed: true,
                   items: [
                     { text: "Overview", link: "/api-reference/idp-group-sync/overview" },
-                    { text: "Get Group Sync Config", link: "/api-reference/idp-group-sync/get-group-sync-config" },
+                    {
+                      text: "Get Group Sync Config",
+                      link: "/api-reference/idp-group-sync/get-group-sync-config",
+                    },
                     {
                       text: "Update Group Sync Config",
                       link: "/api-reference/idp-group-sync/update-group-sync-config",
                     },
-                    { text: "List Project Mappings", link: "/api-reference/idp-group-sync/list-project-mappings" },
-                    { text: "Create Project Mapping", link: "/api-reference/idp-group-sync/create-project-mapping" },
-                    { text: "Get Project Mapping", link: "/api-reference/idp-group-sync/get-project-mapping" },
-                    { text: "Update Project Mapping", link: "/api-reference/idp-group-sync/update-project-mapping" },
-                    { text: "Delete Project Mapping", link: "/api-reference/idp-group-sync/delete-project-mapping" },
+                    {
+                      text: "List Project Mappings",
+                      link: "/api-reference/idp-group-sync/list-project-mappings",
+                    },
+                    {
+                      text: "Create Project Mapping",
+                      link: "/api-reference/idp-group-sync/create-project-mapping",
+                    },
+                    {
+                      text: "Get Project Mapping",
+                      link: "/api-reference/idp-group-sync/get-project-mapping",
+                    },
+                    {
+                      text: "Update Project Mapping",
+                      link: "/api-reference/idp-group-sync/update-project-mapping",
+                    },
+                    {
+                      text: "Delete Project Mapping",
+                      link: "/api-reference/idp-group-sync/delete-project-mapping",
+                    },
                     {
                       text: "List Workspace Mappings",
                       link: "/api-reference/idp-group-sync/list-workspace-mappings",
@@ -1084,7 +1486,10 @@ export default extendConfig(
                   items: [
                     { text: "Building an agent", link: "/dev-tools/agents/building-an-agent" },
                     { text: "Best practices", link: "/dev-tools/agents/best-practices" },
-                    { text: "Signals and content payload", link: "/dev-tools/agents/signals-content-payload" },
+                    {
+                      text: "Signals and content payload",
+                      link: "/dev-tools/agents/signals-content-payload",
+                    },
                   ],
                 },
                 {
@@ -1096,7 +1501,10 @@ export default extendConfig(
                       text: "Create an OAuth application",
                       link: "/dev-tools/build-plane-app/create-oauth-application",
                     },
-                    { text: "Choose token Flow", link: "/dev-tools/build-plane-app/choose-token-flow" },
+                    {
+                      text: "Choose token Flow",
+                      link: "/dev-tools/build-plane-app/choose-token-flow",
+                    },
                     { text: "Handling webhooks", link: "/dev-tools/build-plane-app/webhooks" },
                     { text: "OAuth scopes", link: "/dev-tools/build-plane-app/oauth-scopes" },
                     { text: "SDKs", link: "/dev-tools/build-plane-app/sdks" },
@@ -1144,6 +1552,6 @@ export default extendConfig(
     copyright: 'Copyright © 2024 Plane'
     }*/
       },
-    })
-  )
+    }),
+  ),
 );

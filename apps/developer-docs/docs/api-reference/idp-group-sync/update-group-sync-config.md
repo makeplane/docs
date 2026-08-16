@@ -132,21 +132,24 @@ print(response.json())
 <template #javascript>
 
 ```javascript
-const response = await fetch("https://api.plane.so/api/v1/workspaces/my-workspace/group-sync/config/", {
-  method: "PATCH",
-  headers: {
-    "X-API-Key": "your-api-key",
-    "Content-Type": "application/json",
+const response = await fetch(
+  "https://api.plane.so/api/v1/workspaces/my-workspace/group-sync/config/",
+  {
+    method: "PATCH",
+    headers: {
+      "X-API-Key": "your-api-key",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      is_enabled: true,
+      sync_on_login: true,
+      auto_remove: false,
+      sync_offline: false,
+      group_attribute_key: "groups",
+      default_workspace_role: "member",
+    }),
   },
-  body: JSON.stringify({
-    is_enabled: true,
-    sync_on_login: true,
-    auto_remove: false,
-    sync_offline: false,
-    group_attribute_key: "groups",
-    default_workspace_role: "member",
-  }),
-});
+);
 const data = await response.json();
 ```
 

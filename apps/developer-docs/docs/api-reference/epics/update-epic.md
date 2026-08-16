@@ -187,7 +187,7 @@ const response = await fetch(
       priority: "medium",
       target_date: "2025-09-30",
     }),
-  }
+  },
 );
 const data = await response.json();
 ```

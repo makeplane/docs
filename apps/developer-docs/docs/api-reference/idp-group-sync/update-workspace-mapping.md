@@ -111,7 +111,7 @@ const response = await fetch(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ role: "member" }),
-  }
+  },
 );
 const data = await response.json();
 ```

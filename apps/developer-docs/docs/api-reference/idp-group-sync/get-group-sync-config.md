@@ -133,11 +133,14 @@ print(response.json())
 <template #javascript>
 
 ```javascript
-const response = await fetch("https://api.plane.so/api/v1/workspaces/my-workspace/group-sync/config/", {
-  headers: {
-    "X-API-Key": "your-api-key",
+const response = await fetch(
+  "https://api.plane.so/api/v1/workspaces/my-workspace/group-sync/config/",
+  {
+    headers: {
+      "X-API-Key": "your-api-key",
+    },
   },
-});
+);
 const data = await response.json();
 ```
 

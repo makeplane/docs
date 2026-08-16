@@ -82,12 +82,15 @@ print(response.status_code)
 <template #javascript>
 
 ```javascript
-const response = await fetch("https://api.plane.so/api/v1/workspaces/my-workspace/initiatives/labels/label-uuid/", {
-  method: "DELETE",
-  headers: {
-    "X-API-Key": "your-api-key",
+const response = await fetch(
+  "https://api.plane.so/api/v1/workspaces/my-workspace/initiatives/labels/label-uuid/",
+  {
+    method: "DELETE",
+    headers: {
+      "X-API-Key": "your-api-key",
+    },
   },
-});
+);
 console.log(response.status);
 ```
 

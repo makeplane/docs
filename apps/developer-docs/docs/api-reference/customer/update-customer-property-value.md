@@ -119,7 +119,7 @@ const response = await fetch(
     body: JSON.stringify({
       values: ["Example Name"],
     }),
-  }
+  },
 );
 console.log(response.status);
 ```

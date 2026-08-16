@@ -123,7 +123,7 @@ const response = await fetch(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ role: "admin" }),
-  }
+  },
 );
 const data = await response.json();
 ```

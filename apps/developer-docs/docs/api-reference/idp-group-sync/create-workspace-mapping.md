@@ -100,17 +100,20 @@ print(response.json())
 <template #javascript>
 
 ```javascript
-const response = await fetch("https://api.plane.so/api/v1/workspaces/my-workspace/group-sync/workspace-mappings/", {
-  method: "POST",
-  headers: {
-    "X-API-Key": "your-api-key",
-    "Content-Type": "application/json",
+const response = await fetch(
+  "https://api.plane.so/api/v1/workspaces/my-workspace/group-sync/workspace-mappings/",
+  {
+    method: "POST",
+    headers: {
+      "X-API-Key": "your-api-key",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      idp_group_name: "leadership",
+      role: "admin",
+    }),
   },
-  body: JSON.stringify({
-    idp_group_name: "leadership",
-    role: "admin",
-  }),
-});
+);
 const data = await response.json();
 ```
 

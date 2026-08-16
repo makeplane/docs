@@ -196,27 +196,30 @@ print(response.json())
 <template #javascript>
 
 ```javascript
-const response = await fetch("https://api.plane.so/api/v1/workspaces/my-workspace/initiatives/initiative-uuid/", {
-  method: "PATCH",
-  headers: {
-    "X-API-Key": "your-api-key",
-    "Content-Type": "application/json",
+const response = await fetch(
+  "https://api.plane.so/api/v1/workspaces/my-workspace/initiatives/initiative-uuid/",
+  {
+    method: "PATCH",
+    headers: {
+      "X-API-Key": "your-api-key",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: "Example Name",
+      description: "Example description",
+      description_html: "<p>Example content</p>",
+      description_stripped: "Example description",
+      start_date: "2024-01-01T00:00:00Z",
+      end_date: "2024-01-01T00:00:00Z",
+      logo_props: "example-value",
+      state: "DRAFT",
+      archived_at: "2024-01-01T00:00:00Z",
+      created_by: "550e8400-e29b-41d4-a716-446655440000",
+      updated_by: "550e8400-e29b-41d4-a716-446655440000",
+      lead: "550e8400-e29b-41d4-a716-446655440000",
+    }),
   },
-  body: JSON.stringify({
-    name: "Example Name",
-    description: "Example description",
-    description_html: "<p>Example content</p>",
-    description_stripped: "Example description",
-    start_date: "2024-01-01T00:00:00Z",
-    end_date: "2024-01-01T00:00:00Z",
-    logo_props: "example-value",
-    state: "DRAFT",
-    archived_at: "2024-01-01T00:00:00Z",
-    created_by: "550e8400-e29b-41d4-a716-446655440000",
-    updated_by: "550e8400-e29b-41d4-a716-446655440000",
-    lead: "550e8400-e29b-41d4-a716-446655440000",
-  }),
-});
+);
 const data = await response.json();
 ```
 

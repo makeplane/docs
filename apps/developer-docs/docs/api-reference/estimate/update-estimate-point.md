@@ -145,7 +145,7 @@ const response = await fetch(
       value: "3",
       description: "Small",
     }),
-  }
+  },
 );
 const data = await response.json();
 ```

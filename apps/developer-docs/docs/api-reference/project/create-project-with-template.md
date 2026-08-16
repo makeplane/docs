@@ -132,21 +132,24 @@ print(response.json())
 <template #javascript>
 
 ```javascript
-const response = await fetch("https://api.plane.so/api/v1/workspaces/my-workspace/projects/templates/use/", {
-  method: "POST",
-  headers: {
-    "X-API-Key": "your-api-key",
-    "Content-Type": "application/json",
+const response = await fetch(
+  "https://api.plane.so/api/v1/workspaces/my-workspace/projects/templates/use/",
+  {
+    method: "POST",
+    headers: {
+      "X-API-Key": "your-api-key",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      template_id: "7a2d3972-80a5-4ac5-8bb5-03026671826a",
+      name: "Mobile App Revamp",
+      identifier: "MAR",
+      description: "Project created from the Agile Project Setup template",
+      network: 2,
+      project_lead: "0d8d8869-3ed1-4fb4-b5c4-ff672888f5e2",
+    }),
   },
-  body: JSON.stringify({
-    template_id: "7a2d3972-80a5-4ac5-8bb5-03026671826a",
-    name: "Mobile App Revamp",
-    identifier: "MAR",
-    description: "Project created from the Agile Project Setup template",
-    network: 2,
-    project_lead: "0d8d8869-3ed1-4fb4-b5c4-ff672888f5e2",
-  }),
-});
+);
 const data = await response.json();
 ```
 

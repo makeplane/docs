@@ -127,7 +127,7 @@ const response = await fetch(
       { key: 1, value: "1", description: "Tiny" },
       { key: 2, value: "2", description: "Small" },
     ]),
-  }
+  },
 );
 const data = await response.json();
 ```

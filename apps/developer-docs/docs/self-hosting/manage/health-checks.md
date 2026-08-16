@@ -231,7 +231,11 @@ Success bodies:
 A database failure on `check-db` returns `500`:
 
 ```json
-{ "status": 500, "message": "Internal Server Error", "errors": { "message": "Database is not running" } }
+{
+  "status": 500,
+  "message": "Internal Server Error",
+  "errors": { "message": "Database is not running" }
+}
 ```
 
 ::: warning Non-standard status codes

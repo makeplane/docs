@@ -121,7 +121,7 @@ const response = await fetch(
         priority: "medium",
       },
     }),
-  }
+  },
 );
 const data = await response.json();
 ```

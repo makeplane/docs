@@ -64,15 +64,18 @@ app.get("/oauth/callback", async (req, res) => {
           Authorization: `Basic ${basicAuth}`,
           "Content-Type": "application/x-www-form-urlencoded",
         },
-      }
+      },
     );
 
     const botToken = tokenRes.data.access_token;
 
     // Get workspace details
-    const installRes = await axios.get(`${PLANE_API_URL}/auth/o/app-installation/?id=${appInstallationId}`, {
-      headers: { Authorization: `Bearer ${botToken}` },
-    });
+    const installRes = await axios.get(
+      `${PLANE_API_URL}/auth/o/app-installation/?id=${appInstallationId}`,
+      {
+        headers: { Authorization: `Bearer ${botToken}` },
+      },
+    );
 
     const installation = installRes.data[0];
     const workspaceId = installation.workspace;

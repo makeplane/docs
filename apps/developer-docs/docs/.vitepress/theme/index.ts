@@ -15,7 +15,9 @@ function updateApiPageClass() {
   if (typeof document === "undefined") return;
   const path = window.location.pathname;
   const isApiPage =
-    path.includes("/api-reference/") && !path.endsWith("/introduction") && !path.endsWith("/introduction.html");
+    path.includes("/api-reference/") &&
+    !path.endsWith("/introduction") &&
+    !path.endsWith("/introduction.html");
   document.querySelector(".VPDoc")?.classList.toggle("api-page", isApiPage);
 }
 
@@ -34,7 +36,7 @@ export default createPlaneTheme({
     onMounted(() => nextTick(updateApiPageClass));
     watch(
       () => route.path,
-      () => nextTick(updateApiPageClass)
+      () => nextTick(updateApiPageClass),
     );
   },
 });

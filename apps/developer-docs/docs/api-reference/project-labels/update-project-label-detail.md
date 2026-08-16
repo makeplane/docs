@@ -120,18 +120,21 @@ print(response.json())
 <template #javascript>
 
 ```javascript
-const response = await fetch("https://api.plane.so/api/v1/workspaces/my-workspace/project-labels/label-uuid/", {
-  method: "PATCH",
-  headers: {
-    "X-API-Key": "your-api-key",
-    "Content-Type": "application/json",
+const response = await fetch(
+  "https://api.plane.so/api/v1/workspaces/my-workspace/project-labels/label-uuid/",
+  {
+    method: "PATCH",
+    headers: {
+      "X-API-Key": "your-api-key",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: "Example Name",
+      color: "#00ff00",
+      description: "Example description",
+    }),
   },
-  body: JSON.stringify({
-    name: "Example Name",
-    color: "#00ff00",
-    description: "Example description",
-  }),
-});
+);
 const data = await response.json();
 ```
 

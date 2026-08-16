@@ -218,31 +218,34 @@ print(response.json())
 <template #javascript>
 
 ```javascript
-const response = await fetch("https://api.plane.so/api/v1/workspaces/my-workspace/customers/resource-id-uuid/", {
-  method: "PATCH",
-  headers: {
-    "X-API-Key": "your-api-key",
-    "Content-Type": "application/json",
+const response = await fetch(
+  "https://api.plane.so/api/v1/workspaces/my-workspace/customers/resource-id-uuid/",
+  {
+    method: "PATCH",
+    headers: {
+      "X-API-Key": "your-api-key",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: "Example Name",
+      description: "example-value",
+      description_html: "<p>Example content</p>",
+      description_stripped: "Example description",
+      email: "Example Name",
+      website_url: "https://example.com/resource",
+      logo_props: "example-value",
+      domain: "Example Name",
+      employees: 1,
+      stage: "Example Name",
+      contract_status: "Example Name",
+      revenue: "Example Name",
+      archived_at: "2024-01-01T00:00:00Z",
+      created_by: "550e8400-e29b-41d4-a716-446655440000",
+      updated_by: "550e8400-e29b-41d4-a716-446655440000",
+      logo_asset: "550e8400-e29b-41d4-a716-446655440000",
+    }),
   },
-  body: JSON.stringify({
-    name: "Example Name",
-    description: "example-value",
-    description_html: "<p>Example content</p>",
-    description_stripped: "Example description",
-    email: "Example Name",
-    website_url: "https://example.com/resource",
-    logo_props: "example-value",
-    domain: "Example Name",
-    employees: 1,
-    stage: "Example Name",
-    contract_status: "Example Name",
-    revenue: "Example Name",
-    archived_at: "2024-01-01T00:00:00Z",
-    created_by: "550e8400-e29b-41d4-a716-446655440000",
-    updated_by: "550e8400-e29b-41d4-a716-446655440000",
-    logo_asset: "550e8400-e29b-41d4-a716-446655440000",
-  }),
-});
+);
 const data = await response.json();
 ```
 

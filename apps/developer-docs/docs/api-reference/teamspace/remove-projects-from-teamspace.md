@@ -83,7 +83,7 @@ const response = await fetch(
     headers: {
       "X-API-Key": "your-api-key",
     },
-  }
+  },
 );
 console.log(response.status);
 ```

@@ -108,7 +108,7 @@ const response = await fetch(
     body: JSON.stringify({
       issue: "example-issue",
     }),
-  }
+  },
 );
 const data = await response.json();
 ```

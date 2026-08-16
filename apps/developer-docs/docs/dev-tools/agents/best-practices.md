@@ -37,7 +37,7 @@ import { PlaneClient } from "@makeplane/plane-node-sdk";
 
 async function handleWebhook(
   webhook: AgentRunActivityWebhook,
-  credentials: { bot_token: string; workspace_slug: string }
+  credentials: { bot_token: string; workspace_slug: string },
 ) {
   const planeClient = new PlaneClient({
     baseUrl: process.env.PLANE_API_URL || "https://api.plane.so",
@@ -128,7 +128,7 @@ When a user wants to stop an agent run, Plane sends a `stop` signal with the act
 ```typescript
 async function handleWebhook(
   webhook: AgentRunActivityWebhook,
-  credentials: { bot_token: string; workspace_slug: string }
+  credentials: { bot_token: string; workspace_slug: string },
 ) {
   const planeClient = new PlaneClient({
     baseUrl: process.env.PLANE_API_URL || "https://api.plane.so",
@@ -248,7 +248,7 @@ Graceful error handling is crucial for a good user experience.
 ```typescript
 async function handleWebhook(
   webhook: AgentRunActivityWebhook,
-  credentials: { bot_token: string; workspace_slug: string }
+  credentials: { bot_token: string; workspace_slug: string },
 ) {
   const planeClient = new PlaneClient({
     baseUrl: process.env.PLANE_API_URL || "https://api.plane.so",
@@ -317,7 +317,10 @@ For multi-turn conversations, maintain context from previous activities.
 
 ```typescript
 // Get all activities for context
-const activities = await planeClient.agentRuns.activities.list(credentials.workspace_slug, agentRunId);
+const activities = await planeClient.agentRuns.activities.list(
+  credentials.workspace_slug,
+  agentRunId,
+);
 
 // Build conversation history
 const history = activities.results

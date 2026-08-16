@@ -164,7 +164,7 @@ const response = await fetch(
         priority: "high",
       },
     }),
-  }
+  },
 );
 const data = await response.json();
 ```

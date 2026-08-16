@@ -231,31 +231,34 @@ print(response.json())
 <template #javascript>
 
 ```javascript
-const response = await fetch("https://api.plane.so/api/v1/workspaces/my-workspace/customer-properties/property-uuid/", {
-  method: "PATCH",
-  headers: {
-    "X-API-Key": "your-api-key",
-    "Content-Type": "application/json",
+const response = await fetch(
+  "https://api.plane.so/api/v1/workspaces/my-workspace/customer-properties/property-uuid/",
+  {
+    method: "PATCH",
+    headers: {
+      "X-API-Key": "your-api-key",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      display_name: "Example Name",
+      description: "Example description",
+      logo_props: "example-value",
+      sort_order: 1,
+      property_type: "TEXT",
+      relation_type: "ISSUE",
+      is_required: true,
+      default_value: ["Example Name"],
+      settings: "example-value",
+      is_active: true,
+      is_multi: true,
+      validation_rules: "example-value",
+      external_source: "github",
+      external_id: "550e8400-e29b-41d4-a716-446655440000",
+      created_by: "550e8400-e29b-41d4-a716-446655440000",
+      updated_by: "550e8400-e29b-41d4-a716-446655440000",
+    }),
   },
-  body: JSON.stringify({
-    display_name: "Example Name",
-    description: "Example description",
-    logo_props: "example-value",
-    sort_order: 1,
-    property_type: "TEXT",
-    relation_type: "ISSUE",
-    is_required: true,
-    default_value: ["Example Name"],
-    settings: "example-value",
-    is_active: true,
-    is_multi: true,
-    validation_rules: "example-value",
-    external_source: "github",
-    external_id: "550e8400-e29b-41d4-a716-446655440000",
-    created_by: "550e8400-e29b-41d4-a716-446655440000",
-    updated_by: "550e8400-e29b-41d4-a716-446655440000",
-  }),
-});
+);
 const data = await response.json();
 ```
 

@@ -121,7 +121,7 @@ const response = await fetch(
     body: JSON.stringify({
       is_uploaded: true,
     }),
-  }
+  },
 );
 console.log(response.status);
 ```

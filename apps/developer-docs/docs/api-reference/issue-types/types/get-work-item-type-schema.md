@@ -124,7 +124,7 @@ const response = await fetch(
     headers: {
       "X-API-Key": "your-api-key",
     },
-  }
+  },
 );
 const data = await response.json();
 ```

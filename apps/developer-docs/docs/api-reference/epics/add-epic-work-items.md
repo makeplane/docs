@@ -119,9 +119,12 @@ const response = await fetch(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      work_item_ids: ["550e8400-e29b-41d4-a716-446655440010", "550e8400-e29b-41d4-a716-446655440011"],
+      work_item_ids: [
+        "550e8400-e29b-41d4-a716-446655440010",
+        "550e8400-e29b-41d4-a716-446655440011",
+      ],
     }),
-  }
+  },
 );
 const data = await response.json();
 ```

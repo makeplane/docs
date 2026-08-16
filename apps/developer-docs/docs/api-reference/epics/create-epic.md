@@ -187,7 +187,7 @@ const response = await fetch(
       start_date: "2025-03-01",
       target_date: "2025-06-30",
     }),
-  }
+  },
 );
 const data = await response.json();
 ```

@@ -124,7 +124,7 @@ const response = await fetch(
       url: "https://example.com/resource",
       title: "Example Name",
     }),
-  }
+  },
 );
 const data = await response.json();
 ```

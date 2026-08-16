@@ -133,7 +133,7 @@ const response = await fetch(
     body: JSON.stringify({
       value: "updated text value",
     }),
-  }
+  },
 );
 const data = await response.json();
 ```
