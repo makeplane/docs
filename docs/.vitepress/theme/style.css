@@ -222,17 +222,24 @@ body {
 }
 
 /* Inline doc links (lists, paragraphs, etc.) — match primary button brand per theme */
-.vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor) {
+.vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):not(.copy-page__item) {
   color: var(--vp-c-brand-1);
 }
 
-.vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover {
+.vp-doc
+  a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):not(.copy-page__item):hover {
   color: #0078b8;
 }
 
-.dark .vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover,
-[data-theme="dark"] .vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover,
-html.dark .vp-doc a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):hover {
+.dark
+  .vp-doc
+  a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):not(.copy-page__item):hover,
+[data-theme="dark"]
+  .vp-doc
+  a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):not(.copy-page__item):hover,
+html.dark
+  .vp-doc
+  a:not(.card-link):not(.home-doc-actions__btn):not(.header-anchor):not(.copy-page__item):hover {
   color: #3aa5d4;
 }
 
@@ -1180,23 +1187,32 @@ html.dark .docs-layout,
 
 /* ================================================
    COPY PAGE MENU — placement of components/CopyPageMenu.vue
-   Rendered in the `doc-before` slot (Layout.vue), i.e. as the first child of
-   `.VPDoc .content-container`, right above <main class="main">. The H1 lives inside the
-   markdown output, so the control is anchored to the content column and the H1
-   reserves room for it. Visual styles are scoped in the component.
+   The control is server-rendered in the `doc-before` slot (first child of
+   `.VPDoc .content-container`, above <main>) and, once mounted, teleported into a
+   `.copy-page-slot` host inserted right after the page H1 inside `.vp-doc`. Both
+   positions are styled here; visual styles are scoped in the component.
    ================================================ */
 .docs-layout .VPDoc .content-container {
-  position: relative; /* anchor for the absolutely positioned control */
+  position: relative; /* anchor for the pre-teleport position */
 }
 
-/* < 768px: in-flow, right-aligned block above the title */
-.docs-layout .VPDoc .content-container > .copy-page {
-  margin: 0 0 16px;
-}
-
-@media (min-width: 768px) {
+/* < 768px: below the title, left-aligned, in flow */
+@media (max-width: 767px) {
+  /* Pre-teleport position would sit above the title — keep it hidden to avoid a jump. */
   .docs-layout .VPDoc .content-container > .copy-page {
-    position: absolute;
+    display: none;
+  }
+
+  .docs-layout .vp-doc > div > .copy-page-slot {
+    margin: 14px 0 16px;
+  }
+}
+
+/* ≥ 768px: on the title row, flush with the right edge of the text column */
+@media (min-width: 768px) {
+  .docs-layout .VPDoc .content-container > .copy-page,
+  .docs-layout .vp-doc > div > .copy-page-slot > .copy-page {
+    position: absolute; /* relative to .content-container / .vp-doc — same top edge */
     top: 2px; /* (h1 line box ~38px − 34px button) / 2 */
     right: 0;
     margin: 0;
@@ -1204,7 +1220,8 @@ html.dark .docs-layout,
   }
 
   /* Reserve the control's footprint on the H1 only when it actually rendered
-     (sibling selector, so `copyPage: false` pages keep the full width). */
+     (so `copyPage: false` pages keep the full width). */
+  .docs-layout .vp-doc > div > h1:has(+ .copy-page-slot > .copy-page),
   .docs-layout .VPDoc .content-container > .copy-page ~ .main .vp-doc > div > h1 {
     padding-right: 156px; /* ≈ 132px control + 24px gap — re-measure if the label changes */
   }
