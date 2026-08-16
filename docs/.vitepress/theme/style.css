@@ -1048,13 +1048,10 @@ html.dark .docs-layout,
   }
 
   .docs-layout .VPDoc.has-aside .content {
-    /* Theme default adds large top padding here; remove it so only `.main` controls vertical offset */
-    padding: 0 32px 128px !important;
-  }
-
-  .docs-layout .VPDoc.has-aside .content .main {
-    /* Slightly lower than both side columns */
-    padding-top: 32px !important;
+    /* Theme default adds large top padding here; use 32px so the body copy sits slightly
+       lower than both side columns. Kept on `.content` (not `.main`) so the `doc-before`
+       slot — which hosts the "Copy page" control — shares the H1's vertical origin. */
+    padding: 32px 32px 128px !important;
   }
 
   /* Right "On this page" rail: the theme’s `.aside-container` is 224px, so the flex
@@ -1178,6 +1175,38 @@ html.dark .docs-layout,
     width: 100%;
     margin: 0;
     box-sizing: border-box;
+  }
+}
+
+/* ================================================
+   COPY PAGE MENU — placement of components/CopyPageMenu.vue
+   Rendered in the `doc-before` slot (Layout.vue), i.e. as the first child of
+   `.VPDoc .content-container`, right above <main class="main">. The H1 lives inside the
+   markdown output, so the control is anchored to the content column and the H1
+   reserves room for it. Visual styles are scoped in the component.
+   ================================================ */
+.docs-layout .VPDoc .content-container {
+  position: relative; /* anchor for the absolutely positioned control */
+}
+
+/* < 768px: in-flow, right-aligned block above the title */
+.docs-layout .VPDoc .content-container > .copy-page {
+  margin: 0 0 16px;
+}
+
+@media (min-width: 768px) {
+  .docs-layout .VPDoc .content-container > .copy-page {
+    position: absolute;
+    top: 2px; /* (h1 line box ~38px − 34px button) / 2 */
+    right: 0;
+    margin: 0;
+    z-index: 10; /* below --vp-z-index-local-nav (20) and the image lightbox */
+  }
+
+  /* Reserve the control's footprint on the H1 only when it actually rendered
+     (sibling selector, so `copyPage: false` pages keep the full width). */
+  .docs-layout .VPDoc .content-container > .copy-page ~ .main .vp-doc > div > h1 {
+    padding-right: 156px; /* ≈ 132px control + 24px gap — re-measure if the label changes */
   }
 }
 
