@@ -2,6 +2,7 @@
 layout: doc
 title: Plane Docs
 description: Everything you need to learn Plane, manage projects, and build powerful workflows.
+aside: false
 prev: false
 next: false
 copyPage: false

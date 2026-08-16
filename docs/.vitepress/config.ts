@@ -31,7 +31,7 @@ const posthogHead: HeadConfig[] = posthogKey
         "script",
         {},
         `!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-        posthog.init('${posthogKey}', {api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only'});`,
+        posthog.init('${posthogKey}', {api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only', opt_out_capturing_by_default: true, persistence: 'memory'});`,
       ],
     ]
   : [];
@@ -141,7 +141,7 @@ const config = defineConfig({
         "data-domain": "docs.plane.so",
       },
     ],
-    // Google Analytics
+    // Google Analytics with Consent Mode v2 (granted via the cookie banner)
     [
       "script",
       {
@@ -154,6 +154,12 @@ const config = defineConfig({
       {},
       `window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
       gtag('js', new Date());
       gtag('config', 'G-G578SD4VZD');`,
     ],
@@ -166,6 +172,7 @@ const config = defineConfig({
         async: "true",
       },
     ],
+    ["meta", { name: "theme-color", content: "#006399" }],
     [
       "meta",
       {
@@ -223,33 +230,6 @@ const config = defineConfig({
         content: "index, follow",
       },
     ],
-    /**
-     * SSG inlines OSSHeader with data-theme from server isDark. Tailwind `dark:…`
-     * keys off [data-theme*="dark"] on that wrapper, so the bar can stay dark
-     * until Vue hydrates. The built-in "check-dark-mode" also only add()s
-     * html.dark. Run in setTimeout(0) so it executes after that script, then
-     * clear stale data-theme as soon as the bar exists.
-     */
-    [
-      "script",
-      {},
-      `!function(){setTimeout(function(){
-var k="vitepress-theme-appearance";
-var p=localStorage.getItem(k)||"dark";
-var m=matchMedia("(prefers-color-scheme: dark)").matches;
-var d=!p||p==="auto"?m:p==="dark";
-document.documentElement.classList.toggle("dark",d);
-function bar(n){
-var h=document.querySelector(".docs-layout header");
-if(h&&h.parentElement){
-var w=h.parentElement;
-if(d)w.setAttribute("data-theme","dark");else w.removeAttribute("data-theme");
-return;
-}
-if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n+1)});
-}bar(0);
-},0);}();`,
-    ],
   ],
 
   themeConfig: {
@@ -263,6 +243,9 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
     outline: {
       level: [2, 3],
       label: "On this page",
+    },
+    editLink: {
+      pattern: "https://github.com/makeplane/docs/edit/master/:path",
     },
 
     search: searchConfig,
@@ -284,9 +267,16 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
 
     nav: [
       {
+        text: "Developer Docs",
+        link: "https://developers.plane.so",
+        noIcon: true,
+        planeButton: "secondary",
+      },
+      {
         text: "Sign in",
         link: "https://app.plane.so/sign-in",
         noIcon: true,
+        planeButton: "primary",
       },
     ],
 
@@ -795,8 +785,6 @@ if(n<200&&document.readyState==="loading")requestAnimationFrame(function(){bar(n
   sitemap: {
     hostname: "https://docs.plane.so",
   },
-
-  appearance: "dark",
 
   markdown: {
     theme: {

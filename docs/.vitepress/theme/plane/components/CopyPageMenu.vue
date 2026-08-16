@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <script setup lang="ts">
 /**
  * "Copy page" split button + menu.
@@ -9,7 +7,7 @@
  * the title on wide screens, directly below it on small screens.
  *
  * The raw Markdown for every page is served next to the HTML at `<path>.md`
- * (config.ts `buildEnd()` copies the source files into dist/), so this component
+ * (each site's config `buildEnd()` copies the source files into dist/), so this component
  * only needs the current page's source path to copy / view / hand off to an AI tool.
  */
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
@@ -330,7 +328,7 @@ watch(
 </template>
 
 <style scoped>
-/* Placement inside the doc column lives in theme/style.css ("COPY PAGE MENU"). */
+/* Placement inside the doc column lives in ../css/layout.css ("Copy page menu"). */
 .copy-page {
   position: relative;
   display: flex;

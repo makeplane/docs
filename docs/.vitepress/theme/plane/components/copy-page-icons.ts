@@ -1,5 +1,3 @@
-/** @format */
-
 /**
  * Inline SVG glyphs for the "Copy page" menu (rendered via v-html, sized by CSS).
  * All paths use fill="currentColor" so they follow the surrounding text color.

@@ -1,10 +1,25 @@
-allowBuilds:
-  esbuild: true
-  vue-demi: true
-ignoredBuiltDependencies:
-  - esbuild
+# pnpm workspace configuration.
+# Holds settings that previously lived in package.json's "pnpm" field —
+# pnpm reads overrides / peerDependencyRules / auditConfig from here.
+# Keep the toolchain pins in sync with makeplane/developer-docs.
+
 overrides:
-  esbuild: ^0.25.0
-  vite: 6.4.3
-  postcss: ^8.5.10
-  js-yaml@<3.15.0: 3.15.0
+  # Toolchain pins for VitePress 2 alpha compatibility.
+  rollup: 4.59.0
+  lodash-es: 4.18.1
+  esbuild: 0.25.0
+  # Security overrides — force patched versions of vulnerable transitive deps
+  # (see `pnpm audit`). Bump these as new advisories are published.
+  vite: 6.4.3 # GHSA-fx2h-pf6j-xcff (high), GHSA-v6wh-96g9-6wx3
+  postcss: 8.5.15 # GHSA-qx2v-qp2m-jg93 (via vite)
+  js-yaml: 3.15.0 # GHSA-h67p-54hq-rp68 quadratic-DoS via merge-key aliases (via gray-matter; stays in its ^3.13.1 range)
+
+peerDependencyRules:
+  allowedVersions:
+    vitepress: "2"
+
+# Build scripts left disabled (matching makeplane/developer-docs — neither was
+# ever approved, and the site builds fine without them). Flip to true to allow.
+allowBuilds:
+  esbuild: false
+  vue-demi: false
