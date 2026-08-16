@@ -1,24 +1,21 @@
 # Dependencies
-/node_modules
+node_modules/
+.pnpm-store/
 
-# Build output
-/build
-.docusaurus
+# Build output and caches (any app)
+**/.vitepress/dist/
+**/.vitepress/cache/
+**/.vitepress/.temp/
+*.timestamp-*.mjs
+.turbo/
+.vercel/
 
-# VitePress
-.vitepress/dist
-.vitepress/cache
-docs/.vitepress/dist
-docs/.vitepress/cache
-
-# Misc
-.DS_Store
+# Local env files (.env.example templates stay tracked)
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# OS / editor / local tooling
+.DS_Store
+*.log
+.claude/settings.local.json

@@ -1,7 +1,27 @@
-# pnpm workspace configuration.
-# Holds settings that previously lived in package.json's "pnpm" field —
-# pnpm reads overrides / peerDependencyRules / auditConfig from here.
-# Keep the toolchain pins in sync with makeplane/developer-docs.
+# pnpm workspace configuration (also holds the settings that used to live in
+# package.json's "pnpm" field — pnpm reads overrides / peerDependencyRules /
+# allowBuilds from here).
+
+packages:
+  - apps/*
+  - packages/*
+
+# Single source of truth for dependency versions shared by the apps and the theme
+# package. Reference them with "catalog:" so every workspace package resolves the
+# exact same copy (a second copy of vue / vitepress / @voidzero-dev/vitepress-theme
+# would break the theme).
+catalog:
+  "@types/node": ^25.9.5
+  "@voidzero-dev/vitepress-theme": ^4.8.4
+  lucide-vue-next: ^0.577.0
+  medium-zoom: ^1.1.0
+  mermaid: ^11.15.0
+  typescript: ^6.0.3
+  vitepress: 2.0.0-alpha.16
+  vitepress-plugin-llms: ^1.13.1
+  vitepress-plugin-mermaid: ^2.0.17
+  vitepress-plugin-tabs: ^0.8.0
+  vue: ^3.5.41
 
 overrides:
   # Toolchain pins for VitePress 2 alpha compatibility.
@@ -10,16 +30,18 @@ overrides:
   esbuild: 0.25.0
   # Security overrides — force patched versions of vulnerable transitive deps
   # (see `pnpm audit`). Bump these as new advisories are published.
-  vite: 6.4.3 # GHSA-fx2h-pf6j-xcff (high), GHSA-v6wh-96g9-6wx3
+  dompurify: 3.4.11 # was 3.4.0 — resolves 8 DOMPurify advisories (via mermaid)
+  vite: 6.4.3 # was 6.4.2 — GHSA-fx2h-pf6j-xcff (high), GHSA-v6wh-96g9-6wx3
   postcss: 8.5.15 # GHSA-qx2v-qp2m-jg93 (via vite)
+  uuid: 11.1.1 # GHSA-w5hq-g745-h8pq (via mermaid; stays in mermaid's ^11 range)
   js-yaml: 3.15.0 # GHSA-h67p-54hq-rp68 quadratic-DoS via merge-key aliases (via gray-matter; stays in its ^3.13.1 range)
 
 peerDependencyRules:
   allowedVersions:
     vitepress: "2"
 
-# Build scripts left disabled (matching makeplane/developer-docs — neither was
-# ever approved, and the site builds fine without them). Flip to true to allow.
+# Build scripts left disabled (neither was ever approved, and both sites build
+# fine without them). Flip to true to allow.
 allowBuilds:
   esbuild: false
   vue-demi: false

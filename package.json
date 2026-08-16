@@ -1,0 +1,32 @@
+{
+  "name": "plane-docs",
+  "private": true,
+  "description": "Plane documentation monorepo: docs.plane.so (apps/docs), developers.plane.so (apps/developer-docs) and the shared VitePress theme (packages/theme).",
+  "homepage": "https://plane.so",
+  "author": "Plane",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makeplane/docs.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:docs": "turbo run dev --filter=@plane/docs",
+    "dev:developer-docs": "turbo run dev --filter=@plane/developer-docs",
+    "build": "turbo run build",
+    "preview": "turbo run preview",
+    "check": "pnpm check:format && pnpm check:types",
+    "check:types": "turbo run check:types",
+    "check:format": "oxfmt --check .",
+    "fix:format": "oxfmt --write ."
+  },
+  "devDependencies": {
+    "oxfmt": "^0.36.0",
+    "turbo": "^2.10.10",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@11.8.0+sha512.c1f5e7c4cb241c8f174b743851d82f42b802324afc8b0f116b96adb15aa06664948dde36960a3ba1079ba5b4b29dd0140135b94b5b5f5263592249d68e555f26"
+}

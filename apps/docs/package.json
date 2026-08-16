@@ -1,40 +1,34 @@
 {
-  "name": "docs",
+  "name": "@plane/docs",
   "version": "3.0.0",
   "private": true,
-  "homepage": "https://plane.so",
+  "description": "Plane product documentation — docs.plane.so",
+  "homepage": "https://docs.plane.so",
   "license": "MIT",
   "author": "Plane",
   "repository": {
     "type": "git",
-    "url": "https://github.com/makeplane/docs.git"
+    "url": "https://github.com/makeplane/docs.git",
+    "directory": "apps/docs"
   },
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev docs",
+    "dev": "vitepress dev docs --port 5173",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs",
-    "fix:format": "oxfmt --write .",
-    "check:format": "oxfmt --check .",
-    "check:types": "tsc --noEmit -p docs/.vitepress/tsconfig.json",
-    "check:theme-sync": "node docs/.vitepress/theme/plane/scripts/check-theme-sync.mjs --sibling makeplane/developer-docs"
+    "preview": "vitepress preview docs --port 4173",
+    "check:types": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "lucide-vue-next": "^0.577.0",
-    "medium-zoom": "^1.1.0"
+    "lucide-vue-next": "catalog:",
+    "medium-zoom": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "^25.9.5",
-    "@voidzero-dev/vitepress-theme": "^4.8.4",
-    "oxfmt": "^0.36.0",
-    "typescript": "^6.0.3",
-    "vitepress": "2.0.0-alpha.16",
-    "vitepress-plugin-llms": "^1.13.1",
-    "vitepress-plugin-tabs": "^0.8.0",
-    "vue": "^3.5.41"
-  },
-  "engines": {
-    "node": ">=24.0.0"
-  },
-  "packageManager": "pnpm@11.8.0+sha512.c1f5e7c4cb241c8f174b743851d82f42b802324afc8b0f116b96adb15aa06664948dde36960a3ba1079ba5b4b29dd0140135b94b5b5f5263592249d68e555f26"
+    "@types/node": "catalog:",
+    "@voidzero-dev/vitepress-theme": "catalog:",
+    "typescript": "catalog:",
+    "vitepress": "catalog:",
+    "vitepress-plugin-llms": "catalog:",
+    "vitepress-plugin-tabs": "catalog:",
+    "vue": "catalog:"
+  }
 }
