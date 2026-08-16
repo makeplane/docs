@@ -41,6 +41,11 @@ declare module "@vp-default/VPSocialLinks.vue" {
   export default component;
 }
 
+declare module "@vp-default/VPBadge.vue" {
+  const component: VueModule;
+  export default component;
+}
+
 declare module "@vp-default/VPBackdrop.vue" {
   const component: VueModule;
   export default component;

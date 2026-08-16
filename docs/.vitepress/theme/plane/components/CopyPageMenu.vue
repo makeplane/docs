@@ -7,9 +7,8 @@
  * the title on wide screens, directly below it on small screens.
  *
  * The raw Markdown for every page is served next to the HTML at `<path>.md`
- * (config.mts `buildEnd()` mirrors the source files into dist/ with version tokens
- * resolved), so this component only needs the current page's source path to copy /
- * view / hand off to an AI tool.
+ * (each site's config `buildEnd()` copies the source files into dist/), so this component
+ * only needs the current page's source path to copy / view / hand off to an AI tool.
  */
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { onContentUpdated, useData, useRoute, withBase } from "vitepress";
@@ -31,13 +30,15 @@ const origin = ref("");
 let resetTimer: number | undefined;
 
 /** Hidden on the 404 page and on pages that opt out with `copyPage: false`. */
-const enabled = computed(() => !page.value.isNotFound && !!page.value.filePath && frontmatter.value.copyPage !== false);
+const enabled = computed(
+  () => !page.value.isNotFound && !!page.value.filePath && frontmatter.value.copyPage !== false,
+);
 
 /** Source path of the current page, e.g. "/ai/mcp-server.md" or "/index.md". */
 const mdPath = computed(() => withBase("/" + page.value.filePath));
 
 const prompt = computed(() =>
-  encodeURIComponent(`Read ${origin.value}${mdPath.value} so I can ask questions about it.`)
+  encodeURIComponent(`Read ${origin.value}${mdPath.value} so I can ask questions about it.`),
 );
 
 const links = computed(() => [
@@ -62,7 +63,10 @@ const links = computed(() => [
 ]);
 
 const label = computed(
-  () => ({ idle: "Copy page", busy: "Copy page", copied: "Copied", error: "Copy failed" })[status.value]
+  () =>
+    ({ idle: "Copy page", busy: "Copy page", copied: "Copied", error: "Copy failed" })[
+      status.value
+    ],
 );
 
 /* ---------------------------------------------------------------------------
@@ -94,7 +98,7 @@ function loadMarkdown(): MarkdownEntry {
       },
       () => {
         if (cache === entry) cache = null;
-      }
+      },
     );
     cache = entry;
   }
@@ -143,7 +147,7 @@ function setStatus(next: Status): void {
       () => {
         status.value = "idle";
       },
-      next === "error" ? 2500 : 2000
+      next === "error" ? 2500 : 2000,
     );
   }
 }
@@ -259,7 +263,7 @@ watch(
     // The old page (and our host inside it) is about to unmount; fall back to the
     // in-place position until the new page's content has mounted.
     teleportTarget.value = null;
-  }
+  },
 );
 </script>
 
@@ -324,7 +328,7 @@ watch(
 </template>
 
 <style scoped>
-/* Placement inside the doc column lives in theme/style.css ("COPY PAGE MENU"). */
+/* Placement inside the doc column lives in ../css/layout.css ("Copy page menu"). */
 .copy-page {
   position: relative;
   display: flex;

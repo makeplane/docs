@@ -15,8 +15,7 @@
     "lib": ["ESNext", "DOM"],
     "types": ["vitepress/client", "node", "vue"],
     "paths": {
-      "@voidzero-dev/vitepress-theme": ["./types/voidzero-theme.ts"],
-      "@voidzero-dev/vitepress-theme/src/vitest": ["./types/vitest-theme.ts"],
+      "@voidzero-dev/vitepress-theme": ["./theme/plane/types/voidzero-theme.ts"],
       "@voidzero-dev/vitepress-theme/src/components/vitepress-default/Layout.vue": [
         "../../node_modules/@voidzero-dev/vitepress-theme/src/components/vitepress-default/Layout.vue"
       ],
@@ -35,12 +34,5 @@
       "@components/*": ["../../node_modules/@voidzero-dev/vitepress-theme/src/components/*"]
     }
   },
-  "include": [
-    "./config.mts",
-    "./theme/**/*.ts",
-    "./theme/**/*.vue",
-    "./env.d.ts",
-    "./types/**/*.ts",
-    "./types/**/*.d.ts"
-  ]
+  "include": ["./config.mts", "./env.d.ts", "./theme/**/*.ts", "./theme/**/*.vue", "./theme/**/*.d.ts"]
 }

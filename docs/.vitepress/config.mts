@@ -6,7 +6,6 @@ import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
 import llmstxt from "vitepress-plugin-llms";
 import { readFileSync, readdirSync, statSync, mkdirSync, copyFileSync } from "node:fs";
 import { resolve, join, relative, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
 
 function loadEnvVar(key: string): string | undefined {
   // process.env takes precedence (CI/hosting platforms set vars here)
@@ -92,13 +91,6 @@ export default extendConfig(
             ],
           }),
         ],
-        resolve: {
-          alias: {
-            "@vp-default/VPNavBarSearchButton.vue": fileURLToPath(
-              new URL("./theme/components/PlaneSearchButton.vue", import.meta.url)
-            ),
-          },
-        },
         optimizeDeps: {
           include: [
             "lucide-vue-next",
@@ -170,13 +162,6 @@ export default extendConfig(
           },
         ],
 
-        // Sync OSS header data-theme with html.dark after hydration
-        [
-          "script",
-          {},
-          `(function(){function s(){var d=document.documentElement.classList.contains("dark");document.querySelectorAll("header.wrapper").forEach(function(h){d?h.setAttribute("data-theme","dark"):h.removeAttribute("data-theme")})}s();new MutationObserver(s).observe(document.documentElement,{attributes:true,attributeFilter:["class"]})})();`,
-        ],
-
         // Google Analytics with Consent Mode v2
         ["script", { async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-JF828SKW90" }],
         [
@@ -209,7 +194,7 @@ export default extendConfig(
               "plane, api, self-hosting, project management, developer documentation, kubernetes, docker, rest api, webhooks, plane api",
           },
         ],
-        ["meta", { name: "theme-color", content: "#3b82f6" }],
+        ["meta", { name: "theme-color", content: "#006399" }],
 
         // Open Graph meta tags
         ["meta", { property: "og:type", content: "website" }],
@@ -277,8 +262,8 @@ export default extendConfig(
           { text: "Self-hosting", link: "/self-hosting/overview" },
           { text: "API Reference", link: "/api-reference/introduction" },
           { text: "Build and extend", link: "/dev-tools/build-plane-app/overview" },
-          { text: "Plane Docs", link: "https://docs.plane.so", noIcon: true },
-          { text: "Sign in", link: "https://app.plane.so/sign-in" },
+          { text: "Plane Docs", link: "https://docs.plane.so", noIcon: true, planeButton: "secondary" },
+          { text: "Sign in", link: "https://app.plane.so/sign-in", noIcon: true, planeButton: "primary" },
         ],
 
         sidebar: {
@@ -1149,7 +1134,7 @@ export default extendConfig(
         search: searchConfig,
 
         editLink: {
-          pattern: "https://github.com/makeplane/developer-docs/edit/main/:path",
+          pattern: "https://github.com/makeplane/developer-docs/edit/master/:path",
         },
 
         /*footer: {

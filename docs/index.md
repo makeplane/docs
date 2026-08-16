@@ -4,6 +4,8 @@ title: Plane Developer Documentation - API Reference & Self-Hosting Guides
 description: Build integrations with Plane's REST API and deploy on your infrastructure. Complete guides for self-hosting with Docker, Kubernetes, webhooks, and OAuth apps.
 keywords: plane developer docs, plane api, self-hosting plane, kubernetes deployment, docker compose, plane webhooks, plane oauth, project management api
 aside: false
+prev: false
+next: false
 copyPage: false
 ---
 

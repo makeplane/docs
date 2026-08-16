@@ -18,6 +18,7 @@ pnpm preview              # Preview production build
 pnpm check:format         # Check Prettier formatting
 pnpm fix:format           # Auto-fix Prettier formatting
 pnpm check:types          # Type-check the VitePress config and theme
+pnpm check:theme-sync     # Verify docs/.vitepress/theme/plane/ is identical to makeplane/docs (THEME_SIBLING_PATH=../docs for a local checkout)
 ```
 
 **CI checks on PRs** (to `master`): Prettier formatting + VitePress build must pass.
@@ -26,7 +27,8 @@ pnpm check:types          # Type-check the VitePress config and theme
 
 - **`docs/`** — All documentation content and VitePress config
   - **`docs/.vitepress/config.mts`** — Main VitePress config: navigation, sidebar structure, SEO, Algolia search, analytics. This is a large file that defines the entire site structure.
-  - **`docs/.vitepress/theme/`** — Custom theme (extends `@voidzero-dev/vitepress-theme` via `extendConfig`) with Vue components and global styles
+  - **`docs/.vitepress/theme/`** — `index.ts` calls `createPlaneTheme({...})` from `./plane` (this site's branding + API components); `site.css` holds site-only CSS
+  - **`docs/.vitepress/theme/plane/`** — **shared Plane docs theme**, byte-identical with `makeplane/docs` (tokens, fonts, header, layout, Card/CardGroup/Tags, Copy page menu, cookie consent). Edit in one repo, copy the folder to the sibling, run `pnpm check:theme-sync` in both; add new files to `plane/manifest.json`. Header buttons come from `themeConfig.nav` items flagged `planeButton: "primary" | "secondary"`.
   - **`docs/api-reference/`** — REST API endpoint docs (180+ endpoints across 30+ resource categories)
   - **`docs/self-hosting/`** — Deployment and configuration guides
   - **`docs/dev-tools/`** — Webhooks, OAuth apps, agents, MCP server docs
@@ -69,15 +71,15 @@ docs/
 
 ## Custom Vue Components
 
-Used directly in markdown files — defined in `docs/.vitepress/theme/components/`:
+Used directly in markdown files — API components in `docs/.vitepress/theme/components/`, shared ones in `docs/.vitepress/theme/plane/components/`:
 
-| Component              | Usage                                                             |
-| ---------------------- | ----------------------------------------------------------------- |
-| `<ApiParam>`           | API parameter with name, type, required badge, expandable details |
-| `<CodePanel>`          | Multi-language code tabs (cURL, Python, JavaScript)               |
-| `<ResponsePanel>`      | Syntax-highlighted API response JSON                              |
-| `<Card>`               | Feature card with icon, title, description                        |
-| `<CardGroup cols="N">` | Responsive grid layout (2, 3, or 4 columns)                       |
+| Component              | Usage                                                                                                |
+| ---------------------- | ---------------------------------------------------------------------------------------------------- |
+| `<ApiParam>`           | API parameter with name, type, required badge, expandable details                                    |
+| `<CodePanel>`          | Multi-language code tabs (cURL, Python, JavaScript)                                                  |
+| `<ResponsePanel>`      | Syntax-highlighted API response JSON                                                                 |
+| `<Card>`               | Card: `title`, `icon` (brand key or Lucide), `href`/`link`, `description` or slot, `cta`/`link-text` |
+| `<CardGroup cols="N">` | Responsive grid layout (2, 3, or 4 columns)                                                          |
 
 ## API Documentation Pattern
 

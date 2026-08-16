@@ -5,6 +5,7 @@ import { normalizeLink } from "@vp-support/utils";
 import { ref, computed, onMounted, onUnmounted, watch, nextTick, inject } from "vue";
 import { getSearchProvider } from "@vp-support/search-config";
 import { themeContextKey } from "@voidzero-dev/vitepress-theme";
+import { planeOptionsKey } from "../options";
 import VPNavBarSearch from "@vp-default/VPNavBarSearch.vue";
 import VPNavBarMenuLink from "@vp-default/VPNavBarMenuLink.vue";
 import VPNavBarMenuGroup from "@vp-default/VPNavBarMenuGroup.vue";
@@ -15,34 +16,43 @@ import VPSocialLinks from "@vp-default/VPSocialLinks.vue";
 import { useLangs } from "@vp-composables/langs";
 
 const SIGN_IN_RE = /sign-in/i;
-const PLANE_DOCS_RE = /docs\.plane\.so/i;
 const EXTERNAL_URL_RE = /^(?:[a-z]+:|\/\/)/i;
 
 const { theme, frontmatter, isDark } = useData();
 const nav = computed(() => theme.value.nav ?? []);
 
-const isSignInItem = (item: DefaultTheme.NavItem) =>
-  "link" in item && typeof item.link === "string" && SIGN_IN_RE.test(item.link);
+/**
+ * Nav items flagged with `planeButton: "primary" | "secondary"` render as header
+ * buttons (Sign in / cross-site link) instead of nav links. A `/sign-in` link is
+ * treated as the primary button even without the flag.
+ */
+const isLinkItem = (item: DefaultTheme.NavItem): item is DefaultTheme.NavItemWithLink =>
+  "link" in item && typeof item.link === "string";
 
-const isPlaneDocsItem = (item: DefaultTheme.NavItem) =>
-  "link" in item && typeof item.link === "string" && (PLANE_DOCS_RE.test(item.link) || item.text === "Plane Docs");
+const isPrimaryButtonItem = (item: DefaultTheme.NavItem) =>
+  isLinkItem(item) && (item.planeButton === "primary" || SIGN_IN_RE.test(item.link));
 
-const isNavButtonItem = (item: DefaultTheme.NavItem) => isSignInItem(item) || isPlaneDocsItem(item);
+const isSecondaryButtonItem = (item: DefaultTheme.NavItem) =>
+  isLinkItem(item) && item.planeButton === "secondary";
+
+const isNavButtonItem = (item: DefaultTheme.NavItem) =>
+  isPrimaryButtonItem(item) || isSecondaryButtonItem(item);
 
 const mainNav = computed(() => nav.value.filter((item) => !isNavButtonItem(item)));
 
 const signInNavItem = computed(() =>
-  nav.value.find((item): item is DefaultTheme.NavItemWithLink => isSignInItem(item))
+  nav.value.find((item): item is DefaultTheme.NavItemWithLink => isPrimaryButtonItem(item)),
 );
 
-const planeDocsNavItem = computed(() =>
-  nav.value.find((item): item is DefaultTheme.NavItemWithLink => isPlaneDocsItem(item))
+const secondaryNavItem = computed(() =>
+  nav.value.find((item): item is DefaultTheme.NavItemWithLink => isSecondaryButtonItem(item)),
 );
 
 const route = useRoute();
 const { localeLinks, currentLang } = useLangs({ correspondingLink: true });
 const isForcedTheme = computed(() => !!frontmatter.value.theme);
 const { logoDark, logoLight, logoAlt } = inject(themeContextKey)!;
+const menuTitle = inject(planeOptionsKey)?.brand.menuTitle ?? logoAlt;
 
 const isMarketingPage = computed(() => {
   const layout = frontmatter.value.layout;
@@ -119,7 +129,7 @@ const triggerSearch = () => {
       metaKey: true,
       ctrlKey: true,
       bubbles: true,
-    })
+    }),
   );
 };
 
@@ -132,7 +142,7 @@ const focusTrap = {
     if (!mobileMenu) return;
 
     const focusableElements = mobileMenu.querySelectorAll(
-      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
     );
 
     if (focusableElements.length === 0) return;
@@ -199,8 +209,16 @@ onUnmounted(() => {
       <div class="plane-header__start">
         <a href="/" class="plane-header__brand">
           <slot name="nav-bar-title-before" />
-          <img class="plane-header__logo plane-header__logo--light-bg" :src="logoDark" :alt="logoAlt" />
-          <img class="plane-header__logo plane-header__logo--dark-bg" :src="logoLight" :alt="logoAlt" />
+          <img
+            class="plane-header__logo plane-header__logo--light-bg"
+            :src="logoDark"
+            :alt="logoAlt"
+          />
+          <img
+            class="plane-header__logo plane-header__logo--dark-bg"
+            :src="logoLight"
+            :alt="logoAlt"
+          />
           <slot name="nav-bar-title-after" />
         </a>
 
@@ -220,8 +238,8 @@ onUnmounted(() => {
 
       <div class="plane-header__actions">
         <VPNavBarMenuLink
-          v-if="planeDocsNavItem"
-          :item="planeDocsNavItem"
+          v-if="secondaryNavItem"
+          :item="secondaryNavItem"
           class="home-doc-actions__btn home-doc-actions__btn--secondary home-doc-actions__btn--nav"
         />
         <VPNavBarMenuLink
@@ -229,7 +247,11 @@ onUnmounted(() => {
           :item="signInNavItem"
           class="home-doc-actions__btn home-doc-actions__btn--primary home-doc-actions__btn--nav"
         />
-        <span v-if="signInNavItem && !isForcedTheme" class="plane-header__divider" aria-hidden="true" />
+        <span
+          v-if="signInNavItem && !isForcedTheme"
+          class="plane-header__divider"
+          aria-hidden="true"
+        />
         <VPNavBarAppearance v-if="!isForcedTheme" />
         <span class="plane-header__divider" aria-hidden="true" />
         <VPNavBarSocialLinks />
@@ -243,7 +265,14 @@ onUnmounted(() => {
           class="plane-header__mobile-btn"
           @click="triggerSearch"
         >
-          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <svg
+            class="size-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.3-4.3" stroke-linecap="round" />
           </svg>
@@ -281,7 +310,10 @@ onUnmounted(() => {
       </div>
     </header>
 
-    <div v-if="!isMarketingPage" class="wrapper relative h-0 tick-left tick-right max-w-full overflow-x-clip"></div>
+    <div
+      v-if="!isMarketingPage"
+      class="wrapper relative h-0 tick-left tick-right max-w-full overflow-x-clip"
+    ></div>
 
     <div
       v-if="mobileMenuOpen"
@@ -295,9 +327,17 @@ onUnmounted(() => {
       <section class="wrapper animate-fade-in">
         <div class="w-full pl-5 pr-5 py-5 lg:py-7 flex items-center justify-between">
           <a href="/" class="flex items-center gap-2">
-            <img class="plane-header__logo plane-header__logo--light-bg" :src="logoDark" :alt="logoAlt" />
-            <img class="plane-header__logo plane-header__logo--dark-bg" :src="logoLight" :alt="logoAlt" />
-            <span class="text-base font-medium text-primary dark:text-white">Plane Developers</span>
+            <img
+              class="plane-header__logo plane-header__logo--light-bg"
+              :src="logoDark"
+              :alt="logoAlt"
+            />
+            <img
+              class="plane-header__logo plane-header__logo--dark-bg"
+              :src="logoLight"
+              :alt="logoAlt"
+            />
+            <span class="text-base font-medium text-primary dark:text-white">{{ menuTitle }}</span>
           </a>
           <div class="flex items-center gap-2">
             <button
@@ -367,14 +407,20 @@ onUnmounted(() => {
                     </svg>
                   </button>
                   <ul v-show="expandedAccordions.has(index)" class="pl-4 space-y-1">
-                    <template v-for="childItem in navItem.items" :key="childItem.link || childItem.text">
+                    <template
+                      v-for="childItem in navItem.items"
+                      :key="childItem.link || childItem.text"
+                    >
                       <li v-if="'link' in childItem">
                         <a
                           :href="normalizeLink(childItem.link)"
                           :target="isExternalLink(childItem.link) ? '_blank' : undefined"
                           :rel="isExternalLink(childItem.link) ? 'noreferrer' : undefined"
                           :class="[
-                            { 'bg-primary/10 dark:bg-white/10': route.path === normalizeLink(childItem.link) },
+                            {
+                              'bg-primary/10 dark:bg-white/10':
+                                route.path === normalizeLink(childItem.link),
+                            },
                             { 'vp-external-link-icon': isExternalLink(childItem.link) },
                           ]"
                           class="block py-1.5 px-4 text-sm font-sans text-grey dark:text-white/80 hover:text-primary dark:hover:text-white"
@@ -391,7 +437,10 @@ onUnmounted(() => {
                           {{ childItem.text }}
                         </p>
                         <ul class="pl-4 space-y-1">
-                          <li v-for="nestedItem in childItem.items" :key="nestedItem.link || nestedItem.text">
+                          <li
+                            v-for="nestedItem in childItem.items"
+                            :key="nestedItem.link || nestedItem.text"
+                          >
                             <a
                               v-if="nestedItem.link"
                               :href="normalizeLink(nestedItem.link)"
@@ -399,7 +448,8 @@ onUnmounted(() => {
                               :rel="isExternalLink(nestedItem.link) ? 'noreferrer' : undefined"
                               :class="[
                                 {
-                                  'bg-primary/10 dark:bg-white/10': route.path === normalizeLink(nestedItem.link),
+                                  'bg-primary/10 dark:bg-white/10':
+                                    route.path === normalizeLink(nestedItem.link),
                                 },
                                 { 'vp-external-link-icon': isExternalLink(nestedItem.link) },
                               ]"
@@ -420,7 +470,9 @@ onUnmounted(() => {
                   :target="isExternalLink(navItem.link) ? '_blank' : undefined"
                   :rel="isExternalLink(navItem.link) ? 'noreferrer' : undefined"
                   :class="[
-                    { 'bg-primary/10 dark:bg-white/10': route.path === normalizeLink(navItem.link) },
+                    {
+                      'bg-primary/10 dark:bg-white/10': route.path === normalizeLink(navItem.link),
+                    },
                     { 'vp-external-link-icon': isExternalLink(navItem.link) },
                   ]"
                   class="block py-3 px-4 text-base font-sans text-primary dark:text-white"
@@ -428,7 +480,10 @@ onUnmounted(() => {
                 >
                   {{ navItem.text }}
                 </a>
-                <span v-else class="block py-3 px-4 text-base font-sans text-primary dark:text-white">
+                <span
+                  v-else
+                  class="block py-3 px-4 text-base font-sans text-primary dark:text-white"
+                >
                   {{ navItem.text }}
                 </span>
               </li>
@@ -439,16 +494,16 @@ onUnmounted(() => {
             class="w-full pt-6 pb-12 border-t border-stroke dark:border-nickel relative tick-left tick-right mt-auto"
           >
             <div class="space-y-6">
-              <div v-if="planeDocsNavItem || signInNavItem" class="flex flex-col gap-2 px-4">
+              <div v-if="secondaryNavItem || signInNavItem" class="flex flex-col gap-2 px-4">
                 <a
-                  v-if="planeDocsNavItem"
-                  :href="planeDocsNavItem.link"
+                  v-if="secondaryNavItem"
+                  :href="secondaryNavItem.link"
                   target="_blank"
                   rel="noreferrer"
                   class="home-doc-actions__btn home-doc-actions__btn--secondary home-doc-actions__btn--nav w-full"
                   @click="closeMobileMenu"
                 >
-                  {{ planeDocsNavItem.text }}
+                  {{ secondaryNavItem.text }}
                 </a>
                 <a
                   v-if="signInNavItem"
@@ -501,7 +556,11 @@ onUnmounted(() => {
               </div>
 
               <div class="flex items-center justify-center gap-4 pt-4">
-                <VPSocialLinks v-if="theme.socialLinks" :links="theme.socialLinks" @click="closeMobileMenu" />
+                <VPSocialLinks
+                  v-if="theme.socialLinks"
+                  :links="theme.socialLinks"
+                  @click="closeMobileMenu"
+                />
               </div>
             </div>
           </div>

@@ -1,14 +1,8 @@
-<script setup>
-defineProps({
-  label: {
-    type: String,
-    required: true,
-  },
-  href: {
-    type: String,
-    default: undefined,
-  },
-});
+<script setup lang="ts">
+defineProps<{
+  label: string;
+  href?: string;
+}>();
 </script>
 
 <template>

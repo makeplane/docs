@@ -81,7 +81,8 @@ onMounted(() => {
   <Transition name="consent">
     <div v-if="showBanner" class="consent-banner">
       <p class="consent-text">
-        We use cookies and analytics to improve your experience. You can accept or decline non-essential cookies.
+        We use cookies and analytics to improve your experience. You can accept or decline
+        non-essential cookies.
       </p>
       <div class="consent-actions">
         <button class="consent-btn consent-btn-decline" @click="decline">Decline</button>
