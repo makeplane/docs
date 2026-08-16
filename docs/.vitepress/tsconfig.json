@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "ignoreDeprecations": "6.0",
+    "allowArbitraryExtensions": true,
+    "noEmit": true,
+    "lib": ["ESNext", "DOM"],
+    "types": ["vitepress/client", "node", "vue"],
+    "paths": {
+      "@voidzero-dev/vitepress-theme": ["./theme/plane/types/voidzero-theme.ts"],
+      "@voidzero-dev/vitepress-theme/src/components/vitepress-default/Layout.vue": [
+        "../../node_modules/@voidzero-dev/vitepress-theme/src/components/vitepress-default/Layout.vue"
+      ],
+      "@voidzero-dev/vitepress-theme/src/components/oss/Header.vue": [
+        "../../node_modules/@voidzero-dev/vitepress-theme/src/components/oss/Header.vue"
+      ],
+      "@voidzero-dev/vitepress-theme/src/components/oss/TopBanner.vue": [
+        "../../node_modules/@voidzero-dev/vitepress-theme/src/components/oss/TopBanner.vue"
+      ],
+      "@voidzero-dev/vitepress-theme/src/types/theme-context": [
+        "../../node_modules/@voidzero-dev/vitepress-theme/src/types/theme-context.ts"
+      ],
+      "@vp-default/*": [
+        "../../node_modules/@voidzero-dev/vitepress-theme/src/components/vitepress-default/*"
+      ],
+      "@vp-composables/*": [
+        "../../node_modules/@voidzero-dev/vitepress-theme/src/composables/vitepress-default/*"
+      ],
+      "@vp-support/*": [
+        "../../node_modules/@voidzero-dev/vitepress-theme/src/support/vitepress-default/*"
+      ],
+      "@components/*": ["../../node_modules/@voidzero-dev/vitepress-theme/src/components/*"]
+    }
+  },
+  "include": [
+    "./config.ts",
+    "./env.d.ts",
+    "./theme/**/*.ts",
+    "./theme/**/*.vue",
+    "./theme/**/*.d.ts"
+  ]
+}
