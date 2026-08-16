@@ -1,59 +1,59 @@
 # Contributing to Plane documentation
 
-Thank you for your interest in contributing to Plane documentation! We're thrilled to have you here, and we're eager to work together to make this project better.
+Thank you for your interest in contributing to Plane's documentation! This repository holds both
+[docs.plane.so](https://docs.plane.so) (`apps/docs`) and [developers.plane.so](https://developers.plane.so)
+(`apps/developer-docs`).
 
 ## Report issues
 
-If you encounter any issues with our documentation or have suggestions for improvements, we encourage you to follow these steps:
+1. **Check existing issues** — verify a similar issue does not already exist.
+2. **Create an issue** — describe the problem or enhancement with as much detail as possible and link to the
+   affected page.
 
-1. **Check existing issues**: Before raising a new issue, please verify if a similar issue already exists.
-2. **Create an issue**: If you don't find an existing issue that matches your concern, feel free to create a new one. Provide as much detail as possible to clearly explain the problem or enhancement you're proposing.
+## Set up your environment
 
-## Set up your development environment
+See the [README](/README.md): `pnpm install`, then `pnpm dev:docs` or `pnpm dev:developer-docs`. Node.js 24+ and
+pnpm 11 are required.
 
-To get started with the development environment, please refer to our [README.md](/README.md). It contains all the necessary instructions to set up your environment and dependencies.
+## Where things live
 
-## How to submit changes
+| You want to change…                             | Edit                                                     |
+| ----------------------------------------------- | -------------------------------------------------------- |
+| A docs.plane.so page                            | `apps/docs/docs/**/*.md`                                 |
+| The docs.plane.so sidebar / nav                 | `apps/docs/docs/.vitepress/config.ts`                    |
+| A developers.plane.so page (API, self-hosting…) | `apps/developer-docs/docs/**/*.md`                       |
+| The developers.plane.so sidebar / nav           | `apps/developer-docs/docs/.vitepress/config.mts`         |
+| Something visual shared by both sites           | `packages/theme/src/**` (see `packages/theme/README.md`) |
+| Site-only styling or components                 | `apps/<app>/docs/.vitepress/theme/`                      |
 
-We follow a simple and structured process for submitting changes.
+Each app has an `AGENTS.md` with its content conventions (frontmatter, links, images, components) — read it
+before editing content there.
 
-1. Checkout the `preview` branch:
+## Writing guidelines
 
-   ```bash
-   git checkout preview
-   ```
+- Markdown with VitePress extensions; every page has front matter with at least `title` and `description`
+  (developer docs also use `keywords`).
+- Clear, concise language; second person ("you"), active voice; code examples where helpful, with language
+  identifiers.
+- Relative links between pages of the same site (no `.md` extension). Cross-site links use the full URL.
+- Images: docs.plane.so uses the CDN (`https://media.docs.plane.so/…`, no binaries in the repo);
+  developers.plane.so keeps images in `apps/developer-docs/docs/public/images/` and references them as
+  `/images/...`.
+- API endpoint pages (developer docs) follow the two-column pattern described in
+  `apps/developer-docs/AGENTS.md`: HTTP method + path, all parameters with types, request/response examples,
+  auth requirements.
 
-2. Pull the latest changes:
+## Submit changes
 
-   ```bash
-   git pull origin preview
-   ```
+1. Fork/clone `makeplane/docs` and create a branch from `master` (`docs/add-webhook-guide`,
+   `fix/typo-in-api-reference`, …).
+2. Make your changes and check them locally: `pnpm dev:<app>`, then `pnpm fix:format && pnpm check` and
+   `pnpm build`.
+3. Commit with a clear message that links the issue where applicable
+   (`docs: add recurring work items page (#412)`).
+4. Open a pull request against `master`. CI runs formatting, type-checks and both builds; Vercel posts preview
+   links for the affected site(s).
+5. Before we can merge, you must sign the Contributor License Agreement (CLA).
 
-3. Create a new branch:
-
-   ```bash
-   git checkout -b <branch-name>
-   ```
-
-4. Make necessary changes in the code editor of your choice.
-
-5. Commit your changes. Leave a clear and concise message that links to the corresponding issue (if applicable) and explains the fix or enhancement you've made.
-
-   ```bash
-   git add .
-   git commit -m "Fixes #<issue-number>: Description of the fix or enhancement"
-   ```
-
-6. Push the changes.
-
-   ```bash
-   git push origin <branch-name>
-   ```
-
-7. Raise a pull request (PR) to merge your branch into the **preview** branch. Please provide a detailed description of your changes.
-
-8. Before we can merge your contribution, you must sign the Contributor License Agreement (CLA). This agreement ensures that your contributions comply with our licensing terms.
-
-After you submit your PR, a member of the Plane team will review it. Depending on our workload, response times may vary, but we'll do our best to get back to you as soon as possible. Thank you for your patience!
-
-If you need any help or have any questions, join us on the [Plane Forum](https://forum.plane.so).
+A member of the Plane team will review your PR; response times vary with our workload. Questions? Join the
+[Plane Forum](https://forum.plane.so) or [Discord](https://discord.com/invite/A92xrEGCge).

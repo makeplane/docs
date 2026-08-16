@@ -1,37 +1,34 @@
-# AGENTS.md
+# AGENTS.md — developers.plane.so (`apps/developer-docs`)
 
-Guidance for AI coding agents (Claude Code, Codex, Cursor, etc.) working in this repository. `CLAUDE.md` is a symlink to this file, so both resolve to the same content.
-
-## Project Overview
-
-This is the **Plane developer documentation site** built with **VitePress** (Vue 3-based static site generator). It covers REST API reference, self-hosting guides, and developer tools documentation for the Plane project management platform.
-
-Live site: https://developers.plane.so
+The **Plane developer documentation site** built with VitePress: REST API reference, self-hosting guides and
+developer tools documentation for the Plane project management platform. Live site:
+https://developers.plane.so. Repo-wide rules (workspace, theme, formatting, branches) are in the root
+`AGENTS.md`; this file covers this app only. `CLAUDE.md` is a symlink to this file.
 
 ## Commands
 
 ```bash
-pnpm install              # Install dependencies (use --frozen-lockfile in CI)
-pnpm dev                  # Start dev server at http://localhost:5173
-pnpm build                # Production build
-pnpm preview              # Preview production build
-pnpm check:format         # Check Prettier formatting
-pnpm fix:format           # Auto-fix Prettier formatting
-pnpm check:types          # Type-check the VitePress config and theme
-pnpm check:theme-sync     # Verify docs/.vitepress/theme/plane/ is identical to makeplane/docs (THEME_SIBLING_PATH=../docs for a local checkout)
+pnpm dev:developer-docs                        # from the repo root → http://localhost:5174
+pnpm --filter @plane/developer-docs build      # or: cd apps/developer-docs && pnpm build → docs/.vitepress/dist
+pnpm --filter @plane/developer-docs preview    # → http://localhost:4174
+pnpm --filter @plane/developer-docs check:types
 ```
-
-**CI checks on PRs** (to `master`): Prettier formatting + VitePress build must pass.
 
 ## Architecture
 
 - **`docs/`** — All documentation content and VitePress config
-  - **`docs/.vitepress/config.mts`** — Main VitePress config: navigation, sidebar structure, SEO, Algolia search, analytics. This is a large file that defines the entire site structure.
-  - **`docs/.vitepress/theme/`** — `index.ts` calls `createPlaneTheme({...})` from `./plane` (this site's branding + API components); `site.css` holds site-only CSS
-  - **`docs/.vitepress/theme/plane/`** — **shared Plane docs theme**, byte-identical with `makeplane/docs` (tokens, fonts, header, layout, Card/CardGroup/Tags, Copy page menu, cookie consent). Edit in one repo, copy the folder to the sibling, run `pnpm check:theme-sync` in both; add new files to `plane/manifest.json`. Header buttons come from `themeConfig.nav` items flagged `planeButton: "primary" | "secondary"`.
+  - **`docs/.vitepress/config.mts`** — Main VitePress config: navigation, sidebar structure, SEO, Algolia search,
+    analytics. This is a large file that defines the entire site structure.
+  - **`docs/.vitepress/theme/`** — `index.ts` calls `createPlaneTheme({...})` from `@plane/docs-theme` with this
+    site's branding, registers the API components and toggles `.api-page` on API reference routes; `site.css`
+    holds site-only CSS (home hero); `components/` holds `ApiParam`, `CodePanel`, `ResponsePanel`.
+  - **`docs/public/`** — images (`images/`), fonts, logos, `robots.txt`
   - **`docs/api-reference/`** — REST API endpoint docs (180+ endpoints across 30+ resource categories)
   - **`docs/self-hosting/`** — Deployment and configuration guides
   - **`docs/dev-tools/`** — Webhooks, OAuth apps, agents, MCP server docs
+- **`vercel.json`** — cleanUrls, headers, redirects, `Accept: text/markdown` rewrite (per-app Vercel project)
+- Shared visual identity (header, layout, tokens, `Card`/`CardGroup`/`Tags`, Copy page menu, cookie consent)
+  lives in `packages/theme` — never fork it here.
 
 ### Directory structure
 
@@ -56,12 +53,13 @@ docs/
     troubleshoot/       # CLI errors, installation, license, storage errors
 ```
 
-## Key Documentation Paths
+## Key documentation paths
 
 - `self-hosting/methods/kubernetes.md` — K8s deployment guide
 - `self-hosting/methods/install-methods-commercial/` — Commercial Docker Compose and Kubernetes
 - `self-hosting/govern/integrations/` — GitHub, GitLab, Slack, Sentry
-- `self-hosting/govern/plane-ai/` — AI features configuration (`configure-plane-ai.md`, `configure-embedding-model.md`, `aws-opensearch-embedding.md`)
+- `self-hosting/govern/plane-ai/` — AI features configuration (`configure-plane-ai.md`,
+  `configure-embedding-model.md`, `aws-opensearch-embedding.md`)
 - `self-hosting/govern/environment-variables.md` — All env var reference
 - `self-hosting/govern/authentication.md` — Auth setup (LDAP, OIDC, SAML, OAuth)
 - `self-hosting/govern/reverse-proxy.md` — Reverse proxy setup
@@ -69,9 +67,10 @@ docs/
 - `dev-tools/agents/` — Agent development docs
 - `dev-tools/mcp-server.md` and `mcp-server-claude-code.md` — MCP server docs
 
-## Custom Vue Components
+## Custom Vue components
 
-Used directly in markdown files — API components in `docs/.vitepress/theme/components/`, shared ones in `docs/.vitepress/theme/plane/components/`:
+Used directly in markdown files — API components in `docs/.vitepress/theme/components/`, shared ones come
+from `@plane/docs-theme` (`packages/theme/src/components/`):
 
 | Component              | Usage                                                                                                |
 | ---------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -81,7 +80,7 @@ Used directly in markdown files — API components in `docs/.vitepress/theme/com
 | `<Card>`               | Card: `title`, `icon` (brand key or Lucide), `href`/`link`, `description` or slot, `cta`/`link-text` |
 | `<CardGroup cols="N">` | Responsive grid layout (2, 3, or 4 columns)                                                          |
 
-## API Documentation Pattern
+## API documentation pattern
 
 API endpoint pages follow a strict two-column layout pattern:
 
@@ -96,18 +95,22 @@ API endpoint pages follow a strict two-column layout pattern:
 </div>
 ```
 
-Each endpoint page: one file per endpoint, includes path/body params, OAuth scopes, and code examples in cURL/Python/JavaScript.
+Each endpoint page: one file per endpoint, includes path/body params, OAuth scopes, and code examples in
+cURL/Python/JavaScript.
 
 ## Conventions
 
 - **Frontmatter**: Every markdown page needs `title`, `description`, and `keywords` fields
-- **Images**: Stored in `docs/.vitepress/public/images/`, referenced with absolute paths (`/images/...`)
-- **Branch workflow**: Branch from `master`, use `fix/`, `feat/`, `docs/`, `update/` prefixes
-- **Formatting**: Prettier enforced — 120 char width, 2-space indent, semicolons, double quotes, ES5 trailing commas
+- **Images**: Stored in `docs/public/images/`, referenced with absolute paths (`/images/...`)
+- **Links**: relative between pages of this site (no `.md`); full `https://docs.plane.so/...` URLs to the
+  product docs
 - **Sidebar updates**: When adding new pages, update the sidebar config in `docs/.vitepress/config.mts`
+- **Formatting**: repo-wide oxfmt (`pnpm fix:format` at the root)
+- **Diagrams**: Mermaid is enabled for this app only (`vitepress-plugin-mermaid`)
 
-## Important Notes
+## Important notes
 
 - Not all features are documented immediately after release
 - API reference covers 30+ resource categories — check `docs/api-reference/` for the full list
-- `self-hosting/govern/plane-ai/` is the correct location for AI configuration (the former `self-hosting/govern/plane-ai.md` was split into a directory)
+- `self-hosting/govern/plane-ai/` is the correct location for AI configuration (the former
+  `self-hosting/govern/plane-ai.md` was split into a directory)
