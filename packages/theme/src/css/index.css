@@ -1,8 +1,6 @@
 /* ================================================
-   PLANE DOCS THEME — shared stylesheet entry
-   Byte-identical in makeplane/docs and makeplane/developer-docs
-   (docs/.vitepress/theme/plane/). Edit in one repo, copy to the other,
-   run `pnpm check:theme-sync`.
+   PLANE DOCS THEME — shared stylesheet entry (@plane/docs-theme)
+   Imported once, by ../index.ts. Consumed by apps/docs and apps/developer-docs.
    ================================================ */
 
 /* VoidZero design system (tokens → base → docs → marketing) — includes Tailwind v4 */
@@ -16,6 +14,6 @@
 @import "./components.css";
 @import "./api.css";
 
-/* Tailwind content sources: the shared theme's Vue components and every page/component under docs/ */
+/* Tailwind content sources: this package's Vue components live outside each app's Vite root
+   (= the app's docs/ dir, which Tailwind scans automatically), so register them explicitly. */
 @source "../**/*.vue";
-@source "../../../../**/*.{vue,md}";

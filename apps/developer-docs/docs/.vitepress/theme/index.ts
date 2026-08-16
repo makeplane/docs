@@ -1,10 +1,10 @@
 /**
- * developers.plane.so theme = shared Plane docs theme (./plane, byte-identical with
- * makeplane/docs) + developer-docs specifics (API reference components/layout).
+ * developers.plane.so theme = shared Plane docs theme (@plane/docs-theme, packages/theme)
+ * + developer-docs specifics (API reference components/layout).
  */
 import { onMounted, watch, nextTick } from "vue";
 import { useRoute } from "vitepress";
-import { createPlaneTheme } from "./plane";
+import { createPlaneTheme } from "@plane/docs-theme";
 import ApiParam from "./components/ApiParam.vue";
 import CodePanel from "./components/CodePanel.vue";
 import ResponsePanel from "./components/ResponsePanel.vue";

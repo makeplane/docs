@@ -67,6 +67,9 @@ export default extendConfig(
         // Mermaid configuration options
       },
       vite: {
+        // The theme is a workspace package (packages/theme) consumed as source; make sure it and
+        // the apps always share one copy of vue / the VoidZero base theme.
+        resolve: { dedupe: ["vue", "@voidzero-dev/vitepress-theme"] },
         plugins: [
           // Generates llms.txt and llms-full.txt from the docs and sidebar.
           // https://github.com/okineadev/vitepress-plugin-llms
@@ -93,7 +96,6 @@ export default extendConfig(
         ],
         optimizeDeps: {
           include: [
-            "lucide-vue-next",
             "mermaid",
             "@braintree/sanitize-url",
             "dayjs",

@@ -19,8 +19,7 @@
     "check:types": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "lucide-vue-next": "catalog:",
-    "medium-zoom": "catalog:"
+    "@plane/docs-theme": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "catalog:",

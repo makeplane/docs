@@ -1,9 +1,14 @@
+/// <reference path="./types/shims.d.ts" />
+/// <reference path="./types/vitepress-augment.d.ts" />
+/// <reference path="./types/vp-theme-modules.d.ts" />
 /**
- * Plane docs theme — shared between makeplane/docs and makeplane/developer-docs.
+ * Plane docs theme (`@plane/docs-theme`) — shared by docs.plane.so (apps/docs) and
+ * developers.plane.so (apps/developer-docs).
  *
- * `docs/.vitepress/theme/plane/` is byte-identical in both repos; each site's
- * `theme/index.ts` is a thin `createPlaneTheme({...})` call. Edit here in one repo,
- * copy to the other, and run `pnpm check:theme-sync`.
+ * Each site's `docs/.vitepress/theme/index.ts` is a thin `createPlaneTheme({...})` call;
+ * everything site-specific (branding, extra components, `site.css`) stays in the app.
+ * This file also owns the single stylesheet entry (`./css/index.css`) — never import the
+ * theme CSS from anywhere else, or Tailwind gets a second root.
  */
 import type { Theme } from "vitepress";
 import { useData, useRoute } from "vitepress";

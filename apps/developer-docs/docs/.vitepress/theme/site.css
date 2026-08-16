@@ -1,4 +1,4 @@
-/* developers.plane.so — site-specific styles (everything shared lives in ./plane/css) */
+/* developers.plane.so — site-specific styles (everything shared lives in @plane/docs-theme, packages/theme) */
 
 /* --- Home page hero (docs/index.md) --- */
 .vp-doc .home-hero {

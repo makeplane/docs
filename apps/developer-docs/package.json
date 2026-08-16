@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "Plane developer documentation — developers.plane.so",
+  "keywords": [
+    "api",
+    "documentation",
+    "plane"
+  ],
   "homepage": "https://developers.plane.so",
   "license": "Apache-2.0",
   "author": "Plane",
@@ -11,7 +16,6 @@
     "url": "https://github.com/makeplane/docs.git",
     "directory": "apps/developer-docs"
   },
-  "keywords": ["plane", "documentation", "api"],
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs --port 5174",
@@ -20,8 +24,7 @@
     "check:types": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "lucide-vue-next": "catalog:",
-    "medium-zoom": "catalog:"
+    "@plane/docs-theme": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "catalog:",

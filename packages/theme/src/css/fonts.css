@@ -1,4 +1,4 @@
-/* Self-hosted fonts (files live in docs/public/fonts/ in both repos). */
+/* Self-hosted fonts (files live in each app's docs/public/fonts/ — apps/docs and apps/developer-docs). */
 
 @font-face {
   font-family: "Inter";

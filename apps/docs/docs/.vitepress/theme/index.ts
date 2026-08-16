@@ -1,8 +1,8 @@
 /**
- * docs.plane.so theme = shared Plane docs theme (./plane, byte-identical with
- * makeplane/developer-docs) + this site's branding.
+ * docs.plane.so theme = shared Plane docs theme (@plane/docs-theme, packages/theme)
+ * + this site's branding.
  */
-import { createPlaneTheme } from "./plane";
+import { createPlaneTheme } from "@plane/docs-theme";
 import "./site.css";
 
 export default createPlaneTheme({
