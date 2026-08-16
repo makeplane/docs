@@ -1,0 +1,131 @@
+{
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </api-reference/introduction>; rel=\"service-doc\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/api-reference",
+      "destination": "/api-reference/introduction"
+    },
+    {
+      "source": "/api-reference/byoa/build-plane-app",
+      "destination": "/dev-tools/build-plane-app"
+    },
+    {
+      "source": "/webhooks/intro-webhooks",
+      "destination": "/dev-tools/intro-webhooks"
+    },
+    {
+      "source": "/api-reference/cycle-issue/overview",
+      "destination": "/api-reference/cycle/overview"
+    },
+    {
+      "source": "/api-reference/cycle-issue/add-cycle-issue",
+      "destination": "/api-reference/cycle/add-cycle-work-items"
+    },
+    {
+      "source": "/api-reference/cycle-issue/list-cycle-issues",
+      "destination": "/api-reference/cycle/list-cycle-work-items"
+    },
+    {
+      "source": "/api-reference/cycle-issue/delete-cycle-issue",
+      "destination": "/api-reference/cycle/remove-cycle-work-item"
+    },
+    {
+      "source": "/api-reference/module-issue/overview",
+      "destination": "/api-reference/module/overview"
+    },
+    {
+      "source": "/api-reference/module-issue/add-module-issue",
+      "destination": "/api-reference/module/add-module-work-items"
+    },
+    {
+      "source": "/api-reference/module-issue/list-module-issues",
+      "destination": "/api-reference/module/list-module-work-items"
+    },
+    {
+      "source": "/api-reference/module-issue/delete-module-issue",
+      "destination": "/api-reference/module/remove-module-work-item"
+    },
+    {
+      "source": "/plane-one/governance/authentication/custom-sso",
+      "destination": "/self-hosting/govern/authentication"
+    },
+    {
+      "source": "/plane-one/governance/workspaces-and-teams",
+      "destination": "/self-hosting/overview"
+    },
+    {
+      "source": "/plane-one/manage/advanced-deploy",
+      "destination": "/self-hosting/overview"
+    },
+    {
+      "source": "/plane-one/manage/prime-cli",
+      "destination": "/self-hosting/manage/prime-cli"
+    },
+    {
+      "source": "/plane-one/manage/prime-client",
+      "destination": "/self-hosting/manage/manage-licenses/activate-pro-and-business"
+    },
+    {
+      "source": "/plane-one/self-host/methods/docker",
+      "destination": "/self-hosting/methods/docker-compose"
+    },
+    {
+      "source": "/plane-one/self-host/methods/kubernetes",
+      "destination": "/self-hosting/methods/kubernetes"
+    },
+    {
+      "source": "/plane-one/self-host/guides",
+      "destination": "/self-hosting/overview"
+    },
+    {
+      "source": "/plane-one/self-host/overview",
+      "destination": "/self-hosting/overview"
+    },
+    {
+      "source": "/plane-one/introduction",
+      "destination": "/self-hosting/overview"
+    },
+    {
+      "source": "/dev-tools/build-plane-app",
+      "destination": "/dev-tools/build-plane-app/overview"
+    },
+    {
+      "source": "/self-hosting",
+      "destination": "/self-hosting/overview"
+    },
+    {
+      "source": "/self-hosting/govern/plane-ai",
+      "destination": "/self-hosting/govern/plane-ai/configure-plane-ai"
+    },
+    {
+      "source": "/self-hosting/govern/aws-opensearch-embedding",
+      "destination": "/self-hosting/govern/plane-ai/configure-embedding-model"
+    },
+    {
+      "source": "/dev-tools/mcp-server-claude-code",
+      "destination": "/dev-tools/mcp-server#claude-code"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/:path*.md"
+    }
+  ]
+}

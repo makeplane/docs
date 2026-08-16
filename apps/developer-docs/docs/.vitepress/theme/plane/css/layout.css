@@ -1,0 +1,442 @@
+/* ================================================
+   PLANE DOCS THEME — layout shell, header skin, sidebar / aside geometry
+   ================================================ */
+
+/* ------------------------------------------------
+   Layout borders & corner ticks
+   ------------------------------------------------ */
+@media (min-width: 768px) {
+  .docs-layout .content-wrapper,
+  .docs-layout .wrapper {
+    border-left-color: var(--docs-divider);
+    border-right-color: var(--docs-divider);
+  }
+}
+
+.docs-layout .tick-left::before {
+  border-left-color: var(--docs-divider);
+}
+
+.docs-layout .tick-right::after {
+  border-right-color: var(--docs-divider);
+}
+
+.docs-layout .VPSidebar {
+  border-right: 1px solid var(--docs-divider);
+}
+
+/* Hide local nav when the sidebar is present */
+@media (min-width: 1024px) {
+  .docs-layout .VPLocalNav {
+    display: none !important;
+  }
+}
+
+/* ------------------------------------------------
+   Sidebars: flush under the fixed header
+   ------------------------------------------------ */
+@media (min-width: 1024px) {
+  /* Both rails keep VitePress' 20px top inset so their first rows share a baseline. */
+  .docs-layout .VPSidebar {
+    top: calc(var(--vp-nav-height) + var(--vp-banner-height, 0px) - 4px);
+  }
+
+  .docs-layout .VPDoc .aside-container {
+    top: calc(var(--vp-nav-height) + var(--vp-banner-height, 0px) - 4px);
+  }
+}
+
+/* --- Doc layout shell (1280px+): left nav + right outline share one baseline --- */
+@media (min-width: 1280px) {
+  .docs-layout .VPSidebar .nav {
+    padding-top: 0;
+  }
+
+  .docs-layout .VPDoc .content {
+    padding-top: 32px;
+  }
+
+  .docs-layout .VPDoc .aside {
+    max-width: 256px;
+  }
+
+  .docs-layout .VPDoc .aside-container {
+    width: 256px;
+    padding-left: 24px;
+    border-left-color: var(--docs-divider);
+  }
+
+  /* Outline: allow long headings to wrap, add air between siblings */
+  .docs-layout .VPDocOutlineItem .outline-link {
+    white-space: normal;
+    text-overflow: unset;
+    overflow: visible;
+    line-height: 1.45;
+    padding: 2px 0 4px;
+  }
+
+  .docs-layout .VPDocAsideOutline .VPDocOutlineItem li + li {
+    margin-top: 6px;
+  }
+
+  .docs-layout .VPDocAsideOutline .VPDocOutlineItem li > .VPDocOutlineItem.nested {
+    margin-top: 4px;
+  }
+}
+
+/* --- No right outline (aside: false, or the page has no headings): widen main column --- */
+.docs-layout .VPDoc:not(.has-aside) .content-container {
+  max-width: 960px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 1280px) {
+  .docs-layout .VPDoc:not(.has-aside) .content-container {
+    max-width: 1104px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .docs-layout
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
+    .aside {
+    display: none !important;
+    flex: 0 0 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .docs-layout
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
+    .content {
+    flex: 1 1 auto;
+    max-width: none !important;
+  }
+
+  .docs-layout
+    .VPDoc.has-aside:has(.VPDocAsideOutline:not(.has-outline)):not(:has(.VPDocAsideCarbonAds))
+    .content-container {
+    max-width: 1104px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+/* ------------------------------------------------
+   Copy page menu (components/CopyPageMenu.vue) — placement
+   The control is server-rendered in the `doc-before` slot (first child of
+   `.VPDoc .content-container`, above <main>) and, once mounted, teleported into a
+   `.copy-page-slot` host inserted right after the page H1 inside `.vp-doc`. Both
+   positions are styled here; visual styles are scoped in the component.
+   ------------------------------------------------ */
+.docs-layout .VPDoc .content-container {
+  position: relative; /* anchor for the pre-teleport position */
+}
+
+/* < 768px: below the title, left-aligned, in flow */
+@media (max-width: 767px) {
+  /* Pre-teleport position would sit above the title — keep it hidden to avoid a jump. */
+  .docs-layout .VPDoc .content-container > .copy-page {
+    display: none;
+  }
+
+  .docs-layout .vp-doc > div > .copy-page-slot {
+    margin: 14px 0 16px;
+  }
+}
+
+/* ≥ 768px: on the title row, flush with the right edge of the text column */
+@media (min-width: 768px) {
+  .docs-layout .VPDoc .content-container > .copy-page,
+  .docs-layout .vp-doc > div > .copy-page-slot > .copy-page {
+    position: absolute; /* relative to .content-container / .vp-doc — same top edge */
+    top: 2px; /* (h1 line box ~38px − 34px button) / 2 */
+    right: 0;
+    margin: 0;
+    z-index: 10; /* below --vp-z-index-local-nav (20) and the image lightbox */
+  }
+
+  /* Reserve the control's footprint on the H1 only when it actually rendered
+     (so `copyPage: false` pages keep the full width). */
+  .docs-layout .vp-doc > div > h1:has(+ .copy-page-slot > .copy-page),
+  .docs-layout .VPDoc .content-container > .copy-page ~ .main .vp-doc > div > h1 {
+    padding-right: 156px; /* ≈ 132px control + 24px gap — re-measure if the label changes */
+  }
+}
+
+/* ------------------------------------------------
+   Header (components/PlaneHeader.vue) — shell, search, nav, actions
+   ------------------------------------------------ */
+header.plane-header.wrapper,
+.plane-header-shell {
+  font-family: var(--vp-font-family-base);
+  background-color: var(--plane-header-bg) !important;
+  border-bottom-color: var(--plane-header-border) !important;
+}
+
+@media (min-width: 768px) {
+  .docs-layout header.plane-header.wrapper,
+  .docs-layout .plane-header-shell .wrapper {
+    border-left-color: var(--docs-divider) !important;
+    border-right-color: var(--docs-divider) !important;
+  }
+}
+
+.docs-layout .border-stroke {
+  border-color: var(--docs-divider) !important;
+}
+
+/* Match content-wrapper width (centered when fixed) */
+@media (min-width: 768px) {
+  .docs-layout .plane-header-shell {
+    width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 90rem) {
+  .docs-layout .plane-header-shell {
+    width: 90rem;
+    max-width: 90rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .docs-layout .plane-header-shell--docs {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+  }
+
+  .docs-layout .plane-header-shell--docs.plane-header-shell {
+    overflow-x: clip;
+  }
+}
+
+@media (min-width: 90rem) {
+  .docs-layout .plane-header-shell--docs {
+    width: 90rem;
+    max-width: 90rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .plane-header .VPNavBarSearchButton,
+  .plane-header .search-bar {
+    background-color: var(--plane-header-search-bg) !important;
+    border: 1px solid var(--plane-header-search-border) !important;
+    border-radius: 12px;
+    color: var(--plane-header-search-text) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .plane-header-shell {
+    overflow-x: clip;
+  }
+
+  .docs-layout .plane-header.wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    overflow-x: clip;
+  }
+
+  .plane-header .plane-header__start,
+  .plane-header .plane-header__actions {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .plane-header .plane-header__search {
+    width: 240px;
+    max-width: 240px;
+  }
+
+  .plane-header .VPNavBarSearch {
+    width: 100%;
+    min-width: 0;
+    max-width: 240px;
+  }
+
+  .plane-header .VPNavBarSearchButton,
+  .plane-header .DocSearch.DocSearch-Button {
+    width: 100% !important;
+    max-width: 240px !important;
+    min-width: 0 !important;
+  }
+
+  .plane-header .DocSearch.DocSearch-Button,
+  .plane-header .VPNavBarSearchButton,
+  .plane-header .search-bar {
+    height: 36px;
+    border-radius: 12px;
+    background: var(--plane-header-search-bg) !important;
+    border: 1px solid var(--plane-header-search-border) !important;
+    color: var(--plane-header-search-text) !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    gap: 8px;
+  }
+
+  .plane-header .DocSearch-Button-Container {
+    justify-content: flex-start !important;
+    flex: 1;
+    min-width: 0;
+    gap: 0.5rem;
+  }
+
+  .plane-header .DocSearch-Search-Icon {
+    color: var(--plane-header-search-text) !important;
+  }
+
+  .plane-header .DocSearch-Button-Placeholder,
+  .plane-header .VPNavBarSearchButton .text,
+  .plane-header .search-bar__text {
+    color: var(--plane-header-search-text) !important;
+    text-align: left !important;
+    flex: 0 1 auto;
+    font-size: 13px;
+  }
+
+  .plane-header .DocSearch-Button-Keys,
+  .plane-header .VPNavBarSearchButton .keys,
+  .plane-header .search-bar__keys {
+    color: var(--plane-header-search-text) !important;
+    border: 1px solid var(--plane-header-search-keys-border) !important;
+    margin-left: auto !important;
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .plane-header__nav .VPLink.link,
+  .plane-header__nav .VPLink.text-base,
+  .plane-header .VPNavBarMenuLink:not(.home-doc-actions__btn),
+  .plane-header .VPNavBarMenuGroup .button {
+    color: var(--plane-header-text) !important;
+    font-size: 14px !important;
+    font-weight: 400;
+    padding: 0.375rem 0.5rem;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .plane-header__nav .VPLink.link:hover,
+  .plane-header .VPNavBarMenuLink:not(.home-doc-actions__btn):hover,
+  .plane-header .VPNavBarMenuGroup .button:hover {
+    color: var(--vp-c-brand-1) !important;
+    opacity: 1;
+  }
+
+  .plane-header a.home-doc-actions__btn--secondary.VPNavBarMenuLink,
+  .plane-header a.home-doc-actions__btn--secondary.VPNavBarMenuLink:hover {
+    color: inherit !important;
+    opacity: 1 !important;
+  }
+
+  .plane-header .VPNavBarMenuLink.active,
+  .plane-header__nav .VPLink.link.active {
+    color: var(--vp-c-brand-1) !important;
+  }
+
+  .plane-header .VPNavBarAppearance,
+  .plane-header .VPNavBarSocialLinks {
+    display: flex !important;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .plane-header .VPNavBarSocialLinks {
+    gap: 0.25rem;
+  }
+
+  .plane-header .VPNavBarSocialLinks .VPSocialLink {
+    color: var(--plane-header-text);
+    transition: color 0.2s ease;
+  }
+
+  .plane-header .VPNavBarSocialLinks .VPSocialLink:hover {
+    color: var(--vp-c-brand-1);
+  }
+
+  .plane-header .VPSwitchAppearance {
+    --vp-c-bg: var(--plane-header-search-bg);
+  }
+}
+
+/* Theme switcher border follows the layout hairlines */
+.docs-layout .VPSwitchAppearance {
+  --vp-c-border: var(--docs-divider);
+  --vp-input-border-color: var(--vp-c-border);
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .plane-header__title {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .plane-header {
+    gap: 0.5rem 1.25rem;
+    --plane-header-padding-x: 1.5rem;
+  }
+
+  .plane-header__nav .VPLink.link,
+  .plane-header__nav .VPLink.text-base,
+  .plane-header .VPNavBarMenuLink:not(.home-doc-actions__btn),
+  .plane-header .VPNavBarMenuGroup .button {
+    font-size: 14px !important;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+/* Navbar buttons — hide external-link ↗ icon */
+.plane-header a.home-doc-actions__btn.vp-external-link-icon::after,
+.plane-header .VPLink.home-doc-actions__btn.vp-external-link-icon::after,
+.plane-header a.home-doc-actions__btn.no-icon::after,
+.plane-header .VPLink.home-doc-actions__btn.no-icon::after {
+  display: none !important;
+  content: none !important;
+}
+
+.plane-header a.home-doc-actions__btn .vp-external-link-icon,
+.plane-header a.home-doc-actions__btn svg {
+  display: none !important;
+}
+
+/* Navbar primary & secondary buttons */
+.plane-header a.home-doc-actions__btn--primary.VPNavBarMenuLink,
+.plane-header a.home-doc-actions__btn--secondary.VPNavBarMenuLink,
+.plane-header .VPLink.home-doc-actions__btn--primary,
+.plane-header .VPLink.home-doc-actions__btn--secondary {
+  padding: 4px 15px !important;
+  font-size: 14px !important;
+  border-radius: 6px !important;
+  min-height: auto !important;
+  line-height: 1.25 !important;
+  font-weight: 500 !important;
+  white-space: nowrap;
+}
+
+/* Don't apply nav text-link hover to the button variants */
+.plane-header .VPNavBarMenuLink.home-doc-actions__btn:hover {
+  opacity: 1 !important;
+}
