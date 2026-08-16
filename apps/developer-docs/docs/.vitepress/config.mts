@@ -1544,7 +1544,7 @@ export default extendConfig(
         search: searchConfig,
 
         editLink: {
-          pattern: "https://github.com/makeplane/developer-docs/edit/master/:path",
+          pattern: "https://github.com/makeplane/docs/edit/master/apps/developer-docs/docs/:path",
         },
 
         /*footer: {

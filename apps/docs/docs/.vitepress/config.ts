@@ -248,7 +248,7 @@ const config = defineConfig({
       label: "On this page",
     },
     editLink: {
-      pattern: "https://github.com/makeplane/docs/edit/master/:path",
+      pattern: "https://github.com/makeplane/docs/edit/master/apps/docs/docs/:path",
     },
 
     search: searchConfig,
