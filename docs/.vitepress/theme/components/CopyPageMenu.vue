@@ -428,9 +428,11 @@ watch(
   transition: background-color 0.15s ease;
 }
 
+/* Explicit colour: the control lives inside .vp-doc, so beat the theme's `.vp-doc a:hover`. */
 .copy-page__item:hover,
 .copy-page__item:focus-visible {
   background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
 }
 
 .copy-page__icon {
