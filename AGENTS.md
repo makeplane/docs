@@ -8,11 +8,11 @@ editing content there** (`apps/docs/AGENTS.md`, `apps/developer-docs/AGENTS.md`)
 
 pnpm workspace + Turborepo holding both Plane documentation sites and their shared theme:
 
-| Package                 | Path                  | What                                                                                                                                            |
-| ----------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `@plane/docs`           | `apps/docs`           | [docs.plane.so](https://docs.plane.so) — product documentation                                                                                  |
-| `@plane/developer-docs` | `apps/developer-docs` | [developers.plane.so](https://developers.plane.so) — API reference, self-hosting, dev tools                                                     |
-| `@plane/docs-theme`     | `packages/theme`      | Shared VitePress theme (tokens, fonts, header, layout, Card/CardGroup/Tags, Copy page menu, cookie consent) — consumed as source, no build step |
+| Package             | Path                  | What                                                                                                                                            |
+| ------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `docs`              | `apps/docs`           | [docs.plane.so](https://docs.plane.so) — product documentation                                                                                  |
+| `developer-docs`    | `apps/developer-docs` | [developers.plane.so](https://developers.plane.so) — API reference, self-hosting, dev tools                                                     |
+| `@plane/docs-theme` | `packages/theme`      | Shared VitePress theme (tokens, fonts, header, layout, Card/CardGroup/Tags, Copy page menu, cookie consent) — consumed as source, no build step |
 
 ## Stack
 
@@ -32,14 +32,14 @@ pnpm workspace + Turborepo holding both Plane documentation sites and their shar
 pnpm install                 # one lockfile for the whole workspace
 pnpm dev:docs                # docs.plane.so dev server        → http://localhost:5173
 pnpm dev:developer-docs      # developers.plane.so dev server  → http://localhost:5174
-pnpm dev                     # both, in the Turborepo TUI
+pnpm dev                     # both, interleaved log output
 pnpm build                   # turbo run build (apps/<app>/docs/.vitepress/dist)
 pnpm preview                 # turbo run preview (:4173 / :4174)
 pnpm check:types             # turbo run check:types (theme + both apps)
 pnpm check:format            # oxfmt --check .
 pnpm fix:format              # oxfmt --write .
 pnpm check                   # check:format + check:types
-pnpm --filter @plane/docs <script>   # run a script in one package (or cd into the app)
+pnpm --filter docs <script>  # run a script in one package (or cd into the app)
 ```
 
 Turbo runs tasks with `cwd` = the package directory, so per-app `.env` files live at `apps/<app>/.env`

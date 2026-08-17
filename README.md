@@ -3,11 +3,11 @@
 Monorepo for Plane's documentation sites, built with [VitePress](https://vitepress.dev/) and managed with
 pnpm workspaces + [Turborepo](https://turborepo.dev/).
 
-| Package                 | Path                  | Site                                                                              |
-| ----------------------- | --------------------- | --------------------------------------------------------------------------------- |
-| `@plane/docs`           | `apps/docs`           | [docs.plane.so](https://docs.plane.so) — product docs                             |
-| `@plane/developer-docs` | `apps/developer-docs` | [developers.plane.so](https://developers.plane.so) — API, self-hosting, dev tools |
-| `@plane/docs-theme`     | `packages/theme`      | Shared VitePress theme used by both sites                                         |
+| Package             | Path                  | Site                                                                              |
+| ------------------- | --------------------- | --------------------------------------------------------------------------------- |
+| `docs`              | `apps/docs`           | [docs.plane.so](https://docs.plane.so) — product docs                             |
+| `developer-docs`    | `apps/developer-docs` | [developers.plane.so](https://developers.plane.so) — API, self-hosting, dev tools |
+| `@plane/docs-theme` | `packages/theme`      | Shared VitePress theme used by both sites                                         |
 
 ## Getting started
 
@@ -20,7 +20,7 @@ pnpm install
 
 pnpm dev:docs             # docs.plane.so        → http://localhost:5173
 pnpm dev:developer-docs   # developers.plane.so  → http://localhost:5174
-pnpm dev                  # both dev servers (Turborepo TUI)
+pnpm dev                  # both dev servers (interleaved logs)
 
 pnpm build                # build every app (output: apps/<app>/docs/.vitepress/dist)
 pnpm check                # oxfmt formatting + type-checks

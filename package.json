@@ -11,8 +11,8 @@
   "type": "module",
   "scripts": {
     "dev": "turbo run dev",
-    "dev:docs": "turbo run dev --filter=@plane/docs",
-    "dev:developer-docs": "turbo run dev --filter=@plane/developer-docs",
+    "dev:docs": "turbo run dev --filter=docs",
+    "dev:developer-docs": "turbo run dev --filter=developer-docs",
     "build": "turbo run build",
     "preview": "turbo run preview",
     "check": "pnpm check:format && pnpm check:types",
@@ -28,5 +28,5 @@
   "engines": {
     "node": ">=24.0.0"
   },
-  "packageManager": "pnpm@11.8.0+sha512.c1f5e7c4cb241c8f174b743851d82f42b802324afc8b0f116b96adb15aa06664948dde36960a3ba1079ba5b4b29dd0140135b94b5b5f5263592249d68e555f26"
+  "packageManager": "pnpm@11.22.0+sha512.1ff870c4c6133dfd88fb2afc46dd13d47f09c9794b438c6fdb47ca98caf3bc16381ee0be93a091b8e3824cf01f889f46d7d9e20910fb0be1ab0fb5baa80dd621"
 }

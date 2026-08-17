@@ -28,13 +28,11 @@ overrides:
   rollup: 4.59.0
   lodash-es: 4.18.1
   esbuild: 0.25.0
-  # Security overrides — force patched versions of vulnerable transitive deps
-  # (see `pnpm audit`). Bump these as new advisories are published.
-  dompurify: 3.4.11 # was 3.4.0 — resolves 8 DOMPurify advisories (via mermaid)
-  vite: 6.4.3 # was 6.4.2 — GHSA-fx2h-pf6j-xcff (high), GHSA-v6wh-96g9-6wx3
-  postcss: 8.5.15 # GHSA-qx2v-qp2m-jg93 (via vite)
-  uuid: 11.1.1 # GHSA-w5hq-g745-h8pq (via mermaid; stays in mermaid's ^11 range)
-  js-yaml: 3.15.0 # GHSA-h67p-54hq-rp68 quadratic-DoS via merge-key aliases (via gray-matter; stays in its ^3.13.1 range)
+  dompurify: 3.4.11
+  vite: 6.4.3
+  postcss: 8.5.15
+  uuid: 11.1.1
+  js-yaml: 3.15.0
 
 peerDependencyRules:
   allowedVersions:

@@ -8,10 +8,10 @@ The [Plane](https://plane.so) product documentation site, built with VitePress a
 ## Commands
 
 ```bash
-pnpm dev:docs                        # from the repo root → http://localhost:5173
-pnpm --filter @plane/docs build      # or: cd apps/docs && pnpm build → docs/.vitepress/dist
-pnpm --filter @plane/docs preview    # → http://localhost:4173
-pnpm --filter @plane/docs check:types
+pnpm dev:docs                   # from the repo root → http://localhost:5173
+pnpm --filter docs build        # or: cd apps/docs && pnpm build → docs/.vitepress/dist
+pnpm --filter docs preview      # → http://localhost:4173
+pnpm --filter docs check:types
 ```
 
 ## Structure

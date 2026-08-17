@@ -8,10 +8,10 @@ https://developers.plane.so. Repo-wide rules (workspace, theme, formatting, bran
 ## Commands
 
 ```bash
-pnpm dev:developer-docs                        # from the repo root → http://localhost:5174
-pnpm --filter @plane/developer-docs build      # or: cd apps/developer-docs && pnpm build → docs/.vitepress/dist
-pnpm --filter @plane/developer-docs preview    # → http://localhost:4174
-pnpm --filter @plane/developer-docs check:types
+pnpm dev:developer-docs                   # from the repo root → http://localhost:5174
+pnpm --filter developer-docs build        # or: cd apps/developer-docs && pnpm build → docs/.vitepress/dist
+pnpm --filter developer-docs preview      # → http://localhost:4174
+pnpm --filter developer-docs check:types
 ```
 
 ## Architecture

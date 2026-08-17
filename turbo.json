@@ -1,6 +1,6 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
-  "ui": "tui",
+  "ui": "stream",
   "globalDependencies": ["pnpm-workspace.yaml", "tsconfig.base.json"],
   "tasks": {
     "build": {
