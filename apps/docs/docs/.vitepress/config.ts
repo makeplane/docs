@@ -2,7 +2,7 @@
 
 import { copyFileSync, mkdirSync, readFileSync, readdirSync, statSync } from "fs";
 import { dirname, join, relative, resolve } from "path";
-import { defineConfig, type HeadConfig } from "vitepress";
+import { defineConfig } from "vitepress";
 import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 import llmstxt from "vitepress-plugin-llms";
@@ -20,21 +20,9 @@ function loadEnvVar(key: string): string | undefined {
   }
 }
 
-const posthogKey = loadEnvVar("VITE_POSTHOG_KEY");
 const algoliaAppId = loadEnvVar("VITE_ALGOLIA_APP_ID");
 const algoliaApiKey = loadEnvVar("VITE_ALGOLIA_API_KEY");
 const algoliaIndexName = loadEnvVar("VITE_ALGOLIA_INDEX_NAME");
-
-const posthogHead: HeadConfig[] = posthogKey
-  ? [
-      [
-        "script",
-        {},
-        `!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-        posthog.init('${posthogKey}', {api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only', opt_out_capturing_by_default: true, persistence: 'memory'});`,
-      ],
-    ]
-  : [];
 
 const searchConfig =
   algoliaAppId && algoliaApiKey && algoliaIndexName
@@ -136,14 +124,6 @@ const config = defineConfig({
         crossorigin: "anonymous",
       },
     ],
-    [
-      "script",
-      {
-        src: "https://plausible.io/js/script.js",
-        defer: "true",
-        "data-domain": "docs.plane.so",
-      },
-    ],
     // Google Analytics with Consent Mode v2 (granted via the cookie banner)
     [
       "script",
@@ -166,8 +146,6 @@ const config = defineConfig({
       gtag('js', new Date());
       gtag('config', 'G-G578SD4VZD');`,
     ],
-    // PostHog (conditionally injected)
-    ...posthogHead,
     [
       "script",
       {

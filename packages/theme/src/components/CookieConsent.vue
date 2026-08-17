@@ -4,10 +4,6 @@ import { ref, onMounted } from "vue";
 declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
-    posthog?: {
-      opt_in_capturing?: () => void;
-      opt_out_capturing?: () => void;
-    };
   }
 }
 
@@ -31,22 +27,6 @@ function grantConsent() {
       analytics_storage: "granted",
     });
   }
-
-  // PostHog (may not be loaded if VITE_POSTHOG_KEY is unset)
-  if (window.posthog?.opt_in_capturing) {
-    window.posthog.opt_in_capturing();
-  }
-}
-
-function denyConsent() {
-  if (typeof window === "undefined") return;
-
-  // Google Analytics — consent stays denied by default, no update needed
-
-  // PostHog (may not be loaded if VITE_POSTHOG_KEY is unset)
-  if (window.posthog?.opt_out_capturing) {
-    window.posthog.opt_out_capturing();
-  }
 }
 
 function accept() {
@@ -61,7 +41,6 @@ function decline() {
   try {
     localStorage.setItem(STORAGE_KEY, "denied");
   } catch {}
-  denyConsent();
   showBanner.value = false;
 }
 
@@ -69,9 +48,7 @@ onMounted(() => {
   const consent = getConsent();
   if (consent === "granted") {
     grantConsent();
-  } else if (consent === "denied") {
-    denyConsent();
-  } else {
+  } else if (consent !== "denied") {
     showBanner.value = true;
   }
 });
