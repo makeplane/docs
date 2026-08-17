@@ -28,7 +28,7 @@ pnpm fix:format           # auto-format
 ```
 
 Each app also works on its own: `cd apps/docs && pnpm dev`. Copy `apps/<app>/.env.example` to
-`apps/<app>/.env` for Algolia / PostHog keys (both are optional — search falls back to local search).
+`apps/<app>/.env` to configure optional Algolia credentials; without them, search falls back to local search.
 
 ## Repository layout
 
