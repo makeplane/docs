@@ -6,7 +6,9 @@ keywords: plane one-click deploy, cloud deployment, aws plane, digitalocean plan
 
 # One-click deploy
 
-::: infoThis feature is included in our paid plans, but for a limited time, our community users can access it for free.:::
+:::info
+This feature is included in our paid plans, but for a limited time, our community users can access it for free.
+:::
 
 ### Requirements
 
