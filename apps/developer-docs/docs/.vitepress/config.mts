@@ -532,6 +532,10 @@ export default extendConfig(
                 },
                 { text: "Prime CLI", link: "/self-hosting/manage/prime-cli" },
                 { text: "Manage users", link: "/self-hosting/manage/manage-instance-users" },
+                {
+                  text: "API Server Commands",
+                  link: "/self-hosting/manage/api-server-commands",
+                },
               ],
             },
             {
