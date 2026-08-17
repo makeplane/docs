@@ -1,0 +1,30 @@
+# robots.txt for Plane Developer Documentation
+# https://developers.plane.so
+
+# Allow all search engines to crawl all content
+User-agent: *
+Allow: /
+
+# Disallow crawling of search results (if any)
+Disallow: /search
+
+# Content Signals — AI content usage preferences (comment only; not a standard robots directive)
+# https://contentsignals.org/
+# Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+# Disallow crawling of any internal/private paths (add as needed)
+# Disallow: /private/
+# Disallow: /admin/
+# Disallow: /plane-one/
+
+# Sitemap location
+Sitemap: https://developers.plane.so/sitemap.xml
+
+# LLMs.txt — AI-friendly site documentation (discoverable via Link response header)
+# https://llmstxt.org/
+# https://developers.plane.so/llms.txt
+
+# Crawl-delay for polite crawling (optional)
+# Crawl-delay: 1
+
+

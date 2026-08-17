@@ -2,39 +2,51 @@ name: CI
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+  push:
+    branches: [master] # seeds the .turbo cache that PR runs restore from
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  check-format:
-    name: Check Formatting
+  format:
+    name: Format (oxfmt)
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-
       - uses: pnpm/action-setup@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: pnpm
-
       - run: pnpm install --frozen-lockfile
-
       - run: pnpm check:format
 
   build:
-    name: Build
+    name: Types + build (turbo)
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-
       - uses: pnpm/action-setup@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: pnpm
-
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: turbo-${{ runner.os }}-${{ github.sha }}
+          restore-keys: turbo-${{ runner.os }}-
       - run: pnpm install --frozen-lockfile
-
-      - run: pnpm build
+      # Guards against a second copy of vue / vitepress / the base theme sneaking in
+      # (the shared theme package must resolve the same copies as the apps).
+      - run: pnpm dedupe --check
+      # Turborepo Remote Cache is intentionally not wired up here (needs TURBO_TOKEN /
+      # TURBO_TEAM); the local .turbo cache above is enough for two apps.
+      - run: pnpm turbo run check:types build

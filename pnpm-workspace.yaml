@@ -1,10 +1,45 @@
-allowBuilds:
-  esbuild: true
-  vue-demi: true
-ignoredBuiltDependencies:
-  - esbuild
+# pnpm workspace configuration (also holds the settings that used to live in
+# package.json's "pnpm" field — pnpm reads overrides / peerDependencyRules /
+# allowBuilds from here).
+
+packages:
+  - apps/*
+  - packages/*
+
+# Single source of truth for dependency versions shared by the apps and the theme
+# package. Reference them with "catalog:" so every workspace package resolves the
+# exact same copy (a second copy of vue / vitepress / @voidzero-dev/vitepress-theme
+# would break the theme).
+catalog:
+  "@types/node": ^25.9.5
+  "@voidzero-dev/vitepress-theme": ^4.8.4
+  lucide-vue-next: ^0.577.0
+  medium-zoom: ^1.1.0
+  mermaid: ^11.15.0
+  typescript: ^6.0.3
+  vitepress: 2.0.0-alpha.16
+  vitepress-plugin-llms: ^1.13.1
+  vitepress-plugin-mermaid: ^2.0.17
+  vitepress-plugin-tabs: ^0.8.0
+  vue: ^3.5.41
+
 overrides:
-  esbuild: ^0.25.0
+  # Toolchain pins for VitePress 2 alpha compatibility.
+  rollup: 4.59.0
+  lodash-es: 4.18.1
+  esbuild: 0.25.0
+  dompurify: 3.4.11
   vite: 6.4.3
-  postcss: ^8.5.10
-  js-yaml@<3.15.0: 3.15.0
+  postcss: 8.5.15
+  uuid: 11.1.1
+  js-yaml: 3.15.0
+
+peerDependencyRules:
+  allowedVersions:
+    vitepress: "2"
+
+# Build scripts left disabled (neither was ever approved, and both sites build
+# fine without them). Flip to true to allow.
+allowBuilds:
+  esbuild: false
+  vue-demi: false

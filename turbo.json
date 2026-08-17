@@ -1,0 +1,28 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "ui": "stream",
+  "globalDependencies": ["pnpm-workspace.yaml", "tsconfig.base.json"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env"],
+      "outputs": ["docs/.vitepress/dist/**"],
+      "env": ["VITE_*"]
+    },
+    "check:types": {
+      "dependsOn": ["^check:types"],
+      "outputs": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "env": ["VITE_*"]
+    },
+    "preview": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "persistent": true,
+      "env": ["VITE_*"]
+    }
+  }
+}

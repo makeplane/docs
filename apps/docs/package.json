@@ -1,0 +1,33 @@
+{
+  "name": "docs",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Plane product documentation — docs.plane.so",
+  "homepage": "https://docs.plane.so",
+  "license": "MIT",
+  "author": "Plane",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makeplane/docs.git",
+    "directory": "apps/docs"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs --port 5173",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs --port 4173",
+    "check:types": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@plane/docs-theme": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@voidzero-dev/vitepress-theme": "catalog:",
+    "typescript": "catalog:",
+    "vitepress": "catalog:",
+    "vitepress-plugin-llms": "catalog:",
+    "vitepress-plugin-tabs": "catalog:",
+    "vue": "catalog:"
+  }
+}

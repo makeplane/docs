@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "ignoreDeprecations": "6.0",
+    "allowArbitraryExtensions": true,
+    "noEmit": true,
+    "lib": ["ESNext", "DOM"],
+    "types": ["vitepress/client", "node", "vue"],
+    "paths": {
+      "@voidzero-dev/vitepress-theme": ["./packages/theme/src/types/voidzero-theme.ts"],
+      "@vp-default/*": [
+        "${configDir}/node_modules/@voidzero-dev/vitepress-theme/src/components/vitepress-default/*"
+      ],
+      "@vp-composables/*": [
+        "${configDir}/node_modules/@voidzero-dev/vitepress-theme/src/composables/vitepress-default/*"
+      ],
+      "@vp-support/*": [
+        "${configDir}/node_modules/@voidzero-dev/vitepress-theme/src/support/vitepress-default/*"
+      ],
+      "@components/*": ["${configDir}/node_modules/@voidzero-dev/vitepress-theme/src/components/*"]
+    }
+  }
+}
