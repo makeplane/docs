@@ -19,7 +19,7 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs --port 5174",
-    "build": "(git fetch --unshallow || true) && vitepress build docs",
+    "build": "(git fetch --unshallow || true) && NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs",
     "preview": "vitepress preview docs --port 4174",
     "check:types": "tsc --noEmit -p tsconfig.json"
   },

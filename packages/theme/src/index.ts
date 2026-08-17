@@ -85,7 +85,10 @@ export function createPlaneTheme(options: PlaneThemeOptions): Theme {
 
   return {
     Layout() {
-      return h(PlaneLayout, null, cookieConsent ? { "layout-bottom": () => h(CookieConsent) } : {});
+      return h(PlaneLayout, null, {
+        ...(cookieConsent ? { "layout-bottom": () => h(CookieConsent) } : {}),
+        ...(options.layoutSlots ?? {}),
+      });
     },
 
     enhanceApp(ctx) {

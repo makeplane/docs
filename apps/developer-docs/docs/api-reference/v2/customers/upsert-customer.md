@@ -1,0 +1,285 @@
+---
+title: Upsert a customer
+description: Upsert a customer with the Plane v2 REST API. Parameters, sparse `?fields=` responses, OAuth scopes, error codes, and code examples.
+keywords: plane api v2, upsert a customer, customers, customers upsert
+---
+
+# Upsert a customer
+
+<div class="api-endpoint-badge">
+  <span class="method post">POST</span>
+  <span class="path">/api/v2/workspaces/{slug}/customers/upsert/</span>
+</div>
+
+<div class="api-two-column">
+<div class="api-left">
+
+Customers are the workspace CRM records you attach requests and work items to. Create a customer, or update the existing one that carries the same `(external_source, external_id)` pair.
+
+- Both `external_source` and `external_id` are required — without them there is nothing to match on and the request is a `400`.
+- A created record answers `201` with `X-Plane-Upsert: created`; an updated one answers `200` with `X-Plane-Upsert: updated`. Branch on the header rather than guessing from the status.
+- Upsert is safe for **sequential** importers. Two simultaneous upserts of the same key can each miss and each create, so serialize your writes per key.
+
+<div class="params-section">
+
+### Path Parameters
+
+<div class="params-list">
+
+<ApiParam name="slug" type="string" :required="true">
+
+The workspace slug. It appears in your Plane URLs — in `https://app.plane.so/my-team/projects/`, the slug is `my-team`.
+
+</ApiParam>
+
+</div>
+</div>
+
+<div class="params-section">
+
+### Body Parameters
+
+<div class="params-list">
+
+<ApiParam name="name" type="string" :required="true">
+
+Display name.
+
+Maximum 255 characters.
+
+</ApiParam>
+
+<ApiParam name="contract_status" type="string" :required="false">
+
+Current contract state, in your own vocabulary.
+
+Maximum 255 characters. Nullable.
+
+</ApiParam>
+
+<ApiParam name="description" type="string" :required="false">
+
+Free-form description.
+
+Nullable.
+
+</ApiParam>
+
+<ApiParam name="description_html" type="string" :required="false">
+
+Rich-text body as HTML. This is the field the Plane editor round-trips.
+
+Nullable.
+
+</ApiParam>
+
+<ApiParam name="domain" type="string" :required="false">
+
+The customer's primary domain, for example `example.com`.
+
+Maximum 255 characters. Nullable.
+
+</ApiParam>
+
+<ApiParam name="email" type="string" :required="false">
+
+Email address.
+
+Nullable.
+
+</ApiParam>
+
+<ApiParam name="employees" type="integer" :required="false">
+
+Headcount, for segmentation.
+
+Nullable.
+
+</ApiParam>
+
+<ApiParam name="external_id" type="string" :required="false">
+
+Your system's identifier for this record, for sync and import correlation.
+
+Maximum 255 characters. Nullable.
+
+</ApiParam>
+
+<ApiParam name="external_source" type="string" :required="false">
+
+The system `external_id` came from, for example `github` or `jira`.
+
+Maximum 255 characters. Nullable.
+
+</ApiParam>
+
+<ApiParam name="logo_props" type="string" :required="false">
+
+Editor-owned logo descriptor. Pass back what you read rather than composing it by hand.
+
+</ApiParam>
+
+<ApiParam name="revenue" type="string" :required="false">
+
+Annual revenue, for segmentation.
+
+Nullable.
+
+</ApiParam>
+
+<ApiParam name="stage" type="string" :required="false">
+
+Where the customer sits in your funnel.
+
+Maximum 255 characters. Nullable.
+
+</ApiParam>
+
+<ApiParam name="website_url" type="string" :required="false">
+
+Public website URL.
+
+Nullable.
+
+</ApiParam>
+
+</div>
+</div>
+
+<div class="params-section">
+
+### Response shaping
+
+<div class="params-list">
+
+<ApiParam name="fields" type="string" :required="false">
+
+Comma-separated list of fields to return. Unrequested keys are **omitted**, not returned as `null`. `id` always comes back. Pass `all` for every requestable field. An unknown name is a `400`. See [Sparse fields](/api-reference/v2/sparse-fields).
+
+Requestable here: `archived_at`, `contract_status`, `created_at`, `created_by_id`, `customer_request_count`, `description`, `description_html`, `domain`, `email`, `employees`, `external_id`, `external_source`, `id`, `logo_asset_id`, `logo_props`, `logo_url`, `name`, `revenue`, `stage`, `website_url`.
+
+</ApiParam>
+
+</div>
+</div>
+
+<div class="params-section">
+
+### Scopes
+
+`customers:write`
+
+</div>
+
+<div class="params-section">
+
+### Errors
+
+| Status | Code                     | Cause                                                                               |
+| ------ | ------------------------ | ----------------------------------------------------------------------------------- |
+| `400`  | `invalid_request`        | The request body or a query parameter failed validation.                            |
+| `401`  | `unauthorized`           | Missing or invalid credentials.                                                     |
+| `402`  | `payment_required`       | The feature this endpoint belongs to isn't enabled on your plan or is switched off. |
+| `403`  | `forbidden`              | Your role or token scope doesn't allow this.                                        |
+| `404`  | `not_found`              | No such resource, or it's outside your tenant.                                      |
+| `406`  | `not_acceptable`         | The `Accept` header asks for a representation the API can't produce.                |
+| `409`  | `conflict`               | A business rule blocks the write — see the notes above.                             |
+| `413`  | `payload_too_large`      | The request body is over the size limit.                                            |
+| `415`  | `unsupported_media_type` | The `Content-Type` isn't one this endpoint accepts.                                 |
+| `429`  | `rate_limited`           | Throttled. Honor the `Retry-After` header before retrying.                          |
+
+</div>
+
+</div>
+
+<div class="api-right">
+
+<CodePanel title="Upsert a customer" :languages="['cURL', 'Python', 'JavaScript']">
+<template #curl>
+
+```bash
+curl -X POST \
+  "https://api.plane.so/api/v2/workspaces/my-team/customers/upsert/" \
+  -H "X-Api-Key: $PLANE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "name": "Example name",
+  "contract_status": "active",
+  "description": "What this is for.",
+  "description_html": "<p>Details go here.</p>"
+}'
+```
+
+</template>
+<template #python>
+
+```python
+import requests
+
+response = requests.post(
+    "https://api.plane.so/api/v2/workspaces/my-team/customers/upsert/",
+    headers={"X-Api-Key": "your-api-key"},
+    json={
+        "name": "Example name",
+        "contract_status": "active",
+        "description": "What this is for.",
+        "description_html": "<p>Details go here.</p>"
+    },
+)
+print(response.json())
+```
+
+</template>
+<template #javascript>
+
+```javascript
+const response = await fetch("https://api.plane.so/api/v2/workspaces/my-team/customers/upsert/", {
+  method: "POST",
+  headers: {
+    "X-Api-Key": "your-api-key",
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name: "Example name",
+    contract_status: "active",
+    description: "What this is for.",
+    description_html: "<p>Details go here.</p>",
+  }),
+});
+const data = await response.json();
+```
+
+</template>
+</CodePanel>
+
+<ResponsePanel status="200">
+
+```json
+{
+  "archived_at": null,
+  "contract_status": "active",
+  "created_at": "2026-01-14T09:22:41.478363Z",
+  "created_by_id": "16c61a3a-512a-48ac-b0be-b6b46fe6f430",
+  "customer_request_count": 3,
+  "description": "What this is for.",
+  "description_html": "<p>Details go here.</p>",
+  "domain": "example.com",
+  "email": "ana@example.com",
+  "employees": 250,
+  "external_id": null,
+  "external_source": null,
+  "id": "b7e42a19-3c5d-4f80-9a26-8d1c0f4e7b53",
+  "logo_asset_id": "f960d3c2-8524-4a41-b8eb-055ce4be2a7f",
+  "logo_props": null,
+  "logo_url": "https://example.com/logo.png",
+  "name": "Example name",
+  "revenue": "4.2M",
+  "stage": "customer",
+  "website_url": "https://example.com"
+}
+```
+
+</ResponsePanel>
+
+</div>
+</div>

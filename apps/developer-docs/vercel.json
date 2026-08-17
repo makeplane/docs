@@ -6,7 +6,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </api-reference/introduction>; rel=\"service-doc\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </api-reference/v2/introduction>; rel=\"service-doc\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
         },
         {
           "key": "X-Robots-Tag",
@@ -18,7 +18,11 @@
   "redirects": [
     {
       "source": "/api-reference",
-      "destination": "/api-reference/introduction"
+      "destination": "/api-reference/v2/introduction"
+    },
+    {
+      "source": "/api-reference/introduction",
+      "destination": "/api-reference/v2/introduction"
     },
     {
       "source": "/api-reference/byoa/build-plane-app",
@@ -30,35 +34,39 @@
     },
     {
       "source": "/api-reference/cycle-issue/overview",
-      "destination": "/api-reference/cycle/overview"
+      "destination": "/api-reference/v1/cycle/overview"
     },
     {
       "source": "/api-reference/cycle-issue/add-cycle-issue",
-      "destination": "/api-reference/cycle/add-cycle-work-items"
+      "destination": "/api-reference/v1/cycle/add-cycle-work-items"
     },
     {
       "source": "/api-reference/cycle-issue/list-cycle-issues",
-      "destination": "/api-reference/cycle/list-cycle-work-items"
+      "destination": "/api-reference/v1/cycle/list-cycle-work-items"
     },
     {
       "source": "/api-reference/cycle-issue/delete-cycle-issue",
-      "destination": "/api-reference/cycle/remove-cycle-work-item"
+      "destination": "/api-reference/v1/cycle/remove-cycle-work-item"
     },
     {
       "source": "/api-reference/module-issue/overview",
-      "destination": "/api-reference/module/overview"
+      "destination": "/api-reference/v1/module/overview"
     },
     {
       "source": "/api-reference/module-issue/add-module-issue",
-      "destination": "/api-reference/module/add-module-work-items"
+      "destination": "/api-reference/v1/module/add-module-work-items"
     },
     {
       "source": "/api-reference/module-issue/list-module-issues",
-      "destination": "/api-reference/module/list-module-work-items"
+      "destination": "/api-reference/v1/module/list-module-work-items"
     },
     {
       "source": "/api-reference/module-issue/delete-module-issue",
-      "destination": "/api-reference/module/remove-module-work-item"
+      "destination": "/api-reference/v1/module/remove-module-work-item"
+    },
+    {
+      "source": "/api-reference/:path((?!v1/|v2/).*)",
+      "destination": "/api-reference/v1/:path"
     },
     {
       "source": "/plane-one/governance/authentication/custom-sso",
