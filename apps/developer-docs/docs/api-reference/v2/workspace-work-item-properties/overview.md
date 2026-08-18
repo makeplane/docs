@@ -159,13 +159,13 @@ unaffected by mode. See [Work item type modes](/api-reference/v2/work-item-type-
 
 ## Endpoints
 
-| Method   | Path                                                   | Description                 |
-| -------- | ------------------------------------------------------ | --------------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/`      | List workspace properties   |
-| `POST`   | `/api/v2/workspaces/{slug}/work-item-properties/`      | Create a workspace property |
-| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/{pk}/` | Get a workspace property    |
-| `PATCH`  | `/api/v2/workspaces/{slug}/work-item-properties/{pk}/` | Update a workspace property |
-| `DELETE` | `/api/v2/workspaces/{slug}/work-item-properties/{pk}/` | Delete a workspace property |
+| Method   | Path                                                   | Description                           |
+| -------- | ------------------------------------------------------ | ------------------------------------- |
+| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/`      | List workspace work item properties   |
+| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/{pk}/` | Get a workspace work item property    |
+| `POST`   | `/api/v2/workspaces/{slug}/work-item-properties/`      | Create a workspace work item property |
+| `PATCH`  | `/api/v2/workspaces/{slug}/work-item-properties/{pk}/` | Update a workspace work item property |
+| `DELETE` | `/api/v2/workspaces/{slug}/work-item-properties/{pk}/` | Delete a workspace work item property |
 
 ## Property types
 

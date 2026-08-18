@@ -86,15 +86,17 @@ Work items reference labels by id through `label_ids`, and you filter work items
 
 ## Endpoints
 
-| Method   | Path                                                             | Description       |
-| -------- | ---------------------------------------------------------------- | ----------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/`        | List labels       |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/`        | Create a label    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/bulk/`   | Bulk write labels |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/upsert/` | Upsert a label    |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/{pk}/`   | Delete a label    |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/{pk}/`   | Get a label       |
-| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/{pk}/`   | Update a label    |
+| Method   | Path                                                                  | Description        |
+| -------- | --------------------------------------------------------------------- | ------------------ |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/`             | List labels        |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/{pk}/`        | Get a label        |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/`             | Create a label     |
+| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/{pk}/`        | Update a label     |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/{pk}/`        | Delete a label     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/upsert/`      | Upsert a label     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/bulk-create/` | Bulk create labels |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/bulk-update/` | Bulk update labels |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/labels/bulk-delete/` | Bulk delete labels |
 
 ## Names are unique per project
 

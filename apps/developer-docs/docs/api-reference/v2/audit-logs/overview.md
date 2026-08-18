@@ -175,10 +175,10 @@ Audit logs are read-only. There is no way to write, edit, or delete an entry thr
 
 ## Endpoints
 
-| Method | Path                                         | Description       |
-| ------ | -------------------------------------------- | ----------------- |
-| `GET`  | `/api/v2/workspaces/{slug}/audit-logs/`      | List audit logs   |
-| `GET`  | `/api/v2/workspaces/{slug}/audit-logs/{pk}/` | Get one audit log |
+| Method | Path                                         | Description      |
+| ------ | -------------------------------------------- | ---------------- |
+| `GET`  | `/api/v2/workspaces/{slug}/audit-logs/`      | List audit logs  |
+| `GET`  | `/api/v2/workspaces/{slug}/audit-logs/{pk}/` | Get an audit log |
 
 Both require the `workspaces.audit_logs:read` scope. There is no `POST`, `PATCH`, or `DELETE` — entries are written by Plane and are not editable by any caller.
 

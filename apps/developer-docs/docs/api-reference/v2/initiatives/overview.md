@@ -105,10 +105,10 @@ Initiatives group projects and work items under one strategic objective.
 | Method   | Path                                                     | Description                         |
 | -------- | -------------------------------------------------------- | ----------------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/initiatives/`                 | List initiatives                    |
-| `POST`   | `/api/v2/workspaces/{slug}/initiatives/`                 | Create a initiative                 |
-| `DELETE` | `/api/v2/workspaces/{slug}/initiatives/{pk}/`            | Delete a initiative                 |
 | `GET`    | `/api/v2/workspaces/{slug}/initiatives/{pk}/`            | Get a initiative                    |
+| `POST`   | `/api/v2/workspaces/{slug}/initiatives/`                 | Create a initiative                 |
 | `PATCH`  | `/api/v2/workspaces/{slug}/initiatives/{pk}/`            | Update a initiative                 |
+| `DELETE` | `/api/v2/workspaces/{slug}/initiatives/{pk}/`            | Delete a initiative                 |
 | `POST`   | `/api/v2/workspaces/{slug}/initiatives/{pk}/labels/`     | Add or remove initiative labels     |
 | `POST`   | `/api/v2/workspaces/{slug}/initiatives/{pk}/projects/`   | Add or remove initiative projects   |
 | `POST`   | `/api/v2/workspaces/{slug}/initiatives/{pk}/work-items/` | Add or remove initiative work items |

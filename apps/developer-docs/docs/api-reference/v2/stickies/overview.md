@@ -90,10 +90,10 @@ Stickies are private notes owned by the calling user.
 | Method   | Path                                       | Description     |
 | -------- | ------------------------------------------ | --------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/stickies/`      | List stickies   |
-| `POST`   | `/api/v2/workspaces/{slug}/stickies/`      | Create a sticky |
-| `DELETE` | `/api/v2/workspaces/{slug}/stickies/{pk}/` | Delete a sticky |
 | `GET`    | `/api/v2/workspaces/{slug}/stickies/{pk}/` | Get a sticky    |
+| `POST`   | `/api/v2/workspaces/{slug}/stickies/`      | Create a sticky |
 | `PATCH`  | `/api/v2/workspaces/{slug}/stickies/{pk}/` | Update a sticky |
+| `DELETE` | `/api/v2/workspaces/{slug}/stickies/{pk}/` | Delete a sticky |
 
 ## Response shaping
 

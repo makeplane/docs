@@ -90,10 +90,10 @@ Project work item templates pre-fill new work items in one project.
 | Method   | Path                                                                            | Description                         |
 | -------- | ------------------------------------------------------------------------------- | ----------------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-templates/`          | List project work item templates    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-templates/`          | Create a project work item template |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-templates/{pk}/`     | Delete a project work item template |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-templates/{pk}/`     | Get a project work item template    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-templates/`          | Create a project work item template |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-templates/{pk}/`     | Update a project work item template |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-templates/{pk}/`     | Delete a project work item template |
 | `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-templates/{pk}/use/` | Create a work item from a template  |
 
 ## Response shaping

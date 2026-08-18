@@ -77,14 +77,14 @@ The schema types `role` as a plain string with no enum. Built-in slugs such as `
 
 | Method   | Path                                                            | Description                   |
 | -------- | --------------------------------------------------------------- | ----------------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/members/`                            | List workspace members        |
-| `POST`   | `/api/v2/workspaces/{slug}/members/remove/`                     | Remove a workspace member     |
-| `GET`    | `/api/v2/workspaces/{slug}/project-role-distribution/`          | Get project role distribution |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/members/`      | List project members          |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/members/`      | Create a project member       |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/members/{pk}/` | Delete a project member       |
+| `GET`    | `/api/v2/workspaces/{slug}/members/`                            | List workspace members        |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/members/{pk}/` | Get a project member          |
+| `GET`    | `/api/v2/workspaces/{slug}/project-role-distribution/`          | Get project role distribution |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/members/`      | Create a project member       |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/members/{pk}/` | Update a project member       |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/members/{pk}/` | Delete a project member       |
+| `POST`   | `/api/v2/workspaces/{slug}/members/remove/`                     | Remove a workspace member     |
 
 Both endpoints return the **active** roster for their scope. The workspace list is the superset: a project member is always a workspace member too, so a `member_id` on a project roster always appears on the workspace roster as well — usually with a different `role`.
 

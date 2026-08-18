@@ -89,15 +89,15 @@ Collections group wiki pages in a workspace.
 
 | Method   | Path                                                       | Description                         |
 | -------- | ---------------------------------------------------------- | ----------------------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/collections/`                   | List collections                    |
-| `POST`   | `/api/v2/workspaces/{slug}/collections/`                   | Create a collection                 |
-| `DELETE` | `/api/v2/workspaces/{slug}/collections/{pk}/`              | Delete a collection                 |
-| `GET`    | `/api/v2/workspaces/{slug}/collections/{pk}/`              | Get a collection                    |
-| `PATCH`  | `/api/v2/workspaces/{slug}/collections/{pk}/`              | Update a collection                 |
 | `GET`    | `/api/v2/workspaces/{slug}/collections/{pk}/members/`      | List collection members             |
+| `GET`    | `/api/v2/workspaces/{slug}/collections/`                   | List collections                    |
+| `GET`    | `/api/v2/workspaces/{slug}/collections/{pk}/`              | Get a collection                    |
+| `POST`   | `/api/v2/workspaces/{slug}/collections/`                   | Create a collection                 |
+| `PATCH`  | `/api/v2/workspaces/{slug}/collections/{pk}/`              | Update a collection                 |
+| `DELETE` | `/api/v2/workspaces/{slug}/collections/{pk}/`              | Delete a collection                 |
 | `POST`   | `/api/v2/workspaces/{slug}/collections/{pk}/members/`      | Add or remove collection members    |
-| `GET`    | `/api/v2/workspaces/{slug}/collections/{pk}/pages-search/` | Search pages for a collection       |
 | `POST`   | `/api/v2/workspaces/{slug}/collections/{pk}/pages/`        | Add or remove pages in a collection |
+| `GET`    | `/api/v2/workspaces/{slug}/collections/{pk}/pages-search/` | Search pages for a collection       |
 
 ## Response shaping
 

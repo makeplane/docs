@@ -130,10 +130,10 @@ Customer properties are the workspace-level custom field catalog for customers.
 | Method   | Path                                                  | Description                |
 | -------- | ----------------------------------------------------- | -------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/customer-properties/`      | List customer properties   |
-| `POST`   | `/api/v2/workspaces/{slug}/customer-properties/`      | Create a customer property |
-| `DELETE` | `/api/v2/workspaces/{slug}/customer-properties/{pk}/` | Delete a customer property |
 | `GET`    | `/api/v2/workspaces/{slug}/customer-properties/{pk}/` | Get a customer property    |
+| `POST`   | `/api/v2/workspaces/{slug}/customer-properties/`      | Create a customer property |
 | `PATCH`  | `/api/v2/workspaces/{slug}/customer-properties/{pk}/` | Update a customer property |
+| `DELETE` | `/api/v2/workspaces/{slug}/customer-properties/{pk}/` | Delete a customer property |
 
 ## Response shaping
 

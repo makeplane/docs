@@ -205,14 +205,15 @@ Projects are the main container for work items in a workspace.
 | Method   | Path                                                 | Description           |
 | -------- | ---------------------------------------------------- | --------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/`                | List projects         |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/`                | Create a project      |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/bulk/`           | Bulk write projects   |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/upsert/`         | Upsert a project      |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{pk}/`           | Delete a project      |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{pk}/`           | Get a project         |
-| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{pk}/`           | Update a project      |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{pk}/archive/`   | Archive a project     |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{pk}/summary/`   | Get a project summary |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{pk}/`           | Get a project         |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/`                | Create a project      |
+| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{pk}/`           | Update a project      |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{pk}/`           | Delete a project      |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/upsert/`         | Upsert a project      |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/bulk-create/`    | Bulk create projects  |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/bulk-update/`    | Bulk update projects  |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{pk}/archive/`   | Archive a project     |
 | `POST`   | `/api/v2/workspaces/{slug}/projects/{pk}/unarchive/` | Unarchive a project   |
 
 ## Response shaping

@@ -77,15 +77,17 @@ Estimate points are the individual values inside a project estimate scale.
 
 ## Endpoints
 
-| Method   | Path                                                                                     | Description                |
-| -------- | ---------------------------------------------------------------------------------------- | -------------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/`        | List estimate points       |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/`        | Create a estimate point    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/bulk/`   | Bulk write estimate points |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/upsert/` | Upsert a estimate point    |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/{pk}/`   | Delete a estimate point    |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/{pk}/`   | Get a estimate point       |
-| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/{pk}/`   | Update a estimate point    |
+| Method   | Path                                                                                          | Description                 |
+| -------- | --------------------------------------------------------------------------------------------- | --------------------------- |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/`             | List estimate points        |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/{pk}/`        | Get a estimate point        |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/`             | Create a estimate point     |
+| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/{pk}/`        | Update a estimate point     |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/{pk}/`        | Delete a estimate point     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/upsert/`      | Upsert a estimate point     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/bulk-create/` | Bulk create estimate points |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/bulk-update/` | Bulk update estimate points |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{estimate_id}/points/bulk-delete/` | Bulk delete estimate points |
 
 ## Response shaping
 

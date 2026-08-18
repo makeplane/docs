@@ -135,11 +135,11 @@ Customers are the workspace CRM records you attach requests and work items to.
 | Method   | Path                                                   | Description                        |
 | -------- | ------------------------------------------------------ | ---------------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/customers/`                 | List customers                     |
-| `POST`   | `/api/v2/workspaces/{slug}/customers/`                 | Create a customer                  |
-| `POST`   | `/api/v2/workspaces/{slug}/customers/upsert/`          | Upsert a customer                  |
-| `DELETE` | `/api/v2/workspaces/{slug}/customers/{pk}/`            | Delete a customer                  |
 | `GET`    | `/api/v2/workspaces/{slug}/customers/{pk}/`            | Get a customer                     |
+| `POST`   | `/api/v2/workspaces/{slug}/customers/`                 | Create a customer                  |
 | `PATCH`  | `/api/v2/workspaces/{slug}/customers/{pk}/`            | Update a customer                  |
+| `DELETE` | `/api/v2/workspaces/{slug}/customers/{pk}/`            | Delete a customer                  |
+| `POST`   | `/api/v2/workspaces/{slug}/customers/upsert/`          | Upsert a customer                  |
 | `POST`   | `/api/v2/workspaces/{slug}/customers/{pk}/work-items/` | Link or unlink customer work items |
 
 ## Response shaping

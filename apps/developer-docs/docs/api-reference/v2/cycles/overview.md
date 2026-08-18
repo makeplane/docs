@@ -104,14 +104,16 @@ Cycles are defined by a `start_date` and an `end_date`, interpreted in the cycle
 | Method   | Path                                                                      | Description                        |
 | -------- | ------------------------------------------------------------------------- | ---------------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/`                 | List cycles                        |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/`                 | Create a cycle                     |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/bulk/`            | Bulk write cycles                  |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/upsert/`          | Upsert a cycle                     |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/{pk}/`            | Delete a cycle                     |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/{pk}/`            | Get a cycle                        |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/`                 | Create a cycle                     |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/{pk}/`            | Update a cycle                     |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/{pk}/transfer/`   | Transfer work items between cycles |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/{pk}/`            | Delete a cycle                     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/upsert/`          | Upsert a cycle                     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/bulk-create/`     | Bulk create cycles                 |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/bulk-update/`     | Bulk update cycles                 |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/bulk-delete/`     | Bulk delete cycles                 |
 | `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/{pk}/work-items/` | Add or remove cycle work items     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/cycles/{pk}/transfer/`   | Transfer work items between cycles |
 
 ## Names are unique per project
 

@@ -119,12 +119,14 @@ Modules do not support `?expand=`. `lead_id` and `member_ids` come back as ids â
 | Method   | Path                                                                       | Description                     |
 | -------- | -------------------------------------------------------------------------- | ------------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/`                 | List modules                    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/`                 | Create a module                 |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/bulk/`            | Bulk write modules              |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/upsert/`          | Upsert a module                 |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/{pk}/`            | Delete a module                 |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/{pk}/`            | Get a module                    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/`                 | Create a module                 |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/{pk}/`            | Update a module                 |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/{pk}/`            | Delete a module                 |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/upsert/`          | Upsert a module                 |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/bulk-create/`     | Bulk create modules             |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/bulk-update/`     | Bulk update modules             |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/bulk-delete/`     | Bulk delete modules             |
 | `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/modules/{pk}/work-items/` | Add or remove module work items |
 
 ## Status

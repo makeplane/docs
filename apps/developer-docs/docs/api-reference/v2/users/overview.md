@@ -67,9 +67,9 @@ The users resource has exactly one endpoint, and it answers one question: **who 
 
 ## Endpoints
 
-| Method | Path                | Description                  |
-| ------ | ------------------- | ---------------------------- |
-| `GET`  | `/api/v2/users/me/` | Return the calling principal |
+| Method | Path                | Description      |
+| ------ | ------------------- | ---------------- |
+| `GET`  | `/api/v2/users/me/` | Get current user |
 
 The path has no workspace slug: it describes the credential, not a workspace. There is no `/users/{id}/` in v2 — to look other people up, read a workspace or project roster with [`?expand=member`](/api-reference/v2/members/list-workspace-members).
 

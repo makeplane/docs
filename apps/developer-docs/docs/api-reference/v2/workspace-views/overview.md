@@ -115,10 +115,10 @@ Workspace views are saved filter-and-layout combinations across a workspace.
 | Method   | Path                                    | Description             |
 | -------- | --------------------------------------- | ----------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/views/`      | List workspace views    |
-| `POST`   | `/api/v2/workspaces/{slug}/views/`      | Create a workspace view |
-| `DELETE` | `/api/v2/workspaces/{slug}/views/{pk}/` | Delete a workspace view |
 | `GET`    | `/api/v2/workspaces/{slug}/views/{pk}/` | Get a workspace view    |
+| `POST`   | `/api/v2/workspaces/{slug}/views/`      | Create a workspace view |
 | `PATCH`  | `/api/v2/workspaces/{slug}/views/{pk}/` | Update a workspace view |
+| `DELETE` | `/api/v2/workspaces/{slug}/views/{pk}/` | Delete a workspace view |
 
 ## Response shaping
 

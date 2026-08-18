@@ -115,12 +115,12 @@ Releases group shipped work and carry a changelog.
 | Method   | Path                                                  | Description                      |
 | -------- | ----------------------------------------------------- | -------------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/releases/`                 | List releases                    |
-| `POST`   | `/api/v2/workspaces/{slug}/releases/`                 | Create a release                 |
-| `DELETE` | `/api/v2/workspaces/{slug}/releases/{pk}/`            | Delete a release                 |
-| `GET`    | `/api/v2/workspaces/{slug}/releases/{pk}/`            | Get a release                    |
-| `PATCH`  | `/api/v2/workspaces/{slug}/releases/{pk}/`            | Update a release                 |
 | `GET`    | `/api/v2/workspaces/{slug}/releases/{pk}/changelog/`  | Get a release changelog          |
+| `GET`    | `/api/v2/workspaces/{slug}/releases/{pk}/`            | Get a release                    |
+| `POST`   | `/api/v2/workspaces/{slug}/releases/`                 | Create a release                 |
 | `PATCH`  | `/api/v2/workspaces/{slug}/releases/{pk}/changelog/`  | Update a release changelog       |
+| `PATCH`  | `/api/v2/workspaces/{slug}/releases/{pk}/`            | Update a release                 |
+| `DELETE` | `/api/v2/workspaces/{slug}/releases/{pk}/`            | Delete a release                 |
 | `POST`   | `/api/v2/workspaces/{slug}/releases/{pk}/labels/`     | Add or remove release labels     |
 | `POST`   | `/api/v2/workspaces/{slug}/releases/{pk}/work-items/` | Add or remove release work items |
 

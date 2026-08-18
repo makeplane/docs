@@ -80,10 +80,10 @@ Teamspaces group members and projects under one team.
 | Method   | Path                                         | Description        |
 | -------- | -------------------------------------------- | ------------------ |
 | `GET`    | `/api/v2/workspaces/{slug}/teamspaces/`      | List teamspaces    |
-| `POST`   | `/api/v2/workspaces/{slug}/teamspaces/`      | Create a teamspace |
-| `DELETE` | `/api/v2/workspaces/{slug}/teamspaces/{pk}/` | Delete a teamspace |
 | `GET`    | `/api/v2/workspaces/{slug}/teamspaces/{pk}/` | Get a teamspace    |
+| `POST`   | `/api/v2/workspaces/{slug}/teamspaces/`      | Create a teamspace |
 | `PATCH`  | `/api/v2/workspaces/{slug}/teamspaces/{pk}/` | Update a teamspace |
+| `DELETE` | `/api/v2/workspaces/{slug}/teamspaces/{pk}/` | Delete a teamspace |
 
 ## Response shaping
 

@@ -130,10 +130,10 @@ Project pages are the documents that live inside a project.
 | Method   | Path                                                          | Description           |
 | -------- | ------------------------------------------------------------- | --------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/pages/`      | List project pages    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/pages/`      | Create a project page |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/pages/{pk}/` | Delete a project page |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/pages/{pk}/` | Get a project page    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/pages/`      | Create a project page |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/pages/{pk}/` | Update a project page |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/pages/{pk}/` | Delete a project page |
 
 ## Response shaping
 

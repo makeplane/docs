@@ -130,10 +130,10 @@ Workspace pages are the wiki documents that live outside any project.
 | Method   | Path                                    | Description             |
 | -------- | --------------------------------------- | ----------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/pages/`      | List workspace pages    |
-| `POST`   | `/api/v2/workspaces/{slug}/pages/`      | Create a workspace page |
-| `DELETE` | `/api/v2/workspaces/{slug}/pages/{pk}/` | Delete a workspace page |
 | `GET`    | `/api/v2/workspaces/{slug}/pages/{pk}/` | Get a workspace page    |
+| `POST`   | `/api/v2/workspaces/{slug}/pages/`      | Create a workspace page |
 | `PATCH`  | `/api/v2/workspaces/{slug}/pages/{pk}/` | Update a workspace page |
+| `DELETE` | `/api/v2/workspaces/{slug}/pages/{pk}/` | Delete a workspace page |
 
 ## Response shaping
 

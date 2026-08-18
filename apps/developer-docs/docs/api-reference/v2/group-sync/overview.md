@@ -69,18 +69,18 @@ Group sync maps identity-provider groups onto Plane workspace and project roles.
 
 | Method   | Path                                                            | Description                         |
 | -------- | --------------------------------------------------------------- | ----------------------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/group-sync/config/`                  | Get the group sync configuration    |
-| `PATCH`  | `/api/v2/workspaces/{slug}/group-sync/config/`                  | Update the group sync configuration |
 | `GET`    | `/api/v2/workspaces/{slug}/group-sync/project-mappings/`        | List project mappings               |
-| `POST`   | `/api/v2/workspaces/{slug}/group-sync/project-mappings/`        | Create a project mapping            |
-| `DELETE` | `/api/v2/workspaces/{slug}/group-sync/project-mappings/{pk}/`   | Delete a project mapping            |
-| `GET`    | `/api/v2/workspaces/{slug}/group-sync/project-mappings/{pk}/`   | Get a project mapping               |
-| `PATCH`  | `/api/v2/workspaces/{slug}/group-sync/project-mappings/{pk}/`   | Update a project mapping            |
 | `GET`    | `/api/v2/workspaces/{slug}/group-sync/workspace-mappings/`      | List workspace mappings             |
-| `POST`   | `/api/v2/workspaces/{slug}/group-sync/workspace-mappings/`      | Create a workspace mapping          |
-| `DELETE` | `/api/v2/workspaces/{slug}/group-sync/workspace-mappings/{pk}/` | Delete a workspace mapping          |
+| `GET`    | `/api/v2/workspaces/{slug}/group-sync/config/`                  | Get the group sync configuration    |
+| `GET`    | `/api/v2/workspaces/{slug}/group-sync/project-mappings/{pk}/`   | Get a project mapping               |
 | `GET`    | `/api/v2/workspaces/{slug}/group-sync/workspace-mappings/{pk}/` | Get a workspace mapping             |
+| `POST`   | `/api/v2/workspaces/{slug}/group-sync/project-mappings/`        | Create a project mapping            |
+| `POST`   | `/api/v2/workspaces/{slug}/group-sync/workspace-mappings/`      | Create a workspace mapping          |
+| `PATCH`  | `/api/v2/workspaces/{slug}/group-sync/config/`                  | Update the group sync configuration |
+| `PATCH`  | `/api/v2/workspaces/{slug}/group-sync/project-mappings/{pk}/`   | Update a project mapping            |
 | `PATCH`  | `/api/v2/workspaces/{slug}/group-sync/workspace-mappings/{pk}/` | Update a workspace mapping          |
+| `DELETE` | `/api/v2/workspaces/{slug}/group-sync/project-mappings/{pk}/`   | Delete a project mapping            |
+| `DELETE` | `/api/v2/workspaces/{slug}/group-sync/workspace-mappings/{pk}/` | Delete a workspace mapping          |
 
 ## Response shaping
 

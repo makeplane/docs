@@ -115,10 +115,10 @@ Intake work items are the triage queue for a project.
 | Method   | Path                                                                  | Description               |
 | -------- | --------------------------------------------------------------------- | ------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/intake-issues/`      | List intake work items    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/intake-issues/`      | Create a intake work item |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/intake-issues/{pk}/` | Delete a intake work item |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/intake-issues/{pk}/` | Get a intake work item    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/intake-issues/`      | Create a intake work item |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/intake-issues/{pk}/` | Update a intake work item |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/intake-issues/{pk}/` | Delete a intake work item |
 
 ## Response shaping
 

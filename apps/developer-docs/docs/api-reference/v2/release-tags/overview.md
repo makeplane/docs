@@ -70,10 +70,10 @@ Release tags are the workspace-level tag catalog for releases.
 | Method   | Path                                            | Description          |
 | -------- | ----------------------------------------------- | -------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/releases/tags/`      | List release tags    |
-| `POST`   | `/api/v2/workspaces/{slug}/releases/tags/`      | Create a release tag |
-| `DELETE` | `/api/v2/workspaces/{slug}/releases/tags/{pk}/` | Delete a release tag |
 | `GET`    | `/api/v2/workspaces/{slug}/releases/tags/{pk}/` | Get a release tag    |
+| `POST`   | `/api/v2/workspaces/{slug}/releases/tags/`      | Create a release tag |
 | `PATCH`  | `/api/v2/workspaces/{slug}/releases/tags/{pk}/` | Update a release tag |
+| `DELETE` | `/api/v2/workspaces/{slug}/releases/tags/{pk}/` | Delete a release tag |
 
 ## Response shaping
 

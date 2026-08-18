@@ -75,12 +75,14 @@ Milestones mark dated checkpoints in a project.
 | Method   | Path                                                                          | Description                        |
 | -------- | ----------------------------------------------------------------------------- | ---------------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/`                 | List milestones                    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/`                 | Create a milestone                 |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/bulk/`            | Bulk write milestones              |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/upsert/`          | Upsert a milestone                 |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/{pk}/`            | Delete a milestone                 |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/{pk}/`            | Get a milestone                    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/`                 | Create a milestone                 |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/{pk}/`            | Update a milestone                 |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/{pk}/`            | Delete a milestone                 |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/upsert/`          | Upsert a milestone                 |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/bulk-create/`     | Bulk create milestones             |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/bulk-update/`     | Bulk update milestones             |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/bulk-delete/`     | Bulk delete milestones             |
 | `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/milestones/{pk}/work-items/` | Add or remove milestone work items |
 
 ## Response shaping

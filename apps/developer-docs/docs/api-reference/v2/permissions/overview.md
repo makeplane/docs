@@ -44,8 +44,8 @@ These endpoints report what the calling principal is actually allowed to do.
 
 | Method | Path                                                              | Description                              |
 | ------ | ----------------------------------------------------------------- | ---------------------------------------- |
-| `GET`  | `/api/v2/workspaces/{slug}/permissions/me/`                       | Get your effective workspace permissions |
 | `GET`  | `/api/v2/workspaces/{slug}/projects/{project_id}/permissions/me/` | Get your effective project permissions   |
+| `GET`  | `/api/v2/workspaces/{slug}/permissions/me/`                       | Get your effective workspace permissions |
 
 ## Response shaping
 

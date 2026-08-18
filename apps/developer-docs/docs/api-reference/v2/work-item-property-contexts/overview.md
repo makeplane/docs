@@ -163,13 +163,13 @@ When you create a workspace-level property, Plane seeds a context named `Default
 
 ## Endpoints
 
-| Method   | Path                                                                          | Description      |
-| -------- | ----------------------------------------------------------------------------- | ---------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/contexts/`      | List contexts    |
-| `POST`   | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/contexts/`      | Create a context |
-| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/contexts/{pk}/` | Get a context    |
-| `PATCH`  | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/contexts/{pk}/` | Update a context |
-| `DELETE` | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/contexts/{pk}/` | Delete a context |
+| Method   | Path                                                                          | Description               |
+| -------- | ----------------------------------------------------------------------------- | ------------------------- |
+| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/contexts/`      | List property contexts    |
+| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/contexts/{pk}/` | Get a property context    |
+| `POST`   | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/contexts/`      | Create a property context |
+| `PATCH`  | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/contexts/{pk}/` | Update a property context |
+| `DELETE` | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/contexts/{pk}/` | Delete a property context |
 
 `{property_id}` must be a workspace-level property. A project-level property id is not addressable here and returns `404 not_found`.
 

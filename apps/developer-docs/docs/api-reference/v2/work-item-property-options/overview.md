@@ -74,13 +74,13 @@ Work item property values reference an option by `id`. If you match on `name` in
 
 ## Endpoints
 
-| Method   | Path                                                                                               | Description      |
-| -------- | -------------------------------------------------------------------------------------------------- | ---------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{property_id}/options/`      | List options     |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{property_id}/options/`      | Create an option |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{property_id}/options/{pk}/` | Get an option    |
-| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{property_id}/options/{pk}/` | Update an option |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{property_id}/options/{pk}/` | Delete an option |
+| Method   | Path                                                                                               | Description              |
+| -------- | -------------------------------------------------------------------------------------------------- | ------------------------ |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{property_id}/options/`      | List property options    |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{property_id}/options/{pk}/` | Get a property option    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{property_id}/options/`      | Create a property option |
+| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{property_id}/options/{pk}/` | Update a property option |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{property_id}/options/{pk}/` | Delete a property option |
 
 `DELETE` returns `204` with an empty body.
 

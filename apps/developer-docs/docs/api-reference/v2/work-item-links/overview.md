@@ -70,10 +70,10 @@ Links attach external URLs to a work item.
 | Method   | Path                                                                                    | Description   |
 | -------- | --------------------------------------------------------------------------------------- | ------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/links/`      | List links    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/links/`      | Create a link |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/links/{pk}/` | Delete a link |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/links/{pk}/` | Get a link    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/links/`      | Create a link |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/links/{pk}/` | Update a link |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/links/{pk}/` | Delete a link |
 
 ## Response shaping
 

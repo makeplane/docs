@@ -95,9 +95,9 @@ Workspace assets are files uploaded against a workspace.
 | Method   | Path                                     | Description                      |
 | -------- | ---------------------------------------- | -------------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/assets/`      | List workspace assets            |
+| `GET`    | `/api/v2/workspaces/{slug}/assets/{pk}/` | Get a asset                      |
 | `POST`   | `/api/v2/workspaces/{slug}/assets/`      | Create a workspace asset upload  |
 | `DELETE` | `/api/v2/workspaces/{slug}/assets/{pk}/` | Delete a asset                   |
-| `GET`    | `/api/v2/workspaces/{slug}/assets/{pk}/` | Get a asset                      |
 | `PATCH`  | `/api/v2/workspaces/{slug}/assets/{pk}/` | Confirm a workspace asset upload |
 
 ## Response shaping

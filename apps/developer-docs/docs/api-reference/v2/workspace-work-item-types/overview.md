@@ -93,14 +93,14 @@ You can send `external_id` and `external_source` when creating or updating a typ
 
 ## Endpoints
 
-| Method   | Path                                                           | Description            |
-| -------- | -------------------------------------------------------------- | ---------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/work-item-types/`                   | List types             |
-| `POST`   | `/api/v2/workspaces/{slug}/work-item-types/`                   | Create a type          |
-| `GET`    | `/api/v2/workspaces/{slug}/work-item-types/{pk}/`              | Get a type             |
-| `PATCH`  | `/api/v2/workspaces/{slug}/work-item-types/{pk}/`              | Update a type          |
-| `DELETE` | `/api/v2/workspaces/{slug}/work-item-types/{pk}/`              | Delete a type          |
-| `POST`   | `/api/v2/workspaces/{slug}/work-item-types/{pk}/mark-default/` | Mark a type as default |
+| Method   | Path                                                           | Description                                |
+| -------- | -------------------------------------------------------------- | ------------------------------------------ |
+| `GET`    | `/api/v2/workspaces/{slug}/work-item-types/`                   | List workspace work item types             |
+| `GET`    | `/api/v2/workspaces/{slug}/work-item-types/{pk}/`              | Get a workspace work item type             |
+| `POST`   | `/api/v2/workspaces/{slug}/work-item-types/`                   | Create a workspace work item type          |
+| `PATCH`  | `/api/v2/workspaces/{slug}/work-item-types/{pk}/`              | Update a workspace work item type          |
+| `DELETE` | `/api/v2/workspaces/{slug}/work-item-types/{pk}/`              | Delete a workspace work item type          |
+| `POST`   | `/api/v2/workspaces/{slug}/work-item-types/{pk}/mark-default/` | Mark a workspace work item type as default |
 
 There is no `enable` and no `import` action at the workspace level. Both are project-level operations — see [Work item types (project)](/api-reference/v2/work-item-types/overview).
 

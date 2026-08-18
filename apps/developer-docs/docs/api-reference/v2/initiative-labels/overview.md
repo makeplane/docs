@@ -70,10 +70,10 @@ Initiative labels are the workspace-level label catalog for initiatives.
 | Method   | Path                                                 | Description               |
 | -------- | ---------------------------------------------------- | ------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/initiatives/labels/`      | List initiative labels    |
-| `POST`   | `/api/v2/workspaces/{slug}/initiatives/labels/`      | Create a initiative label |
-| `DELETE` | `/api/v2/workspaces/{slug}/initiatives/labels/{pk}/` | Delete a initiative label |
 | `GET`    | `/api/v2/workspaces/{slug}/initiatives/labels/{pk}/` | Get a initiative label    |
+| `POST`   | `/api/v2/workspaces/{slug}/initiatives/labels/`      | Create a initiative label |
 | `PATCH`  | `/api/v2/workspaces/{slug}/initiatives/labels/{pk}/` | Update a initiative label |
+| `DELETE` | `/api/v2/workspaces/{slug}/initiatives/labels/{pk}/` | Delete a initiative label |
 
 ## Response shaping
 

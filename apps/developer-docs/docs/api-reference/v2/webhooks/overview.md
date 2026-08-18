@@ -80,10 +80,10 @@ Webhooks push Plane events to a URL you control.
 | Method   | Path                                                  | Description                 |
 | -------- | ----------------------------------------------------- | --------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/webhooks/`                 | List webhooks               |
-| `POST`   | `/api/v2/workspaces/{slug}/webhooks/`                 | Create a webhook            |
-| `DELETE` | `/api/v2/workspaces/{slug}/webhooks/{pk}/`            | Delete a webhook            |
 | `GET`    | `/api/v2/workspaces/{slug}/webhooks/{pk}/`            | Get a webhook               |
+| `POST`   | `/api/v2/workspaces/{slug}/webhooks/`                 | Create a webhook            |
 | `PATCH`  | `/api/v2/workspaces/{slug}/webhooks/{pk}/`            | Update a webhook            |
+| `DELETE` | `/api/v2/workspaces/{slug}/webhooks/{pk}/`            | Delete a webhook            |
 | `POST`   | `/api/v2/workspaces/{slug}/webhooks/{pk}/regenerate/` | Regenerate a webhook secret |
 
 ## Response shaping

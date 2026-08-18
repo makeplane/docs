@@ -75,10 +75,10 @@ Workflow states are the states attached to a project workflow.
 | Method   | Path                                                                                   | Description             |
 | -------- | -------------------------------------------------------------------------------------- | ----------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/states/`      | List workflow states    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/states/`      | Create a workflow state |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/states/{pk}/` | Delete a workflow state |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/states/{pk}/` | Get a workflow state    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/states/`      | Create a workflow state |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/states/{pk}/` | Update a workflow state |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/states/{pk}/` | Delete a workflow state |
 
 ## Response shaping
 

@@ -106,15 +106,17 @@ the two never drift apart.
 
 ## Endpoints
 
-| Method   | Path                                                                                         | Description         |
-| -------- | -------------------------------------------------------------------------------------------- | ------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/`        | List comments       |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/`        | Create a comment    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/bulk/`   | Bulk write comments |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/upsert/` | Upsert a comment    |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/{pk}/`   | Delete a comment    |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/{pk}/`   | Get a comment       |
-| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/{pk}/`   | Update a comment    |
+| Method   | Path                                                                                              | Description          |
+| -------- | ------------------------------------------------------------------------------------------------- | -------------------- |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/`             | List comments        |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/{pk}/`        | Get a comment        |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/`             | Create a comment     |
+| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/{pk}/`        | Update a comment     |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/{pk}/`        | Delete a comment     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/upsert/`      | Upsert a comment     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/bulk-create/` | Bulk create comments |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/bulk-update/` | Bulk update comments |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/comments/bulk-delete/` | Bulk delete comments |
 
 ## Comments are not deduplicated
 

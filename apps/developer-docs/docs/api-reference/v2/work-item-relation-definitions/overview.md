@@ -105,10 +105,10 @@ Relation definitions are the workspace registry of typed work item relationships
 | Method   | Path                                                             | Description                  |
 | -------- | ---------------------------------------------------------------- | ---------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/work-item-relation-definitions/`      | List relation definitions    |
-| `POST`   | `/api/v2/workspaces/{slug}/work-item-relation-definitions/`      | Create a relation definition |
-| `DELETE` | `/api/v2/workspaces/{slug}/work-item-relation-definitions/{pk}/` | Delete a relation definition |
 | `GET`    | `/api/v2/workspaces/{slug}/work-item-relation-definitions/{pk}/` | Get a relation definition    |
+| `POST`   | `/api/v2/workspaces/{slug}/work-item-relation-definitions/`      | Create a relation definition |
 | `PATCH`  | `/api/v2/workspaces/{slug}/work-item-relation-definitions/{pk}/` | Update a relation definition |
+| `DELETE` | `/api/v2/workspaces/{slug}/work-item-relation-definitions/{pk}/` | Delete a relation definition |
 
 ## Response shaping
 

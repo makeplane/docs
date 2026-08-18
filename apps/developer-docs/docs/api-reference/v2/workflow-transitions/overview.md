@@ -75,10 +75,10 @@ Workflow transitions define the legal moves between workflow states, and who may
 | Method   | Path                                                                                              | Description                  |
 | -------- | ------------------------------------------------------------------------------------------------- | ---------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/state-transitions/`      | List workflow transitions    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/state-transitions/`      | Create a workflow transition |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/state-transitions/{pk}/` | Delete a workflow transition |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/state-transitions/{pk}/` | Get a workflow transition    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/state-transitions/`      | Create a workflow transition |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/state-transitions/{pk}/` | Update a workflow transition |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{workflow_id}/state-transitions/{pk}/` | Delete a workflow transition |
 
 ## Response shaping
 

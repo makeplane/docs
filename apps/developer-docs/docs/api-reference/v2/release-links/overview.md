@@ -70,10 +70,10 @@ Release links attach external URLs to a release.
 | Method   | Path                                                          | Description           |
 | -------- | ------------------------------------------------------------- | --------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/releases/{release_id}/links/`      | List release links    |
-| `POST`   | `/api/v2/workspaces/{slug}/releases/{release_id}/links/`      | Create a release link |
-| `DELETE` | `/api/v2/workspaces/{slug}/releases/{release_id}/links/{pk}/` | Delete a release link |
 | `GET`    | `/api/v2/workspaces/{slug}/releases/{release_id}/links/{pk}/` | Get a release link    |
+| `POST`   | `/api/v2/workspaces/{slug}/releases/{release_id}/links/`      | Create a release link |
 | `PATCH`  | `/api/v2/workspaces/{slug}/releases/{release_id}/links/{pk}/` | Update a release link |
+| `DELETE` | `/api/v2/workspaces/{slug}/releases/{release_id}/links/{pk}/` | Delete a release link |
 
 ## Response shaping
 

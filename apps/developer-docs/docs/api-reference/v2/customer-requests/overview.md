@@ -80,10 +80,10 @@ Customer requests capture what a customer asked for, and link that ask to work i
 | Method   | Path                                                               | Description               |
 | -------- | ------------------------------------------------------------------ | ------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/customers/{customer_id}/requests/`      | List customer requests    |
-| `POST`   | `/api/v2/workspaces/{slug}/customers/{customer_id}/requests/`      | Create a customer request |
-| `DELETE` | `/api/v2/workspaces/{slug}/customers/{customer_id}/requests/{pk}/` | Delete a customer request |
 | `GET`    | `/api/v2/workspaces/{slug}/customers/{customer_id}/requests/{pk}/` | Get a customer request    |
+| `POST`   | `/api/v2/workspaces/{slug}/customers/{customer_id}/requests/`      | Create a customer request |
 | `PATCH`  | `/api/v2/workspaces/{slug}/customers/{customer_id}/requests/{pk}/` | Update a customer request |
+| `DELETE` | `/api/v2/workspaces/{slug}/customers/{customer_id}/requests/{pk}/` | Delete a customer request |
 
 ## Response shaping
 

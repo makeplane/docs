@@ -123,17 +123,17 @@ After that, create work items with `type_id` set to the type and `custom_fields`
 
 ## Endpoints
 
-| Method   | Path                                                                                 | Description                           |
-| -------- | ------------------------------------------------------------------------------------ | ------------------------------------- |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/enable/`            | Enable work item types for a project  |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/`                   | List work item types                  |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/`                   | Create a work item type               |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{pk}/`              | Get a work item type                  |
-| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{pk}/`              | Update a work item type               |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{pk}/`              | Delete a work item type               |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{pk}/schema/`       | Get a work item type schema           |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{pk}/mark-default/` | Mark a type as the project default    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/import/`            | Import workspace types into a project |
+| Method   | Path                                                                                 | Description                      |
+| -------- | ------------------------------------------------------------------------------------ | -------------------------------- |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/`                   | List work item types             |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{pk}/schema/`       | Get a work item type schema      |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{pk}/`              | Get a work item type             |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/`                   | Create a work item type          |
+| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{pk}/`              | Update a work item type          |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{pk}/`              | Delete a work item type          |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/enable/`            | Enable work item types           |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/import/`            | Import work item types           |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{pk}/mark-default/` | Mark a work item type as default |
 
 ## What you can and cannot write
 

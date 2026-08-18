@@ -1603,8 +1603,16 @@ export default extendConfig(
                       link: "/api-reference/v2/work-items/upsert-work-item",
                     },
                     {
-                      text: "Bulk write work items",
-                      link: "/api-reference/v2/work-items/bulk-work-items",
+                      text: "Bulk create work items",
+                      link: "/api-reference/v2/work-items/bulk-create-work-items",
+                    },
+                    {
+                      text: "Bulk update work items",
+                      link: "/api-reference/v2/work-items/bulk-update-work-items",
+                    },
+                    {
+                      text: "Bulk delete work items",
+                      link: "/api-reference/v2/work-items/bulk-delete-work-items",
                     },
                     {
                       text: "Archive a work item",
@@ -1646,8 +1654,16 @@ export default extendConfig(
                       link: "/api-reference/v2/work-item-comments/upsert-comment",
                     },
                     {
-                      text: "Bulk write comments",
-                      link: "/api-reference/v2/work-item-comments/bulk-comments",
+                      text: "Bulk create comments",
+                      link: "/api-reference/v2/work-item-comments/bulk-create-comments",
+                    },
+                    {
+                      text: "Bulk update comments",
+                      link: "/api-reference/v2/work-item-comments/bulk-update-comments",
+                    },
+                    {
+                      text: "Bulk delete comments",
+                      link: "/api-reference/v2/work-item-comments/bulk-delete-comments",
                     },
                   ],
                 },
@@ -1824,7 +1840,18 @@ export default extendConfig(
                     { text: "Update a state", link: "/api-reference/v2/states/update-state" },
                     { text: "Delete a state", link: "/api-reference/v2/states/delete-state" },
                     { text: "Upsert a state", link: "/api-reference/v2/states/upsert-state" },
-                    { text: "Bulk write states", link: "/api-reference/v2/states/bulk-states" },
+                    {
+                      text: "Bulk create states",
+                      link: "/api-reference/v2/states/bulk-create-states",
+                    },
+                    {
+                      text: "Bulk update states",
+                      link: "/api-reference/v2/states/bulk-update-states",
+                    },
+                    {
+                      text: "Bulk delete states",
+                      link: "/api-reference/v2/states/bulk-delete-states",
+                    },
                   ],
                 },
                 {
@@ -1838,7 +1865,18 @@ export default extendConfig(
                     { text: "Update a label", link: "/api-reference/v2/labels/update-label" },
                     { text: "Delete a label", link: "/api-reference/v2/labels/delete-label" },
                     { text: "Upsert a label", link: "/api-reference/v2/labels/upsert-label" },
-                    { text: "Bulk write labels", link: "/api-reference/v2/labels/bulk-labels" },
+                    {
+                      text: "Bulk create labels",
+                      link: "/api-reference/v2/labels/bulk-create-labels",
+                    },
+                    {
+                      text: "Bulk update labels",
+                      link: "/api-reference/v2/labels/bulk-update-labels",
+                    },
+                    {
+                      text: "Bulk delete labels",
+                      link: "/api-reference/v2/labels/bulk-delete-labels",
+                    },
                   ],
                 },
                 {
@@ -1852,7 +1890,18 @@ export default extendConfig(
                     { text: "Update a cycle", link: "/api-reference/v2/cycles/update-cycle" },
                     { text: "Delete a cycle", link: "/api-reference/v2/cycles/delete-cycle" },
                     { text: "Upsert a cycle", link: "/api-reference/v2/cycles/upsert-cycle" },
-                    { text: "Bulk write cycles", link: "/api-reference/v2/cycles/bulk-cycles" },
+                    {
+                      text: "Bulk create cycles",
+                      link: "/api-reference/v2/cycles/bulk-create-cycles",
+                    },
+                    {
+                      text: "Bulk update cycles",
+                      link: "/api-reference/v2/cycles/bulk-update-cycles",
+                    },
+                    {
+                      text: "Bulk delete cycles",
+                      link: "/api-reference/v2/cycles/bulk-delete-cycles",
+                    },
                     {
                       text: "Add or remove cycle work items",
                       link: "/api-reference/v2/cycles/manage-cycle-work-items",
@@ -1874,7 +1923,18 @@ export default extendConfig(
                     { text: "Update a module", link: "/api-reference/v2/modules/update-module" },
                     { text: "Delete a module", link: "/api-reference/v2/modules/delete-module" },
                     { text: "Upsert a module", link: "/api-reference/v2/modules/upsert-module" },
-                    { text: "Bulk write modules", link: "/api-reference/v2/modules/bulk-modules" },
+                    {
+                      text: "Bulk create modules",
+                      link: "/api-reference/v2/modules/bulk-create-modules",
+                    },
+                    {
+                      text: "Bulk update modules",
+                      link: "/api-reference/v2/modules/bulk-update-modules",
+                    },
+                    {
+                      text: "Bulk delete modules",
+                      link: "/api-reference/v2/modules/bulk-delete-modules",
+                    },
                     {
                       text: "Add or remove module work items",
                       link: "/api-reference/v2/modules/manage-module-work-items",
@@ -1908,8 +1968,16 @@ export default extendConfig(
                       link: "/api-reference/v2/milestones/upsert-milestone",
                     },
                     {
-                      text: "Bulk write milestones",
-                      link: "/api-reference/v2/milestones/bulk-milestones",
+                      text: "Bulk create milestones",
+                      link: "/api-reference/v2/milestones/bulk-create-milestones",
+                    },
+                    {
+                      text: "Bulk update milestones",
+                      link: "/api-reference/v2/milestones/bulk-update-milestones",
+                    },
+                    {
+                      text: "Bulk delete milestones",
+                      link: "/api-reference/v2/milestones/bulk-delete-milestones",
                     },
                     {
                       text: "Add or remove milestone work items",
@@ -2251,8 +2319,12 @@ export default extendConfig(
                     { text: "Delete a project", link: "/api-reference/v2/projects/delete-project" },
                     { text: "Upsert a project", link: "/api-reference/v2/projects/upsert-project" },
                     {
-                      text: "Bulk write projects",
-                      link: "/api-reference/v2/projects/bulk-projects",
+                      text: "Bulk create projects",
+                      link: "/api-reference/v2/projects/bulk-create-projects",
+                    },
+                    {
+                      text: "Bulk update projects",
+                      link: "/api-reference/v2/projects/bulk-update-projects",
                     },
                     {
                       text: "Archive a project",
@@ -2357,8 +2429,16 @@ export default extendConfig(
                       link: "/api-reference/v2/estimates/upsert-estimate",
                     },
                     {
-                      text: "Bulk write estimates",
-                      link: "/api-reference/v2/estimates/bulk-estimates",
+                      text: "Bulk create estimates",
+                      link: "/api-reference/v2/estimates/bulk-create-estimates",
+                    },
+                    {
+                      text: "Bulk update estimates",
+                      link: "/api-reference/v2/estimates/bulk-update-estimates",
+                    },
+                    {
+                      text: "Bulk delete estimates",
+                      link: "/api-reference/v2/estimates/bulk-delete-estimates",
                     },
                   ],
                 },
@@ -2392,8 +2472,16 @@ export default extendConfig(
                       link: "/api-reference/v2/estimate-points/upsert-estimate-point",
                     },
                     {
-                      text: "Bulk write estimate points",
-                      link: "/api-reference/v2/estimate-points/bulk-estimate-points",
+                      text: "Bulk create estimate points",
+                      link: "/api-reference/v2/estimate-points/bulk-create-estimate-points",
+                    },
+                    {
+                      text: "Bulk update estimate points",
+                      link: "/api-reference/v2/estimate-points/bulk-update-estimate-points",
+                    },
+                    {
+                      text: "Bulk delete estimate points",
+                      link: "/api-reference/v2/estimate-points/bulk-delete-estimate-points",
                     },
                   ],
                 },
@@ -3224,7 +3312,7 @@ export default extendConfig(
                       link: "/api-reference/v2/invitations/delete-invitation",
                     },
                     {
-                      text: "Bulk write invitations",
+                      text: "Bulk invite members",
                       link: "/api-reference/v2/invitations/bulk-invitations",
                     },
                   ],

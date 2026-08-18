@@ -103,10 +103,10 @@ It is `is_workitem_hierarchy_enabled` — no underscore between `work` and `item
 
 ## Endpoints
 
-| Method  | Path                                  | Description                   |
-| ------- | ------------------------------------- | ----------------------------- |
-| `GET`   | `/api/v2/workspaces/{slug}/features/` | Read the workspace's features |
-| `PATCH` | `/api/v2/workspaces/{slug}/features/` | Toggle workspace features     |
+| Method  | Path                                  | Description               |
+| ------- | ------------------------------------- | ------------------------- |
+| `GET`   | `/api/v2/workspaces/{slug}/features/` | Get workspace features    |
+| `PATCH` | `/api/v2/workspaces/{slug}/features/` | Update workspace features |
 
 There is one feature record per workspace, so the path has no id and there is nothing to create or delete.
 

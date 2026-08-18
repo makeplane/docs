@@ -75,10 +75,10 @@ Workflows constrain how work items move between states in a project.
 | Method   | Path                                                              | Description       |
 | -------- | ----------------------------------------------------------------- | ----------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/`      | List workflows    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/`      | Create a workflow |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{pk}/` | Delete a workflow |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{pk}/` | Get a workflow    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/`      | Create a workflow |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{pk}/` | Update a workflow |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/workflows/{pk}/` | Delete a workflow |
 
 ## Response shaping
 

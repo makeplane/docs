@@ -65,10 +65,10 @@ Release labels are the workspace-level label catalog for releases.
 | Method   | Path                                              | Description            |
 | -------- | ------------------------------------------------- | ---------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/releases/labels/`      | List release labels    |
-| `POST`   | `/api/v2/workspaces/{slug}/releases/labels/`      | Create a release label |
-| `DELETE` | `/api/v2/workspaces/{slug}/releases/labels/{pk}/` | Delete a release label |
 | `GET`    | `/api/v2/workspaces/{slug}/releases/labels/{pk}/` | Get a release label    |
+| `POST`   | `/api/v2/workspaces/{slug}/releases/labels/`      | Create a release label |
 | `PATCH`  | `/api/v2/workspaces/{slug}/releases/labels/{pk}/` | Update a release label |
+| `DELETE` | `/api/v2/workspaces/{slug}/releases/labels/{pk}/` | Delete a release label |
 
 ## Response shaping
 

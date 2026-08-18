@@ -72,13 +72,13 @@ Invitations are pending workspace membership offers.
 
 ## Endpoints
 
-| Method   | Path                                          | Description            |
-| -------- | --------------------------------------------- | ---------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/invitations/`      | List invitations       |
-| `POST`   | `/api/v2/workspaces/{slug}/invitations/`      | Create a invitation    |
-| `POST`   | `/api/v2/workspaces/{slug}/invitations/bulk/` | Bulk write invitations |
-| `DELETE` | `/api/v2/workspaces/{slug}/invitations/{pk}/` | Delete a invitation    |
-| `GET`    | `/api/v2/workspaces/{slug}/invitations/{pk}/` | Get a invitation       |
+| Method   | Path                                          | Description         |
+| -------- | --------------------------------------------- | ------------------- |
+| `GET`    | `/api/v2/workspaces/{slug}/invitations/`      | List invitations    |
+| `GET`    | `/api/v2/workspaces/{slug}/invitations/{pk}/` | Get a invitation    |
+| `POST`   | `/api/v2/workspaces/{slug}/invitations/`      | Create a invitation |
+| `DELETE` | `/api/v2/workspaces/{slug}/invitations/{pk}/` | Delete a invitation |
+| `POST`   | `/api/v2/workspaces/{slug}/invitations/bulk/` | Bulk invite members |
 
 ## Response shaping
 

@@ -119,24 +119,24 @@ Project automations are rule graphs that run inside one project.
 
 | Method   | Path                                                                                                                | Description                                  |
 | -------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/`                                                      | List project automations                     |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/`                                                      | Create a project automation                  |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/activities/`                           | List automation activities                   |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/activities/{pk}/`                      | Get a automation activity                    |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/edges/`                                | List automation edges                        |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/edges/`                                | Create a automation edge                     |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/edges/{pk}/`                           | Delete a automation edge                     |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/edges/{pk}/`                           | Get a automation edge                        |
-| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/edges/{pk}/`                           | Update a automation edge                     |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/nodes/`                                | List automation nodes                        |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/nodes/`                                | Create a automation node                     |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/nodes/{pk}/`                           | Delete a automation node                     |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/`                                                      | List project automations                     |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/activities/{pk}/`                      | Get a automation activity                    |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/edges/{pk}/`                           | Get a automation edge                        |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/nodes/{pk}/`                           | Get a automation node                        |
-| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/nodes/{pk}/`                           | Update a automation node                     |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/nodes/{pk}/regenerate-webhook-secret/` | Regenerate an automation node webhook secret |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{pk}/`                                                 | Delete a project automation                  |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{pk}/`                                                 | Get a project automation                     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/edges/`                                | Create a automation edge                     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/nodes/`                                | Create a automation node                     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/`                                                      | Create a project automation                  |
+| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/edges/{pk}/`                           | Update a automation edge                     |
+| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/nodes/{pk}/`                           | Update a automation node                     |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{pk}/`                                                 | Update a project automation                  |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/edges/{pk}/`                           | Delete a automation edge                     |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/nodes/{pk}/`                           | Delete a automation node                     |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{pk}/`                                                 | Delete a project automation                  |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{automation_id}/nodes/{pk}/regenerate-webhook-secret/` | Regenerate an automation node webhook secret |
 | `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/automations/{pk}/status/`                                          | Enable or disable a project automation       |
 
 ## Response shaping

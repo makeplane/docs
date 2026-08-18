@@ -90,9 +90,9 @@ User assets are the calling user's own uploads, such as an avatar or cover image
 | Method   | Path                            | Description                 |
 | -------- | ------------------------------- | --------------------------- |
 | `GET`    | `/api/v2/users/me/assets/`      | List user assets            |
+| `GET`    | `/api/v2/users/me/assets/{pk}/` | Get a user asset            |
 | `POST`   | `/api/v2/users/me/assets/`      | Create a user asset upload  |
 | `DELETE` | `/api/v2/users/me/assets/{pk}/` | Delete a user asset         |
-| `GET`    | `/api/v2/users/me/assets/{pk}/` | Get a user asset            |
 | `PATCH`  | `/api/v2/users/me/assets/{pk}/` | Confirm a user asset upload |
 
 ## Response shaping

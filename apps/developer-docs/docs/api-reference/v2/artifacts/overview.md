@@ -104,8 +104,8 @@ Earlier versions are retained server-side, but v2 exposes no endpoint to read th
 
 | Method  | Path                                                         | Description          |
 | ------- | ------------------------------------------------------------ | -------------------- |
-| `POST`  | `/api/v2/workspaces/{slug}/artifacts/`                       | Create an artifact   |
 | `GET`   | `/api/v2/workspaces/{slug}/artifacts/{artifact_id}/`         | Get an artifact      |
+| `POST`  | `/api/v2/workspaces/{slug}/artifacts/`                       | Create an artifact   |
 | `PATCH` | `/api/v2/workspaces/{slug}/artifacts/{artifact_id}/update/`  | Append a new version |
 | `POST`  | `/api/v2/workspaces/{slug}/artifacts/{artifact_id}/publish/` | Publish an artifact  |
 

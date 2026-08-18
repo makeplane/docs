@@ -75,11 +75,11 @@ Worklogs record time spent on a work item.
 | Method   | Path                                                                                       | Description                     |
 | -------- | ------------------------------------------------------------------------------------------ | ------------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/worklogs/`      | List worklogs                   |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/worklogs/`      | Create a worklog                |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/worklogs/{pk}/` | Delete a worklog                |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/worklogs/{pk}/` | Get a worklog                   |
-| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/worklogs/{pk}/` | Update a worklog                |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/worklogs/summary/`                        | Get the project worklog summary |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/worklogs/{pk}/` | Get a worklog                   |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/worklogs/`      | Create a worklog                |
+| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/worklogs/{pk}/` | Update a worklog                |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/worklogs/{pk}/` | Delete a worklog                |
 
 ## Response shaping
 

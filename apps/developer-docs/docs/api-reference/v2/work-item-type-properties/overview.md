@@ -167,12 +167,12 @@ Every field is read-only here. Changing a definition goes through
 
 ## Endpoints
 
-| Method   | Path                                                                                         | Description                     |
-| -------- | -------------------------------------------------------------------------------------------- | ------------------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{type_id}/properties/`      | List the properties on a type   |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{type_id}/properties/`      | Attach properties to a type     |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{type_id}/properties/{pk}/` | Get one property through a type |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{type_id}/properties/{pk}/` | Detach a property from a type   |
+| Method   | Path                                                                                         | Description                   |
+| -------- | -------------------------------------------------------------------------------------------- | ----------------------------- |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{type_id}/properties/`      | List type properties          |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{type_id}/properties/{pk}/` | Get a type property           |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{type_id}/properties/`      | Attach a property to a type   |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-types/{type_id}/properties/{pk}/` | Detach a property from a type |
 
 `{pk}` is the **property id**, not a separate link id. The same id you attach is the id you delete.
 

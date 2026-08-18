@@ -96,15 +96,17 @@ Filtering work items by `state_group=started` is stable across projects even whe
 
 ## Endpoints
 
-| Method   | Path                                                             | Description       |
-| -------- | ---------------------------------------------------------------- | ----------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/states/`        | List states       |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/states/`        | Create a state    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/states/bulk/`   | Bulk write states |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/states/upsert/` | Upsert a state    |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/states/{pk}/`   | Delete a state    |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/states/{pk}/`   | Get a state       |
-| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/states/{pk}/`   | Update a state    |
+| Method   | Path                                                                  | Description        |
+| -------- | --------------------------------------------------------------------- | ------------------ |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/states/`             | List states        |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/states/{pk}/`        | Get a state        |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/states/`             | Create a state     |
+| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/states/{pk}/`        | Update a state     |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/states/{pk}/`        | Delete a state     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/states/upsert/`      | Upsert a state     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/states/bulk-create/` | Bulk create states |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/states/bulk-update/` | Bulk update states |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/states/bulk-delete/` | Bulk delete states |
 
 ## Deleting states
 

@@ -115,10 +115,10 @@ Project views are saved filter-and-layout combinations for a project.
 | Method   | Path                                                          | Description           |
 | -------- | ------------------------------------------------------------- | --------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/views/`      | List project views    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/views/`      | Create a project view |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/views/{pk}/` | Delete a project view |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/views/{pk}/` | Get a project view    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/views/`      | Create a project view |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/views/{pk}/` | Update a project view |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/views/{pk}/` | Delete a project view |
 
 ## Response shaping
 

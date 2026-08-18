@@ -77,15 +77,17 @@ Estimates define the sizing scale a project uses.
 
 ## Endpoints
 
-| Method   | Path                                                                | Description          |
-| -------- | ------------------------------------------------------------------- | -------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/`        | List estimates       |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/`        | Create a estimate    |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/bulk/`   | Bulk write estimates |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/upsert/` | Upsert a estimate    |
-| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{pk}/`   | Delete a estimate    |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{pk}/`   | Get a estimate       |
-| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{pk}/`   | Update a estimate    |
+| Method   | Path                                                                     | Description           |
+| -------- | ------------------------------------------------------------------------ | --------------------- |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/`             | List estimates        |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{pk}/`        | Get a estimate        |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/`             | Create a estimate     |
+| `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{pk}/`        | Update a estimate     |
+| `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/{pk}/`        | Delete a estimate     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/upsert/`      | Upsert a estimate     |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/bulk-create/` | Bulk create estimates |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/bulk-update/` | Bulk update estimates |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/estimates/bulk-delete/` | Bulk delete estimates |
 
 ## Response shaping
 

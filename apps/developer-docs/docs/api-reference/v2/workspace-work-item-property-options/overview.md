@@ -75,13 +75,13 @@ Renaming an option keeps its `id`, so integrations that matched on `id` keep wor
 
 ## Endpoints
 
-| Method   | Path                                                                         | Description   |
-| -------- | ---------------------------------------------------------------------------- | ------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/options/`      | List options  |
-| `POST`   | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/options/`      | Create option |
-| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/options/{pk}/` | Get option    |
-| `PATCH`  | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/options/{pk}/` | Update option |
-| `DELETE` | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/options/{pk}/` | Delete option |
+| Method   | Path                                                                         | Description                        |
+| -------- | ---------------------------------------------------------------------------- | ---------------------------------- |
+| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/options/`      | List workspace property options    |
+| `GET`    | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/options/{pk}/` | Get a workspace property option    |
+| `POST`   | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/options/`      | Create a workspace property option |
+| `PATCH`  | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/options/{pk}/` | Update a workspace property option |
+| `DELETE` | `/api/v2/workspaces/{slug}/work-item-properties/{property_id}/options/{pk}/` | Delete a workspace property option |
 
 ## Scopes
 

@@ -170,12 +170,12 @@ The response is the property, not a join record. If you need to know whether a g
 
 ## Endpoints
 
-| Method   | Path                                                                   | Description                     |
-| -------- | ---------------------------------------------------------------------- | ------------------------------- |
-| `GET`    | `/api/v2/workspaces/{slug}/work-item-types/{type_id}/properties/`      | List the properties on a type   |
-| `POST`   | `/api/v2/workspaces/{slug}/work-item-types/{type_id}/properties/`      | Attach existing properties      |
-| `GET`    | `/api/v2/workspaces/{slug}/work-item-types/{type_id}/properties/{pk}/` | Get one property on a type      |
-| `DELETE` | `/api/v2/workspaces/{slug}/work-item-types/{type_id}/properties/{pk}/` | Detach a property from the type |
+| Method   | Path                                                                   | Description                             |
+| -------- | ---------------------------------------------------------------------- | --------------------------------------- |
+| `GET`    | `/api/v2/workspaces/{slug}/work-item-types/{type_id}/properties/`      | List properties on a workspace type     |
+| `GET`    | `/api/v2/workspaces/{slug}/work-item-types/{type_id}/properties/{pk}/` | Get a property on a workspace type      |
+| `POST`   | `/api/v2/workspaces/{slug}/work-item-types/{type_id}/properties/`      | Attach properties to a workspace type   |
+| `DELETE` | `/api/v2/workspaces/{slug}/work-item-types/{type_id}/properties/{pk}/` | Detach a property from a workspace type |
 
 There is no `POST` that creates a property here and no `PATCH` that edits one. Attaching takes ids of
 properties that already exist, and editing a property is done on the catalog resource.

@@ -175,8 +175,8 @@ These are two different fields and mixing them up is the most common first error
 | Method   | Path                                                                         | Description                 |
 | -------- | ---------------------------------------------------------------------------- | --------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/`      | List work item properties   |
-| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/`      | Create a work item property |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{pk}/` | Get a work item property    |
+| `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/`      | Create a work item property |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{pk}/` | Update a work item property |
 | `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-item-properties/{pk}/` | Delete a work item property |
 

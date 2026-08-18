@@ -85,10 +85,10 @@ Release comments are the discussion thread on a release.
 | Method   | Path                                                             | Description              |
 | -------- | ---------------------------------------------------------------- | ------------------------ |
 | `GET`    | `/api/v2/workspaces/{slug}/releases/{release_id}/comments/`      | List release comments    |
-| `POST`   | `/api/v2/workspaces/{slug}/releases/{release_id}/comments/`      | Create a release comment |
-| `DELETE` | `/api/v2/workspaces/{slug}/releases/{release_id}/comments/{pk}/` | Delete a release comment |
 | `GET`    | `/api/v2/workspaces/{slug}/releases/{release_id}/comments/{pk}/` | Get a release comment    |
+| `POST`   | `/api/v2/workspaces/{slug}/releases/{release_id}/comments/`      | Create a release comment |
 | `PATCH`  | `/api/v2/workspaces/{slug}/releases/{release_id}/comments/{pk}/` | Update a release comment |
+| `DELETE` | `/api/v2/workspaces/{slug}/releases/{release_id}/comments/{pk}/` | Delete a release comment |
 
 ## Response shaping
 

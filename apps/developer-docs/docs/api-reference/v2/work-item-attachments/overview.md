@@ -95,9 +95,9 @@ Attachments are files uploaded against a work item.
 | Method   | Path                                                                                          | Description                           |
 | -------- | --------------------------------------------------------------------------------------------- | ------------------------------------- |
 | `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/attachments/`      | List attachments                      |
+| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/attachments/{pk}/` | Get a attachment                      |
 | `POST`   | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/attachments/`      | Create a work item attachment upload  |
 | `DELETE` | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/attachments/{pk}/` | Delete a attachment                   |
-| `GET`    | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/attachments/{pk}/` | Get a attachment                      |
 | `PATCH`  | `/api/v2/workspaces/{slug}/projects/{project_id}/work-items/{work_item_id}/attachments/{pk}/` | Confirm a work item attachment upload |
 
 ## Response shaping
