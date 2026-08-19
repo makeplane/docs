@@ -217,4 +217,4 @@ GET https://api.plane.so/api/v1/workspaces/{workspace_slug}/projects/
 Authorization: Bearer YOUR_TOKEN
 ```
 
-See the [API Reference](/api-reference/introduction) for available endpoints.
+See the [API Reference](/api-reference/v1/introduction) for available endpoints.

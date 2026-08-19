@@ -1,4 +1,4 @@
-import type { Component, InjectionKey } from "vue";
+import type { Component, InjectionKey, VNode } from "vue";
 import type { EnhanceAppContext } from "vitepress";
 
 /** Per-site branding + hooks for the shared Plane docs theme. */
@@ -21,6 +21,12 @@ export interface PlaneThemeOptions {
   cookieConsent?: boolean;
   /** Extra globally-registered components (site-specific markdown components). */
   components?: Record<string, Component>;
+  /**
+   * Extra layout slots, forwarded to the shared layout (and on to the VoidZero
+   * default layout) — e.g. `sidebar-nav-before` to render something above the
+   * sidebar nav. `layout-bottom` is owned by the cookie-consent banner.
+   */
+  layoutSlots?: Record<string, () => VNode | VNode[]>;
   /** Extra `enhanceApp` work, run after the shared setup. */
   enhanceApp?: (ctx: EnhanceAppContext) => void;
   /** Extra client-side `setup()` work, run inside the shared theme's `setup()`. */

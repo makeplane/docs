@@ -125,6 +125,6 @@ See full working implementations:
 
 ## Quick links
 
-- [API Reference](/api-reference/introduction) - Explore all available endpoints
+- [API Reference](/api-reference/v1/introduction) - Explore all available endpoints
 - [Build an Agent](/dev-tools/agents/overview) - Create AI agents for Plane
 - [Webhook Events](/dev-tools/intro-webhooks) - All webhook event types

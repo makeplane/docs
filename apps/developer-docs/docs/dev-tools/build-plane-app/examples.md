@@ -239,7 +239,7 @@ if __name__ == "__main__":
 ## Next Steps
 
 - [Build an Agent](/dev-tools/agents/overview) - Create AI agents that respond to @mentions
-- [API Reference](/api-reference/introduction) - Explore the full Plane API
+- [API Reference](/api-reference/v1/introduction) - Explore the full Plane API
 - [Webhook Events](/dev-tools/intro-webhooks) - All webhook event types
 - [Example: PRD Agent](https://github.com/makeplane/prd-agent) - Complete agent implementation
 

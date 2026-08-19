@@ -251,7 +251,7 @@ export default extendConfig(
 
         nav: [
           { text: "Self-hosting", link: "/self-hosting/overview" },
-          { text: "API Reference", link: "/api-reference/introduction" },
+          { text: "API Reference", link: "/api-reference/v2/introduction" },
           { text: "Build and extend", link: "/dev-tools/build-plane-app/overview" },
           {
             text: "Plane Docs",
@@ -274,7 +274,7 @@ export default extendConfig(
               items: [
                 { text: "Home", link: "/" },
                 { text: "Self-hosting", link: "/self-hosting/overview" },
-                { text: "API Reference", link: "/api-reference/introduction" },
+                { text: "API Reference", link: "/api-reference/v2/introduction" },
                 { text: "Build and extend", link: "/dev-tools/build-plane-app/overview" },
               ],
             },
@@ -290,9 +290,9 @@ export default extendConfig(
             {
               text: "API Reference",
               items: [
-                { text: "Introduction", link: "/api-reference/introduction" },
-                { text: "Work items", link: "/api-reference/issue/overview" },
-                { text: "Projects", link: "/api-reference/project/overview" },
+                { text: "Introduction", link: "/api-reference/v2/introduction" },
+                { text: "Work items", link: "/api-reference/v2/work-items/overview" },
+                { text: "Migrating from v1", link: "/api-reference/v2/migrating-from-v1" },
               ],
             },
             {
@@ -532,44 +532,47 @@ export default extendConfig(
             },
           ],
 
-          "/api-reference/": [
+          "/api-reference/v1/": [
             {
               text: "API Reference",
               items: [
-                { text: "Introduction", link: "/api-reference/introduction" },
+                { text: "Introduction", link: "/api-reference/v1/introduction" },
                 {
                   text: "Project",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/project/overview" },
-                    { text: "Create Project", link: "/api-reference/project/add-project" },
+                    { text: "Overview", link: "/api-reference/v1/project/overview" },
+                    { text: "Create Project", link: "/api-reference/v1/project/add-project" },
                     {
                       text: "Create Project with Template",
-                      link: "/api-reference/project/create-project-with-template",
+                      link: "/api-reference/v1/project/create-project-with-template",
                     },
-                    { text: "List Projects", link: "/api-reference/project/list-projects" },
-                    { text: "Get Project", link: "/api-reference/project/get-project-detail" },
+                    { text: "List Projects", link: "/api-reference/v1/project/list-projects" },
+                    { text: "Get Project", link: "/api-reference/v1/project/get-project-detail" },
                     {
                       text: "Update Project",
-                      link: "/api-reference/project/update-project-detail",
+                      link: "/api-reference/v1/project/update-project-detail",
                     },
-                    { text: "Archive Project", link: "/api-reference/project/archive-project" },
-                    { text: "Unarchive Project", link: "/api-reference/project/unarchive-project" },
-                    { text: "Delete Project", link: "/api-reference/project/delete-project" },
+                    { text: "Archive Project", link: "/api-reference/v1/project/archive-project" },
+                    {
+                      text: "Unarchive Project",
+                      link: "/api-reference/v1/project/unarchive-project",
+                    },
+                    { text: "Delete Project", link: "/api-reference/v1/project/delete-project" },
                   ],
                 },
                 {
                   text: "Project Features",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/project-features/overview" },
+                    { text: "Overview", link: "/api-reference/v1/project-features/overview" },
                     {
                       text: "Get Project Features",
-                      link: "/api-reference/project-features/get-project-features",
+                      link: "/api-reference/v1/project-features/get-project-features",
                     },
                     {
                       text: "Update Project Features",
-                      link: "/api-reference/project-features/update-project-features",
+                      link: "/api-reference/v1/project-features/update-project-features",
                     },
                   ],
                 },
@@ -577,26 +580,26 @@ export default extendConfig(
                   text: "Project Labels",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/project-labels/overview" },
+                    { text: "Overview", link: "/api-reference/v1/project-labels/overview" },
                     {
                       text: "Create Project Label",
-                      link: "/api-reference/project-labels/add-project-label",
+                      link: "/api-reference/v1/project-labels/add-project-label",
                     },
                     {
                       text: "List Project Labels",
-                      link: "/api-reference/project-labels/list-project-labels",
+                      link: "/api-reference/v1/project-labels/list-project-labels",
                     },
                     {
                       text: "Get Project Label",
-                      link: "/api-reference/project-labels/get-project-label-detail",
+                      link: "/api-reference/v1/project-labels/get-project-label-detail",
                     },
                     {
                       text: "Update Project Label",
-                      link: "/api-reference/project-labels/update-project-label-detail",
+                      link: "/api-reference/v1/project-labels/update-project-label-detail",
                     },
                     {
                       text: "Delete Project Label",
-                      link: "/api-reference/project-labels/delete-project-label",
+                      link: "/api-reference/v1/project-labels/delete-project-label",
                     },
                   ],
                 },
@@ -604,72 +607,78 @@ export default extendConfig(
                   text: "Work Item",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/issue/overview" },
-                    { text: "Create Work Item", link: "/api-reference/issue/add-issue" },
-                    { text: "List Work Items", link: "/api-reference/issue/list-issues" },
-                    { text: "Get Work Item", link: "/api-reference/issue/get-issue-detail" },
+                    { text: "Overview", link: "/api-reference/v1/issue/overview" },
+                    { text: "Create Work Item", link: "/api-reference/v1/issue/add-issue" },
+                    { text: "List Work Items", link: "/api-reference/v1/issue/list-issues" },
+                    { text: "Get Work Item", link: "/api-reference/v1/issue/get-issue-detail" },
                     {
                       text: "Get by identifier",
-                      link: "/api-reference/issue/get-issue-sequence-id",
+                      link: "/api-reference/v1/issue/get-issue-sequence-id",
                     },
-                    { text: "Search Work Items", link: "/api-reference/issue/search-issues" },
+                    { text: "Search Work Items", link: "/api-reference/v1/issue/search-issues" },
                     {
                       text: "Advanced Search",
-                      link: "/api-reference/issue/advanced-search-work-items",
+                      link: "/api-reference/v1/issue/advanced-search-work-items",
                     },
-                    { text: "Update Work Item", link: "/api-reference/issue/update-issue-detail" },
-                    { text: "Delete Work Item", link: "/api-reference/issue/delete-issue" },
+                    {
+                      text: "Update Work Item",
+                      link: "/api-reference/v1/issue/update-issue-detail",
+                    },
+                    { text: "Delete Work Item", link: "/api-reference/v1/issue/delete-issue" },
                   ],
                 },
                 {
                   text: "Work Item States",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/state/overview" },
-                    { text: "Create State", link: "/api-reference/state/add-state" },
-                    { text: "List States", link: "/api-reference/state/list-states" },
-                    { text: "Get State", link: "/api-reference/state/get-state-detail" },
-                    { text: "Update State", link: "/api-reference/state/update-state-detail" },
-                    { text: "Delete State", link: "/api-reference/state/delete-state" },
+                    { text: "Overview", link: "/api-reference/v1/state/overview" },
+                    { text: "Create State", link: "/api-reference/v1/state/add-state" },
+                    { text: "List States", link: "/api-reference/v1/state/list-states" },
+                    { text: "Get State", link: "/api-reference/v1/state/get-state-detail" },
+                    { text: "Update State", link: "/api-reference/v1/state/update-state-detail" },
+                    { text: "Delete State", link: "/api-reference/v1/state/delete-state" },
                   ],
                 },
                 {
                   text: "Work Item Labels",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/label/overview" },
-                    { text: "Create Label", link: "/api-reference/label/add-label" },
-                    { text: "List Labels", link: "/api-reference/label/list-labels" },
-                    { text: "Get Label", link: "/api-reference/label/get-label-detail" },
-                    { text: "Update Label", link: "/api-reference/label/update-label-detail" },
-                    { text: "Delete Label", link: "/api-reference/label/delete-label" },
+                    { text: "Overview", link: "/api-reference/v1/label/overview" },
+                    { text: "Create Label", link: "/api-reference/v1/label/add-label" },
+                    { text: "List Labels", link: "/api-reference/v1/label/list-labels" },
+                    { text: "Get Label", link: "/api-reference/v1/label/get-label-detail" },
+                    { text: "Update Label", link: "/api-reference/v1/label/update-label-detail" },
+                    { text: "Delete Label", link: "/api-reference/v1/label/delete-label" },
                   ],
                 },
                 {
                   text: "Work Item Types",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/issue-types/types/overview" },
-                    { text: "Add Type", link: "/api-reference/issue-types/types/add-issue-type" },
+                    { text: "Overview", link: "/api-reference/v1/issue-types/types/overview" },
+                    {
+                      text: "Add Type",
+                      link: "/api-reference/v1/issue-types/types/add-issue-type",
+                    },
                     {
                       text: "List Types",
-                      link: "/api-reference/issue-types/types/list-issue-types",
+                      link: "/api-reference/v1/issue-types/types/list-issue-types",
                     },
                     {
                       text: "Get Type Details",
-                      link: "/api-reference/issue-types/types/get-issue-type-details",
+                      link: "/api-reference/v1/issue-types/types/get-issue-type-details",
                     },
                     {
                       text: "Get Type Schema",
-                      link: "/api-reference/issue-types/types/get-work-item-type-schema",
+                      link: "/api-reference/v1/issue-types/types/get-work-item-type-schema",
                     },
                     {
                       text: "Update Type",
-                      link: "/api-reference/issue-types/types/update-issue-types",
+                      link: "/api-reference/v1/issue-types/types/update-issue-types",
                     },
                     {
                       text: "Delete Type",
-                      link: "/api-reference/issue-types/types/delete-issue-type",
+                      link: "/api-reference/v1/issue-types/types/delete-issue-type",
                     },
                   ],
                 },
@@ -677,26 +686,26 @@ export default extendConfig(
                   text: "Custom Properties",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/issue-types/properties/overview" },
+                    { text: "Overview", link: "/api-reference/v1/issue-types/properties/overview" },
                     {
                       text: "Add Property",
-                      link: "/api-reference/issue-types/properties/add-property",
+                      link: "/api-reference/v1/issue-types/properties/add-property",
                     },
                     {
                       text: "List Properties",
-                      link: "/api-reference/issue-types/properties/list-properties",
+                      link: "/api-reference/v1/issue-types/properties/list-properties",
                     },
                     {
                       text: "Get Property Details",
-                      link: "/api-reference/issue-types/properties/get-property-details",
+                      link: "/api-reference/v1/issue-types/properties/get-property-details",
                     },
                     {
                       text: "Update Property",
-                      link: "/api-reference/issue-types/properties/update-property",
+                      link: "/api-reference/v1/issue-types/properties/update-property",
                     },
                     {
                       text: "Delete Property",
-                      link: "/api-reference/issue-types/properties/delete-property",
+                      link: "/api-reference/v1/issue-types/properties/delete-property",
                     },
                   ],
                 },
@@ -704,26 +713,26 @@ export default extendConfig(
                   text: "Custom Property Values",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/issue-types/values/overview" },
+                    { text: "Overview", link: "/api-reference/v1/issue-types/values/overview" },
                     {
                       text: "Add Property Values",
-                      link: "/api-reference/issue-types/values/add-property-values",
+                      link: "/api-reference/v1/issue-types/values/add-property-values",
                     },
                     {
                       text: "List Property Values",
-                      link: "/api-reference/issue-types/values/list-property-values",
+                      link: "/api-reference/v1/issue-types/values/list-property-values",
                     },
                     {
                       text: "Get Property Value",
-                      link: "/api-reference/issue-types/values/get-property-value-detail",
+                      link: "/api-reference/v1/issue-types/values/get-property-value-detail",
                     },
                     {
                       text: "Update Property Value",
-                      link: "/api-reference/issue-types/values/update-property-value",
+                      link: "/api-reference/v1/issue-types/values/update-property-value",
                     },
                     {
                       text: "Delete Property Value",
-                      link: "/api-reference/issue-types/values/delete-property-value",
+                      link: "/api-reference/v1/issue-types/values/delete-property-value",
                     },
                   ],
                 },
@@ -731,26 +740,26 @@ export default extendConfig(
                   text: "Custom Property Options",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/issue-types/options/overview" },
+                    { text: "Overview", link: "/api-reference/v1/issue-types/options/overview" },
                     {
                       text: "Add Dropdown Options",
-                      link: "/api-reference/issue-types/options/add-dropdown-options",
+                      link: "/api-reference/v1/issue-types/options/add-dropdown-options",
                     },
                     {
                       text: "List Dropdown Options",
-                      link: "/api-reference/issue-types/options/list-dropdown-options",
+                      link: "/api-reference/v1/issue-types/options/list-dropdown-options",
                     },
                     {
                       text: "Get Option Details",
-                      link: "/api-reference/issue-types/options/get-option-details",
+                      link: "/api-reference/v1/issue-types/options/get-option-details",
                     },
                     {
                       text: "Update Dropdown Options",
-                      link: "/api-reference/issue-types/options/update-dropdown-options",
+                      link: "/api-reference/v1/issue-types/options/update-dropdown-options",
                     },
                     {
                       text: "Delete Dropdown Options",
-                      link: "/api-reference/issue-types/options/delete-dropdown-options",
+                      link: "/api-reference/v1/issue-types/options/delete-dropdown-options",
                     },
                   ],
                 },
@@ -758,26 +767,26 @@ export default extendConfig(
                   text: "Work Item Links",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/link/overview" },
-                    { text: "Add Link", link: "/api-reference/link/add-link" },
-                    { text: "List Links", link: "/api-reference/link/list-links" },
-                    { text: "Get Link", link: "/api-reference/link/get-link-detail" },
-                    { text: "Update Link", link: "/api-reference/link/update-link-detail" },
-                    { text: "Delete Link", link: "/api-reference/link/delete-link" },
+                    { text: "Overview", link: "/api-reference/v1/link/overview" },
+                    { text: "Add Link", link: "/api-reference/v1/link/add-link" },
+                    { text: "List Links", link: "/api-reference/v1/link/list-links" },
+                    { text: "Get Link", link: "/api-reference/v1/link/get-link-detail" },
+                    { text: "Update Link", link: "/api-reference/v1/link/update-link-detail" },
+                    { text: "Delete Link", link: "/api-reference/v1/link/delete-link" },
                   ],
                 },
                 {
                   text: "Work Item Activity",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/issue-activity/overview" },
+                    { text: "Overview", link: "/api-reference/v1/issue-activity/overview" },
                     {
                       text: "List Activities",
-                      link: "/api-reference/issue-activity/list-issue-activities",
+                      link: "/api-reference/v1/issue-activity/list-issue-activities",
                     },
                     {
                       text: "Get Activity",
-                      link: "/api-reference/issue-activity/get-issue-activity-detail",
+                      link: "/api-reference/v1/issue-activity/get-issue-activity-detail",
                     },
                   ],
                 },
@@ -785,23 +794,26 @@ export default extendConfig(
                   text: "Work Item Comments",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/issue-comment/overview" },
-                    { text: "Add Comment", link: "/api-reference/issue-comment/add-issue-comment" },
+                    { text: "Overview", link: "/api-reference/v1/issue-comment/overview" },
+                    {
+                      text: "Add Comment",
+                      link: "/api-reference/v1/issue-comment/add-issue-comment",
+                    },
                     {
                       text: "List Comments",
-                      link: "/api-reference/issue-comment/list-issue-comments",
+                      link: "/api-reference/v1/issue-comment/list-issue-comments",
                     },
                     {
                       text: "Get Comment",
-                      link: "/api-reference/issue-comment/get-issue-comment-detail",
+                      link: "/api-reference/v1/issue-comment/get-issue-comment-detail",
                     },
                     {
                       text: "Update Comment",
-                      link: "/api-reference/issue-comment/update-issue-comment-detail",
+                      link: "/api-reference/v1/issue-comment/update-issue-comment-detail",
                     },
                     {
                       text: "Delete Comment",
-                      link: "/api-reference/issue-comment/delete-issue-comment",
+                      link: "/api-reference/v1/issue-comment/delete-issue-comment",
                     },
                   ],
                 },
@@ -809,31 +821,34 @@ export default extendConfig(
                   text: "Work Item Attachments",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/issue-attachments/overview" },
+                    { text: "Overview", link: "/api-reference/v1/issue-attachments/overview" },
                     {
                       text: "Get Attachments",
-                      link: "/api-reference/issue-attachments/get-attachments",
+                      link: "/api-reference/v1/issue-attachments/get-attachments",
                     },
                     {
                       text: "Get Attachment Detail",
-                      link: "/api-reference/issue-attachments/get-attachment-detail",
+                      link: "/api-reference/v1/issue-attachments/get-attachment-detail",
                     },
                     {
                       text: "Get Upload Credentials",
-                      link: "/api-reference/issue-attachments/get-upload-credentials",
+                      link: "/api-reference/v1/issue-attachments/get-upload-credentials",
                     },
-                    { text: "Upload File", link: "/api-reference/issue-attachments/upload-file" },
+                    {
+                      text: "Upload File",
+                      link: "/api-reference/v1/issue-attachments/upload-file",
+                    },
                     {
                       text: "Complete Upload",
-                      link: "/api-reference/issue-attachments/complete-upload",
+                      link: "/api-reference/v1/issue-attachments/complete-upload",
                     },
                     {
                       text: "Update Attachment",
-                      link: "/api-reference/issue-attachments/update-attachment",
+                      link: "/api-reference/v1/issue-attachments/update-attachment",
                     },
                     {
                       text: "Delete Attachment",
-                      link: "/api-reference/issue-attachments/delete-attachment",
+                      link: "/api-reference/v1/issue-attachments/delete-attachment",
                     },
                   ],
                 },
@@ -841,22 +856,22 @@ export default extendConfig(
                   text: "Work Item Page Links",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/work-item-pages/overview" },
+                    { text: "Overview", link: "/api-reference/v1/work-item-pages/overview" },
                     {
                       text: "Create Work Item Page Link",
-                      link: "/api-reference/work-item-pages/add-work-item-page",
+                      link: "/api-reference/v1/work-item-pages/add-work-item-page",
                     },
                     {
                       text: "List Work Item Pages",
-                      link: "/api-reference/work-item-pages/list-work-item-pages",
+                      link: "/api-reference/v1/work-item-pages/list-work-item-pages",
                     },
                     {
                       text: "Get Work Item Page Link",
-                      link: "/api-reference/work-item-pages/get-work-item-page-detail",
+                      link: "/api-reference/v1/work-item-pages/get-work-item-page-detail",
                     },
                     {
                       text: "Delete Work Item Page Link",
-                      link: "/api-reference/work-item-pages/delete-work-item-page",
+                      link: "/api-reference/v1/work-item-pages/delete-work-item-page",
                     },
                   ],
                 },
@@ -865,100 +880,118 @@ export default extendConfig(
                   text: "Cycles",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/cycle/overview" },
-                    { text: "Create Cycle", link: "/api-reference/cycle/add-cycle" },
-                    { text: "Add Work Items", link: "/api-reference/cycle/add-cycle-work-items" },
+                    { text: "Overview", link: "/api-reference/v1/cycle/overview" },
+                    { text: "Create Cycle", link: "/api-reference/v1/cycle/add-cycle" },
+                    {
+                      text: "Add Work Items",
+                      link: "/api-reference/v1/cycle/add-cycle-work-items",
+                    },
                     {
                       text: "Transfer Work Items",
-                      link: "/api-reference/cycle/transfer-cycle-work-items",
+                      link: "/api-reference/v1/cycle/transfer-cycle-work-items",
                     },
-                    { text: "Archive Cycle", link: "/api-reference/cycle/archive-cycle" },
-                    { text: "List Cycles", link: "/api-reference/cycle/list-cycles" },
-                    { text: "Get Cycle", link: "/api-reference/cycle/get-cycle-detail" },
+                    { text: "Archive Cycle", link: "/api-reference/v1/cycle/archive-cycle" },
+                    { text: "List Cycles", link: "/api-reference/v1/cycle/list-cycles" },
+                    { text: "Get Cycle", link: "/api-reference/v1/cycle/get-cycle-detail" },
                     {
                       text: "List Cycle Work Items",
-                      link: "/api-reference/cycle/list-cycle-work-items",
+                      link: "/api-reference/v1/cycle/list-cycle-work-items",
                     },
                     {
                       text: "List Archived Cycles",
-                      link: "/api-reference/cycle/list-archived-cycles",
+                      link: "/api-reference/v1/cycle/list-archived-cycles",
                     },
-                    { text: "Update Cycle", link: "/api-reference/cycle/update-cycle-detail" },
-                    { text: "Unarchive Cycle", link: "/api-reference/cycle/unarchive-cycle" },
+                    { text: "Update Cycle", link: "/api-reference/v1/cycle/update-cycle-detail" },
+                    { text: "Unarchive Cycle", link: "/api-reference/v1/cycle/unarchive-cycle" },
                     {
                       text: "Remove Work Item",
-                      link: "/api-reference/cycle/remove-cycle-work-item",
+                      link: "/api-reference/v1/cycle/remove-cycle-work-item",
                     },
-                    { text: "Delete Cycle", link: "/api-reference/cycle/delete-cycle" },
+                    { text: "Delete Cycle", link: "/api-reference/v1/cycle/delete-cycle" },
                   ],
                 },
                 {
                   text: "Modules",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/module/overview" },
-                    { text: "Create Module", link: "/api-reference/module/add-module" },
-                    { text: "Add Work Items", link: "/api-reference/module/add-module-work-items" },
-                    { text: "Archive Module", link: "/api-reference/module/archive-module" },
-                    { text: "List Modules", link: "/api-reference/module/list-modules" },
-                    { text: "Get Module", link: "/api-reference/module/get-module-detail" },
+                    { text: "Overview", link: "/api-reference/v1/module/overview" },
+                    { text: "Create Module", link: "/api-reference/v1/module/add-module" },
+                    {
+                      text: "Add Work Items",
+                      link: "/api-reference/v1/module/add-module-work-items",
+                    },
+                    { text: "Archive Module", link: "/api-reference/v1/module/archive-module" },
+                    { text: "List Modules", link: "/api-reference/v1/module/list-modules" },
+                    { text: "Get Module", link: "/api-reference/v1/module/get-module-detail" },
                     {
                       text: "List Module Work Items",
-                      link: "/api-reference/module/list-module-work-items",
+                      link: "/api-reference/v1/module/list-module-work-items",
                     },
                     {
                       text: "List Archived Modules",
-                      link: "/api-reference/module/list-archived-modules",
+                      link: "/api-reference/v1/module/list-archived-modules",
                     },
-                    { text: "Update Module", link: "/api-reference/module/update-module-detail" },
-                    { text: "Unarchive Module", link: "/api-reference/module/unarchive-module" },
+                    {
+                      text: "Update Module",
+                      link: "/api-reference/v1/module/update-module-detail",
+                    },
+                    { text: "Unarchive Module", link: "/api-reference/v1/module/unarchive-module" },
                     {
                       text: "Remove Work Item",
-                      link: "/api-reference/module/remove-module-work-item",
+                      link: "/api-reference/v1/module/remove-module-work-item",
                     },
-                    { text: "Delete Module", link: "/api-reference/module/delete-module" },
+                    { text: "Delete Module", link: "/api-reference/v1/module/delete-module" },
                   ],
                 },
                 {
                   text: "Pages",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/page/overview" },
+                    { text: "Overview", link: "/api-reference/v1/page/overview" },
                     {
                       text: "List Workspace Pages",
-                      link: "/api-reference/page/list-workspace-pages",
+                      link: "/api-reference/v1/page/list-workspace-pages",
                     },
-                    { text: "Add Workspace Page", link: "/api-reference/page/add-workspace-page" },
-                    { text: "List Project Pages", link: "/api-reference/page/list-project-pages" },
-                    { text: "Add Project Page", link: "/api-reference/page/add-project-page" },
-                    { text: "Get Workspace Page", link: "/api-reference/page/get-workspace-page" },
-                    { text: "Get Project Page", link: "/api-reference/page/get-project-page" },
+                    {
+                      text: "Add Workspace Page",
+                      link: "/api-reference/v1/page/add-workspace-page",
+                    },
+                    {
+                      text: "List Project Pages",
+                      link: "/api-reference/v1/page/list-project-pages",
+                    },
+                    { text: "Add Project Page", link: "/api-reference/v1/page/add-project-page" },
+                    {
+                      text: "Get Workspace Page",
+                      link: "/api-reference/v1/page/get-workspace-page",
+                    },
+                    { text: "Get Project Page", link: "/api-reference/v1/page/get-project-page" },
                   ],
                 },
                 {
                   text: "Intake",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/intake-issue/overview" },
+                    { text: "Overview", link: "/api-reference/v1/intake-issue/overview" },
                     {
                       text: "Add Intake Issue",
-                      link: "/api-reference/intake-issue/add-intake-issue",
+                      link: "/api-reference/v1/intake-issue/add-intake-issue",
                     },
                     {
                       text: "List Intake Issues",
-                      link: "/api-reference/intake-issue/list-intake-issues",
+                      link: "/api-reference/v1/intake-issue/list-intake-issues",
                     },
                     {
                       text: "Get Intake Issue",
-                      link: "/api-reference/intake-issue/get-intake-issue-detail",
+                      link: "/api-reference/v1/intake-issue/get-intake-issue-detail",
                     },
                     {
                       text: "Update Intake Issue",
-                      link: "/api-reference/intake-issue/update-intake-issue-detail",
+                      link: "/api-reference/v1/intake-issue/update-intake-issue-detail",
                     },
                     {
                       text: "Delete Intake Issue",
-                      link: "/api-reference/intake-issue/delete-intake-issue",
+                      link: "/api-reference/v1/intake-issue/delete-intake-issue",
                     },
                   ],
                 },
@@ -966,24 +999,30 @@ export default extendConfig(
                   text: "Assets",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/assets/overview" },
+                    { text: "Overview", link: "/api-reference/v1/assets/overview" },
                     {
                       text: "Create User Asset Upload",
-                      link: "/api-reference/assets/create-user-asset-upload",
+                      link: "/api-reference/v1/assets/create-user-asset-upload",
                     },
-                    { text: "Update User Asset", link: "/api-reference/assets/update-user-asset" },
-                    { text: "Delete User Asset", link: "/api-reference/assets/delete-user-asset" },
+                    {
+                      text: "Update User Asset",
+                      link: "/api-reference/v1/assets/update-user-asset",
+                    },
+                    {
+                      text: "Delete User Asset",
+                      link: "/api-reference/v1/assets/delete-user-asset",
+                    },
                     {
                       text: "Create Workspace Asset Upload",
-                      link: "/api-reference/assets/create-workspace-asset-upload",
+                      link: "/api-reference/v1/assets/create-workspace-asset-upload",
                     },
                     {
                       text: "Get Workspace Asset",
-                      link: "/api-reference/assets/get-workspace-asset",
+                      link: "/api-reference/v1/assets/get-workspace-asset",
                     },
                     {
                       text: "Update Workspace Asset",
-                      link: "/api-reference/assets/update-workspace-asset",
+                      link: "/api-reference/v1/assets/update-workspace-asset",
                     },
                   ],
                 },
@@ -991,24 +1030,30 @@ export default extendConfig(
                   text: "Milestones",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/milestones/overview" },
-                    { text: "Create Milestone", link: "/api-reference/milestones/add-milestone" },
-                    { text: "List Milestones", link: "/api-reference/milestones/list-milestones" },
+                    { text: "Overview", link: "/api-reference/v1/milestones/overview" },
+                    {
+                      text: "Create Milestone",
+                      link: "/api-reference/v1/milestones/add-milestone",
+                    },
+                    {
+                      text: "List Milestones",
+                      link: "/api-reference/v1/milestones/list-milestones",
+                    },
                     {
                       text: "Get Milestone",
-                      link: "/api-reference/milestones/get-milestone-detail",
+                      link: "/api-reference/v1/milestones/get-milestone-detail",
                     },
                     {
                       text: "List Milestone Work Items",
-                      link: "/api-reference/milestones/list-milestone-work-items",
+                      link: "/api-reference/v1/milestones/list-milestone-work-items",
                     },
                     {
                       text: "Update Milestone",
-                      link: "/api-reference/milestones/update-milestone-detail",
+                      link: "/api-reference/v1/milestones/update-milestone-detail",
                     },
                     {
                       text: "Delete Milestone",
-                      link: "/api-reference/milestones/delete-milestone",
+                      link: "/api-reference/v1/milestones/delete-milestone",
                     },
                   ],
                 },
@@ -1016,26 +1061,26 @@ export default extendConfig(
                   text: "Estimates",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/estimate/overview" },
-                    { text: "Create Estimate", link: "/api-reference/estimate/add-estimate" },
-                    { text: "Get Estimate", link: "/api-reference/estimate/get-estimate" },
-                    { text: "Update Estimate", link: "/api-reference/estimate/update-estimate" },
-                    { text: "Delete Estimate", link: "/api-reference/estimate/delete-estimate" },
+                    { text: "Overview", link: "/api-reference/v1/estimate/overview" },
+                    { text: "Create Estimate", link: "/api-reference/v1/estimate/add-estimate" },
+                    { text: "Get Estimate", link: "/api-reference/v1/estimate/get-estimate" },
+                    { text: "Update Estimate", link: "/api-reference/v1/estimate/update-estimate" },
+                    { text: "Delete Estimate", link: "/api-reference/v1/estimate/delete-estimate" },
                     {
                       text: "List Estimate Points",
-                      link: "/api-reference/estimate/list-estimate-points",
+                      link: "/api-reference/v1/estimate/list-estimate-points",
                     },
                     {
                       text: "Create Estimate Points",
-                      link: "/api-reference/estimate/add-estimate-points",
+                      link: "/api-reference/v1/estimate/add-estimate-points",
                     },
                     {
                       text: "Update Estimate Point",
-                      link: "/api-reference/estimate/update-estimate-point",
+                      link: "/api-reference/v1/estimate/update-estimate-point",
                     },
                     {
                       text: "Delete Estimate Point",
-                      link: "/api-reference/estimate/delete-estimate-point",
+                      link: "/api-reference/v1/estimate/delete-estimate-point",
                     },
                   ],
                 },
@@ -1043,34 +1088,34 @@ export default extendConfig(
                   text: "Time Tracking",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/worklogs/overview" },
-                    { text: "Create Worklog", link: "/api-reference/worklogs/create-worklog" },
+                    { text: "Overview", link: "/api-reference/v1/worklogs/overview" },
+                    { text: "Create Worklog", link: "/api-reference/v1/worklogs/create-worklog" },
                     {
                       text: "Get Worklogs for Issue",
-                      link: "/api-reference/worklogs/get-worklogs-for-issue",
+                      link: "/api-reference/v1/worklogs/get-worklogs-for-issue",
                     },
-                    { text: "Get Total Time", link: "/api-reference/worklogs/get-total-time" },
-                    { text: "Update Worklog", link: "/api-reference/worklogs/update-worklog" },
-                    { text: "Delete Worklog", link: "/api-reference/worklogs/delete-worklog" },
+                    { text: "Get Total Time", link: "/api-reference/v1/worklogs/get-total-time" },
+                    { text: "Update Worklog", link: "/api-reference/v1/worklogs/update-worklog" },
+                    { text: "Delete Worklog", link: "/api-reference/v1/worklogs/delete-worklog" },
                   ],
                 },
                 {
                   text: "Epics",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/epics/overview" },
-                    { text: "Create Epic", link: "/api-reference/epics/create-epic" },
-                    { text: "List Epics", link: "/api-reference/epics/list-epics" },
-                    { text: "Get Epic", link: "/api-reference/epics/get-epic-detail" },
-                    { text: "Update Epic", link: "/api-reference/epics/update-epic" },
-                    { text: "Delete Epic", link: "/api-reference/epics/delete-epic" },
+                    { text: "Overview", link: "/api-reference/v1/epics/overview" },
+                    { text: "Create Epic", link: "/api-reference/v1/epics/create-epic" },
+                    { text: "List Epics", link: "/api-reference/v1/epics/list-epics" },
+                    { text: "Get Epic", link: "/api-reference/v1/epics/get-epic-detail" },
+                    { text: "Update Epic", link: "/api-reference/v1/epics/update-epic" },
+                    { text: "Delete Epic", link: "/api-reference/v1/epics/delete-epic" },
                     {
                       text: "Add Epic Work Items",
-                      link: "/api-reference/epics/add-epic-work-items",
+                      link: "/api-reference/v1/epics/add-epic-work-items",
                     },
                     {
                       text: "List Epic Work Items",
-                      link: "/api-reference/epics/list-epic-work-items",
+                      link: "/api-reference/v1/epics/list-epic-work-items",
                     },
                   ],
                 },
@@ -1078,23 +1123,26 @@ export default extendConfig(
                   text: "Initiatives",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/initiative/overview" },
-                    { text: "Create Initiative", link: "/api-reference/initiative/add-initiative" },
+                    { text: "Overview", link: "/api-reference/v1/initiative/overview" },
+                    {
+                      text: "Create Initiative",
+                      link: "/api-reference/v1/initiative/add-initiative",
+                    },
                     {
                       text: "List Initiatives",
-                      link: "/api-reference/initiative/list-initiatives",
+                      link: "/api-reference/v1/initiative/list-initiatives",
                     },
                     {
                       text: "Get Initiative",
-                      link: "/api-reference/initiative/get-initiative-detail",
+                      link: "/api-reference/v1/initiative/get-initiative-detail",
                     },
                     {
                       text: "Update Initiative",
-                      link: "/api-reference/initiative/update-initiative-detail",
+                      link: "/api-reference/v1/initiative/update-initiative-detail",
                     },
                     {
                       text: "Delete Initiative",
-                      link: "/api-reference/initiative/delete-initiative",
+                      link: "/api-reference/v1/initiative/delete-initiative",
                     },
                   ],
                 },
@@ -1102,34 +1150,37 @@ export default extendConfig(
                   text: "Initiative Labels",
                   collapsed: true,
                   items: [
-                    { text: "Add Label", link: "/api-reference/initiative/add-initiative-label" },
+                    {
+                      text: "Add Label",
+                      link: "/api-reference/v1/initiative/add-initiative-label",
+                    },
                     {
                       text: "Add Labels to Initiative",
-                      link: "/api-reference/initiative/add-labels-to-initiative",
+                      link: "/api-reference/v1/initiative/add-labels-to-initiative",
                     },
                     {
                       text: "List Initiative Labels",
-                      link: "/api-reference/initiative/list-initiative-labels",
+                      link: "/api-reference/v1/initiative/list-initiative-labels",
                     },
                     {
                       text: "Get Label Detail",
-                      link: "/api-reference/initiative/get-initiative-label-detail",
+                      link: "/api-reference/v1/initiative/get-initiative-label-detail",
                     },
                     {
                       text: "List Labels for Initiative",
-                      link: "/api-reference/initiative/list-initiative-labels-for-initiative",
+                      link: "/api-reference/v1/initiative/list-initiative-labels-for-initiative",
                     },
                     {
                       text: "Update Label",
-                      link: "/api-reference/initiative/update-initiative-label-detail",
+                      link: "/api-reference/v1/initiative/update-initiative-label-detail",
                     },
                     {
                       text: "Remove Labels",
-                      link: "/api-reference/initiative/remove-labels-from-initiative",
+                      link: "/api-reference/v1/initiative/remove-labels-from-initiative",
                     },
                     {
                       text: "Delete Label",
-                      link: "/api-reference/initiative/delete-initiative-label",
+                      link: "/api-reference/v1/initiative/delete-initiative-label",
                     },
                   ],
                 },
@@ -1139,15 +1190,15 @@ export default extendConfig(
                   items: [
                     {
                       text: "Add Projects",
-                      link: "/api-reference/initiative/add-projects-to-initiative",
+                      link: "/api-reference/v1/initiative/add-projects-to-initiative",
                     },
                     {
                       text: "List Projects",
-                      link: "/api-reference/initiative/list-initiative-projects",
+                      link: "/api-reference/v1/initiative/list-initiative-projects",
                     },
                     {
                       text: "Remove Projects",
-                      link: "/api-reference/initiative/remove-projects-from-initiative",
+                      link: "/api-reference/v1/initiative/remove-projects-from-initiative",
                     },
                   ],
                 },
@@ -1157,12 +1208,15 @@ export default extendConfig(
                   items: [
                     {
                       text: "Add Epics",
-                      link: "/api-reference/initiative/add-epics-to-initiative",
+                      link: "/api-reference/v1/initiative/add-epics-to-initiative",
                     },
-                    { text: "List Epics", link: "/api-reference/initiative/list-initiative-epics" },
+                    {
+                      text: "List Epics",
+                      link: "/api-reference/v1/initiative/list-initiative-epics",
+                    },
                     {
                       text: "Remove Epics",
-                      link: "/api-reference/initiative/remove-epics-from-initiative",
+                      link: "/api-reference/v1/initiative/remove-epics-from-initiative",
                     },
                   ],
                 },
@@ -1170,61 +1224,67 @@ export default extendConfig(
                   text: "Customers",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/customer/overview" },
-                    { text: "Add Customer", link: "/api-reference/customer/add-customer" },
+                    { text: "Overview", link: "/api-reference/v1/customer/overview" },
+                    { text: "Add Customer", link: "/api-reference/v1/customer/add-customer" },
                     {
                       text: "Link Work Items",
-                      link: "/api-reference/customer/link-work-items-to-customer",
+                      link: "/api-reference/v1/customer/link-work-items-to-customer",
                     },
-                    { text: "List Customers", link: "/api-reference/customer/list-customers" },
-                    { text: "Get Customer", link: "/api-reference/customer/get-customer-detail" },
+                    { text: "List Customers", link: "/api-reference/v1/customer/list-customers" },
+                    {
+                      text: "Get Customer",
+                      link: "/api-reference/v1/customer/get-customer-detail",
+                    },
                     {
                       text: "List Customer Work Items",
-                      link: "/api-reference/customer/list-customer-work-items",
+                      link: "/api-reference/v1/customer/list-customer-work-items",
                     },
                     {
                       text: "Update Customer",
-                      link: "/api-reference/customer/update-customer-detail",
+                      link: "/api-reference/v1/customer/update-customer-detail",
                     },
                     {
                       text: "Unlink Work Item",
-                      link: "/api-reference/customer/unlink-work-item-from-customer",
+                      link: "/api-reference/v1/customer/unlink-work-item-from-customer",
                     },
-                    { text: "Delete Customer", link: "/api-reference/customer/delete-customer" },
+                    { text: "Delete Customer", link: "/api-reference/v1/customer/delete-customer" },
                   ],
                 },
                 {
                   text: "Customer Properties",
                   collapsed: true,
                   items: [
-                    { text: "Add Property", link: "/api-reference/customer/add-customer-property" },
+                    {
+                      text: "Add Property",
+                      link: "/api-reference/v1/customer/add-customer-property",
+                    },
                     {
                       text: "List Properties",
-                      link: "/api-reference/customer/list-customer-properties",
+                      link: "/api-reference/v1/customer/list-customer-properties",
                     },
                     {
                       text: "Get Property Detail",
-                      link: "/api-reference/customer/get-customer-property-detail",
+                      link: "/api-reference/v1/customer/get-customer-property-detail",
                     },
                     {
                       text: "List Property Values",
-                      link: "/api-reference/customer/list-customer-property-values",
+                      link: "/api-reference/v1/customer/list-customer-property-values",
                     },
                     {
                       text: "Get Property Value",
-                      link: "/api-reference/customer/get-customer-property-value",
+                      link: "/api-reference/v1/customer/get-customer-property-value",
                     },
                     {
                       text: "Update Property",
-                      link: "/api-reference/customer/update-customer-property-detail",
+                      link: "/api-reference/v1/customer/update-customer-property-detail",
                     },
                     {
                       text: "Update Property Value",
-                      link: "/api-reference/customer/update-customer-property-value",
+                      link: "/api-reference/v1/customer/update-customer-property-value",
                     },
                     {
                       text: "Delete Property",
-                      link: "/api-reference/customer/delete-customer-property",
+                      link: "/api-reference/v1/customer/delete-customer-property",
                     },
                   ],
                 },
@@ -1232,22 +1292,25 @@ export default extendConfig(
                   text: "Customer Requests",
                   collapsed: true,
                   items: [
-                    { text: "Add Request", link: "/api-reference/customer/add-customer-request" },
+                    {
+                      text: "Add Request",
+                      link: "/api-reference/v1/customer/add-customer-request",
+                    },
                     {
                       text: "List Requests",
-                      link: "/api-reference/customer/list-customer-requests",
+                      link: "/api-reference/v1/customer/list-customer-requests",
                     },
                     {
                       text: "Get Request Detail",
-                      link: "/api-reference/customer/get-customer-request-detail",
+                      link: "/api-reference/v1/customer/get-customer-request-detail",
                     },
                     {
                       text: "Update Request",
-                      link: "/api-reference/customer/update-customer-request-detail",
+                      link: "/api-reference/v1/customer/update-customer-request-detail",
                     },
                     {
                       text: "Delete Request",
-                      link: "/api-reference/customer/delete-customer-request",
+                      link: "/api-reference/v1/customer/delete-customer-request",
                     },
                   ],
                 },
@@ -1255,18 +1318,24 @@ export default extendConfig(
                   text: "Teamspaces",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/teamspace/overview" },
-                    { text: "Create Teamspace", link: "/api-reference/teamspace/add-teamspace" },
-                    { text: "List Teamspaces", link: "/api-reference/teamspace/list-teamspaces" },
+                    { text: "Overview", link: "/api-reference/v1/teamspace/overview" },
+                    { text: "Create Teamspace", link: "/api-reference/v1/teamspace/add-teamspace" },
+                    {
+                      text: "List Teamspaces",
+                      link: "/api-reference/v1/teamspace/list-teamspaces",
+                    },
                     {
                       text: "Get Teamspace",
-                      link: "/api-reference/teamspace/get-teamspace-detail",
+                      link: "/api-reference/v1/teamspace/get-teamspace-detail",
                     },
                     {
                       text: "Update Teamspace",
-                      link: "/api-reference/teamspace/update-teamspace-detail",
+                      link: "/api-reference/v1/teamspace/update-teamspace-detail",
                     },
-                    { text: "Delete Teamspace", link: "/api-reference/teamspace/delete-teamspace" },
+                    {
+                      text: "Delete Teamspace",
+                      link: "/api-reference/v1/teamspace/delete-teamspace",
+                    },
                   ],
                 },
                 {
@@ -1275,12 +1344,15 @@ export default extendConfig(
                   items: [
                     {
                       text: "List Members",
-                      link: "/api-reference/teamspace/list-teamspace-members",
+                      link: "/api-reference/v1/teamspace/list-teamspace-members",
                     },
-                    { text: "Add Members", link: "/api-reference/teamspace/add-teamspace-members" },
+                    {
+                      text: "Add Members",
+                      link: "/api-reference/v1/teamspace/add-teamspace-members",
+                    },
                     {
                       text: "Remove Members",
-                      link: "/api-reference/teamspace/remove-teamspace-members",
+                      link: "/api-reference/v1/teamspace/remove-teamspace-members",
                     },
                   ],
                 },
@@ -1290,15 +1362,15 @@ export default extendConfig(
                   items: [
                     {
                       text: "List Projects",
-                      link: "/api-reference/teamspace/list-teamspace-projects",
+                      link: "/api-reference/v1/teamspace/list-teamspace-projects",
                     },
                     {
                       text: "Add Projects",
-                      link: "/api-reference/teamspace/add-projects-to-teamspace",
+                      link: "/api-reference/v1/teamspace/add-projects-to-teamspace",
                     },
                     {
                       text: "Remove Projects",
-                      link: "/api-reference/teamspace/remove-projects-from-teamspace",
+                      link: "/api-reference/v1/teamspace/remove-projects-from-teamspace",
                     },
                   ],
                 },
@@ -1306,26 +1378,29 @@ export default extendConfig(
                   text: "Stickies",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/sticky/overview" },
-                    { text: "Add Sticky", link: "/api-reference/sticky/add-sticky" },
-                    { text: "List Stickies", link: "/api-reference/sticky/list-stickies" },
-                    { text: "Get Sticky", link: "/api-reference/sticky/get-sticky-detail" },
-                    { text: "Update Sticky", link: "/api-reference/sticky/update-sticky-detail" },
-                    { text: "Delete Sticky", link: "/api-reference/sticky/delete-sticky" },
+                    { text: "Overview", link: "/api-reference/v1/sticky/overview" },
+                    { text: "Add Sticky", link: "/api-reference/v1/sticky/add-sticky" },
+                    { text: "List Stickies", link: "/api-reference/v1/sticky/list-stickies" },
+                    { text: "Get Sticky", link: "/api-reference/v1/sticky/get-sticky-detail" },
+                    {
+                      text: "Update Sticky",
+                      link: "/api-reference/v1/sticky/update-sticky-detail",
+                    },
+                    { text: "Delete Sticky", link: "/api-reference/v1/sticky/delete-sticky" },
                   ],
                 },
                 {
                   text: "Workspace Features",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/workspace-features/overview" },
+                    { text: "Overview", link: "/api-reference/v1/workspace-features/overview" },
                     {
                       text: "Get Workspace Features",
-                      link: "/api-reference/workspace-features/get-workspace-features",
+                      link: "/api-reference/v1/workspace-features/get-workspace-features",
                     },
                     {
                       text: "Update Workspace Features",
-                      link: "/api-reference/workspace-features/update-workspace-features",
+                      link: "/api-reference/v1/workspace-features/update-workspace-features",
                     },
                   ],
                 },
@@ -1333,26 +1408,26 @@ export default extendConfig(
                   text: "Workspace Invitations",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/workspace-invitations/overview" },
+                    { text: "Overview", link: "/api-reference/v1/workspace-invitations/overview" },
                     {
                       text: "Create Workspace Invitation",
-                      link: "/api-reference/workspace-invitations/add-workspace-invitation",
+                      link: "/api-reference/v1/workspace-invitations/add-workspace-invitation",
                     },
                     {
                       text: "List Workspace Invitations",
-                      link: "/api-reference/workspace-invitations/list-workspace-invitations",
+                      link: "/api-reference/v1/workspace-invitations/list-workspace-invitations",
                     },
                     {
                       text: "Get Workspace Invitation",
-                      link: "/api-reference/workspace-invitations/get-workspace-invitation-detail",
+                      link: "/api-reference/v1/workspace-invitations/get-workspace-invitation-detail",
                     },
                     {
                       text: "Update Workspace Invitation",
-                      link: "/api-reference/workspace-invitations/update-workspace-invitation",
+                      link: "/api-reference/v1/workspace-invitations/update-workspace-invitation",
                     },
                     {
                       text: "Delete Workspace Invitation",
-                      link: "/api-reference/workspace-invitations/delete-workspace-invitation",
+                      link: "/api-reference/v1/workspace-invitations/delete-workspace-invitation",
                     },
                   ],
                 },
@@ -1360,34 +1435,34 @@ export default extendConfig(
                   text: "Members",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/members/overview" },
+                    { text: "Overview", link: "/api-reference/v1/members/overview" },
                     {
                       text: "Get Workspace Members",
-                      link: "/api-reference/members/get-workspace-members",
+                      link: "/api-reference/v1/members/get-workspace-members",
                     },
                     {
                       text: "Get Project Members",
-                      link: "/api-reference/members/get-project-members",
+                      link: "/api-reference/v1/members/get-project-members",
                     },
                     {
                       text: "Create Project Member",
-                      link: "/api-reference/members/add-project-member",
+                      link: "/api-reference/v1/members/add-project-member",
                     },
                     {
                       text: "Get Project Member",
-                      link: "/api-reference/members/get-project-member-detail",
+                      link: "/api-reference/v1/members/get-project-member-detail",
                     },
                     {
                       text: "Update Project Member",
-                      link: "/api-reference/members/update-project-member",
+                      link: "/api-reference/v1/members/update-project-member",
                     },
                     {
                       text: "Delete Project Member",
-                      link: "/api-reference/members/delete-project-member",
+                      link: "/api-reference/v1/members/delete-project-member",
                     },
                     {
                       text: "Remove Workspace Members",
-                      link: "/api-reference/members/remove-workspace-member",
+                      link: "/api-reference/v1/members/remove-workspace-member",
                     },
                   ],
                 },
@@ -1395,62 +1470,2067 @@ export default extendConfig(
                   text: "User",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/user/overview" },
-                    { text: "Get Current User", link: "/api-reference/user/get-current-user" },
+                    { text: "Overview", link: "/api-reference/v1/user/overview" },
+                    { text: "Get Current User", link: "/api-reference/v1/user/get-current-user" },
                   ],
                 },
                 {
                   text: "IDP Group Sync",
                   collapsed: true,
                   items: [
-                    { text: "Overview", link: "/api-reference/idp-group-sync/overview" },
+                    { text: "Overview", link: "/api-reference/v1/idp-group-sync/overview" },
                     {
                       text: "Get Group Sync Config",
-                      link: "/api-reference/idp-group-sync/get-group-sync-config",
+                      link: "/api-reference/v1/idp-group-sync/get-group-sync-config",
                     },
                     {
                       text: "Update Group Sync Config",
-                      link: "/api-reference/idp-group-sync/update-group-sync-config",
+                      link: "/api-reference/v1/idp-group-sync/update-group-sync-config",
                     },
                     {
                       text: "List Project Mappings",
-                      link: "/api-reference/idp-group-sync/list-project-mappings",
+                      link: "/api-reference/v1/idp-group-sync/list-project-mappings",
                     },
                     {
                       text: "Create Project Mapping",
-                      link: "/api-reference/idp-group-sync/create-project-mapping",
+                      link: "/api-reference/v1/idp-group-sync/create-project-mapping",
                     },
                     {
                       text: "Get Project Mapping",
-                      link: "/api-reference/idp-group-sync/get-project-mapping",
+                      link: "/api-reference/v1/idp-group-sync/get-project-mapping",
                     },
                     {
                       text: "Update Project Mapping",
-                      link: "/api-reference/idp-group-sync/update-project-mapping",
+                      link: "/api-reference/v1/idp-group-sync/update-project-mapping",
                     },
                     {
                       text: "Delete Project Mapping",
-                      link: "/api-reference/idp-group-sync/delete-project-mapping",
+                      link: "/api-reference/v1/idp-group-sync/delete-project-mapping",
                     },
                     {
                       text: "List Workspace Mappings",
-                      link: "/api-reference/idp-group-sync/list-workspace-mappings",
+                      link: "/api-reference/v1/idp-group-sync/list-workspace-mappings",
                     },
                     {
                       text: "Create Workspace Mapping",
-                      link: "/api-reference/idp-group-sync/create-workspace-mapping",
+                      link: "/api-reference/v1/idp-group-sync/create-workspace-mapping",
                     },
                     {
                       text: "Get Workspace Mapping",
-                      link: "/api-reference/idp-group-sync/get-workspace-mapping",
+                      link: "/api-reference/v1/idp-group-sync/get-workspace-mapping",
                     },
                     {
                       text: "Update Workspace Mapping",
-                      link: "/api-reference/idp-group-sync/update-workspace-mapping",
+                      link: "/api-reference/v1/idp-group-sync/update-workspace-mapping",
                     },
                     {
                       text: "Delete Workspace Mapping",
-                      link: "/api-reference/idp-group-sync/delete-workspace-mapping",
+                      link: "/api-reference/v1/idp-group-sync/delete-workspace-mapping",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+
+          "/api-reference/v2/": [
+            {
+              text: "API Reference",
+              items: [
+                { text: "Introduction", link: "/api-reference/v2/introduction" },
+                { text: "Authentication", link: "/api-reference/v2/authentication" },
+                { text: "Pagination", link: "/api-reference/v2/pagination" },
+                { text: "Filtering & Ordering", link: "/api-reference/v2/filtering-and-ordering" },
+                { text: "Sparse Fields", link: "/api-reference/v2/sparse-fields" },
+                { text: "Expanding Relations", link: "/api-reference/v2/expanding-relations" },
+                { text: "Errors", link: "/api-reference/v2/errors" },
+                { text: "Work Item Type Modes", link: "/api-reference/v2/work-item-type-modes" },
+                { text: "Migrating from v1", link: "/api-reference/v2/migrating-from-v1" },
+              ],
+            },
+            {
+              text: "Core Resources",
+              items: [
+                {
+                  text: "Work Items",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/work-items/overview" },
+                    {
+                      text: "List work items",
+                      link: "/api-reference/v2/work-items/list-work-items",
+                    },
+                    {
+                      text: "List work items across a workspace",
+                      link: "/api-reference/v2/work-items/list-workspace-work-items",
+                    },
+                    { text: "Get a work item", link: "/api-reference/v2/work-items/get-work-item" },
+                    {
+                      text: "Get a work item by identifier",
+                      link: "/api-reference/v2/work-items/get-work-item-by-identifier",
+                    },
+                    {
+                      text: "Create a work item",
+                      link: "/api-reference/v2/work-items/create-work-item",
+                    },
+                    {
+                      text: "Update a work item",
+                      link: "/api-reference/v2/work-items/update-work-item",
+                    },
+                    {
+                      text: "Delete a work item",
+                      link: "/api-reference/v2/work-items/delete-work-item",
+                    },
+                    {
+                      text: "Upsert a work item",
+                      link: "/api-reference/v2/work-items/upsert-work-item",
+                    },
+                    {
+                      text: "Bulk create work items",
+                      link: "/api-reference/v2/work-items/bulk-create-work-items",
+                    },
+                    {
+                      text: "Bulk update work items",
+                      link: "/api-reference/v2/work-items/bulk-update-work-items",
+                    },
+                    {
+                      text: "Bulk delete work items",
+                      link: "/api-reference/v2/work-items/bulk-delete-work-items",
+                    },
+                    {
+                      text: "Archive a work item",
+                      link: "/api-reference/v2/work-items/archive-work-item",
+                    },
+                    {
+                      text: "Unarchive a work item",
+                      link: "/api-reference/v2/work-items/unarchive-work-item",
+                    },
+                  ],
+                },
+                {
+                  text: "Comments",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/work-item-comments/overview" },
+                    {
+                      text: "List comments",
+                      link: "/api-reference/v2/work-item-comments/list-comments",
+                    },
+                    {
+                      text: "Get a comment",
+                      link: "/api-reference/v2/work-item-comments/get-comment",
+                    },
+                    {
+                      text: "Create a comment",
+                      link: "/api-reference/v2/work-item-comments/create-comment",
+                    },
+                    {
+                      text: "Update a comment",
+                      link: "/api-reference/v2/work-item-comments/update-comment",
+                    },
+                    {
+                      text: "Delete a comment",
+                      link: "/api-reference/v2/work-item-comments/delete-comment",
+                    },
+                    {
+                      text: "Upsert a comment",
+                      link: "/api-reference/v2/work-item-comments/upsert-comment",
+                    },
+                    {
+                      text: "Bulk create comments",
+                      link: "/api-reference/v2/work-item-comments/bulk-create-comments",
+                    },
+                    {
+                      text: "Bulk update comments",
+                      link: "/api-reference/v2/work-item-comments/bulk-update-comments",
+                    },
+                    {
+                      text: "Bulk delete comments",
+                      link: "/api-reference/v2/work-item-comments/bulk-delete-comments",
+                    },
+                  ],
+                },
+                {
+                  text: "Attachments",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/work-item-attachments/overview" },
+                    {
+                      text: "List attachments",
+                      link: "/api-reference/v2/work-item-attachments/list-attachments",
+                    },
+                    {
+                      text: "Get a attachment",
+                      link: "/api-reference/v2/work-item-attachments/get-attachment",
+                    },
+                    {
+                      text: "Create a work item attachment upload",
+                      link: "/api-reference/v2/work-item-attachments/create-attachment-upload",
+                    },
+                    {
+                      text: "Delete a attachment",
+                      link: "/api-reference/v2/work-item-attachments/delete-attachment",
+                    },
+                    {
+                      text: "Confirm a work item attachment upload",
+                      link: "/api-reference/v2/work-item-attachments/confirm-attachment-upload",
+                    },
+                  ],
+                },
+                {
+                  text: "Links",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/work-item-links/overview" },
+                    { text: "List links", link: "/api-reference/v2/work-item-links/list-links" },
+                    { text: "Get a link", link: "/api-reference/v2/work-item-links/get-link" },
+                    {
+                      text: "Create a link",
+                      link: "/api-reference/v2/work-item-links/create-link",
+                    },
+                    {
+                      text: "Update a link",
+                      link: "/api-reference/v2/work-item-links/update-link",
+                    },
+                    {
+                      text: "Delete a link",
+                      link: "/api-reference/v2/work-item-links/delete-link",
+                    },
+                  ],
+                },
+                {
+                  text: "Activities",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/work-item-activities/overview" },
+                    {
+                      text: "List activities",
+                      link: "/api-reference/v2/work-item-activities/list-activities",
+                    },
+                    {
+                      text: "Get a activity",
+                      link: "/api-reference/v2/work-item-activities/get-activity",
+                    },
+                  ],
+                },
+                {
+                  text: "Worklogs",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/work-item-worklogs/overview" },
+                    {
+                      text: "List worklogs",
+                      link: "/api-reference/v2/work-item-worklogs/list-worklogs",
+                    },
+                    {
+                      text: "Get the project worklog summary",
+                      link: "/api-reference/v2/work-item-worklogs/get-project-worklog-summary",
+                    },
+                    {
+                      text: "Get a worklog",
+                      link: "/api-reference/v2/work-item-worklogs/get-worklog",
+                    },
+                    {
+                      text: "Create a worklog",
+                      link: "/api-reference/v2/work-item-worklogs/create-worklog",
+                    },
+                    {
+                      text: "Update a worklog",
+                      link: "/api-reference/v2/work-item-worklogs/update-worklog",
+                    },
+                    {
+                      text: "Delete a worklog",
+                      link: "/api-reference/v2/work-item-worklogs/delete-worklog",
+                    },
+                  ],
+                },
+                {
+                  text: "Relations",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/work-item-relations/overview" },
+                    {
+                      text: "List work item relations",
+                      link: "/api-reference/v2/work-item-relations/list-work-item-relations",
+                    },
+                    {
+                      text: "Create work item relations",
+                      link: "/api-reference/v2/work-item-relations/create-work-item-relations",
+                    },
+                    {
+                      text: "Delete a work item relation",
+                      link: "/api-reference/v2/work-item-relations/delete-work-item-relation",
+                    },
+                  ],
+                },
+                {
+                  text: "Dependencies",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/work-item-dependencies/overview" },
+                    {
+                      text: "List work item dependencies",
+                      link: "/api-reference/v2/work-item-dependencies/list-work-item-dependencies",
+                    },
+                    {
+                      text: "Create work item dependencies",
+                      link: "/api-reference/v2/work-item-dependencies/create-work-item-dependencies",
+                    },
+                    {
+                      text: "Delete a work item dependency",
+                      link: "/api-reference/v2/work-item-dependencies/delete-work-item-dependency",
+                    },
+                  ],
+                },
+                {
+                  text: "Relation Definitions",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "Overview",
+                      link: "/api-reference/v2/work-item-relation-definitions/overview",
+                    },
+                    {
+                      text: "List relation definitions",
+                      link: "/api-reference/v2/work-item-relation-definitions/list-relation-definitions",
+                    },
+                    {
+                      text: "Get a relation definition",
+                      link: "/api-reference/v2/work-item-relation-definitions/get-relation-definition",
+                    },
+                    {
+                      text: "Create a relation definition",
+                      link: "/api-reference/v2/work-item-relation-definitions/create-relation-definition",
+                    },
+                    {
+                      text: "Update a relation definition",
+                      link: "/api-reference/v2/work-item-relation-definitions/update-relation-definition",
+                    },
+                    {
+                      text: "Delete a relation definition",
+                      link: "/api-reference/v2/work-item-relation-definitions/delete-relation-definition",
+                    },
+                  ],
+                },
+                {
+                  text: "States",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/states/overview" },
+                    { text: "List states", link: "/api-reference/v2/states/list-states" },
+                    { text: "Get a state", link: "/api-reference/v2/states/get-state" },
+                    { text: "Create a state", link: "/api-reference/v2/states/create-state" },
+                    { text: "Update a state", link: "/api-reference/v2/states/update-state" },
+                    { text: "Delete a state", link: "/api-reference/v2/states/delete-state" },
+                    { text: "Upsert a state", link: "/api-reference/v2/states/upsert-state" },
+                    {
+                      text: "Bulk create states",
+                      link: "/api-reference/v2/states/bulk-create-states",
+                    },
+                    {
+                      text: "Bulk update states",
+                      link: "/api-reference/v2/states/bulk-update-states",
+                    },
+                    {
+                      text: "Bulk delete states",
+                      link: "/api-reference/v2/states/bulk-delete-states",
+                    },
+                  ],
+                },
+                {
+                  text: "Labels",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/labels/overview" },
+                    { text: "List labels", link: "/api-reference/v2/labels/list-labels" },
+                    { text: "Get a label", link: "/api-reference/v2/labels/get-label" },
+                    { text: "Create a label", link: "/api-reference/v2/labels/create-label" },
+                    { text: "Update a label", link: "/api-reference/v2/labels/update-label" },
+                    { text: "Delete a label", link: "/api-reference/v2/labels/delete-label" },
+                    { text: "Upsert a label", link: "/api-reference/v2/labels/upsert-label" },
+                    {
+                      text: "Bulk create labels",
+                      link: "/api-reference/v2/labels/bulk-create-labels",
+                    },
+                    {
+                      text: "Bulk update labels",
+                      link: "/api-reference/v2/labels/bulk-update-labels",
+                    },
+                    {
+                      text: "Bulk delete labels",
+                      link: "/api-reference/v2/labels/bulk-delete-labels",
+                    },
+                  ],
+                },
+                {
+                  text: "Cycles",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/cycles/overview" },
+                    { text: "List cycles", link: "/api-reference/v2/cycles/list-cycles" },
+                    { text: "Get a cycle", link: "/api-reference/v2/cycles/get-cycle" },
+                    { text: "Create a cycle", link: "/api-reference/v2/cycles/create-cycle" },
+                    { text: "Update a cycle", link: "/api-reference/v2/cycles/update-cycle" },
+                    { text: "Delete a cycle", link: "/api-reference/v2/cycles/delete-cycle" },
+                    { text: "Upsert a cycle", link: "/api-reference/v2/cycles/upsert-cycle" },
+                    {
+                      text: "Bulk create cycles",
+                      link: "/api-reference/v2/cycles/bulk-create-cycles",
+                    },
+                    {
+                      text: "Bulk update cycles",
+                      link: "/api-reference/v2/cycles/bulk-update-cycles",
+                    },
+                    {
+                      text: "Bulk delete cycles",
+                      link: "/api-reference/v2/cycles/bulk-delete-cycles",
+                    },
+                    {
+                      text: "Add or remove cycle work items",
+                      link: "/api-reference/v2/cycles/manage-cycle-work-items",
+                    },
+                    {
+                      text: "Transfer work items between cycles",
+                      link: "/api-reference/v2/cycles/transfer-cycle-work-items",
+                    },
+                  ],
+                },
+                {
+                  text: "Modules",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/modules/overview" },
+                    { text: "List modules", link: "/api-reference/v2/modules/list-modules" },
+                    { text: "Get a module", link: "/api-reference/v2/modules/get-module" },
+                    { text: "Create a module", link: "/api-reference/v2/modules/create-module" },
+                    { text: "Update a module", link: "/api-reference/v2/modules/update-module" },
+                    { text: "Delete a module", link: "/api-reference/v2/modules/delete-module" },
+                    { text: "Upsert a module", link: "/api-reference/v2/modules/upsert-module" },
+                    {
+                      text: "Bulk create modules",
+                      link: "/api-reference/v2/modules/bulk-create-modules",
+                    },
+                    {
+                      text: "Bulk update modules",
+                      link: "/api-reference/v2/modules/bulk-update-modules",
+                    },
+                    {
+                      text: "Bulk delete modules",
+                      link: "/api-reference/v2/modules/bulk-delete-modules",
+                    },
+                    {
+                      text: "Add or remove module work items",
+                      link: "/api-reference/v2/modules/manage-module-work-items",
+                    },
+                  ],
+                },
+                {
+                  text: "Milestones",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/milestones/overview" },
+                    {
+                      text: "List milestones",
+                      link: "/api-reference/v2/milestones/list-milestones",
+                    },
+                    { text: "Get a milestone", link: "/api-reference/v2/milestones/get-milestone" },
+                    {
+                      text: "Create a milestone",
+                      link: "/api-reference/v2/milestones/create-milestone",
+                    },
+                    {
+                      text: "Update a milestone",
+                      link: "/api-reference/v2/milestones/update-milestone",
+                    },
+                    {
+                      text: "Delete a milestone",
+                      link: "/api-reference/v2/milestones/delete-milestone",
+                    },
+                    {
+                      text: "Upsert a milestone",
+                      link: "/api-reference/v2/milestones/upsert-milestone",
+                    },
+                    {
+                      text: "Bulk create milestones",
+                      link: "/api-reference/v2/milestones/bulk-create-milestones",
+                    },
+                    {
+                      text: "Bulk update milestones",
+                      link: "/api-reference/v2/milestones/bulk-update-milestones",
+                    },
+                    {
+                      text: "Bulk delete milestones",
+                      link: "/api-reference/v2/milestones/bulk-delete-milestones",
+                    },
+                    {
+                      text: "Add or remove milestone work items",
+                      link: "/api-reference/v2/milestones/manage-milestone-work-items",
+                    },
+                  ],
+                },
+                {
+                  text: "Intake",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/intake-work-items/overview" },
+                    {
+                      text: "List intake work items",
+                      link: "/api-reference/v2/intake-work-items/list-intake-work-items",
+                    },
+                    {
+                      text: "Get a intake work item",
+                      link: "/api-reference/v2/intake-work-items/get-intake-work-item",
+                    },
+                    {
+                      text: "Create a intake work item",
+                      link: "/api-reference/v2/intake-work-items/create-intake-work-item",
+                    },
+                    {
+                      text: "Update a intake work item",
+                      link: "/api-reference/v2/intake-work-items/update-intake-work-item",
+                    },
+                    {
+                      text: "Delete a intake work item",
+                      link: "/api-reference/v2/intake-work-items/delete-intake-work-item",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              text: "Work Item Types (Project)",
+              items: [
+                {
+                  text: "Work Item Types",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/work-item-types/overview" },
+                    {
+                      text: "List work item types",
+                      link: "/api-reference/v2/work-item-types/list-work-item-types",
+                    },
+                    {
+                      text: "Get a work item type",
+                      link: "/api-reference/v2/work-item-types/get-work-item-type",
+                    },
+                    {
+                      text: "Get a work item type schema",
+                      link: "/api-reference/v2/work-item-types/get-work-item-type-schema",
+                    },
+                    {
+                      text: "Create a work item type",
+                      link: "/api-reference/v2/work-item-types/create-work-item-type",
+                    },
+                    {
+                      text: "Update a work item type",
+                      link: "/api-reference/v2/work-item-types/update-work-item-type",
+                    },
+                    {
+                      text: "Delete a work item type",
+                      link: "/api-reference/v2/work-item-types/delete-work-item-type",
+                    },
+                    {
+                      text: "Enable work item types",
+                      link: "/api-reference/v2/work-item-types/enable-work-item-types",
+                    },
+                    {
+                      text: "Import work item types",
+                      link: "/api-reference/v2/work-item-types/import-work-item-types",
+                    },
+                    {
+                      text: "Mark a work item type as default",
+                      link: "/api-reference/v2/work-item-types/mark-default-work-item-type",
+                    },
+                  ],
+                },
+                {
+                  text: "Properties",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/work-item-properties/overview" },
+                    {
+                      text: "List work item properties",
+                      link: "/api-reference/v2/work-item-properties/list-work-item-properties",
+                    },
+                    {
+                      text: "Get a work item property",
+                      link: "/api-reference/v2/work-item-properties/get-work-item-property",
+                    },
+                    {
+                      text: "Create a work item property",
+                      link: "/api-reference/v2/work-item-properties/create-work-item-property",
+                    },
+                    {
+                      text: "Update a work item property",
+                      link: "/api-reference/v2/work-item-properties/update-work-item-property",
+                    },
+                    {
+                      text: "Delete a work item property",
+                      link: "/api-reference/v2/work-item-properties/delete-work-item-property",
+                    },
+                  ],
+                },
+                {
+                  text: "Property Options",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "Overview",
+                      link: "/api-reference/v2/work-item-property-options/overview",
+                    },
+                    {
+                      text: "List property options",
+                      link: "/api-reference/v2/work-item-property-options/list-property-options",
+                    },
+                    {
+                      text: "Get a property option",
+                      link: "/api-reference/v2/work-item-property-options/get-property-option",
+                    },
+                    {
+                      text: "Create a property option",
+                      link: "/api-reference/v2/work-item-property-options/create-property-option",
+                    },
+                    {
+                      text: "Update a property option",
+                      link: "/api-reference/v2/work-item-property-options/update-property-option",
+                    },
+                    {
+                      text: "Delete a property option",
+                      link: "/api-reference/v2/work-item-property-options/delete-property-option",
+                    },
+                  ],
+                },
+                {
+                  text: "Type Properties",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "Overview",
+                      link: "/api-reference/v2/work-item-type-properties/overview",
+                    },
+                    {
+                      text: "List type properties",
+                      link: "/api-reference/v2/work-item-type-properties/list-type-properties",
+                    },
+                    {
+                      text: "Get a type property",
+                      link: "/api-reference/v2/work-item-type-properties/get-type-property",
+                    },
+                    {
+                      text: "Attach a property to a type",
+                      link: "/api-reference/v2/work-item-type-properties/attach-type-property",
+                    },
+                    {
+                      text: "Detach a property from a type",
+                      link: "/api-reference/v2/work-item-type-properties/detach-type-property",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              text: "Work Item Types (Workspace)",
+              items: [
+                {
+                  text: "Work Item Types",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "Overview",
+                      link: "/api-reference/v2/workspace-work-item-types/overview",
+                    },
+                    {
+                      text: "List workspace work item types",
+                      link: "/api-reference/v2/workspace-work-item-types/list-workspace-work-item-types",
+                    },
+                    {
+                      text: "Get a workspace work item type",
+                      link: "/api-reference/v2/workspace-work-item-types/get-workspace-work-item-type",
+                    },
+                    {
+                      text: "Create a workspace work item type",
+                      link: "/api-reference/v2/workspace-work-item-types/create-workspace-work-item-type",
+                    },
+                    {
+                      text: "Update a workspace work item type",
+                      link: "/api-reference/v2/workspace-work-item-types/update-workspace-work-item-type",
+                    },
+                    {
+                      text: "Delete a workspace work item type",
+                      link: "/api-reference/v2/workspace-work-item-types/delete-workspace-work-item-type",
+                    },
+                    {
+                      text: "Mark a workspace work item type as default",
+                      link: "/api-reference/v2/workspace-work-item-types/mark-default-workspace-work-item-type",
+                    },
+                  ],
+                },
+                {
+                  text: "Properties",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "Overview",
+                      link: "/api-reference/v2/workspace-work-item-properties/overview",
+                    },
+                    {
+                      text: "List workspace work item properties",
+                      link: "/api-reference/v2/workspace-work-item-properties/list-workspace-work-item-properties",
+                    },
+                    {
+                      text: "Get a workspace work item property",
+                      link: "/api-reference/v2/workspace-work-item-properties/get-workspace-work-item-property",
+                    },
+                    {
+                      text: "Create a workspace work item property",
+                      link: "/api-reference/v2/workspace-work-item-properties/create-workspace-work-item-property",
+                    },
+                    {
+                      text: "Update a workspace work item property",
+                      link: "/api-reference/v2/workspace-work-item-properties/update-workspace-work-item-property",
+                    },
+                    {
+                      text: "Delete a workspace work item property",
+                      link: "/api-reference/v2/workspace-work-item-properties/delete-workspace-work-item-property",
+                    },
+                  ],
+                },
+                {
+                  text: "Property Options",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "Overview",
+                      link: "/api-reference/v2/workspace-work-item-property-options/overview",
+                    },
+                    {
+                      text: "List workspace property options",
+                      link: "/api-reference/v2/workspace-work-item-property-options/list-workspace-property-options",
+                    },
+                    {
+                      text: "Get a workspace property option",
+                      link: "/api-reference/v2/workspace-work-item-property-options/get-workspace-property-option",
+                    },
+                    {
+                      text: "Create a workspace property option",
+                      link: "/api-reference/v2/workspace-work-item-property-options/create-workspace-property-option",
+                    },
+                    {
+                      text: "Update a workspace property option",
+                      link: "/api-reference/v2/workspace-work-item-property-options/update-workspace-property-option",
+                    },
+                    {
+                      text: "Delete a workspace property option",
+                      link: "/api-reference/v2/workspace-work-item-property-options/delete-workspace-property-option",
+                    },
+                  ],
+                },
+                {
+                  text: "Type Properties",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "Overview",
+                      link: "/api-reference/v2/workspace-work-item-type-properties/overview",
+                    },
+                    {
+                      text: "List properties on a workspace type",
+                      link: "/api-reference/v2/workspace-work-item-type-properties/list-workspace-type-properties",
+                    },
+                    {
+                      text: "Get a property on a workspace type",
+                      link: "/api-reference/v2/workspace-work-item-type-properties/get-workspace-type-property",
+                    },
+                    {
+                      text: "Attach properties to a workspace type",
+                      link: "/api-reference/v2/workspace-work-item-type-properties/attach-workspace-type-property",
+                    },
+                    {
+                      text: "Detach a property from a workspace type",
+                      link: "/api-reference/v2/workspace-work-item-type-properties/detach-workspace-type-property",
+                    },
+                  ],
+                },
+                {
+                  text: "Property Contexts",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "Overview",
+                      link: "/api-reference/v2/work-item-property-contexts/overview",
+                    },
+                    {
+                      text: "List property contexts",
+                      link: "/api-reference/v2/work-item-property-contexts/list-property-contexts",
+                    },
+                    {
+                      text: "Get a property context",
+                      link: "/api-reference/v2/work-item-property-contexts/get-property-context",
+                    },
+                    {
+                      text: "Create a property context",
+                      link: "/api-reference/v2/work-item-property-contexts/create-property-context",
+                    },
+                    {
+                      text: "Update a property context",
+                      link: "/api-reference/v2/work-item-property-contexts/update-property-context",
+                    },
+                    {
+                      text: "Delete a property context",
+                      link: "/api-reference/v2/work-item-property-contexts/delete-property-context",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              text: "Projects & Planning",
+              items: [
+                {
+                  text: "Projects",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/projects/overview" },
+                    { text: "List projects", link: "/api-reference/v2/projects/list-projects" },
+                    { text: "Get a project", link: "/api-reference/v2/projects/get-project" },
+                    {
+                      text: "Get a project summary",
+                      link: "/api-reference/v2/projects/get-project-summary",
+                    },
+                    { text: "Create a project", link: "/api-reference/v2/projects/create-project" },
+                    { text: "Update a project", link: "/api-reference/v2/projects/update-project" },
+                    { text: "Delete a project", link: "/api-reference/v2/projects/delete-project" },
+                    { text: "Upsert a project", link: "/api-reference/v2/projects/upsert-project" },
+                    {
+                      text: "Bulk create projects",
+                      link: "/api-reference/v2/projects/bulk-create-projects",
+                    },
+                    {
+                      text: "Bulk update projects",
+                      link: "/api-reference/v2/projects/bulk-update-projects",
+                    },
+                    {
+                      text: "Archive a project",
+                      link: "/api-reference/v2/projects/archive-project",
+                    },
+                    {
+                      text: "Unarchive a project",
+                      link: "/api-reference/v2/projects/unarchive-project",
+                    },
+                  ],
+                },
+                {
+                  text: "Project Features",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/project-features/overview" },
+                    {
+                      text: "Get project features",
+                      link: "/api-reference/v2/project-features/get-project-features",
+                    },
+                    {
+                      text: "Update project features",
+                      link: "/api-reference/v2/project-features/update-project-features",
+                    },
+                  ],
+                },
+                {
+                  text: "Views (Project)",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/project-views/overview" },
+                    {
+                      text: "List project views",
+                      link: "/api-reference/v2/project-views/list-project-views",
+                    },
+                    {
+                      text: "Get a project view",
+                      link: "/api-reference/v2/project-views/get-project-view",
+                    },
+                    {
+                      text: "Create a project view",
+                      link: "/api-reference/v2/project-views/create-project-view",
+                    },
+                    {
+                      text: "Update a project view",
+                      link: "/api-reference/v2/project-views/update-project-view",
+                    },
+                    {
+                      text: "Delete a project view",
+                      link: "/api-reference/v2/project-views/delete-project-view",
+                    },
+                  ],
+                },
+                {
+                  text: "Views (Workspace)",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/workspace-views/overview" },
+                    {
+                      text: "List workspace views",
+                      link: "/api-reference/v2/workspace-views/list-workspace-views",
+                    },
+                    {
+                      text: "Get a workspace view",
+                      link: "/api-reference/v2/workspace-views/get-workspace-view",
+                    },
+                    {
+                      text: "Create a workspace view",
+                      link: "/api-reference/v2/workspace-views/create-workspace-view",
+                    },
+                    {
+                      text: "Update a workspace view",
+                      link: "/api-reference/v2/workspace-views/update-workspace-view",
+                    },
+                    {
+                      text: "Delete a workspace view",
+                      link: "/api-reference/v2/workspace-views/delete-workspace-view",
+                    },
+                  ],
+                },
+                {
+                  text: "Estimates",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/estimates/overview" },
+                    { text: "List estimates", link: "/api-reference/v2/estimates/list-estimates" },
+                    { text: "Get a estimate", link: "/api-reference/v2/estimates/get-estimate" },
+                    {
+                      text: "Create a estimate",
+                      link: "/api-reference/v2/estimates/create-estimate",
+                    },
+                    {
+                      text: "Update a estimate",
+                      link: "/api-reference/v2/estimates/update-estimate",
+                    },
+                    {
+                      text: "Delete a estimate",
+                      link: "/api-reference/v2/estimates/delete-estimate",
+                    },
+                    {
+                      text: "Upsert a estimate",
+                      link: "/api-reference/v2/estimates/upsert-estimate",
+                    },
+                    {
+                      text: "Bulk create estimates",
+                      link: "/api-reference/v2/estimates/bulk-create-estimates",
+                    },
+                    {
+                      text: "Bulk update estimates",
+                      link: "/api-reference/v2/estimates/bulk-update-estimates",
+                    },
+                    {
+                      text: "Bulk delete estimates",
+                      link: "/api-reference/v2/estimates/bulk-delete-estimates",
+                    },
+                  ],
+                },
+                {
+                  text: "Estimate Points",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/estimate-points/overview" },
+                    {
+                      text: "List estimate points",
+                      link: "/api-reference/v2/estimate-points/list-estimate-points",
+                    },
+                    {
+                      text: "Get a estimate point",
+                      link: "/api-reference/v2/estimate-points/get-estimate-point",
+                    },
+                    {
+                      text: "Create a estimate point",
+                      link: "/api-reference/v2/estimate-points/create-estimate-point",
+                    },
+                    {
+                      text: "Update a estimate point",
+                      link: "/api-reference/v2/estimate-points/update-estimate-point",
+                    },
+                    {
+                      text: "Delete a estimate point",
+                      link: "/api-reference/v2/estimate-points/delete-estimate-point",
+                    },
+                    {
+                      text: "Upsert a estimate point",
+                      link: "/api-reference/v2/estimate-points/upsert-estimate-point",
+                    },
+                    {
+                      text: "Bulk create estimate points",
+                      link: "/api-reference/v2/estimate-points/bulk-create-estimate-points",
+                    },
+                    {
+                      text: "Bulk update estimate points",
+                      link: "/api-reference/v2/estimate-points/bulk-update-estimate-points",
+                    },
+                    {
+                      text: "Bulk delete estimate points",
+                      link: "/api-reference/v2/estimate-points/bulk-delete-estimate-points",
+                    },
+                  ],
+                },
+                {
+                  text: "Initiatives",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/initiatives/overview" },
+                    {
+                      text: "List initiatives",
+                      link: "/api-reference/v2/initiatives/list-initiatives",
+                    },
+                    {
+                      text: "Get a initiative",
+                      link: "/api-reference/v2/initiatives/get-initiative",
+                    },
+                    {
+                      text: "Create a initiative",
+                      link: "/api-reference/v2/initiatives/create-initiative",
+                    },
+                    {
+                      text: "Update a initiative",
+                      link: "/api-reference/v2/initiatives/update-initiative",
+                    },
+                    {
+                      text: "Delete a initiative",
+                      link: "/api-reference/v2/initiatives/delete-initiative",
+                    },
+                    {
+                      text: "Add or remove initiative labels",
+                      link: "/api-reference/v2/initiatives/manage-initiative-labels",
+                    },
+                    {
+                      text: "Add or remove initiative projects",
+                      link: "/api-reference/v2/initiatives/manage-initiative-projects",
+                    },
+                    {
+                      text: "Add or remove initiative work items",
+                      link: "/api-reference/v2/initiatives/manage-initiative-work-items",
+                    },
+                  ],
+                },
+                {
+                  text: "Initiative Labels",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/initiative-labels/overview" },
+                    {
+                      text: "List initiative labels",
+                      link: "/api-reference/v2/initiative-labels/list-initiative-labels",
+                    },
+                    {
+                      text: "Get a initiative label",
+                      link: "/api-reference/v2/initiative-labels/get-initiative-label",
+                    },
+                    {
+                      text: "Create a initiative label",
+                      link: "/api-reference/v2/initiative-labels/create-initiative-label",
+                    },
+                    {
+                      text: "Update a initiative label",
+                      link: "/api-reference/v2/initiative-labels/update-initiative-label",
+                    },
+                    {
+                      text: "Delete a initiative label",
+                      link: "/api-reference/v2/initiative-labels/delete-initiative-label",
+                    },
+                  ],
+                },
+                {
+                  text: "Teamspaces",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/teamspaces/overview" },
+                    {
+                      text: "List teamspaces",
+                      link: "/api-reference/v2/teamspaces/list-teamspaces",
+                    },
+                    { text: "Get a teamspace", link: "/api-reference/v2/teamspaces/get-teamspace" },
+                    {
+                      text: "Create a teamspace",
+                      link: "/api-reference/v2/teamspaces/create-teamspace",
+                    },
+                    {
+                      text: "Update a teamspace",
+                      link: "/api-reference/v2/teamspaces/update-teamspace",
+                    },
+                    {
+                      text: "Delete a teamspace",
+                      link: "/api-reference/v2/teamspaces/delete-teamspace",
+                    },
+                  ],
+                },
+                {
+                  text: "Templates (Project)",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "Overview",
+                      link: "/api-reference/v2/project-work-item-templates/overview",
+                    },
+                    {
+                      text: "List project work item templates",
+                      link: "/api-reference/v2/project-work-item-templates/list-project-work-item-templates",
+                    },
+                    {
+                      text: "Get a project work item template",
+                      link: "/api-reference/v2/project-work-item-templates/get-project-work-item-template",
+                    },
+                    {
+                      text: "Create a project work item template",
+                      link: "/api-reference/v2/project-work-item-templates/create-project-work-item-template",
+                    },
+                    {
+                      text: "Update a project work item template",
+                      link: "/api-reference/v2/project-work-item-templates/update-project-work-item-template",
+                    },
+                    {
+                      text: "Delete a project work item template",
+                      link: "/api-reference/v2/project-work-item-templates/delete-project-work-item-template",
+                    },
+                    {
+                      text: "Create a work item from a template",
+                      link: "/api-reference/v2/project-work-item-templates/use-work-item-template",
+                    },
+                  ],
+                },
+                {
+                  text: "Templates (Workspace)",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "Overview",
+                      link: "/api-reference/v2/workspace-work-item-templates/overview",
+                    },
+                    {
+                      text: "List workspace work item templates",
+                      link: "/api-reference/v2/workspace-work-item-templates/list-workspace-work-item-templates",
+                    },
+                    {
+                      text: "Get a workspace work item template",
+                      link: "/api-reference/v2/workspace-work-item-templates/get-workspace-work-item-template",
+                    },
+                    {
+                      text: "Create a workspace work item template",
+                      link: "/api-reference/v2/workspace-work-item-templates/create-workspace-work-item-template",
+                    },
+                    {
+                      text: "Update a workspace work item template",
+                      link: "/api-reference/v2/workspace-work-item-templates/update-workspace-work-item-template",
+                    },
+                    {
+                      text: "Delete a workspace work item template",
+                      link: "/api-reference/v2/workspace-work-item-templates/delete-workspace-work-item-template",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              text: "Wiki & Notes",
+              items: [
+                {
+                  text: "Collections",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/collections/overview" },
+                    {
+                      text: "List collection members",
+                      link: "/api-reference/v2/collections/list-collection-members",
+                    },
+                    {
+                      text: "List collections",
+                      link: "/api-reference/v2/collections/list-collections",
+                    },
+                    {
+                      text: "Get a collection",
+                      link: "/api-reference/v2/collections/get-collection",
+                    },
+                    {
+                      text: "Create a collection",
+                      link: "/api-reference/v2/collections/create-collection",
+                    },
+                    {
+                      text: "Update a collection",
+                      link: "/api-reference/v2/collections/update-collection",
+                    },
+                    {
+                      text: "Delete a collection",
+                      link: "/api-reference/v2/collections/delete-collection",
+                    },
+                    {
+                      text: "Add or remove collection members",
+                      link: "/api-reference/v2/collections/manage-collection-members",
+                    },
+                    {
+                      text: "Add or remove pages in a collection",
+                      link: "/api-reference/v2/collections/manage-collection-pages",
+                    },
+                    {
+                      text: "Search pages for a collection",
+                      link: "/api-reference/v2/collections/search-collection-pages",
+                    },
+                  ],
+                },
+                {
+                  text: "Pages (Project)",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/project-pages/overview" },
+                    {
+                      text: "List project pages",
+                      link: "/api-reference/v2/project-pages/list-project-pages",
+                    },
+                    {
+                      text: "Get a project page",
+                      link: "/api-reference/v2/project-pages/get-project-page",
+                    },
+                    {
+                      text: "Create a project page",
+                      link: "/api-reference/v2/project-pages/create-project-page",
+                    },
+                    {
+                      text: "Update a project page",
+                      link: "/api-reference/v2/project-pages/update-project-page",
+                    },
+                    {
+                      text: "Delete a project page",
+                      link: "/api-reference/v2/project-pages/delete-project-page",
+                    },
+                  ],
+                },
+                {
+                  text: "Pages (Workspace)",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/workspace-pages/overview" },
+                    {
+                      text: "List workspace pages",
+                      link: "/api-reference/v2/workspace-pages/list-workspace-pages",
+                    },
+                    {
+                      text: "Get a workspace page",
+                      link: "/api-reference/v2/workspace-pages/get-workspace-page",
+                    },
+                    {
+                      text: "Create a workspace page",
+                      link: "/api-reference/v2/workspace-pages/create-workspace-page",
+                    },
+                    {
+                      text: "Update a workspace page",
+                      link: "/api-reference/v2/workspace-pages/update-workspace-page",
+                    },
+                    {
+                      text: "Delete a workspace page",
+                      link: "/api-reference/v2/workspace-pages/delete-workspace-page",
+                    },
+                  ],
+                },
+                {
+                  text: "Stickies",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/stickies/overview" },
+                    { text: "List stickies", link: "/api-reference/v2/stickies/list-stickies" },
+                    { text: "Get a sticky", link: "/api-reference/v2/stickies/get-sticky" },
+                    { text: "Create a sticky", link: "/api-reference/v2/stickies/create-sticky" },
+                    { text: "Update a sticky", link: "/api-reference/v2/stickies/update-sticky" },
+                    { text: "Delete a sticky", link: "/api-reference/v2/stickies/delete-sticky" },
+                  ],
+                },
+              ],
+            },
+            {
+              text: "Customers",
+              items: [
+                {
+                  text: "Customers",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/customers/overview" },
+                    { text: "List customers", link: "/api-reference/v2/customers/list-customers" },
+                    { text: "Get a customer", link: "/api-reference/v2/customers/get-customer" },
+                    {
+                      text: "Create a customer",
+                      link: "/api-reference/v2/customers/create-customer",
+                    },
+                    {
+                      text: "Update a customer",
+                      link: "/api-reference/v2/customers/update-customer",
+                    },
+                    {
+                      text: "Delete a customer",
+                      link: "/api-reference/v2/customers/delete-customer",
+                    },
+                    {
+                      text: "Upsert a customer",
+                      link: "/api-reference/v2/customers/upsert-customer",
+                    },
+                    {
+                      text: "Link or unlink customer work items",
+                      link: "/api-reference/v2/customers/manage-customer-work-items",
+                    },
+                  ],
+                },
+                {
+                  text: "Customer Requests",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/customer-requests/overview" },
+                    {
+                      text: "List customer requests",
+                      link: "/api-reference/v2/customer-requests/list-customer-requests",
+                    },
+                    {
+                      text: "Get a customer request",
+                      link: "/api-reference/v2/customer-requests/get-customer-request",
+                    },
+                    {
+                      text: "Create a customer request",
+                      link: "/api-reference/v2/customer-requests/create-customer-request",
+                    },
+                    {
+                      text: "Update a customer request",
+                      link: "/api-reference/v2/customer-requests/update-customer-request",
+                    },
+                    {
+                      text: "Delete a customer request",
+                      link: "/api-reference/v2/customer-requests/delete-customer-request",
+                    },
+                  ],
+                },
+                {
+                  text: "Customer Properties",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/customer-properties/overview" },
+                    {
+                      text: "List customer properties",
+                      link: "/api-reference/v2/customer-properties/list-customer-properties",
+                    },
+                    {
+                      text: "Get a customer property",
+                      link: "/api-reference/v2/customer-properties/get-customer-property",
+                    },
+                    {
+                      text: "Create a customer property",
+                      link: "/api-reference/v2/customer-properties/create-customer-property",
+                    },
+                    {
+                      text: "Update a customer property",
+                      link: "/api-reference/v2/customer-properties/update-customer-property",
+                    },
+                    {
+                      text: "Delete a customer property",
+                      link: "/api-reference/v2/customer-properties/delete-customer-property",
+                    },
+                  ],
+                },
+                {
+                  text: "Customer Property Values",
+                  collapsed: true,
+                  items: [
+                    {
+                      text: "Overview",
+                      link: "/api-reference/v2/customer-property-values/overview",
+                    },
+                    {
+                      text: "List customer property values",
+                      link: "/api-reference/v2/customer-property-values/list-customer-property-values",
+                    },
+                    {
+                      text: "Set customer property values",
+                      link: "/api-reference/v2/customer-property-values/set-customer-property-values",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              text: "Releases",
+              items: [
+                {
+                  text: "Releases",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/releases/overview" },
+                    { text: "List releases", link: "/api-reference/v2/releases/list-releases" },
+                    { text: "Get a release", link: "/api-reference/v2/releases/get-release" },
+                    {
+                      text: "Get a release changelog",
+                      link: "/api-reference/v2/releases/get-release-changelog",
+                    },
+                    { text: "Create a release", link: "/api-reference/v2/releases/create-release" },
+                    { text: "Update a release", link: "/api-reference/v2/releases/update-release" },
+                    {
+                      text: "Update a release changelog",
+                      link: "/api-reference/v2/releases/update-release-changelog",
+                    },
+                    { text: "Delete a release", link: "/api-reference/v2/releases/delete-release" },
+                    {
+                      text: "Add or remove release labels",
+                      link: "/api-reference/v2/releases/manage-release-labels",
+                    },
+                    {
+                      text: "Add or remove release work items",
+                      link: "/api-reference/v2/releases/manage-release-work-items",
+                    },
+                  ],
+                },
+                {
+                  text: "Release Tags",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/release-tags/overview" },
+                    {
+                      text: "List release tags",
+                      link: "/api-reference/v2/release-tags/list-release-tags",
+                    },
+                    {
+                      text: "Get a release tag",
+                      link: "/api-reference/v2/release-tags/get-release-tag",
+                    },
+                    {
+                      text: "Create a release tag",
+                      link: "/api-reference/v2/release-tags/create-release-tag",
+                    },
+                    {
+                      text: "Update a release tag",
+                      link: "/api-reference/v2/release-tags/update-release-tag",
+                    },
+                    {
+                      text: "Delete a release tag",
+                      link: "/api-reference/v2/release-tags/delete-release-tag",
+                    },
+                  ],
+                },
+                {
+                  text: "Release Labels",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/release-labels/overview" },
+                    {
+                      text: "List release labels",
+                      link: "/api-reference/v2/release-labels/list-release-labels",
+                    },
+                    {
+                      text: "Get a release label",
+                      link: "/api-reference/v2/release-labels/get-release-label",
+                    },
+                    {
+                      text: "Create a release label",
+                      link: "/api-reference/v2/release-labels/create-release-label",
+                    },
+                    {
+                      text: "Update a release label",
+                      link: "/api-reference/v2/release-labels/update-release-label",
+                    },
+                    {
+                      text: "Delete a release label",
+                      link: "/api-reference/v2/release-labels/delete-release-label",
+                    },
+                  ],
+                },
+                {
+                  text: "Release Comments",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/release-comments/overview" },
+                    {
+                      text: "List release comments",
+                      link: "/api-reference/v2/release-comments/list-release-comments",
+                    },
+                    {
+                      text: "Get a release comment",
+                      link: "/api-reference/v2/release-comments/get-release-comment",
+                    },
+                    {
+                      text: "Create a release comment",
+                      link: "/api-reference/v2/release-comments/create-release-comment",
+                    },
+                    {
+                      text: "Update a release comment",
+                      link: "/api-reference/v2/release-comments/update-release-comment",
+                    },
+                    {
+                      text: "Delete a release comment",
+                      link: "/api-reference/v2/release-comments/delete-release-comment",
+                    },
+                  ],
+                },
+                {
+                  text: "Release Links",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/release-links/overview" },
+                    {
+                      text: "List release links",
+                      link: "/api-reference/v2/release-links/list-release-links",
+                    },
+                    {
+                      text: "Get a release link",
+                      link: "/api-reference/v2/release-links/get-release-link",
+                    },
+                    {
+                      text: "Create a release link",
+                      link: "/api-reference/v2/release-links/create-release-link",
+                    },
+                    {
+                      text: "Update a release link",
+                      link: "/api-reference/v2/release-links/update-release-link",
+                    },
+                    {
+                      text: "Delete a release link",
+                      link: "/api-reference/v2/release-links/delete-release-link",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              text: "Automation & Workflows",
+              items: [
+                {
+                  text: "Automations (Project)",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/project-automations/overview" },
+                    {
+                      text: "List automation activities",
+                      link: "/api-reference/v2/project-automations/list-automation-activities",
+                    },
+                    {
+                      text: "List automation edges",
+                      link: "/api-reference/v2/project-automations/list-automation-edges",
+                    },
+                    {
+                      text: "List automation nodes",
+                      link: "/api-reference/v2/project-automations/list-automation-nodes",
+                    },
+                    {
+                      text: "List project automations",
+                      link: "/api-reference/v2/project-automations/list-project-automations",
+                    },
+                    {
+                      text: "Get a automation activity",
+                      link: "/api-reference/v2/project-automations/get-automation-activity",
+                    },
+                    {
+                      text: "Get a automation edge",
+                      link: "/api-reference/v2/project-automations/get-automation-edge",
+                    },
+                    {
+                      text: "Get a automation node",
+                      link: "/api-reference/v2/project-automations/get-automation-node",
+                    },
+                    {
+                      text: "Get a project automation",
+                      link: "/api-reference/v2/project-automations/get-project-automation",
+                    },
+                    {
+                      text: "Create a automation edge",
+                      link: "/api-reference/v2/project-automations/create-automation-edge",
+                    },
+                    {
+                      text: "Create a automation node",
+                      link: "/api-reference/v2/project-automations/create-automation-node",
+                    },
+                    {
+                      text: "Create a project automation",
+                      link: "/api-reference/v2/project-automations/create-project-automation",
+                    },
+                    {
+                      text: "Update a automation edge",
+                      link: "/api-reference/v2/project-automations/update-automation-edge",
+                    },
+                    {
+                      text: "Update a automation node",
+                      link: "/api-reference/v2/project-automations/update-automation-node",
+                    },
+                    {
+                      text: "Update a project automation",
+                      link: "/api-reference/v2/project-automations/update-project-automation",
+                    },
+                    {
+                      text: "Delete a automation edge",
+                      link: "/api-reference/v2/project-automations/delete-automation-edge",
+                    },
+                    {
+                      text: "Delete a automation node",
+                      link: "/api-reference/v2/project-automations/delete-automation-node",
+                    },
+                    {
+                      text: "Delete a project automation",
+                      link: "/api-reference/v2/project-automations/delete-project-automation",
+                    },
+                    {
+                      text: "Regenerate an automation node webhook secret",
+                      link: "/api-reference/v2/project-automations/regenerate-node-webhook-secret",
+                    },
+                    {
+                      text: "Enable or disable a project automation",
+                      link: "/api-reference/v2/project-automations/set-project-automation-status",
+                    },
+                  ],
+                },
+                {
+                  text: "Automations (Workspace)",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/workspace-automations/overview" },
+                    {
+                      text: "List automation activities",
+                      link: "/api-reference/v2/workspace-automations/list-automation-activities",
+                    },
+                    {
+                      text: "List automation edges",
+                      link: "/api-reference/v2/workspace-automations/list-automation-edges",
+                    },
+                    {
+                      text: "List automation nodes",
+                      link: "/api-reference/v2/workspace-automations/list-automation-nodes",
+                    },
+                    {
+                      text: "List workspace automations",
+                      link: "/api-reference/v2/workspace-automations/list-workspace-automations",
+                    },
+                    {
+                      text: "Get a automation activity",
+                      link: "/api-reference/v2/workspace-automations/get-automation-activity",
+                    },
+                    {
+                      text: "Get a automation edge",
+                      link: "/api-reference/v2/workspace-automations/get-automation-edge",
+                    },
+                    {
+                      text: "Get a automation node",
+                      link: "/api-reference/v2/workspace-automations/get-automation-node",
+                    },
+                    {
+                      text: "Get a workspace automation",
+                      link: "/api-reference/v2/workspace-automations/get-workspace-automation",
+                    },
+                    {
+                      text: "Create a automation edge",
+                      link: "/api-reference/v2/workspace-automations/create-automation-edge",
+                    },
+                    {
+                      text: "Create a automation node",
+                      link: "/api-reference/v2/workspace-automations/create-automation-node",
+                    },
+                    {
+                      text: "Create a workspace automation",
+                      link: "/api-reference/v2/workspace-automations/create-workspace-automation",
+                    },
+                    {
+                      text: "Update a automation edge",
+                      link: "/api-reference/v2/workspace-automations/update-automation-edge",
+                    },
+                    {
+                      text: "Update a automation node",
+                      link: "/api-reference/v2/workspace-automations/update-automation-node",
+                    },
+                    {
+                      text: "Update a workspace automation",
+                      link: "/api-reference/v2/workspace-automations/update-workspace-automation",
+                    },
+                    {
+                      text: "Delete a automation edge",
+                      link: "/api-reference/v2/workspace-automations/delete-automation-edge",
+                    },
+                    {
+                      text: "Delete a automation node",
+                      link: "/api-reference/v2/workspace-automations/delete-automation-node",
+                    },
+                    {
+                      text: "Delete a workspace automation",
+                      link: "/api-reference/v2/workspace-automations/delete-workspace-automation",
+                    },
+                    {
+                      text: "Regenerate an automation node webhook secret",
+                      link: "/api-reference/v2/workspace-automations/regenerate-node-webhook-secret",
+                    },
+                    {
+                      text: "Enable or disable a workspace automation",
+                      link: "/api-reference/v2/workspace-automations/set-workspace-automation-status",
+                    },
+                  ],
+                },
+                {
+                  text: "Workflows",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/workflows/overview" },
+                    { text: "List workflows", link: "/api-reference/v2/workflows/list-workflows" },
+                    { text: "Get a workflow", link: "/api-reference/v2/workflows/get-workflow" },
+                    {
+                      text: "Create a workflow",
+                      link: "/api-reference/v2/workflows/create-workflow",
+                    },
+                    {
+                      text: "Update a workflow",
+                      link: "/api-reference/v2/workflows/update-workflow",
+                    },
+                    {
+                      text: "Delete a workflow",
+                      link: "/api-reference/v2/workflows/delete-workflow",
+                    },
+                  ],
+                },
+                {
+                  text: "Workflow States",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/workflow-states/overview" },
+                    {
+                      text: "List workflow states",
+                      link: "/api-reference/v2/workflow-states/list-workflow-states",
+                    },
+                    {
+                      text: "Get a workflow state",
+                      link: "/api-reference/v2/workflow-states/get-workflow-state",
+                    },
+                    {
+                      text: "Create a workflow state",
+                      link: "/api-reference/v2/workflow-states/create-workflow-state",
+                    },
+                    {
+                      text: "Update a workflow state",
+                      link: "/api-reference/v2/workflow-states/update-workflow-state",
+                    },
+                    {
+                      text: "Delete a workflow state",
+                      link: "/api-reference/v2/workflow-states/delete-workflow-state",
+                    },
+                  ],
+                },
+                {
+                  text: "Workflow Transitions",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/workflow-transitions/overview" },
+                    {
+                      text: "List workflow transitions",
+                      link: "/api-reference/v2/workflow-transitions/list-workflow-transitions",
+                    },
+                    {
+                      text: "Get a workflow transition",
+                      link: "/api-reference/v2/workflow-transitions/get-workflow-transition",
+                    },
+                    {
+                      text: "Create a workflow transition",
+                      link: "/api-reference/v2/workflow-transitions/create-workflow-transition",
+                    },
+                    {
+                      text: "Update a workflow transition",
+                      link: "/api-reference/v2/workflow-transitions/update-workflow-transition",
+                    },
+                    {
+                      text: "Delete a workflow transition",
+                      link: "/api-reference/v2/workflow-transitions/delete-workflow-transition",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              text: "Workspace & Admin",
+              items: [
+                {
+                  text: "Members",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/members/overview" },
+                    {
+                      text: "List project members",
+                      link: "/api-reference/v2/members/list-project-members",
+                    },
+                    {
+                      text: "List workspace members",
+                      link: "/api-reference/v2/members/list-workspace-members",
+                    },
+                    {
+                      text: "Get a project member",
+                      link: "/api-reference/v2/members/get-project-member",
+                    },
+                    {
+                      text: "Get project role distribution",
+                      link: "/api-reference/v2/members/get-project-role-distribution",
+                    },
+                    {
+                      text: "Create a project member",
+                      link: "/api-reference/v2/members/create-project-member",
+                    },
+                    {
+                      text: "Update a project member",
+                      link: "/api-reference/v2/members/update-project-member",
+                    },
+                    {
+                      text: "Delete a project member",
+                      link: "/api-reference/v2/members/delete-project-member",
+                    },
+                    {
+                      text: "Remove a workspace member",
+                      link: "/api-reference/v2/members/remove-workspace-member",
+                    },
+                  ],
+                },
+                {
+                  text: "Invitations",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/invitations/overview" },
+                    {
+                      text: "List invitations",
+                      link: "/api-reference/v2/invitations/list-invitations",
+                    },
+                    {
+                      text: "Get a invitation",
+                      link: "/api-reference/v2/invitations/get-invitation",
+                    },
+                    {
+                      text: "Create a invitation",
+                      link: "/api-reference/v2/invitations/create-invitation",
+                    },
+                    {
+                      text: "Delete a invitation",
+                      link: "/api-reference/v2/invitations/delete-invitation",
+                    },
+                    {
+                      text: "Bulk invite members",
+                      link: "/api-reference/v2/invitations/bulk-invitations",
+                    },
+                  ],
+                },
+                {
+                  text: "Roles",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/roles/overview" },
+                    { text: "List roles", link: "/api-reference/v2/roles/list-roles" },
+                    { text: "Get a role", link: "/api-reference/v2/roles/get-role" },
+                  ],
+                },
+                {
+                  text: "Permissions",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/permissions/overview" },
+                    {
+                      text: "Get your effective project permissions",
+                      link: "/api-reference/v2/permissions/get-project-permissions",
+                    },
+                    {
+                      text: "Get your effective workspace permissions",
+                      link: "/api-reference/v2/permissions/get-workspace-permissions",
+                    },
+                  ],
+                },
+                {
+                  text: "Permission Schemes",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/permission-schemes/overview" },
+                    {
+                      text: "List permission schemes",
+                      link: "/api-reference/v2/permission-schemes/list-permission-schemes",
+                    },
+                    {
+                      text: "Get a permission scheme",
+                      link: "/api-reference/v2/permission-schemes/get-permission-scheme",
+                    },
+                  ],
+                },
+                {
+                  text: "Workspace Features",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/workspace-features/overview" },
+                    {
+                      text: "Get workspace features",
+                      link: "/api-reference/v2/workspace-features/get-workspace-features",
+                    },
+                    {
+                      text: "Update workspace features",
+                      link: "/api-reference/v2/workspace-features/update-workspace-features",
+                    },
+                  ],
+                },
+                {
+                  text: "Audit Logs",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/audit-logs/overview" },
+                    {
+                      text: "List audit logs",
+                      link: "/api-reference/v2/audit-logs/list-audit-logs",
+                    },
+                    {
+                      text: "Get an audit log",
+                      link: "/api-reference/v2/audit-logs/get-audit-log",
+                    },
+                  ],
+                },
+                {
+                  text: "Group Sync",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/group-sync/overview" },
+                    {
+                      text: "List project mappings",
+                      link: "/api-reference/v2/group-sync/list-project-mappings",
+                    },
+                    {
+                      text: "List workspace mappings",
+                      link: "/api-reference/v2/group-sync/list-workspace-mappings",
+                    },
+                    {
+                      text: "Get the group sync configuration",
+                      link: "/api-reference/v2/group-sync/get-group-sync-config",
+                    },
+                    {
+                      text: "Get a project mapping",
+                      link: "/api-reference/v2/group-sync/get-project-mapping",
+                    },
+                    {
+                      text: "Get a workspace mapping",
+                      link: "/api-reference/v2/group-sync/get-workspace-mapping",
+                    },
+                    {
+                      text: "Create a project mapping",
+                      link: "/api-reference/v2/group-sync/create-project-mapping",
+                    },
+                    {
+                      text: "Create a workspace mapping",
+                      link: "/api-reference/v2/group-sync/create-workspace-mapping",
+                    },
+                    {
+                      text: "Update the group sync configuration",
+                      link: "/api-reference/v2/group-sync/update-group-sync-config",
+                    },
+                    {
+                      text: "Update a project mapping",
+                      link: "/api-reference/v2/group-sync/update-project-mapping",
+                    },
+                    {
+                      text: "Update a workspace mapping",
+                      link: "/api-reference/v2/group-sync/update-workspace-mapping",
+                    },
+                    {
+                      text: "Delete a project mapping",
+                      link: "/api-reference/v2/group-sync/delete-project-mapping",
+                    },
+                    {
+                      text: "Delete a workspace mapping",
+                      link: "/api-reference/v2/group-sync/delete-workspace-mapping",
+                    },
+                  ],
+                },
+                {
+                  text: "Webhooks",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/webhooks/overview" },
+                    { text: "List webhooks", link: "/api-reference/v2/webhooks/list-webhooks" },
+                    { text: "Get a webhook", link: "/api-reference/v2/webhooks/get-webhook" },
+                    { text: "Create a webhook", link: "/api-reference/v2/webhooks/create-webhook" },
+                    { text: "Update a webhook", link: "/api-reference/v2/webhooks/update-webhook" },
+                    { text: "Delete a webhook", link: "/api-reference/v2/webhooks/delete-webhook" },
+                    {
+                      text: "Regenerate a webhook secret",
+                      link: "/api-reference/v2/webhooks/regenerate-webhook-secret",
+                    },
+                  ],
+                },
+                {
+                  text: "Webhook Logs",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/webhook-logs/overview" },
+                    {
+                      text: "List webhook logs",
+                      link: "/api-reference/v2/webhook-logs/list-webhook-logs",
+                    },
+                    {
+                      text: "Get a webhook log",
+                      link: "/api-reference/v2/webhook-logs/get-webhook-log",
+                    },
+                  ],
+                },
+                {
+                  text: "Workspace Assets",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/workspace-assets/overview" },
+                    {
+                      text: "List workspace assets",
+                      link: "/api-reference/v2/workspace-assets/list-workspace-assets",
+                    },
+                    { text: "Get a asset", link: "/api-reference/v2/workspace-assets/get-asset" },
+                    {
+                      text: "Create a workspace asset upload",
+                      link: "/api-reference/v2/workspace-assets/create-workspace-asset",
+                    },
+                    {
+                      text: "Delete a asset",
+                      link: "/api-reference/v2/workspace-assets/delete-asset",
+                    },
+                    {
+                      text: "Confirm a workspace asset upload",
+                      link: "/api-reference/v2/workspace-assets/confirm-workspace-asset",
+                    },
+                  ],
+                },
+                {
+                  text: "User Assets",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/user-assets/overview" },
+                    {
+                      text: "List user assets",
+                      link: "/api-reference/v2/user-assets/list-user-assets",
+                    },
+                    {
+                      text: "Get a user asset",
+                      link: "/api-reference/v2/user-assets/get-user-asset",
+                    },
+                    {
+                      text: "Create a user asset upload",
+                      link: "/api-reference/v2/user-assets/create-user-asset",
+                    },
+                    {
+                      text: "Delete a user asset",
+                      link: "/api-reference/v2/user-assets/delete-user-asset",
+                    },
+                    {
+                      text: "Confirm a user asset upload",
+                      link: "/api-reference/v2/user-assets/confirm-user-asset",
+                    },
+                  ],
+                },
+                {
+                  text: "Users",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/users/overview" },
+                    { text: "Get current user", link: "/api-reference/v2/users/get-current-user" },
+                  ],
+                },
+                {
+                  text: "Artifacts",
+                  collapsed: true,
+                  items: [
+                    { text: "Overview", link: "/api-reference/v2/artifacts/overview" },
+                    { text: "Get an artifact", link: "/api-reference/v2/artifacts/get-artifact" },
+                    {
+                      text: "Create an artifact",
+                      link: "/api-reference/v2/artifacts/create-artifact",
+                    },
+                    {
+                      text: "Append a new version",
+                      link: "/api-reference/v2/artifacts/update-artifact",
+                    },
+                    {
+                      text: "Publish an artifact",
+                      link: "/api-reference/v2/artifacts/publish-artifact",
                     },
                   ],
                 },

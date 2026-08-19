@@ -21,7 +21,7 @@ copyPage: false
 
 <div class="home-doc-actions">
   <a class="home-doc-actions__btn home-doc-actions__btn--primary" href="/self-hosting/overview">Get Started</a>
-  <a class="home-doc-actions__btn home-doc-actions__btn--secondary" href="/api-reference/introduction">Tutorials</a>
+  <a class="home-doc-actions__btn home-doc-actions__btn--secondary" href="/api-reference/v1/introduction">Tutorials</a>
 </div>
 
 <div class="home-feature-cards">
@@ -34,7 +34,7 @@ Deploy Plane on your infrastructure with Docker, Kubernetes, or other methods. C
 
 </Card>
 
-<Card title="REST API" icon="braces" href="/api-reference/introduction" link-text="Explore API docs">
+<Card title="REST API" icon="braces" href="/api-reference/v1/introduction" link-text="Explore API docs">
 
 180+ endpoints to manage projects, work items, cycles, modules, and more.
 
