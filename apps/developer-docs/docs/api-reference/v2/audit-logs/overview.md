@@ -45,7 +45,7 @@ Audit logs are read-only. There is no way to write, edit, or delete an entry thr
 
 - `source` _string_
 
-  The surface the request came through. One of `platform`, `api`, `graphql`, `auth`, or `system`. `api` marks calls made with a token like yours; `system` marks actions Plane took on its own.
+  The surface the request came through. One of `platform`, `api`, `graphql`, `auth`, `admin`, or `system`. `api` marks calls made with a token like yours; `admin` marks actions taken through instance God Mode; `system` marks actions Plane took on its own.
 
 - `actor_type` _string_
 
@@ -203,7 +203,7 @@ For a full export, add `?paginate=cursor` and walk `next_cursor` — that skips 
 - **Snapshots, not joins.** `actor_display_name`, `actor_email`, and `target_display_name` are recorded at event time. That is what makes the log evidential — the entry still names the person as they were, even after a rename or an offboarding.
 - **Failures are first-class.** `outcome: failure` entries are exactly what a security review is looking for. A burst of them from one `ip_address` with `category: auth` is the shape of a credential-stuffing attempt.
 - **`old_value` and `new_value` are free-form.** They describe the change for that `event_name` and are not a fixed schema. Render them, diff them, but do not require particular keys.
-- **`source` separates humans from tokens.** `platform` is the Plane app, `api` is a REST client, `system` is Plane acting by itself. Combining `source: api` with `actor_type: api_token` isolates automation.
+- **`source` separates humans from tokens.** `platform` is the Plane app, `api` is a REST client, `admin` is instance God Mode, `system` is Plane acting by itself. Combining `source: api` with `actor_type: api_token` isolates automation.
 
 ::: tip Correlate a `409` with a settings change
 If clients suddenly start getting `409 work_item_types_managed_at_workspace` or `work_item_types_managed_at_project`, someone toggled the work item type mode. Query `?category=settings` around the time the failures started to find the change and the actor behind it. See [Work item type modes](/api-reference/v2/work-item-type-modes) and [Update workspace features](/api-reference/v2/workspace-features/update-workspace-features).
