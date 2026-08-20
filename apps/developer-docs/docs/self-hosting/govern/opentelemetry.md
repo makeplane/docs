@@ -109,12 +109,54 @@ If your backend requires an ingestion key, you have two options.
 --set observability.otel.headers='x-api-key=your_ingestion_key'
 ```
 
-**Bring your own secret.** If you manage secrets externally (for example, with the [External Secrets Operator](/self-hosting/govern/external-secrets)), create a Secret containing the key `OTEL_EXPORTER_OTLP_HEADERS` and point the chart at it. The chart then skips creating its own Secret:
+**Bring your own secret.** If you manage secrets externally (for example, with the [External Secrets Operator](/self-hosting/govern/external-secrets)), point the chart at a Secret you own. The chart then skips creating its own Secret and references yours instead:
 
 ```yaml
 external_secrets:
   otel_env_existingSecret: my-otel-headers
 ```
+
+The Secret is injected into the pods with `envFrom`, so the data key must be named exactly like the environment variable it supplies:
+
+| Key                          | Required | Value                                                                                      |
+| ---------------------------- | -------- | ------------------------------------------------------------------------------------------ |
+| `OTEL_EXPORTER_OTLP_HEADERS` | Yes      | Exporter headers in `key=value,key=value` form, for example `x-api-key=your_ingestion_key` |
+
+Created manually, it looks like this:
+
+```bash
+kubectl create secret generic my-otel-headers \
+  --namespace plane \
+  --from-literal=OTEL_EXPORTER_OTLP_HEADERS='x-api-key=your_ingestion_key'
+```
+
+Or as an `ExternalSecret` target synced by the External Secrets Operator:
+
+```yaml
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
+metadata:
+  name: otel-external-secret
+  namespace: plane
+spec:
+  refreshInterval: 1m
+  secretStoreRef:
+    name: cluster-aws-secretsmanager
+    kind: ClusterSecretStore
+  target:
+    name: my-otel-headers # referenced by external_secrets.otel_env_existingSecret
+    creationPolicy: Owner
+  data:
+    - secretKey: OTEL_EXPORTER_OTLP_HEADERS
+      remoteRef:
+        key: prod/secrets/otel
+        property: OTEL_EXPORTER_OTLP_HEADERS
+```
+
+Keep the following in mind:
+
+- The Secret must live in the same namespace as the Plane release and is referenced as non-optional — if it doesn't exist yet (for example, ESO hasn't synced it), the instrumented pods won't start until it appears.
+- Because the Secret is applied with `envFrom`, any other keys in it also become environment variables on every instrumented pod. Keep it limited to the `OTEL_*` values you intend to set.
 
 ## Sampling
 
