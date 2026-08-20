@@ -66,15 +66,24 @@ Consider these alternatives:
    Edit the `plane.env` file to configure your deployment:
 
    ```bash
-   # Generate a unique machine signature
-   export MACHINE_SIGNATURE=$(uuidgen)
-
    # Set your domain
-   export DOMAIN_NAME=plane.yourcompany.com
-   export WEB_URL=https://plane.yourcompany.com
-   export CORS_ALLOWED_ORIGINS=https://plane.yourcompany.com
-   export SITE_ADDRESS=https://plane.yourcompany.com
+   DOMAIN_NAME=plane.yourcompany.com
+   WEB_URL=https://plane.yourcompany.com
+   CORS_ALLOWED_ORIGINS=https://plane.yourcompany.com
+   SITE_ADDRESS=https://plane.yourcompany.com
+
+   # Paste the generated UUID here (see note below)
+   MACHINE_SIGNATURE=your-uuid-here
    ```
+
+   :::info
+   **Generating `MACHINE_SIGNATURE`:** Run the following command in your terminal to generate a unique UUID, then paste the output as the value of `MACHINE_SIGNATURE` in `plane.env`:
+
+   ```bash
+   uuidgen
+   ```
+
+   :::
 
    **Update image references** in `docker-compose.yml` to point to your private registry:
 
