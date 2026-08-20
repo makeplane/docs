@@ -266,7 +266,25 @@ const config = defineConfig({
         text: "Get started",
         items: [
           { text: "Introduction", link: "/introduction/home" },
-          { text: "Quickstart guide", link: "/introduction/quickstart" },
+          {
+            text: "Quickstart guide",
+            link: "/introduction/quickstart",
+            collapsed: true,
+            items: [
+              {
+                text: "How to Plane: For startups",
+                link: "/introduction/quickstart/startups",
+              },
+              {
+                text: "How to Plane: For growing teams",
+                link: "/introduction/quickstart/growing-teams",
+              },
+              {
+                text: "How to Plane: For enterprise teams",
+                link: "/introduction/quickstart/enterprise-teams",
+              },
+            ],
+          },
           { text: "Core concepts", link: "/introduction/core-concepts" },
           {
             text: "Tutorials",
@@ -370,7 +388,10 @@ const config = defineConfig({
               },
             ],
           },
-          { text: "Workspace Governance", link: "/workspace-administration/workspace-governance" },
+          {
+            text: "Workspace Governance",
+            link: "/workspace-administration/workspace-governance",
+          },
           {
             text: "Authentication",
             collapsed: true,
@@ -383,7 +404,10 @@ const config = defineConfig({
               },
             ],
           },
-          { text: "Workspace Audit Logs", link: "/workspaces-and-users/audit-logs" },
+          {
+            text: "Workspace Audit Logs",
+            link: "/workspaces-and-users/audit-logs",
+          },
           {
             text: "Billing and plans",
             collapsed: true,
