@@ -102,6 +102,10 @@
       "destination": "/integrations/about"
     },
     {
+      "source": "/integrations/drawio",
+      "destination": "/integrations/draw-io"
+    },
+    {
       "source": "/plane-integrations/about",
       "destination": "/integrations/about"
     },
