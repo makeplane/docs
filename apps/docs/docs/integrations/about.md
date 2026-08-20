@@ -14,7 +14,7 @@ Plane's integrations make it easy to connect your workspace and projects with yo
   <Card title="GitHub Enterprise" icon="github" href="/integrations/github?edition=github-enterprise#connect-github-organization">
     Sync issues and pull requests between Plane and GitHub Enterprise for a smooth, two-way workflow.
   </Card>
-  <Card title="Draw.io" icon="drawio" href="/integrations/drawio">
+  <Card title="Draw.io" icon="drawio" href="/integrations/draw-io">
     Embed Draw.io diagrams directly in Plane pages to visualize workflows, architectures, and processes.
   </Card>
   <Card title="GitLab" icon="gitlab" href="/integrations/gitlab">
