@@ -24,7 +24,8 @@
     "check:types": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@plane/docs-theme": "workspace:*"
+    "@plane/docs-theme": "workspace:*",
+    "@vercel/functions": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",

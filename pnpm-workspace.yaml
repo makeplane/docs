@@ -12,6 +12,7 @@ packages:
 # would break the theme).
 catalog:
   "@types/node": ^25.9.5
+  "@vercel/functions": ^3.9.5
   "@voidzero-dev/vitepress-theme": ^4.8.4
   lucide-vue-next: ^0.577.0
   medium-zoom: ^1.1.0
