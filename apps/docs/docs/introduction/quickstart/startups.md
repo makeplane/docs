@@ -3,7 +3,7 @@ title: "How to Plane: For startups"
 description: A lightweight Plane setup for managing company priorities, product work, customer feedback, and delivery in one place.
 ---
 
-# For startups
+# How to Plane: For startups
 
 Startups need enough structure to keep priorities, product context, and execution connected. They do not need a process for every possible situation.
 

@@ -3,7 +3,7 @@ title: "How to Plane: For growing teams"
 description: Structure Plane for multiple teams, introduce the right capabilities at the right time, and create reliable cross-team visibility without adding unnecessary administration.
 ---
 
-# For growing teams
+# How to Plane: For growing teams
 
 Once several teams share products, dependencies, and company goals, informal coordination stops being enough. Requests get lost, ownership becomes unclear, and leaders need answers that span more than one project.
 

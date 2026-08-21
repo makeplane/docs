@@ -3,7 +3,7 @@ title: "How to Plane: For enterprise teams"
 description: Set up Plane across your organization with common governance, clear visibility, and enough flexibility for teams to work in the way that suits them.
 ---
 
-# For enterprise teams
+# How to Plane: For enterprise teams
 
 Set up Plane across your organization with common governance, clear visibility, and enough flexibility for teams to work in the way that suits them.
 
