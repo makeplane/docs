@@ -45,7 +45,7 @@ Plane provides importers for tools including [Jira](/importers/jira), [Linear](/
 
 Move active work, recent context, and records the team still needs. Historical data that has no role in current planning or reporting can remain in a read-only archive.
 
-![Importing active work](https://media.docs.plane.so/for-growing-teams/imports.webp#hero)
+![Importing active work](https://media.docs.plane.so/for-growing-teams/imports.webp)
 
 > **Tip:** Clean up states and labels before importing. Mapping several variations of "in progress" into Plane only carries the existing inconsistency into the new Workspace.
 
@@ -311,7 +311,7 @@ Start with how the team plans and manages its work, then enable the features tha
 
 **Projects organized by team**
 
-![Projects organized by team](https://media.docs.plane.so/for-growing-teams/projects.webp#hero)
+![Projects organized by team](https://media.docs.plane.so/for-growing-teams/projects.webp)
 
 ### Create Teamspaces for shared team context
 
@@ -332,7 +332,7 @@ A useful Teamspace description states:
 
 **Teamspace**
 
-![Teamspace](https://media.docs.plane.so/for-growing-teams/teamspaces.webp#hero)
+![Teamspace](https://media.docs.plane.so/for-growing-teams/teamspaces.webp)
 
 ### Organize work by type
 
@@ -340,7 +340,7 @@ Every work item has a type, and the type decides which properties that item carr
 
 Teams can create types such as Bug, Feature Request, Security Review, Incident Follow-up, or Content Request. Each type can have properties suited to the work.
 
-![Work item types](https://media.docs.plane.so/for-growing-teams/work-item-type.webp#hero)
+![Work item types](https://media.docs.plane.so/for-growing-teams/work-item-type.webp)
 
 | Work Item Type  | Useful properties                                                                                                                                           |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -432,7 +432,7 @@ Use the [Workspace Wiki](/core-concepts/pages/wiki) for knowledge that applies a
 
 **Workspace Wiki**
 
-![Workspace wiki](https://media.docs.plane.so/for-growing-teams/wiki.webp#hero)
+![Workspace wiki](https://media.docs.plane.so/for-growing-teams/wiki.webp)
 
 Business adds [nested Pages](/pages/nested-pages) for larger documentation structures. Add nesting when a flat structure becomes difficult to navigate.
 
@@ -463,7 +463,7 @@ Accepted requests should enter the team's normal project workflow. Intake should
 
 **Review incoming requests before they enter the team's planned workflow.**
 
-![Reviewing incoming requests](https://media.docs.plane.so/for-growing-teams/intake.webp#hero)
+![Reviewing incoming requests](https://media.docs.plane.so/for-growing-teams/intake.webp)
 
 ### Connect customer requests to delivery work
 
@@ -495,7 +495,7 @@ Repeated carryover points at oversized work items, shifting priorities, unresolv
 
 **Cycles**
 
-![Cycles](https://media.docs.plane.so/for-growing-teams/cycles.webp#hero)
+![Cycles](https://media.docs.plane.so/for-growing-teams/cycles.webp)
 
 ### Group related work with Modules
 
@@ -512,7 +512,7 @@ A Module might represent:
 
 **Modules**
 
-![Modules](https://media.docs.plane.so/for-growing-teams/modules.webp#hero)
+![Modules](https://media.docs.plane.so/for-growing-teams/modules.webp)
 
 A Module can span several work items. Work can remain grouped around the same deliverable even when it is completed over multiple planning periods.
 
@@ -565,7 +565,7 @@ On the item that has to wait, add the item it is waiting for. Say the dashboard 
 
 When two items are connected but neither has to wait, use _related_. When the same thing was filed twice, use _duplicate_.
 
-![Work item dependencies](https://media.docs.plane.so/for-growing-teams/gatt-chart.webp#hero)
+![Work item dependencies](https://media.docs.plane.so/for-growing-teams/gatt-chart.webp)
 
 An important dependency should make four things clear:
 
@@ -601,7 +601,7 @@ Do not create an Initiative for an individual team project. Keep the number of a
 
 **An Initiative across projects**
 
-![An Initiative across projects](https://media.docs.plane.so/for-growing-teams/initatives.webp#hero)
+![An Initiative across projects](https://media.docs.plane.so/for-growing-teams/initatives.webp)
 
 ### Share project updates consistently
 
@@ -648,7 +648,7 @@ Business adds advanced Dashboard widgets for deeper analysis and more flexible r
 
 **Build Dashboards around the decisions teams and leaders make regularly**
 
-![Leadership dashboard](https://media.docs.plane.so/for-growing-teams/dashboards.webp#hero)
+![Leadership dashboard](https://media.docs.plane.so/for-growing-teams/dashboards.webp)
 
 ## Automate stable workflows
 
@@ -671,7 +671,7 @@ Do not automate an unclear process or use automation to compensate for inconsist
 
 **A focused automation**
 
-![A focused automation](https://media.docs.plane.so/for-growing-teams/automation.webp#hero)
+![A focused automation](https://media.docs.plane.so/for-growing-teams/automation.webp)
 
 ## Introduce Plane AI gradually
 
@@ -685,7 +685,7 @@ Begin with read-only questions that help teams evaluate the quality of their Wor
 - Which customer requests are connected to planned work?
 - How has the scope of this Cycle changed?
 
-![Plane AI answering workspace questions](https://media.docs.plane.so/for-growing-teams/plane-ai.webp#hero)
+![Plane AI answering workspace questions](https://media.docs.plane.so/for-growing-teams/plane-ai.webp)
 
 Once you are satisfied with the answers, introduce reviewed actions for clearly defined work. A person should inspect proposed changes before they are applied.
 

@@ -70,7 +70,7 @@ A very small startup may not need Teamspaces immediately. Enable this feature wh
 
 Create Teamspaces around stable areas of responsibility, not temporary initiatives. A feature launch or company objective usually belongs in a project, module, or initiative rather than a new Teamspace.
 
-![Teamspaces](https://media.docs.plane.so/for-startup/teamspaces.webp#hero)
+![Teamspaces](https://media.docs.plane.so/for-startup/teamspaces.webp)
 
 ### Create one or two projects
 
@@ -86,7 +86,7 @@ Add another project when the work needs different ownership, access, workflow, o
 
 **Projects Overview**
 
-![Projects overview](https://media.docs.plane.so/for-startup/projects-overview.webp#hero)
+![Projects overview](https://media.docs.plane.so/for-startup/projects-overview.webp)
 
 ### Invite the team
 
@@ -124,7 +124,7 @@ This first import gives you a chance to test the workspace structure before brin
 
 **Importer mapping**
 
-![Importer mapping](https://media.docs.plane.so/for-startup/imports.webp#hero)
+![Importer mapping](https://media.docs.plane.so/for-startup/imports.webp)
 
 ## 4. Turn priorities into work
 
@@ -159,7 +159,7 @@ Use an epic work item type when a larger deliverable contains several related wo
 
 **Work item**
 
-![Work item](https://media.docs.plane.so/for-startup/work-item.webp#hero)
+![Work item](https://media.docs.plane.so/for-startup/work-item.webp)
 
 ### Keep workflows simple
 
@@ -187,7 +187,7 @@ A lightweight planning loop is enough for most startups:
 
 Short planning horizons allow the company to respond when customer feedback, delivery constraints, or business priorities change.
 
-![Short planning horizons](https://media.docs.plane.so/for-growing-teams/gatt-chart.webp#hero)
+![Short planning horizons](https://media.docs.plane.so/for-growing-teams/gatt-chart.webp)
 
 ### Set priorities
 
@@ -240,7 +240,7 @@ The [Workspace Wiki](/core-concepts/pages/wiki) holds knowledge used across the 
 
 Keep project-specific context with the project. Move durable knowledge to the Wiki when people outside the project will need it again.
 
-![Workspace Wiki](https://media.docs.plane.so/for-startup/wiki.webp#hero)
+![Workspace Wiki](https://media.docs.plane.so/for-startup/wiki.webp)
 
 ### Reuse repeated processes
 
@@ -282,7 +282,7 @@ The owner should:
 
 A single owned queue is easier to maintain than several channels that nobody reviews consistently.
 
-![Intake queue](https://media.docs.plane.so/for-startup/intake.webp#hero)
+![Intake queue](https://media.docs.plane.so/for-startup/intake.webp)
 
 ### Move accepted requests into planned work
 
@@ -351,7 +351,7 @@ Do not introduce time tracking as a default measure of individual productivity.
 
 [Plane AI](/ai/plane-ai) helps whether a workspace is brand new or already full of work items, documentation, and project history.
 
-![Plane AI](https://media.docs.plane.so/for-startup/plane-ai.webp#hero)
+![Plane AI](https://media.docs.plane.so/for-startup/plane-ai.webp)
 
 **Setting up a workspace**
 

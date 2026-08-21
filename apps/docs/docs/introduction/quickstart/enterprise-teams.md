@@ -118,7 +118,7 @@ Before rollout, test:
 - Guest access
 - Administrator recovery access
 
-![Identity provider sign-in](https://media.docs.plane.so/for-enterprise/identity.webp#hero)
+![Identity provider sign-in](https://media.docs.plane.so/for-enterprise/identity.webp)
 
 > **Tip:** Test off-boarding as carefully as onboarding. Confirm that removing someone from the identity provider removes the access you expect it to remove in Plane.
 
@@ -175,7 +175,7 @@ Enterprise Grid provides [workspace audit logs](/workspaces-and-users/audit-logs
 
 **Workspace audit logs**
 
-![Workspace audit logs](https://media.docs.plane.so/for-enterprise/audit-logs.webp#hero)
+![Workspace audit logs](https://media.docs.plane.so/for-enterprise/audit-logs.webp)
 
 > **Tip:** Include audit-log exports in the organization's existing security review or evidence-collection process. Do not leave them as a feature that is only checked after an incident.
 
@@ -432,7 +432,7 @@ Do not create a separate template for every team. A smaller set of well-maintain
 
 **Project template**
 
-![Project template](https://media.docs.plane.so/for-enterprise/project-templates.webp#hero)
+![Project template](https://media.docs.plane.so/for-enterprise/project-templates.webp)
 
 ## 4. Migration
 
@@ -460,7 +460,7 @@ Not every field from the old system needs to be preserved. Keep information that
 
 **Importer mapping**
 
-![Importer mapping](https://media.docs.plane.so/for-enterprise/imports.webp#hero)
+![Importer mapping](https://media.docs.plane.so/for-enterprise/imports.webp)
 
 **Migration guides:** [Import from Jira](/importers/jira) | [Import from Linear](/importers/linear) | [Import from CSV](/importers/csv)
 
@@ -480,7 +480,7 @@ Keep initiative names focused on the intended outcome. "Improve enterprise activ
 
 **Initiative**
 
-![Initiative](https://media.docs.plane.so/for-enterprise/initatives.webp#hero)
+![Initiative](https://media.docs.plane.so/for-enterprise/initatives.webp)
 
 > **Tip:** An initiative should help leadership understand progress and make decisions. If it only groups unrelated projects, it will not provide a useful strategic view.
 
@@ -522,7 +522,7 @@ Teams can use all three together or only the ones that fit their planning proces
 
 **Cycles**
 
-![Cycles](https://media.docs.plane.so/for-enterprise/cycles.webp#hero)
+![Cycles](https://media.docs.plane.so/for-enterprise/cycles.webp)
 
 ## 6. Integrations
 
@@ -543,7 +543,7 @@ Start with the integrations used by the pilot team. Confirm that work moves as e
 
 **Integrations**
 
-![Integrations](https://media.docs.plane.so/for-enterprise/integrations.webp#hero)
+![Integrations](https://media.docs.plane.so/for-enterprise/integrations.webp)
 
 ## Define ownership before connecting tools
 
@@ -597,7 +597,7 @@ Decide:
 
 **Intake requests**
 
-![Intake requests](https://media.docs.plane.so/for-enterprise/intake.webp#hero)
+![Intake requests](https://media.docs.plane.so/for-enterprise/intake.webp)
 
 Teams can create intake forms for structured submissions or accept requests through intake email.
 
@@ -609,7 +609,7 @@ Support and Customer Success teams can follow whether a request has been accepte
 
 **Customer requests**
 
-![Customer requests](https://media.docs.plane.so/for-enterprise/customers.webp#hero)
+![Customer requests](https://media.docs.plane.so/for-enterprise/customers.webp)
 
 ## 8. Knowledge and documentation
 
@@ -632,7 +632,7 @@ Organize the Wiki through [collections](/pages/collections) and [nested pages](/
 
 **Organization Wiki**
 
-![Organization wiki](https://media.docs.plane.so/for-enterprise/wiki-docs.webp#hero)
+![Organization wiki](https://media.docs.plane.so/for-enterprise/wiki-docs.webp)
 
 ## Keep decision records consistent
 
@@ -683,7 +683,7 @@ Keep dashboards focused. A screen filled with widgets can provide less clarity t
 
 **Leadership dashboard**
 
-![Leadership dashboard](https://media.docs.plane.so/for-enterprise/dashboards.webp#hero)
+![Leadership dashboard](https://media.docs.plane.so/for-enterprise/dashboards.webp)
 
 > **Tip:** Assign an owner to every dashboard. Review it periodically and remove anything that no longer informs a decision.
 
@@ -736,7 +736,7 @@ For every approval, define:
 
 **Workflow with approval**
 
-![Workflow with approval](https://media.docs.plane.so/for-enterprise/workflows.webp#hero)
+![Workflow with approval](https://media.docs.plane.so/for-enterprise/workflows.webp)
 
 > **Tip:** If approvals regularly happen outside Plane, check whether the workflow includes enough context and the right approver.
 
@@ -759,7 +759,7 @@ Plane supports project automations, while Enterprise Grid provides additional ca
 
 **Automation builder**
 
-![Automation builder](https://media.docs.plane.so/for-enterprise/automation.webp#hero)
+![Automation builder](https://media.docs.plane.so/for-enterprise/automation.webp)
 
 For every automation, record:
 
@@ -785,7 +785,7 @@ Plane AI is built into the workspace you already use, not a separate chat window
 | Build     | Plans a set of actions, shows them to you as cards, waits for your confirmation. |
 | Autopilot | Same planning as Build, but executes immediately. No review step.                |
 
-![Plane AI modes](https://media.docs.plane.so/for-enterprise/plane-ai.webp#hero)
+![Plane AI modes](https://media.docs.plane.so/for-enterprise/plane-ai.webp)
 
 Introduce Plane AI after the organization has clear permissions, reliable workflows, and defined data boundaries.
 
