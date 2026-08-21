@@ -45,7 +45,7 @@ src/
   index.ts        createPlaneTheme(options) + client setup (appearance sync, medium-zoom, tab hashes)
   options.ts      PlaneThemeOptions / planeOptionsKey
   layout/         Layout.vue, doc-layout.vue (PlaneHeader + bordered content wrapper), slots/header helpers
-  components/     PlaneHeader, CopyPageMenu, CookieConsent, Card, CardGroup, Tags, brand icons
+  components/     PlaneHeader, CopyPageMenu, CookieConsent, NotFound (not-found.md → 404.html + not-found slot), Card, CardGroup, Tags, brand icons
   css/            index.css → fonts, tokens, base, layout, components, api
   types/          ambient shims (*.vue, @vp-* aliases) and the VitePress config augmentation
 ```

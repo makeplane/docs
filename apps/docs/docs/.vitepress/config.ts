@@ -1,6 +1,14 @@
 /** @format */
 
-import { copyFileSync, mkdirSync, readFileSync, readdirSync, statSync } from "fs";
+import {
+  copyFileSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  renameSync,
+  rmSync,
+  statSync,
+} from "fs";
 import { dirname, join, relative, resolve } from "path";
 import { defineConfig } from "vitepress";
 import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
@@ -64,6 +72,7 @@ const config = defineConfig({
         // Pages hidden from search (search: false / noindex) are excluded
         // from the LLM files too.
         ignoreFiles: [
+          "not-found.md",
           "core-concepts/issues.md",
           "core-concepts/projects/run-project.md",
           "importers/github-imp.md",
@@ -94,6 +103,11 @@ const config = defineConfig({
     }
 
     walk(srcDir);
+
+    // The server-rendered "page not found" page becomes the static 404.html that Vercel
+    // serves for unknown paths (VitePress leaves #app empty in the 404.html it writes).
+    renameSync(join(outDir, "not-found.html"), join(outDir, "404.html"));
+    rmSync(join(outDir, "not-found.md"));
   },
 
   head: [
@@ -789,6 +803,8 @@ const config = defineConfig({
 
   sitemap: {
     hostname: "https://docs.plane.so",
+    // not-found.md only exists to become 404.html (see buildEnd).
+    transformItems: (items) => items.filter((item) => item.url !== "not-found"),
   },
 
   markdown: {
