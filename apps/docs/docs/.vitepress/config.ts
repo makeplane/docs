@@ -6,6 +6,7 @@ import { defineConfig } from "vitepress";
 import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 import llmstxt from "vitepress-plugin-llms";
+import { canonicalLink, siteJsonLd } from "@plane/docs-theme/seo";
 
 function loadEnvVar(key: string): string | undefined {
   // process.env takes precedence (CI/hosting platforms set vars here)
@@ -211,6 +212,13 @@ const config = defineConfig({
         content: "index, follow",
       },
     ],
+    // Organization + WebSite JSON-LD (shared identity from packages/theme)
+    siteJsonLd({
+      name: "Plane Docs",
+      url: "https://docs.plane.so",
+      description:
+        "Product documentation for Plane: workspaces, projects, work items, cycles, modules, pages, integrations, importers, automations, and Plane AI.",
+    }),
   ],
 
   themeConfig: {
@@ -785,6 +793,12 @@ const config = defineConfig({
 
   // Enables per-page git timestamps used for sitemap <lastmod> (and the
   // "Last updated" footer). Without this, sitemap entries omit lastmod.
+  transformPageData(pageData) {
+    // Canonical URL per page (skipped when frontmatter already sets one)
+    const canonical = canonicalLink("https://docs.plane.so", pageData);
+    if (canonical) (pageData.frontmatter.head ??= []).push(canonical);
+  },
+
   lastUpdated: true,
 
   sitemap: {
