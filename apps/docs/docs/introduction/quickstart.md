@@ -14,6 +14,19 @@ What you'll accomplish:
 - First project with real work items
 - Sprint planning with cycles
 
+## Choose the right setup
+
+The steps in this guide cover the essentials for any new Plane workspace. If you are responsible for setting up Plane across an organization, start with the guide that matches where you are today.
+
+[**How to Plane: For startups**](https://docs.plane.so/introduction/quickstart/startups)\
+Set up a simple structure that helps your team ship faster and leaves room to grow.
+
+[**How to Plane: For growing teams**](https://docs.plane.so/introduction/quickstart/growing-teams)\
+Coordinate teams with shared workflows, approvals, planning, and organization-wide visibility.
+
+[**How to Plane: For enterprise teams**](https://docs.plane.so/introduction/quickstart/enterprise-teams)\
+Establish governance, identity and access controls, auditability, deployment, and rollout across a the organization with multiple workspaces.
+
 ## Before you begin
 
 - [Create a Plane account](/#get-plane)
