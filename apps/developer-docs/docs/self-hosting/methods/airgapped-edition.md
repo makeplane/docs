@@ -73,6 +73,7 @@ Consider these alternatives:
    export DOMAIN_NAME=plane.yourcompany.com
    export WEB_URL=https://plane.yourcompany.com
    export CORS_ALLOWED_ORIGINS=https://plane.yourcompany.com
+   export SITE_ADDRESS=https://plane.yourcompany.com
    ```
 
    **Update image references** in `docker-compose.yml` to point to your private registry:
@@ -153,16 +154,19 @@ Consider these alternatives:
 
    ```yaml
    services:
-     redis:
+     plane-redis:
        image: valkey/valkey:7.2.11-alpine
 
-     postgres:
+     plane-db:
        image: postgres:15.7-alpine
 
-     rabbitmq:
+     pi-db-init:
+       image: postgres:15.7-alpine
+
+     plane-mq:
        image: rabbitmq:3.13.6-management-alpine
 
-     minio:
+     plane-minio:
        image: minio/minio:latest
    ```
 
