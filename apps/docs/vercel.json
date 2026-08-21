@@ -7,7 +7,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</api-reference/introduction>; rel=\"service-doc\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </api-reference/introduction>; rel=\"service-doc\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
         },
         {
           "key": "X-Robots-Tag",
