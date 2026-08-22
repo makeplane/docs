@@ -14,9 +14,22 @@ export const planeOrganization = {
   "@type": "Organization",
   "@id": PLANE_ORGANIZATION_ID,
   name: "Plane",
+  legalName: "Plane Software, Inc.",
   url: "https://plane.so",
   logo: "https://media.docs.plane.so/logo/new-logo-white.png",
+  // Canonical company description (brand book: short description).
+  description:
+    "Plane connects projects, knowledge, and work intake in one shared system, keeping context, ownership, permissions, and history visible for people and supported AI agents.",
   sameAs: ["https://github.com/makeplane", "https://x.com/planepowers"],
+  // Registered address as published in Plane's Terms of Service.
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "651 N Broad St, Suite 201",
+    addressLocality: "Middletown",
+    addressRegion: "DE",
+    postalCode: "19709",
+    addressCountry: "US",
+  },
   contactPoint: [
     {
       "@type": "ContactPoint",

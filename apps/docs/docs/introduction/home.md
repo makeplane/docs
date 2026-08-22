@@ -1,6 +1,6 @@
 ---
-title: Modern project management software
-description: Discover Plane, the enterprise project management software for teams of all sizes. Learn how our issue tracking, sprint management, and knowledge tools can streamline your workflow.
+title: Introduction to Plane
+description: "Plane is agentic work infrastructure: projects, knowledge, and work intake in one shared system for people and AI agents. Learn what Plane does and how to get it."
 ---
 
 # Introduction
@@ -11,9 +11,9 @@ This page gives you a quick rundown of Plane and highlights why it's a great cho
 
 ## What is Plane
 
-Plane is modern project management software that helps teams plan, track, and manage their work more efficiently.
+Plane is agentic work infrastructure: a shared system for projects, knowledge, and work intake, where people and supported AI agents can act with context, ownership, permissions, and history visible.
 
-Whether you're a startup, a growing business, or a large enterprise, Plane can adapt to your team’s specific needs, making it a perfect solution for smooth, collaborative project management.
+Project management is a core Plane capability. Teams use Plane to plan, track, and manage their work, and to keep documentation, incoming requests, and AI-agent activity connected to that work. Whether you're a startup, a growing business, or a large enterprise, Plane adapts to your team's specific needs.
 
 ## Why Plane
 
