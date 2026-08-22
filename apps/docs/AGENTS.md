@@ -36,7 +36,8 @@ docs/
   ai/                          # Plane AI features
   support/                     # Keyboard shortcuts, get help
   templates/                   # Page, project, work-item templates
-vercel.json                    # cleanUrls, headers, redirects, Accept: text/markdown rewrite
+vercel.json                    # cleanUrls, headers, redirects
+middleware.ts                  # Vercel Routing Middleware: Accept: text/markdown → /path.md (+ Vary: Accept)
 ```
 
 ## Content conventions

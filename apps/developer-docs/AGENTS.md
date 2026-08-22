@@ -26,7 +26,8 @@ pnpm --filter developer-docs check:types
   - **`docs/api-reference/`** — REST API endpoint docs (180+ endpoints across 30+ resource categories)
   - **`docs/self-hosting/`** — Deployment and configuration guides
   - **`docs/dev-tools/`** — Webhooks, OAuth apps, agents, MCP server docs
-- **`vercel.json`** — cleanUrls, headers, redirects, `Accept: text/markdown` rewrite (per-app Vercel project)
+- **`vercel.json`** — cleanUrls, headers, redirects (per-app Vercel project)
+- **`middleware.ts`** — Vercel Routing Middleware: `Accept: text/markdown` → `/path.md` with `Vary: Accept` (mirror of `apps/docs/middleware.ts`)
 - Shared visual identity (header, layout, tokens, `Card`/`CardGroup`/`Tags`, Copy page menu, cookie consent)
   lives in `packages/theme` — never fork it here.
 

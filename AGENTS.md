@@ -75,7 +75,8 @@ tsconfig.base.json             # shared compilerOptions + @vp-* path aliases (${
   them as `"catalog:"`. Add new shared deps there. There must be exactly one copy of `vue`, `vitepress` and
   `@voidzero-dev/vitepress-theme` (`pnpm dedupe --check` runs in CI).
 - One `pnpm-lock.yaml` at the root; never edit it by hand.
-- Each app keeps its own `vercel.json` (redirects, headers, `Accept: text/markdown` rewrite) — Vercel projects
+- Each app keeps its own `vercel.json` (redirects, headers) and `middleware.ts` (Vercel Routing Middleware for
+  `Accept: text/markdown` negotiation; the two copies must stay identical) — Vercel projects
   point at `apps/docs` and `apps/developer-docs` as Root Directory.
 - Header buttons come from `themeConfig.nav` items flagged `planeButton: "primary" | "secondary"`.
 

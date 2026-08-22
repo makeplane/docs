@@ -56,7 +56,7 @@ const config = defineConfig({
         details:
           "This documentation covers workspaces, projects, work items, cycles, modules, pages and wikis, integrations, importers, automations, and Plane AI.",
         // Per-page .md versions are already emitted by buildEnd() for the
-        // `Accept: text/markdown` rewrite in vercel.json, so the plugin only
+        // `Accept: text/markdown` negotiation in middleware.ts, so the plugin only
         // owns llms.txt / llms-full.txt.
         generateLLMFriendlyDocsForEachPage: false,
         // Don't inject invisible LLM-hint markup into rendered pages.
@@ -73,7 +73,7 @@ const config = defineConfig({
   },
 
   buildEnd(siteConfig) {
-    // Copy source .md files into dist/ for Accept: text/markdown negotiation.
+    // Copy source .md files into dist/ for Accept: text/markdown negotiation (see middleware.ts).
     const srcDir = siteConfig.srcDir;
     const outDir = siteConfig.outDir;
 

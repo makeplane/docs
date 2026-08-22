@@ -1,5 +1,10 @@
 {
   "extends": "../../tsconfig.base.json",
-  "include": ["docs/.vitepress/**/*.ts", "docs/.vitepress/**/*.mts", "docs/.vitepress/**/*.vue"],
+  "include": [
+    "middleware.ts",
+    "docs/.vitepress/**/*.ts",
+    "docs/.vitepress/**/*.mts",
+    "docs/.vitepress/**/*.vue"
+  ],
   "exclude": ["docs/.vitepress/cache", "docs/.vitepress/dist", "docs/.vitepress/.temp"]
 }

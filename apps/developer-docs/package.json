@@ -24,9 +24,12 @@
     "check:types": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@plane/docs-theme": "workspace:*"
+    "@plane/docs-theme": "workspace:*",
+    "@vercel/functions": "catalog:",
+    "negotiator": "catalog:"
   },
   "devDependencies": {
+    "@types/negotiator": "catalog:",
     "@types/node": "catalog:",
     "@voidzero-dev/vitepress-theme": "catalog:",
     "mermaid": "catalog:",
