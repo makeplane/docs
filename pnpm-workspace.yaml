@@ -12,11 +12,13 @@ packages:
 # would break the theme).
 catalog:
   "@types/node": ^25.9.5
+  "@types/negotiator": ^0.6.5
   "@vercel/functions": ^3.9.5
   "@voidzero-dev/vitepress-theme": ^4.8.4
   lucide-vue-next: ^0.577.0
   medium-zoom: ^1.1.0
   mermaid: ^11.15.0
+  negotiator: ^1.1.0
   typescript: ^6.0.3
   vitepress: 2.0.0-alpha.16
   vitepress-plugin-llms: ^1.13.1

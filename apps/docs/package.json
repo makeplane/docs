@@ -20,9 +20,11 @@
   },
   "dependencies": {
     "@plane/docs-theme": "workspace:*",
-    "@vercel/functions": "catalog:"
+    "@vercel/functions": "catalog:",
+    "negotiator": "catalog:"
   },
   "devDependencies": {
+    "@types/negotiator": "catalog:",
     "@types/node": "catalog:",
     "@voidzero-dev/vitepress-theme": "catalog:",
     "typescript": "catalog:",

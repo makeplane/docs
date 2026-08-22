@@ -1,7 +1,7 @@
 /**
  * Vercel Routing Middleware for docs.plane.so — markdown content negotiation.
  *
- * Requests that send `Accept: text/markdown` are rewritten to the page's
+ * Requests that prefer `text/markdown` over `text/html` are rewritten to the page's
  * markdown source (`/foo` → `/foo.md`, `/` → `/index.md`); buildEnd() in
  * docs/.vitepress/config.ts copies those files into dist/. Every other request
  * falls through to the HTML page. Both variants carry `Vary: Accept` so
@@ -17,10 +17,11 @@
  * Mirror of apps/developer-docs/middleware.ts — keep the two in sync.
  */
 import { next, rewrite } from "@vercel/functions";
+import Negotiator from "negotiator";
 
 export const config = {
-  // Page URLs only. Skip the Vite asset dir and anything that already has a
-  // file extension (.md, sitemap.xml, llms.txt, images, fonts, ...). Listed
+  // Page URLs only. Skip the Vite asset dir and known static-file extensions
+  // (.md, sitemap.xml, llms.txt, images, fonts, ...). Listed
   // explicitly instead of "contains a dot" because some page slugs contain
   // version numbers.
   matcher: [
@@ -29,10 +30,25 @@ export const config = {
 };
 
 const VARY_ACCEPT = { Vary: "Accept" };
+const HTML = "text/html; charset=utf-8";
+const MARKDOWN = "text/markdown; charset=utf-8";
+const REPRESENTATIONS = [HTML, MARKDOWN];
+
+function prefersMarkdown(accept: string | null): boolean {
+  try {
+    const negotiator = new Negotiator({ headers: { accept: accept ?? undefined } });
+    const explicitlyAcceptsMarkdown = negotiator
+      .mediaTypes()
+      .some((mediaType) => mediaType.toLowerCase() === "text/markdown");
+    return explicitlyAcceptsMarkdown && negotiator.mediaType(REPRESENTATIONS) === MARKDOWN;
+  } catch {
+    // Fall back to HTML when the header cannot be parsed.
+    return false;
+  }
+}
 
 export default function middleware(request: Request): Response {
-  const accept = request.headers.get("accept") ?? "";
-  if (!/\btext\/markdown\b/i.test(accept)) {
+  if (!prefersMarkdown(request.headers.get("accept"))) {
     return next({ headers: VARY_ACCEPT });
   }
 
