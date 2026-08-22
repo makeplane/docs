@@ -63,7 +63,17 @@ The MCP server authenticates users through Plane's OAuth 2.0 system. You need to
 
    :::
 
-4. Under **Scopes & permissions**, select both **read** and **write** scopes.
+4. Under **Scopes & permissions**, tick both **Read** and **Write** on the **All workspace resources** row.
+
+   ::: warning Grant full read and write — granular scopes will not work
+   The MCP server requests the workspace-wide `read` and `write` scopes, because its tools span every resource (projects, work items, cycles, modules, pages, members, and more).
+
+   | Scopes & permissions    | Read | Write |
+   | ----------------------- | ---- | ----- |
+   | All workspace resources | ✅   | ✅    |
+
+   If you select only granular scopes (for example `projects:read`) or none at all, Plane rejects the authorization request with `error=invalid_scope` and the token exchange never happens.
+   :::
 
 5. Save. Copy the generated **Client ID** and **Client Secret** - you'll need them in the next step.
 
@@ -325,6 +335,10 @@ If Valkey is unhealthy, tokens are stored in-memory and lost on restart. Verify 
 
 **OAuth errors:**
 
+- If Plane redirects back with `error=invalid_scope`, the OAuth app is missing the workspace-wide scopes. Open the app
+  in **Workspace settings → Integrations** and tick both **Read** and **Write** on the **All workspace resources** row,
+  then restart the authorization flow. Granular scopes alone are not enough — see step 4 of
+  **Register an OAuth app in Plane** above.
 - Confirm both redirect URIs are registered in your Plane OAuth app: `/http/auth/callback` and `/auth/callback`. An
   existing `/callback` registration is harmless but unnecessary.
 - Check that `PLANE_OAUTH_PROVIDER_CLIENT_ID` and `PLANE_OAUTH_PROVIDER_CLIENT_SECRET` match what Plane generated.

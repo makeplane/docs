@@ -1,16 +1,16 @@
 ---
 title: MCP server tool reference
-description: Reference for the 28 tools and 183 actions exposed by the Plane MCP server — work items, cycles, modules, releases, customers, pages, and more.
-keywords: plane mcp tools, mcp tool reference, plane mcp actions, workitem tool, cycle tool, release tool, customer tool
+description: Reference for the 30 tools and 204 actions exposed by the Plane MCP server — work items, cycles, modules, releases, customers, pages, collections, templates, and more.
+keywords: plane mcp tools, mcp tool reference, plane mcp actions, workitem tool, cycle tool, release tool, customer tool, collection tool, template tool
 ---
 
 # Tool reference
 
-The Plane MCP server exposes 28 tools, one per resource. Resource tools take an `action` parameter that selects one of 183 operations; `get_pql_reference` is the only exception. Every transport—hosted OAuth, hosted access token, local stdio, and deprecated SSE—exposes the same surface.
+The Plane MCP server exposes 30 tools, one per resource. Resource tools take an `action` parameter that selects one of 204 operations; `get_pql_reference` is the only exception. Every transport—hosted OAuth, hosted access token, local stdio, and deprecated SSE—exposes the same surface.
 
 The description your MCP client receives is generated from each tool's action declarations. It is the authoritative reference at call time, including required and optional parameters.
 
-**Totals:** 28 tools, 183 actions, and 169 retired-name aliases.
+**Totals:** 30 tools, 204 actions, and 169 retired-name aliases.
 
 For connection and authentication instructions, see [MCP server](/dev-tools/mcp-server).
 
@@ -37,9 +37,11 @@ Most actions take UUIDs for projects, work items, states, labels, members, and o
 
 ### Project vs workspace scope
 
-Pages, work item types, and work item properties can belong to a project or the workspace. Supply `project_id` for the project's own set; omit it for the workspace's set.
+Pages, workflow states, work item types, work item properties, and templates can belong to a project or the workspace. Supply `project_id` for the project's own set; omit it for the workspace's set.
 
-Some workspaces centrally govern the type and property vocabulary. In that mode, project-scoped writes are refused. Use `workitem_type resolve` to find or create a usable type without duplicates, or `workitem_type import_to_project` to link existing workspace types to a project.
+Some workspaces centrally govern part of that vocabulary. A write aimed at the scope that does not own the resource names the one that does: omit `project_id` where the workspace owns it, pass `project_id` where it is kept per project. This covers `state`, `workitem_type`, `workitem_property`, and `template`. Reads are never refused.
+
+For types, use `workitem_type resolve` to find or create a usable type without duplicates, or `workitem_type import_to_project` to link existing workspace types to a project.
 
 ### PQL
 
@@ -215,17 +217,17 @@ Custom work item properties and their options.
 
 A project's estimate system and its points.
 
-| Action          | Required                                         | Optional                                                             | Notes                                         |
-| --------------- | ------------------------------------------------ | -------------------------------------------------------------------- | --------------------------------------------- |
-| `retrieve`      | `project_id`                                     | —                                                                    | a project has at most one estimate; Read-only |
-| `create`        | `project_id`, `name`                             | `type`, `description`, `last_used`, `external_source`, `external_id` | —                                             |
-| `update`        | `project_id`                                     | `name`, `description`, `external_source`, `external_id`              | —                                             |
-| `delete`        | `project_id`                                     | —                                                                    | Destructive                                   |
-| `link`          | `project_id`, `estimate_id`                      | —                                                                    | makes that estimate the project's active one  |
-| `list_points`   | `project_id`, `estimate_id`                      | —                                                                    | Read-only                                     |
-| `create_points` | `project_id`, `estimate_id`, `points`            | —                                                                    | —                                             |
-| `update_point`  | `project_id`, `estimate_id`, `estimate_point_id` | `value`, `key`, `description`, `external_source`, `external_id`      | —                                             |
-| `delete_point`  | `project_id`, `estimate_id`, `estimate_point_id` | —                                                                    | Destructive                                   |
+| Action          | Required                                         | Optional                                                             | Notes                                                        |
+| --------------- | ------------------------------------------------ | -------------------------------------------------------------------- | ------------------------------------------------------------ |
+| `retrieve`      | `project_id`                                     | —                                                                    | a project has at most one estimate; Read-only                |
+| `create`        | `project_id`, `name`                             | `type`, `description`, `last_used`, `external_source`, `external_id` | creates the estimate only; add its values with create_points |
+| `update`        | `project_id`                                     | `name`, `description`, `external_source`, `external_id`              | —                                                            |
+| `delete`        | `project_id`                                     | —                                                                    | Destructive                                                  |
+| `link`          | `project_id`, `estimate_id`                      | —                                                                    | makes that estimate the project's active one                 |
+| `list_points`   | `project_id`, `estimate_id`                      | —                                                                    | Read-only                                                    |
+| `create_points` | `project_id`, `estimate_id`, `points`            | —                                                                    | —                                                            |
+| `update_point`  | `project_id`, `estimate_id`, `estimate_point_id` | `value`, `key`, `description`, `external_source`, `external_id`      | —                                                            |
+| `delete_point`  | `project_id`, `estimate_id`, `estimate_point_id` | —                                                                    | Destructive                                                  |
 
 **Notes:** type is one of: categories, points, time. A point's `value` is its display label ("5", "XL") and its `key` is the sort order. points takes a JSON array such as [{"value": "1", "key": 0}]. To set a work item's estimate: retrieve to get the estimate_id, list_points to see the available values, then pass the chosen point's id to `workitem update` as estimate_point.
 
@@ -237,19 +239,19 @@ _Example prompt: “Move unfinished work from Sprint 14 to Sprint 15, then count
 
 Cycles (time-boxed iterations) in a project.
 
-| Action               | Required                                 | Optional                                                                                                  | Notes                                                                                      |
-| -------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| `list`               | `project_id`                             | `archived`, `status`, `cursor`, `per_page`, `order_by`                                                    | Read-only                                                                                  |
-| `retrieve`           | `project_id`, `cycle_id`                 | —                                                                                                         | Read-only                                                                                  |
-| `create`             | `project_id`, `name`, `owned_by`         | `description`, `start_date`, `end_date`, `timezone`, `external_source`, `external_id`                     | —                                                                                          |
-| `update`             | `project_id`, `cycle_id`                 | `name`, `description`, `start_date`, `end_date`, `owned_by`, `timezone`, `external_source`, `external_id` | only the fields you pass are changed                                                       |
-| `delete`             | `project_id`, `cycle_id`                 | —                                                                                                         | Destructive                                                                                |
-| `list_workitems`     | `project_id`, `cycle_id`                 | `pql`, `order_by`, `cursor`, `per_page`, `expand`, `fields`                                               | Read-only                                                                                  |
-| `manage_workitems`   | `project_id`, `cycle_id`                 | `add_ids`, `remove_ids`                                                                                   | pass at least one of add_ids or remove_ids; returns nothing, read back with list_workitems |
-| `transfer_workitems` | `project_id`, `cycle_id`, `new_cycle_id` | —                                                                                                         | moves everything to new_cycle_id                                                           |
-| `complete`           | `project_id`, `cycle_id`                 | —                                                                                                         | sets end_date to today                                                                     |
-| `archive`            | `project_id`, `cycle_id`                 | —                                                                                                         | ends the cycle first if it is still running                                                |
-| `unarchive`          | `project_id`, `cycle_id`                 | —                                                                                                         | —                                                                                          |
+| Action               | Required                                 | Optional                                                                                                  | Notes                                                                                        |
+| -------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `list`               | `project_id`                             | `archived`, `status`, `cursor`, `per_page`, `order_by`                                                    | Read-only                                                                                    |
+| `retrieve`           | `project_id`, `cycle_id`                 | —                                                                                                         | Read-only                                                                                    |
+| `create`             | `project_id`, `name`, `owned_by`         | `description`, `start_date`, `end_date`, `timezone`, `external_source`, `external_id`                     | —                                                                                            |
+| `update`             | `project_id`, `cycle_id`                 | `name`, `description`, `start_date`, `end_date`, `owned_by`, `timezone`, `external_source`, `external_id` | only the fields you pass are changed                                                         |
+| `delete`             | `project_id`, `cycle_id`                 | —                                                                                                         | Destructive                                                                                  |
+| `list_workitems`     | `project_id`, `cycle_id`                 | `pql`, `order_by`, `cursor`, `per_page`, `expand`, `fields`                                               | Read-only                                                                                    |
+| `manage_workitems`   | `project_id`, `cycle_id`                 | `add_ids`, `remove_ids`                                                                                   | pass at least one of add_ids or remove_ids; returns nothing, read back with list_workitems   |
+| `transfer_workitems` | `project_id`, `cycle_id`, `new_cycle_id` | —                                                                                                         | moves only the unfinished work items; the source cycle must have ended, so complete it first |
+| `complete`           | `project_id`, `cycle_id`                 | —                                                                                                         | sets end_date to today                                                                       |
+| `archive`            | `project_id`, `cycle_id`                 | —                                                                                                         | ends the cycle first if it is still running                                                  |
+| `unarchive`          | `project_id`, `cycle_id`                 | —                                                                                                         | —                                                                                            |
 
 **Notes:** status filters active cycles: current, upcoming, completed, draft, incomplete; it is ignored when archived is true. Dates are ISO 8601 (YYYY-MM-DD). owned_by is a member id. Optional Plane Query Language (PQL) filter. Examples: `priority = "urgent" AND assignee = currentUser()`, `stateGroup IN openStates() AND isOverdue()`. UUID fields (project, assignee, state, label, cycle, module, type, milestone, createdBy) need UUIDs — resolve a name to its UUID first if you only have a name or short identifier (e.g. `LSS` → `project list` and match `identifier` to get `id`). Call `get_pql_reference` for full PQL syntax before composing complex queries.
 
@@ -363,34 +365,34 @@ _Example prompt: “List my active projects and show the work currently assigned
 
 Projects in a workspace.
 
-| Action            | Required             | Optional                                                                                                                                                                                                                                    | Notes                                                   |
-| ----------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| `list`            | —                    | `cursor`, `per_page`, `order_by`                                                                                                                                                                                                            | trimmed fields; use retrieve for full detail; Read-only |
-| `retrieve`        | `project_id`         | —                                                                                                                                                                                                                                           | Read-only                                               |
-| `create`          | `name`, `identifier` | `description`, `project_lead`, `default_assignee`, `emoji`, `cover_image`, `timezone`, `archive_in`, `close_in`, `external_source`, `external_id`                                                                                           | —                                                       |
-| `update`          | `project_id`         | `name`, `description`, `identifier`, `project_lead`, `default_assignee`, `emoji`, `cover_image`, `network`, `timezone`, `archive_in`, `close_in`, `default_state`, `estimate`, `is_time_tracking_enabled`, `external_source`, `external_id` | only the fields you pass are changed                    |
-| `delete`          | `project_id`         | —                                                                                                                                                                                                                                           | Destructive                                             |
-| `archive`         | `project_id`         | —                                                                                                                                                                                                                                           | —                                                       |
-| `unarchive`       | `project_id`         | —                                                                                                                                                                                                                                           | —                                                       |
-| `worklog_summary` | `project_id`         | —                                                                                                                                                                                                                                           | Read-only                                               |
-| `get_features`    | `project_id`         | —                                                                                                                                                                                                                                           | Read-only                                               |
-| `update_features` | `project_id`         | `modules`, `cycles`, `views`, `pages`, `intakes`, `workitem_types`, `epics`, `parallel_cycles`, `project_updates`, `workflows`                                                                                                              | toggles project features on or off                      |
+| Action            | Required             | Optional                                                                                                                                                                                                                                                        | Notes                                                   |
+| ----------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `list`            | —                    | `cursor`, `per_page`, `order_by`                                                                                                                                                                                                                                | trimmed fields; use retrieve for full detail; Read-only |
+| `retrieve`        | `project_id`         | —                                                                                                                                                                                                                                                               | Read-only                                               |
+| `create`          | `name`, `identifier` | `description`, `description_html`, `project_lead`, `default_assignee`, `emoji`, `cover_image`, `timezone`, `archive_in`, `close_in`, `external_source`, `external_id`                                                                                           | —                                                       |
+| `update`          | `project_id`         | `name`, `description`, `description_html`, `identifier`, `project_lead`, `default_assignee`, `emoji`, `cover_image`, `network`, `timezone`, `archive_in`, `close_in`, `default_state`, `estimate`, `is_time_tracking_enabled`, `external_source`, `external_id` | only the fields you pass are changed                    |
+| `delete`          | `project_id`         | —                                                                                                                                                                                                                                                               | Destructive                                             |
+| `archive`         | `project_id`         | —                                                                                                                                                                                                                                                               | —                                                       |
+| `unarchive`       | `project_id`         | —                                                                                                                                                                                                                                                               | —                                                       |
+| `worklog_summary` | `project_id`         | —                                                                                                                                                                                                                                                               | Read-only                                               |
+| `get_features`    | `project_id`         | —                                                                                                                                                                                                                                                               | Read-only                                               |
+| `update_features` | `project_id`         | `modules`, `cycles`, `views`, `pages`, `intakes`, `workitem_types`, `epics`, `parallel_cycles`, `project_updates`, `workflows`                                                                                                                                  | toggles project features on or off                      |
 
 **Notes:** identifier is the short work item prefix, such as ENG. network is 0 for secret or 2 for public. project_lead and default_assignee are member ids -- get them from `member list_workspace`. Feature toggles are booleans; omitted ones are left as they are.
 
 ### `state` — Workflow states
 
-Workflow states within a project.
+Workflow states, at project or workspace scope.
 
-| Action     | Required                      | Optional                                                                                     | Notes                                |
-| ---------- | ----------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------ |
-| `list`     | `project_id`                  | `cursor`, `per_page`                                                                         | Read-only                            |
-| `retrieve` | `project_id`, `state_id`      | —                                                                                            | Read-only                            |
-| `create`   | `project_id`, `name`, `color` | `description`, `sequence`, `group`, `is_triage`, `default`, `external_source`, `external_id` | —                                    |
-| `update`   | `project_id`, `state_id`      | `name`, `color`, `description`, `sequence`, `group`, `is_triage`, `default`                  | only the fields you pass are changed |
-| `delete`   | `project_id`, `state_id`      | —                                                                                            | Destructive                          |
+| Action     | Required        | Optional                                                                                      | Notes                                                 |
+| ---------- | --------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| `list`     | —               | `project_id`, `cursor`, `per_page`                                                            | workspace scope when project_id is omitted; Read-only |
+| `retrieve` | `state_id`      | `project_id`                                                                                  | Read-only                                             |
+| `create`   | `name`, `color` | `project_id`, `description`, `sequence`, `group`, `default`, `external_source`, `external_id` | group is required at workspace scope                  |
+| `update`   | `state_id`      | `project_id`, `name`, `color`, `description`, `sequence`, `group`, `default`                  | only the fields you pass are changed                  |
+| `delete`   | `state_id`      | `project_id`                                                                                  | Destructive                                           |
 
-**Notes:** group is one of: backlog, unstarted, started, completed, cancelled, triage. color is a hex code such as #EF4444.
+**Notes:** group is one of: backlog, unstarted, started, completed, cancelled. color is a hex code such as #EF4444. Omit project_id for the workspace catalogue, where states live once the workspace owns them; sequence and default apply to a project's states only.
 
 ### `label` — Labels
 
@@ -449,16 +451,59 @@ The intake (triage) queue for a project.
 
 Pages at workspace or project scope.
 
-| Action                 | Required                                        | Optional                                                                       | Notes                                                                                  |
-| ---------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
-| `list`                 | —                                               | `project_id`, `cursor`, `per_page`                                             | workspace pages unless project_id is given; Read-only                                  |
-| `retrieve`             | `page_id`                                       | `project_id`                                                                   | Read-only                                                                              |
-| `create`               | `name`, `description_html`                      | `project_id`, `access`, `color`, `is_locked`, `external_source`, `external_id` | —                                                                                      |
-| `list_workitem_pages`  | `project_id`, `workitem_id`                     | —                                                                              | Read-only                                                                              |
-| `attach_to_workitem`   | `project_id`, `workitem_id`, `page_id`          | —                                                                              | —                                                                                      |
-| `detach_from_workitem` | `project_id`, `workitem_id`, `workitem_page_id` | —                                                                              | workitem_page_id is the link id from list_workitem_pages, not the page id; Destructive |
+| Action                 | Required                                        | Optional                                                                                                     | Notes                                                                                                                                                                    |
+| ---------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `list`                 | —                                               | `project_id`, `cursor`, `per_page`                                                                           | workspace pages unless project_id is given; Read-only                                                                                                                    |
+| `retrieve`             | `page_id`                                       | `project_id`                                                                                                 | Read-only                                                                                                                                                                |
+| `create`               | `name`, `description_html`                      | `project_id`, `parent_id`, `collection_id`, `access`, `color`, `is_locked`, `external_source`, `external_id` | parent_id nests the new page under an existing one; collection_id files it. Pass one or the other, never both                                                            |
+| `update`               | `page_id`                                       | `project_id`, `name`, `description_html`                                                                     | pass name, description_html, or both; description_html replaces the whole body, so retrieve the page first when editing part of it; a locked or archived page is refused |
+| `archive`              | `page_id`                                       | `project_id`, `archive`                                                                                      | archive defaults to true; pass archive=false to restore                                                                                                                  |
+| `delete`               | `page_id`                                       | `project_id`                                                                                                 | requires the page to be archived first; Destructive                                                                                                                      |
+| `set_collection`       | `page_id`, `collection_id`                      | —                                                                                                            | files a page into a collection, or moves it out of the one it is in; workspace pages only                                                                                |
+| `list_workitem_pages`  | `project_id`, `workitem_id`                     | —                                                                                                            | Read-only                                                                                                                                                                |
+| `attach_to_workitem`   | `project_id`, `workitem_id`, `page_id`          | —                                                                                                            | —                                                                                                                                                                        |
+| `detach_from_workitem` | `project_id`, `workitem_id`, `workitem_page_id` | —                                                                                                            | workitem_page_id is the link id from list_workitem_pages, not the page id; Destructive                                                                                   |
 
 **Notes:** description_html is the page body as HTML. access is the page access level. Omit project_id to work with workspace-level pages.
+
+### `collection` — Page collections
+
+Collections grouping workspace pages.
+
+| Action          | Required                                                 | Optional                                    | Notes                                                                                                    |
+| --------------- | -------------------------------------------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `list`          | —                                                        | —                                           | Read-only                                                                                                |
+| `retrieve`      | `collection_id`                                          | —                                           | Read-only                                                                                                |
+| `create`        | `name`                                                   | `access`                                    | access is fixed at creation and cannot be changed afterwards                                             |
+| `update`        | `collection_id`                                          | `name`, `sort_order`                        | pass name or sort_order; only the fields you pass are changed                                            |
+| `delete`        | `collection_id`                                          | `archive_pages`                             | the pages survive; archive_pages defaults to true, pass false to leave them unfiled instead; Destructive |
+| `list_pages`    | `collection_id`                                          | `search`, `parent_id`, `cursor`, `per_page` | Read-only                                                                                                |
+| `search_pages`  | `collection_id`                                          | `search`                                    | pages not yet in this collection, to pick ids for add_pages; Read-only                                   |
+| `add_pages`     | `collection_id`, `page_ids`                              | —                                           | files existing pages; use `page create` to make new ones                                                 |
+| `remove_page`   | `collection_id`, `page_collection_id`                    | —                                           | page_collection_id is the membership id from list_pages, not the page id; the page itself is kept        |
+| `list_members`  | `collection_id`                                          | —                                           | Read-only                                                                                                |
+| `add_member`    | `collection_id`, `user_id`, `member_access`              | —                                           | —                                                                                                        |
+| `update_member` | `collection_id`, `collection_member_id`, `member_access` | —                                           | —                                                                                                        |
+| `remove_member` | `collection_id`, `collection_member_id`                  | —                                           | collection_member_id is the membership id from list_members, not the user id                             |
+
+**Notes:** access is one of: public, private -- a private collection is visible only to its members. member_access is one of: view, comment, edit, a separate scale from access. Collections hold workspace pages only. To file or move a page, use `page set_collection`; it needs no membership id.
+
+## Templates
+
+_Example prompt: “Create a workspace work item template called Bug report with our standard acceptance-criteria body.”_
+
+### `template` — Templates
+
+Reusable templates for work items, pages, and projects.
+
+| Action   | Required                        | Optional                                             | Notes                                |
+| -------- | ------------------------------- | ---------------------------------------------------- | ------------------------------------ |
+| `list`   | `kind`                          | `project_id`                                         | Read-only                            |
+| `create` | `kind`, `name`, `template_data` | `project_id`, `description`                          | —                                    |
+| `update` | `kind`, `template_id`           | `project_id`, `name`, `description`, `template_data` | only the fields you pass are changed |
+| `delete` | `kind`, `template_id`           | `project_id`                                         | Destructive                          |
+
+**Notes:** kind is one of: workitem, page, project. project_id picks the scope a write lands in; omit it for the workspace, the only scope a project kind lives at. Listing without project_id also returns a project's templates, marked by a non-null `project`. template_data is a JSON object of what gets templated, such as `{"name": "Spec", "priority": "medium"}`; update merges it, so pass only what changes. description is the template's own summary, not the templated body. Where the workspace owns templates, a project's own are read-only.
 
 ## Customers
 

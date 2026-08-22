@@ -22,7 +22,7 @@ Just want to connect your AI tool? Use the [short setup guide](https://docs.plan
 [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard for how AI clients discover and call
 external tools. The Plane MCP server sits between your client and Plane's REST API, then acts as the signed-in user.
 
-Version 0.3.0 exposes **28 tools, one per resource, covering 183 actions**. Pass `action` to select an operation:
+Version 0.3.1 exposes **30 tools, one per resource, covering 204 actions**. Pass `action` to select an operation:
 
 ```python
 workitem(action="create", project_id=..., name="Fix login")
@@ -47,7 +47,9 @@ instance, or [deploy your own server](/dev-tools/mcp-server-self-host).
 - [Planning](/dev-tools/mcp-server-tools#planning): plan cycles, modules, milestones, and initiatives.
 - [Releases](/dev-tools/mcp-server-tools#releases): manage tags, labels, work items, and changelogs.
 - [Projects and workspace](/dev-tools/mcp-server-tools#projects-and-workspace): manage projects, states, labels, members,
-  pages, features, and intake.
+  pages and their collections, features, and intake.
+- [Templates](/dev-tools/mcp-server-tools#templates): manage work item, page, and project templates at workspace or
+  project scope.
 - [Customers](/dev-tools/mcp-server-tools#customers): manage customers, requests, properties, and linked work.
 - [Query](/dev-tools/mcp-server-tools#query): retrieve the PQL language reference before composing filters.
 
@@ -749,8 +751,8 @@ _Trace: `workitem retrieve_by_identifier` → `work_log create` → `state list`
   token in a project-scoped `.mcp.json`.
 - Use a workspace access token with the minimum role needed for automations.
 - Revoke tokens in Plane settings and audit API token events in the workspace audit log.
-- Server logs are structured JSON with tool name, duration, status, opaque user ID, and workspace slug. Display
-  names are logged only when `LOG_USER_INFO=true`, because they are PII.
+- Server logs are structured JSON with the tool name, the `resource` and `action` that ran, duration, status, opaque
+  user ID, and workspace slug. Display names are logged only when `LOG_USER_INFO=true`, because they are PII.
 
 ## Self-hosted Plane
 
