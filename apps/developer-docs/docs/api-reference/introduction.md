@@ -28,6 +28,15 @@ GET https://api.plane.so/api/v1/workspaces/{workspace_slug}/projects/
 If you're using a self-hosted instance of Plane, your API base URL will differ based on your custom domain and setup.
 :::
 
+## OpenAPI specification
+
+The complete API is described by an OpenAPI 3.0 specification — useful for generating clients, validating requests, or giving AI agents a machine-readable view of every endpoint:
+
+- [openapi.json](https://developers.plane.so/openapi.json)
+- [openapi.yaml](https://developers.plane.so/openapi.yaml)
+
+See [OpenAPI Specification](/dev-tools/openapi-specification) for how the spec is produced and how to generate one from a self-hosted instance.
+
 ## Authentication
 
 Our APIs use a key for authentication. The API key should be included in the header of each request to verify the client's identity and permissions. The key should be passed as the value of the `X-API-Key` header.

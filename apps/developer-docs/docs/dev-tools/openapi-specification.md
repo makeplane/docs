@@ -6,9 +6,24 @@ keywords: plane, developer tools, openapi, api specification, swagger, redoc, dr
 
 # OpenAPI Specification
 
-Plane uses [drf-spectacular](https://drf-spectacular.readthedocs.io/) to generate an OpenAPI 3.0 specification for the public REST API (`/api/v1/`). The feature is **disabled by default** and must be explicitly enabled.
+Plane uses [drf-spectacular](https://drf-spectacular.readthedocs.io/) to generate an OpenAPI 3.0 specification for the public REST API (`/api/v1/`).
 
-## Enable the OpenAPI spec
+## Download the published spec
+
+The specification is published with these docs — point code generators, API clients, and AI agents at either file:
+
+| Format | URL                                                                          |
+| ------ | ---------------------------------------------------------------------------- |
+| JSON   | [developers.plane.so/openapi.json](https://developers.plane.so/openapi.json) |
+| YAML   | [developers.plane.so/openapi.yaml](https://developers.plane.so/openapi.yaml) |
+
+The published spec lists `https://api.plane.so` (Plane Cloud) as the production server. When self-hosting, replace it with your own domain, or generate the spec from your own instance as described below.
+
+## Generate the spec from a self-hosted instance
+
+The schema endpoints are **disabled by default** and must be explicitly enabled.
+
+### Enable the OpenAPI spec
 
 Add the following to your `.env` file (at the project root or `apps/api/.env`):
 
@@ -24,7 +39,7 @@ Then restart the API server so it picks up the new variable.
 
 No other environment variables are needed — everything else (schema path prefix, tags, auth schemes, servers) is pre-configured in `apps/api/plane/settings/openapi.py`.
 
-## Access the OpenAPI spec
+### Access the OpenAPI spec
 
 > Replace `{domain_name}` below with your self-hosted Plane domain (e.g. `plane.example.com`).
 
@@ -36,9 +51,9 @@ Once the API server is running with the variable enabled, three endpoints are av
 | `GET /api/schema/swagger-ui/` | `https://{domain_name}/api/schema/swagger-ui/` | Interactive Swagger UI     |
 | `GET /api/schema/redoc/`      | `https://{domain_name}/api/schema/redoc/`      | ReDoc documentation viewer |
 
-## Download the OpenAPI spec
+### Download the OpenAPI spec
 
-### Browser
+#### Browser
 
 Open `https://{domain_name}/api/schema/` and save the page. The default format is YAML.
 
@@ -48,7 +63,7 @@ For JSON, append the `format` query parameter:
 https://{domain_name}/api/schema/?format=openapi-json
 ```
 
-### curl
+#### curl
 
 ```bash
 # YAML
@@ -58,7 +73,7 @@ curl -o openapi.yaml https://{domain_name}/api/schema/
 curl -o openapi.json https://{domain_name}/api/schema/?format=openapi-json
 ```
 
-### Management command (offline, no running server required)
+#### Management command (offline, no running server required)
 
 ```bash
 # From apps/api/

@@ -88,6 +88,7 @@ export default extendConfig(
                 "- [Roles and permissions](https://docs.plane.so/roles-and-permissions/overview.md): What each workspace and project role is allowed to do.",
               ].join("\n"),
               optional: [
+                "- [OpenAPI 3.0 specification (JSON)](https://developers.plane.so/openapi.json): Machine-readable description of every Plane REST API endpoint; also available as [YAML](https://developers.plane.so/openapi.yaml).",
                 "- [Complete documentation in one file](https://developers.plane.so/llms-full.txt): Every page of developers.plane.so concatenated as Markdown (about 1.6 MB).",
                 "- [Sitemap](https://developers.plane.so/sitemap.xml): Every page URL on developers.plane.so.",
                 "- [Plane on GitHub](https://github.com/makeplane/plane): Source code, issues, and releases.",
