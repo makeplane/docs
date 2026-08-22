@@ -2,8 +2,10 @@
 title: Page not found
 description: This page doesn't exist on developers.plane.so. Start from the home page, search, the sitemap, or llms.txt to find what you're looking for.
 keywords: plane, page not found, 404
-# Not a real page: keep it out of search, the LLM files, and search engines.
+# Not a real page: keep it out of search, the LLM files, and search engines, and
+# don't give it a canonical URL (it is served at whatever path was not found).
 search: false
+canonical: false
 copyPage: false
 outline: false
 prev: false

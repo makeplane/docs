@@ -71,11 +71,13 @@ export function siteJsonLd(site: SiteIdentity): HeadConfig {
 
 /**
  * `<link rel="canonical">` for a page, or undefined when the page's
- * frontmatter already sets one. Mirrors cleanUrls: `dir/page.md` →
- * `${origin}/dir/page`, `dir/index.md` → `${origin}/dir`, `index.md` →
- * `${origin}/`. Call from `transformPageData`.
+ * frontmatter already sets one or opts out with `canonical: false` (e.g. the
+ * 404 page, which is served at arbitrary URLs). Mirrors cleanUrls:
+ * `dir/page.md` → `${origin}/dir/page`, `dir/index.md` → `${origin}/dir`,
+ * `index.md` → `${origin}/`. Call from `transformPageData`.
  */
 export function canonicalLink(origin: string, pageData: PageData): HeadConfig | undefined {
+  if (pageData.frontmatter.canonical === false) return undefined;
   const head = (pageData.frontmatter.head ?? []) as HeadConfig[];
   if (head.some(([tag, attrs]) => tag === "link" && attrs?.rel === "canonical")) return undefined;
   const path = pageData.relativePath.replace(/\.md$/, "").replace(/(^|\/)index$/, "");
