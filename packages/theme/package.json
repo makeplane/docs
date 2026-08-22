@@ -6,6 +6,7 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
+    "./seo": "./src/seo.ts",
     "./package.json": "./package.json"
   },
   "scripts": {

@@ -1,9 +1,10 @@
 /// <reference path="./env.d.ts" />
-import { defineConfig, type HeadConfig, type PageData } from "vitepress";
+import { defineConfig, type PageData } from "vitepress";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 import { withMermaid } from "vitepress-plugin-mermaid";
 import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
 import llmstxt from "vitepress-plugin-llms";
+import { canonicalLink, siteJsonLd } from "@plane/docs-theme/seo";
 import { readFileSync, readdirSync, statSync, mkdirSync, copyFileSync } from "node:fs";
 import { resolve, join, relative, dirname } from "node:path";
 
@@ -213,21 +214,22 @@ export default extendConfig(
           "meta",
           { name: "twitter:image", content: "https://media.docs.plane.so/logo/og-docs.webp#hero" },
         ],
+
+        // Organization + WebSite JSON-LD (shared identity from packages/theme)
+        siteJsonLd({
+          name: "Plane Developer Docs",
+          url: "https://developers.plane.so",
+          description:
+            "Developer documentation for Plane: REST API reference, webhooks, MCP server, OAuth apps, and self-hosting guides.",
+        }),
       ],
 
       transformPageData(pageData: PageData) {
         const head = (pageData.frontmatter.head ??= []);
 
-        // Inject canonical URL if not already defined in frontmatter
-        const hasCanonical = (head as HeadConfig[]).some(
-          ([tag, attrs]) => tag === "link" && attrs?.rel === "canonical",
-        );
-        if (!hasCanonical) {
-          const canonicalUrl = `https://developers.plane.so/${pageData.relativePath}`
-            .replace(/index\.md$/, "")
-            .replace(/\.md$/, "");
-          head.push(["link", { rel: "canonical", href: canonicalUrl }]);
-        }
+        // Canonical URL per page (skipped when frontmatter already sets one)
+        const canonical = canonicalLink("https://developers.plane.so", pageData);
+        if (canonical) head.push(canonical);
 
         // Inject frontmatter keywords as a meta tag (VitePress doesn't do this natively)
         const keywords = pageData.frontmatter.keywords;
