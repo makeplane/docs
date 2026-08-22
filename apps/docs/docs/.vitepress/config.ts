@@ -55,7 +55,27 @@ const config = defineConfig({
         description:
           "Plane is open-source, modern project management software for planning, tracking, and shipping work.",
         details:
-          "This documentation covers workspaces, projects, work items, cycles, modules, pages and wikis, integrations, importers, automations, and Plane AI.",
+          "This documentation covers workspaces, projects, work items, cycles, modules, pages and wikis, integrations, importers, automations, and Plane AI. Every page is also available as Markdown: append `.md` to its URL or request it with `Accept: text/markdown`.",
+        // llmstxt.org layout: H1, blockquote, details, then H2 link sections. "Related
+        // documentation" points agents at developers.plane.so (API, webhooks, MCP server,
+        // self-hosting) and "Optional" holds the bulk files they can skip.
+        customLLMsTxtTemplate:
+          "# {title}\n\n{description}\n\n{details}\n\n## Table of Contents\n\n{toc}\n\n## Related documentation\n\n{related}\n\n## Optional\n\n{optional}\n",
+        customTemplateVariables: {
+          related: [
+            "- [Plane developer documentation](https://developers.plane.so/llms.txt): Index of developers.plane.so — REST API reference, webhooks, OAuth apps, the MCP server, agents, and self-hosting guides.",
+            "- [REST API reference](https://developers.plane.so/api-reference/introduction.md): Authentication, pagination, rate limits, and every endpoint of the Plane public API.",
+            "- [Webhooks](https://developers.plane.so/dev-tools/intro-webhooks.md): Real-time event notifications for work items, cycles, modules, and more.",
+            "- [MCP server](https://developers.plane.so/dev-tools/mcp-server.md): Let AI assistants read and update Plane through the Model Context Protocol.",
+            "- [Self-host Plane](https://developers.plane.so/self-hosting/overview.md): Deploy Plane with Docker Compose, Kubernetes, or Podman.",
+          ].join("\n"),
+          optional: [
+            "- [Complete documentation in one file](https://docs.plane.so/llms-full.txt): Every page of docs.plane.so concatenated as Markdown (about 1 MB).",
+            "- [Sitemap](https://docs.plane.so/sitemap.xml): Every page URL on docs.plane.so.",
+            "- [Plane on GitHub](https://github.com/makeplane/plane): Source code, issues, and releases.",
+            "- [plane.so](https://plane.so): Product website, pricing, and sign-up.",
+          ].join("\n"),
+        },
         // Per-page .md versions are already emitted by buildEnd() for the
         // `Accept: text/markdown` negotiation in middleware.ts, so the plugin only
         // owns llms.txt / llms-full.txt.
