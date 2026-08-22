@@ -14,4 +14,13 @@ export default createPlaneTheme({
     footerBg: "https://media.docs.plane.so/logo/og-docs.webp",
     monoIcon: "https://media.docs.plane.so/logo/favicon-32x32.png",
   },
+  notFound: {
+    siteName: "the Plane docs",
+    sibling: {
+      name: "developers.plane.so",
+      url: "https://developers.plane.so",
+      covers: "the API, webhooks, the MCP server, or self-hosting",
+    },
+    help: { text: "Get help from the Plane team", link: "/support/get-help" },
+  },
 });

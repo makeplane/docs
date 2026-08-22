@@ -25,11 +25,12 @@ import Card from "./components/Card.vue";
 import CardGroup from "./components/CardGroup.vue";
 import Tags from "./components/Tags.vue";
 import CookieConsent from "./components/CookieConsent.vue";
+import NotFound from "./components/NotFound.vue";
 import { planeOptionsKey, type PlaneThemeOptions } from "./options";
 
 export type { PlaneThemeOptions } from "./options";
 export { planeOptionsKey } from "./options";
-export { Card, CardGroup, Tags, CookieConsent, PlaneLayout };
+export { Card, CardGroup, Tags, CookieConsent, NotFound, PlaneLayout };
 
 /* ---------------------------------------------------------------------------
  * Client-side helpers
@@ -122,6 +123,8 @@ export function createPlaneTheme(options: PlaneThemeOptions): Theme {
       app.component("Card", Card);
       app.component("CardGroup", CardGroup);
       app.component("Tags", Tags);
+      // Used by each app's docs/404.md (see components/NotFound.vue).
+      app.component("PlaneNotFound", NotFound);
       for (const [name, component] of Object.entries(options.components ?? {})) {
         app.component(name, component);
       }

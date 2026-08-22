@@ -19,6 +19,22 @@ export interface PlaneThemeOptions {
   };
   /** Render the cookie-consent banner. Default: true. */
   cookieConsent?: boolean;
+  /** Site-specific wording for the shared "page not found" content (404.md + not-found slot). */
+  notFound?: {
+    /** How this site is referred to in prose, e.g. "the Plane docs". */
+    siteName: string;
+    /** The other Plane docs site, for visitors who landed on the wrong one. */
+    sibling?: {
+      /** Display name, e.g. "developers.plane.so". */
+      name: string;
+      /** Origin without a trailing slash. */
+      url: string;
+      /** What it covers, completing "Looking for …?", e.g. "the API, webhooks, or self-hosting". */
+      covers: string;
+    };
+    /** Where a person can ask for help. */
+    help?: { text: string; link: string };
+  };
   /** Extra globally-registered components (site-specific markdown components). */
   components?: Record<string, Component>;
   /** Extra `enhanceApp` work, run after the shared setup. */

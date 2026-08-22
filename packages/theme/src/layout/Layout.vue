@@ -5,13 +5,15 @@ import VPDefaultLayout from "./default-layout";
 import OSSHeader from "./header";
 import TopBanner from "./top-banner";
 import CopyPageMenu from "../components/CopyPageMenu.vue";
+import NotFound from "../components/NotFound.vue";
 
 const { frontmatter, site } = useData();
 const slots = useSlots();
-// `doc-before` is rendered explicitly below (it also hosts the "Copy page" control),
-// so keep it out of the dynamic forwarding loop.
+// `doc-before` and `not-found` are rendered explicitly below (the first also hosts the
+// "Copy page" control, the second defaults to the shared NotFound content), so keep them
+// out of the dynamic forwarding loop.
 const forwardSlotNames = computed(() =>
-  (Object.keys(slots) as string[]).filter((name) => name !== "doc-before"),
+  (Object.keys(slots) as string[]).filter((name) => name !== "doc-before" && name !== "not-found"),
 );
 
 const variant = computed(
@@ -40,6 +42,9 @@ const useDocLayout = computed(() => {
       <template #doc-before>
         <slot name="doc-before" />
         <CopyPageMenu />
+      </template>
+      <template #not-found>
+        <slot name="not-found"><NotFound /></slot>
       </template>
     </VPDefaultLayout>
   </div>

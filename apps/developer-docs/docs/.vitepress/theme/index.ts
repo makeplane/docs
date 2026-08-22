@@ -30,6 +30,15 @@ export default createPlaneTheme({
     footerBg: "https://media.docs.plane.so/logo/og-docs.webp",
     monoIcon: "/logo/favicon-32x32.png",
   },
+  notFound: {
+    siteName: "the Plane developer docs",
+    sibling: {
+      name: "docs.plane.so",
+      url: "https://docs.plane.so",
+      covers: "how to use Plane (workspaces, projects, work items, pages)",
+    },
+    help: { text: "Get help from the Plane team", link: "https://docs.plane.so/support/get-help" },
+  },
   components: { ApiParam, CodePanel, ResponsePanel },
   setup() {
     const route = useRoute();

@@ -36,6 +36,7 @@ docs/
   ai/                          # Plane AI features
   support/                     # Keyboard shortcuts, get help
   templates/                   # Page, project, work-item templates
+docs/not-found.md              # "Page not found" page → becomes 404.html in buildEnd (shared NotFound component)
 vercel.json                    # cleanUrls, headers, redirects
 middleware.ts                  # Vercel Routing Middleware: Accept: text/markdown → /path.md (+ Vary: Accept)
 ```

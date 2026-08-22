@@ -5,7 +5,15 @@ import { withMermaid } from "vitepress-plugin-mermaid";
 import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
 import llmstxt from "vitepress-plugin-llms";
 import { canonicalLink, siteJsonLd } from "@plane/docs-theme/seo";
-import { readFileSync, readdirSync, statSync, mkdirSync, copyFileSync } from "node:fs";
+import {
+  readFileSync,
+  readdirSync,
+  statSync,
+  mkdirSync,
+  copyFileSync,
+  renameSync,
+  rmSync,
+} from "node:fs";
 import { resolve, join, relative, dirname } from "node:path";
 
 function loadEnvVar(key: string): string | undefined {
@@ -102,6 +110,7 @@ export default extendConfig(
             // Pages hidden from search (search: false / noindex) are excluded
             // from the LLM files too.
             ignoreFiles: [
+              "not-found.md",
               "self-hosting/methods/install-methods-commercial/docker-compose.md",
               "self-hosting/methods/install-methods-commercial/kubernetes.md",
             ],
@@ -144,6 +153,12 @@ export default extendConfig(
         }
 
         walk(srcDir);
+
+        // The server-rendered "page not found" page becomes the static 404.html that
+        // Vercel serves for unknown paths (VitePress leaves #app empty in the 404.html
+        // it writes).
+        renameSync(join(outDir, "not-found.html"), join(outDir, "404.html"));
+        rmSync(join(outDir, "not-found.md"));
       },
       title: "Plane developer documentation",
       description:
@@ -156,6 +171,8 @@ export default extendConfig(
       // SEO: Generate sitemap automatically
       sitemap: {
         hostname: "https://developers.plane.so",
+        // not-found.md only exists to become 404.html (see buildEnd).
+        transformItems: (items) => items.filter((item) => item.url !== "not-found"),
       },
 
       // SEO: Clean URLs without .html extension
