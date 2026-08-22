@@ -71,16 +71,29 @@ export default extendConfig(
           llmstxt({
             domain: "https://developers.plane.so",
             title: "Plane Developer Documentation",
+            // Canonical company definition (brand book), then this site's role.
             description:
-              "Plane is open-source, modern project management software. These developer docs cover self-hosting, the REST API, and tools for building on Plane.",
+              "Plane is agentic work infrastructure: a shared system for projects, knowledge, and work intake, where people and supported AI agents can act with context, ownership, permissions, and history visible. This site is the developer documentation: build on Plane and run it yourself.",
             details:
               "This documentation covers self-hosting (Docker, Kubernetes, and more), the REST API reference for projects, work items, cycles, modules, states, pages, and more, plus developer tools including OAuth apps, webhooks, agents, and the MCP server. Every page is also available as Markdown: append `.md` to its URL or request it with `Accept: text/markdown`.",
-            // llmstxt.org layout: H1, blockquote, details, then H2 link sections. "Related
-            // documentation" points agents at docs.plane.so (how to use the product) and
-            // "Optional" holds the bulk files they can skip.
+            // llmstxt.org layout: H1, blockquote, details, then H2 link sections. "When to
+            // use these docs" tells agents which jobs belong here, "Related documentation"
+            // points them at docs.plane.so (how to use the product) and "Optional" holds
+            // the bulk files they can skip.
             customLLMsTxtTemplate:
-              "# {title}\n\n{description}\n\n{details}\n\n## Table of Contents\n\n{toc}\n\n## Related documentation\n\n{related}\n\n## Optional\n\n{optional}\n",
+              "# {title}\n\n{description}\n\n{details}\n\n## When to use these docs\n\n{whenToUse}\n\n## Table of Contents\n\n{toc}\n\n## Related documentation\n\n{related}\n\n## Optional\n\n{optional}\n",
             customTemplateVariables: {
+              whenToUse: [
+                "Use these docs when you need to:",
+                "",
+                "- Call the REST API: `https://api.plane.so/api/v1/` on Plane Cloud, or `https://<your-domain>/api/v1/` when self-hosted. Authenticate with an `X-API-Key` header, or an OAuth bearer token for Plane apps.",
+                "- Connect an AI client or agent to Plane through the MCP server.",
+                "- Receive webhooks for events in a workspace.",
+                "- Build a Plane app with OAuth 2.0 bot and user tokens.",
+                "- Self-host Plane with Docker Compose, Kubernetes, or the Airgapped Edition.",
+                "",
+                "For how to use the product itself, see the [product documentation](https://docs.plane.so/llms.txt).",
+              ].join("\n"),
               related: [
                 "- [Plane product documentation](https://docs.plane.so/llms.txt): Index of docs.plane.so — how to use Plane: workspaces, projects, work items, cycles, modules, pages, integrations, importers, automations, and Plane AI.",
                 "- [Core concepts](https://docs.plane.so/introduction/core-concepts.md): The building blocks the API exposes — workspaces, projects, work items, cycles, modules, views, and pages.",
@@ -162,7 +175,7 @@ export default extendConfig(
       },
       title: "Plane developer documentation",
       description:
-        "Self-host Plane, integrate with our API, configure webhooks, and extend your project management platform. Complete guides for developers building on Plane.",
+        "Self-host Plane, integrate with the REST API, configure webhooks, and build apps and agents on Plane. Complete guides for developers building on Plane.",
 
       // SEO: Per-page lastmod in sitemap.xml from each file's latest git commit.
       // Requires full git history at build time (see package.json build script).
@@ -233,7 +246,7 @@ export default extendConfig(
           {
             property: "og:description",
             content:
-              "Self-host Plane, integrate with our API, configure webhooks, and extend your project management platform.",
+              "Self-host Plane, integrate with the REST API, configure webhooks, and build apps and agents on Plane.",
           },
         ],
         [
@@ -250,7 +263,7 @@ export default extendConfig(
           {
             name: "twitter:description",
             content:
-              "Self-host Plane, integrate with our API, configure webhooks, and extend your project management platform.",
+              "Self-host Plane, integrate with the REST API, configure webhooks, and build apps and agents on Plane.",
           },
         ],
         [

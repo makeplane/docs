@@ -48,7 +48,8 @@ const searchConfig =
 
 const config = defineConfig({
   title: "Plane",
-  description: "Modern project management software",
+  description:
+    "Product documentation for Plane: workspaces, projects, work items, cycles, modules, pages, integrations, importers, automations, and Plane AI.",
   cleanUrls: true,
 
   vite: {
@@ -60,16 +61,30 @@ const config = defineConfig({
       // https://github.com/okineadev/vitepress-plugin-llms
       llmstxt({
         domain: "https://docs.plane.so",
+        // Canonical company definition (brand book), then this site's role.
         description:
-          "Plane is open-source, modern project management software for planning, tracking, and shipping work.",
+          "Plane is agentic work infrastructure: a shared system for projects, knowledge, and work intake, where people and supported AI agents can act with context, ownership, permissions, and history visible. This site is the product documentation: how to set up and use Plane.",
         details:
-          "This documentation covers workspaces, projects, work items, cycles, modules, pages and wikis, integrations, importers, automations, and Plane AI. Every page is also available as Markdown: append `.md` to its URL or request it with `Accept: text/markdown`.",
-        // llmstxt.org layout: H1, blockquote, details, then H2 link sections. "Related
-        // documentation" points agents at developers.plane.so (API, webhooks, MCP server,
-        // self-hosting) and "Optional" holds the bulk files they can skip.
+          "Project management is a core Plane capability, not the whole category. This documentation covers workspaces, projects, work items, cycles, modules, pages and wikis, integrations, importers, automations, and Plane AI. Every page is also available as Markdown: append `.md` to its URL or request it with `Accept: text/markdown`.",
+        // llmstxt.org layout: H1, blockquote, details, then H2 link sections. "When to use
+        // Plane" gives agents fit conditions, "Related documentation" points them at
+        // developers.plane.so (API, webhooks, MCP server, self-hosting) and "Optional"
+        // holds the bulk files they can skip.
         customLLMsTxtTemplate:
-          "# {title}\n\n{description}\n\n{details}\n\n## Table of Contents\n\n{toc}\n\n## Related documentation\n\n{related}\n\n## Optional\n\n{optional}\n",
+          "# {title}\n\n{description}\n\n{details}\n\n## When to use Plane\n\n{whenToUse}\n\n## Table of Contents\n\n{toc}\n\n## Related documentation\n\n{related}\n\n## Optional\n\n{optional}\n",
         customTemplateVariables: {
+          whenToUse: [
+            "Plane fits when one or more of these conditions hold:",
+            "",
+            "- Work changes quickly.",
+            "- Work crosses teams, tools, or external stakeholders.",
+            "- Different groups need different workflows.",
+            "- Knowledge and execution must stay connected.",
+            "- AI agents need to understand or act on real work.",
+            "- Permissions, review, audit history, or deployment control matter.",
+            "",
+            "Use this site to learn how to use Plane. For the REST API, MCP server, webhooks, OAuth apps, and self-hosting, use the [developer documentation](https://developers.plane.so/llms.txt).",
+          ].join("\n"),
           related: [
             "- [Plane developer documentation](https://developers.plane.so/llms.txt): Index of developers.plane.so — REST API reference, webhooks, OAuth apps, the MCP server, agents, and self-hosting guides.",
             "- [REST API reference](https://developers.plane.so/api-reference/introduction.md): Authentication, pagination, rate limits, and every endpoint of the Plane public API.",
