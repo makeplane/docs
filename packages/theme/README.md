@@ -44,6 +44,7 @@ the repo root); changes hot-reload through the workspace link. `pnpm check:types
 src/
   index.ts        createPlaneTheme(options) + client setup (appearance sync, medium-zoom, tab hashes)
   options.ts      PlaneThemeOptions / planeOptionsKey
+  seo.ts          build-time helpers for the VitePress configs (`@plane/docs-theme/seo`): Organization/WebSite JSON-LD, canonical link
   layout/         Layout.vue, doc-layout.vue (PlaneHeader + bordered content wrapper), slots/header helpers
   components/     PlaneHeader, CopyPageMenu, CookieConsent, NotFound (not-found.md → 404.html + not-found slot), Card, CardGroup, Tags, brand icons
   css/            index.css → fonts, tokens, base, layout, components, api

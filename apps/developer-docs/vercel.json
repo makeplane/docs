@@ -120,12 +120,5 @@
       "source": "/dev-tools/mcp-server-claude-code",
       "destination": "/dev-tools/mcp-server#claude-code"
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
-      "destination": "/:path*.md"
-    }
   ]
 }

@@ -1,9 +1,10 @@
 /// <reference path="./env.d.ts" />
-import { defineConfig, type HeadConfig, type PageData } from "vitepress";
+import { defineConfig, type PageData } from "vitepress";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 import { withMermaid } from "vitepress-plugin-mermaid";
 import { extendConfig } from "@voidzero-dev/vitepress-theme/config";
 import llmstxt from "vitepress-plugin-llms";
+import { canonicalLink, siteJsonLd } from "@plane/docs-theme/seo";
 import {
   readFileSync,
   readdirSync,
@@ -73,9 +74,35 @@ export default extendConfig(
             description:
               "Plane is open-source, modern project management software. These developer docs cover self-hosting, the REST API, and tools for building on Plane.",
             details:
-              "This documentation covers self-hosting (Docker, Kubernetes, and more), the REST API reference for projects, work items, cycles, modules, states, pages, and more, plus developer tools including OAuth apps, webhooks, agents, and the MCP server.",
+              "This documentation covers self-hosting (Docker, Kubernetes, and more), the REST API reference for projects, work items, cycles, modules, states, pages, and more, plus developer tools including OAuth apps, webhooks, agents, and the MCP server. Every page is also available as Markdown: append `.md` to its URL or request it with `Accept: text/markdown`.",
+            // llmstxt.org layout: H1, blockquote, details, then H2 link sections. "Related
+            // documentation" points agents at docs.plane.so (how to use the product) and
+            // "Optional" holds the bulk files they can skip.
+            customLLMsTxtTemplate:
+              "# {title}\n\n{description}\n\n{details}\n\n## Table of Contents\n\n{toc}\n\n## Related documentation\n\n{related}\n\n## Optional\n\n{optional}\n",
+            customTemplateVariables: {
+              related: [
+                "- [Plane product documentation](https://docs.plane.so/llms.txt): Index of docs.plane.so — how to use Plane: workspaces, projects, work items, cycles, modules, pages, integrations, importers, automations, and Plane AI.",
+                "- [Core concepts](https://docs.plane.so/introduction/core-concepts.md): The building blocks the API exposes — workspaces, projects, work items, cycles, modules, views, and pages.",
+                "- [Quickstart](https://docs.plane.so/introduction/quickstart.md): Set up a workspace and a first project.",
+                "- [Roles and permissions](https://docs.plane.so/roles-and-permissions/overview.md): What each workspace and project role is allowed to do.",
+              ].join("\n"),
+              optional: [
+                "- [Complete documentation in one file](https://developers.plane.so/llms-full.txt): Every page of developers.plane.so concatenated as Markdown (about 1.6 MB).",
+                "- [Sitemap](https://developers.plane.so/sitemap.xml): Every page URL on developers.plane.so.",
+                "- [Plane on GitHub](https://github.com/makeplane/plane): Source code, issues, and releases.",
+                "- [plane.so](https://plane.so): Product website, pricing, and sign-up.",
+              ].join("\n"),
+            },
+            // The "/" sidebar only holds shortcut groups that repeat pages from the section
+            // sidebars, so drop it to keep every page listed exactly once.
+            sidebar: (configSidebar) => {
+              if (!configSidebar || Array.isArray(configSidebar)) return configSidebar;
+              const { "/": _shortcuts, ...sections } = configSidebar;
+              return sections;
+            },
             // Per-page .md versions are already emitted by buildEnd() for the
-            // `Accept: text/markdown` rewrite in vercel.json, so the plugin only
+            // `Accept: text/markdown` negotiation in middleware.ts, so the plugin only
             // owns llms.txt / llms-full.txt.
             generateLLMFriendlyDocsForEachPage: false,
             // Don't inject invisible LLM-hint markup into rendered pages.
@@ -105,7 +132,7 @@ export default extendConfig(
         },
       },
       buildEnd(siteConfig) {
-        // Copy source .md files into dist/ for Accept: text/markdown negotiation.
+        // Copy source .md files into dist/ for Accept: text/markdown negotiation (see middleware.ts).
         const srcDir = siteConfig.srcDir;
         const outDir = siteConfig.outDir;
 
@@ -230,21 +257,22 @@ export default extendConfig(
           "meta",
           { name: "twitter:image", content: "https://media.docs.plane.so/logo/og-docs.webp#hero" },
         ],
+
+        // Organization + WebSite JSON-LD (shared identity from packages/theme)
+        siteJsonLd({
+          name: "Plane Developer Docs",
+          url: "https://developers.plane.so",
+          description:
+            "Developer documentation for Plane: REST API reference, webhooks, MCP server, OAuth apps, and self-hosting guides.",
+        }),
       ],
 
       transformPageData(pageData: PageData) {
         const head = (pageData.frontmatter.head ??= []);
 
-        // Inject canonical URL if not already defined in frontmatter
-        const hasCanonical = (head as HeadConfig[]).some(
-          ([tag, attrs]) => tag === "link" && attrs?.rel === "canonical",
-        );
-        if (!hasCanonical) {
-          const canonicalUrl = `https://developers.plane.so/${pageData.relativePath}`
-            .replace(/index\.md$/, "")
-            .replace(/\.md$/, "");
-          head.push(["link", { rel: "canonical", href: canonicalUrl }]);
-        }
+        // Canonical URL per page (skipped when frontmatter already sets one)
+        const canonical = canonicalLink("https://developers.plane.so", pageData);
+        if (canonical) head.push(canonical);
 
         // Inject frontmatter keywords as a meta tag (VitePress doesn't do this natively)
         const keywords = pageData.frontmatter.keywords;
